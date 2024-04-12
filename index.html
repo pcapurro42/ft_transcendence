@@ -1,39 +1,64 @@
 <!DOCTYPE html>
-
 <html lang="fr">
-
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- 'width=device-width' ajuste la largeur de la page avec la largeur de l'écran -->
-        <!-- 'initial-scale=1' définit le niveau de zoom au premier chargement de la page -->
-        
-        <title> Metal Gear Pong - Main</title>
-
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
+        <title>Metal Gear Pong - Main</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+          @keyframes bg-anim {
+            0%,100%{background-position: 0% 50%, 0 0;}
+            5%{background-position: 10%, 45%;}
+            10%{background-position: 15%, 40%;}
+            15%{background-position: 20% 35%;}
+            20%{background-position: 25% 30%;}
+            25%{background-position: 30%, 25%;}
+            30%{background-position: 35%, 30%;}
+            35%{background-position: 35%, 35%;}
+            40%{background-position: 35%, 40%;}
+            50%{background-position: 35% 45%;}
+            55%{background-position: 35% 50%;}
+            60%{background-position: 30% 50%;}
+            65%{background-position: 25% 50%;}
+            70%{background-position: 20% 50%;}
+            85%{background-position: 15% 50%;}
+            90%{background-position: 10% 50%;}
+            95%{background-position: 5% 50%;}
+        }
+        @keyframes bg-anim-rev {
+            0%{ color: white; }
+            50% { color: rgb(0, 0, 0); }
+        }
+            body {
+                background: radial-gradient(circle, #ffb700, #f0802f, #ff7284, #c78aad, #ec7cf7) 0 0 / 300%;
+                animation: bg-anim 30s infinite;
+            }
+        </style>
+        <style>
+            .no-border-shadow-outline {
+                border: none !important;
+                outline: none !important;
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+        </style>
     </head>
-
-    <body class="container">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
-        <div class="navbar navbar-expand navbar-light bg-light">
-            <div class="intra-42-connect">
+    <body class="container" >
+        <div class="navbar navbar-expand border border-primary navbar-light bg-light" style="box-sizing: border-box!important;">
+            <span class="intra-42-connect">
                 <a class="btn" href="https://www.intra.42.fr">Se connnecter (42)</a>
-            </div>
+            </span>
         </div>
 
-        <div class="container p-5 my-5 border bg-dark text-white text-center">
-            <h1 class="display-1">Metal Gear Pong</h1>
-        </div>
-        
-        <div class="container text-center">
-            <h2>Play</h2>
+        <div class="text-center text-white pt-5 mt-5">
+            <h1 class="display-1">METAL GEAR PONG</h1>
+            <h2 class="rounded-circle">Play</h2>
             <h2>Customize</h2>
             <h2>Settings</h2>
             <h2>Credits</h2>
         </div>
 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
-
 </html>
