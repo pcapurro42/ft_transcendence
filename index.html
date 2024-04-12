@@ -30,7 +30,7 @@
             50% { color: rgb(0, 0, 0); }
         }
             body {
-                background: radial-gradient(circle, #ffb700, #f0802f, #ff7284, #c78aad, #ec7cf7) 0 0 / 300%;
+                background: radial-gradient(circle, rgb(255, 214, 67), #f0802f, #ff7284, #c78aad, #ec7cf7) 0 0 / 300%;
                 animation: bg-anim 30s infinite;
             }
         </style>
@@ -45,18 +45,20 @@
         </style>
     </head>
     <body class="container" >
-        <div class="navbar navbar-expand border border-primary navbar-light bg-light" style="box-sizing: border-box!important;">
-            <span class="intra-42-connect">
-                <a class="btn" href="https://www.intra.42.fr">Se connnecter (42)</a>
-            </span>
-        </div>
+        <span class="intra-42-connect">
+            <a class="btn text-white border rounded" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">LOGIN WITH 42</a>
+        </span>
 
-        <div class="text-center text-white pt-5 mt-5">
-            <h1 class="display-1">METAL GEAR PONG</h1>
-            <h2 class="rounded-circle">Play</h2>
-            <h2>Customize</h2>
-            <h2>Settings</h2>
-            <h2>Credits</h2>
+
+            <div class="d-flex flex-column align-items-center text-center text-white py-5 px-5 mt-5 border rounded" style="border-width: 1 !important;">
+                <h1 class="display-1">METAL GEAR PONG</h1>
+                <div class = "border-3 p-5">
+                    <h2 class="display-4 border rounded p-2">Play</h2>
+                    <h2 class="display-4 border rounded p-2">Customize</h2>
+                    <h2 class="display-4 border rounded p-2">Settings</h2>
+                    <h2 class="display-4 border rounded p-2">Credits</h2>
+                </div>
+            </div>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
