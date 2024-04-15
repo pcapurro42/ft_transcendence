@@ -1,2 +1,0 @@
-UID (id de l'application, public) = u-s4t2ud-328d5957a0e78853f7b035bed31812c4bd82ea90773c43b8686b35f1ae4d1353
-SECRET (clé d'authentification de l'application, private)= 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

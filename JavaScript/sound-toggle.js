@@ -9,11 +9,11 @@ function audio()
 	{
 		audio.muted = false;
 		audio.play();
-		img.src = './ressources/images/sound-on.png';
+		img.src = './Materials/images/sound-on.png';
 	}
 	else
 	{
 		audio.muted = true;
-		img.src = './ressources/images/sound-off.png';
+		img.src = './Materials/images/sound-off.png';
 	}
 }
