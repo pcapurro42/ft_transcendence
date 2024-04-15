@@ -1,0 +1,26 @@
+@keyframes bg-anim
+{
+    0%,100%{background-position: 0% 50%, 0 0;}
+    5%{background-position: 10%, 45%;}
+    10%{background-position: 15%, 40%;}
+    15%{background-position: 20% 35%;}
+    20%{background-position: 25% 30%;}
+    25%{background-position: 30%, 25%;}
+    30%{background-position: 35%, 30%;}
+    35%{background-position: 35%, 35%;}
+    40%{background-position: 35%, 40%;}
+    50%{background-position: 35% 45%;}
+    55%{background-position: 35% 55%;}
+    60%{background-position: 30% 60%;}
+    65%{background-position: 25% 65%;}
+    70%{background-position: 20% 70%;}
+    85%{background-position: 15% 65%;}
+    90%{background-position: 10% 60%;}
+    95%{background-position: 5% 55%;}
+}
+
+body
+{
+    background: radial-gradient(circle, #9f0d0d, #5a0c15, #3f0d16, #240b10, #000000) 0 0 / 300%;
+    animation: bg-anim 30s infinite;
+}
