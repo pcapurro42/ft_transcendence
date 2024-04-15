@@ -1,5 +1,5 @@
-if (localStorage.getItem("language") == NULL)
+if (localStorage.getItem("language") == null)
     localStorage.setItem("language", "en");
 
-if (localStorage.getItem("status") == NULL)
-    localStorage.setItem("not connected");
+if (localStorage.getItem("status") == null)
+    localStorage.setItem("status", "not connected");
