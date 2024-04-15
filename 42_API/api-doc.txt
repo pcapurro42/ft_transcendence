@@ -1,0 +1,3 @@
+https://api.intra.42.fr/apidoc
+
+A priori, on devrait se soucier que de : Users - GET /v2/users/:id
