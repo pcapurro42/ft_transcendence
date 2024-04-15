@@ -21,6 +21,6 @@
 
 body
 {
-    background: radial-gradient(circle, rgb(255, 214, 67), #f0802f, #ff7284, #c78aad, #ec7cf7) 0 0 / 300%;
+    background: radial-gradient(circle, #9f0d0d, #5a0c15, #3f0d16, #240b10, #000000) 0 0 / 300%;
     animation: bg-anim 30s infinite;
 }
