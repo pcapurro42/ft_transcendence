@@ -1,19 +1,34 @@
-let login_id = document.getElementById("login-42");
-
-localStorage.setItem("status", "not connected");
+let log_button = document.getElementById("login-42");
 
 if (localStorage.getItem("status") == "connected")
-    login_id.innerHTML = "CONNECTED";
+    log_button.innerHTML = "LOG OUT";
 else
-    login_id.innerHTML = "LOGIN WITH 42";
+    log_button.innerHTML = "LOGIN WITH 42";
 
-login_id.onclick = auth;
+log_button.onclick = log;
 
-function auth()
+function log()
 {
-    if (localStorage.getItem("status") == "not connected")
+    if (localStorage.getItem("status") == "connected")
     {
-        localStorage.setItem("status", "connected");
-        login_id.innerHTML = "CONNECTED";
+        disconnect();
+        localStorage.setItem("status", "not connected");
+        log_button.innerHTML = "LOG IN WITH 42";
     }
+    else
+    {
+        connect();
+        localStorage.setItem("status", "connected");
+        log_button.innerHTML = "LOG OUT";
+    }
+}
+
+function connect()
+{
+    ;
+}
+
+function disconnect()
+{
+    ;
 }
