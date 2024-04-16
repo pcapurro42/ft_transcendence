@@ -1,8 +1,9 @@
 #main_bar
 {
     border:none;
-    width: 115%;
-    background-color: white;
+    width: 90%;
+    opacity: 100%;
+    /* background-color: red; */
     height: 5px;
 }
 
