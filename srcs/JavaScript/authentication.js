@@ -1,4 +1,4 @@
-let log_button = document.getElementById("login-42");
+let log_button = document.getElementById("login_btn");
 
 if (localStorage.getItem("status") == "connected")
     log_button.innerHTML = "LOG OUT";
