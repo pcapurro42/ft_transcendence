@@ -1,12 +1,13 @@
 let lang = localStorage.getItem("language");
-let filename = "./Languages/" + lang + ".json";
 
-if (localStorage.getItem("language") == "en")
+if (lang == "en")
 {
-    ;
+    for (let i = 0; i != en.length; i++)
+        document.getElementById(en[i][0]).innerHTML = en[i][1];
 }
 
-if (localStorage.getItem("language") == "fr")
+if (lang == "fr")
 {
-    ;
+    for (let i = 0; i != fr.length; i++)
+        document.getElementById(fr[i][0]).innerHTML = fr[i][1];
 }

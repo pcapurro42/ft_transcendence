@@ -1,9 +1,0 @@
-{
-    "connect_btn_on": "LOGIN WITH 42",
-    "connect_btn_off": "LOG OUT",
-
-    "play_btn": "Play",
-    "customize_btn": "Customize",
-    "settings_btn": "Settings",
-    "credits_btn": "Credits"
-}
