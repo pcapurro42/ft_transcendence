@@ -7,10 +7,10 @@ RUN apt-get -y update ; \
 
 WORKDIR /home/
 
-COPY . .
-
-RUN rm /home/Dockerfile
+COPY srcs/ ./
 
 EXPOSE 8080
 
-CMD ["python3.7 -m http.server 8080"]
+CMD ["bash"]
+
+# CMD ["python3.7 -m http.server 8080"]
