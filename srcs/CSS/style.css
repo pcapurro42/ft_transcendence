@@ -1,4 +1,10 @@
 #play_btn, #customize_btn, #settings_btn, #credits_btn
 {
     font-size: 45px;
+    font-style: normal;
+}
+
+#play_btn:hover, #customize_btn:hover, #settings_btn:hover, #credits_btn:hover
+{
+    text-decoration: underline;
 }
