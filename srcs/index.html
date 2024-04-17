@@ -16,32 +16,39 @@
 
     <body class="container" >
 
-        <div class = "my-5 row">
+        <div id="main_menu_page">
 
-            <img id="soundtoggle" src="./Materials/images/sound-off.png" class="img-fluid" style="max-width: 5%; cursor: pointer;">
-            <audio id="mgs" src="./Materials/musics/mgs2-theme.mp3" autoplay muted></audio>
+            <div class = "my-5 row">
 
-            <div class="col d-inline-block">
-                <button id="login_btn" class="btn text-white border float-end" data-oname=""></a>
+                <img id="soundtoggle" src="./Materials/images/sound-off.png" class="img-fluid" style="max-width: 5%; cursor: pointer;">
+                <audio id="mgs" src="./Materials/musics/mgs2-theme.mp3" autoplay muted></audio>
+
+                <div class="col d-inline-block">
+                    <button id="login_btn" class="btn text-white border float-end" data-oname=""></a>
+                </div>
+
             </div>
 
-        </div>
+            <div class="d-flex flex-column align-items-center text-center py-5 px-5 mt-5" style="border-width: 1 !important;">
 
-        <div class="d-flex flex-column align-items-center text-center py-5 px-5 mt-5" style="border-width: 1 !important;">
+                <hr id="main_bar">
 
-            <hr id="main_bar">
+                <img src="./Materials/images/mgp-title-r.png" class="img-fluid" style="max-width: 80%; height: auto">
 
-            <img src="./Materials/images/mgp-title-r.png" class="img-fluid" style="max-width: 80%; height: auto">
+                <hr id="main_bar">
 
-            <hr id="main_bar">
+                <div id="main_menu_buttons" class="p-2">
+                    <button class="btn text-white" id="play_btn" data-oname="Play"></button><br>
+                    <button class="btn text-white" id="customize_btn" data-oname="Customize"></button><br>
+                    <button class="btn text-white" id="settings_btn" data-oname="Settings"></button><br>
+                    <button class="btn text-white" id="credits_btn" data-oname="Credits">=</button><br>
+                </div>
 
-            <div class="p-2">
-                <button class="btn text-white" id="play_btn" data-oname="Play"></button><br>
-                <button class="btn text-white" id="customize_btn" data-oname="Customize"></button><br>
-                <button class="btn text-white" id="settings_btn" data-oname="Settings"></button><br>
-                <button class="btn text-white" id="credits_btn" data-oname="Credits">=</button><br>
+                <div id="main_menu_settings">
+
+                </div>
+
             </div>
-
         </div>
 
         <script src="./JavaScript/tools.js"></script>
@@ -51,6 +58,8 @@
         <script src="./Languages/en.js"></script>
         <script src="./Languages/fr.js"></script>
         <script src="./JavaScript/load-language.js"></script>
+
+        <script src="./JavaScript/settings.js"></script>
 
         <script src="./JavaScript/auth.js"></script>
         <script src="./JavaScript/sound-toggle.js"></script>
