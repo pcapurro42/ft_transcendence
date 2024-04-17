@@ -38,14 +38,34 @@
                 <hr id="main_bar">
 
                 <div id="main_menu_buttons" class="p-2 text-center">
+                    
                     <button id="play_btn" class="btn text-white" data-oname="Play"></button><br>
+                    
                     <button id="customize_btn" class="btn text-white" data-oname="Customize"></button><br>
-                    <button id="settings_btn" class="btn text-white" data-oname="Settings"></button><br>
+                    
+                    <button id="settings_btn" class="btn text-white" data-bs-toggle="modal" data-bs-target="#settings_modal" data-oname="Settings"></button><br>
+                    
                     <button id="credits_btn" class="btn text-white" data-oname="Credits"></button><br>
+                
                 </div>
 
                 <div id="main_menu_settings">
-
+                    <div class="modal fade" id="settings_modal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="modal-title">Settings</h2>
+                                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>test</p>
+                                    <p>test</p>
+                                    <p>test</p>
+                                    <p>test</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
