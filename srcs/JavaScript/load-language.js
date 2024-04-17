@@ -1,13 +1,10 @@
-function findElement(lang, text)
+function getElement(lang, text)
 {
-    let i = 0;
-    while (i != lang.length)
+    for (let i = 0; i != lang.length; i++)
     {
-        if (lang[i][0] == "text")
-            break ;
-        i++;
+        if (lang[i][0] == text)
+            return (lang[i][1]);
     }
-    return (i);
 }
 
 function refreshLanguage()
@@ -17,10 +14,12 @@ function refreshLanguage()
 
     if (lang == "en")
     {
-        ;
+        for (let i = 0; i != words.length; i++)
+            words[i].innerHTML = getElement(en, words[i].getAttribute("data-oname"));
     }
     if (lang == "fr")
     {
-        ;
+        for (let i = 0; i != words.length; i++)
+            words[i].innerHTML = getElement(fr, words[i].getAttribute("data-oname"));
     }
 }
