@@ -3,9 +3,9 @@ let login_btn = document.getElementById("login_btn");
 login_btn.onclick = log;
 
 if (localStorage.getItem("status") == "connected")
-    login_btn.innerHTML = "LOG OUT", refreshLanguage();
+login_btn.setAttribute("data-oname", "LOG OUT"), refreshLanguage();
 else
-    login_btn.innerHTML = "LOG IN WITH 42", refreshLanguage();
+    login_btn.setAttribute("data-oname", "LOG IN WITH 42"), refreshLanguage();
 
 /****************************************** Code Verifier | Code Challenge | API ***********************************************/
 
@@ -19,7 +19,7 @@ function log()
         generateCodeVerifier(), generateCodeChallenger();
         window.location.href = `https://api.intra.42.fr/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`;
 
-        login_btn.innerHTML = "LOG OUT";
+        login_btn.setAttribute("data-oname", "LOG OUT");
         refreshLanguage();
         localStorage.setItem("status", "connected");
     }
@@ -27,7 +27,7 @@ function log()
     {
         // ...
 
-        login_btn.innerHTML = "LOG IN WITH 42";
+        login_btn.setAttribute("data-oname", "LOG IN WITH 42");
         refreshLanguage();
         localStorage.setItem("status", "not connected");
     }

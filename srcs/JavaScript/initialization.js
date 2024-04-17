@@ -3,3 +3,5 @@ if (localStorage.getItem("language") == null)
 
 if (localStorage.getItem("status") == null)
     localStorage.setItem("status", "not connected");
+
+// localStorage.setItem("language", "fr");
