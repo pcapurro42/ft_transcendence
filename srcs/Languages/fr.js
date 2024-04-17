@@ -1,10 +1,10 @@
 let fr = 
 [
-    ["login_btn_on", "SE CONNECTER AVEC 42"],
-    ["login_btn_off", "SE DÉCONNECTER"],
+    ["LOG IN WITH 42", "SE CONNECTER AVEC 42"],
+    ["LOG OUT WITH 42", "SE DÉCONNECTER"],
 
-    ["play_btn", "Jouer"],
-    ["customize_btn", "Personnaliser"],
-    ["settings_btn", "Options"],
-    ["credits_btn", "Crédits"]
+    ["Play", "Jouer"],
+    ["Customize", "Personnaliser"],
+    ["Settings", "Options"],
+    ["Credits", "Crédits"]
 ]

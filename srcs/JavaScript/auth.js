@@ -1,29 +1,36 @@
+let login_btn = document.getElementById("login_btn");
+
+login_btn.onclick = log;
+
+if (localStorage.getItem("status") == "connected")
+    login_btn.innerHTML = "LOG OUT", refreshLanguage();
+else
+    login_btn.innerHTML = "LOG IN WITH 42", refreshLanguage();
 
 /****************************************** Code Verifier | Code Challenge | API ***********************************************/
-
-let login_btn_on = document.getElementById("login_btn_on");
-let login_btn_off = document.getElementById("login_btn_off");
-
-login_btn_on.onclick = connect;
-login_btn_off.onclick = disconnect;
 
 const client_id = 'u-s4t2ud-328d5957a0e78853f7b035bed31812c4bd82ea90773c43b8686b35f1ae4d1353';
 const redirect_uri = 'http%3A%2F%2F127.0.0.1%3A8080';
 
-function connect()
+function log()
 {
-    // ...
-    displayLogOut();
-    generateCodeVerifier(), generateCodeChallenger();
-    window.location.href = `https://api.intra.42.fr/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`
-    localStorage.setItem("status", "not connected");
-}
+    if (localStorage.getItem("status") == "not connected")
+    {
+        generateCodeVerifier(), generateCodeChallenger();
+        window.location.href = `https://api.intra.42.fr/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`;
 
-function disconnect()
-{
-    // ...
-    displayLogIn();
-    localStorage.setItem("status", "connected");
+        login_btn.innerHTML = "LOG OUT";
+        refreshLanguage();
+        localStorage.setItem("status", "connected");
+    }
+    else
+    {
+        // ...
+
+        login_btn.innerHTML = "LOG IN WITH 42";
+        refreshLanguage();
+        localStorage.setItem("status", "not connected");
+    }
 }
 
 function generateCodeVerifier(){
@@ -42,25 +49,4 @@ async function generateCodeChallenger(){
     const code_challenge = await crypto.subtle.digest('SHA-256', data);// on encrypte en SHA-256
     code_challenge = String.fromCharCode(...code_challenge)
     .replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, ''); //on met au format URL.
-}
-
-
-/******************************************************** DISPLAY *************************************************************/
-
-
-if (localStorage.getItem("status") == "connected")
-    displayLogOut();
-else
-    displayLogIn();
-
-function displayLogIn()
-{
-    login_btn_on.style.display = "inline";
-    login_btn_off.style.display = "none";
-}
-
-function displayLogOut()
-{
-    login_btn_off.style.display = "inline";
-    login_btn_on.style.display = "none";
 }

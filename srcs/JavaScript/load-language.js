@@ -1,19 +1,26 @@
-let lang = localStorage.getItem("language");
-
-if (lang == "en")
+function findElement(lang, text)
 {
-    for (let i = 0; i != en.length; i++)
+    let i = 0;
+    while (i != lang.length)
     {
-        if (document.getElementById(en[i][0]) != null)
-            document.getElementById(en[i][0]).innerHTML = en[i][1];
+        if (lang[i][0] == "text")
+            break ;
+        i++;
     }
+    return (i);
 }
 
-if (lang == "fr")
+function refreshLanguage()
 {
-    for (let i = 0; i != fr.length; i++)
+    let lang = localStorage.getItem("language");
+    let words = document.getElementsByClassName("text-white");
+
+    if (lang == "en")
     {
-        if (document.getElementById(fr[i][0]) != null)
-            document.getElementById(fr[i][0]).innerHTML = fr[i][1];
+        ;
+    }
+    if (lang == "fr")
+    {
+        ;
     }
 }
