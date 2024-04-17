@@ -8,5 +8,8 @@ let fr =
     ["Settings", "Options"],
     ["Credits", "Crédits"],
 
-    ["Back", "Retour"]
+    ["Back", "Retour"],
+    ["Language", "Langue"],
+    ["Music volume", "Volume de la musique"],
+    ["Sounds volume", "Volume des sons"]
 ]
