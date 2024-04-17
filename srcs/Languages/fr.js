@@ -6,5 +6,7 @@ let fr =
     ["Play", "Jouer"],
     ["Customize", "Personnaliser"],
     ["Settings", "Options"],
-    ["Credits", "Crédits"]
+    ["Credits", "Crédits"],
+
+    ["Back", "Retour"]
 ]

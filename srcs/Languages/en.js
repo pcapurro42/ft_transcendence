@@ -6,5 +6,7 @@ let en =
     ["Play", "Play"],
     ["Customize", "Customize"],
     ["Settings", "Settings"],
-    ["Credits", "Credits"]
+    ["Credits", "Credits"],
+
+    ["Back", "Back"]
 ]

@@ -4,4 +4,6 @@ if (localStorage.getItem("language") == null)
 if (localStorage.getItem("status") == null)
     localStorage.setItem("status", "not connected");
 
-// localStorage.setItem("language", "fr");
+localStorage.setItem("language", "en");
+
+document.getElementById("main_menu_settings").style.display = "none";
