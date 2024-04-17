@@ -6,10 +6,5 @@ let fr =
     ["Play", "Jouer"],
     ["Customize", "Personnaliser"],
     ["Settings", "Options"],
-    ["Credits", "Crédits"],
-
-    ["Back", "Retour"],
-    ["Language", "Langue"],
-    ["Music volume", "Volume de la musique"],
-    ["Sounds volume", "Volume des sons"]
+    ["Credits", "Crédits"]
 ]

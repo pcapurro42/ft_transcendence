@@ -5,18 +5,12 @@ main_menu_settings_btn.onclick = removeSettings;
 
 function displaySettings()
 {
-    let main_menu_buttons = document.getElementById("main_menu_buttons");
     let main_menu_settings = document.getElementById("main_menu_settings");
-    
-    main_menu_buttons.style.display = "none";
     main_menu_settings.style.display = "block";
 }
 
 function removeSettings()
 {
     let main_menu_buttons = document.getElementById("main_menu_buttons");
-    let main_menu_settings = document.getElementById("main_menu_settings");
-    
-    main_menu_buttons.style.display = "block";
     main_menu_settings.style.display = "none";
 }

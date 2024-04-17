@@ -6,10 +6,5 @@ let en =
     ["Play", "Play"],
     ["Customize", "Customize"],
     ["Settings", "Settings"],
-    ["Credits", "Credits"],
-
-    ["Back", "Back"],
-    ["Language", "Language"],
-    ["Music volume", "Music volume"],
-    ["Sounds volume", "Sounds volume"]
+    ["Credits", "Credits"]
 ]
