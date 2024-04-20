@@ -14,37 +14,53 @@ async function log()
     if (localStorage.getItem("status") == "not connected")
     {
         window.location.href = `https://api.intra.42.fr/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`;
-        login_btn.setAttribute("data-oname", "LOG OUT");
-        refreshLanguage();
         localStorage.setItem("status", "connected");
     }
     else
     {
         // ...
-
         login_btn.setAttribute("data-oname", "LOG IN WITH 42");
         refreshLanguage();
         localStorage.setItem("status", "not connected");
+        localStorage.removeItem("user_info");
+        document.getElementById('welcome').style.visibility = "hidden";
     }
 }
 /********************************************** API UTILS ************************************************/
 
-function handleRedirection(){
+async function handleRedirection(){
     const query = new URLSearchParams(window.location.search);
     const code = query.get('code');
     const err = query.get('error');
-    console.log('handleRedirection says hello');
-    if (!code && !err){
-        console.error('no code no err');
+
+    if ((!code && !err) || localStorage.getItem("status") == "not connected"){
+        localStorage.setItem("status", "not connected");
+        document.getElementById('welcome').style.visibility = "hidden";
         return;
     }
     else if (err){
+        localStorage.setItem("status", "not connected");
         console.error(`Error during login: ${err}`);
         return;
     }
     sessionStorage.setItem('auth_code', code);
-    getAccessToken(code);
-    sendAccessToken();
+    if (!sessionStorage.getItem('access_token'))
+        await getAccessToken(code);
+
+    try {
+        const userinfo = await sendAccessToken();
+        if (userinfo){
+            localStorage.setItem('user_info', JSON.stringify(userinfo));
+            document.getElementById('welcome').innerHTML += ` ${userinfo.login}.`;
+            document.getElementById('welcome').style.display = "block";
+        }
+        else{
+            throw("Error: user_info not retrieved.");
+        }
+    } catch (error) {
+        localStorage.setItem("status", "not connected");
+        console.error('Failed to retrieve or process user info:', error);
+    }
 }
 
 async function sendAccessToken(){
@@ -55,7 +71,14 @@ async function sendAccessToken(){
         headers: {'Authorization' : `Bearer ${sessionStorage.getItem('accessToken')}`}
     })
     const response = await request.json();
-    console.log(response);
+    if (!response){
+        console.log("Error: No response received.");
+        return;
+    }
+    login_btn.setAttribute("data-oname", "LOG OUT");
+    refreshLanguage();
+    localStorage.setItem("status", "connected");
+    return response;
 }
 
 async function getAccessToken(auth_code){
@@ -68,7 +91,6 @@ async function getAccessToken(auth_code){
         client_secret : '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',
         grant_type : 'authorization_code',
         redirect_uri: redirect_uri,
-        code_verifier: sessionStorage.getItem('code_verifier')
     });
 
     const request = await fetch(endpoint, {
@@ -87,24 +109,24 @@ async function getAccessToken(auth_code){
 }
 
 
-function generateCodeVerifier(){
-    let bin_tab = new Uint8Array(32) // = 44 caracteres
-    window.crypto.getRandomValues(bin_tab);
+// function generateCodeVerifier(){
+//     let bin_tab = new Uint8Array(32) // = 44 caracteres
+//     window.crypto.getRandomValues(bin_tab);
 
-    const to_chars = String.fromCharCode(...bin_tab);
-    const url_formatted = btoa(to_chars).replace(/\+/g, '-')
-    .replace(/\//g, '_').replace(/=+$/, '');
-    sessionStorage.setItem('code_verifier', url_formatted)
-}
+//     const to_chars = String.fromCharCode(...bin_tab);
+//     const url_formatted = btoa(to_chars).replace(/\+/g, '-')
+//     .replace(/\//g, '_').replace(/=+$/, '');
+//     sessionStorage.setItem('code_verifier', url_formatted)
+// }
 
-async function generateCodeChallenge(){
-    const encoder = new TextEncoder(); // on instancie TextEncoder
-    const bin_tab = encoder.encode(sessionStorage.getItem('code_verifier')); //on repasse le code_verifier en binaire pour l'encryption
-    const hash = await crypto.subtle.digest('SHA-256', bin_tab);// on encrypte en SHA-256
-    const code_challenge = btoa(String.fromCharCode(...new Uint8Array(hash)))
-    .replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, ''); //on met au format URL.
-    return (code_challenge);
-}
+// async function generateCodeChallenge(){
+//     const encoder = new TextEncoder(); // on instancie TextEncoder
+//     const bin_tab = encoder.encode(sessionStorage.getItem('code_verifier')); //on repasse le code_verifier en binaire pour l'encryption
+//     const hash = await crypto.subtle.digest('SHA-256', bin_tab);// on encrypte en SHA-256
+//     const code_challenge = btoa(String.fromCharCode(...new Uint8Array(hash)))
+//     .replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, ''); //on met au format URL.
+//     return (code_challenge);
+// }
 
 /******************************************************** DISPLAY *************************************************************/
 
@@ -114,21 +136,3 @@ if (localStorage.getItem("status") == "connected")
     login_btn.setAttribute("data-oname", "LOG OUT"), refreshLanguage();
 else
     login_btn.setAttribute("data-oname", "LOG IN WITH 42"), refreshLanguage();
-
-/******************************************************** (TEMPORARY ?) USERFORM *************************************************************/
-
-// document.getElementById('userForm').addEventListener('submit', function(event){
-//     event.preventDefault() //empeche le rechargement de la page.
-//     const username = document.getElementById('username').value;
-//     const err = document.getElementById('err_username');
-//     if (username.length < 4 || username.length > 15 || /[^a-zA-Z0-9-_]/.test(username))
-//         err.style.display = 'block';
-//     else{
-//         err.style.display = 'none';
-//         document.getElementById('userForm').style.display = 'none';
-//         document.getElementById('main_menu_buttons').style.display = 'block';
-
-//     }
-//     sessionStorage.setItem('username', username);
-// })
-
