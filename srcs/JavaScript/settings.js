@@ -12,5 +12,5 @@ function displaySettings()
 function removeSettings()
 {
     let main_menu_buttons = document.getElementById("main_menu_buttons");
-    main_menu_settings.style.display = "none";
+    main_menu_buttons.style.display = "none";
 }
