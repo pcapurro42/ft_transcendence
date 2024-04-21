@@ -7,10 +7,10 @@ RUN apt-get -y update ; \
 
 WORKDIR /home/
 
-COPY srcs/ ./
+COPY front-end/ ./
 
-EXPOSE 8080
+EXPOSE 443
 
-CMD ["python3.7", "-m", "http.server", "8080"]
+CMD ["python3.7", "-m", "http.server", "443"]
 
 # CMD ["bash"]

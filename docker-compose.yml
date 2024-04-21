@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+
+  host:
+    build: 
+      context: srcs/host/
+      dockerfile: Dockerfile.host
+    image: host_img
+    container_name: host_server
+    ports:
+      - "443:443"
+    depends_on:
+      - proxy
+  
+  proxy:
+    build:
+      context: srcs/proxy/
+      dockerfile: Dockerfile.proxy
+    image: proxy_img
+    container_name: proxy_server
+    ports:
+      - "8080:8080"
