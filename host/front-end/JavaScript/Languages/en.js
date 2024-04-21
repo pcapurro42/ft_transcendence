@@ -22,5 +22,7 @@ let en = [
     ["Join a game", "Join a game"],
     ["Play against AI", "Play against AI"],
     ["Create a tournament", "Create a tournament"],
-    ["Join a tournament", "Join a tournament"]
+    ["Join a tournament", "Join a tournament"],
+
+    ["Back", "Back"]
 ];

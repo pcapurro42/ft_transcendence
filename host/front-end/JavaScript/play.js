@@ -1,5 +1,5 @@
 document.getElementById('play_btn').onclick = displayPlay;
-// document.getElementById('play_back_btn').onclick = removePlay;
+document.getElementById('play_back_btn').onclick = removePlay;
 
 function displayPlay()
 {

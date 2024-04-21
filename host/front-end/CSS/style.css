@@ -23,13 +23,19 @@
     font-style: normal;
 }
 
-#create_game_btn, #join_game_btn, #ai_game_btn, #create_tournament_btn, #join_tournament_btn
+#create_game_btn, #join_game_btn, #ai_game_btn, #create_tournament_btn, #join_tournament_btn, #play_back_btn
 {
     font-size: 35px;
     font-style: normal;
 }
 
-#play_btn:hover, #customize_btn:hover, #settings_btn:hover, #credits_btn:hover, #create_game_btn:hover, #join_game_btn:hover, #ai_game_btn:hover, #create_tournament_btn:hover, #join_tournament_btn:hover
+#play_back_btn
+{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#play_btn:hover, #customize_btn:hover, #settings_btn:hover, #credits_btn:hover, #create_game_btn:hover, #join_game_btn:hover, #ai_game_btn:hover, #create_tournament_btn:hover, #join_tournament_btn:hover, #play_back_btn:hover
 {
     text-decoration: underline;
 }

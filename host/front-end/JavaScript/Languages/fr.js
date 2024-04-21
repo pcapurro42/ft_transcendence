@@ -22,5 +22,7 @@ let fr = [
     ["Join a game", "Rejoindre une partie"],
     ["Play against AI", "Jouer contre l'IA"],
     ["Create a tournament", "Créer un tournoi"],
-    ["Join a tournament", "Rejoindre un tournoi"]
+    ["Join a tournament", "Rejoindre un tournoi"],
+
+    ["Back", "Retour"]
 ];
