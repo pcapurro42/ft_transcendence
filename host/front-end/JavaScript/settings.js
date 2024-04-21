@@ -1,5 +1,5 @@
 document.getElementById('settings_btn').onclick = displaySettings;
-// document.getElementById('settings_back_btn').onclick = removeSettings;
+document.getElementById('settings_back_btn').onclick = removeSettings;
 
 function displaySettings()
 {
