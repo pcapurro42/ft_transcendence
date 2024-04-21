@@ -51,7 +51,7 @@ else
 
 // < REFRESH > //
 
-high_contrast = "true";
+// high_contrast = "true";
 
 refreshLanguage();
 refreshDisplay();
