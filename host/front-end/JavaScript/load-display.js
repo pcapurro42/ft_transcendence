@@ -2,8 +2,11 @@ function defaultHide()
 {
     let play_menu = document.getElementById('play_menu');
     play_menu.style.display = "none";
+
     let settings_menu = document.getElementById('settings_menu');
     settings_menu.style.display = "none";
+    let settings_back_btn = document.getElementById('settings_back_btn');
+    settings_back_btn.style.display = "none";
 }
 
 function setBackground(color)
