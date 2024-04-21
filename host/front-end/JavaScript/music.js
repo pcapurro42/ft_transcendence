@@ -13,11 +13,11 @@ function enableDisableMusic()
         console.log(music_volume);
         music.volume = music_volume / 100;
 		music.play();
-		img.src = './Materials/images/sound-on.png';
+		img.src = './Materials/images/music-on.png';
 	}
 	else
 	{
 		music.muted = true;
-		img.src = './Materials/images/sound-off.png';
+		img.src = './Materials/images/music-off.png';
 	}
 }
