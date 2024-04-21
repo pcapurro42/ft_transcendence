@@ -22,9 +22,7 @@ function hoverSound(event) {
     let audio = document.getElementById('mgs');
     let hoverSound = document.getElementById('hover_sound');
 
-    if (!audio.muted) {
-        hoverSound.play();
-    }
+    hoverSound.play();
 
     event.stopPropagation();
 }
@@ -33,9 +31,7 @@ function clickSound(event) {
     let audio = document.getElementById('mgs');
     let clickSound = document.getElementById('click_sound');
 
-    if (!audio.muted) {
-        clickSound.play();
-    }
+    clickSound.play();
 
     event.stopPropagation();
 }
@@ -51,6 +47,5 @@ const closeSound = document.getElementById('close_sound');
 
 settingsModal.addEventListener('hidden.bs.modal', function () {
     let audio = document.getElementById('mgs');
-    if (!audio.muted)
-        closeSound.play();
+    closeSound.play();
 });
