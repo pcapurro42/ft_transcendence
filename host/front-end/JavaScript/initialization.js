@@ -15,12 +15,12 @@ else
     language = localStorage.getItem("language");
 
 if (localStorage.getItem("sounds_volume") == null)
-    localStorage.setItem("sounds_volume", "100"), sounds_volume = "100";
+    localStorage.setItem("sounds_volume", 50), sounds_volume = 50;
 else
     sounds_volume = localStorage.getItem("sounds_volume");
 
 if (localStorage.getItem("music_volume") == null)
-    localStorage.setItem("music_volume", "100"), music_volume = "100";
+    localStorage.setItem("music_volume", 50), music_volume = 50;
 else
     music_volume = localStorage.getItem("music_volume");
 
