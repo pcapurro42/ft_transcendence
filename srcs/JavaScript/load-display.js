@@ -1,5 +1,3 @@
-refreshDisplay();
-
 function setBackground(color)
 {
     let background = document.getElementById("background");
@@ -33,13 +31,11 @@ function setText(color)
         else
             texts[i].classList.replace(text_color, "text-black");
     }
-
-    console.log(texts);
 }
 
 function refreshDisplay()
 {
-    if (high_contrast_colors == true)
+    if (high_contrast_colors == "true")
         setBackground("black"), setText("white");
     else
         setBackground("white"), setText("black");

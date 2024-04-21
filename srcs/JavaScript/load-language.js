@@ -1,5 +1,3 @@
-refreshLanguage();
-
 function getElement(lang, text)
 {
     for (let i = 0; i != lang.length; i++)

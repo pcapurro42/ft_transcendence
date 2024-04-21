@@ -48,3 +48,10 @@ if (localStorage.getItem("status") == "not connected")
     document.getElementById('welcome').style.visibility = "hidden";
 else
     document.getElementById('welcome').style.display = "block";
+
+// < REFRESH > //
+
+// high_contrast_colors = "true";
+
+refreshLanguage();
+refreshDisplay();
