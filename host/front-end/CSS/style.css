@@ -19,11 +19,17 @@
 
 #play_btn, #customize_btn, #settings_btn, #credits_btn
 {
-    font-size: 45px;
+    font-size: 40px;
     font-style: normal;
 }
 
-#play_btn:hover, #customize_btn:hover, #settings_btn:hover, #credits_btn:hover
+#create_game_btn, #join_game_btn, #ai_game_btn, #create_tournament_btn, #join_tournament_btn
+{
+    font-size: 35px;
+    font-style: normal;
+}
+
+#play_btn:hover, #customize_btn:hover, #settings_btn:hover, #credits_btn:hover, #create_game_btn:hover, #join_game_btn:hover, #ai_game_btn:hover, #create_tournament_btn:hover, #join_tournament_btn:hover
 {
     text-decoration: underline;
 }

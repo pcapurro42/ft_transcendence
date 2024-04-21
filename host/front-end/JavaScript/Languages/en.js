@@ -16,5 +16,11 @@ let en = [
     ["Music volume", "Music volume"],
     ["Text size", "Text size"],
     ["Image description", "Image description"],
-    ["High contrast", "High contrast"]
+    ["High contrast", "High contrast"],
+
+    ["Create a game", "Create a game"],
+    ["Join a game", "Join a game"],
+    ["Play against AI", "Play against AI"],
+    ["Create a tournament", "Create a tournament"],
+    ["Join a tournament", "Join a tournament"]
 ];

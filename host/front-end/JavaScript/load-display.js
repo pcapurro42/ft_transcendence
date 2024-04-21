@@ -1,3 +1,9 @@
+function defaultHide()
+{
+    let play_menu = document.getElementById('play_menu');
+    play_menu.style.display = "none";
+}
+
 function setBackground(color)
 {
     let background = document.getElementById("background");
@@ -52,6 +58,8 @@ function setText(color)
 
 function refreshDisplay()
 {
+    defaultHide();
+
     if (high_contrast == "true")
         setBackground("black"), setText("white"), setMaterials("black"), setImages("white");
     else

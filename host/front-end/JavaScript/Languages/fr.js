@@ -16,5 +16,11 @@ let fr = [
     ["Music volume", "Volume de la musique"],
     ["Text size", "Taille du texte"],
     ["Image description", "Description de l'image"],
-    ["High contrast", "Haut contraste"]
+    ["High contrast", "Haut contraste"],
+
+    ["Create a game", "Créer une partie"],
+    ["Join a game", "Rejoindre une partie"],
+    ["Play against AI", "Jouer contre l'IA"],
+    ["Create a tournament", "Créer un tournoi"],
+    ["Join a tournament", "Rejoindre un tournoi"]
 ];
