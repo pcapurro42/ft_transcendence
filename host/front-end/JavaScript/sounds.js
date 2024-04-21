@@ -43,11 +43,16 @@ function initializeSounds()
 	const settingsModal = document.getElementById('settings_modal');
 	settingsModal.addEventListener('hidden.bs.modal', closeSound);
 
-	const buttons = document.getElementsByClassName('btn');
+	const simple_buttons = document.getElementsByClassName('btn-simple');
 
-	for (let i = 0; i < buttons.length; i++)
+	for (let i = 0; i < simple_buttons.length; i++)
 	{
-    	buttons[i].addEventListener('mouseover', hoverSound);
-    	buttons[i].addEventListener('click', clickSound);
+    	simple_buttons[i].addEventListener('mouseover', hoverSound);
+    	simple_buttons[i].addEventListener('click', clickSound);
 	}
+
+	let complex_buttons = document.getElementsByClassName('btn-complex');
+
+	for (let i = 0; i != complex_buttons.length; i++)
+		complex_buttons[i].addEventListener('click', closeSound);
 }
