@@ -1,3 +1,13 @@
+.text-white
+{
+    color: white;
+}
+
+.text-black
+{
+    color: black;
+}
+
 #main_bar
 {
     border:none;

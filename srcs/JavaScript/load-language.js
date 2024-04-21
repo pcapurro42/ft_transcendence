@@ -1,3 +1,5 @@
+refreshLanguage();
+
 function getElement(lang, text)
 {
     for (let i = 0; i != lang.length; i++)
@@ -10,7 +12,7 @@ function getElement(lang, text)
 function refreshLanguage()
 {
     let lang = localStorage.getItem("language");
-    let words = document.getElementsByClassName("text-white");
+    let words = document.getElementsByClassName("text");
 
     if (lang == "en")
     {
