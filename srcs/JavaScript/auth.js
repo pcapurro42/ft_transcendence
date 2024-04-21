@@ -65,7 +65,7 @@ async function handleRedirection(){
 
 async function sendAccessToken(){
     console.log("sendAccessToken says hello")
-    const endpoint = 'https://cors-anywhere.herokuapp.com/https://api.intra.42.fr/v2/me';
+    const endpoint = 'https://corsproxy.io/?https://api.intra.42.fr/v2/me';
     const request = await fetch(endpoint, {
         method: 'GET',
         headers: {'Authorization' : `Bearer ${sessionStorage.getItem('accessToken')}`}
@@ -83,7 +83,7 @@ async function sendAccessToken(){
 
 async function getAccessToken(auth_code){
     console.log("getAccessToken says hello")
-    const endpoint = 'https://cors-anywhere.herokuapp.com/https://api.intra.42.fr/oauth/token';
+    const endpoint = 'https://corsproxy.io/?https://api.intra.42.fr/oauth/token';
 
     const url = new URLSearchParams({
         client_id: client_id,
