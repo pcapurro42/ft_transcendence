@@ -1,3 +1,11 @@
 require 'socket'
 
-server_socket = TCPSocket.new('127.0.0.1', 8080)
+server = TCPServer.new('localhost', 8080)
+
+while (true) do
+    client = server.accept
+    client.sendmsg("connecté\n")
+    url = client.readpartial(2048)
+    puts url
+    client.close
+end
