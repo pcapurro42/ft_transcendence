@@ -6,6 +6,11 @@ let fr = [
     ["LOG IN WITH 42", "SE CONNECTER AVEC 42"],
     ["LOG OUT", "SE DÉCONNECTER"],
 
+    ["Play", "Jouer"],
+    ["Customize", "Personnaliser"],
+    ["Settings", "Options"],
+    ["Credits", "Crédits"],
+
     ["Language", "Langue"],
     ["Sound volume", "Volume du son"],
     ["Music volume", "Volume de la musique"],
