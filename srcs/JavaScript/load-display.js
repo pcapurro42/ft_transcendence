@@ -7,6 +7,24 @@ function setBackground(color)
         background.style.setProperty("background-color", "black");
 }
 
+function setMaterials(color)
+{
+    materials = document.getElementsByClassName("modal-content");
+
+    for (let i = 0; i != materials.length; i++)
+    {
+        if (color == "white")
+            materials[i].style["background-color"] = "white", materials[i].style["border"] = "black 2px solid";
+        else
+            materials[i].style["background-color"] = "black", materials[i].style["border"] = "white 2px solid";
+    }
+}
+
+function setImages(color)
+{
+    ;
+}
+
 function setText(color)
 {
     let text_color;
@@ -35,8 +53,8 @@ function setText(color)
 
 function refreshDisplay()
 {
-    if (high_contrast_colors == "true")
-        setBackground("black"), setText("white");
+    if (high_contrast == "true")
+        setBackground("black"), setText("white"), setMaterials("black"), setImages("white");
     else
-        setBackground("white"), setText("black");
+        setBackground("white"), setText("black"), setMaterials("white"), setImages("black");
 }

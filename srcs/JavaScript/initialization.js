@@ -7,7 +7,7 @@ let sounds_volume;
 let music_volume;
 let text_size;
 let descriptive_images;
-let high_contrast_colors;
+let high_contrast;
 
 if (localStorage.getItem("language") == null)
     localStorage.setItem("language", "en"), language = "en";
@@ -34,10 +34,10 @@ if (localStorage.getItem("descriptive_images") == null)
 else
     descriptive_images = localStorage.getItem("descriptive_images");
 
-if (localStorage.getItem("high_contrast_colors") == null)
-    localStorage.setItem("high_contrast_colors", "false"), high_contrast_colors = "false";
+if (localStorage.getItem("high_contrast") == null)
+    localStorage.setItem("high_contrast", "false"), high_contrast = "false";
 else
-    high_contrast_colors = localStorage.getItem("high_contrast_colors");
+    high_contrast = localStorage.getItem("high_contrast");
 
 // < 42 CONNECT > //
 
@@ -51,7 +51,7 @@ else
 
 // < REFRESH > //
 
-// high_contrast_colors = "true";
+high_contrast = "true";
 
 refreshLanguage();
 refreshDisplay();

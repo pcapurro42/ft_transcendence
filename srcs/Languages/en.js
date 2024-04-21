@@ -9,5 +9,12 @@ let en = [
     ["Play", "Play"],
     ["Customize", "Customize"],
     ["Settings", "Settings"],
-    ["Credits", "Credits"]
+    ["Credits", "Credits"],
+
+    ["Language", "Language"],
+    ["Sound volume", "Sound volume"],
+    ["Music volume", "Music volume"],
+    ["Text size", "Text size"],
+    ["Image description", "Image description"],
+    ["High contrast", "High contrast"]
 ];
