@@ -27,7 +27,7 @@
 
                                         <!-- BODY -->
 
-    <body class="container" style="background-color: black;">
+    <body id="background" class="container" style="background-color: black;">
 
         <div id="main_menu_page">
 
@@ -37,8 +37,8 @@
                 <img id="soundtoggle" src="./Materials/images/sound-off.png" class="img-fluid" style="max-width: 4%; cursor: pointer;">
 
                 <div class="col d-inline-block float-end">
-                    <p class="col d-inline-block text-white" data-oname="Welcome" id="welcome"></p>
-                    <button id="login_btn" class="btn text-white border mb-4" data-oname=""></a>
+                    <p class="col d-inline-block text" data-oname="Welcome" id="welcome"></p>
+                    <button id="login_btn" class="btn text border mb-4" data-oname=""></a>
                     </div>
 
             </div>
@@ -55,13 +55,13 @@
 
                 <div id="main_menu_buttons" class="p-2 text-center">
 
-                    <button id="play_btn" class="btn text-white" data-oname="Play"></button><br>
+                    <button id="play_btn" class="btn text" data-oname="Play"></button><br>
 
-                    <button id="customize_btn" class="btn text-white" data-oname="Customize"></button><br>
+                    <button id="customize_btn" class="btn text" data-oname="Customize"></button><br>
 
-                    <button id="settings_btn" class="btn text-white" data-bs-toggle="modal" data-bs-target="#settings_modal" data-oname="Settings"></button><br>
+                    <button id="settings_btn" class="btn text" data-bs-toggle="modal" data-bs-target="#settings_modal" data-oname="Settings"></button><br>
 
-                    <button id="credits_btn" class="btn text-white" data-oname="Credits"></button><br>
+                    <button id="credits_btn" class="btn text" data-oname="Credits"></button><br>
 
                 </div>
 
@@ -72,14 +72,14 @@
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content rounded-0" style="background-color: black; border:white 2px solid">
                                 <div class="modal-header">
-                                    <h2 class="modal-title text-white" data-oname="Settings"></h2>
+                                    <h2 class="modal-title text" data-oname="Settings"></h2>
                                     <button class="btn-close" data-bs-dismiss="modal"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <p class="text-white"></p>
-                                    <p class="text-white"></p>
-                                    <p class="text-white"></p>
-                                    <p class="text-white"></p>
+                                    <p class="text"></p>
+                                    <p class="text"></p>
+                                    <p class="text"></p>
+                                    <p class="text"></p>
                                 </div>
                             </div>
                         </div>
@@ -100,6 +100,7 @@
         <script src="./Languages/en.js"></script>
         <script src="./Languages/fr.js"></script>
         <script src="./JavaScript/load-language.js"></script>
+        <script src="./JavaScript/load-display.js"></script>
 
         <script src="./JavaScript/settings.js"></script>
 
