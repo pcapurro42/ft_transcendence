@@ -9,7 +9,7 @@ server = WEBrick::HTTPServer.new :Port => 443, :Bindaddress => '127.0.0.1', :Log
 # 'WEBrick::Log::FATAL' définit les erreurs fatales comme niveau minimum d'erreur autorisé à être affiché
 
 trap 'INT' do
-    puts "\r^C detected. Shutting down server..."
+    puts "\r^C Shutting down server..."
     server.shutdown 
 end
 # Réception du signal INT (= SIGINT = Ctrl-C) pour éteindre le serveur
