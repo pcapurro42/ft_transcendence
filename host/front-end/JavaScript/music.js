@@ -8,6 +8,7 @@ function enableDisableMusic()
 	if (music.muted)
 	{
 		music.muted = false;
+        console.log(music_volume);
         music.volume = music_volume / 100;
 		music.play();
 		img.src = './Materials/images/sound-on.png';

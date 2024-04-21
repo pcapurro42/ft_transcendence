@@ -20,7 +20,7 @@ else
     sounds_volume = localStorage.getItem("sounds_volume");
 
 if (localStorage.getItem("music_volume") == null)
-    localStorage.setItem("music_volume", 50), music_volume = 50;
+    localStorage.setItem("music_volume", 15), music_volume = 15;
 else
     music_volume = localStorage.getItem("music_volume");
 
