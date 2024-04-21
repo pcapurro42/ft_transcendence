@@ -2,10 +2,11 @@ FROM debian:buster
 
 USER root
 
-RUN apt-get -y update
+RUN apt-get -y update ; \
+    apt-get -y install ruby ruby-full
 
 WORKDIR /home/
 
 EXPOSE 8080
 
-CMD ["sleep", "30"]
+CMD ["sleep 1000"]
