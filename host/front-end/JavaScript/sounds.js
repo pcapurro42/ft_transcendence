@@ -1,8 +1,16 @@
+function alertSound(event)
+{
+	let loginSound = document.getElementById('alert_sound');
+
+	loginSound.volume = sounds_volume / 100;
+	loginSound.play();
+
+	event.stopPropagation();
+}
+
 function hoverSound(event)
 {
     let hoverSound = document.getElementById('hover_sound');
-
-	console.log(sounds_volume);
 
 	hoverSound.volume = sounds_volume / 100;
     hoverSound.play();
@@ -20,19 +28,26 @@ function clickSound(event)
     event.stopPropagation();
 }
 
-const buttons = document.getElementsByClassName('btn');
-
-for (let i = 0; i < buttons.length; i++)
+function closeSound(event)
 {
-    buttons[i].addEventListener('mouseover', hoverSound);
-    buttons[i].addEventListener('click', clickSound);
-}
+	let closeSound = document.getElementById('close_sound');
 
-const settingsModal = document.getElementById('settings_modal');
-const closeSound = document.getElementById('close_sound');
-
-settingsModal.addEventListener('hidden.bs.modal', function ()
-{
 	closeSound.volume = sounds_volume / 100;
     closeSound.play();
-});
+
+	event.stopPropagation();
+}
+
+function initializeSounds()
+{
+	const settingsModal = document.getElementById('settings_modal');
+	settingsModal.addEventListener('hidden.bs.modal', closeSound);
+
+	const buttons = document.getElementsByClassName('btn');
+
+	for (let i = 0; i < buttons.length; i++)
+	{
+    	buttons[i].addEventListener('mouseover', hoverSound);
+    	buttons[i].addEventListener('click', clickSound);
+	}
+}

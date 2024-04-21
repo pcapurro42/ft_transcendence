@@ -1,9 +1,9 @@
-document.getElementById('soundtoggle').onclick = enableDisableMusic;
+document.getElementById('music_toggle').onclick = enableDisableMusic;
 
 function enableDisableMusic()
 {
 	let music = document.getElementById('mgs');
-	let img = document.getElementById('soundtoggle');
+	let img = document.getElementById('music_toggle');
 
     music.loop = true;
 

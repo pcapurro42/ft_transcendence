@@ -39,6 +39,10 @@ if (localStorage.getItem("high_contrast") == null)
 else
     high_contrast = localStorage.getItem("high_contrast");
 
+// < SOUNDS AND MUSICS > //
+
+initializeSounds();
+
 // < 42 CONNECT > //
 
 if (localStorage.getItem("status") == null)
