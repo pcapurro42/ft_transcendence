@@ -1,4 +1,4 @@
-// localStorage.clear();
+localStorage.clear();
 
 // < SETTINGS > //
 
@@ -15,7 +15,7 @@ else
     language = localStorage.getItem("language");
 
 if (localStorage.getItem("sounds_volume") == null)
-    localStorage.setItem("sounds_volume", 50), sounds_volume = 50;
+    localStorage.setItem("sounds_volume", 15), sounds_volume = 15;
 else
     sounds_volume = localStorage.getItem("sounds_volume");
 

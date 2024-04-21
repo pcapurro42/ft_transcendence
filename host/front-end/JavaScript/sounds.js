@@ -2,6 +2,8 @@ function hoverSound(event)
 {
     let hoverSound = document.getElementById('hover_sound');
 
+	console.log(sounds_volume);
+
 	hoverSound.volume = sounds_volume / 100;
     hoverSound.play();
 
