@@ -22,7 +22,13 @@ function setMaterials(color)
 
 function setImages(color)
 {
-    ;
+    let images = document.getElementsByClassName("image");
+
+    for (let i = 0; i != images.length; i++)
+    {
+        if (color == "black")
+            images[i].style.filter="invert(100%)";
+    }
 }
 
 function setText(color)
