@@ -1,3 +1,5 @@
+// localStorage.clear();
+
 // < SETTINGS > //
 
 let language;

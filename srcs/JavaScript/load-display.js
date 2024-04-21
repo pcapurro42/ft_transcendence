@@ -1,3 +1,5 @@
+refreshDisplay();
+
 function setBackground(color)
 {
     let background = document.getElementById("background");
@@ -9,8 +11,12 @@ function setBackground(color)
 
 function setText(color)
 {
-    let texts = document.getElementsByClassName("text");
-    console.log(texts);
+    let grey_texts = document.getElementsByClassName("text");
+    let white_texts = document.getElementsByClassName("text-white");
+    let black_texts = document.getElementsByClassName("text-black");
+
+    let texts = [...white_texts, ...black_texts, ...grey_texts];
+
     for (let i = 0; i != texts.length; i++)
     {
         if (color == "white")
@@ -18,8 +24,6 @@ function setText(color)
         else
             texts[i].classList.add("text-black"), texts[i].classList.remove("text-white");
     }
-    console.log("ok");
-    console.log(texts);
 }
 
 function refreshDisplay()
