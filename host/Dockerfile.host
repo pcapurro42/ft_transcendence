@@ -11,6 +11,6 @@ COPY front-end/ ./
 
 EXPOSE 443
 
-CMD ["python3.7", "-m", "http.server", "443"]
+CMD ["python3.7", "-m", "http.server", "443", "--bind", "127.0.0.1"]
 
 # CMD ["bash"]
