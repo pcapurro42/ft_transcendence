@@ -7,6 +7,8 @@ RUN apt-get -y update ; \
 
 WORKDIR /home/
 
+COPY proxy_init.rb .
+
 EXPOSE 8080
 
 CMD ["bash"]
