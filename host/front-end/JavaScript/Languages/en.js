@@ -28,7 +28,6 @@ let en = [
     ["Yes", "Yes"],
     ["No", "No"],
 
-    ["Small", "Small"],
     ["Normal", "Normal"],
     ["Large", "Large"]
 ];

@@ -66,8 +66,7 @@ function changeTextSize()
 function changeLanguage()
 {
     let language_btn_selector = document.getElementById('language_btn_selector');
-    let new_language = (language_btn_selector.value).toLowerCase();
-    new_language = (new_language[0] + new_language[1]);
+    let new_language = language_btn_selector.value;
     
     localStorage.setItem("language", new_language);
     language = new_language;

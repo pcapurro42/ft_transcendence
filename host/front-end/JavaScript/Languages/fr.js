@@ -28,7 +28,6 @@ let fr = [
     ["Yes", "Oui"],
     ["No", "Non"],
 
-    ["Small", "Petit"],
     ["Normal", "Normal"],
     ["Large", "Grand"]
 ];

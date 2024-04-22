@@ -66,13 +66,12 @@ function setTextColor(color)
 
 function setTextSize(size)
 {
-    if (size == "normal")
+    let texts = document.querySelectorAll('[data-snormal]');
+
+    for (let i = 0; i != texts.length; i++)
     {
-        ;
-    }
-    else
-    {
-        ;
+        let value = texts[i].getAttribute(size);
+        texts[i].style.fontSize = value;
     }
 }
 
@@ -84,7 +83,7 @@ function refreshDisplay()
         setBackgroundColor("white"), setTextColor("black"), setMaterialsColor("white"), setImagesColor("black");
 
     if (text_size == "normal")
-        setTextSize("normal")
+        setTextSize("data-snormal")
     else
-        setTextSize("large");
+        setTextSize("data-slarge");
 }
