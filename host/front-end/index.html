@@ -4,6 +4,9 @@
     <!-- HEAD -->
 
     <head>
+
+        <!-- GENERAL -->
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,68 +23,92 @@
         <!-- AUDIO -->
 
         <audio id="mgs" src="./Materials/musics/mgs2-theme.mp3" autoplay muted></audio>
+
         <audio id="hover_sound" src="./Materials/sounds/click-hover.mp3"></audio>
         <audio id="click_sound" src="./Materials/sounds/click-sound.mp3"></audio>
         <audio id="close_sound" src="./Materials/sounds/close-sound.mp3"></audio>
         <audio id="alert_sound" src="./Materials/sounds/mgs1-alert.mp3"></audio>
+
+        <!-- VIDEO -->
+
         <video id="vid_credits" style="position: absolute; width: 100%; height: 100%; top: 0%; left: 0%;">
             <source src="./Materials/video/credits.mp4" type="video/mp4">
         </video>
-        <button id="credit_close" class="btn btn-simple text-white flex float-end" style="display: none; position: absolute; top: 1%; left: 90%; ">&#x2717</button>
 
+        <button id="credit_close" class="btn btn-simple text-white flex float-end" style="display: none; position: absolute; top: 1%; left: 90%; ">&#x2717</button>
 
     </head>
 
     <!-- BODY -->
 
-    <body id="background" class="container" style="background-color: black;">
+    <body id="background" class="container">
 
         <div id="main_menu_page">
 
             <!-- TOOLBAR -->
 
-            <div class = "my-5">
+            <div id="toolbar" class="my-5">
+
                 <img id="music_toggle" src="./Materials/images/music-off.png" class="img-fluid image" style="max-width: 4%; cursor: pointer;">
 
                 <div class="col d-inline-block float-end">
-                    <p class="col d-inline-block text" data-oname="Welcome" id="welcome"></p>
+                    <p id="welcome" class="col d-inline-block text" data-oname="Welcome"></p>
                     <button id="login_btn" class="btn text border mb-4 btn-simple" data-oname=""></a>
-                    </div>
-
                 </div>
 
-                <div class="d-flex flex-column py-5 px-5" style="border-width: 1 !important;">
+            </div>
 
-                    <hr id="main_bar">
+            <!-- TITLE -->
 
-                    <img src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto" style="max-width: 80%; height: auto">
+            <div id="title" class="d-flex flex-column py-5 px-5" style="border-width: 1 !important;">
+                
+                <img src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto" style="max-width: 80%; height: auto">
+                
+            </div>
 
-                    <hr id="main_bar">
+            <!-- MAIN MENU -->
 
-                    <!-- MAIN MENU -->
+            <div id="main_menu">
 
-                    <div id="main_menu_buttons" class="p-2 text-center">
-                        <button id="play_btn" class="btn text btn-simple" data-oname="Play"></button><br>
-                        <button id="customize_btn" class="btn text btn-simple" data-oname="Customize"></button><br>
-                        <button id="settings_btn" class="btn text btn-simple" data-oname="Settings"></button><br>
-                        <button id="credits_btn" class="btn text btn-simple" data-oname="Credits"></button><br>
+                <!-- MAIN MENU BUTTONS -->
 
-                    </div>
+                <div id="main_menu_buttons" class="p-2 text-center">
 
-                    <div id="play_menu" class="p-2 text-center">
-                        <button id="create_game_btn" class="btn text btn-simple" data-oname="Create a game"></button><br>
-                        <button id="join_game_btn" class="btn text btn-simple" data-oname="Join a game"></button><br>
+                    <button id="play_btn" class="btn text btn-simple" data-oname="Play"></button><br>
+    
+                    <button id="customize_btn" class="btn text btn-simple" data-oname="Customize"></button><br>
+    
+                    <button id="settings_btn" class="btn text btn-simple" data-oname="Settings"></button><br>
+    
+                    <button id="credits_btn" class="btn text btn-simple" data-oname="Credits"></button><br>
+    
+                </div>
+
+                <!-- PLAY MENU -->
+
+                <div id="play_menu" class="p-2 text-center" style="display: none;">
+                    
+                    <button id="create_game_btn" class="btn text btn-simple" data-oname="Create a game"></button><br>
+                    
+                    <button id="join_game_btn" class="btn text btn-simple" data-oname="Join a game"></button><br>
+                    
                     <button id="ai_game_btn" class="btn text btn-simple" data-oname="Play against AI"></button><br>
+                    
                     <button id="create_tournament_btn" class="btn text btn-simple" data-oname="Create a tournament"></button><br>
+                    
                     <button id="join_tournament_btn" class="btn text btn-simple" data-oname="Join a tournament"></button><br><br>
+                    
                     <button id="play_back_btn" class="btn text btn-complex" data-oname="Back"></button><br>
+                
                 </div>
 
-        <!-- SETTINGS TAB-->
+                <!-- SETTINGS MENU -->
 
-                <div id="settings_menu" class="p-2 text-center">
+                <div id="settings_menu" class="p-2 text-center" style="display: none;">
 
-                    <div style="width:50%; float:left">
+                    <!-- LEFT PANEL -->
+                    
+                    <div id="settings_left_panel" style="width:50%; float:left">
 
                         <div>
                             <button id="language_btn" class="btn text btn-simple" data-oname="Language"></button><br>
@@ -106,7 +133,9 @@
 
                     </div>
 
-                    <div style="width:50%; float:right">
+                    <!-- RIGHT PANEL -->
+
+                    <div id="settings_right_panel" style="width:50%; float:right">
 
                         <div>
                             <button id="text_size_btn" class="btn text btn-simple" data-oname="Text size"></button><br>
@@ -134,19 +163,17 @@
 
                     </div>
 
-                </div>
+                    <!-- BACK BUTTON -->
 
-                <div class="mx-auto">
                     <br><button id="settings_back_btn" class="btn text btn-complex" data-oname="Back"></button>
+
                 </div>
 
             </div>
 
         </div>
 
-
-        <!-- SCRIPT -->
-
+        <!-- SCRIPTS -->
 
         <script src="./JavaScript/tools.js"></script>
 
@@ -157,15 +184,12 @@
         <script src="./JavaScript/load-display.js"></script>
 
         <script src="./JavaScript/play.js"></script>
-
         <script src="./JavaScript/settings.js"></script>
 
         <script src="./JavaScript/auth.js"></script>
 
         <script src="./JavaScript/video.js"></script>
-
         <script src="./JavaScript/sounds.js"></script>
-
         <script src="./JavaScript/music.js"></script>
 
         <script src="./JavaScript/initialization.js"></script>
