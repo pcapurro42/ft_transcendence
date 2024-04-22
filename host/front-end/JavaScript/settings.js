@@ -26,3 +26,14 @@ function removeSettings()
 
     main_menu.style.display = 'block';
 }
+
+function initializeSettings()
+{
+    let language;
+    let sound_volume;
+    let music_volume;
+
+    let text_size;
+    let image_description;
+    let high_contrast;
+}

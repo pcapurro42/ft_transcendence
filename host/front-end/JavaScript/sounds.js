@@ -40,9 +40,6 @@ function closeSound(event)
 
 function initializeSounds()
 {
-	const settingsModal = document.getElementById('settings_modal');
-	// settingsModal.addEventListener('hidden.bs.modal', closeSound);
-
 	const simple_buttons = document.getElementsByClassName('btn-simple');
 
 	for (let i = 0; i < simple_buttons.length; i++)
