@@ -3,10 +3,10 @@ window.onload = handleRedirection;
 
 /****************************************** Log in | Log Out ***********************************************/
 
-document.getElementById("login_btn").on_click = log;
+document.getElementById("login_btn").onclick = log;
 
 const client_id = 'u-s4t2ud-328d5957a0e78853f7b035bed31812c4bd82ea90773c43b8686b35f1ae4d1353';
-const redirect_uri = 'http://127.0.0.1:8080';
+const redirect_uri = 'http://127.0.0.1:443';
 
 async function log()
 {
