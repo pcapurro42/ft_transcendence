@@ -32,7 +32,7 @@
         <!-- VIDEO -->
 
         <video id="vid_credits" style="position: absolute; width: 100%; height: 100%; top: 0%; left: 0%; display: none;">
-            <source src="./Materials/video/credits.mp4" type="video/mp4">
+            <source id="video_credits" src="./Materials/video/credits.mp4" type="video/mp4">
         </video>
 
         <button id="credit_close" class="btn btn-simple text-white flex float-end" style="display: none; position: absolute; top: 1%; left: 90%; ">&#x2717</button>
@@ -133,14 +133,14 @@
 
                             <div>
                                 <button id="sound_volume_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Sound volume" data-title="Sound volume" title=""></button><br>
-                                <input type="range" class="form-range" style="width: 40%;">
+                                <input id="sound_volume_slider" type="range" class="form-range" value="" style="width: 40%;">
                             </div>
 
                             <br>
 
                             <div>
                                 <button id="music_volume_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Music volume" data-title="Music volume" title=""></button><br>
-                                <input type="range" class="form-range" style="width: 40%;">
+                                <input id="music_volume_slider" type="range" class="form-range" value="" style="width: 40%;">
                             </div>
 
                             <br>
