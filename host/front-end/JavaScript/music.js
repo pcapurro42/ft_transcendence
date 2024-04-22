@@ -23,7 +23,7 @@ function enableDisableMusic()
 function refreshMusics()
 {
 	let menu_theme = document.getElementById('mgs');
-	let credits_theme = document.getElementById('video_credits');
+	let credits_theme = document.getElementById('vid_credits');
 
 	menu_theme.volume = music_volume / 100;
 	credits_theme.volume = music_volume / 100;
