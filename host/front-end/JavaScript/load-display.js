@@ -23,14 +23,14 @@ function setBackground(color)
 
 function setMaterials(color)
 {
-    materials = document.getElementsByClassName("modal-content");
+    materials = document.getElementsByClassName("form-select");
 
     for (let i = 0; i != materials.length; i++)
     {
         if (color == "white")
-            materials[i].style["background-color"] = "white", materials[i].style["border"] = "black 2px solid";
+            materials[i].style["background-color"] = "white", materials[i].style["color"] = "black";
         else
-            materials[i].style["background-color"] = "black", materials[i].style["border"] = "white 2px solid";
+            materials[i].style["background-color"] = "black", materials[i].style["color"] = "white";
     }
 }
 
