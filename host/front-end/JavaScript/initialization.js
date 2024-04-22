@@ -27,7 +27,10 @@ else
 
 // < REFRESH > //
 
+defaultHide();
+
 refreshLanguage();
 refreshDisplay();
-defaultHide();
+
 refreshSounds();
+refreshMusics();
