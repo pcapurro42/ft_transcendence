@@ -7,6 +7,9 @@ function defaultHide()
     settings_menu.style.display = "none";
     let settings_back_btn = document.getElementById('settings_back_btn');
     settings_back_btn.style.display = "none";
+
+    let video = document.getElementById('vid_credits');
+    video.style.display="none";
 }
 
 function setBackground(color)
