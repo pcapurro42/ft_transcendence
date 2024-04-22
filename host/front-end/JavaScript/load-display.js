@@ -12,7 +12,7 @@ function defaultHide()
     video.style.display="none";
 }
 
-function setBackground(color)
+function setBackgroundColor(color)
 {
     let background = document.getElementById("background");
     if (color == "white")
@@ -21,7 +21,7 @@ function setBackground(color)
         background.style.setProperty("background-color", "black");
 }
 
-function setMaterials(color)
+function setMaterialsColor(color)
 {
     materials = document.getElementsByClassName("form-select");
 
@@ -34,7 +34,7 @@ function setMaterials(color)
     }
 }
 
-function setImages(color)
+function setImagesColor(color)
 {
     let images = document.getElementsByClassName("image");
 
@@ -47,7 +47,7 @@ function setImages(color)
     }
 }
 
-function setText(color)
+function setTextColor(color)
 {
     let grey_texts = document.getElementsByClassName("text");
     let white_texts = document.getElementsByClassName("text-white");
@@ -61,14 +61,30 @@ function setText(color)
             texts[i].classList.replace("text", "text-white"), texts[i].classList.replace("text-black", "text-white");
         else
             texts[i].classList.replace("text", "text-black"), texts[i].classList.replace("text-white", "text-black");
-        // texts[i].style["font-size"] = "30px";
+    }
+}
+
+function setTextSize(size)
+{
+    if (size == "normal")
+    {
+        ;
+    }
+    else
+    {
+        ;
     }
 }
 
 function refreshDisplay()
 {
     if (high_contrast == "true")
-        setBackground("black"), setText("white"), setMaterials("black"), setImages("white");
+        setBackgroundColor("black"), setTextColor("white"), setMaterialsColor("black"), setImagesColor("white");
     else
-        setBackground("white"), setText("black"), setMaterials("white"), setImages("black");
+        setBackgroundColor("white"), setTextColor("black"), setMaterialsColor("white"), setImagesColor("black");
+
+    if (text_size == "normal")
+        setTextSize("normal")
+    else
+        setTextSize("large");
 }
