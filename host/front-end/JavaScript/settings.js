@@ -1,6 +1,8 @@
 document.getElementById('settings_btn').onclick = displaySettings;
 document.getElementById('settings_back_btn').onclick = removeSettings;
 
+document.getElementById('language_btn_selector').onchange = changeLanguage;
+
 function displaySettings()
 {
     let main_menu = document.getElementById('main_menu_buttons');
@@ -27,13 +29,15 @@ function removeSettings()
     main_menu.style.display = 'block';
 }
 
-function changeLanguage(event)
+function changeLanguage()
 {
-    let new_language = (event.target.value).toLowerCase();
+    let language_btn_selector = document.getElementById('language_btn_selector');
+    let new_language = (language_btn_selector.value).toLowerCase();
     new_language = (new_language[0] + new_language[1]);
     
     localStorage.setItem("language", new_language);
     language = new_language;
+
     refreshLanguage();
 }
 
