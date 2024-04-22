@@ -50,15 +50,6 @@ function initializeSounds()
 		complex_buttons[i].addEventListener('click', closeSound);
 }
 
-function refreshMusics()
-{
-	let menu_theme = document.getElementById('mgs');
-	let credits_theme = document.getElementById('video_credits');
-
-	menu_theme.volume = music_volume / 100;
-	credits_theme.volume = music_volume / 100;
-}
-
 function refreshSounds()
 {
 	let hover_sound = document.getElementById('hover_sound');

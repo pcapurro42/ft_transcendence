@@ -10,7 +10,6 @@ function enableDisableMusic()
 	if (music.muted)
 	{
 		music.muted = false;
-        music.volume = music_volume / 100;
 		music.play();
 		img.src = './Materials/images/music-on.png';
 	}
@@ -19,4 +18,13 @@ function enableDisableMusic()
 		music.muted = true;
 		img.src = './Materials/images/music-off.png';
 	}
+}
+
+function refreshMusics()
+{
+	let menu_theme = document.getElementById('mgs');
+	let credits_theme = document.getElementById('video_credits');
+
+	menu_theme.volume = music_volume / 100;
+	credits_theme.volume = music_volume / 100;
 }
