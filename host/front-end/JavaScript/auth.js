@@ -132,6 +132,6 @@ async function getAccessToken(auth_code){
 
 
 if (localStorage.getItem("status") == "connected")
-    login_btn.setAttribute("data-oname", "LOG OUT"), refreshLanguage();
+    login_btn.setAttribute("data-oname", "LOG OUT");
 else
-    login_btn.setAttribute("data-oname", "LOG IN WITH 42"), refreshLanguage();
+    login_btn.setAttribute("data-oname", "LOG IN WITH 42");
