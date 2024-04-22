@@ -66,13 +66,14 @@ function setTextColor(color)
 
 function setImageSize(size)
 {
-    // let images = document.querySelectorAll('[data-snormal]');
+    let images = document.querySelectorAll('[data-isnormal]');
 
-    // for (let i = 0; i != texts.length; i++)
-    // {
-    //     let value = texts[i].getAttribute(size);
-    //     texts[i].style.fontSize = value;
-    // }
+    for (let i = 0; i != images.length; i++)
+    {
+        let value = images[i].getAttribute(size);
+        let nb = value[value.length - 2] + value[value.length - 1];
+        images[i].style.maxWidth = nb;
+    }
 }
 
 function setTextSize(size)
