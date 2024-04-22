@@ -6,6 +6,10 @@ let en = [
     ["LOG IN WITH 42", "LOG IN WITH 42"],
     ["LOG OUT", "LOG OUT"],
 
+    ["Enable/Disable menu music", "Enable/Disable menu music"],
+
+    ["Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'", "Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'"],
+
     ["Play", "Play"],
     ["Customize", "Customize"],
     ["Settings", "Settings"],

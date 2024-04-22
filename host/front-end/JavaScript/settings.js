@@ -126,7 +126,7 @@ function initializeSettings()
         localStorage.setItem("descriptive_images", "false"), descriptive_images = "false";
     else
         descriptive_images = localStorage.getItem("descriptive_images");
-    enableDisableDescriptiveImages(high_contrast);
+    enableDisableDescriptiveImages(descriptive_images);
 
     if (localStorage.getItem("high_contrast") == null)
         localStorage.setItem("high_contrast", "false"), high_contrast = "false"
