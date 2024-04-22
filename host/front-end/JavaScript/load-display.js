@@ -61,6 +61,7 @@ function setText(color)
             texts[i].classList.replace("text", "text-white"), texts[i].classList.replace("text-black", "text-white");
         else
             texts[i].classList.replace("text", "text-black"), texts[i].classList.replace("text-white", "text-black");
+        // texts[i].style["font-size"] = "30px";
     }
 }
 

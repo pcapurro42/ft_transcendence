@@ -2,6 +2,7 @@ document.getElementById('settings_btn').onclick = displaySettings;
 document.getElementById('settings_back_btn').onclick = removeSettings;
 
 document.getElementById('language_btn_selector').onchange = changeLanguage;
+document.getElementById('text_size_btn_selector').onchange = changeTextSize;
 
 document.getElementById('high_contrast_btn_y').onclick = enableDisableHighContrast.bind(null, "true");
 document.getElementById('high_contrast_btn_n').onclick = enableDisableHighContrast.bind(null, "false");
@@ -48,6 +49,17 @@ function enableDisableDescriptiveImages(value)
         descriptive_images = "false";
         localStorage.setItem("descriptive_images", "false");
     }
+    refreshDisplay();
+}
+
+function changeTextSize()
+{
+    let text_size_btn_selector = document.getElementById('text_size_btn_selector');
+    let new_size = (text_size_btn_selector.value).toLowerCase();
+
+    localStorage.setItem("text_size", new_size);
+    text_size = new_size;
+
     refreshDisplay();
 }
 
