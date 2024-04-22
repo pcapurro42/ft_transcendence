@@ -61,4 +61,7 @@ function refreshSounds()
 	close_sound.volume = sounds_volume / 100;
 	click_sound.volume = sounds_volume / 100;
 	login_sound.volume = sounds_volume / 100;
+
+	let sound_slider_label = document.getElementById('sound_volume_slider_label');
+    sound_slider_label.innerHTML = "(" + sounds_volume + "%)";
 }

@@ -16,8 +16,8 @@ document.getElementById('image_desc_btn_n').onclick = enableDisableDescriptiveIm
 function changeSoundVolume()
 {
     let sound_slider = document.getElementById('sound_volume_slider');
-
     let new_volume = sound_slider.value;
+
     localStorage.setItem('sounds_volume', new_volume);
     sounds_volume = new_volume;
 
@@ -27,8 +27,8 @@ function changeSoundVolume()
 function changeMusicVolume()
 {
     let music_slider = document.getElementById('music_volume_slider');
-
     let new_volume = music_slider.value;
+
     localStorage.setItem('music_volume', new_volume);
     music_volume = new_volume;
 
