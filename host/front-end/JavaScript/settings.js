@@ -27,13 +27,23 @@ function removeSettings()
     main_menu.style.display = 'block';
 }
 
+function changeLanguage(event)
+{
+    let new_language = (event.target.value).toLowerCase();
+    new_language = (new_language[0] + new_language[1]);
+    
+    localStorage.setItem("language", new_language);
+    language = new_language;
+    refreshLanguage();
+}
+
 function initializeSettings()
 {
-    let language;
-    let sound_volume;
-    let music_volume;
+    let s_language;
+    let s_sound_volume;
+    let s_music_volume;
 
-    let text_size;
-    let image_description;
-    let high_contrast;
+    let s_text_size;
+    let s_image_description;
+    let s_high_contrast;
 }
