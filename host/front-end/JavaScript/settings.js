@@ -38,14 +38,14 @@ function removeSettings()
 function disableHighContrast()
 {
     high_contrast = "false";
-    localStorage.setItem("descriptive_images", "false");
+    localStorage.setItem("high_contrast", "false");
     refreshDisplay();
 }
 
 function enableHighContrast()
 {
     high_contrast = "true";
-    localStorage.setItem("descriptive_images", "true");
+    localStorage.setItem("high_contrast", "true");
     refreshDisplay();
 }
 
