@@ -35,7 +35,7 @@
     font-weight: bold;
 }
 
-#play_btn:hover, #customize_btn:hover, #settings_btn:hover, #credits_btn:hover, #create_game_btn:hover, #join_game_btn:hover, #ai_game_btn:hover, #create_tournament_btn:hover, #join_tournament_btn:hover, #play_back_btn:hover, #language_btn:hover, #sound_volume_btn:hover, #music_volume_btn:hover, #text_size_btn:hover, #image_desc_btn:hover, #high_contrast_btn:hover, #settings_back_btn:hover
+#play_btn:hover, #customize_btn:hover, #settings_btn:hover, #credits_btn:hover, #create_game_btn:hover, #join_game_btn:hover, #ai_game_btn:hover, #create_tournament_btn:hover, #join_tournament_btn:hover, #play_back_btn:hover, #settings_back_btn:hover
 {
     text-decoration: underline;
 }
