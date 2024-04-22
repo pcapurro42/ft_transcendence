@@ -15,7 +15,7 @@ function refreshLanguage()
     if (lang == "en")
     {
         for (let i = 0; i != words.length; i++)
-            words[i].innerHTML = getElement(en, words[i].getAttribute("data-oname")), console.log("ok");
+            words[i].innerHTML = getElement(en, words[i].getAttribute("data-oname"));
     }
     if (lang == "fr")
     {
