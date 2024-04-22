@@ -1,17 +1,16 @@
-let credits_btn = document.getElementById('credits_btn');
-let cross_exit = document.getElementById('credit_close');
-let video = document.getElementById('vid_credits');
 
 let boolAudio_on;
 
-credits_btn.onclick = theaterCredits;
+document.getElementById('credits_btn').onclick = theaterCredits;
+document.getElementById('vid_credits').onended = theaterClose;
 
-video.onended = theaterClose;
-cross_exit.onclick = theaterClose;
+document.getElementById('credit_close').onclick = theaterClose;
 
 function theaterCredits(){
 	let website = document.getElementById('main_menu_page');
 	let music_menu = document.getElementById('mgs');
+	let cross_exit = document.getElementById('credit_close');
+	let video = document.getElementById('vid_credits');
 
 	website.style.transition = 'opacity 0.5s';
     website.style.opacity = '0';
@@ -39,6 +38,8 @@ function theaterCredits(){
 function theaterClose(){
 	let website = document.getElementById('main_menu_page');
 	let music_menu = document.getElementById('mgs');
+	let cross_exit = document.getElementById('credit_close');
+	let video = document.getElementById('vid_credits');
 
 	video.pause();
 	video.currentTime = 0;
