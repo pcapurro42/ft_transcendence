@@ -3,11 +3,65 @@ document.getElementById('settings_back_btn').onclick = removeSettings;
 
 document.getElementById('language_btn_selector').onchange = changeLanguage;
 
-document.getElementById('high_contrast_btn_y').onclick = enableHighContrast;
-document.getElementById('high_contrast_btn_n').onclick = disableHighContrast;
+document.getElementById('high_contrast_btn_y').onclick = enableDisableHighContrast.bind(null, "true");
+document.getElementById('high_contrast_btn_n').onclick = enableDisableHighContrast.bind(null, "false");
 
-document.getElementById('image_desc_btn_y').onclick = enableImageDescription;
-document.getElementById('image_desc_btn_n').onclick = disableImageDescription;
+document.getElementById('image_desc_btn_y').onclick = enableDisableDescriptiveImages.bind(null, "true");
+document.getElementById('image_desc_btn_n').onclick = enableDisableDescriptiveImages.bind(null, "false");
+
+function enableDisableHighContrast(value)
+{
+    if (value == "true")
+    {
+        document.getElementById('high_contrast_btn_y').style = "background-color: red;";
+        document.getElementById('high_contrast_btn_n').style = "";
+    
+        high_contrast = "true";
+        localStorage.setItem("high_contrast", "true");
+    }
+    else
+    {
+        document.getElementById('high_contrast_btn_n').style = "background-color: red;";
+        document.getElementById('high_contrast_btn_y').style = "";
+    
+        high_contrast = "false";
+        localStorage.setItem("high_contrast", "false");
+    }
+    refreshDisplay();
+}
+
+function enableDisableDescriptiveImages(value)
+{
+    if (value == "true")
+    {
+        document.getElementById('image_desc_btn_y').style = "background-color: red;";
+        document.getElementById('image_desc_btn_n').style = "";
+    
+        descriptive_images = "true";
+        localStorage.setItem("high_contrast", "true");
+    }
+    else
+    {
+        document.getElementById('image_desc_btn_n').style = "background-color: red;";
+        document.getElementById('image_desc_btn_y').style = "";
+    
+        descriptive_images = "false";
+        localStorage.setItem("high_contrast", "false");
+    }
+    refreshDisplay();
+}
+
+function changeLanguage()
+{
+    let language_btn_selector = document.getElementById('language_btn_selector');
+    let new_language = (language_btn_selector.value).toLowerCase();
+    new_language = (new_language[0] + new_language[1]);
+    
+    localStorage.setItem("language", new_language);
+    language = new_language;
+
+    refreshLanguage();
+}
 
 function displaySettings()
 {
@@ -33,46 +87,6 @@ function removeSettings()
     settings_back_btn.style.display = 'none';
 
     main_menu.style.display = 'block';
-}
-
-function disableHighContrast()
-{
-    high_contrast = "false";
-    localStorage.setItem("high_contrast", "false");
-    refreshDisplay();
-}
-
-function enableHighContrast()
-{
-    high_contrast = "true";
-    localStorage.setItem("high_contrast", "true");
-    refreshDisplay();
-}
-
-function disableImageDescription()
-{
-    descriptive_images = "false";
-    localStorage.setItem("high_contrast", "false");
-    refreshDisplay();
-}
-
-function enableImageDescription()
-{
-    descriptive_images = "true";
-    localStorage.setItem("high_contrast", "true");
-    refreshDisplay();
-}
-
-function changeLanguage()
-{
-    let language_btn_selector = document.getElementById('language_btn_selector');
-    let new_language = (language_btn_selector.value).toLowerCase();
-    new_language = (new_language[0] + new_language[1]);
-    
-    localStorage.setItem("language", new_language);
-    language = new_language;
-
-    refreshLanguage();
 }
 
 function initializeSettings()
@@ -101,9 +115,11 @@ function initializeSettings()
         localStorage.setItem("descriptive_images", "false"), descriptive_images = "false";
     else
         descriptive_images = localStorage.getItem("descriptive_images");
+    enableDisableDescriptiveImages(high_contrast);
 
     if (localStorage.getItem("high_contrast") == null)
-        localStorage.setItem("high_contrast", "false"), high_contrast = "false";
+        localStorage.setItem("high_contrast", "false"), high_contrast = "false"
     else
         high_contrast = localStorage.getItem("high_contrast");
+    enableDisableHighContrast(high_contrast);
 }
