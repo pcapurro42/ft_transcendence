@@ -64,9 +64,20 @@ function setTextColor(color)
     }
 }
 
+function setImageSize(size)
+{
+    // let images = document.querySelectorAll('[data-snormal]');
+
+    // for (let i = 0; i != texts.length; i++)
+    // {
+    //     let value = texts[i].getAttribute(size);
+    //     texts[i].style.fontSize = value;
+    // }
+}
+
 function setTextSize(size)
 {
-    let texts = document.querySelectorAll('[data-snormal]');
+    let texts = document.querySelectorAll('[data-tsnormal]');
 
     for (let i = 0; i != texts.length; i++)
     {
@@ -83,7 +94,7 @@ function refreshDisplay()
         setBackgroundColor("white"), setTextColor("black"), setMaterialsColor("white"), setImagesColor("black");
 
     if (text_size == "normal")
-        setTextSize("data-snormal")
+        setTextSize("data-tsnormal"), setImageSize("data-isnormal");
     else
-        setTextSize("data-slarge");
+        setTextSize("data-tslarge"), setImageSize("data-islarge");
 }
