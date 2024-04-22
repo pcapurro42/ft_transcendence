@@ -87,6 +87,19 @@ function setTextSize(size)
     }
 }
 
+function setDescriptiveImages(value)
+{
+    let descriptions = document.querySelectorAll('[title]');
+
+    if (value == "enable")
+        refreshLanguage();
+    else
+    {
+        for (let i = 0; i != descriptions.length; i++)
+            descriptions[i].setAttribute('title', "");
+    }
+}
+
 function refreshDisplay()
 {
     if (high_contrast == "true")
@@ -98,4 +111,9 @@ function refreshDisplay()
         setTextSize("data-tsnormal"), setImageSize("data-isnormal");
     else
         setTextSize("data-tslarge"), setImageSize("data-islarge");
+
+    if (descriptive_images == "true")
+        setDescriptiveImages("enable");
+    else
+        setDescriptiveImages("disable");
 }
