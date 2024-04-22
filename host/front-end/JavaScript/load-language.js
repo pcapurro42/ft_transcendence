@@ -10,7 +10,7 @@ function getElement(lang, text)
 function refreshLanguage()
 {
     let lang = localStorage.getItem("language");
-    let words = document.getElementsByClassName("text");
+    let words = document.querySelectorAll('[data-oname]');
 
     if (lang == "en")
     {
