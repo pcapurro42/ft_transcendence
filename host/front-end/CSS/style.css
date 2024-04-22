@@ -1,25 +1,6 @@
-.text-white
-{
-    color: white;
-}
-
-.text-black
-{
-    color: black;
-}
-
-#main_bar
-{
-    border:none;
-    width: 90%;
-    opacity: 100%;
-    /* background-color: red; */
-    height: 5px;
-}
-
 #play_btn, #customize_btn, #settings_btn, #credits_btn
 {
-    font-size: 40px;
+    font-size: 35px;
     font-style: normal;
 }
 
