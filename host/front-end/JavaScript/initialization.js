@@ -15,10 +15,6 @@ initializeSettings();
 
 initializeSounds();
 
-// < SETTINGS > //
-
-initializeSettings();
-
 // < 42 CONNECT > //
 
 if (localStorage.getItem("status") == null)

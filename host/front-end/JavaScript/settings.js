@@ -38,7 +38,7 @@ function enableDisableDescriptiveImages(value)
         document.getElementById('image_desc_btn_n').style = "";
     
         descriptive_images = "true";
-        localStorage.setItem("high_contrast", "true");
+        localStorage.setItem("descriptive_images", "true");
     }
     else
     {
@@ -46,7 +46,7 @@ function enableDisableDescriptiveImages(value)
         document.getElementById('image_desc_btn_y').style = "";
     
         descriptive_images = "false";
-        localStorage.setItem("high_contrast", "false");
+        localStorage.setItem("descriptive_images", "false");
     }
     refreshDisplay();
 }
