@@ -4,7 +4,7 @@ services:
 
   host:
     build: 
-      context: srcs/host/
+      context: host/
       dockerfile: Dockerfile.host
     image: host_img
     container_name: host_server
@@ -15,7 +15,7 @@ services:
   
   proxy:
     build:
-      context: srcs/proxy/
+      context: proxy/
       dockerfile: Dockerfile.proxy
     image: proxy_img
     container_name: proxy_server

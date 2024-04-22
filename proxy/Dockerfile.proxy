@@ -11,4 +11,4 @@ COPY proxy_init.rb .
 
 EXPOSE 8080
 
-CMD ["bash"]
+CMD ["ruby", "proxy_init.rb"]
