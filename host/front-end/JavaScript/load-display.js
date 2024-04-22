@@ -66,8 +66,6 @@ function setText(color)
 
 function refreshDisplay()
 {
-    defaultHide();
-
     if (high_contrast == "true")
         setBackground("black"), setText("white"), setMaterials("black"), setImages("white");
     else
