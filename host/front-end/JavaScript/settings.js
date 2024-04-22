@@ -1,18 +1,3 @@
-document.getElementById('settings_btn').onclick = displaySettings;
-document.getElementById('settings_back_btn').onclick = removeSettings;
-
-document.getElementById('language_btn_selector').onchange = changeLanguage;
-document.getElementById('text_size_btn_selector').onchange = changeTextSize;
-
-document.getElementById('sound_volume_slider').onchange = changeSoundVolume;
-document.getElementById('music_volume_slider').onchange = changeMusicVolume;
-
-document.getElementById('high_contrast_btn_y').onclick = enableDisableHighContrast.bind(null, "true");
-document.getElementById('high_contrast_btn_n').onclick = enableDisableHighContrast.bind(null, "false");
-
-document.getElementById('image_desc_btn_y').onclick = enableDisableDescriptiveImages.bind(null, "true");
-document.getElementById('image_desc_btn_n').onclick = enableDisableDescriptiveImages.bind(null, "false");
-
 function changeSoundVolume()
 {
     let sound_slider = document.getElementById('sound_volume_slider');

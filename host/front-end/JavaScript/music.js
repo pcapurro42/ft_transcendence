@@ -1,5 +1,3 @@
-document.getElementById('music_toggle').onclick = enableDisableMusic;
-
 function enableDisableMusic()
 {
 	let music = document.getElementById('mgs');

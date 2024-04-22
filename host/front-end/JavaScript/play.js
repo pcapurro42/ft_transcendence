@@ -1,6 +1,3 @@
-document.getElementById('play_btn').onclick = displayPlay;
-document.getElementById('play_back_btn').onclick = removePlay;
-
 function displayPlay()
 {
     let main_menu = document.getElementById('main_menu_buttons');

@@ -1,10 +1,4 @@
-
 let boolAudio_on;
-
-document.getElementById('credits_btn').onclick = theaterCredits;
-document.getElementById('vid_credits').onended = theaterClose;
-
-document.getElementById('credit_close').onclick = theaterClose;
 
 function theaterCredits(){
 	let website = document.getElementById('main_menu_page');
@@ -32,8 +26,6 @@ function theaterCredits(){
 	}
 	video.play();
 }
-
-
 
 function theaterClose(){
 	let website = document.getElementById('main_menu_page');
