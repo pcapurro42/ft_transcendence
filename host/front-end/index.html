@@ -112,68 +112,74 @@
 
                 <!-- SETTINGS MENU -->
 
-                <div id="settings_menu" class="p-2 text-center" style="display: none;">
+                <div id="settings_menu" class="container" style="display: none;">
 
-                    <!-- LEFT PANEL -->
-                    
-                    <div id="settings_left_panel" style="width:50%; float:left">
+                    <div class="row">
 
-                        <div>
-                            <button id="language_btn" class="btn text btn-simple" data-oname="Language"></button><br>
-                            <select id="language_btn_selector" class="form-select mx-auto" style="width: auto;">
-                                <option value="English">English</option>
-                                <option value="Français">Français</option>
-                                <!-- ... -->
-                            </select>
-                            <br>
+                        <!-- LEFT PANEL -->
+                                            
+                        <div id="settings_left_panel" class="col-sm text-center">
+
+                            <div>
+                                <button id="language_btn" class="btn text btn-simple" data-oname="Language"></button><br>
+                                <select id="language_btn_selector" class="form-select mx-auto" style="width: auto;">
+                                    <option value="English">English</option>
+                                    <option value="Français">Français</option>
+                                    <!-- ... -->
+                                </select>
+                                <br>
+                            </div>
+
+                            <div>
+                                <button id="sound_volume_btn" class="btn text btn-simple" data-oname="Sound volume"></button><br>
+                                <input type="range" class="form-range" style="width: 40%;">
+                                <br>
+                            </div>
+
+                            <div>
+                                <button id="music_volume_btn" class="btn text btn-simple" data-oname="Music volume"></button><br>
+                                <input type="range" class="form-range" style="width: 40%;">
+                            </div>
+
                         </div>
 
-                        <div>
-                            <button id="sound_volume_btn" class="btn text btn-simple" data-oname="Sound volume"></button><br>
-                            <input type="range" class="form-range" style="width: 40%;">
-                            <br>
+                        <!-- RIGHT PANEL -->
+
+                        <div id="settings_right_panel" class="col-sm text-center">
+
+                            <div>
+                                <button id="text_size_btn" class="btn text btn-simple" data-oname="Text size"></button><br>
+                                <select class="form-select mx-auto" style="width: auto;">
+                                    <option class="text" value="1" data-oname="Small"></option>
+                                    <option class="text" value="2" data-oname="Normal"></option>
+                                    <option class="text" value="3" data-oname="Large"></option>
+                                </select>
+                                <br>
+                            </div>
+
+                            <div>
+                                <button id="image_desc_btn" class="btn text btn-simple" data-oname="Image description"></button><br>
+                                <button id="image_desc_btn_y" class="btn text" data-oname="Yes"></button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <button id="image_desc_btn_n" class="btn text" data-oname="No"></button>
+                            </div>
+
+                            <div>
+                                <button id="high_contrast_btn" class="btn text btn-simple" data-oname="High contrast"></button><br>
+                                <button id="high_contrast_btn_y" class="btn text" data-oname="Yes"></button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <button id="high_contrast_btn_n" class="btn text" data-oname="No"></button>
+                            </div>
+
                         </div>
 
-                        <div>
-                            <button id="music_volume_btn" class="btn text btn-simple" data-oname="Music volume"></button><br>
-                            <input type="range" class="form-range" style="width: 40%;">
+                        <!-- BACK BUTTON -->
+
+                        <div class="d-flex justify-content-center">
+                            <button id="settings_back_btn" class="btn text btn-complex" data-oname="Back"></button>
                         </div>
 
                     </div>
-
-                    <!-- RIGHT PANEL -->
-
-                    <div id="settings_right_panel" style="width:50%; float:right">
-
-                        <div>
-                            <button id="text_size_btn" class="btn text btn-simple" data-oname="Text size"></button><br>
-                            <select class="form-select mx-auto" style="width: auto;">
-                                <option class="text" value="1" data-oname="Small"></option>
-                                <option class="text" value="2" data-oname="Normal"></option>
-                                <option class="text" value="3" data-oname="Large"></option>
-                            </select>
-                            <br>
-                        </div>
-
-                        <div>
-                            <button id="image_desc_btn" class="btn text btn-simple" data-oname="Image description"></button><br>
-                            <button id="image_desc_btn_y" class="btn text" data-oname="Yes"></button>
-                            &nbsp;&nbsp;&nbsp;&nbsp;
-                            <button id="image_desc_btn_n" class="btn text" data-oname="No"></button>
-                        </div>
-
-                        <div>
-                            <button id="high_contrast_btn" class="btn text btn-simple" data-oname="High contrast"></button><br>
-                            <button id="high_contrast_btn_y" class="btn text" data-oname="Yes"></button>
-                            &nbsp;&nbsp;&nbsp;&nbsp;
-                            <button id="high_contrast_btn_n" class="btn text" data-oname="No"></button>
-                        </div>
-
-                    </div>
-
-                    <!-- BACK BUTTON -->
-
-                    <button id="settings_back_btn" class="btn text btn-complex" data-oname="Back"></button>
 
                 </div>
 
