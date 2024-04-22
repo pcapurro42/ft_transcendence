@@ -24,5 +24,11 @@ let fr = [
     ["Create a tournament", "Créer un tournoi"],
     ["Join a tournament", "Rejoindre un tournoi"],
 
-    ["Back", "Retour"]
+    ["Back", "Retour"],
+    ["Yes", "Oui"],
+    ["No", "Non"],
+
+    ["Small", "Petit"],
+    ["Normal", "Normal"],
+    ["Large", "Grand"]
 ];

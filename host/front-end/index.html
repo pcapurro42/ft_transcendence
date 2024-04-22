@@ -85,14 +85,23 @@
 
                         <div>
                             <button id="language_btn" class="btn text btn-simple" data-oname="Language"></button><br>
+                            <select class="form-select mx-auto" style="width: auto;">
+                                <option selected>English</option>
+                                <option value="1">Français</option>
+                                <!-- ... -->
+                            </select>
+                            <br>
                         </div>
 
                         <div>
                             <button id="sound_volume_btn" class="btn text btn-simple" data-oname="Sound volume"></button><br>
+                            <input type="range" class="form-range" style="width: 60%;">
+                            <br>
                         </div>
 
                         <div>
                             <button id="music_volume_btn" class="btn text btn-simple" data-oname="Music volume"></button><br>
+                            <input type="range" class="form-range" style="width: 60%;">
                         </div>
 
                     </div>
@@ -101,14 +110,24 @@
 
                         <div>
                             <button id="text_size_btn" class="btn text btn-simple" data-oname="Text size"></button><br>
+                            <select class="form-select mx-auto" style="width: auto;">
+                                <option class="text" value="1" data-oname="Small"></option>
+                                <option class="text" selected data-oname="Normal"></option>
+                                <option class="text" value="2" data-oname="Large"></option>
+                            </select>
+                            <br>
                         </div>
 
                         <div>
                             <button id="image_desc_btn" class="btn text btn-simple" data-oname="Image description"></button><br>
+                            <button class="btn btn-primary text" data-oname="Yes"></button>
+                            <button class="btn btn-primary text" data-oname="No"></button>
                         </div>
 
                         <div>
-                            <button id="high_contrast_btn" class="btn text btn-simple" data-oname="High contrast"></button>
+                            <button id="high_contrast_btn" class="btn text btn-simple" data-oname="High contrast"></button><br>
+                            <button class="btn btn-primary text" data-oname="Yes"></button>
+                            <button class="btn btn-primary text" data-oname="No"></button>
                         </div>
 
                     </div>
