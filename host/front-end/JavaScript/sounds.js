@@ -2,7 +2,6 @@ function alertSound(event)
 {
 	let loginSound = document.getElementById('alert_sound');
 
-	loginSound.volume = sounds_volume / 100;
 	loginSound.play();
 
 	event.stopPropagation();
@@ -12,7 +11,6 @@ function hoverSound(event)
 {
     let hoverSound = document.getElementById('hover_sound');
 
-	hoverSound.volume = sounds_volume / 100;
     hoverSound.play();
 
     event.stopPropagation();
@@ -22,7 +20,6 @@ function clickSound(event)
 {
     let clickSound = document.getElementById('click_sound');
 
-	clickSound.volume = sounds_volume / 100;
     clickSound.play();
 
     event.stopPropagation();
@@ -32,7 +29,6 @@ function closeSound(event)
 {
 	let closeSound = document.getElementById('close_sound');
 
-	closeSound.volume = sounds_volume / 100;
     closeSound.play();
 
 	event.stopPropagation();
@@ -52,4 +48,17 @@ function initializeSounds()
 
 	for (let i = 0; i != complex_buttons.length; i++)
 		complex_buttons[i].addEventListener('click', closeSound);
+}
+
+function refreshSounds()
+{
+	let hover_sound = document.getElementById('hover_sound');
+	let close_sound = document.getElementById('close_sound');
+	let click_sound = document.getElementById('click_sound');
+	let login_sound = document.getElementById('alert_sound');
+
+	hover_sound.volume = sounds_volume / 100;
+	close_sound.volume = sounds_volume / 100;
+	click_sound.volume = sounds_volume / 100;
+	login_sound.volume = sounds_volume / 100;
 }

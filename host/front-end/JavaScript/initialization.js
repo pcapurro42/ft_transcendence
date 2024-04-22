@@ -61,7 +61,6 @@ else
 
 high_contrast = "true";
 
-// localStorage.setItem("language", "en"), language = "en";
-
 refreshLanguage();
 refreshDisplay();
+refreshSounds();
