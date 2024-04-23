@@ -3,14 +3,16 @@ FROM debian:buster
 USER root
 
 RUN apt-get -y update ; \
-    apt-get -y install ruby ruby-full
+    apt-get -y install nginx
 
 WORKDIR /home/
 
 COPY front-end/ ./
 
-COPY host_init.rb ./
+COPY nginx.conf /etc/nginx/conf.d/
 
 EXPOSE 443
 
-CMD ["ruby", "host_init.rb"]
+CMD ["nginx", "-g", "daemon off;"]
+
+# CMD ["bash"]
