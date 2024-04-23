@@ -25,8 +25,6 @@ function theaterCredits(){
 		boolAudio_on = true;
 	}
 	video.play();
-	if (boolAudio_on == true)
-		document.getElementById('credits_song').play();
 }
 
 function theaterClose(){
@@ -49,7 +47,6 @@ function theaterClose(){
         website.style.opacity = '1';
     }, 10);
 	if (boolAudio_on == true){
-		document.getElementById('credits_song').pause();
 		music_menu.muted = false;
 		music_menu.play();
 	}
