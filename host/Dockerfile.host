@@ -3,16 +3,21 @@ FROM debian:buster
 USER root
 
 RUN apt-get -y update ; \
-    apt-get -y install nginx
+    apt-get -y install nginx openssl
 
-WORKDIR /home/
+RUN mkdir -p /etc/nginx/ssl/
 
-COPY front-end/ ./
+COPY front-end/ /home/front-end
+
+RUN openssl req \
+    -x509 \
+    -nodes \
+    -out /etc/nginx/ssl/ft_transcendence.crt \
+    -keyout /etc/nginx/ssl/ft_transcendence.key \
+    -subj "/C=FR/ST=PACA/L=Nice/O=42/OU=42Nice/CN=127.0.0.1"
 
 COPY nginx.conf /etc/nginx/conf.d/
 
 EXPOSE 443
 
 CMD ["nginx", "-g", "daemon off;"]
-
-# CMD ["bash"]
