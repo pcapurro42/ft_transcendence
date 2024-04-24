@@ -1,4 +1,4 @@
-// window.onload = handleRedirection;
+window.onload = handleRedirection;
 
 /****************************************** Log in | Log Out ***********************************************/
 
@@ -14,6 +14,8 @@ async function login()
 
 async function logout()
 {
+    window.location.href = `https://127.0.0.1/`;
+
     localStorage.setItem("status", "not connected");
     localStorage.removeItem("user_info");
     account_status = "not connected";
@@ -112,13 +114,13 @@ function refreshLogin()
 {
     if (account_status == "connected")
     {
-        document.getElementById('logged').style.display = "block";
-        // document.getElementById('login').style.display = "none";
+        document.getElementById('intra_login').style.display = "block";
+        document.getElementById('login_btn').style.display = "none";
     }
     else
     {
-        // document.getElementById('login').style.display = "block";
-        document.getElementById('logged').style.display = "none";
+        document.getElementById('login_btn').style.display = "block";
+        document.getElementById('intra_login').style.display = "none";
     }
 }
 

@@ -1,7 +1,7 @@
 // < TOOLBAR > //
 
 document.getElementById('music_toggle').onclick = enableDisableMusic;
-// document.getElementById("login_btn").onclick = login;
+document.getElementById("login_btn").onclick = login;
 document.getElementById("logout_btn").onclick = logout;
 
 // < MAIN MENU > //
