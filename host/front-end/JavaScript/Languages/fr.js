@@ -22,6 +22,9 @@ let fr = [
     ["Image description", "Description de l'image"],
     ["High contrast", "Haut contraste"],
 
+    ["Change game theme", "Changer la musique du jeu"],
+    ["Change game map", "Changer la carte du jeu"],
+
     ["Create a game", "Créer une partie"],
     ["Join a game", "Rejoindre une partie"],
     ["Play against AI", "Jouer contre l'IA"],

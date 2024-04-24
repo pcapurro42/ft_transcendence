@@ -22,6 +22,9 @@ let en = [
     ["Image description", "Image description"],
     ["High contrast", "High contrast"],
 
+    ["Change game theme", "Change game theme"],
+    ["Change game map", "Change game map"],
+
     ["Create a game", "Create a game"],
     ["Join a game", "Join a game"],
     ["Play against AI", "Play against AI"],

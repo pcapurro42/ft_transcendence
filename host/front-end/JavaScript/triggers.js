@@ -11,6 +11,9 @@ document.getElementById('play_back_btn').onclick = removePlay;
 document.getElementById('settings_btn').onclick = displaySettings;
 document.getElementById('settings_back_btn').onclick = removeSettings;
 
+document.getElementById('customize_btn').onclick = displayCustomize;
+document.getElementById('customize_back_btn').onclick = removeCustomize;
+
 document.getElementById('credits_btn').onclick = theaterCredits;
 document.getElementById('vid_credits').onended = theaterClose;
 document.getElementById('credit_close').onclick = theaterClose;
