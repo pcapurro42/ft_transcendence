@@ -19,8 +19,9 @@ let high_contrast;
 initializeLanguage();
 initializeSettings();
 
-// < SOUNDS > //
+// < MUSICS AND SOUNDS > //
 
+initializeMusics();
 initializeSounds();
 
 // < 42 CONNECT > //

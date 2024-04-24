@@ -50,6 +50,12 @@ function refreshSounds()
     sound_slider_label.innerHTML = "(" + sounds_volume + "%)";
 }
 
+function updateSoundsSlider()
+{
+	let sound_volume_slider = document.getElementById('sound_volume_slider');
+	sound_volume_slider.value = sounds_volume;
+}
+
 function initializeSounds()
 {
 	const simple_buttons = document.getElementsByClassName('btn-simple');
@@ -64,4 +70,6 @@ function initializeSounds()
 
 	for (let i = 0; i != complex_buttons.length; i++)
 		complex_buttons[i].addEventListener('click', closeSound);
+
+	updateSoundsSlider();
 }
