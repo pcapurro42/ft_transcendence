@@ -105,7 +105,18 @@ async function getAccessToken(auth_code){
     }
 }
 
-if (localStorage.getItem("status") == "connected")
-    login_btn.setAttribute("data-oname", "LOG OUT");
-else
-    login_btn.setAttribute("data-oname", "LOG IN WITH 42");
+function initializeAuth()
+{
+    if (localStorage.getItem("status") == null)
+    localStorage.setItem("status", "not connected");
+
+    if (localStorage.getItem("status") == "not connected")
+        document.getElementById('welcome').style.visibility = "hidden";
+    else
+        document.getElementById('welcome').style.display = "block";
+
+    if (localStorage.getItem("status") == "connected")
+        login_btn.setAttribute("data-oname", "LOG OUT");
+    else
+        login_btn.setAttribute("data-oname", "LOG IN WITH 42");
+}

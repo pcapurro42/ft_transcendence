@@ -25,13 +25,7 @@ initializeSounds();
 
 // < 42 CONNECT > //
 
-if (localStorage.getItem("status") == null)
-    localStorage.setItem("status", "not connected");
-
-if (localStorage.getItem("status") == "not connected")
-    document.getElementById('welcome').style.visibility = "hidden";
-else
-    document.getElementById('welcome').style.display = "block";
+initializeAuth();
 
 // < REFRESH > //
 
