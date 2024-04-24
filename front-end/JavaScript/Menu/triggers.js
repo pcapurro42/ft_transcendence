@@ -18,6 +18,11 @@ document.getElementById('credits_btn').onclick = theaterCredits;
 document.getElementById('vid_credits').onended = theaterClose;
 document.getElementById('credit_close').onclick = theaterClose;
 
+// < CUSTOMIZE > //
+
+document.getElementById('game_theme_btn_selector').onchange = changeGameMusic;
+document.getElementById('game_map_btn_selector').onchange = changeGameMap;
+
 // < SETTINGS > //
 
 document.getElementById('language_btn_selector').onchange = changeLanguage;

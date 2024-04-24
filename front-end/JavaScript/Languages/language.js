@@ -46,3 +46,11 @@ function refreshLanguage()
         }
     }
 }
+
+function initializeLanguage()
+{
+    if (localStorage.getItem("language") == null)
+        localStorage.setItem("language", "en"), language = "en";
+    else
+        language = localStorage.getItem("language");
+}

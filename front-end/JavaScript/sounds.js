@@ -34,22 +34,6 @@ function closeSound(event)
 	event.stopPropagation();
 }
 
-function initializeSounds()
-{
-	const simple_buttons = document.getElementsByClassName('btn-simple');
-
-	for (let i = 0; i < simple_buttons.length; i++)
-	{
-    	simple_buttons[i].addEventListener('mouseover', hoverSound);
-    	simple_buttons[i].addEventListener('click', clickSound);
-	}
-
-	let complex_buttons = document.getElementsByClassName('btn-complex');
-
-	for (let i = 0; i != complex_buttons.length; i++)
-		complex_buttons[i].addEventListener('click', closeSound);
-}
-
 function refreshSounds()
 {
 	let hover_sound = document.getElementById('hover_sound');
@@ -64,4 +48,20 @@ function refreshSounds()
 
 	let sound_slider_label = document.getElementById('sound_volume_slider_label');
     sound_slider_label.innerHTML = "(" + sounds_volume + "%)";
+}
+
+function initializeSounds()
+{
+	const simple_buttons = document.getElementsByClassName('btn-simple');
+
+	for (let i = 0; i < simple_buttons.length; i++)
+	{
+    	simple_buttons[i].addEventListener('mouseover', hoverSound);
+    	simple_buttons[i].addEventListener('click', clickSound);
+	}
+
+	let complex_buttons = document.getElementsByClassName('btn-complex');
+
+	for (let i = 0; i != complex_buttons.length; i++)
+		complex_buttons[i].addEventListener('click', closeSound);
 }

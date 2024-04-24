@@ -112,11 +112,6 @@ function removeSettings()
 
 function initializeSettings()
 {
-    if (localStorage.getItem("language") == null)
-        localStorage.setItem("language", "en"), language = "en";
-    else
-        language = localStorage.getItem("language");
-
     if (localStorage.getItem("sounds_volume") == null)
         localStorage.setItem("sounds_volume", 15), sounds_volume = 15;
     else

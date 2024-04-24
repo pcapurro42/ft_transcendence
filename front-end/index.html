@@ -72,45 +72,75 @@
 
                 <!-- MAIN MENU BUTTONS -->
 
-                <div id="main_menu_buttons" class="p-2 text-center">
+                <div id="main_menu_buttons" class="container">
 
-                    <button id="play_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Play" data-title="Play" title=""></button><br>
+                    <div class="p-2 text-center">
+                        <button id="play_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Play" data-title="Play" title=""></button><br>
 
-                    <button id="customize_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Customize" data-title="Customize" title=""></button><br>
-
-                    <button id="settings_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Settings" data-title="Settings" title=""></button><br>
-
-                    <button id="credits_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Credits" data-title="Credits" title=""></button><br>
+                        <button id="customize_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Customize" data-title="Customize" title=""></button><br>
+    
+                        <button id="settings_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Settings" data-title="Settings" title=""></button><br>
+    
+                        <button id="credits_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Credits" data-title="Credits" title=""></button><br>
+                    </div>
 
                 </div>
 
                 <!-- PLAY MENU -->
 
-                <div id="play_menu" class="p-2 text-center" style="display: none;">
+                <div id="play_menu" class="container" style="display: none;">
 
-                    <button id="create_game_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Create a game" data-title="Create a game" title=""></button><br>
+                    <div class="p-2 text-center">
+                        <button id="create_game_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Create a game" data-title="Create a game" title=""></button><br>
 
-                    <button id="join_game_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Join a game" data-title="Join a game" title=""></button><br>
-
-                    <button id="ai_game_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Play against AI" data-title="Play against AI" title=""></button><br>
-
-                    <button id="create_tournament_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Create a tournament" data-title="Create a tournament" title=""></button><br>
-
-                    <button id="join_tournament_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Join a tournament" data-title="Join a tournament" title=""></button><br><br>
-
-                    <button id="play_back_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button><br>
+                        <button id="join_game_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Join a game" data-title="Join a game" title=""></button><br>
+    
+                        <button id="ai_game_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Play against AI" data-title="Play against AI" title=""></button><br>
+    
+                        <button id="create_tournament_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Create a tournament" data-title="Create a tournament" title=""></button><br>
+    
+                        <button id="join_tournament_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Join a tournament" data-title="Join a tournament" title=""></button><br><br>
+    
+                        <button id="play_back_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
+                    </div>
 
                 </div>
 
                 <!-- CUSTOMIZE MENU -->
 
-                <div id="customize_menu" class="p-2 text-center" style="display: none;">
+                <div id="customize_menu" class="container" style="display: none;">
 
-                    <button id="change_game_theme" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Change game theme" data-title="Change game theme" title=""></button><br>
+                    <div class="p-2 text-center">
 
-                    <button id="change_game_map" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Change game map" data-title="Change game map" title=""></button><br>
+                        <div>
+                            <button id="game_theme_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Game theme" data-title="Game theme" title=""></button><br>
+                            <select id="game_theme_btn_selector" class="form-select form-select-lg mx-auto" style="width: auto;">
+                                <option class="btn-simple" data-oname="None" data-title="None" title=""></option>
+                                <option class="btn-simple" data-title="Metal Gear Solid 1 - Duel" title="">MGS 1 - Duel</option>
+                                <option class="btn-simple" title="...">...</option>
+                                <!-- ... -->
+                            </select>
+                        </div>
 
-                    <button id="customize_back_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button><br>
+                        <br>
+
+                        <div>
+                            <button id="game_map_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Game map" data-title="Game map" title=""></button><br>
+                            <select id="game_map_btn_selector" class="form-select form-select-lg mx-auto" style="width: auto;">
+                                <option class="btn-simple" data-oname="None" data-title="None" title=""></option>
+                                <option class="btn-simple" title="...">...</option>
+                                <!-- ... -->
+                            </select>
+
+                        </div>
+
+                        <br>
+   
+                        <div class="d-flex justify-content-center">
+                            <button id="customize_back_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
+                        </div>
+
+                    </div>
 
                     <!-- ... -->
 
@@ -206,27 +236,25 @@
 
         <!-- SCRIPTS -->
 
-        <script src="./JavaScript/tools.js"></script>
-
         <script src="./JavaScript/Languages/en.js"></script>
         <script src="./JavaScript/Languages/fr.js"></script>
-        <script src="./JavaScript/load-language.js"></script>
+        <script src="./JavaScript/Languages/language.js"></script>
 
-        <script src="./JavaScript/load-display.js"></script>
+        <script src="./JavaScript/display.js"></script>
 
-        <script src="./JavaScript/play.js"></script>
-        <script src="./JavaScript/settings.js"></script>
-        <script src="./JavaScript/customize.js"></script>
-        <script src="./JavaScript/credits.js"></script>
+        <script src="./JavaScript/Menu/auth.js"></script>
 
-        <script src="./JavaScript/auth.js"></script>
+        <script src="./JavaScript/Menu/play.js"></script>
+        <script src="./JavaScript/Menu/settings.js"></script>
+        <script src="./JavaScript/Menu/customize.js"></script>
+        <script src="./JavaScript/Menu/credits.js"></script>
 
         <script src="./JavaScript/sounds.js"></script>
         <script src="./JavaScript/music.js"></script>
 
-        <script src="./JavaScript/triggers.js"></script>
+        <script src="./JavaScript/Menu/triggers.js"></script>
 
-        <script src="./JavaScript/initialization.js"></script>
+        <script src="./JavaScript/init.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
