@@ -27,9 +27,9 @@ document.getElementById('game_map_btn_selector').onchange = changeGameMap;
 
 document.getElementById('language_btn_selector').onchange = changeLanguage;
 document.getElementById('text_size_btn_selector').onchange = changeTextSize;
-document.getElementById('sound_volume_slider').onchange = changeSoundVolume;
+document.getElementById('sound_volume_slider').onchange = changeSoundsVolume;
 document.getElementById('music_volume_slider').onchange = changeMusicVolume;
-document.getElementById('high_contrast_btn_y').onclick = enableDisableHighContrast.bind(null, "true");
-document.getElementById('high_contrast_btn_n').onclick = enableDisableHighContrast.bind(null, "false");
-document.getElementById('image_desc_btn_y').onclick = enableDisableDescriptiveImages.bind(null, "true");
-document.getElementById('image_desc_btn_n').onclick = enableDisableDescriptiveImages.bind(null, "false");
+document.getElementById('high_contrast_btn_y').onclick = changeHighContrast.bind(null, "true");
+document.getElementById('high_contrast_btn_n').onclick = changeHighContrast.bind(null, "false");
+document.getElementById('image_desc_btn_y').onclick = changeDescriptiveImages.bind(null, "true");
+document.getElementById('image_desc_btn_n').onclick = changeDescriptiveImages.bind(null, "false");

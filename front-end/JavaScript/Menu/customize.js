@@ -1,15 +1,3 @@
-// < SETERS > //
-
-function setGameMusci()
-{
-    ;
-}
-
-function setGameMap()
-{
-    ;
-}
-
 // < CHANGERS > //
 
 function changeGameMusic()

@@ -1,21 +1,6 @@
-// < SETERS > //
+// < CHANGERS > //
 
-function setSoundsVolume(value)
-{
-    ;
-}
-
-function setMusicVolume(value)
-{
-    ;
-}
-
-function setTextSize(value)
-{
-    ;
-}
-
-function setHighContrast(value)
+function changeHighContrast(value)
 {
     if (value == "true")
     {
@@ -36,7 +21,7 @@ function setHighContrast(value)
     refreshDisplay();
 }
 
-function setDescriptiveImages(value)
+function changeDescriptiveImages(value)
 {
     if (value == "true")
     {
@@ -57,9 +42,7 @@ function setDescriptiveImages(value)
     refreshDisplay();
 }
 
-// < CHANGERS > //
-
-function changeSoundVolume()
+function changeSoundsVolume()
 {
     let sound_slider = document.getElementById('sound_volume_slider');
     let new_volume = sound_slider.value;
@@ -139,29 +122,29 @@ function initializeSettings()
         localStorage.setItem("sounds_volume", 15), sounds_volume = 15;
     else
         sounds_volume = localStorage.getItem("sounds_volume");
-    setSoundsVolume(text_size);
+    changeSoundsVolume(text_size);
 
     if (localStorage.getItem("music_volume") == null)
         localStorage.setItem("music_volume", 15), music_volume = 15;
     else
         music_volume = localStorage.getItem("music_volume");
-    setMusicVolume(text_size);
+    changeMusicVolume(text_size);
 
     if (localStorage.getItem("text_size") == null)
         localStorage.setItem("text_size", "normal"), text_size = "normal";
     else
         text_size = localStorage.getItem("text_size");
-    setTextSize(text_size);
+    changeTextSize(text_size);
 
     if (localStorage.getItem("descriptive_images") == null)
         localStorage.setItem("descriptive_images", "false"), descriptive_images = "false";
     else
         descriptive_images = localStorage.getItem("descriptive_images");
-    setDescriptiveImages(descriptive_images);
+    changeDescriptiveImages(descriptive_images);
 
     if (localStorage.getItem("high_contrast") == null)
         localStorage.setItem("high_contrast", "false"), high_contrast = "false"
     else
         high_contrast = localStorage.getItem("high_contrast");
-    setHighContrast(high_contrast);
+    changeHighContrast(high_contrast);
 }
