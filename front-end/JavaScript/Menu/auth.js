@@ -106,6 +106,8 @@ async function getAccessToken(auth_code){
     }
 }
 
+// < DISPLAY > //
+
 function refreshLogin()
 {
     if (account_status == "connected")
@@ -134,6 +136,4 @@ function initializeAuth()
         account_status = "not connected";
     else
         account_status = "connected";
-
-    refreshLogin();
 }

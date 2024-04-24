@@ -32,6 +32,7 @@ let client_id;
 let redirect_uri;
 
 initializeAuth();
+refreshLogin();
 
 // < REFRESH > //
 
