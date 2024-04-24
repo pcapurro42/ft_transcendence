@@ -20,16 +20,6 @@ async function log()
     refreshLogin();
 }
 
-function displayLogin()
-{
-    ;
-}
-
-function removeLogin()
-{
-    ;
-}
-
 /********************************************** API UTILS ************************************************/
 
 async function handleRedirection(){
