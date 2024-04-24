@@ -73,5 +73,13 @@ function initializeSounds()
 	for (let i = 0; i != complex_buttons.length; i++)
 		complex_buttons[i].addEventListener('click', closeSound);
 
+	let alert_buttons = document.getElementsByClassName('btn-alert');
+
+	for (let i = 0; i != alert_buttons.length; i++)
+	{
+		alert_buttons[i].addEventListener('mouseover', hoverSound);
+		alert_buttons[i].addEventListener('click', alertSound);
+	}
+
 	updateSoundsSlider();
 }
