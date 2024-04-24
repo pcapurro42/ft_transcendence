@@ -7,18 +7,29 @@ async function log()
     if (localStorage.getItem("status") == "not connected")
     {
         window.location.href = `https://api.intra.42.fr/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`;
+        
         localStorage.setItem("status", "connected");
+        account_status = "connected";
     }
     else
     {
-        // ...
-        login_btn.setAttribute("data-oname", "LOG IN WITH 42");
-        refreshLanguage();
         localStorage.setItem("status", "not connected");
         localStorage.removeItem("user_info");
-        document.getElementById('welcome').style.visibility = "hidden";
+        account_status = "not connected";
     }
+    refreshLogin();
 }
+
+function displayLogin()
+{
+    ;
+}
+
+function removeLogin()
+{
+    ;
+}
+
 /********************************************** API UTILS ************************************************/
 
 async function handleRedirection(){
@@ -28,11 +39,14 @@ async function handleRedirection(){
 
     if ((!code && !err) || localStorage.getItem("status") == "not connected"){
         localStorage.setItem("status", "not connected");
-        document.getElementById('welcome').style.visibility = "hidden";
+        account_status == "not connected";
+        refreshLogin();
         return;
     }
     else if (err){
         localStorage.setItem("status", "not connected");
+        account_status == "not connected";
+        refreshLogin();
         console.error(`Error during login: ${err}`);
         return;
     }
@@ -44,14 +58,14 @@ async function handleRedirection(){
         const userinfo = await sendAccessToken();
         if (userinfo){
             localStorage.setItem('user_info', JSON.stringify(userinfo));
-            document.getElementById('welcome').innerHTML += ` ${userinfo.login}.`;
-            document.getElementById('welcome').style.display = "block";
+            document.getElementById('intra_login').innerHTML = ` ${userinfo.login}`;
         }
         else{
             throw("Error: user_info not retrieved.");
         }
     } catch (error) {
         localStorage.setItem("status", "not connected");
+        refreshLogin();
         console.error('Failed to retrieve or process user info:', error);
     }
 }
@@ -68,9 +82,9 @@ async function sendAccessToken(){
         console.log("Error: No response received.");
         return;
     }
-    login_btn.setAttribute("data-oname", "LOG OUT");
-    refreshLanguage();
     localStorage.setItem("status", "connected");
+    account_status == "connected";
+    refreshLogin();
     return response;
 }
 
@@ -101,21 +115,35 @@ async function getAccessToken(auth_code){
     }
 }
 
+function refreshLogin()
+{
+    if (account_status == "connected")
+    {
+        console.log("ok");
+        document.getElementById('logged').style.display = "block";
+        document.getElementById('login').style.visibility = "none";
+    }
+    else
+    {
+        document.getElementById('login').style.visibility = "block";
+        document.getElementById('logged').style.visibility = "none";
+    }
+}
+
 function initializeAuth()
 {
     client_id = 'u-s4t2ud-328d5957a0e78853f7b035bed31812c4bd82ea90773c43b8686b35f1ae4d1353';
     redirect_uri = 'https://127.0.0.1';
 
     if (localStorage.getItem("status") == null)
+    {
         localStorage.setItem("status", "not connected");
-
-    if (localStorage.getItem("status") == "not connected")
-        document.getElementById('welcome').style.visibility = "hidden";
+        account_status = "not connected";
+    }
+    else if (localStorage.getItem("status") == "not connected")
+        account_status = "not connected";
     else
-        document.getElementById('welcome').style.display = "block";
+        account_status = "connected";
 
-    if (localStorage.getItem("status") == "connected")
-        login_btn.setAttribute("data-oname", "LOG OUT");
-    else
-        login_btn.setAttribute("data-oname", "LOG IN WITH 42");
+    refreshLogin();
 }

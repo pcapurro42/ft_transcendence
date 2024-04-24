@@ -26,6 +26,8 @@ initializeSounds();
 
 // < 42 CONNECT > //
 
+let account_status;
+
 let client_id;
 let redirect_uri;
 

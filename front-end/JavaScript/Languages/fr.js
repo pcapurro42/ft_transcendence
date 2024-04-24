@@ -2,9 +2,7 @@ let user_info = localStorage.getItem('user_info');
 let loginName = user_info ? JSON.parse(user_info).login : "null";
 
 let fr = [
-    ["Welcome", `Bienvenue,`],
     ["LOG IN WITH 42", "SE CONNECTER AVEC 42"],
-    ["LOG OUT", "SE DÉCONNECTER"],
 
     ["Enable/Disable menu music", "Activer/désactiver la musique du menu"],
 

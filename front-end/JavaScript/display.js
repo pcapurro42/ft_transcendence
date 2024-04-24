@@ -8,6 +8,9 @@ function defaultHide()
     let settings_back_btn = document.getElementById('settings_back_btn');
     settings_back_btn.style.display = "none";
 
+    let logged = document.getElementById('logged');
+    logged.style.display = "none";
+
     let video = document.getElementById('vid_credits');
     video.style.display="none";
 }
