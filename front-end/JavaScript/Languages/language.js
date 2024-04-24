@@ -15,6 +15,8 @@ function refreshLanguage()
 
     if (lang == "en")
     {
+        document.getElementById('language_btn_selector').selectedIndex = 0;
+
         for (let i = 0; i != words.length; i++)
             words[i].innerHTML = getElement(en, words[i].getAttribute("data-oname"));
 
@@ -31,6 +33,8 @@ function refreshLanguage()
     }
     if (lang == "fr")
     {
+        document.getElementById('language_btn_selector').selectedIndex = 1;
+
         for (let i = 0; i != words.length; i++)
             words[i].innerHTML = getElement(fr, words[i].getAttribute("data-oname"));
 

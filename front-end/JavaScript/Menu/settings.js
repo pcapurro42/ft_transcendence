@@ -1,43 +1,31 @@
 // < CHANGERS > //
 
-function changeHighContrast(value)
+function changeHighContrast()
 {
-    if (value == "true")
+    if (high_contrast == "true")
     {
-        document.getElementById('high_contrast_btn_y').style = "background-color: red;";
-        document.getElementById('high_contrast_btn_n').style = "";
-    
-        high_contrast = "true";
-        localStorage.setItem("high_contrast", "true");
-    }
-    else
-    {
-        document.getElementById('high_contrast_btn_n').style = "background-color: red;";
-        document.getElementById('high_contrast_btn_y').style = "";
-    
         high_contrast = "false";
         localStorage.setItem("high_contrast", "false");
+    }
+    else
+    {    
+        high_contrast = "true";
+        localStorage.setItem("high_contrast", "true");
     }
     refreshDisplay();
 }
 
-function changeDescriptiveImages(value)
+function changeDescriptiveImages()
 {
-    if (value == "true")
+    if (descriptive_images == "true")
     {
-        document.getElementById('image_desc_btn_y').style = "background-color: red;";
-        document.getElementById('image_desc_btn_n').style = "";
-    
-        descriptive_images = "true";
-        localStorage.setItem("descriptive_images", "true");
+        descriptive_images = "false";
+        localStorage.setItem("descriptive_images", "false");
     }
     else
     {
-        document.getElementById('image_desc_btn_n').style = "background-color: red;";
-        document.getElementById('image_desc_btn_y').style = "";
-    
-        descriptive_images = "false";
-        localStorage.setItem("descriptive_images", "false");
+        descriptive_images = "true";
+        localStorage.setItem("descriptive_images", "true");
     }
     refreshDisplay();
 }
@@ -122,29 +110,26 @@ function initializeSettings()
         localStorage.setItem("sounds_volume", 15), sounds_volume = 15;
     else
         sounds_volume = localStorage.getItem("sounds_volume");
-    changeSoundsVolume();
 
     if (localStorage.getItem("music_volume") == null)
         localStorage.setItem("music_volume", 15), music_volume = 15;
     else
         music_volume = localStorage.getItem("music_volume");
-    changeMusicVolume();
 
     if (localStorage.getItem("text_size") == null)
         localStorage.setItem("text_size", "normal"), text_size = "normal";
     else
         text_size = localStorage.getItem("text_size");
-    changeTextSize();
 
     if (localStorage.getItem("descriptive_images") == null)
         localStorage.setItem("descriptive_images", "false"), descriptive_images = "false";
     else
         descriptive_images = localStorage.getItem("descriptive_images");
-    changeDescriptiveImages(descriptive_images);
 
     if (localStorage.getItem("high_contrast") == null)
         localStorage.setItem("high_contrast", "false"), high_contrast = "false"
     else
         high_contrast = localStorage.getItem("high_contrast");
-    changeHighContrast(high_contrast);
+    
+    refreshDisplay();
 }
