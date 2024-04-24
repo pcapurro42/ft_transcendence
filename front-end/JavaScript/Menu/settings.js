@@ -1,26 +1,21 @@
-function changeSoundVolume()
+// < SETERS > //
+
+function setSoundsVolume(value)
 {
-    let sound_slider = document.getElementById('sound_volume_slider');
-    let new_volume = sound_slider.value;
-
-    localStorage.setItem('sounds_volume', new_volume);
-    sounds_volume = new_volume;
-
-    refreshSounds();
+    ;
 }
 
-function changeMusicVolume()
+function setMusicVolume(value)
 {
-    let music_slider = document.getElementById('music_volume_slider');
-    let new_volume = music_slider.value;
-
-    localStorage.setItem('music_volume', new_volume);
-    music_volume = new_volume;
-
-    refreshMusics();
+    ;
 }
 
-function enableDisableHighContrast(value)
+function setTextSize(value)
+{
+    ;
+}
+
+function setHighContrast(value)
 {
     if (value == "true")
     {
@@ -41,7 +36,7 @@ function enableDisableHighContrast(value)
     refreshDisplay();
 }
 
-function enableDisableDescriptiveImages(value)
+function setDescriptiveImages(value)
 {
     if (value == "true")
     {
@@ -60,6 +55,30 @@ function enableDisableDescriptiveImages(value)
         localStorage.setItem("descriptive_images", "false");
     }
     refreshDisplay();
+}
+
+// < CHANGERS > //
+
+function changeSoundVolume()
+{
+    let sound_slider = document.getElementById('sound_volume_slider');
+    let new_volume = sound_slider.value;
+
+    localStorage.setItem('sounds_volume', new_volume);
+    sounds_volume = new_volume;
+
+    refreshSounds();
+}
+
+function changeMusicVolume()
+{
+    let music_slider = document.getElementById('music_volume_slider');
+    let new_volume = music_slider.value;
+
+    localStorage.setItem('music_volume', new_volume);
+    music_volume = new_volume;
+
+    refreshMusics();
 }
 
 function changeTextSize()
@@ -83,6 +102,8 @@ function changeLanguage()
 
     refreshLanguage();
 }
+
+// < DISPLAY/REMOVE > //
 
 function displaySettings()
 {
@@ -110,32 +131,37 @@ function removeSettings()
     main_menu.style.display = 'block';
 }
 
+// < INIT > //
+
 function initializeSettings()
 {
     if (localStorage.getItem("sounds_volume") == null)
         localStorage.setItem("sounds_volume", 15), sounds_volume = 15;
     else
         sounds_volume = localStorage.getItem("sounds_volume");
+    setSoundsVolume(text_size);
 
     if (localStorage.getItem("music_volume") == null)
         localStorage.setItem("music_volume", 15), music_volume = 15;
     else
         music_volume = localStorage.getItem("music_volume");
+    setMusicVolume(text_size);
 
     if (localStorage.getItem("text_size") == null)
         localStorage.setItem("text_size", "normal"), text_size = "normal";
     else
         text_size = localStorage.getItem("text_size");
+    setTextSize(text_size);
 
     if (localStorage.getItem("descriptive_images") == null)
         localStorage.setItem("descriptive_images", "false"), descriptive_images = "false";
     else
         descriptive_images = localStorage.getItem("descriptive_images");
-    enableDisableDescriptiveImages(descriptive_images);
+    setDescriptiveImages(descriptive_images);
 
     if (localStorage.getItem("high_contrast") == null)
         localStorage.setItem("high_contrast", "false"), high_contrast = "false"
     else
         high_contrast = localStorage.getItem("high_contrast");
-    enableDisableHighContrast(high_contrast);
+    setHighContrast(high_contrast);
 }

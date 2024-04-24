@@ -103,8 +103,11 @@ async function getAccessToken(auth_code){
 
 function initializeAuth()
 {
+    client_id = 'u-s4t2ud-328d5957a0e78853f7b035bed31812c4bd82ea90773c43b8686b35f1ae4d1353';
+    redirect_uri = 'https://127.0.0.1';
+
     if (localStorage.getItem("status") == null)
-    localStorage.setItem("status", "not connected");
+        localStorage.setItem("status", "not connected");
 
     if (localStorage.getItem("status") == "not connected")
         document.getElementById('welcome').style.visibility = "hidden";

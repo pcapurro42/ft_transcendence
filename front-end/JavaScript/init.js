@@ -25,8 +25,8 @@ initializeSounds();
 
 // < 42 CONNECT > //
 
-const client_id = 'u-s4t2ud-328d5957a0e78853f7b035bed31812c4bd82ea90773c43b8686b35f1ae4d1353';
-const redirect_uri = 'https://127.0.0.1';
+let client_id;
+let redirect_uri;
 
 initializeAuth();
 

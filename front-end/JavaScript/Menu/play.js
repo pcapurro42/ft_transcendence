@@ -1,3 +1,7 @@
+// < ... > //
+
+// < DISPLAY/REMOVE > //
+
 function displayPlay()
 {
     let main_menu = document.getElementById('main_menu_buttons');
