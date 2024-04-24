@@ -26,7 +26,10 @@ function setBackgroundColor(color)
 
 function setMaterialsColor(color)
 {
-    materials = document.getElementsByClassName("form-select");
+    forms_select = document.getElementsByClassName("form-select");
+    dropdowns = document.getElementsByClassName("dropdown");
+    materials = [...forms_select, ...dropdowns];
+
 
     for (let i = 0; i != materials.length; i++)
     {

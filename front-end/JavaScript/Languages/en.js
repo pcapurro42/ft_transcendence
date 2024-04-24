@@ -3,6 +3,7 @@ loginName = user_info? JSON.parse(user_info).login : "null";
 
 let en = [
     ["LOG IN WITH 42", "LOG IN WITH 42"],
+    ["LOG OUT", "LOG OUT"],
 
     ["Enable/Disable menu music", "Enable/Disable menu music"],
 

@@ -1,4 +1,4 @@
-window.onload = handleRedirection;
+// window.onload = handleRedirection;
 
 /****************************************** Log in | Log Out ***********************************************/
 
@@ -113,11 +113,11 @@ function refreshLogin()
     if (account_status == "connected")
     {
         document.getElementById('logged').style.display = "block";
-        document.getElementById('login').style.display = "none";
+        // document.getElementById('login').style.display = "none";
     }
     else
     {
-        document.getElementById('login').style.display = "block";
+        // document.getElementById('login').style.display = "block";
         document.getElementById('logged').style.display = "none";
     }
 }
