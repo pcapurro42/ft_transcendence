@@ -15,6 +15,8 @@ let fr = [
     ["Settings", "Options"],
     ["Credits", "Crédits"],
 
+    ["MGS 1 - Duel", "MGS 1 - Duel"],
+
     ["Language", "Langue"],
     ["Sound volume", "Volume du son"],
     ["Music volume", "Volume de la musique"],
@@ -25,7 +27,7 @@ let fr = [
     ["Game theme", "Musique du jeu"],
     ["Game map", "Carte du jeu"],
 
-    ["None", "Aucun"],
+    ["– None –", "– Aucun –"],
 
     ["Create a game", "Créer une partie"],
     ["Join a game", "Rejoindre une partie"],
