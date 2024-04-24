@@ -4,23 +4,20 @@ window.onload = handleRedirection;
 
 async function login()
 {
-    window.location.href = `https://api.intra.42.fr/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`;
+    setTimeout(() => {window.location.href = `https://api.intra.42.fr/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`;}, 800);
+    
         
     localStorage.setItem("status", "connected");
     account_status = "connected";
-
-    refreshLogin();
 }
 
 async function logout()
 {
-    window.location.href = `https://127.0.0.1/`;
+    setTimeout(() => {window.location.href = `https://127.0.0.1/`;}, 800);
 
     localStorage.setItem("status", "not connected");
     localStorage.removeItem("user_info");
     account_status = "not connected";
-
-    refreshLogin();
 }
 
 /********************************************** API UTILS ************************************************/
