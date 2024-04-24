@@ -48,6 +48,8 @@ function refreshSounds()
 
 	let sound_slider_label = document.getElementById('sound_volume_slider_label');
     sound_slider_label.innerHTML = "(" + sounds_volume + "%)";
+
+	updateSoundsSlider();
 }
 
 function updateSoundsSlider()

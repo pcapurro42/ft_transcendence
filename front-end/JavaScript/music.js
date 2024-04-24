@@ -18,12 +18,6 @@ function enableDisableMusic()
 	}
 }
 
-function updateMusicsSlider()
-{
-	let music_volume_slider = document.getElementById('music_volume_slider');
-	music_volume_slider.value = music_volume;
-}
-
 function refreshMusics()
 {
 	let menu_theme = document.getElementById('mgs');
@@ -34,6 +28,14 @@ function refreshMusics()
 
 	let music_slider_label = document.getElementById('music_volume_slider_label');
     music_slider_label.innerHTML = "(" + music_volume + "%)";
+
+	updateMusicsSlider();
+}
+
+function updateMusicsSlider()
+{
+	let music_volume_slider = document.getElementById('music_volume_slider');
+	music_volume_slider.value = music_volume;
 }
 
 function initializeMusics()
