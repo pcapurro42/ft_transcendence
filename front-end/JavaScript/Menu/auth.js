@@ -2,21 +2,22 @@ window.onload = handleRedirection;
 
 /****************************************** Log in | Log Out ***********************************************/
 
-async function log()
+async function login()
 {
-    if (localStorage.getItem("status") == "not connected")
-    {
-        window.location.href = `https://api.intra.42.fr/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`;
+    window.location.href = `https://api.intra.42.fr/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`;
         
-        localStorage.setItem("status", "connected");
-        account_status = "connected";
-    }
-    else
-    {
-        localStorage.setItem("status", "not connected");
-        localStorage.removeItem("user_info");
-        account_status = "not connected";
-    }
+    localStorage.setItem("status", "connected");
+    account_status = "connected";
+
+    refreshLogin();
+}
+
+async function logout()
+{
+    localStorage.setItem("status", "not connected");
+    localStorage.removeItem("user_info");
+    account_status = "not connected";
+
     refreshLogin();
 }
 
@@ -109,14 +110,13 @@ function refreshLogin()
 {
     if (account_status == "connected")
     {
-        console.log("ok");
         document.getElementById('logged').style.display = "block";
-        document.getElementById('login').style.visibility = "none";
+        document.getElementById('login').style.display = "none";
     }
     else
     {
-        document.getElementById('login').style.visibility = "block";
-        document.getElementById('logged').style.visibility = "none";
+        document.getElementById('login').style.display = "block";
+        document.getElementById('logged').style.display = "none";
     }
 }
 
