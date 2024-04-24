@@ -33,6 +33,9 @@ let en = [
     ["Create a tournament", "Create a tournament"],
     ["Join a tournament", "Join a tournament"],
 
+    ["Enabled", "Enabled"],
+    ["Disabled", "Disabled"],
+
     ["Back", "Back"],
     ["Yes", "Yes"],
     ["No", "No"],

@@ -96,8 +96,8 @@ function setHighContrast(value)
 {
     if (high_contrast == "true")
     {
-        document.getElementById('high_contrast_btn_y').style = "background-color: red;";
-        document.getElementById('high_contrast_btn_n').style = "";
+        document.getElementById('high_contrast_btn_yn').setAttribute('data-oname', 'Enabled');
+        document.getElementById('high_contrast_btn_yn').style.backgroundColor = "red";
 
         setBackgroundColor("black");
         setTextColor("white");
@@ -106,8 +106,8 @@ function setHighContrast(value)
     }
     else
     {
-        document.getElementById('high_contrast_btn_n').style = "background-color: red;";
-        document.getElementById('high_contrast_btn_y').style = "";
+        document.getElementById('high_contrast_btn_yn').setAttribute('data-oname', 'Disabled');
+        document.getElementById('high_contrast_btn_yn').style.backgroundColor = "";
 
         setBackgroundColor("white");
         setTextColor("black");
@@ -122,19 +122,17 @@ function setDescriptiveImages(value)
 
     if (value == "enable")
     {
-        document.getElementById('image_desc_btn_y').style = "background-color: red;";
-        document.getElementById('image_desc_btn_n').style = "";
-        
-        refreshLanguage();
+        document.getElementById('image_desc_btn_yn').setAttribute('data-oname', 'Enabled');
+        document.getElementById('image_desc_btn_yn').style.backgroundColor = "red";
     }
     else
     {
+        document.getElementById('image_desc_btn_yn').setAttribute('data-oname', 'Disabled');
+        document.getElementById('image_desc_btn_yn').style.backgroundColor = "";
         for (let i = 0; i != descriptions.length; i++)
             descriptions[i].setAttribute('title', "");
-        
-        document.getElementById('image_desc_btn_n').style = "background-color: red;";
-        document.getElementById('image_desc_btn_y').style = "";
     }
+    refreshLanguage();
 }
 
 function refreshDisplay()

@@ -33,6 +33,9 @@ let fr = [
     ["Create a tournament", "Créer un tournoi"],
     ["Join a tournament", "Rejoindre un tournoi"],
 
+    ["Enabled", "Activé"],
+    ["Disabled", "Désactivé"],
+
     ["Back", "Retour"],
     ["Yes", "Oui"],
     ["No", "Non"],

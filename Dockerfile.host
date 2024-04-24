@@ -7,8 +7,6 @@ RUN apt-get -y update ; \
 
 RUN mkdir -p /etc/nginx/ssl/
 
-COPY front-end/ /home/front-end
-
 RUN openssl req \
     -x509 \
     -nodes \
@@ -17,6 +15,8 @@ RUN openssl req \
     -subj "/C=FR/ST=PACA/L=Nice/O=42/OU=42Nice/CN=127.0.0.1"
 
 COPY nginx.conf /etc/nginx/conf.d/
+
+COPY front-end/ /home/front-end
 
 EXPOSE 443
 

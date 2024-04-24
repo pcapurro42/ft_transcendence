@@ -1,4 +1,4 @@
-// localStorage.clear();
+localStorage.clear();
 
 // < CUSTOMIZE > //
 
