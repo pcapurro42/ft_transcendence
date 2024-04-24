@@ -48,11 +48,11 @@ function initializeCustomize()
         localStorage.setItem('game_music', 'none'), game_music = 'none'
     else
         game_music = localStorage.getItem('game_music');
-    setGameMusic(game_music);
+    changeGameMusic(game_music);
 
     if (localStorage.getItem('game_map') == null)
         localStorage.setItem('game_map', 'none'), game_map = 'none'
     else
         game_map = localStorage.getItem('game_map');
-    setGameMap(game_map);
+    changeGameMap(game_map);
 }

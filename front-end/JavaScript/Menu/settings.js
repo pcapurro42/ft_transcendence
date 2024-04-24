@@ -122,19 +122,19 @@ function initializeSettings()
         localStorage.setItem("sounds_volume", 15), sounds_volume = 15;
     else
         sounds_volume = localStorage.getItem("sounds_volume");
-    changeSoundsVolume(text_size);
+    changeSoundsVolume();
 
     if (localStorage.getItem("music_volume") == null)
         localStorage.setItem("music_volume", 15), music_volume = 15;
     else
         music_volume = localStorage.getItem("music_volume");
-    changeMusicVolume(text_size);
+    changeMusicVolume();
 
     if (localStorage.getItem("text_size") == null)
         localStorage.setItem("text_size", "normal"), text_size = "normal";
     else
         text_size = localStorage.getItem("text_size");
-    changeTextSize(text_size);
+    changeTextSize();
 
     if (localStorage.getItem("descriptive_images") == null)
         localStorage.setItem("descriptive_images", "false"), descriptive_images = "false";
