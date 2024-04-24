@@ -1,18 +1,18 @@
-function defaultHide()
+function displayMenu()
 {
     let play_menu = document.getElementById('play_menu');
     play_menu.style.display = "none";
 
+    let customize_menu = document.getElementById('customize_menu');
+    customize_menu.style.display = "none";
+
     let settings_menu = document.getElementById('settings_menu');
     settings_menu.style.display = "none";
-    let settings_back_btn = document.getElementById('settings_back_btn');
-    settings_back_btn.style.display = "none";
 
-    let logged = document.getElementById('logged');
-    logged.style.display = "none";
+    let main_menu_buttons = document.getElementById('main_menu_buttons');
+    main_menu_buttons.style.display = "block";
 
-    let video = document.getElementById('vid_credits');
-    video.style.display="none";
+    refreshLogin();
 }
 
 function setBackgroundColor(color)

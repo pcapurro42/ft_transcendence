@@ -36,7 +36,7 @@ refreshLogin();
 
 // < REFRESH > //
 
-defaultHide();
+displayMenu();
 
 refreshLanguage();
 refreshDisplay();
