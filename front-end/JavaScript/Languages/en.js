@@ -28,11 +28,9 @@ let en = [
 
     ["– None –", "– None –"],
 
-    ["Create a game", "Create a game"],
-    ["Join a game", "Join a game"],
-    ["Play against AI", "Play against AI"],
-    ["Create a tournament", "Create a tournament"],
-    ["Join a tournament", "Join a tournament"],
+    ["Normal game", "Normal game"],
+    ["Tournament", "Tournament"],
+    ["Against AI", "Against AI"],
 
     ["Enabled", "Enabled"],
     ["Disabled", "Disabled"],

@@ -28,11 +28,9 @@ let fr = [
 
     ["– None –", "– Aucun –"],
 
-    ["Create a game", "Créer une partie"],
-    ["Join a game", "Rejoindre une partie"],
-    ["Play against AI", "Jouer contre l'IA"],
-    ["Create a tournament", "Créer un tournoi"],
-    ["Join a tournament", "Rejoindre un tournoi"],
+    ["Normal game", "Partie normale"],
+    ["Tournament", "Tournoi"],
+    ["Against AI", "Contre l'IA"],
 
     ["Enabled", "Activé"],
     ["Disabled", "Désactivé"],
