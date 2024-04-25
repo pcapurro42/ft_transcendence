@@ -14,6 +14,9 @@ let en = [
     ["Settings", "Settings"],
     ["Credits", "Credits"],
 
+    ["Create a game", "Create a game"],
+    ["Join a game", "Join a game"],
+
     ["MGS 1 - Duel", "MGS 1 - Duel"],
 
     ["Language", "Language"],

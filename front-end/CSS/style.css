@@ -3,12 +3,12 @@
     border: 0cap;
 }
 
-#play_back_btn, #settings_back_btn, #customize_back_btn
+#play_back_btn, #settings_back_btn, #customize_back_btn, #play_game_back_btn
 {
     font-weight: bold;
 }
 
-#play_btn:hover, #customize_btn:hover, #settings_btn:hover, #credits_btn:hover, #play_game_btn:hover, #ai_game_btn:hover, #play_tournament_btn:hover, #play_back_btn:hover, #settings_back_btn:hover, #customize_back_btn:hover
+#play_btn:hover, #customize_btn:hover, #settings_btn:hover, #credits_btn:hover, #play_game_btn:hover, #ai_game_btn:hover, #play_tournament_btn:hover, #play_back_btn:hover, #settings_back_btn:hover, #customize_back_btn:hover, #play_game_back_btn:hover, #join_game_btn:hover, #create_game_btn:hover
 {
     text-decoration: underline;
 }
