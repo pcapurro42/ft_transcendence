@@ -110,13 +110,25 @@ function refreshLogin()
     {
         document.getElementById('intra_login').style.display = "block";
         document.getElementById('login_btn').style.display = "none";
+        
+        document.getElementById('create_game_btn').classList.remove('disabled');
+        document.getElementById('join_game_btn').classList.remove('disabled');
+        document.getElementById('create_tournament_btn').classList.remove('disabled');
+        document.getElementById('join_tournament_btn').classList.remove('disabled');
     }
     else
     {
         document.getElementById('login_btn').style.display = "block";
         document.getElementById('intra_login').style.display = "none";
+
+        document.getElementById('create_game_btn').classList.add('disabled');
+        document.getElementById('join_game_btn').classList.add('disabled');
+        document.getElementById('create_tournament_btn').classList.add('disabled');
+        document.getElementById('join_tournament_btn').classList.add('disabled');
     }
 }
+
+// < INIT > //
 
 function initializeAuth()
 {
