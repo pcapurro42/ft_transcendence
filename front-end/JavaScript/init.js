@@ -43,6 +43,3 @@ refreshDisplay();
 
 refreshSounds();
 refreshMusics();
-
-account_status = "connected";
-refreshLogin();
