@@ -1,5 +1,8 @@
 function displayMenu()
 {
+    let main_menu_page = document.getElementById('main_menu_page');
+    main_menu_page.style.display = "block";
+
     let play_menu = document.getElementById('play_menu');
     play_menu.style.display = "none";
 
@@ -19,6 +22,12 @@ function displayMenu()
     main_menu_buttons.style.display = "block";
 
     refreshLogin();
+}
+
+function removeMenu()
+{
+    let main_menu_page = document.getElementById('main_menu_page');
+    main_menu_page.style.display = "none";
 }
 
 function setBackgroundColor(color)
