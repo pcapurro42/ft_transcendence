@@ -22,4 +22,4 @@ COPY start.sh home/
 
 EXPOSE 443
 
-CMD ["sh", "/home/start.sh"]
+CMD ["nginx", "-g", "daemon off;"]
