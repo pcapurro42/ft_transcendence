@@ -6,8 +6,6 @@ function changeGameMusic()
     
     game_music = new_game_music.value;
     localStorage.setItem('game_music', game_music);
-
-    console.log(game_music)
 }
 
 function changeGameMap()
