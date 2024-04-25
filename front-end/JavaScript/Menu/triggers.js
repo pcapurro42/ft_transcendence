@@ -47,3 +47,7 @@ document.getElementById('sound_volume_slider').onchange = changeSoundsVolume;
 document.getElementById('music_volume_slider').onchange = changeMusicVolume;
 document.getElementById('high_contrast_btn_yn').onclick = changeHighContrast;
 document.getElementById('image_desc_btn_yn').onclick = changeDescriptiveImages;
+
+// < GAME > //
+
+document.getElementById('top_logo').onclick = displayMenu;

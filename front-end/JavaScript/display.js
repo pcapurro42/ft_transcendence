@@ -1,5 +1,8 @@
 function displayMenu()
 {
+    let game_page = document.getElementById('game_page');
+    game_page.style.display = "none";
+
     let main_menu_page = document.getElementById('main_menu_page');
     main_menu_page.style.display = "block";
 
