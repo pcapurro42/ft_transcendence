@@ -5,8 +5,8 @@ window.onload = handleRedirection;
 async function login()
 {
     setTimeout(() => {window.location.href = `https://api.intra.42.fr/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`;}, 800);
-    
-        
+
+
     localStorage.setItem("status", "connected");
     account_status = "connected";
 }
@@ -61,7 +61,6 @@ async function handleRedirection(){
 }
 
 async function sendAccessToken(){
-    console.log("sendAccessToken says hello")
     const endpoint = '/v2/me';
     const request = await fetch(endpoint, {
         method: 'GET',
@@ -79,13 +78,11 @@ async function sendAccessToken(){
 }
 
 async function getAccessToken(auth_code){
-    console.log("getAccessToken says hello")
     const endpoint = '/oauth/token';
 
     const url = new URLSearchParams({
         client_id: client_id,
         code: auth_code,
-        client_secret : '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',
         grant_type : 'authorization_code',
         redirect_uri: redirect_uri,
     });

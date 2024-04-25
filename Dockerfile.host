@@ -18,6 +18,9 @@ COPY nginx.conf /etc/nginx/conf.d/
 
 COPY front-end/ /home/front-end
 
+COPY start.sh home/start.sh
+RUN chmod 777 home/start.sh
+
 EXPOSE 443
 
 CMD ["nginx", "-g", "daemon off;"]
