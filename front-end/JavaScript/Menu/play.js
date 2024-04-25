@@ -15,6 +15,21 @@ function removeGameMenu()
     displayPlay();
 }
 
+function displayTournamentMenu()
+{
+    let game_menu = document.getElementById('play_tournament_menu');
+    game_menu.style.display = "block";
+    let play_menu = document.getElementById('play_menu');
+    play_menu.style.display = 'none';
+}
+
+function removeTournamentMenu()
+{
+    let tournament_menu = document.getElementById('play_tournament_menu');
+    tournament_menu.style.display = "none";
+    displayPlay();
+}
+
 // < DISPLAY/REMOVE > //
 
 function displayPlay()

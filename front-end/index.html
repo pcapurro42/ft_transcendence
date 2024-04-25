@@ -118,13 +118,29 @@
 
                 <!-- PLAY GAME MENU -->
 
-                <div id="play_game_menu" class="container p-2 text-center" style="display: none;">
+                <div id="play_game_menu" class="container" style="display: none;">
 
-                    <button id="create_game_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Create a game" data-title="Create a game" title=""></button><br>
+                    <div class="p-2 text-center">
+                        <button id="create_game_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Create a game" data-title="Create a game" title=""></button><br>
 
-                    <button id="join_game_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Join a game" data-title="Join a game" title=""></button><br><br>
+                        <button id="join_game_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Join a game" data-title="Join a game" title=""></button><br><br>
+    
+                        <button id="play_game_back_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
+                    </div>
 
-                    <button id="play_game_back_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
+                </div>
+
+                <!-- PLAY TOURNAMENT MENU -->
+
+                <div id="play_tournament_menu" class="container" style="display: none;">
+
+                    <div class="p-2 text-center">
+                        <button id="create_tournament_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Create a tournament" data-title="Create a tournament" title=""></button><br>
+
+                        <button id="join_tournament_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Join a tournament" data-title="Join a tournament" title=""></button><br><br>
+    
+                        <button id="play_tournament_back_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
+                    </div>
 
                 </div>
 
@@ -139,7 +155,7 @@
                             <select id="game_theme_btn_selector" class="form-select form-select-lg mx-auto" style="width: auto;">
                                 <option class="btn-simple" value="none" data-oname="– None –" data-title="None" title=""></option>
                                 <option class="btn-simple" value="MGS 1 - Duel" data-oname="MGS 1 - Duel" data-title="MGS 1 - Duel" title=""></option>
-                                <option class="btn-simple"title="...">...</option>
+                                <option class="btn-simple" title="...">...</option>
                                 <!-- ... -->
                             </select>
                         </div>

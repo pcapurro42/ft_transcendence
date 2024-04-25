@@ -12,6 +12,9 @@ function displayMenu()
     let play_menu_buttons = document.getElementById('play_game_menu');
     play_menu_buttons.style.display = "none";
 
+    let play_tournament_buttons = document.getElementById('play_tournament_menu');
+    play_tournament_buttons.style.display = "none";
+
     let main_menu_buttons = document.getElementById('main_menu_buttons');
     main_menu_buttons.style.display = "block";
 

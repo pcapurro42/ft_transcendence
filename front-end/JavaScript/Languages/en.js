@@ -16,6 +16,8 @@ let en = [
 
     ["Create a game", "Create a game"],
     ["Join a game", "Join a game"],
+    ["Create a tournament", "Create a tournament"],
+    ["Join a tournament", "Join a tournament"],
 
     ["MGS 1 - Duel", "MGS 1 - Duel"],
 

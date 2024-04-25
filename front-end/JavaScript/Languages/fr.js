@@ -16,6 +16,8 @@ let fr = [
 
     ["Create a game", "Créer une partie"],
     ["Join a game", "Rejoindre une partie"],
+    ["Create a tournament", "Créer un tournoi"],
+    ["Join a tournament", "Rejoindre un tournoi"],
 
     ["MGS 1 - Duel", "MGS 1 - Duel"],
 

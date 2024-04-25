@@ -25,6 +25,8 @@ document.getElementById('credit_close').onclick = theaterClose;
 
 document.getElementById('play_game_btn').onclick = displayGameMenu;
 document.getElementById('play_game_back_btn').onclick = removeGameMenu;
+document.getElementById('play_tournament_btn').onclick = displayTournamentMenu;
+document.getElementById('play_tournament_back_btn').onclick = removeTournamentMenu;
 
 // < CUSTOMIZE > //
 
