@@ -44,5 +44,5 @@ refreshDisplay();
 refreshSounds();
 refreshMusics();
 
-account_status = "true";
+account_status = "connected";
 refreshLogin();
