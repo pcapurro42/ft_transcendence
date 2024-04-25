@@ -1,20 +1,5 @@
 // < ... > //
 
-function displayTournamentMenu()
-{
-    ;
-}
-
-function displayGameMenu()
-{
-    ;
-}
-
-function removeGameMenuTournamentMenu()
-{
-    ;
-}
-
 // < DISPLAY/REMOVE > //
 
 function displayPlay()
