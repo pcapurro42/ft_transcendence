@@ -1,7 +1,7 @@
 function displayGamePage()
 {
-    let game_top_bar = document.getElementById('game_page');
-    game_top_bar.style.display = "block";
+    let game_page = document.getElementById('game_page');
+    game_page.style.display = "block";
 }
 
 function displayCreateGame()
