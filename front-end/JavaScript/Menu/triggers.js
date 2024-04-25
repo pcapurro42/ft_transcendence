@@ -23,7 +23,8 @@ document.getElementById('credit_close').onclick = theaterClose;
 
 // < PLAY > //
 
-
+document.getElementById('play_game_btn').onclick = displayGameMenu;
+document.getElementById('play_game_back_btn').onclick = removeGameMenu;
 
 // < CUSTOMIZE > //
 

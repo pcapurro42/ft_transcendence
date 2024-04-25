@@ -9,6 +9,9 @@ function displayMenu()
     let settings_menu = document.getElementById('settings_menu');
     settings_menu.style.display = "none";
 
+    let play_menu_buttons = document.getElementById('play_game_menu');
+    play_menu_buttons.style.display = "none";
+
     let main_menu_buttons = document.getElementById('main_menu_buttons');
     main_menu_buttons.style.display = "block";
 

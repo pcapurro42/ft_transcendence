@@ -1,5 +1,20 @@
 // < ... > //
 
+function displayGameMenu()
+{
+    let game_menu = document.getElementById('play_game_menu');
+    game_menu.style.display = "block";
+    let play_menu = document.getElementById('play_menu');
+    play_menu.style.display = 'none';
+}
+
+function removeGameMenu()
+{
+    let game_menu = document.getElementById('play_game_menu');
+    game_menu.style.display = "none";
+    displayPlay();
+}
+
 // < DISPLAY/REMOVE > //
 
 function displayPlay()
