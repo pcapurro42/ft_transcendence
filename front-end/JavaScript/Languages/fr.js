@@ -19,6 +19,10 @@ let fr = [
     ["Create a tournament", "Créer un tournoi"],
     ["Join a tournament", "Rejoindre un tournoi"],
 
+    ["Classic", "Classique"],
+    ["Tournament", "Tournoi"],
+    ["Against AI", "Contre l'IA"],
+
     ["MGS 1 - Duel", "MGS 1 - Duel"],
 
     ["Language", "Langue"],
@@ -32,10 +36,6 @@ let fr = [
     ["Game map", "Carte du jeu"],
 
     ["– None –", "– Aucun –"],
-
-    ["Normal game", "Partie normale"],
-    ["Tournament", "Tournoi"],
-    ["Against AI", "Contre l'IA"],
 
     ["Enabled", "Activé"],
     ["Disabled", "Désactivé"],

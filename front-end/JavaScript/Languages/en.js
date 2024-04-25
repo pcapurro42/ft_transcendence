@@ -19,6 +19,10 @@ let en = [
     ["Create a tournament", "Create a tournament"],
     ["Join a tournament", "Join a tournament"],
 
+    ["Classic", "Classic"],
+    ["Tournament", "Tournament"],
+    ["Against AI", "Against AI"],
+
     ["MGS 1 - Duel", "MGS 1 - Duel"],
 
     ["Language", "Language"],
@@ -32,10 +36,6 @@ let en = [
     ["Game map", "Game map"],
 
     ["– None –", "– None –"],
-
-    ["Normal game", "Normal game"],
-    ["Tournament", "Tournament"],
-    ["Against AI", "Against AI"],
 
     ["Enabled", "Enabled"],
     ["Disabled", "Disabled"],
