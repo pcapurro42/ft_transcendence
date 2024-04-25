@@ -28,11 +28,11 @@ document.getElementById('play_game_back_btn').onclick = removeGameMenu;
 document.getElementById('play_tournament_btn').onclick = displayTournamentMenu;
 document.getElementById('play_tournament_back_btn').onclick = removeTournamentMenu;
 
-document.getElementById('create_game_btn').onclick = displayCreateGame;
-document.getElementById('join_game_btn').onclick = displayJoinGame;
+// document.getElementById('create_game_btn').onclick = ;
+// document.getElementById('join_game_btn').onclick = ;
 // document.getElementById('create_tournament_btn').onclick = ;
 // document.getElementById('join_tournament_btn').onclick = ;
-// document.getElementById('ai_game_btn').onclick = ;
+document.getElementById('ai_game_btn').onclick = ai;
 
 // < CUSTOMIZE > //
 
