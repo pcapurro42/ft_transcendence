@@ -21,6 +21,11 @@ document.getElementById('credits_btn').onclick = theaterCredits;
 document.getElementById('vid_credits').onended = theaterClose;
 document.getElementById('credit_close').onclick = theaterClose;
 
+// < PLAY > //
+
+document.getElementById('play_tournament_btn').onclick = displayTournamentMenu;
+document.getElementById('play_game_btn').onclick = displayGameMenu;
+
 // < CUSTOMIZE > //
 
 document.getElementById('game_theme_btn_selector').onchange = changeGameMusic;

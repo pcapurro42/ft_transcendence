@@ -1,5 +1,15 @@
 // < ... > //
 
+function displayTournamentMenu()
+{
+    ;
+}
+
+function displayGameMenu()
+{
+    ;
+}
+
 // < DISPLAY/REMOVE > //
 
 function displayPlay()

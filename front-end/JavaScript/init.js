@@ -43,3 +43,6 @@ refreshDisplay();
 
 refreshSounds();
 refreshMusics();
+
+account_status = "true";
+refreshLogin();
