@@ -11,6 +11,7 @@ function refreshLanguage()
 {
     let lang = localStorage.getItem("language");
     let words = document.querySelectorAll('[data-oname]');
+    let placeholders = document.querySelectorAll('[placeholder]');
     let titles = document.querySelectorAll('[data-title');
 
     if (lang == "en")
@@ -19,7 +20,8 @@ function refreshLanguage()
 
         for (let i = 0; i != words.length; i++)
             words[i].innerHTML = getElement(en, words[i].getAttribute("data-oname"));
-
+        for (let i = 0; i != placeholders.length; i++)
+            placeholders[i].setAttribute('placeholder', getElement(en, placeholders[i].getAttribute("data-oname")));
         if (descriptive_images == "true")
         {
             for (let i = 0; i != titles.length; i++)
@@ -37,7 +39,8 @@ function refreshLanguage()
 
         for (let i = 0; i != words.length; i++)
             words[i].innerHTML = getElement(fr, words[i].getAttribute("data-oname"));
-
+        for (let i = 0; i != placeholders.length; i++)
+            placeholders[i].setAttribute('placeholder', getElement(fr, placeholders[i].getAttribute("data-oname")));
         if (descriptive_images == "true")
         {
             for (let i = 0; i != titles.length; i++)

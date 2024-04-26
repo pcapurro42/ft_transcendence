@@ -18,6 +18,11 @@ let fr = [
     ["Join a game", "Rejoindre une partie"],
     ["Create a tournament", "Créer un tournoi"],
     ["Join a tournament", "Rejoindre un tournoi"],
+    ["Tournament nickname", "Surnom"],
+    ["Submit", "Soumettre"],
+    ["keep42", "Garder le nom d'utilisateur 42"],
+    ["Invalid alias", "Longueur du surnom 4-15.<br>(ABCabc123_-)"],
+    ["Checkbox error", "Authentifiez vous avec 42."],
 
     ["Classic", "Classique"],
     ["Tournament", "Tournoi"],

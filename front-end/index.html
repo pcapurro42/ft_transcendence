@@ -48,7 +48,7 @@
         <div id="game_page" style="display: none;">
 
             <div id="game_toolbar" class="container">
-                
+
                 <div>
 
                     <img id="top_logo" src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto d-block btn-alert" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" style="max-width: 30%; height: auto; cursor: pointer">
@@ -104,9 +104,9 @@
                         <button id="play_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Play" data-title="Play" title=""></button><br>
 
                         <button id="customize_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Customize" data-title="Customize" title=""></button><br>
-    
+
                         <button id="settings_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Settings" data-title="Settings" title=""></button><br>
-    
+
                         <button id="credits_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Credits" data-title="Credits" title=""></button><br>
                     </div>
 
@@ -119,11 +119,11 @@
                     <div class="p-2 text-center">
 
                         <button id="play_game_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Classic" data-title="Classic" title=""></button><br>
-        
+
                         <button id="play_tournament_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Tournament" data-title="Tournament" title=""></button><br>
 
                         <button id="ai_game_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Against AI" data-title="Against AI" title=""></button><br><br>
-        
+
                         <button id="play_back_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
 
                     </div>
@@ -138,7 +138,7 @@
                         <button id="create_game_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Create a game" data-title="Create a game" title=""></button><br>
 
                         <button id="join_game_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Join a game" data-title="Join a game" title=""></button><br><br>
-    
+
                         <button id="play_game_back_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
                     </div>
 
@@ -152,11 +152,34 @@
                         <button id="create_tournament_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Create a tournament" data-title="Create a tournament" title=""></button><br>
 
                         <button id="join_tournament_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Join a tournament" data-title="Join a tournament" title=""></button><br><br>
-    
+
                         <button id="play_tournament_back_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
                     </div>
 
                 </div>
+
+                <!-- CREATE/JOIN TOURNAMENT -->
+
+                <form id="form_alias" style="display: none;" class="text-center container">
+
+                    <div class="form-control-lg p-2 text-center">
+                        <input id="alias_input" class="form-control-sm" type="text" placeholder="" data-oname="Tournament nickname">
+                        <button id ="submit_alias" type="submit" class="btn btn-secondary" onclick="parse_alias(event)" data-oname="Submit"></button>
+                        <div id="invalid-alias" class="invalid-feedback" data-oname="Invalid alias">
+                          </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="keep42">
+                        <label class="text" for="keep42" data-oname="keep42"></label>
+                        <div id="checkbox_err" class="invalid-feedback" data-oname="Checkbox error">
+                        </div>
+                    </div>
+
+                    <button id="tournament_submenu_back_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
+
+                </form>
+
+
 
                 <!-- CUSTOMIZE MENU -->
 
@@ -187,7 +210,7 @@
                         </div>
 
                         <br>
-   
+
                         <div class="d-flex justify-content-center">
                             <button id="customize_back_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
                         </div>
@@ -292,10 +315,11 @@
 
         <script src="./JavaScript/Menu/auth.js"></script>
 
-        <script src="./JavaScript/Menu/play.js"></script>
+        <script src="./JavaScript/Menu/menu_display.js"></script>
         <script src="./JavaScript/Menu/settings.js"></script>
         <script src="./JavaScript/Menu/customize.js"></script>
         <script src="./JavaScript/Menu/credits.js"></script>
+        <script src="./JavaScript/Menu/form.js"></script>
 
         <script src="./JavaScript/Game/page.js"></script>
         <script src="./JavaScript/Game/game.js"></script>

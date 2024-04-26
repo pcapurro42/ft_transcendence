@@ -27,7 +27,11 @@ document.getElementById('play_game_btn').onclick = displayGameMenu;
 document.getElementById('play_game_back_btn').onclick = removeGameMenu;
 document.getElementById('play_tournament_btn').onclick = displayTournamentMenu;
 document.getElementById('play_tournament_back_btn').onclick = removeTournamentMenu;
+document.getElementById('tournament_submenu_back_btn').onclick = displayTournamentMenu;
 
+// < TOURNAMENT > //
+document.getElementById('create_tournament_btn').onclick = displayTournamentForm;
+document.getElementById('join_tournament_btn').onclick = displayTournamentForm;
 // document.getElementById('create_game_btn').onclick = ;
 // document.getElementById('join_game_btn').onclick = ;
 // document.getElementById('create_tournament_btn').onclick = ;

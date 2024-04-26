@@ -18,6 +18,11 @@ let en = [
     ["Join a game", "Join a game"],
     ["Create a tournament", "Create a tournament"],
     ["Join a tournament", "Join a tournament"],
+    ["Tournament nickname", "Nickname"],
+    ["Submit", "Submit"],
+    ["keep42", "Keep 42 username"],
+    ["Invalid alias", "Nickname length 4-15.<br>(ABCabc123_-)"],
+    ["Checkbox error", "Authentificate with 42 first."],
 
     ["Classic", "Classic"],
     ["Tournament", "Tournament"],
