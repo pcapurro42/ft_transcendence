@@ -81,7 +81,6 @@ async function getAccessToken(auth_code){
     const endpoint = '/oauth/token';
 
     const url = new URLSearchParams({
-        client_id: client_id,
         code: auth_code,
         grant_type : 'authorization_code',
         redirect_uri: redirect_uri,
@@ -110,7 +109,7 @@ function refreshLogin()
     {
         document.getElementById('intra_login').style.display = "block";
         document.getElementById('login_btn').style.display = "none";
-        
+
         document.getElementById('play_game_btn').classList.remove('disabled');
         document.getElementById('play_tournament_btn').classList.remove('disabled');
     }
