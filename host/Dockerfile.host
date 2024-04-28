@@ -10,17 +10,14 @@ RUN mkdir -p /etc/nginx/ssl/
 RUN openssl req \
     -x509 \
     -nodes \
-    -out /etc/nginx/ssl/ft_transcendence.crt \
-    -keyout /etc/nginx/ssl/ft_transcendence.key \
+    -out /etc/nginx/ssl/ft_transcendence_host.crt \
+    -keyout /etc/nginx/ssl/ft_transcendence_host.key \
     -subj "/C=FR/ST=PACA/L=Nice/O=42/OU=42Nice/CN=127.0.0.1"
 
 COPY nginx.conf /etc/nginx/conf.d/nginx.conf
 
 COPY front-end/ /home/front-end
 
-COPY start.sh home/start.sh
-RUN chmod 777 /home/start.sh
-
 EXPOSE 443
 
-CMD ["/home/start.sh"]
+CMD ["nginx", "-g", "daemon off;"]

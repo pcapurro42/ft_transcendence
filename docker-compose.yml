@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  
+  host:
+    build:
+      context: host/
+      dockerfile: Dockerfile.host
+    ports: 
+      - 443:443
+  
+  proxy:
+    build:
+      context: proxy/
+      dockerfile: Dockerfile.proxy
+    env_file:
+      - .env
+    ports:
+      - 8080:8080
+    depends_on:
+      - host
