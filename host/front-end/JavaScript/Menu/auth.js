@@ -1,5 +1,4 @@
 window.onload = handleRedirection;
-
 /****************************************** Log in | Log Out ***********************************************/
 
 async function login()
@@ -27,6 +26,10 @@ async function handleRedirection(){
     const code = query.get('code');
     const err = query.get('error');
 
+    if (user_info && user_info.login){
+        document.getElementById('intra_login').innerHTML = ` ${user_info.login}`;
+        return;
+    }
     if ((!code && !err) || localStorage.getItem("status") == "not connected"){
         localStorage.setItem("status", "not connected");
         account_status == "not connected";
@@ -45,10 +48,10 @@ async function handleRedirection(){
         await getAccessToken(code);
 
     try {
-        const userinfo = await sendAccessToken();
-        if (userinfo){
-            localStorage.setItem('user_info', JSON.stringify(userinfo));
-            document.getElementById('intra_login').innerHTML = ` ${userinfo.login}`;
+        user_info = await sendAccessToken();
+        if (user_info){
+            localStorage.setItem('user_info', JSON.stringify(user_info));
+            document.getElementById('intra_login').innerHTML = ` ${user_info.login}`;
         }
         else{
             throw("Error: user_info not retrieved.");
@@ -129,8 +132,9 @@ function initializeAuth()
 {
     client_id = 'u-s4t2ud-328d5957a0e78853f7b035bed31812c4bd82ea90773c43b8686b35f1ae4d1353';
     redirect_uri = 'https://127.0.0.1';
+    user_info = JSON.parse(localStorage.getItem('user_info'));
 
-    if (localStorage.getItem("status") == null)
+    if (localStorage.getItem("status") == null && user_info.login == null)
     {
         localStorage.setItem("status", "not connected");
         account_status = "not connected";

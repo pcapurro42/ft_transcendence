@@ -1,5 +1,3 @@
-user_info = localStorage.getItem('user_info');
-loginName = user_info? JSON.parse(user_info).login : "null";
 
 let en = [
     ["LOG IN WITH 42", "LOG IN WITH 42"],
