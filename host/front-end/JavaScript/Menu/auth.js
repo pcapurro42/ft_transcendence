@@ -61,7 +61,7 @@ async function handleRedirection(){
 }
 
 async function sendAccessToken(){
-    const endpoint = '/v2/me';
+    const endpoint = 'https://127.0.0.1:8080/v2/me';
     const request = await fetch(endpoint, {
         method: 'GET',
         headers: {'Authorization' : `Bearer ${sessionStorage.getItem('accessToken')}`}
@@ -78,7 +78,7 @@ async function sendAccessToken(){
 }
 
 async function getAccessToken(auth_code){
-    const endpoint = '/oauth/token';
+    const endpoint = 'https://127.0.0.1:8080/oauth/token';
 
     const url = new URLSearchParams({
         code: auth_code,
