@@ -3,6 +3,7 @@ version: '3.8'
 services:
   
   host:
+    container_name: host
     build:
       context: host/
       dockerfile: Dockerfile.host
@@ -10,6 +11,7 @@ services:
       - 443:443
   
   proxy:
+    container_name: proxy
     build:
       context: proxy/
       dockerfile: Dockerfile.proxy
