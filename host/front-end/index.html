@@ -160,26 +160,26 @@
 
                 <!-- CREATE/JOIN TOURNAMENT -->
 
-                <form id="form_alias" style="display: none;" class="text-center container">
+                <form id="form_alias" style="display: none;" class="container text-center">
 
-                    <div class="form-control-lg p-2 text-center">
-                        <input id="alias_input" class="form-control-sm" type="text" placeholder="" data-oname="Tournament nickname">
-                        <button id ="submit_alias" type="submit" class="btn btn-secondary" onclick="parse_alias(event)" data-oname="Submit"></button>
-                        <div id="invalid-alias" class="invalid-feedback" data-oname="Invalid alias">
-                          </div>
+                    <div class="form-control-lg p-2">
+                        <input id="alias_input" class="form-control-sm" type="text" placeholder="" data-tsnormal="16px" data-tslarge="21px" data-oname="Tournament nickname" data-title="Tournament nickname" title="">
+                        <button id ="submit_alias" type="submit" class="btn text btn-lg btn-simple border" onclick="parse_alias(event)"  data-tsnormal="15px" data-tslarge="20px" data-oname="Submit"></button>
+                        <div id="invalid-alias" class="invalid-feedback" data-tsnormal="20px" data-tslarge="25px" data-oname="Invalid alias"></div>
                     </div>
+
                     <div>
-                        <input type="checkbox" id="keep42">
-                        <label class="text" for="keep42" data-oname="keep42"></label>
-                        <div id="checkbox_err" class="invalid-feedback" data-oname="Checkbox error">
+                        <input id="keep42" type="checkbox">
+                        <label class="text" for="keep42" data-tsnormal="20px" data-tslarge="25px" data-oname="keep42" data-title="keep42"></label>
+                        <div id="checkbox_err" class="invalid-feedback" data-tsnormal="20px" data-tslarge="25px" data-oname="Checkbox error">
                         </div>
                     </div>
+
+                    <br>
 
                     <button id="tournament_submenu_back_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
 
                 </form>
-
-
 
                 <!-- CUSTOMIZE MENU -->
 
