@@ -34,6 +34,8 @@ document.getElementById('tournament_submenu_back_btn').onclick = displayTourname
 document.getElementById('create_tournament_btn').onclick = displayTournamentForm;
 document.getElementById('join_tournament_btn').onclick = displayTournamentForm;
 
+document.getElementById('submit_alias').onclick = parse_alias;
+
 // document.getElementById('create_game_btn').onclick = ;
 // document.getElementById('join_game_btn').onclick = ;
 // document.getElementById('create_tournament_btn').onclick = ;

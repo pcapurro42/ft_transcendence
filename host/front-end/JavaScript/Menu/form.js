@@ -3,7 +3,6 @@ function parse_alias(event){
 	event.preventDefault(); // Empêche retour main_menu quand on submit
 
 	const regex = /^[A-Za-z0-9\-_]+$/;
-	console.log('test')
     var input = document.getElementById('alias_input');
     var err = document.getElementById('invalid-alias');
 
