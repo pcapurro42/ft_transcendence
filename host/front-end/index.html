@@ -31,11 +31,11 @@
 
         <!-- VIDEO -->
 
-        <video id="vid_credits" style="position: absolute; width: 100%; height: 100%; top: 0%; left: 0%; display: none;">
+        <video id="vid_credits">
             <source src="./Materials/video/credits.mp4" type="video/mp4">
         </video>
 
-        <button id="credit_close" class="btn btn-simple text-white flex float-end" style="display: none; position: absolute; top: 1%; left: 90%; ">&#x2717</button>
+        <button id="credit_close" class="btn btn-simple text-white flex float-end">&#x2717</button>
 
     </head>
 
@@ -45,13 +45,13 @@
 
         <!-- GAME -->
 
-        <div id="game_page" style="display: none;">
+        <div id="game_page">
 
             <div id="game_toolbar" class="container">
 
                 <div>
 
-                    <img id="top_logo" src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto d-block btn-complex" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" style="max-width: 30%; height: auto; cursor: pointer">
+                    <img id="top_logo" src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto d-block btn-complex" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'">
 
                     <hr class="line" id="top_line">
 
@@ -69,13 +69,13 @@
 
             <div id="main_menu_toolbar" class="container my-5">
 
-                <img id="music_toggle" src="./Materials/images/music-off.png" class="img-fluid image" data-isnormal="max-width: 5%" data-islarge="max-width: 6%" data-title="Enable/Disable menu music" style="max-width: 4%; cursor: pointer;">
+                <img id="music_toggle" src="./Materials/images/music-off.png" class="img-fluid image" data-isnormal="max-width: 5%" data-islarge="max-width: 6%" data-title="Enable/Disable menu music">
 
                 <div id="login" class="col d-inline-block float-end">
                     <button id="login_btn" class="btn text border mb-4 btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="LOG IN WITH 42" data-title="LOG IN WITH 42" title=""></a>
                 </div>
 
-                <div id="logged" class="col d-inline-block float-end" style="display: none;">
+                <div id="logged" class="col d-inline-block float-end">
                     <a id="intra_login" class="dropdown dropdown-toggle btn text" data-bs-toggle="dropdown" role="button" data-tsnormal="25px" data-tslarge="35px"></a>
                     <ul class="dropdown dropdown-menu">
                         <a id="logout_btn" class="dropdown dropdown-item btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="LOG OUT" data-title="LOG OUT" role="button"></a>
@@ -86,9 +86,9 @@
 
             <!-- TITLE -->
 
-            <div id="title" class="d-flex flex-column py-5 px-5" style="border-width: 1 !important;">
+            <div id="title" class="d-flex flex-column py-5 px-5">
 
-                <img id="title_logo" src="./Materials/images/mgp-title-r.png" class="img-fluid btn-alert mx-auto" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" style="max-width: 80%; height: auto; cursor: pointer">
+                <img id="title_logo" src="./Materials/images/mgp-title-r.png" class="img-fluid btn-alert mx-auto" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'">
 
             </div>
 
@@ -114,7 +114,7 @@
 
                 <!-- PLAY MENU -->
 
-                <div id="play_menu" class="container" style="display: none;">
+                <div id="play_menu" class="container">
 
                     <div class="p-2 text-center">
 
@@ -132,7 +132,7 @@
 
                 <!-- PLAY GAME MENU -->
 
-                <div id="play_game_menu" class="container" style="display: none;">
+                <div id="play_game_menu" class="container">
 
                     <div class="p-2 text-center">
                         <button id="create_game_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Create a game" data-title="Create a game" title=""></button><br>
@@ -146,7 +146,7 @@
 
                 <!-- PLAY TOURNAMENT MENU -->
 
-                <div id="play_tournament_menu" class="container" style="display: none;">
+                <div id="play_tournament_menu" class="container">
 
                     <div class="p-2 text-center">
                         <button id="create_tournament_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Create a tournament" data-title="Create a tournament" title=""></button><br>
@@ -160,7 +160,7 @@
 
                 <!-- CREATE/JOIN TOURNAMENT -->
 
-                <form id="form_alias" style="display: none;" class="container text-center">
+                <form id="form_alias" class="container text-center">
 
                     <div class="form-control-lg p-2">
                         <input id="alias_input" class="form-control-sm" type="text" placeholder="" data-tsnormal="16px" data-tslarge="21px" data-oname="Tournament nickname" data-title="Tournament nickname" title="">
@@ -183,13 +183,13 @@
 
                 <!-- CUSTOMIZE MENU -->
 
-                <div id="customize_menu" class="container" style="display: none;">
+                <div id="customize_menu" class="container">
 
                     <div class="p-2 text-center">
 
                         <div>
                             <button id="game_theme_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Game theme" data-title="Game theme" title=""></button><br>
-                            <select id="game_theme_btn_selector" class="form-select form-select-lg mx-auto" style="width: auto;">
+                            <select id="game_theme_btn_selector" class="form-select form-select-lg mx-auto">
                                 <option class="btn-simple" value="none" data-oname="– None –" data-title="None" title=""></option>
                                 <option class="btn-simple" value="MGS 1 - Duel" data-oname="MGS 1 - Duel" data-title="MGS 1 - Duel" title=""></option>
                                 <option class="btn-simple" title="...">...</option>
@@ -201,7 +201,7 @@
 
                         <div>
                             <button id="game_map_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Game map" data-title="Game map" title=""></button><br>
-                            <select id="game_map_btn_selector" class="form-select form-select-lg mx-auto" style="width: auto;">
+                            <select id="game_map_btn_selector" class="form-select form-select-lg mx-auto">
                                 <option class="btn-simple" value="none" data-oname="– None –" data-title="None" title=""></option>
                                 <option class="btn-simple" value="..." title="...">...</option>
                                 <!-- ... -->
@@ -223,7 +223,7 @@
 
                 <!-- SETTINGS MENU -->
 
-                <div id="settings_menu" class="container" style="display: none;">
+                <div id="settings_menu" class="container">
 
                     <div class="row">
 
@@ -233,7 +233,7 @@
 
                             <div>
                                 <button id="language_btn" class="btn text" data-tsnormal="40px" data-tslarge="50px" data-oname="Language" data-title="Language" title=""></button><br>
-                                <select id="language_btn_selector" class="form-select form-select-lg mx-auto" style="width: auto;">
+                                <select id="language_btn_selector" class="form-select form-select-lg mx-auto">
                                     <option class="btn-simple" value="en">English</option>
                                     <option class="btn-simple" value="fr">Français</option>
                                     <!-- ... -->
@@ -245,7 +245,7 @@
                             <div>
                                 <button id="sound_volume_btn" class="btn text" data-tsnormal="40px" data-tslarge="50px" data-oname="Sound volume" data-title="Sound volume" title=""></button><br>
                                 <label id="sound_volume_slider_label" for="sound_volume_slider" class="form-label text" data-tsnormal="20px" data-tslarge="30px"></label><br>
-                                <input id="sound_volume_slider" type="range" class="form-range btn-simple" value="" style="width: 40%;">
+                                <input id="sound_volume_slider" type="range" class="form-range btn-simple" value="">
                             </div>
 
                             <br>
@@ -253,7 +253,7 @@
                             <div>
                                 <button id="music_volume_btn" class="btn text" data-tsnormal="40px" data-tslarge="50px" data-oname="Music volume" data-title="Music volume" title=""></button><br>
                                 <label id="music_volume_slider_label" for="music_volume_slider" class="form-label text" data-tsnormal="20px" data-tslarge="30px"></label><br>
-                                <input id="music_volume_slider" type="range" class="form-range btn-simple" value="" style="width: 40%;">
+                                <input id="music_volume_slider" type="range" class="form-range btn-simple" value="">
                             </div>
 
                             <br>
@@ -266,7 +266,7 @@
 
                             <div>
                                 <button id="text_size_btn" class="btn text" data-tsnormal="40px" data-tslarge="50px" data-oname="Text size" data-title="Text size" title=""></button><br>
-                                <select id="text_size_btn_selector" class="form-select form-select-lg mx-auto" style="width: auto;">
+                                <select id="text_size_btn_selector" class="form-select form-select-lg mx-auto">
                                     <option class="text btn-simple" value="normal" data-oname="Normal" data-title="Normal" title=""></option>
                                     <option class="text btn-simple" value="large" data-oname="Large" data-title="Large" title=""></option>
                                 </select>

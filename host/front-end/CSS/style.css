@@ -1,3 +1,61 @@
+#game_page, #logged, #play_menu, #play_game_menu, #play_tournament_menu, #form_alias, #customize_menu, #settings_menu
+{
+    display: none;
+}
+
+#vid_credits
+{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+}
+
+#credit_close
+{
+    position: absolute; 
+    display: none;
+    top: 1%; 
+    left: 90%;
+}
+
+#top_logo
+{
+    max-width: 30%; 
+    height: auto; 
+    cursor: pointer
+}
+
+#music_toggle
+{
+    max-width: 4%; 
+    cursor: pointer;
+}
+
+#title
+{
+    border-width: 1 !important;
+}
+
+#title_logo
+{
+    max-width: 80%; 
+    height: auto; 
+    cursor: pointer
+}
+
+#game_theme_btn_selector, #game_map_btn, #language_btn_selector, #text_size_btn_selector
+{
+    width: auto;
+}
+
+#sound_volume_slider, #music_volume_slider
+{
+    width: 40%;
+}
+
 #play_game_btn, #play_tournament_btn
 {
     border: 0cap;
