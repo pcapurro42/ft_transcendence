@@ -29,6 +29,10 @@ document.getElementById('play_tournament_btn').onclick = displayTournamentMenu;
 document.getElementById('play_tournament_back_btn').onclick = removeTournamentMenu;
 document.getElementById('tournament_submenu_back_btn').onclick = displayTournamentMenu;
 
+// < CLASSIC > //
+
+document.getElementById('create_classic_btn').onclick = displayClassicCreateGame;
+
 // < TOURNAMENT > //
 
 document.getElementById('create_tournament_btn').onclick = displayTournamentForm;

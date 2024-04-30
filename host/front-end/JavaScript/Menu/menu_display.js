@@ -15,6 +15,17 @@ function removeClassicMenu()
     displayPlay();
 }
 
+
+function displayClassicCreateGame(){
+    let classic_menu = document.getElementById('play_classic_menu');
+    classic_menu.style.display = "none";
+
+    let create_classic_menu = document.getElementById('create_classic_menu');
+    create_classic_menu.style.display = 'block';
+    let gameId = document.getElementById('game_id');
+    gameId.innerHTML = generateGameID();
+}
+
 function displayTournamentMenu(event)
 {
     let tournament_menu = document.getElementById('play_tournament_menu');
@@ -24,7 +35,7 @@ function displayTournamentMenu(event)
     play_menu.style.display = "none";
     tournament_menu.style.display = "block";
 
-    event.preventDefault(); //empeche le bouton back de form_alias de revenir au menu principal plutot qu'au menu des tournois.
+    event.preventDefault(); //prevent the back button from form_alias to take us back to main menu instead of tournament menu
 }
 
 function removeTournamentMenu()
@@ -61,8 +72,4 @@ function removePlay()
 
     play_menu.style.display = 'none';
     main_menu.style.display = 'block';
-}
-
-function displayClassicCreateGame(){
-
 }

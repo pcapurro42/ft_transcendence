@@ -144,6 +144,19 @@
 
                 </div>
 
+                <!-- CREATE/JOIN CLASSIC -->
+                <div id="create_classic_menu" class="text-center">
+                    <div id="game_id_div">
+                        <img id="cpy_to_clipboard" src="./Materials/images/copy_icon.png" class="w-auto">
+                        <div class="d-inline  border border-danger border-2 rounded-pill">
+                            <p id="game_id" class="d-inline m-2" ></p>
+                        </div>
+                        <button id="create_classic_loby" class="btn btn-sm text btn-outline-danger btn-simple ms-2 mb-1" data-oname="Create Lobby"></button>
+                    </div>
+                </div>
+
+
+
                 <!-- PLAY TOURNAMENT MENU -->
 
                 <div id="play_tournament_menu" class="container">
@@ -164,7 +177,7 @@
 
                     <div class="form-control-lg p-2">
                         <input id="alias_input" class="form-control-sm" type="text" placeholder="" data-tsnormal="16px" data-tslarge="21px" data-oname="Tournament nickname" data-title="Tournament nickname" title="">
-                        <button id ="submit_alias" type="submit" class="btn text btn-lg btn-simple border" data-tsnormal="15px" data-tslarge="20px" data-oname="Submit"></button>
+                        <button id ="submit_alias" type="submit" class="btn text btn-lg btn-simple border btn-outline-success" data-tsnormal="15px" data-tslarge="20px" data-oname="Submit"></button>
                         <div id="invalid-alias" class="invalid-feedback" data-tsnormal="20px" data-tslarge="25px" data-oname="Invalid alias"></div>
                     </div>
 
@@ -331,6 +344,8 @@
         <script src="./JavaScript/Menu/triggers.js"></script>
 
         <script src="./JavaScript/init.js"></script>
+
+        <script src="./JavaScript/utils.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
