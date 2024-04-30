@@ -1,17 +1,17 @@
 // < ... > //
 
-function displayGameMenu()
+function displayClassicMenu()
 {
-    let game_menu = document.getElementById('play_game_menu');
-    game_menu.style.display = "block";
+    let classic_menu = document.getElementById('play_classic_menu');
+    classic_menu.style.display = "block";
     let play_menu = document.getElementById('play_menu');
     play_menu.style.display = 'none';
 }
 
-function removeGameMenu()
+function removeClassicMenu()
 {
-    let game_menu = document.getElementById('play_game_menu');
-    game_menu.style.display = "none";
+    let classic_menu = document.getElementById('play_classic_menu');
+    classic_menu.style.display = "none";
     displayPlay();
 }
 
@@ -61,4 +61,8 @@ function removePlay()
 
     play_menu.style.display = 'none';
     main_menu.style.display = 'block';
+}
+
+function displayClassicCreateGame(){
+
 }
