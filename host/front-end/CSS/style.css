@@ -3,9 +3,7 @@
     display: none;
 }
 
-#game_container, #lobby_container{
-    height: 80vh;
-}
+
 #vid_credits
 {
     display: none;
@@ -14,6 +12,10 @@
     height: 100%;
     top: 0%;
     left: 0%;
+}
+
+#game_lobby_block {
+    aspect-ratio: 1400 / 720;
 }
 
 #credit_close
