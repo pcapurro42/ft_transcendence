@@ -22,6 +22,7 @@ function displayBackground()
 {
     display.fillStyle = theme;
     display.fillRect(0, 0, canvas.width, canvas.height);
+    displayCenterBar();
 }
 
 function displayCenterBar()
@@ -90,7 +91,6 @@ window.addEventListener('keydown', (event) =>
 
 initializeCanvas();
 displayBackground();
-displayCenterBar();
 
 let left_player = new Bar(bar_width, bar_height, 0 + bar_width, 150, bar_speed, "white");
 let right_player = new Bar(bar_width, bar_height, (canvas.width - bar_width) - bar_width, 400, bar_speed, "white");
