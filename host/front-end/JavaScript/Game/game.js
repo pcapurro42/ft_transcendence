@@ -1,23 +1,28 @@
 /** @type {HTMLCanvasElement} */
 
-const canvas = document.getElementById('game');
-let display = canvas.getContext('2d');
-
-canvas.width = 1100;
-canvas.height = 720;
+let canvas;
+let display;
 
 let theme = "black";
-// theme = "white";
-
-display.fillStyle = theme;
-display.fillRect(0, 0, canvas.width, canvas.height);
-
 let bar_speed = 30;
-
 let bar_height = 100;
 let bar_width = 30;
-
 let bar_color = "white";
+
+function initializeCanvas()
+{
+    canvas = document.getElementById('game');
+    display = canvas.getContext('2d');
+
+    canvas.width = 1100;
+    canvas.height = 720;
+}
+
+function displayBackground()
+{
+    display.fillStyle = theme;
+    display.fillRect(0, 0, canvas.width, canvas.height);
+}
 
 class Bar
 {
@@ -34,32 +39,24 @@ class Bar
         this.color = color;
     }
 
-    print(color)
+    print()
     {
-        display.fillStyle = color;
+        display.fillStyle = bar_color;
         display.fillRect(this.x, this.y, this.width, this.height);
     }
 
     moveUp()
     {
-        this.print(theme);
         this.y = this.y + this.speed;
-        this.print(bar_color);
+        this.print();
     }
 
     moveDown()
     {
-        this.print(theme);
         this.y = this.y - this.speed;
-        this.print(bar_color);
+        this.print();
     }
 }
-
-let left_player = new Bar(bar_width, bar_height, 0, 150, bar_speed, "white");
-left_player.print();
-
-let right_player = new Bar(bar_width, bar_height, canvas.width - bar_width, 400, bar_speed, "white");
-right_player.print();
 
 window.addEventListener('keyup', (event) => {
     left_player.moveUp();
@@ -68,3 +65,14 @@ window.addEventListener('keyup', (event) => {
 window.addEventListener('keydown', (event) => {
     left_player.moveDown();
 });
+
+// < CODE > //
+
+initializeCanvas();
+displayBackground();
+
+let left_player = new Bar(bar_width, bar_height, 0, 150, bar_speed, "white");
+let right_player = new Bar(bar_width, bar_height, canvas.width - bar_width, 400, bar_speed, "white");
+
+left_player.print();
+right_player.print();
