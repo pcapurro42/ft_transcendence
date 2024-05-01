@@ -53,9 +53,9 @@ async function handleRedirection(){
             localStorage.setItem('user_info', JSON.stringify(user_info));
             document.getElementById('intra_login').innerHTML = ` ${user_info.login}`;
             if (localStorage.getItem("language") == "fr")
-                displayStatusBar(`Succesfully logged in! Welcome ${user_info.login}.`)
+                displayStatusBar(`Connecté avec succès! Bienvenue ${user_info.login}`)
             else
-                displayStatusBar(`Connecté avec succès! Bienvenue ${user_info.login}.`)
+                displayStatusBar(`Succesfully logged in! Welcome ${user_info.login}.`)
         }
         else{
             throw("Error: user_info not retrieved.");
