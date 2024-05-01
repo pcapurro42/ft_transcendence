@@ -27,7 +27,7 @@ function displayBackground()
 function displayCenterBar()
 {
     display.fillStyle = "white";
-    display.fillRect(canvas.width / 2, 0, 15, canvas.height);
+    display.fillRect((canvas.width / 2) - (bar_width / 2), 0, 15, canvas.height);
 }
 
 class Bar
