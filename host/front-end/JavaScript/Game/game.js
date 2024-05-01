@@ -17,6 +17,8 @@ let bar_speed = 30;
 let bar_height = 100;
 let bar_width = 30;
 
+let bar_color = "white";
+
 class Bar
 {
     constructor(width, height, x, y, speed, color)
@@ -32,32 +34,37 @@ class Bar
         this.color = color;
     }
 
-    display()
+    print(color)
     {
-        display.fillStyle = this.color;
+        display.fillStyle = color;
         display.fillRect(this.x, this.y, this.width, this.height);
     }
 
     moveUp()
     {
-        console.log("ok");
+        this.print(theme);
         this.y = this.y + this.speed;
-        this.display();
+        this.print(bar_color);
     }
 
     moveDown()
     {
-        console.log("ok2");
+        this.print(theme);
         this.y = this.y - this.speed;
-        this.display();
+        this.print(bar_color);
     }
 }
 
 let left_player = new Bar(bar_width, bar_height, 0, 150, bar_speed, "white");
-left_player.display();
+left_player.print();
 
 let right_player = new Bar(bar_width, bar_height, canvas.width - bar_width, 400, bar_speed, "white");
-right_player.display();
+right_player.print();
 
-window.addEventListener('keyup', left_player.moveUp());
-window.addEventListener('keydown', left_player.moveDown());
+window.addEventListener('keyup', (event) => {
+    left_player.moveUp();
+});
+
+window.addEventListener('keydown', (event) => {
+    left_player.moveDown();
+});
