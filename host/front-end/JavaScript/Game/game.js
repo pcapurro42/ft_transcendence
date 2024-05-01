@@ -97,8 +97,8 @@ window.addEventListener('keydown', (event) =>
 initializeCanvas();
 displayBackground();
 
-let left_player = new Bar(p_bar_width, p_bar_height, 0 + p_bar_width, 150, p_bar_speed, "white");
-let right_player = new Bar(p_bar_width, p_bar_height, (canvas.width - p_bar_width) - p_bar_width, 400, p_bar_speed, "white");
+let left_player = new Bar(p_bar_width, p_bar_height, 0 + p_bar_width, (canvas.height / 2) - p_bar_height / 2, p_bar_speed, "white");
+let right_player = new Bar(p_bar_width, p_bar_height, ((canvas.width - p_bar_width) - p_bar_width), ((canvas.height / 2) - p_bar_height / 2), p_bar_speed, "white");
 
 left_player.print();
 right_player.print();
