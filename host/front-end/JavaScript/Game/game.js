@@ -60,12 +60,14 @@ class Bar
     }
 }
 
-window.addEventListener('keyup', (event) => {
-    left_player.moveUp();
-});
+window.addEventListener('keydown', (event) => 
+{
+    if (event.key == 'ArrowDown')
+        left_player.moveUp();
+    else if (event.key == 'ArrowUp')
+        left_player.moveDown();
 
-window.addEventListener('keydown', (event) => {
-    left_player.moveDown();
+    right_player.print();
 });
 
 // < CODE > //
