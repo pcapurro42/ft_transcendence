@@ -132,7 +132,7 @@ function initializeAuth()
     redirect_uri = 'https://127.0.0.1';
     user_info = JSON.parse(localStorage.getItem('user_info'));
 
-    if (localStorage.getItem("status") == null && user_info.login == null)
+    if (localStorage.getItem("status") == null && !user_info)
     {
         localStorage.setItem("status", "not connected");
         account_status = "not connected";
@@ -142,3 +142,4 @@ function initializeAuth()
     else
         account_status = "connected";
 }
+/*  */
