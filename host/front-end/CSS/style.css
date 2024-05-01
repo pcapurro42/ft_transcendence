@@ -1,4 +1,4 @@
-#game_page_ai, #game_page_classic, #game_page_tournament, #create_classic_menu, #logged, #play_menu, #play_classic_menu, #play_tournament_menu, #form_alias, #customize_menu, #settings_menu, #statusBar
+#game_page_ai, #game_page_classic, #game_page_tournament, #create_classic_menu, #logged, #play_menu, #classic_menu, #tournament_menu, #form_alias, #customize_menu, #settings_menu, #statusBar
 {
     display: none;
 }
@@ -66,12 +66,12 @@
     border: 0cap;
 }
 
-#play_back_btn, #settings_back_btn, #customize_back_btn, #play_classic_back_btn, #tournament_submenu_back_btn
+#play_back_btn, #settings_back_btn, #customize_back_btn, #classic_back_btn, #tournament_submenu_back_btn
 {
     font-weight: bold;
 }
 
-#play_btn:hover, #customize_btn:hover, #settings_btn:hover, #credits_btn:hover, #play_classic_btn:hover, #ai_game_btn:hover, #play_tournament_btn:hover, #play_back_btn:hover, #settings_back_btn:hover, #customize_back_btn:hover, #play_classic_back_btn:hover, #join_classic_btn:hover, #create_classic_btn:hover, #create_tournament_btn:hover, #join_tournament_btn:hover, #play_tournament_back_btn:hover, #tournament_submenu_back_btn:hover
+#play_btn:hover, #customize_btn:hover, #settings_btn:hover, #credits_btn:hover, #play_classic_btn:hover, #ai_game_btn:hover, #play_tournament_btn:hover, #play_back_btn:hover, #settings_back_btn:hover, #customize_back_btn:hover, #classic_back_btn:hover, #join_classic_btn:hover, #create_classic_btn:hover, #create_tournament_btn:hover, #join_tournament_btn:hover, #tournament_back_btn:hover, #tournament_submenu_back_btn:hover
 {
     text-decoration: underline;
 }

@@ -24,9 +24,9 @@ document.getElementById('credit_close').onclick = theaterClose;
 // < PLAY > //
 
 document.getElementById('play_classic_btn').onclick = displayClassicMenu;
-document.getElementById('play_classic_back_btn').onclick = removeClassicMenu;
+document.getElementById('classic_back_btn').onclick = removeClassicMenu;
 document.getElementById('play_tournament_btn').onclick = displayTournamentMenu;
-document.getElementById('play_tournament_back_btn').onclick = removeTournamentMenu;
+document.getElementById('tournament_back_btn').onclick = removeTournamentMenu;
 document.getElementById('tournament_submenu_back_btn').onclick = displayTournamentMenu;
 
 // < CLASSIC > //

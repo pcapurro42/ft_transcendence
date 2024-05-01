@@ -21,13 +21,13 @@ function displayMenu()
     let settings_menu = document.getElementById('settings_menu');
     settings_menu.style.display = "none";
 
-    let play_classic_buttons = document.getElementById('play_classic_menu');
+    let play_classic_buttons = document.getElementById('classic_menu');
     play_classic_buttons.style.display = "none";
 
     let create_classic_menu = document.getElementById('create_classic_menu');
     create_classic_menu.style.display = 'none';
 
-    let play_tournament_buttons = document.getElementById('play_tournament_menu');
+    let play_tournament_buttons = document.getElementById('tournament_menu');
     play_tournament_buttons.style.display = "none";
 
     let tournament_form = document.getElementById('form_alias')

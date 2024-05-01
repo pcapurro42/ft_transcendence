@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html id="lang" lang="">
 
-    <!-- HEAD -->
+            <!----------------------------------------- HEAD ----------------------------------------->
 
     <head>
 
@@ -39,62 +39,62 @@
 
     </head>
 
-    <!-- BODY -->
+
+
+
+
+
+            <!----------------------------------------- BODY ----------------------------------------->
 
     <body id="background" class="container my-4">
 
-    <!-- GAME -->
 
-            <!-- vs AI Game Page -->
-        <div id="game_page_ai">
 
-            <div id="game_toolbar" class="container">
 
-                <div>
+            <!----------------------------------------- GAME PAGES----------------------------------------->
 
-                    <img id="top_logo" src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto d-block btn-complex" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'">
-
-                    <hr class="line" id="top_line">
-
-                </div>
-
-            </div>
-
-        </div>
 
             <!--Classic Game Page -->
-        <div id="game_page_classic">
 
-            <div id="game_toolbar" class="container">
+            <div id="game_page_classic">
 
-                <div>
+                <div id="game_toolbar" class="container">
 
-                    <img id="top_logo" src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto d-block btn-complex" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'">
+                    <div>
 
-                    <hr class="line" id="top_line">
+                        <img id="top_logo" src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto d-block btn-complex" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'">
+
+                        <hr class="line" id="top_line">
+
+                    </div>
+
+                </div>
+
+                <div id="game_lobby_block" class="container d-flex flex-row w-100 h-auto">
+
+                    <div id="game_container" class="col-10 border border-5">
+                        <p class="m-1">game section....</p>
+                    </div>
+                    <div id="lobby_container" class="col-2 border border-5 overflow-auto h-100">
+                        <div id="lobby_container_info" class="border border-2 h-25">
+                            <p class="m-1">info section....</p>
+                        </div>
+                        <div id="lobby_container_chat" class="border border-2 h-75">
+                            <p class="m-1">chat section...</p>
+                        </div>
 
                 </div>
 
             </div>
-
-            <div id="game_lobby_block" class="container d-flex flex-row w-100 h-auto">
-
-                <div id="game_container" class="col-10 border border-5">
-                    <!-- Content -->
-                </div>
-                <div id="lobby_container" class="col-2 border border-5 overflow-auto h-100">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus velit felis, lacinia nec nisi vitae, sollicitudin mollis eros. Proin est orci, mattis ac nunc vel, semper pretium arcu. Pellentesque molestie accumsan posuere. Proin condimentum bibendum ante, posuere faucibus erat tristique vel. Fusce nec condimentum mi, et gravida mi. Aliquam eget tortor at leo congue gravida. Aenean consectetur viverra dolor sed faucibus. Nunc cursus malesuada sapien, sed suscipit eros luctus porta. Donec neque lacus, volutpat sit amet urna id, porta congue nisi. Vivamus mauris diam, sollicitudin nec iaculis quis, pretium eu mauris. Ut ornare purus ut molestie aliquam. Cras ac laoreet enim. Cras est ligula, sollicitudin eu fringilla at, venenatis eget sapien.
-                        Praesent ultricies, nulla consequat mollis rutrum, velit quam lacinia sem, ut convallis dui est non dolor. Praesent eu commodo dui. Nam tempus ultricies velit, eu dictum lectus scelerisque euismod. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus dolor risus, vehicula auctor ullamcorper id, mollis eu erat. Nulla facilisi. Quisque ut est vitae risus euismod viverra. Nunc ligula lacus, pretium vitae sem ut, maximus tempus elit. Quisque viverra erat ut orci euismod tincidunt. Cras scelerisque sapien arcu, tincidunt tempor urna placerat quis. Etiam pulvinar, libero vitae varius imperdiet, ex purus varius erat, eget sollicitudin est nunc ac diam. Vivamus id tortor egestas ligula convallis varius sed eget tellus. Vestibulum magna magna, fringilla eget libero id, pulvinar viverra eros. Phasellus nunc nulla, dignissim non erat sit amet, egestas consectetur magna.
-
-                        </p>
-                </div>
-
-
+             <div class="text-center">
+                            <input type="text" id="game_id_reminder" class="d-inline m-2" data-tsnormal="16px" data-tslarge="21px" readonly></input>
+                            <button id="cpy_btn_reminder" class="btn btn-simple text btn-outline-secondary btn-sm" data-tsnormal="15px" data-tslarge="20px" data-title="Copy" data-oname="Copy"></button>
+                            <p class="text" data-tsnormal="15px" data-tslarge="20px" data-oname="Game Id send msg"></p>
             </div>
-
         </div>
 
-            <!-- Tournament Game Page -->
+        <!-- Tournament Game Page -->
+
         <div id="game_page_tournament">
 
             <div id="game_toolbar" class="container">
@@ -111,7 +111,25 @@
 
         </div>
 
-        <!-- MENU -->
+        <!-- vs AI Game Page -->
+
+        <div id="game_page_ai">
+
+            <div id="game_toolbar" class="container">
+
+                <div>
+
+                    <img id="top_logo" src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto d-block btn-complex" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'">
+
+                    <hr class="line" id="top_line">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!---------------------------------------- MAIN MENU ---------------------------------------->
 
         <div id="main_menu_page">
 
@@ -134,7 +152,7 @@
 
             </div>
 
-            <!-- TITLE -->
+        <!-- TITLE -->
 
             <div id="title" class="d-flex flex-column py-5 px-5">
 
@@ -142,11 +160,10 @@
 
             </div>
 
-            <!-- MAIN MENU -->
+
 
             <div id="main_menu">
-
-                <!-- MAIN MENU BUTTONS -->
+            <!---------------------------------------- MAIN MENU BUTTONS ---------------------------------------->
 
                 <div id="main_menu_buttons" class="container">
 
@@ -162,7 +179,7 @@
 
                 </div>
 
-                <!-- PLAY MENU -->
+            <!---------------------------------------- "PLAY" MENU ---------------------------------------->
 
                 <div id="play_menu" class="container">
 
@@ -180,52 +197,52 @@
 
                 </div>
 
-                <!-- PLAY CLASSIC MENU -->
+            <!------------------------------------ "CLASSIC" MENU -------------------------------------->
 
-                <div id="play_classic_menu" class="container">
+                <div id="classic_menu" class="container">
 
                     <div class="p-2 text-center">
                         <button id="create_classic_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Create a game" data-title="Create a game" title=""></button><br>
 
                         <button id="join_classic_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Join a game" data-title="Join a game" title=""></button><br><br>
 
-                        <button id="play_classic_back_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
+                        <button id="classic_back_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
                     </div>
 
                 </div>
 
-                <!-- CREATE/JOIN CLASSIC -->
+        <!-- CREATE/JOIN CLASSIC -->
 
                 <div id="create_classic_menu" class="text-center mt-4">
 
                     <div id="game_id_div">
-                            <input type="text" id="game_id" class="d-inline m-2" data-tsnormal="16px" data-tslarge="21px" readonly></input>
-                            <button id="cpy_btn" class="btn btn-simple text btn-outline-secondary btn-sm" data-tsnormal="15px" data-tslarge="20px" data-title="Copy" data-oname="Copy"></button>
+                        <input type="text" id="game_id" class="d-inline m-2" data-tsnormal="16px" data-tslarge="21px" readonly></input>
+                        <button id="cpy_btn" class="btn btn-simple text btn-outline-secondary btn-sm" data-tsnormal="15px" data-tslarge="20px" data-title="Copy" data-oname="Copy"></button>
                     </div>
                     <div>
-                        <button id="create_classic_lobby" class="btn btn-sm text btn-outline-danger btn-simple me-2 my-3" data-title="Create Lobby" data-oname="Create Lobby"></button>
+                        <p class="text" data-oname="Game Id send msg" data-tsnormal="15px" data-tslarge="20px"></p>
+                        <button id="create_classic_lobby" class="btn btn-lg text btn-outline-danger btn-simple me-2 my-3" data-title="Create Lobby" data-oname="Create Lobby"></button>
                     </div>
-                <button id="create_classic_back_btn" class="btn text btn-complex mt-5" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
-
+                    <button id="create_classic_back_btn" class="btn text btn-complex mt-5" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
                 </div>
 
 
 
-                <!-- PLAY TOURNAMENT MENU -->
+            <!-------------------------------------- "TOURNAMENT" MENU -------------------------------------->
 
-                <div id="play_tournament_menu" class="container">
+                <div id="tournament_menu" class="container">
 
                     <div class="p-2 text-center">
                         <button id="create_tournament_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Create a tournament" data-title="Create a tournament" title=""></button><br>
 
                         <button id="join_tournament_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Join a tournament" data-title="Join a tournament" title=""></button><br><br>
 
-                        <button id="play_tournament_back_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
+                        <button id="tournament_back_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
                     </div>
 
                 </div>
 
-                <!-- CREATE/JOIN TOURNAMENT -->
+        <!-- CREATE/JOIN TOURNAMENT -->
 
                 <form id="form_alias" class="container text-center">
 
@@ -248,7 +265,7 @@
 
                 </form>
 
-                <!-- CUSTOMIZE MENU -->
+            <!-------------------------------------- CUSTOMIZE MENU -------------------------------------->
 
                 <div id="customize_menu" class="container">
 
@@ -288,13 +305,13 @@
 
                 </div>
 
-                <!-- SETTINGS MENU -->
+            <!-------------------------------------- SETTINGS MENU ---------------------------------------->
 
                 <div id="settings_menu" class="container">
 
                     <div class="row">
 
-                        <!-- LEFT PANEL -->
+        <!-- LEFT PANEL -->
 
                         <div id="settings_left_panel" class="col-sm text-center">
 
@@ -327,7 +344,7 @@
 
                         </div>
 
-                        <!-- RIGHT PANEL -->
+        <!-- RIGHT PANEL -->
 
                         <div id="settings_right_panel" class="col-sm text-center">
 
@@ -358,7 +375,7 @@
 
                         </div>
 
-                        <!-- BACK BUTTON -->
+        <!-- BACK BUTTON -->
 
                         <div class="d-flex justify-content-center">
                             <button id="settings_back_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
@@ -372,11 +389,12 @@
 
         </div>
 
-        <!-- UTILS -->
+            <!---------------------------------------- UTILS ---------------------------------------->
+
         <div id="statusBar" class="alert alert-success fixed-top p-2"></div>
 
 
-        <!-- SCRIPTS -->
+            <!---------------------------------------- SCRIPTS ---------------------------------------->
 
         <script src="./JavaScript/Languages/en.js"></script>
         <script src="./JavaScript/Languages/fr.js"></script>

@@ -2,7 +2,7 @@
 
 function displayClassicMenu()
 {
-    let classic_menu = document.getElementById('play_classic_menu');
+    let classic_menu = document.getElementById('classic_menu');
     classic_menu.style.display = "block";
     let sub_menu = document.getElementById('create_classic_menu');
     sub_menu.style.display = 'none';
@@ -12,14 +12,14 @@ function displayClassicMenu()
 
 function removeClassicMenu()
 {
-    let classic_menu = document.getElementById('play_classic_menu');
+    let classic_menu = document.getElementById('classic_menu');
     classic_menu.style.display = "none";
     displayPlay();
 }
 
 
 function displayClassicCreateGame(){
-    let classic_menu = document.getElementById('play_classic_menu');
+    let classic_menu = document.getElementById('classic_menu');
     classic_menu.style.display = "none";
 
     let create_classic_menu = document.getElementById('create_classic_menu');
@@ -30,7 +30,7 @@ function displayClassicCreateGame(){
 
 function displayTournamentMenu(event)
 {
-    let tournament_menu = document.getElementById('play_tournament_menu');
+    let tournament_menu = document.getElementById('tournament_menu');
     let sub_menu = document.getElementById('form_alias');
     let play_menu = document.getElementById('play_menu');
     sub_menu.style.display = "none";
@@ -42,7 +42,7 @@ function displayTournamentMenu(event)
 
 function removeTournamentMenu()
 {
-    let tournament_menu = document.getElementById('play_tournament_menu');
+    let tournament_menu = document.getElementById('tournament_menu');
     tournament_menu.style.display = "none";
     displayPlay();
 }
@@ -50,7 +50,7 @@ function removeTournamentMenu()
 function displayTournamentForm(){
     // if (sessionStorage.getItem('alias'))
     //     return;
-    let tournament_menu = document.getElementById('play_tournament_menu');
+    let tournament_menu = document.getElementById('tournament_menu');
     tournament_menu.style.display = 'none';
     let form = document.getElementById('form_alias');
 	form.style.display = 'block';
