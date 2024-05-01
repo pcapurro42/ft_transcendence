@@ -4,8 +4,8 @@ let canvas;
 let display;
 
 let theme = "black";
-let bar_speed = 30;
-let bar_height = 100;
+let bar_speed = 15;
+let bar_height = 105;
 let bar_width = 30;
 let bar_color = "white";
 
@@ -47,25 +47,35 @@ class Bar
 
     moveUp()
     {
-        displayBackground();
-        this.y = this.y + this.speed;
-        this.print();
+        if (this.y != 0)
+        {
+            displayBackground();
+            this.y = this.y - this.speed;
+            this.print();
+        }
     }
 
     moveDown()
     {
-        displayBackground();
-        this.y = this.y - this.speed;
-        this.print();
+        if (this.y + bar_height < canvas.height)
+        {
+            displayBackground();
+            this.y = this.y + this.speed;
+            this.print();
+        }
     }
 }
 
 window.addEventListener('keydown', (event) => 
 {
     if (event.key == 'ArrowDown')
-        left_player.moveUp();
-    else if (event.key == 'ArrowUp')
         left_player.moveDown();
+    else if (event.key == 'ArrowUp')
+        left_player.moveUp();
+
+    console.log(event.key);
+
+    console.log(left_player.y);
 
     right_player.print();
 });
