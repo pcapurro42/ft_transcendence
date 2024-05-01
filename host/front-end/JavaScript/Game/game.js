@@ -80,10 +80,6 @@ window.addEventListener('keydown', (event) =>
     else if (event.key == 'ArrowUp')
         left_player.moveUp();
 
-    console.log(event.key);
-
-    console.log(left_player.y);
-
     right_player.print();
 });
 
