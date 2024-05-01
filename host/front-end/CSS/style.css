@@ -2,15 +2,10 @@
 {
     display: none;
 }
-/*
-#game_container{
-    width: 80%;
-    padding-top: 80%;
+
+#game_container, #lobby_container{
+    height: 80vh;
 }
-#lobby_container{
-    width: 20%;
-    padding-top: 20%;
-} */
 #vid_credits
 {
     display: none;
