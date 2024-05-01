@@ -72,6 +72,11 @@ class Bar
             this.print();
         }
     }
+
+    getInfo()
+    {
+        return ([this.x, this.y]);
+    }
 }
 
 window.addEventListener('keydown', (event) => 
@@ -80,6 +85,9 @@ window.addEventListener('keydown', (event) =>
         left_player.moveDown();
     else if (event.key == 'ArrowUp')
         left_player.moveUp();
+
+    console.log(left_player.getInfo());
+    console.log(right_player.getInfo());
 
     right_player.print();
 });
