@@ -1,8 +1,16 @@
-#game_page, #logged, #play_menu, #play_classic_menu, #play_tournament_menu, #form_alias, #customize_menu, #settings_menu
+#game_page_ai, #game_page_classic, #game_page_tournament, #create_classic_menu, #logged, #play_menu, #play_classic_menu, #play_tournament_menu, #form_alias, #customize_menu, #settings_menu
 {
     display: none;
 }
-
+/*
+#game_container{
+    width: 80%;
+    padding-top: 80%;
+}
+#lobby_container{
+    width: 20%;
+    padding-top: 20%;
+} */
 #vid_credits
 {
     display: none;
