@@ -1,7 +1,11 @@
 function displayMenu()
 {
-    let game_page = document.getElementById('game_page');
-    game_page.style.display = "none";
+    let game_page_ai = document.getElementById('game_page_ai');
+    game_page_ai.style.display = "none";
+    let game_page_classic = document.getElementById('game_page_classic');
+    game_page_classic.style.display = "none";
+    let game_page_tournament = document.getElementById('game_page_tournament');
+    game_page_tournament.style.display = "none";
 
     let main_menu_page = document.getElementById('main_menu_page');
     main_menu_page.style.display = "block";
