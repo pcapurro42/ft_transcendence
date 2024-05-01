@@ -2,6 +2,8 @@ let fr = [
     ["LOG IN WITH 42", "SE CONNECTER AVEC 42"],
     ["LOG OUT", "SE DÉCONNECTER"],
 
+    ["Succesfully logged in! Welcome ", "Connexion réussie ! Bienvenue "],
+
     ["Enable/Disable menu music", "Activer/désactiver la musique du menu"],
 
     ["Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'", "Logo titre central: 'Tactical Tennis Action, Metal Gear: Pong'"],
@@ -49,5 +51,7 @@ let fr = [
     ["No", "Non"],
 
     ["Normal", "Normal"],
-    ["Large", "Grand"]
+    ["Large", "Grand"],
+
+    ["Succesfully copied to clipboard.", "Copié dans le presse-papier avec succès."]
 ];

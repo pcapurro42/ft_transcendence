@@ -7,6 +7,26 @@ function getElement(lang, text)
     }
 }
 
+function getTranslation(text)
+{
+    if (language == "en")
+    {
+        for (let i = 0; i != en.length; i++)
+        {
+            if (en[i][0] == text)
+                return (en[i][1]);
+        }
+    }
+    if (language == "fr")
+    {
+        for (let i = 0; i != fr.length; i++)
+        {
+            if (fr[i][0] == text)
+                return (fr[i][1]);
+        }
+    }
+}
+
 function refreshLanguage()
 {
     let lang = localStorage.getItem("language");

@@ -3,6 +3,8 @@ let en = [
     ["LOG IN WITH 42", "LOG IN WITH 42"],
     ["LOG OUT", "LOG OUT"],
 
+    ["Succesfully logged in! Welcome ", "Succesfully logged in! Welcome "],
+
     ["Enable/Disable menu music", "Enable/Disable menu music"],
 
     ["Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'", "Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'"],
@@ -50,5 +52,7 @@ let en = [
     ["No", "No"],
 
     ["Normal", "Normal"],
-    ["Large", "Large"]
+    ["Large", "Large"],
+
+    ["Succesfully copied to clipboard.", "Succesfully copied to clipboard."]
 ];
