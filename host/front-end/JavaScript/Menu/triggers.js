@@ -32,6 +32,8 @@ document.getElementById('tournament_submenu_back_btn').onclick = displayTourname
 // < CLASSIC > //
 
 document.getElementById('create_classic_btn').onclick = displayClassicCreateGame;
+document.getElementById('create_classic_back_btn').onclick = displayClassicMenu;
+document.getElementById('create_classic_lobby').onclick = displayGamePage_classic;
 
 // < TOURNAMENT > //
 

@@ -1,4 +1,4 @@
 function ai()
 {
-    displayGamePage();
+    displayGamePage_ai();
 }

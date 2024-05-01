@@ -4,6 +4,8 @@ function displayClassicMenu()
 {
     let classic_menu = document.getElementById('play_classic_menu');
     classic_menu.style.display = "block";
+    let sub_menu = document.getElementById('create_classic_menu');
+    sub_menu.style.display = 'none';
     let play_menu = document.getElementById('play_menu');
     play_menu.style.display = 'none';
 }
