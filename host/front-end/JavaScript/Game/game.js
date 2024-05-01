@@ -4,9 +4,11 @@ let canvas;
 let display;
 
 let theme = "black";
-let p_bar_speed = 15;
-let p_bar_height = 105;
-let p_bar_width = 30;
+
+let p_bar_speed = 10;
+let p_bar_height = 100;
+let p_bar_width = 20;
+
 let p_bar_color = "white";
 
 function initializeCanvas()
@@ -55,12 +57,13 @@ class Bar
 
     moveUp()
     {
-        if (this.y != 0)
+        if (this.y > 0)
         {
             displayBackground();
             this.y = this.y - this.speed;
             this.print();
         }
+        console.log(this.y);
     }
 
     moveDown()
