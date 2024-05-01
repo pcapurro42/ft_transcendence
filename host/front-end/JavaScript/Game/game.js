@@ -47,12 +47,14 @@ class Bar
 
     moveUp()
     {
+        displayBackground();
         this.y = this.y + this.speed;
         this.print();
     }
 
     moveDown()
     {
+        displayBackground();
         this.y = this.y - this.speed;
         this.print();
     }
