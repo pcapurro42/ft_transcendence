@@ -147,12 +147,10 @@
                 <!-- CREATE/JOIN CLASSIC -->
                 <div id="create_classic_menu" class="text-center">
                     <div id="game_id_div">
-                        <img id="cpy_to_clipboard" src="./Materials/images/copy_icon.png" class="w-auto">
-                        <div class="d-inline  border border-danger border-2 rounded-pill">
-                            <p id="game_id" class="d-inline m-2" ></p>
-                        </div>
-                        <button id="create_classic_loby" class="btn btn-sm text btn-outline-danger btn-simple ms-2 mb-1" data-oname="Create Lobby"></button>
+                            <input type="text" id="game_id" class="d-inline m-2" data-tsnormal="16px" data-tslarge="21px" readonly></input>
+                            <button id="cpy_btn" class="btn btn-simple text btn-outline-secondary btn-sm" data-tsnormal="15px" data-tslarge="20px" data-title="Copy" data-oname="Copy"></button>
                     </div>
+                        <button id="create_classic_loby" class="btn btn-sm text btn-outline-danger btn-simple me-2 mb-1" data-title="Create Lobby" data-oname="Create Lobby"></button>
                 </div>
 
 
@@ -318,6 +316,10 @@
 
         </div>
 
+        <!-- UTILS -->
+        <div id="statusBar" class="alert alert-success fixed-top p-2"></div>
+
+
         <!-- SCRIPTS -->
 
         <script src="./JavaScript/Languages/en.js"></script>
@@ -337,6 +339,7 @@
         <script src="./JavaScript/Game/page.js"></script>
         <script src="./JavaScript/Game/game.js"></script>
         <script src="./JavaScript/Game/ai.js"></script>
+        <script src="./JavaScript/Game/lobby.js"></script>
 
         <script src="./JavaScript/sounds.js"></script>
         <script src="./JavaScript/music.js"></script>

@@ -13,6 +13,7 @@ let fr = [
 
     ["Create a game", "Créer une partie"],
     ["Join a game", "Rejoindre une partie"],
+    ["Copy", "Copier"],
     ["Create Lobby", "Créer un salon"],
     ["Create a tournament", "Créer un tournoi"],
     ["Join a tournament", "Rejoindre un tournoi"],

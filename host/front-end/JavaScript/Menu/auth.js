@@ -52,6 +52,10 @@ async function handleRedirection(){
         if (user_info){
             localStorage.setItem('user_info', JSON.stringify(user_info));
             document.getElementById('intra_login').innerHTML = ` ${user_info.login}`;
+            if (localStorage.getItem("language") == "fr")
+                displayStatusBar(`Succesfully logged in! Welcome ${user_info.login}.`)
+            else
+                displayStatusBar(`Connecté avec succès! Bienvenue ${user_info.login}.`)
         }
         else{
             throw("Error: user_info not retrieved.");
@@ -118,8 +122,8 @@ function refreshLogin()
         document.getElementById('login_btn').style.display = "block";
         document.getElementById('intra_login').style.display = "none";
 
-        document.getElementById('play_classic_btn').classList.add('disabled');
-        document.getElementById('play_tournament_btn').classList.add('disabled');
+        // document.getElementById('play_classic_btn').classList.add('disabled');
+        // document.getElementById('play_tournament_btn').classList.add('disabled');
     }
 }
 

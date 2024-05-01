@@ -23,7 +23,7 @@ function displayClassicCreateGame(){
     let create_classic_menu = document.getElementById('create_classic_menu');
     create_classic_menu.style.display = 'block';
     let gameId = document.getElementById('game_id');
-    gameId.innerHTML = generateGameID();
+    gameId.value = generateGameID();
 }
 
 function displayTournamentMenu(event)

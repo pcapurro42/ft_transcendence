@@ -27,6 +27,9 @@ function displayMenu()
     let tournament_form = document.getElementById('form_alias')
     tournament_form.style.display = 'none';
 
+    let statusBar = document.getElementById('statusBar');
+    statusBar.style.display = 'none';
+
     let main_menu_buttons = document.getElementById('main_menu_buttons');
     main_menu_buttons.style.display = "block";
 
