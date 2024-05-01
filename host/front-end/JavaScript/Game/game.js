@@ -4,10 +4,10 @@ let canvas;
 let display;
 
 let theme = "black";
-let bar_speed = 15;
-let bar_height = 105;
-let bar_width = 30;
-let bar_color = "white";
+let p_bar_speed = 15;
+let p_bar_height = 105;
+let p_bar_width = 30;
+let p_bar_color = "white";
 
 function initializeCanvas()
 {
@@ -22,13 +22,14 @@ function displayBackground()
 {
     display.fillStyle = theme;
     display.fillRect(0, 0, canvas.width, canvas.height);
+
     displayCenterBar();
 }
 
 function displayCenterBar()
 {
     display.fillStyle = "white";
-    display.fillRect((canvas.width / 2) - (bar_width / 2), 0, 15, canvas.height);
+    display.fillRect((canvas.width / 2) - (p_bar_width / 2), 0, 10, canvas.height);
 }
 
 class Bar
@@ -48,7 +49,7 @@ class Bar
 
     print()
     {
-        display.fillStyle = bar_color;
+        display.fillStyle = p_bar_color;
         display.fillRect(this.x, this.y, this.width, this.height);
     }
 
@@ -64,7 +65,7 @@ class Bar
 
     moveDown()
     {
-        if (this.y + bar_height < canvas.height)
+        if (this.y + p_bar_height < canvas.height)
         {
             displayBackground();
             this.y = this.y + this.speed;
@@ -88,8 +89,8 @@ window.addEventListener('keydown', (event) =>
 initializeCanvas();
 displayBackground();
 
-let left_player = new Bar(bar_width, bar_height, 0 + bar_width, 150, bar_speed, "white");
-let right_player = new Bar(bar_width, bar_height, (canvas.width - bar_width) - bar_width, 400, bar_speed, "white");
+let left_player = new Bar(p_bar_width, p_bar_height, 0 + p_bar_width, 150, p_bar_speed, "white");
+let right_player = new Bar(p_bar_width, p_bar_height, (canvas.width - p_bar_width) - p_bar_width, 400, p_bar_speed, "white");
 
 left_player.print();
 right_player.print();
