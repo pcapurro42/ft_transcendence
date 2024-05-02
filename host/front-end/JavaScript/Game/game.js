@@ -173,9 +173,6 @@ function initializePlayers()
 
     game.left_player = new Bar(...Object.values(left_player_data));
     game.right_player = new Bar(...Object.values(right_player_data));
-
-    game.left_player.print();
-    game.right_player.print();
 }
 
 function initializeBall()
@@ -183,34 +180,38 @@ function initializeBall()
     ;
 }
 
-function refreshGameDisplay(event)
+function refreshPlayerPos(event)
 {
     if (event.key == 'ArrowDown')
         game.left_player.moveDown();
     else if (event.key == 'ArrowUp')
         game.left_player.moveUp();
 
-    game.right_player.print();
-    
-    displayCenterBar();
-    displayScores();
+    refreshGameDisplay();
 
     // console.log(game.left_player.getInfo());
     // console.log(game.right_player.getInfo());
 }
 
+function refreshGameDisplay()
+{
+    displayBackground();
+    displayCenterBar();
+    displayScores();
+
+    game.left_player.print();
+    game.right_player.print();
+}
+
 window.addEventListener('keydown', (event) => {
-    refreshGameDisplay(event); });
+    refreshPlayerPos(event); });
 
 // < MAIN CODE > //
 
 initializeCanvas();
 initializeColors();
 
-displayBackground();
-displayCenterBar();
-
-displayScores();
-
 initializePlayers();
 initializeBall();
+
+refreshGameDisplay();
