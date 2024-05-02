@@ -34,7 +34,7 @@ class Bar
 
     moveDown()
     {
-        if (this.y + infos.bar_height < game_height)
+        if (this.y + infos.bar_height < infos.game_height)
         {
             displayBackground();
             this.y = this.y + this.speed;
@@ -54,9 +54,17 @@ infos = {
     canvas: null,
     display: null,
 
+    game_width: 1100,
+    game_height: 720,
+
     bar_speed: 10,
+
     bar_height: 100,
     bar_width: 20,
+
+    separator_height: 20,
+    separator_width: 10,
+    separator_space: 17,
 
     menu_color: null,
     background_color: null,
@@ -69,5 +77,7 @@ game = {
     left_player: null,
     right_player: null,
 
-    ball: null
+    ball: null,
+
+    scores: [0, 0]
 }

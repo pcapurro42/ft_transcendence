@@ -5,22 +5,10 @@ theme = "dark";
 
 // < CONSTANTS > //
 
-const game_width = 1100;
-const game_height = 720;
+const x_center = infos.game_width / 2;
 
-const bar_speed = 10;
-
-const bar_height = 100;
-const bar_width = 20;
-
-const separator_height = 20;
-const separator_width = 10;
-const separator_space = 17;
-
-const x_center = game_width / 2;
-
-const x_end = (game_width - infos.bar_width) - infos.bar_width;
-const y_middle = (game_height / 2) - infos.bar_height / 2;
+const x_end = (infos.game_width - infos.bar_width) - infos.bar_width;
+const y_middle = (infos.game_height / 2) - infos.bar_height / 2;
 
 // < FUNCTIONS > //
 
@@ -29,8 +17,8 @@ function initializeCanvas()
     infos.canvas = document.getElementById('game');
     infos.display = infos.canvas.getContext('2d');
     
-    infos.canvas.width = game_width;
-    infos.canvas.height = game_height;
+    infos.canvas.width = infos.game_width;
+    infos.canvas.height = infos.game_height;
 }
 
 function initializeColors()
@@ -52,18 +40,18 @@ function initializeColors()
 function displayBackground()
 {
     infos.display.fillStyle = infos.background_color;
-    infos.display.fillRect(0, 0, game_width, game_height);
+    infos.display.fillRect(0, 0, infos.game_width, infos.game_height);
 }
 
 function displayCenterBar()
 {
-    let x_bar_center = x_center - (separator_width / 2);
-    let nb = ~~(game_height / (separator_height + separator_space));
+    let x_bar_center = x_center - (infos.separator_width / 2);
+    let nb = ~~(infos.game_height / (infos.separator_height + infos.separator_space));
 
     infos.display.fillStyle = infos.menu_color;
     for (let value = 0; value != nb; value++)
     {
-        infos.display.fillRect(x_bar_center, ((separator_height * value) + separator_space * (value + 1)), separator_width, separator_height);
+        infos.display.fillRect(x_bar_center, ((infos.separator_height * value) + infos.separator_space * (value + 1)), infos.separator_width, infos.separator_height);
     }
 }
 
