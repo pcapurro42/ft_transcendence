@@ -5,6 +5,8 @@
 const game_width = 1100;
 const game_height = 720;
 
+const x_center = game_width / 2;
+
 const x_end = (game_width - infos.bar_width) - infos.bar_width;
 const y_middle = (game_height / 2) - infos.bar_height / 2;
 
@@ -23,14 +25,21 @@ function displayBackground()
 {
     infos.display.fillStyle = infos.theme;
     infos.display.fillRect(0, 0, game_width, game_height);
-
-    displayCenterBar();
 }
 
 function displayCenterBar()
 {
+    let bar_width = 10;
+    let bar_height = 30;
+    let space_height = 10;
+
     infos.display.fillStyle = "white";
-    infos.display.fillRect((game_width / 2) - (infos.bar_width / 2), 20, 10, game_height - 40);
+    infos.display.fillRect(x_center - (bar_width / 2), space_height, bar_width, bar_height);
+}
+
+function displayScores()
+{
+    ;
 }
 
 function initializePlayers()
@@ -69,24 +78,31 @@ function initializeBall()
     ;
 }
 
-window.addEventListener('keydown', (event) => 
+function refreshGameDisplay(event)
 {
     if (event.key == 'ArrowDown')
         game.left_player.moveDown();
     else if (event.key == 'ArrowUp')
         game.left_player.moveUp();
 
+    game.right_player.print();
+    
+    displayCenterBar();
+    displayScores();
+
     console.log(game.left_player.getInfo());
     console.log(game.right_player.getInfo());
+}
 
-    game.right_player.print();
-});
+window.addEventListener('keydown', (event) => {
+    refreshGameDisplay(event); });
 
 // < MAIN CODE > //
 
 initializeCanvas();
 
 displayBackground();
+displayCenterBar();
 
 initializePlayers();
 initializeBall();
