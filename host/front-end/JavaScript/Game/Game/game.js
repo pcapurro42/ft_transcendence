@@ -1,9 +1,21 @@
 /** @type {HTMLCanvasElement} */
 
+theme = "dark";
+// theme = "light";
+
 // < CONSTANTS > //
 
 const game_width = 1100;
 const game_height = 720;
+
+const bar_speed = 10;
+
+const bar_height = 100;
+const bar_width = 20;
+
+const separator_height = 20;
+const separator_width = 10;
+const separator_space = 17;
 
 const x_center = game_width / 2;
 
@@ -21,24 +33,37 @@ function initializeCanvas()
     infos.canvas.height = game_height;
 }
 
+function initializeColors()
+{
+    if (theme == "dark")
+    {
+        infos.menu_color = 'white';
+        infos.background_color = 'black';
+        infos.bar_color = 'white';
+    }
+    else
+    {
+        infos.menu_color = 'black';
+        infos.background_color = 'white';
+        infos.bar_color = 'black';
+    }
+}
+
 function displayBackground()
 {
-    infos.display.fillStyle = infos.theme;
+    infos.display.fillStyle = infos.background_color;
     infos.display.fillRect(0, 0, game_width, game_height);
 }
 
 function displayCenterBar()
 {
-    let bar_width = 10;
-    let bar_height = 20;
-    let space_height = 10;
+    let x_bar_center = x_center - (separator_width / 2);
+    let nb = ~~(game_height / (separator_height + separator_space));
 
-    infos.display.fillStyle = "white";
-    
-    infos.display.fillRect(x_center - (bar_width / 2), space_height, bar_width, bar_height);
-    for (let value = 0; value != 10; value++)
+    infos.display.fillStyle = infos.menu_color;
+    for (let value = 0; value != nb; value++)
     {
-        ;
+        infos.display.fillRect(x_bar_center, ((separator_height * value) + separator_space * (value + 1)), separator_width, separator_height);
     }
 }
 
@@ -105,6 +130,7 @@ window.addEventListener('keydown', (event) => {
 // < MAIN CODE > //
 
 initializeCanvas();
+initializeColors();
 
 displayBackground();
 displayCenterBar();

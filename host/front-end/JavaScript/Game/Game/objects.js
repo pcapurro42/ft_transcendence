@@ -54,13 +54,13 @@ infos = {
     canvas: null,
     display: null,
 
-    theme: 'black',
-
     bar_speed: 10,
     bar_height: 100,
     bar_width: 20,
 
-    bar_color: 'white'
+    menu_color: null,
+    background_color: null,
+    bar_color: null
 }
 
 // < GAME STRUCT > //
