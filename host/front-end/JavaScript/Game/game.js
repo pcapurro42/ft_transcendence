@@ -1,5 +1,3 @@
-/** @type {HTMLCanvasElement} */
-
 theme = "dark";
 // theme = "light";
 
@@ -56,7 +54,7 @@ class Bar
 
 infos = {
     canvas: null,
-    display: null,
+    /** @type {HTMLCanvasElement} */ display: null,
 
     game_width: 1100,
     game_height: 720,
@@ -140,7 +138,13 @@ function displayCenterBar()
 
 function displayScores()
 {
-    ;
+    score_y = 50;
+    left_score_x = 100;
+    right_score_x = 500;
+
+    infos.display.font = "40px Arial";
+    infos.display.fillText(game.scores[0], left_score_x, score_y);
+    infos.display.fillText(game.scores[1], right_score_x, score_y);
 }
 
 function initializePlayers()
@@ -205,6 +209,8 @@ initializeColors();
 
 displayBackground();
 displayCenterBar();
+
+displayScores();
 
 initializePlayers();
 initializeBall();
