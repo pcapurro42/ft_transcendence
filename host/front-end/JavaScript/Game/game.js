@@ -1,6 +1,32 @@
 theme = "dark";
 // theme = "light";
 
+// < INFO STRUCT > //
+
+infos = {
+    canvas: null,
+    /** @type {HTMLCanvasElement} */ display: null,
+
+    game_width: 1100,
+    game_height: 720,
+
+    bar_speed: 10,
+
+    bar_height: 100,
+    bar_width: 20,
+
+    text_size: "100px",
+    text_font: 'Arial',
+
+    separator_height: 20,
+    separator_width: 10,
+    separator_space: 17,
+
+    menu_color: null,
+    background_color: null,
+    bar_color: null
+}
+
 // < OBJECT > //
 
 class Bar
@@ -50,29 +76,6 @@ class Bar
     }
 }
 
-// < INFO STRUCT > //
-
-infos = {
-    canvas: null,
-    /** @type {HTMLCanvasElement} */ display: null,
-
-    game_width: 1100,
-    game_height: 720,
-
-    bar_speed: 10,
-
-    bar_height: 100,
-    bar_width: 20,
-
-    separator_height: 20,
-    separator_width: 10,
-    separator_space: 17,
-
-    menu_color: null,
-    background_color: null,
-    bar_color: null
-}
-
 // < GAME STRUCT > //
 
 game = {
@@ -91,7 +94,7 @@ const x_center = infos.game_width / 2;
 const x_end = (infos.game_width - infos.bar_width) - infos.bar_width;
 const y_middle = (infos.game_height / 2) - infos.bar_height / 2;
 
-// < FUNCTIONS > //
+// < INIT > //
 
 function initializeCanvas()
 {
@@ -118,6 +121,8 @@ function initializeColors()
     }
 }
 
+// < DISPLAY > //
+
 function displayBackground()
 {
     infos.display.fillStyle = infos.background_color;
@@ -138,13 +143,14 @@ function displayCenterBar()
 
 function displayScores()
 {
-    score_y = 50;
-    left_score_x = 100;
+    let txt_size = infos.text_size[0] + infos.text_size[1] + infos.text_size[2];
+    score_y = infos.game_height / 6;
+    left_score_x = (infos.game_width / 4) - (txt_size / 2) + infos.bar_width;
     right_score_x = 500;
 
-    infos.display.font = "40px Arial";
+    infos.display.font = infos.text_size + " " + infos.text_font;
     infos.display.fillText(game.scores[0], left_score_x, score_y);
-    infos.display.fillText(game.scores[1], right_score_x, score_y);
+    // infos.display.fillText(game.scores[1], right_score_x, score_y);
 }
 
 function initializePlayers()
@@ -180,6 +186,8 @@ function initializeBall()
     ;
 }
 
+// < REFRESH > //
+
 function refreshPlayerPos(event)
 {
     if (event.key == 'ArrowDown')
@@ -202,6 +210,8 @@ function refreshGameDisplay()
     game.left_player.print();
     game.right_player.print();
 }
+
+// < TRIGGER > //
 
 window.addEventListener('keydown', (event) => {
     refreshPlayerPos(event); });
