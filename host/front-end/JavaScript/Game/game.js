@@ -1,38 +1,24 @@
 /** @type {HTMLCanvasElement} */
 
-let canvas;
-let display;
+// < INFO STRUCT > //
 
-let theme = "black";
+infos = {
+    canvas: null,
+    display: null,
 
-let p_bar_speed = 10;
-let p_bar_height = 100;
-let p_bar_width = 20;
+    screen_width: 1100,
+    screen_heigth: 720,
 
-let p_bar_color = "white";
+    theme: 'black',
 
-function initializeCanvas()
-{
-    canvas = document.getElementById('game');
-    display = canvas.getContext('2d');
+    bar_speed: 10,
+    bar_height: 100,
+    bar_width: 20,
 
-    canvas.width = 1100;
-    canvas.height = 720;
+    bar_color: 'white'
 }
 
-function displayBackground()
-{
-    display.fillStyle = theme;
-    display.fillRect(0, 0, canvas.width, canvas.height);
-
-    displayCenterBar();
-}
-
-function displayCenterBar()
-{
-    display.fillStyle = "white";
-    display.fillRect((canvas.width / 2) - (p_bar_width / 2), 20, 10, canvas.height - 40);
-}
+// < OBJECT > //
 
 class Bar
 {
@@ -51,8 +37,8 @@ class Bar
 
     print()
     {
-        display.fillStyle = p_bar_color;
-        display.fillRect(this.x, this.y, this.width, this.height);
+        infos.display.fillStyle = infos.bar_color;
+        infos.display.fillRect(this.x, this.y, this.width, this.height);
     }
 
     moveUp()
@@ -68,7 +54,7 @@ class Bar
 
     moveDown()
     {
-        if (this.y + p_bar_height < canvas.height)
+        if (this.y + infos.bar_height < infos.height)
         {
             displayBackground();
             this.y = this.y + this.speed;
@@ -82,26 +68,52 @@ class Bar
     }
 }
 
-window.addEventListener('keydown', (event) => 
+// < FUNCTIONS > //
+
+infos.canvas = document.getElementById('game');
+infos.display = infos.canvas.getContext('2d');
+
+infos.canvas.width = infos.screen_width;
+infos.canvas.height = infos.screen_heigth;
+
+function displayBackground()
 {
-    if (event.key == 'ArrowDown')
-        left_player.moveDown();
-    else if (event.key == 'ArrowUp')
-        left_player.moveUp();
+    infos.display.fillStyle = infos.theme;
+    infos.display.fillRect(0, 0, infos.screen_width, infos.screen_height);
 
-    console.log(left_player.getInfo());
-    console.log(right_player.getInfo());
+    displayCenterBar();
+}
 
-    right_player.print();
-});
+function displayCenterBar()
+{
+    infos.display.fillStyle = "white";
+    infos.display.fillRect((infos.width / 2) - (infos.bar_width / 2), 20, 10, infos.height - 40);
+}
+
+// window.addEventListener('keydown', (event) => 
+// {
+//     if (event.key == 'ArrowDown')
+//         left_player.moveDown();
+//     else if (event.key == 'ArrowUp')
+//         left_player.moveUp();
+
+//     console.log(left_player.getInfo());
+//     console.log(right_player.getInfo());
+
+//     right_player.print();
+// });
+
+// < CONSTANTS > //
+
+// const x_end = (infos.width - infos.bar_width) - infos.bar_width;
+// const y_middle = (infos.height / 2) - infos.bar_height / 2;
 
 // < CODE > //
 
-initializeCanvas();
 displayBackground();
 
-let left_player = new Bar(p_bar_width, p_bar_height, 0 + p_bar_width, (canvas.height / 2) - p_bar_height / 2, p_bar_speed, "white");
-let right_player = new Bar(p_bar_width, p_bar_height, ((canvas.width - p_bar_width) - p_bar_width), ((canvas.height / 2) - p_bar_height / 2), p_bar_speed, "white");
+// let left_player = new Bar(infos.bar_width, infos.bar_height, 0 + infos.bar_width, y_middle, infos.bar_speed, "white");
+// let right_player = new Bar(infos.bar_width, infos.bar_height, x_end, y_middle, infos.bar_speed, "white");
 
-left_player.print();
-right_player.print();
+// left_player.print();
+// right_player.print();
