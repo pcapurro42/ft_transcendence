@@ -30,11 +30,16 @@ function displayBackground()
 function displayCenterBar()
 {
     let bar_width = 10;
-    let bar_height = 30;
+    let bar_height = 20;
     let space_height = 10;
 
     infos.display.fillStyle = "white";
+    
     infos.display.fillRect(x_center - (bar_width / 2), space_height, bar_width, bar_height);
+    for (let value = 0; value != 10; value++)
+    {
+        ;
+    }
 }
 
 function displayScores()
