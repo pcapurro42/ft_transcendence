@@ -13,13 +13,13 @@ infos = {
     bar_speed: 10,
 
     bar_height: 100,
-    bar_width: 20,
+    bar_width: 15,
 
-    text_size: "100px",
+    text_size: 100,
     text_font: 'Arial',
 
     separator_height: 20,
-    separator_width: 10,
+    separator_width: 3,
     separator_space: 17,
 
     menu_color: null,
@@ -143,13 +143,11 @@ function displayCenterBar()
 
 function displayScores()
 {
-    let txt_size = infos.text_size[0] + infos.text_size[1] + infos.text_size[2];
-
     score_y = infos.game_height / 6;
-    left_score_x = (infos.game_width / 4) - txt_size / 2;
-    right_score_x = (infos.game_width - infos.game_width / 4) - txt_size / 4;
+    left_score_x = (infos.game_width / 4) - infos.text_size / 2;
+    right_score_x = (infos.game_width - infos.game_width / 4) - infos.text_size / 4;
 
-    infos.display.font = infos.text_size + " " + infos.text_font;
+    infos.display.font = infos.text_size + "px " + infos.text_font;
     infos.display.fillText(game.scores[0], left_score_x, score_y);
     infos.display.fillText(game.scores[1], right_score_x, score_y);
 }
