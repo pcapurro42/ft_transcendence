@@ -33,26 +33,60 @@ function displayCenterBar()
     infos.display.fillRect((game_width / 2) - (infos.bar_width / 2), 20, 10, game_height - 40);
 }
 
+function initializePlayers()
+{
+    left_player_data = {
+        object_width: infos.bar_width,
+        object_heigth : infos.bar_height,
+
+        map_x: 0 + infos.bar_width,
+        map_y: y_middle,
+
+        bar_speed: infos.bar_speed,
+        color: "white"
+    }
+
+    right_player_data = {
+        object_width: infos.bar_width,
+        object_heigth : infos.bar_height,
+
+        map_x: x_end,
+        map_y: y_middle,
+
+        bar_speed: infos.bar_speed,
+        color: "white"
+    }
+
+    game.left_player = new Bar(...Object.values(left_player_data));
+    game.right_player = new Bar(...Object.values(right_player_data));
+
+    game.left_player.print();
+    game.right_player.print();
+}
+
+function initializeBall()
+{
+    ;
+}
+
 window.addEventListener('keydown', (event) => 
 {
     if (event.key == 'ArrowDown')
-        left_player.moveDown();
+        game.left_player.moveDown();
     else if (event.key == 'ArrowUp')
-        left_player.moveUp();
+        game.left_player.moveUp();
 
-    console.log(left_player.getInfo());
-    console.log(right_player.getInfo());
+    console.log(game.left_player.getInfo());
+    console.log(game.right_player.getInfo());
 
-    right_player.print();
+    game.right_player.print();
 });
 
-// < CODE > //
+// < MAIN CODE > //
 
 initializeCanvas();
+
 displayBackground();
 
-let left_player = new Bar(infos.bar_width, infos.bar_height, 0 + infos.bar_width, y_middle, infos.bar_speed, "white");
-let right_player = new Bar(infos.bar_width, infos.bar_height, x_end, y_middle, infos.bar_speed, "white");
-
-left_player.print();
-right_player.print();
+initializePlayers();
+initializeBall();

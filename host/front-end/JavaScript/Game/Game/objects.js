@@ -1,18 +1,3 @@
-// < INFO STRUCT > //
-
-infos = {
-    canvas: null,
-    display: null,
-
-    theme: 'black',
-
-    bar_speed: 10,
-    bar_height: 100,
-    bar_width: 20,
-
-    bar_color: 'white'
-}
-
 // < OBJECT > //
 
 class Bar
@@ -61,4 +46,28 @@ class Bar
     {
         return ([this.x, this.y]);
     }
+}
+
+// < INFO STRUCT > //
+
+infos = {
+    canvas: null,
+    display: null,
+
+    theme: 'black',
+
+    bar_speed: 10,
+    bar_height: 100,
+    bar_width: 20,
+
+    bar_color: 'white'
+}
+
+// < GAME STRUCT > //
+
+game = {
+    left_player: null,
+    right_player: null,
+
+    ball: null
 }
