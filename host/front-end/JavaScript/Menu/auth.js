@@ -119,8 +119,8 @@ function refreshLogin()
         document.getElementById('login_btn').style.display = "block";
         document.getElementById('intra_login').style.display = "none";
 
-        document.getElementById('play_classic_btn').classList.add('disabled');
-        document.getElementById('play_tournament_btn').classList.add('disabled');
+        // document.getElementById('play_classic_btn').classList.add('disabled');
+        // document.getElementById('play_tournament_btn').classList.add('disabled');
     }
 }
 

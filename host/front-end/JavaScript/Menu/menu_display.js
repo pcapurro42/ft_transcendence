@@ -4,8 +4,12 @@ function displayClassicMenu()
 {
     let classic_menu = document.getElementById('classic_menu');
     classic_menu.style.display = "block";
-    let sub_menu = document.getElementById('create_classic_menu');
-    sub_menu.style.display = 'none';
+    let create_sub_menu = document.getElementById('create_classic_menu');
+    create_sub_menu.style.display = 'none';
+
+    let join_sub_menu = document.getElementById('join_classic_menu');
+    join_sub_menu.style.display = 'none';
+
     let play_menu = document.getElementById('play_menu');
     play_menu.style.display = 'none';
 }
@@ -23,6 +27,22 @@ async function displayClassicCreateGame(){
     classic_menu.style.display = "none";
 
     let create_classic_menu = document.getElementById('create_classic_menu');
+    create_classic_menu.style.display = 'block';
+    let peerOffer = document.getElementById('peer_offer');
+    try{
+        peerOffer.value = await offerGenerator();
+    }
+    catch (error){
+        peerOffer.value = `ERROR: ${error}`;
+    }
+
+}
+
+async function displayClassicJoinGame(){
+    let classic_menu = document.getElementById('classic_menu');
+    classic_menu.style.display = "none";
+
+    let create_classic_menu = document.getElementById('join_classic_menu');
     create_classic_menu.style.display = 'block';
     let peerOffer = document.getElementById('peer_offer');
     try{

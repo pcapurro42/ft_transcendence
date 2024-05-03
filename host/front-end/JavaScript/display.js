@@ -27,6 +27,9 @@ function displayMenu()
     let create_classic_menu = document.getElementById('create_classic_menu');
     create_classic_menu.style.display = 'none';
 
+    let join_classic_menu = document.getElementById('join_classic_menu')
+    join_classic_menu.style.display = 'none';
+
     let play_tournament_buttons = document.getElementById('tournament_menu');
     play_tournament_buttons.style.display = "none";
 

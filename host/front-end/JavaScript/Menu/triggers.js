@@ -35,6 +35,10 @@ document.getElementById('create_classic_btn').onclick = displayClassicCreateGame
 document.getElementById('create_classic_back_btn').onclick = displayClassicMenu;
 document.getElementById('create_classic_lobby').onclick = displayGamePage_classic;
 
+document.getElementById('join_classic_btn').onclick = displayClassicJoinGame;
+document.getElementById('join_classic_back_btn').onclick = displayClassicMenu;
+
+
 // < TOURNAMENT > //
 
 document.getElementById('create_tournament_btn').onclick = displayTournamentForm;

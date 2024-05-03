@@ -215,19 +215,46 @@
 
                 <div id="create_classic_menu" class="text-center mt-4">
 
-                    <div id="game_id_div">
-                        <input type="text" id="peer_offer" class="d-inline m-2" data-tsnormal="16px" data-tslarge="21px" readonly></input>
-                        <button id="cpy_btn" class="btn btn-simple text btn-outline-secondary btn-sm" data-tsnormal="15px" data-tslarge="20px" data-title="Copy" data-oname="Copy"></button>
+                    <div id="game_id_div" class="d-flex flex-row justify-content-center">
+                        <div id="game_id_div" class="border border-2">
+                            <input type="text" id="peer_offer" class="d-inline m-2" data-tsnormal="16px" data-tslarge="21px" readonly></input>
+                            <button id="cpy_btn" class="btn btn-simple text btn-outline-secondary btn-sm m-1" data-tsnormal="15px" data-tslarge="20px" data-title="Copy" data-oname="Copy"></button>
+                            <p class="text" data-oname="Peer offer send msg" data-tsnormal="15px" data-tslarge="20px"></p>
+                        </div>
+                    <div class="border border-2">
+                            <input type="text" id="paste_peer_answer" class="d-inline m-2" data-tsnormal="16px" data-tslarge="21px"></input>
+                            <button id ="submit_answer" type="submit" class="btn text btn-lg btn-simple border btn-outline-success" data-tsnormal="15px" data-tslarge="20px" data-oname="Submit"></button>
+                            <p class="text" data-oname="Paste answer msg" data-tsnormal="15px" data-tslarge="20px"></p>
+                        </div>
                     </div>
                     <div>
-                        <p class="text" data-oname="Peer offer send msg" data-tsnormal="15px" data-tslarge="20px"></p>
-                        <input type="text" id="paste_peer_answer" class="d-inline m-2" data-tsnormal="16px" data-tslarge="21px" readonly></input>
-                        <button id="cpy_btn" class="btn btn-simple text btn-outline-secondary btn-sm" data-tsnormal="15px" data-tslarge="20px" data-title="Copy" data-oname="Copy"></button>
-                    </div>
-                    <div>
-                        <button id="create_classic_lobby" class="btn btn-lg text btn-outline-danger btn-simple me-2 my-3" data-title="Create Lobby" data-oname="Create Lobby"></button>
+                        <button id="create_classic_lobby" class="btn btn-lg text btn-outline-danger btn-simple me-2 my-3" data-title="Create Lobby" data-oname="Create Lobby" disabled></button>
                     </div>
                     <button id="create_classic_back_btn" class="btn text btn-complex mt-5" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
+                </div>
+
+                <div id="join_classic_menu" class="text-center mt-4">
+
+                    <div id="game_id_div_join" class="d-flex flex-row justify-content-center">
+
+                        <div class="border border-2">
+                            <input type="text" id="paste_peer_offer" class="d-inline m-2" data-tsnormal="16px" data-tslarge="21px" readonly></input>
+                            <button id ="submit_offer" type="submit" class="btn text btn-lg btn-simple border btn-outline-success" data-tsnormal="15px" data-tslarge="20px" data-oname="Submit"></button>
+                            <p class="text" data-oname="Peer offer paste msg" data-tsnormal="15px" data-tslarge="20px"></p>
+                        </div>
+                        <div class="border border-2">
+                            <input type="text" id="peer_answer" class="d-inline m-2" data-tsnormal="16px" data-tslarge="21px" readonly></input>
+                            <button id="cpy_btn" class="btn btn-simple text btn-outline-secondary btn-sm" data-tsnormal="15px" data-tslarge="20px" data-title="Copy" data-oname="Copy"></button>
+                            <p class="text" data-oname="Peer answer send msg" data-tsnormal="15px" data-tslarge="20px"></p>
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <button id="join_classic_lobby" class="btn btn-lg text btn-outline-danger btn-simple me-2 my-3" data-title="Create Lobby" data-oname="Join Lobby" disabled></button>
+                    </div>
+
+                    <button id="join_classic_back_btn" class="btn text btn-complex mt-5" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
                 </div>
 
 
