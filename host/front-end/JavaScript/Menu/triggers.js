@@ -72,4 +72,5 @@ document.getElementById('top_logo').onclick = displayMenu;
 
 // < PEER ANSWERS/OFFERS> //
 
-document.getElementById('submit_offer').onclick = offerHandler;
+document.getElementById('submit_offer').onclick = answerGenerator;
+document.getElementById('submit_answer').onclick = offerHandler;

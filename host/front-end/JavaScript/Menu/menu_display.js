@@ -28,13 +28,7 @@ async function displayClassicCreateGame(){
 
     let create_classic_menu = document.getElementById('create_classic_menu');
     create_classic_menu.style.display = 'block';
-    let peerOffer = document.getElementById('peer_offer');
-    try{
-        peerOffer.value = await offerGenerator();
-    }
-    catch (error){
-        peerOffer.value = `ERROR: ${error}`;
-    }
+    offerGenerator();
 
 }
 
