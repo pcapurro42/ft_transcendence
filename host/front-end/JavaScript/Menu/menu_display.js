@@ -18,14 +18,20 @@ function removeClassicMenu()
 }
 
 
-function displayClassicCreateGame(){
+async function displayClassicCreateGame(){
     let classic_menu = document.getElementById('classic_menu');
     classic_menu.style.display = "none";
 
     let create_classic_menu = document.getElementById('create_classic_menu');
     create_classic_menu.style.display = 'block';
-    let gameId = document.getElementById('game_id');
-    gameId.value = generateGameID();
+    let peerOffer = document.getElementById('peer_offer');
+    try{
+        peerOffer.value = await offerGenerator();
+    }
+    catch (error){
+        peerOffer.value = `ERROR: ${error}`;
+    }
+
 }
 
 function displayTournamentMenu(event)

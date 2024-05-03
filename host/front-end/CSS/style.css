@@ -13,8 +13,7 @@
     top: 0%;
     left: 0%;
 }
-
-#game_lobby_block {
+#game_lobby_block{
     aspect-ratio: 1400 / 720;
 }
 

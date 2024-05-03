@@ -17,7 +17,7 @@ let en = [
     ["Create a game", "Create a game"],
     ["Join a game", "Join a game"],
     ["Copy", "Copy"],
-    ['Game Id send msg', "Send this code to a friend so <br> he can join the game!"],
+    ['Peer offer send msg', "Send this code to a friend so <br> he can join the game!"],
     ["Create Lobby", "Create Lobby"],
     ["Create a tournament", "Create a tournament"],
     ["Join a tournament", "Join a tournament"],
