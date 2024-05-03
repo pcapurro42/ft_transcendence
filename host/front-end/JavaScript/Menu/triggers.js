@@ -69,3 +69,7 @@ document.getElementById('image_desc_btn_yn').onclick = changeDescriptiveImages;
 // < GAME > //
 
 document.getElementById('top_logo').onclick = displayMenu;
+
+// < PEER ANSWERS/OFFERS> //
+
+document.getElementById('submit_offer').onclick = offerHandler;

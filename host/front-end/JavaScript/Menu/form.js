@@ -13,6 +13,11 @@ function parse_alias(event){
     }
 }
 
+function parse_offersAnswers(str){
+	const regex = /^[A-Za-z0-9+\/=\r\n]+$/;
+	return regex.test(str);
+}
+
 document.getElementById('keep42').onclick = checkboxEnabler;
 
 function checkboxEnabler(){
