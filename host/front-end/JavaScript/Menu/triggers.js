@@ -25,6 +25,9 @@ document.getElementById('credit_close').onclick = theaterClose;
 
 document.getElementById('one_vs_one_online_btn').onclick = displayOneVsOneChoice;
 
+document.getElementById('one_vs_one_local_btn').onclick = displayOneVsOneGameLocal;
+document.getElementById('two_vs_two_local_btn').onclick = displayTwoVsTwoGameLocal;
+
 document.getElementById('play_classic_btn').onclick = displayClassicChoice;
 document.getElementById('classic_back_btn').onclick = removeClassicChoice;
 

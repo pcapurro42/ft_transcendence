@@ -144,5 +144,5 @@
 
     // < MAIN CODE > //
 
-    initialize2v2(game_2v2); // when page is loaded
+    // initialize2v2(game_2v2); // when page is loaded
     // start2v2(game_2v2); // to start game

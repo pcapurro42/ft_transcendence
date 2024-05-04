@@ -68,7 +68,7 @@
                     <div id="game_lobby_block" class="d-flex flex-row w-100 h-auto">
 
                         <div id="game_container" >
-                            <canvas id="game" class="col-10 border border-5 w-100"></canvas>
+                            <canvas id="game_1v1_online" class="col-10 border border-5 w-100"></canvas>
                         </div>
 
                         <div id="lobby_container" class="col-2 border border-5 overflow-auto h-100">
@@ -94,13 +94,13 @@
                 <!-- 1 vs 1 (local) -->
 
                 <div id="one_vs_one_local_page">
-                    <!-- ... -->
+                    <canvas id="game_1v1_local"></canvas>
                 </div>
 
                 <!-- 2 vs 2 (local) -->
 
                 <div id="two_vs_two_local_page">
-                    <!-- ... -->
+                    <canvas id="game_2v2_local"></canvas>
                 </div>
 
                 <!-- Tournament -->
@@ -438,8 +438,8 @@
         <script src="./JavaScript/Game/page.js"></script>
 
         <script src="./JavaScript/Game/game.js"></script>
-        <script src="./JavaScript/Game/1v1.js"></script>
-        <script src="./JavaScript/Game/2v2.js"></script>
+        <script src="./JavaScript/Game/1v1_local.js"></script>
+        <script src="./JavaScript/Game/2v2_local.js"></script>
 
         <script src="./JavaScript/Game/ai.js"></script>
         <script src="./JavaScript/Game/tournament.js"></script>

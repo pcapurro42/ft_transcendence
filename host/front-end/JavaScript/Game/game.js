@@ -5,7 +5,7 @@
     theme = "dark";
     // theme = "light";
 
-    mode = "2v2";
+    mode = "1v1";
 
     // < OBJECT > //
 
@@ -20,7 +20,7 @@
     {
         game.enabled = true;
 
-        game.infos.canvas = document.getElementById('game');
+        game.infos.canvas = document.getElementById('game_1v1_local');
         game.infos.display = game.infos.canvas.getContext('2d');
         
         game.infos.canvas.width = game.infos.game_width;

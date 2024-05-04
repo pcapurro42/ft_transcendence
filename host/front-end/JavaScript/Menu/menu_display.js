@@ -101,3 +101,28 @@ function removePlay()
     play_menu.style.display = 'none';
     main_menu.style.display = 'block';
 }
+
+
+function displayTwoVsTwoGameLocal()
+{
+    main_menu_page = document.getElementById('main_menu_page');
+    main_menu_page.style.display = "none";
+    game_toolbar = document.getElementById('game_toolbar');
+    game_toolbar.style.display = "block";
+
+    two_vs_two_local_page = document.getElementById('two_vs_two_local_page');
+    two_vs_two_local_page.style.display = "block";
+}
+
+function displayOneVsOneGameLocal()
+{
+    main_menu_page = document.getElementById('main_menu_page');
+    main_menu_page.style.display = "none";
+    game_toolbar = document.getElementById('game_toolbar');
+    game_toolbar.style.display = "block";
+
+    one_vs_one_local_page = document.getElementById('one_vs_one_local_page');
+    one_vs_one_local_page.style.display = "block";
+
+    initialize1v1(game_1v1)
+}
