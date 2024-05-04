@@ -34,6 +34,10 @@ let redirect_uri;
 initializeAuth();
 refreshLogin();
 
+// < MODE > //
+
+let mode;
+
 // < REFRESH > //
 
 displayMenu();
@@ -43,3 +47,6 @@ refreshDisplay();
 
 refreshSounds();
 refreshMusics();
+
+// TEMPORARY
+mode = "1v1";

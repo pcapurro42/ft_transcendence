@@ -5,6 +5,8 @@
     theme = "dark";
     // theme = "light";
 
+    mode = "1v1";
+
     // < OBJECT > //
 
     class Ball
@@ -118,15 +120,8 @@
 
     // < REFRESH > //
 
-    function refreshPlayerPos(event, game1v1, game2v2)
+    function refreshPlayerPos(event, game)
     {
-        let game;
-
-        if (game1v1.enabled == true)
-            game = game1v1;
-        else
-            game = game2v2;
-
         refreshGameDisplay(game);
 
         if (event.key == 'ArrowDown')
@@ -162,5 +157,10 @@
 
     // < TRIGGER > //
 
-    window.addEventListener('keydown', (event) => {
-        refreshPlayerPos(event, game_1v1, game_2v2); });
+    window.addEventListener('keydown', (event) => 
+    {
+        if (mode == "1v1")
+            refreshPlayerPos(event, game_1v1);
+        else
+            refreshPlayerPos(event, game_2v2);
+    });

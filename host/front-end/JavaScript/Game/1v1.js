@@ -79,6 +79,7 @@
 
     game_1v1 = {
         enabled: false,
+        player_nb: 2,
 
         left_player: null,
         right_player: null,
@@ -96,7 +97,10 @@
         initializeColors(game);
 
         initializePlayers(2, game);
-        // initializeBall();
+        initializeBall(game);
+
+        refreshGameDisplay(game);
+        displayPlayers1v1(game);
     }
 
     function displayPlayers1v1(game)
@@ -107,13 +111,10 @@
 
     function start1v1(game)
     {
-        refreshGameDisplay(game);
-        displayPlayers1v1(game);
-
         // ...
     }
 
     // < MAIN CODE > //
 
     initialize1v1(game_1v1); // when page is loaded
-    start1v1(game_1v1); // to start game
+    // start1v1(game_1v1); // to start game
