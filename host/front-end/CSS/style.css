@@ -37,6 +37,11 @@
     cursor: pointer;
 }
 
+#one_vs_one_local_page, #one_vs_two_local_page
+{
+    text-align: center;
+}
+
 #title
 {
     border-width: 1 !important;
