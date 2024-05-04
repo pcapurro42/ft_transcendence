@@ -7,55 +7,6 @@
 
     // < OBJECT > //
 
-    class Bar
-    {
-        constructor(game, width, height, x, y, speed, color)
-        {
-            this.game = game;
-
-            this.width = width;
-            this.height = height;
-
-            this.x = x;
-            this.y = y;
-
-            this.speed = speed;
-
-            this.color = color;
-        }
-
-        print()
-        {
-            this.game.infos.display.fillStyle = this.game.infos.bar_color;
-            this.game.infos.display.fillRect(this.x, this.y, this.width, this.height);
-        }
-
-        moveUp()
-        {
-            if (this.y > 0)
-            {
-                displayBackground(this.game);
-                this.y = this.y - this.speed;
-                this.print();
-            }
-        }
-
-        moveDown()
-        {
-            if (this.y + this.game.infos.bar_height < this.game.infos.game_height)
-            {
-                displayBackground(this.game);
-                this.y = this.y + this.speed;
-                this.print();
-            }
-        }
-
-        getInfo()
-        {
-            return ([this.x, this.y]);
-        }
-    }
-
     class Ball
     {
         ;
@@ -151,8 +102,8 @@
                 color: "white"
             }
         
-            game.left_player = new Bar(...Object.values(left_player_data));
-            game.right_player = new Bar(...Object.values(right_player_data));
+            game.left_player = new Bar1v1(...Object.values(left_player_data));
+            game.right_player = new Bar1v1(...Object.values(right_player_data));
         }
         else
         {
@@ -160,26 +111,46 @@
         }
     }
 
+    function initializeBall()
+    {
+        ;
+    }
+
     // < REFRESH > //
 
     function refreshPlayerPos(event, game1v1, game2v2)
     {
         let game;
-        
+
         if (game1v1.enabled == true)
             game = game1v1;
         else
             game = game2v2;
+
+        refreshGameDisplay(game);
 
         if (event.key == 'ArrowDown')
             game.left_player.moveDown();
         else if (event.key == 'ArrowUp')
             game.left_player.moveUp();
 
-        refreshGameDisplay(game);
+        refreshPlayersDisplay(game);
+    }
 
-        // console.log(game.left_player.getInfo());
-        // console.log(game.right_player.getInfo());
+    function refreshPlayersDisplay(game)
+    {
+        if (game.player_nb == 2)
+        {
+            game.left_player.print();
+            game.right_player.print();
+        }
+        else
+        {
+            game.left_player_1.print();
+            game.left_player_2.print();
+            game.right_player_1.print();
+            game.right_player_2.print();
+        }
     }
 
     function refreshGameDisplay(game)
@@ -187,122 +158,9 @@
         displayBackground(game);
         displayCenterBar(game);
         displayScores(game);
-
-        game.left_player.print();
-        game.right_player.print();
     }
 
     // < TRIGGER > //
 
     window.addEventListener('keydown', (event) => {
         refreshPlayerPos(event, game_1v1, game_2v2); });
-
-// <<<<<<< 2V2 >>>>>>> //
-
-    // < INFO STRUCT > //
-
-    infos_2v2 = {
-        canvas: null,
-        /** @type {HTMLCanvasElement} */ display: null,
-
-        game_width: 1100,
-        game_height: 720,
-
-        bar_speed: 10,
-
-        bar_height: 100,
-        bar_width: 15,
-
-        text_size: 100,
-        text_font: 'Arial',
-
-        separator_height: 20,
-        separator_width: 3,
-        separator_space: 17,
-
-        menu_color: null,
-        background_color: null,
-        bar_color: null
-    }
-
-    // < GAME STRUCT > //
-
-    game_2v2 = {
-        enabled: false,
-
-        left_player_1: null,
-        right_player_1: null,
-
-        left_player_2: null,
-        right_player_2: null,
-
-        ball: null,
-
-        scores: [0, 0],
-
-        infos: infos_2v2
-    }
-
-// <<<<<<< 1V1 >>>>>>> //
-
-    // < INFO STRUCT > //
-
-    infos_1v1 = {
-        canvas: null,
-        /** @type {HTMLCanvasElement} */ display: null,
-
-        game_width: 1100,
-        game_height: 720,
-
-        bar_speed: 10,
-
-        bar_height: 100,
-        bar_width: 15,
-
-        text_size: 100,
-        text_font: 'Arial',
-
-        separator_height: 20,
-        separator_width: 3,
-        separator_space: 17,
-
-        menu_color: null,
-        background_color: null,
-        bar_color: null
-    }
-
-    // < GAME STRUCT > //
-
-    game_1v1 = {
-        enabled: false,
-
-        left_player: null,
-        right_player: null,
-
-        ball: null,
-
-        scores: [0, 0],
-
-        infos: infos_1v1
-    }
-
-    function initialize1v1(game)
-    {
-        initializeCanvas(game);
-        initializeColors(game);
-
-        initializePlayers(2, game);
-        // initializeBall();
-    }
-
-    function start1v1(game)
-    {
-        refreshGameDisplay(game);
-
-        // ...
-    }
-
-    // < MAIN CODE > //
-
-    initialize1v1(game_1v1); // when page is loaded
-    start1v1(game_1v1); // to start game
