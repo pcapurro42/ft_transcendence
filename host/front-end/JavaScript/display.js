@@ -1,9 +1,12 @@
 function displayMenu()
 {
+    let game_toolbar = document.getElementById('game_toolbar');
+    game_toolbar.style.display = "none";
+
     let game_page_ai = document.getElementById('game_page_ai');
     game_page_ai.style.display = "none";
 
-    let game_page_classic = document.getElementById('game_page_classic');
+    let game_page_classic = document.getElementById('one_vs_one_online_page');
     game_page_classic.style.display = "none";
 
     let game_page_tournament = document.getElementById('game_page_tournament');
@@ -29,9 +32,6 @@ function displayMenu()
 
     let join_classic_menu = document.getElementById('join_classic_menu')
     join_classic_menu.style.display = 'none';
-
-    let play_tournament_buttons = document.getElementById('tournament_menu');
-    play_tournament_buttons.style.display = "none";
 
     let tournament_form = document.getElementById('form_alias')
     tournament_form.style.display = 'none';

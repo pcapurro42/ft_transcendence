@@ -48,30 +48,9 @@ async function displayClassicJoinGame(){
 
 }
 
-function displayTournamentMenu(event)
-{
-    let tournament_menu = document.getElementById('tournament_menu');
-    let sub_menu = document.getElementById('form_alias');
-    let play_menu = document.getElementById('play_menu');
-    sub_menu.style.display = "none";
-    play_menu.style.display = "none";
-    tournament_menu.style.display = "block";
-
-    event.preventDefault(); //prevent the back button from form_alias to take us back to main menu instead of tournament menu
-}
-
-function removeTournamentMenu()
-{
-    let tournament_menu = document.getElementById('tournament_menu');
-    tournament_menu.style.display = "none";
-    displayPlay();
-}
-
 function displayTournamentForm(){
     // if (sessionStorage.getItem('alias'))
     //     return;
-    let tournament_menu = document.getElementById('tournament_menu');
-    tournament_menu.style.display = 'none';
     let form = document.getElementById('form_alias');
 	form.style.display = 'block';
 
