@@ -23,8 +23,10 @@ document.getElementById('credit_close').onclick = theaterClose;
 
 // < PLAY > //
 
-document.getElementById('play_classic_btn').onclick = displayClassicMenu;
-document.getElementById('classic_back_btn').onclick = removeClassicMenu;
+// document.getElementById('play_classic_btn').onclick = displayClassicMenu;
+
+document.getElementById('play_classic_btn').onclick = displayClassicChoice;
+document.getElementById('classic_back_btn').onclick = removeClassicChoice;
 
 // < CLASSIC > //
 

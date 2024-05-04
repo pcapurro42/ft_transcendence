@@ -13,6 +13,10 @@ let fr = [
     ["Settings", "Options"],
     ["Credits", "Crédits"],
 
+    ["1 vs 1 (online)", "1 vs 1 (en ligne)"],
+    ["1 vs 1 (local)", "1 vs 1 (local)"],
+    ["2 vs 2 (local)", "2 vs 2 (local)"],
+
     ["Create a game", "Créer une partie"],
     ["Join a game", "Rejoindre une partie"],
     ["Copy", "Copier"],

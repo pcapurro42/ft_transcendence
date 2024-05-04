@@ -27,6 +27,9 @@ function displayMenu()
     let play_classic_buttons = document.getElementById('classic_menu');
     play_classic_buttons.style.display = "none";
 
+    let classic_buttons = document.getElementById('classic_buttons');
+    classic_buttons.style.display = "none";
+
     let create_classic_menu = document.getElementById('create_classic_menu');
     create_classic_menu.style.display = 'none';
 

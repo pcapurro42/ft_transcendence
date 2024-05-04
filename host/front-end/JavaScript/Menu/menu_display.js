@@ -1,5 +1,20 @@
 // < ... > //
 
+function displayClassicChoice()
+{
+    let classic_buttons = document.getElementById('classic_buttons');
+    classic_buttons.style.display = "block";
+    let play_menu = document.getElementById('play_menu');
+    play_menu.style.display = 'none';
+}
+
+function removeClassicChoice()
+{
+    let classic_menu = document.getElementById('classic_buttons');
+    classic_menu.style.display = "none";
+    displayPlay();
+}
+
 function displayClassicMenu()
 {
     let classic_menu = document.getElementById('classic_menu');
@@ -13,14 +28,6 @@ function displayClassicMenu()
     let play_menu = document.getElementById('play_menu');
     play_menu.style.display = 'none';
 }
-
-function removeClassicMenu()
-{
-    let classic_menu = document.getElementById('classic_menu');
-    classic_menu.style.display = "none";
-    displayPlay();
-}
-
 
 async function displayClassicCreateGame(){
     let classic_menu = document.getElementById('classic_menu');
