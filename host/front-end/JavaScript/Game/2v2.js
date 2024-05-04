@@ -21,7 +21,7 @@
 
         print()
         {
-            this.game.infos.display.fillStyle = this.game.infos.bar_color;
+            this.game.infos.display.fillStyle = this.color;
             this.game.infos.display.fillRect(this.x, this.y, this.width, this.height);
         }
 
@@ -102,7 +102,7 @@
         initializeBall(game);
 
         refreshGameDisplay(game);
-        // displayPlayers2v2(game);
+        displayPlayers2v2(game);
     }
 
     function displayPlayers2v2(game)

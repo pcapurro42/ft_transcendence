@@ -116,7 +116,7 @@
                 object_heigth : game.infos.bar_height,
         
                 map_x: 0 + game.infos.bar_width,
-                map_y: ((game.infos.game_height / 2) - game.infos.bar_height / 2),
+                map_y: (game.infos.game_height / 4) - (game.infos.bar_height / 2),
         
                 bar_speed: game.infos.bar_speed,
                 color: "white"
@@ -129,7 +129,7 @@
                 object_heigth : game.infos.bar_height,
         
                 map_x: ((game.infos.game_width - game.infos.bar_width) - game.infos.bar_width),
-                map_y: ((game.infos.game_height / 2) - game.infos.bar_height / 2),
+                map_y: (game.infos.game_height / 4) - (game.infos.bar_height / 2),
         
                 bar_speed: game.infos.bar_speed,
                 color: "white"
@@ -142,7 +142,7 @@
                 object_heigth : game.infos.bar_height,
         
                 map_x: 0 + game.infos.bar_width,
-                map_y: ((game.infos.game_height / 2) - game.infos.bar_height / 2),
+                map_y: (game.infos.game_height / 4 + (game.infos.game_height / 2)) - (game.infos.bar_height / 2),
         
                 bar_speed: game.infos.bar_speed,
                 color: "white"
@@ -155,7 +155,7 @@
                 object_heigth : game.infos.bar_height,
         
                 map_x: ((game.infos.game_width - game.infos.bar_width) - game.infos.bar_width),
-                map_y: ((game.infos.game_height / 2) - game.infos.bar_height / 2),
+                map_y: (game.infos.game_height / 4 + (game.infos.game_height / 2)) - (game.infos.bar_height / 2),
         
                 bar_speed: game.infos.bar_speed,
                 color: "white"
