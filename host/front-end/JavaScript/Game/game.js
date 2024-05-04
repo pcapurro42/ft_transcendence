@@ -66,7 +66,7 @@
     function displayScores(game)
     {
         score_y = game.infos.game_height / 6;
-        left_score_x = (game.infos.game_width / 4) - game.infos.text_size / 2;
+        left_score_x = (game.infos.game_width / 4) - game.infos.text_size / 4;
         right_score_x = (game.infos.game_width - game.infos.game_width / 4) - game.infos.text_size / 4;
 
         game.infos.display.font = game.infos.text_size + "px " + game.infos.text_font;
