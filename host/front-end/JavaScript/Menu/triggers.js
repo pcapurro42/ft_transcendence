@@ -23,19 +23,21 @@ document.getElementById('credit_close').onclick = theaterClose;
 
 // < PLAY > //
 
-// document.getElementById('play_classic_btn').onclick = displayClassicMenu;
+document.getElementById('one_vs_one_online_btn').onclick = displayOneVsOneChoice;
 
 document.getElementById('play_classic_btn').onclick = displayClassicChoice;
 document.getElementById('classic_back_btn').onclick = removeClassicChoice;
 
 // < CLASSIC > //
 
-document.getElementById('create_classic_btn').onclick = displayClassicCreateGame;
-document.getElementById('create_classic_back_btn').onclick = displayClassicMenu;
+document.getElementById('create_one_vs_one_online_btn').onclick = displayOneVsOneOnlineCreateGame;
 document.getElementById('create_classic_lobby').onclick = displayGamePage_classic;
+document.getElementById('create_classic_back_btn').onclick = displayOneVsOneChoice;
 
-document.getElementById('join_classic_btn').onclick = displayClassicJoinGame;
-document.getElementById('join_classic_back_btn').onclick = displayClassicMenu;
+document.getElementById('join_one_vs_one_online_btn').onclick = displayOneVsOneOnlineJoinGame;
+document.getElementById('join_classic_back_btn').onclick = displayOneVsOneChoice;
+
+document.getElementById('one_vs_one_online_choice_back_btn').onclick = removeOneVsOneChoice;
 
 // < AI > //
 

@@ -15,9 +15,11 @@ function removeClassicChoice()
     displayPlay();
 }
 
-function displayClassicMenu()
+function displayOneVsOneChoice()
 {
-    let classic_menu = document.getElementById('classic_menu');
+    removeClassicChoice();
+
+    let classic_menu = document.getElementById('one_vs_one_online_choice_menu');
     classic_menu.style.display = "block";
     let create_sub_menu = document.getElementById('create_classic_menu');
     create_sub_menu.style.display = 'none';
@@ -29,8 +31,16 @@ function displayClassicMenu()
     play_menu.style.display = 'none';
 }
 
-async function displayClassicCreateGame(){
-    let classic_menu = document.getElementById('classic_menu');
+function removeOneVsOneChoice()
+{
+    displayClassicChoice();
+
+    one_vs_one_online_choice_menu = document.getElementById('one_vs_one_online_choice_menu');
+    one_vs_one_online_choice_menu.style.display = "none";
+}
+
+async function displayOneVsOneOnlineCreateGame(){
+    let classic_menu = document.getElementById('one_vs_one_online_choice_menu');
     classic_menu.style.display = "none";
 
     let create_classic_menu = document.getElementById('create_classic_menu');
@@ -39,8 +49,8 @@ async function displayClassicCreateGame(){
 
 }
 
-async function displayClassicJoinGame(){
-    let classic_menu = document.getElementById('classic_menu');
+async function displayOneVsOneOnlineJoinGame(){
+    let classic_menu = document.getElementById('one_vs_one_online_choice_menu');
     classic_menu.style.display = "none";
 
     let create_classic_menu = document.getElementById('join_classic_menu');
