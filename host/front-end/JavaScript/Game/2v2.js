@@ -1,5 +1,54 @@
 // <<<<<<< 2V2 >>>>>>> //
 
+    // < OBJECT > //
+
+    class Bar2v2
+    {
+        constructor(game, width, height, x, y, speed, color)
+        {
+            this.game = game;
+
+            this.width = width;
+            this.height = height;
+
+            this.x = x;
+            this.y = y;
+
+            this.speed = speed;
+
+            this.color = color;
+        }
+
+        print()
+        {
+            this.game.infos.display.fillStyle = this.game.infos.bar_color;
+            this.game.infos.display.fillRect(this.x, this.y, this.width, this.height);
+        }
+
+        moveUp()
+        {
+            // if (this.y > 0)
+            // {
+            //     this.y = this.y - this.speed;
+            //     this.print();
+            // }
+        }
+
+        moveDown()
+        {
+            // if (this.y + this.game.infos.bar_height < this.game.infos.game_height)
+            // {
+            //     this.y = this.y + this.speed;
+            //     this.print();
+            // }
+        }
+
+        getInfo()
+        {
+            return ([this.x, this.y]);
+        }
+    }
+
     // < INFO STRUCT > //
 
     infos_2v2 = {
@@ -43,3 +92,31 @@
 
         infos: infos_2v2
     }
+
+    function initialize2v2(game)
+    {
+        initializeCanvas(game);
+        initializeColors(game);
+
+        initializePlayers(2, game);
+        initializeBall(game);
+
+        refreshGameDisplay(game);
+        displayPlayers1v1(game);
+    }
+
+    function displayPlayers2v2(game)
+    {
+        game.left_player.print();
+        game.right_player.print();
+    }
+
+    function start2v2(game)
+    {
+        // ...
+    }
+
+    // < MAIN CODE > //
+
+    initialize2v2(game_2v2); // when page is loaded
+    // start2v2(game_2v2); // to start game
