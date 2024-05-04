@@ -46,7 +46,7 @@ document.getElementById('submit_alias').onclick = parse_alias;
 
 // document.getElementById('create_classic_btn').onclick = ;
 // document.getElementById('join_classic_btn').onclick = ;
-document.getElementById('play_tournament_btn').onclick = tournament;
+document.getElementById('play_tournament_btn').onclick = displayTournamentForm;
 document.getElementById('ai_game_btn').onclick = ai;
 
 // < CUSTOMIZE > //
