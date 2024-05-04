@@ -3,17 +3,23 @@ function displayMenu()
     let game_toolbar = document.getElementById('game_toolbar');
     game_toolbar.style.display = "none";
 
-    let game_page_ai = document.getElementById('game_page_ai');
-    game_page_ai.style.display = "none";
+    let one_vs_one_online_choice_menu = document.getElementById('one_vs_one_online_choice_menu');
+    one_vs_one_online_choice_menu.style.display = "none";
 
     let game_page_classic = document.getElementById('one_vs_one_online_page');
     game_page_classic.style.display = "none";
 
+    let one_vs_one_local_page = document.getElementById('one_vs_one_local_page');
+    one_vs_one_local_page.style.display = "none";
+
+    let one_vs_two_local_page = document.getElementById('one_vs_two_local_page');
+    one_vs_two_local_page.style.display = "none";
+
     let game_page_tournament = document.getElementById('game_page_tournament');
     game_page_tournament.style.display = "none";
 
-    let main_menu_page = document.getElementById('main_menu_page');
-    main_menu_page.style.display = "block";
+    let game_page_ai = document.getElementById('game_page_ai');
+    game_page_ai.style.display = "none";
 
     let play_menu = document.getElementById('play_menu');
     play_menu.style.display = "none";
@@ -41,6 +47,9 @@ function displayMenu()
 
     let statusBar = document.getElementById('statusBar');
     statusBar.style.display = 'none';
+
+    let main_menu_page = document.getElementById('main_menu_page');
+    main_menu_page.style.display = "block";
 
     let main_menu_buttons = document.getElementById('main_menu_buttons');
     main_menu_buttons.style.display = "block";
