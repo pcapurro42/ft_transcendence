@@ -123,8 +123,8 @@ function displayOneVsOneGameLocal()
     game_toolbar = document.getElementById('game_toolbar');
     game_toolbar.style.display = "block";
 
-    one_vs_one_local_game = document.getElementById('one_vs_one_local_game');
-    one_vs_one_local_game.style.display = "block";
+    one_vs_one_local_page = document.getElementById('one_vs_one_local_page');
+    one_vs_one_local_page.style.display = "block";
 
     initializeLocal1v1();
 }
