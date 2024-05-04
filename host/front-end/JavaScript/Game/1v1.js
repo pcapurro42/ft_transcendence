@@ -116,5 +116,5 @@
 
     // < MAIN CODE > //
 
-    initialize1v1(game_1v1); // when page is loaded
+    // initialize1v1(game_1v1); // when page is loaded
     // start1v1(game_1v1); // to start game

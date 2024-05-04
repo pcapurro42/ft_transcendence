@@ -98,17 +98,19 @@
         initializeCanvas(game);
         initializeColors(game);
 
-        initializePlayers(2, game);
+        initializePlayers(4, game);
         initializeBall(game);
 
         refreshGameDisplay(game);
-        displayPlayers1v1(game);
+        // displayPlayers2v2(game);
     }
 
     function displayPlayers2v2(game)
     {
-        game.left_player.print();
-        game.right_player.print();
+        game.left_player_1.print();
+        game.right_player_1.print();
+        game.left_player_2.print();
+        game.right_player_2.print();
     }
 
     function start2v2(game)

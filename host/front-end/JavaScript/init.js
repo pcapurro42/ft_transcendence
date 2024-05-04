@@ -47,6 +47,3 @@ refreshDisplay();
 
 refreshSounds();
 refreshMusics();
-
-// TEMPORARY
-mode = "1v1";
