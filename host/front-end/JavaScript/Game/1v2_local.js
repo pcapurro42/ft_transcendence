@@ -225,12 +225,10 @@ function initializeLocal1v2()
         infos: infos_2v2
     }
 
-    // if (high_contrast == "true")
-    //     infos_2v2.menu_color = "white", infos_2v2.background_color = "black", infos_2v2.bar_color = "white";
-    // else
-    //     infos_2v2.menu_color = "black", infos_2v2.background_color = "white", infos_2v2.bar_color = "black";
-
-    infos_2v2.menu_color = "white", infos_2v2.background_color = "black", infos_2v2.bar_color = "white"; //
+    if (high_contrast == "true")
+        infos_2v2.menu_color = "white", infos_2v2.background_color = "black", infos_2v2.bar_color = "white";
+    else
+        infos_2v2.menu_color = "black", infos_2v2.background_color = "white", infos_2v2.bar_color = "black";
 
     the_game = new LocalGame1v2(infos_2v2, game_2v2);
     the_game.initialize();

@@ -179,12 +179,10 @@ function initializeLocal1v1()
         infos: infos_1v1
     }
 
-    // if (high_contrast == "true")
-    //     infos_1v1.menu_color = "white", infos_1v1.background_color = "black", infos_1v1.bar_color = "white";
-    // else
-    //     infos_1v1.menu_color = "black", infos_1v1.background_color = "white", infos_1v1.bar_color = "black";
-
-    infos_1v1.menu_color = "white", infos_1v1.background_color = "black", infos_1v1.bar_color = "white"; //
+    if (high_contrast == "true")
+        infos_1v1.menu_color = "white", infos_1v1.background_color = "black", infos_1v1.bar_color = "white";
+    else
+        infos_1v1.menu_color = "black", infos_1v1.background_color = "white", infos_1v1.bar_color = "black";
 
     the_game = new LocalGame1v1(infos_1v1, game_1v1);
     the_game.initialize();
