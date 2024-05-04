@@ -123,6 +123,4 @@ function displayOneVsOneGameLocal()
 
     one_vs_one_local_page = document.getElementById('one_vs_one_local_page');
     one_vs_one_local_page.style.display = "block";
-
-    initialize1v1(game_1v1)
 }

@@ -185,7 +185,7 @@ class LocalGame1v2
     }
 }
 
-function start2v2()
+function initializeLocal1v2()
 {
     let infos_2v2 = {
         canvas: null,
@@ -238,5 +238,3 @@ function start2v2()
     the_game.initialize();
     the_game.refreshDisplay();
 }
-
-// start2v2();
