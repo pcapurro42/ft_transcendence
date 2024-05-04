@@ -48,11 +48,21 @@ async function displayClassicJoinGame(){
 
 }
 
+function removeTournamentForm()
+{
+    let play_menu = document.getElementById('play_menu');
+    play_menu.style.display = "block";
+    let tournament_nickname_menu = document.getElementById('tournament_nickname_menu');
+	tournament_nickname_menu.style.display = 'none';
+}
+
 function displayTournamentForm(){
     // if (sessionStorage.getItem('alias'))
     //     return;
-    let form = document.getElementById('form_alias');
-	form.style.display = 'block';
+    let play_menu = document.getElementById('play_menu');
+    play_menu.style.display = "none";
+    let tournament_nickname_menu = document.getElementById('form_alias');
+	tournament_nickname_menu.style.display = 'block';
 
 }
 // < DISPLAY/REMOVE > //

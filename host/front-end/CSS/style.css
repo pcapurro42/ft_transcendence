@@ -65,12 +65,12 @@
     border: 0cap;
 }
 
-#play_back_btn, #settings_back_btn, #customize_back_btn, #classic_back_btn, #tournament_submenu_back_btn
+#play_back_btn, #settings_back_btn, #customize_back_btn, #classic_back_btn, #back_tournament_btn
 {
     font-weight: bold;
 }
 
-#play_btn:hover, #customize_btn:hover, #settings_btn:hover, #credits_btn:hover, #play_classic_btn:hover, #ai_game_btn:hover, #play_tournament_btn:hover, #play_back_btn:hover, #settings_back_btn:hover, #customize_back_btn:hover, #classic_back_btn:hover, #join_classic_btn:hover, #create_classic_btn:hover, #create_tournament_btn:hover, #join_tournament_btn:hover, #tournament_back_btn:hover, #tournament_submenu_back_btn:hover
+#play_btn:hover, #customize_btn:hover, #settings_btn:hover, #credits_btn:hover, #play_classic_btn:hover, #ai_game_btn:hover, #play_tournament_btn:hover, #play_back_btn:hover, #settings_back_btn:hover, #customize_back_btn:hover, #classic_back_btn:hover, #join_classic_btn:hover, #create_classic_btn:hover, #create_tournament_btn:hover, #join_tournament_btn:hover, #tournament_back_btn:hover, #back_tournament_btn:hover
 {
     text-decoration: underline;
 }

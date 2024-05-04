@@ -25,7 +25,6 @@ document.getElementById('credit_close').onclick = theaterClose;
 
 document.getElementById('play_classic_btn').onclick = displayClassicMenu;
 document.getElementById('classic_back_btn').onclick = removeClassicMenu;
-// document.getElementById('tournament_submenu_back_btn').onclick = displayTournamentMenu;
 
 // < CLASSIC > //
 
@@ -36,18 +35,16 @@ document.getElementById('create_classic_lobby').onclick = displayGamePage_classi
 document.getElementById('join_classic_btn').onclick = displayClassicJoinGame;
 document.getElementById('join_classic_back_btn').onclick = displayClassicMenu;
 
+// < AI > //
+
+document.getElementById('ai_game_btn').onclick = ai;
 
 // < TOURNAMENT > //
 
-// document.getElementById('create_tournament_btn').onclick = displayTournamentForm;
-// document.getElementById('join_tournament_btn').onclick = displayTournamentForm;
-
 document.getElementById('submit_alias').onclick = parse_alias;
 
-// document.getElementById('create_classic_btn').onclick = ;
-// document.getElementById('join_classic_btn').onclick = ;
 document.getElementById('play_tournament_btn').onclick = displayTournamentForm;
-document.getElementById('ai_game_btn').onclick = ai;
+document.getElementById('back_tournament_btn').onclick = removeTournamentForm;
 
 // < CUSTOMIZE > //
 
