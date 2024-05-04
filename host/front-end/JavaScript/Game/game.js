@@ -112,6 +112,8 @@
             left_player_data_1 = {
                 game: game,
 
+                id: 1,
+
                 object_width: game.infos.bar_width,
                 object_heigth : game.infos.bar_height,
         
@@ -124,6 +126,8 @@
         
             right_player_data_1 = {
                 game: game,
+
+                id: 1,
 
                 object_width: game.infos.bar_width,
                 object_heigth : game.infos.bar_height,
@@ -138,6 +142,8 @@
             left_player_data_2 = {
                 game: game,
 
+                id: 2,
+
                 object_width: game.infos.bar_width,
                 object_heigth : game.infos.bar_height,
         
@@ -150,6 +156,8 @@
         
             right_player_data_2 = {
                 game: game,
+
+                id: 2,
 
                 object_width: game.infos.bar_width,
                 object_heigth : game.infos.bar_height,

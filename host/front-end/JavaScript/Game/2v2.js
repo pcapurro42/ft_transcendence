@@ -4,9 +4,11 @@
 
     class Bar2v2
     {
-        constructor(game, width, height, x, y, speed, color)
+        constructor(game, id, width, height, x, y, speed, color)
         {
             this.game = game;
+
+            this.id = id;
 
             this.width = width;
             this.height = height;
@@ -27,20 +29,42 @@
 
         moveUp()
         {
-            // if (this.y > 0)
-            // {
-            //     this.y = this.y - this.speed;
-            //     this.print();
-            // }
+            if (this.id == 1)
+            {
+                if (this.y > 0)
+                {
+                    this.y = this.y - this.speed;
+                    this.print();
+                }
+            }
+            else
+            {
+                if (this.y > this.game.infos.game_height / 2)
+                {
+                    this.y = this.y - this.speed;
+                    this.print();
+                }
+            }
         }
 
         moveDown()
         {
-            // if (this.y + this.game.infos.bar_height < this.game.infos.game_height)
-            // {
-            //     this.y = this.y + this.speed;
-            //     this.print();
-            // }
+            if (this.id == 1)
+            {
+                if (this.y + this.game.infos.bar_height < this.game.infos.game_height / 2)
+                {
+                    this.y = this.y + this.speed;
+                    this.print();
+                }
+            }
+            else
+            {
+                if (this.y + this.game.infos.bar_height < this.game.infos.game_height)
+                {
+                    this.y = this.y + this.speed;
+                    this.print();
+                }
+            }
         }
 
         getInfo()
