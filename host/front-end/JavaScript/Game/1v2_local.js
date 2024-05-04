@@ -2,7 +2,7 @@
 
 // < OBJECT > //
 
-class Bar2v2
+class Bar2v1
 {
     constructor(game, id, width, height, x, y, speed, color)
     {
@@ -98,8 +98,6 @@ class LocalGame1v2
         let left_player_data_1 = {
             game: this.game,
 
-            id: 1,
-
             object_width: this.game.infos.bar_width,
             object_heigth : this.game.infos.bar_height,
     
@@ -140,9 +138,9 @@ class LocalGame1v2
             color: this.infos.bar_color
         }
     
-        this.game.left_player_1 = new Bar2v2(...Object.values(left_player_data_1));
-        this.game.right_player_1 = new Bar2v2(...Object.values(right_player_data_1));
-        this.game.right_player_2 = new Bar2v2(...Object.values(right_player_data_2));
+        this.game.left_player_1 = new Bar1v1(...Object.values(left_player_data_1));
+        this.game.right_player_1 = new Bar2v1(...Object.values(right_player_data_1));
+        this.game.right_player_2 = new Bar2v1(...Object.values(right_player_data_2));
 
         // ball creation
 

@@ -103,7 +103,7 @@ function removePlay()
 }
 
 
-function displayTwoVsTwoGameLocal()
+function displayTwoVsOneGameLocal()
 {
     main_menu_page = document.getElementById('main_menu_page');
     main_menu_page.style.display = "none";
@@ -112,6 +112,8 @@ function displayTwoVsTwoGameLocal()
 
     one_vs_two_local_page = document.getElementById('one_vs_two_local_page');
     one_vs_two_local_page.style.display = "block";
+
+    initializeLocal2v1();
 }
 
 function displayOneVsOneGameLocal()
@@ -123,4 +125,6 @@ function displayOneVsOneGameLocal()
 
     one_vs_one_local_page = document.getElementById('one_vs_one_local_page');
     one_vs_one_local_page.style.display = "block";
+
+    initializeLocal1v1();
 }
