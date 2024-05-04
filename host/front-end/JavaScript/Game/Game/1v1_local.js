@@ -63,7 +63,7 @@ class LocalGame1v1
 
         // canvas creation
 
-        this.game.infos.canvas = document.getElementById('game_1v1_local');
+        this.game.infos.canvas = document.getElementById('one_vs_one_local_page');
         this.game.infos.display = this.game.infos.canvas.getContext('2d');
         
         this.game.infos.canvas.width = this.game.infos.game_width;
@@ -81,7 +81,7 @@ class LocalGame1v1
             map_y: ((this.game.infos.game_height / 2) - this.game.infos.bar_height / 2),
     
             bar_speed: this.game.infos.bar_speed,
-            color: "white"
+            color: this.infos.bar_color
         }
     
         let right_player_data = {
@@ -94,7 +94,7 @@ class LocalGame1v1
             map_y: ((this.game.infos.game_height / 2) - this.game.infos.bar_height / 2),
     
             bar_speed: this.game.infos.bar_speed,
-            color: "white"
+            color: this.infos.bar_color
         }
     
         this.game.left_player = new Bar1v1(...Object.values(left_player_data));
@@ -191,4 +191,4 @@ function start1v1(game)
     the_game.refreshDisplay();
 }
 
-start1v1();
+// start1v1();
