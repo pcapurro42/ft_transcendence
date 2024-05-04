@@ -16,7 +16,7 @@ let en = [
 
     ["1 vs 1 (online)", "1 vs 1 (online)"],
     ["1 vs 1 (local)", "1 vs 1 (local)"],
-    ["2 vs 2 (local)", "2 vs 2 (local)"],
+    ["1 vs 2 (local)", "1 vs 2 (local)"],
 
     ["Create a game", "Create a game"],
     ["Join a game", "Join a game"],

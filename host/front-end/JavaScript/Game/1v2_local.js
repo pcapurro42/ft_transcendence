@@ -73,7 +73,7 @@ class Bar2v2
     }
 }
 
-class LocalGame2v2
+class LocalGame1v2
 {
     constructor(infos, game)
     {   
@@ -87,7 +87,7 @@ class LocalGame2v2
 
         // canvas creation
 
-        this.game.infos.canvas = document.getElementById('two_vs_two_local_page');
+        this.game.infos.canvas = document.getElementById('one_vs_two_local_page');
         this.game.infos.display = this.game.infos.canvas.getContext('2d');
         
         this.game.infos.canvas.width = this.game.infos.game_width;
@@ -104,7 +104,7 @@ class LocalGame2v2
             object_heigth : this.game.infos.bar_height,
     
             map_x: 0 + this.game.infos.bar_width,
-            map_y: (this.game.infos.game_height / 4) - (this.game.infos.bar_height / 2),
+            map_y: ((this.game.infos.game_height / 2) - this.game.infos.bar_height / 2),
     
             bar_speed: this.game.infos.bar_speed,
             color: this.infos.bar_color
@@ -120,21 +120,6 @@ class LocalGame2v2
     
             map_x: ((this.game.infos.game_width - this.game.infos.bar_width) - this.game.infos.bar_width),
             map_y: (this.game.infos.game_height / 4) - (this.game.infos.bar_height / 2),
-    
-            bar_speed: this.game.infos.bar_speed,
-            color: this.infos.bar_color
-        }
-
-        let left_player_data_2 = {
-            game: this.game,
-
-            id: 2,
-
-            object_width: this.game.infos.bar_width,
-            object_heigth : this.game.infos.bar_height,
-    
-            map_x: 0 + this.game.infos.bar_width,
-            map_y: (this.game.infos.game_height / 4 + (this.game.infos.game_height / 2)) - (this.game.infos.bar_height / 2),
     
             bar_speed: this.game.infos.bar_speed,
             color: this.infos.bar_color
@@ -157,7 +142,6 @@ class LocalGame2v2
     
         this.game.left_player_1 = new Bar2v2(...Object.values(left_player_data_1));
         this.game.right_player_1 = new Bar2v2(...Object.values(right_player_data_1));
-        this.game.left_player_2 = new Bar2v2(...Object.values(left_player_data_2));
         this.game.right_player_2 = new Bar2v2(...Object.values(right_player_data_2));
 
         // ball creation
@@ -197,7 +181,6 @@ class LocalGame2v2
 
         this.game.left_player_1.print();
         this.game.right_player_1.print();
-        this.game.left_player_2.print();
         this.game.right_player_2.print();
     }
 }
@@ -251,9 +234,9 @@ function start2v2()
 
     infos_2v2.menu_color = "white", infos_2v2.background_color = "black", infos_2v2.bar_color = "white"; //
 
-    the_game = new LocalGame2v2(infos_2v2, game_2v2);
+    the_game = new LocalGame1v2(infos_2v2, game_2v2);
     the_game.initialize();
     the_game.refreshDisplay();
 }
 
-start2v2();
+// start2v2();

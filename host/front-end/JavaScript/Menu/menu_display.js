@@ -110,8 +110,8 @@ function displayTwoVsTwoGameLocal()
     game_toolbar = document.getElementById('game_toolbar');
     game_toolbar.style.display = "block";
 
-    two_vs_two_local_page = document.getElementById('two_vs_two_local_page');
-    two_vs_two_local_page.style.display = "block";
+    one_vs_two_local_page = document.getElementById('one_vs_two_local_page');
+    one_vs_two_local_page.style.display = "block";
 }
 
 function displayOneVsOneGameLocal()
