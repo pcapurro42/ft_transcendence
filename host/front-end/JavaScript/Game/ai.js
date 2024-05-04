@@ -10,6 +10,5 @@ function displayGamePage_ai()
 
 function ai()
 {
-    console
     displayGamePage_ai();
 }
