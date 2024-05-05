@@ -15,7 +15,14 @@ function parse_alias(event){
 
 function parse_offersAnswers(str){
 	const regex = /^[A-Za-z0-9+\/=\r\n]+$/;
-	return regex.test(str);
+	if(regex.test(str) == false)
+		return false;
+
+	let tmp = JSON.parse(atob(str));
+	console.log(tmp);
+	if (!tmp.iceCandidates || !tmp.type || !tmp.sdp)
+		return false;
+	return true;
 }
 
 document.getElementById('keep42').onclick = checkboxEnabler;
