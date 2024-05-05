@@ -58,7 +58,7 @@
                     <br><br><br>
 
                 </div>
-    
+
             </div>
 
             <!-- 1 vs 1 (online) -->
@@ -95,13 +95,13 @@
             <!-- 1 vs 1 (local) -->
 
             <div id="one_vs_one_local_page" class="container mx-auto">
-                <canvas id="one_vs_one_local_game"></canvas>
+                <canvas id="one_vs_one_local_game" class="col-10 border border-5 w-100"></canvas>
             </div>
 
             <!-- 2 vs 2 (local) -->
 
             <div id="one_vs_two_local_page">
-                <canvas id="one_vs_two_local_game"></canvas>
+                <canvas id="one_vs_two_local_game" class="col-10 border border-5 w-100"></canvas>
             </div>
 
             <!-- Tournament -->
@@ -115,7 +115,7 @@
             <div id="game_page_ai">
                 <!-- ... -->
             </div>
-    
+
         </div>
 
         <!-- Menu Pages -->
@@ -152,7 +152,7 @@
             <div id="main_menu_page">
 
                 <!-- Main menu buttons -->
-                
+
                 <div id="main_menu_buttons" class="container">
 
                     <div class="p-2 text-center">
@@ -192,13 +192,13 @@
                     <div class="p-2 text-center">
 
                         <button id="one_vs_one_online_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="1 vs 1 (online)" data-title="1 vs 1 (online)" title=""></button><br>
-                    
+
                         <button id="one_vs_one_local_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="1 vs 1 (local)" data-title="1 vs 1 (local)" title=""></button><br>
-                        
+
                         <button id="two_vs_two_local_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="1 vs 2 (local)" data-title="1 vs 2 (local)" title=""></button><br>
 
                         <br>
-    
+
                         <button id="classic_back_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
 
                     </div>
@@ -210,7 +210,7 @@
                 <div id="one_vs_one_online_choice_menu" class="container">
 
                     <div class="p-2 text-center">
-    
+
                         <button id="create_one_vs_one_online_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Create a game" data-title="Create a game" title=""></button><br>
 
                         <button id="join_one_vs_one_online_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Join a game" data-title="Join a game" title=""></button><br><br>
@@ -244,11 +244,11 @@
                         </div>
                         <button id="create_classic_back_btn" class="btn text btn-complex mt-5" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
                     </div>
-    
+
                     <div id="join_classic_menu" class="text-center mt-4">
-    
+
                         <div id="game_id_div_join" class="d-flex flex-row justify-content-center">
-    
+
                             <div class="border border-2">
                                 <input type="text" id="paste_peer_offer" class="d-inline m-2" data-tsnormal="16px" data-tslarge="21px"></input>
                                 <button id ="submit_offer" type="submit" class="btn text btn-lg btn-simple border btn-outline-success" data-tsnormal="15px" data-tslarge="20px" data-oname="Submit"></button>
@@ -259,16 +259,16 @@
                                 <button id="cpy_btn_answer" class="btn btn-simple text btn-outline-secondary btn-sm" data-tsnormal="15px" data-tslarge="20px" data-title="Copy" data-oname="Copy"></button>
                                 <p class="text" data-oname="Peer answer send msg" data-tsnormal="15px" data-tslarge="20px"></p>
                             </div>
-    
+
                         </div>
-    
+
                         <div>
                             <button id="join_classic_lobby" class="btn btn-lg text btn-outline-danger btn-simple me-2 my-3" data-title="Create Lobby" data-oname="Join Lobby" disabled></button>
                         </div>
-    
+
                         <button id="join_classic_back_btn" class="btn text btn-complex mt-5" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
                     </div>
-    
+
                 </div>
 
                 <!-- Tournament nickname -->
@@ -282,20 +282,20 @@
                             <button id ="submit_alias" type="submit" class="btn text btn-lg btn-simple border btn-outline-success" data-tsnormal="15px" data-tslarge="20px" data-oname="Submit"></button>
                             <div id="invalid-alias" class="invalid-feedback" data-tsnormal="20px" data-tslarge="25px" data-oname="Invalid alias"></div>
                         </div>
-    
+
                         <div>
                             <input id="keep42" type="checkbox">
                             <label class="text" for="keep42" data-tsnormal="20px" data-tslarge="25px" data-oname="keep42" data-title="keep42"></label>
                             <div id="checkbox_err" class="invalid-feedback" data-tsnormal="20px" data-tslarge="25px" data-oname="Checkbox error">
                             </div>
                         </div>
-    
+
                         <br>
-    
+
                         <button id="back_tournament_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
-    
+
                     </form>
-    
+
                 </div>
 
                 <!-- Customize menu -->

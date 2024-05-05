@@ -8,7 +8,7 @@ function displayGamePage_ai()
 
 function displayGamePage_classic()
 {
-    let game_page = document.getElementById('game_page_classic');
+    let game_page = document.getElementById('one_vs_one_online_page');
     game_page.style.display = "block";
 
     let peer_offer = document.getElementById('peer_offer');
