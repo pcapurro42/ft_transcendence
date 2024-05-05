@@ -34,9 +34,10 @@ let redirect_uri;
 initializeAuth();
 refreshLogin();
 
-// < MODE > //
+// < GAME > //
 
 let mode;
+let game;
 
 // < REFRESH > //
 

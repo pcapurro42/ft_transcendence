@@ -185,6 +185,8 @@ class LocalGame1v2
 
 function initializeLocal1v2()
 {
+    mode = "local1v2";
+
     let infos_2v2 = {
         canvas: null,
         /** @type {HTMLCanvasElement} */ display: null,
@@ -230,7 +232,9 @@ function initializeLocal1v2()
     else
         infos_2v2.menu_color = "black", infos_2v2.background_color = "white", infos_2v2.bar_color = "black";
 
-    the_game = new LocalGame1v2(infos_2v2, game_2v2);
+    let the_game = new LocalGame1v2(infos_2v2, game_2v2);
     the_game.initialize();
     the_game.refreshDisplay();
+
+    game = the_game;
 }

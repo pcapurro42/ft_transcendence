@@ -1,49 +1,55 @@
 // <<<<<<< GAME >>>>>>> //
 
-    // < OBJECT > //
+let keys = {
+    ArrowUp: false,
+    ArrowDown: false,
+    KeyA: false,
+    KeyQ: false
+};
 
-    class Ball
+// < OBJECT > //
+
+class Ball
+{
+    ;
+}
+
+// < TRIGGER > //
+
+window.addEventListener('keydown', (event) => 
+{
+    if (mode != null)
     {
-        ;
-    }
-
-    // < REFRESH > //
-
-    function refreshPlayerPos(event, game)
-    {
-        refreshGameDisplay(game);
-
-        if (game.player_nb == 2)
+        if (mode == "local1v1")
         {
-            if (event.key == 'ArrowDown')
-                game.left_player.moveDown();
-            else if (event.key == 'ArrowUp')
-                game.left_player.moveUp();
+            if (event.key == 'ArrowUp' || keys.ArrowUp == true)
+                game.game.right_player.moveUp(), keys.ArrowUp = true;
+            else if (event.key == 'ArrowDown' || keys.ArrowDown == true)
+                game.game.right_player.moveDown(), keys.ArrowDown = true;
+
+            if (event.key == 'a' || keys.KeyA == true)
+                game.game.left_player.moveUp(), keys.KeyA = true;
+            else if (event.key == 'q' || keys.KeyQ == true)
+                game.game.left_player.moveDown(), keys.KeyQ = true;
+
         }
-        else
+        else if (mode == "local1v2")
         {
-            if (event.key == 'ArrowDown')
-                game.left_player_1.moveDown();
-            else if (event.key == 'ArrowUp')
-                game.left_player_1.moveUp();
+            ;
         }
-
-        refreshPlayersDisplay(game);
     }
+    game.refreshDisplay();
+});
 
-    function refreshGameDisplay(game)
-    {
-        displayBackground(game);
-        displayCenterBar(game);
-        displayScores(game);
-    }
+window.addEventListener('keyup', (event) => 
+{
+    if (event.key == 'ArrowUp')
+        keys.ArrowUp = false;
+    else if (event.key == 'ArrowDown')
+        keys.ArrowDown = false;
 
-    // < TRIGGER > //
-
-    window.addEventListener('keydown', (event) => 
-    {
-        // if (mode == "1v1")
-            // refreshPlayerPos(event, game_1v1);
-        // else
-            // refreshPlayerPos(event, game_2v2);
-    });
+    if (event.key == 'a')
+        keys.KeyA = false;
+    else if (event.key == 'q')
+        keys.KeyQ = false;
+});
