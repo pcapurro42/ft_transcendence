@@ -191,9 +191,9 @@ window.addEventListener('keyup', (event) =>
     else if (event.key == 'ArrowDown')
         keys.ArrowDown = false;
 
-    if (event.key == 'a')
+    if (event.key == 'e')
         keys.KeyA = false;
-    else if (event.key == 'q')
+    else if (event.key == 'd')
         keys.KeyQ = false;
 
     if (event.key == 'u')
