@@ -111,29 +111,26 @@ class LocalGame1v1
         let x, y;
         let value = this.generateNumber(4);
 
-        if (value == 1)
+        if (value == 1) // left
         {
-            x = (this.game.infos.game_width / 4);
+            x = (this.game.infos.game_width / 4) - (this.game.infos.ball_width / 2);
             y = this.game.infos.game_height / 2 + this.game.infos.game_height / 4;
         }
-        if (value == 2)
+        if (value == 2) // right
         {
-            x = (this.game.infos.game_width / 2 + this.game.infos.game_width / 4);
+            x = (this.game.infos.game_width / 2 + this.game.infos.game_width / 4) - (this.game.infos.ball_width / 2);
             y = this.game.infos.game_height / 4;
         }
-        if (value == 3)
+        if (value == 3) // right
         {
-            x = (this.game.infos.game_width / 2 + this.game.infos.game_width / 4);
-            y = this.game.infos.game_height / 4;
-        }
-        if (value == 4)
-        {
-            x = (this.game.infos.game_width / 4);
+            x = (this.game.infos.game_width / 2 + this.game.infos.game_width / 4) - (this.game.infos.ball_width / 2);
             y = this.game.infos.game_height / 2 + this.game.infos.game_height / 4;
         }
-        
-        console.log(value);
-        console.log(x, " ; ", y);
+        if (value == 4) // left
+        {
+            x = (this.game.infos.game_width / 4) - (this.game.infos.ball_width / 2);
+            y = this.game.infos.game_height / 2 - this.game.infos.game_height / 4;
+        }
 
         let ball_data = {
             game: this.game,
