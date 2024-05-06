@@ -67,94 +67,36 @@ class Ball
         return (false);
     }
 
-    // Nord-Est
-
-    move30()
+    move()
     {
-        if (this.isOffLimits() == true)
-            this.direction = this.getOpposite(this.direction);
-    }
+        // Nord-Est
+        if (this.direction == 45)
+        {
+            this.x = this.x + this.speed;
+            this.y = this.y - this.speed;
+        }
 
-    move45()
-    {
-        this.x = this.x + this.speed;
-        this.y = this.y - this.speed;
+        // Nord-Ouest
+        if (this.direction == 135)
+        {
+            this.x = this.x - this.speed;
+            this.y = this.y - this.speed;
+        }
 
-        if (this.isOffLimits() == true)
-            this.direction = this.getOpposite(this.direction);
-    }
+        // Sud-Ouest
+        if (this.direction == 225)
+        {
+            this.x = this.x - this.speed;
+            this.y = this.y + this.speed;
+        }
 
-    move60()
-    {
-        if (this.isOffLimits() == true)
-            this.direction = this.getOpposite(this.direction);
-    }
+        // Sud-Est
+        if (this.direction == 315)
+        {
+            this.x = this.x + this.speed;
+            this.y = this.y + this.speed;
+        }
 
-    // Nord-Ouest
-
-    move120()
-    {
-        if (this.isOffLimits() == true)
-            this.direction = this.getOpposite(this.direction);
-    }
-
-    move135()
-    {
-        this.x = this.x - this.speed;
-        this.y = this.y - this.speed;
-        
-        if (this.isOffLimits() == true)
-            this.direction = this.getOpposite(this.direction);
-    }
-
-    move150()
-    {
-        if (this.isOffLimits() == true)
-            this.direction = this.getOpposite(this.direction);
-    }
-
-    // Sud-Ouest
-
-    move210()
-    {
-        if (this.isOffLimits() == true)
-            this.direction = this.getOpposite(this.direction);
-    }
-
-    move225()
-    {
-        this.x = this.x - this.speed;
-        this.y = this.y + this.speed;
-
-        if (this.isOffLimits() == true)
-            this.direction = this.getOpposite(this.direction);
-    }
-
-    move240()
-    {
-        if (this.isOffLimits() == true)
-            this.direction = this.getOpposite(this.direction);
-    }
-
-    // Sud-Est
-
-    move300()
-    {
-        if (this.isOffLimits() == true)
-            this.direction = this.getOpposite(this.direction);
-    }
-
-    move315()
-    {
-        this.x = this.x + this.speed;
-        this.y = this.y + this.speed;
-
-        if (this.isOffLimits() == true)
-            this.direction = this.getOpposite(this.direction);
-    }
-
-    move330()
-    {
         if (this.isOffLimits() == true)
             this.direction = this.getOpposite(this.direction);
     }
