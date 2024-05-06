@@ -3,7 +3,6 @@ let en = [
     ["LOG IN WITH 42", "LOG IN WITH 42"],
     ["LOG OUT", "LOG OUT"],
 
-    ["Succesfully logged in! Welcome ", "Succesfully logged in! Welcome "],
 
     ["Enable/Disable menu music", "Enable/Disable menu music"],
 
@@ -23,12 +22,6 @@ let en = [
     ["Copy", "Copy"],
 
     ["Start the game", "Start the game"],
-
-    ['Peer offer send msg', "Send this code to a friend for <br> him to approve connection."],
-    ['Peer answer send msg', "Send this code to a friend in <br> order to approve connection."],
-
-    ['Peer offer paste msg', "Paste your friend's invitation code <br> to generate the authorization code."],
-    ['Paste answer msg', "Paste your friend's authorization <br> code in order to init connection."],
 
     ["Create Lobby", "Create Lobby"],
     ["Join Lobby", "Join Lobby"],
@@ -68,5 +61,24 @@ let en = [
     ["Normal", "Normal"],
     ["Large", "Large"],
 
-    ["Succesfully copied to clipboard.", "Succesfully copied to clipboard."]
+
+    //******* Offer/Answer ******/
+
+    ['Peer offer send msg', "Send this code to a friend for <br> him to approve connection."],
+    ['Peer answer send msg', "Send this code to a friend in <br> order to approve connection."],
+
+    ['Peer offer paste msg', "Paste your friend's invitation code <br> to generate the authorization code."],
+    ['Paste answer msg', "Paste your friend's authorization <br> code in order to init connection."],
+
+    //******* Status Bar ******/
+
+    ["42 Auth Success", "Succesfully logged in! Welcome "],
+    ["42 Auth Failure", "Connection failed."],
+    ["Copy Success", "Succesfully copied to clipboard."],
+
+    ["Peer Connection Success", "Succesfully connected to remote peer."],
+    ["Peer Connection Warning", "Trying to connect with remote peer."],
+    ["Peer Connection Alert", "Connection with remote peer failed."],
+    ["Peer Connection Timeout", "Connection timeout... Please restart process."],
+    ["Wrong Code Format", "Error: code is formatted incorrectly."]
 ];

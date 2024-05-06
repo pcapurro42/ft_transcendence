@@ -2,7 +2,6 @@ let fr = [
     ["LOG IN WITH 42", "SE CONNECTER AVEC 42"],
     ["LOG OUT", "SE DÉCONNECTER"],
 
-    ["Succesfully logged in! Welcome ", "Connexion réussie ! Bienvenue "],
 
     ["Enable/Disable menu music", "Activer/désactiver la musique du menu"],
 
@@ -23,11 +22,6 @@ let fr = [
 
     ["Start the game", "Lancer la partie"],
 
-    ['Peer offer send msg', "Envoyez ce code a un ami pour<br> qu'il autorise la connexion."],
-    ['Peer answer send msg', "Envoyez ce code a votre ami <br> en vue d'autoriser la connexion."],
-
-    ['Peer offer paste msg', "Collez le code d'invitation de votre ami <br> pour générer le code d'autorisation."],
-    ['Paste answer msg', "Collez le code d'autorisation de<br> votre ami pour initier la connexion."],
 
     ["Create Lobby", "Créer un salon"],
     ["Join Lobby", "Rejoindre un salon"],
@@ -67,5 +61,26 @@ let fr = [
     ["Normal", "Normal"],
     ["Large", "Grand"],
 
-    ["Succesfully copied to clipboard.", "Copié dans le presse-papier avec succès."]
+    //******* Offer/Answer ******/
+
+    ['Peer offer send msg', "Envoyez ce code a un ami pour<br> qu'il autorise la connexion."],
+    ['Peer answer send msg', "Envoyez ce code a votre ami <br> en vue d'autoriser la connexion."],
+
+    ['Peer offer paste msg', "Collez le code d'invitation de votre ami <br> pour générer le code d'autorisation."],
+    ['Paste answer msg', "Collez le code d'autorisation de<br> votre ami pour initier la connexion."],
+
+    //******* Status Bar ******/
+
+    ["42 Auth Success", "Connexion réussie ! Bienvenue "],
+    ["42 Auth Failure", "La connexion a echoué."],
+
+    ["Copy Success", "Copié dans le presse-papier avec succès."],
+
+    ["Peer Connection Success", "Succès de la connexion à distance."],
+    ["Peer Connection Warning", "Connexion à distance en cours..."],
+    ["Peer Connection Alert", "Connexion à distance échouée."],
+    ["Peer Connection Timeout", "Délai de connexion dépassé... Merci de bien vouloir recommencer."],
+
+    ["Wrong Code Format", "Erreur: le code n'est pas au bon format."]
+
 ];

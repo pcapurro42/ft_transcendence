@@ -43,7 +43,7 @@ async function offerGenerator(){
 			type: sdp_offer.type,
 			iceCandidates: candidates,
 		}
-
+		console.log(jsonOffer);
 		let offer = JSON.stringify(jsonOffer);
 		document.getElementById('peer_offer').value = btoa(offer);
 	}
@@ -52,18 +52,17 @@ async function offerGenerator(){
 		document.getElementById('peer_offer').value = "Error generating offer.";
 	}
 }
+
 async function submitAnswer(){
 	let answer = document.getElementById('paste_peer_answer').value;
 	try{
 		if (parse_offersAnswers(answer) == false)
 		throw("Error: answer not b64.");
-	console.log('test');
-	answer = atob(answer);
-	initConnection(JSON.parse(answer));
-
+		answer = atob(answer);
+		initConnection(JSON.parse(answer));
 	}
 	catch(error){
-		document.getElementById('paste_peer_answer').value = "Error: code is invalid.";
+		displayStatusBarAlert(getTranslation("Wrong Code Format"));
 	}
 }
 
@@ -82,39 +81,42 @@ async function gatherIceCandidates_a(){
 			if (event.candidate)
 				candidate_a.push(event.candidate);
 			else
-			resolve(candidate_a);
+				resolve(candidate_a);
 	}
-})
+	})
 }
+
 async function answerGenerator(){
 	let offer = document.getElementById('paste_peer_offer').value;
 
 	try{
 		if (parse_offersAnswers(offer) == false)
-		throw("Error: offer not b64.");
-	offer = JSON.parse(atob(offer));
+			throw("Error: offer not b64.");
+		offer = JSON.parse(atob(offer));
+		if(offer.type != 'offer')
+			throw("Error: expecting 'offer' type");
+		RTC_a = new RTCPeerConnection(getIceConfig());
+		await RTC_a.setRemoteDescription(new RTCSessionDescription(offer));
+		for (let candidate of offer.iceCandidates){
+			await RTC_a.addIceCandidate(candidate);
+		}
 
-	RTC_a = new RTCPeerConnection(getIceConfig());
-	await RTC_a.setRemoteDescription(new RTCSessionDescription(offer));
-	for (let candidate of offer.iceCandidates){
-		await RTC_a.addIceCandidate(candidate);
+		let answer = await RTC_a.createAnswer();
+		await RTC_a.setLocalDescription(answer);
+
+		let candidates = await gatherIceCandidates_a();
+
+		let jsonAnswer = {
+			sdp: answer.sdp,
+			type: answer.type,
+			iceCandidates: candidates,
+		}
+		document.getElementById('peer_answer').value = btoa(JSON.stringify(jsonAnswer));
 	}
-
-	let answer = await RTC_a.createAnswer();
-	await RTC_a.setLocalDescription(answer);
-
-	let candidates = await gatherIceCandidates_a();
-
-	let jsonAnswer = {
-		sdp: answer.sdp,
-		type: answer.type,
-		iceCandidates: candidates,
+	catch(error){
+		console.error(`Error: ${error}`);
+		displayStatusBarAlert(getTranslation("Wrong Code Format"));
 	}
-	document.getElementById('peer_answer').value = btoa(JSON.stringify(jsonAnswer));
-}
-catch(error){
-	document.getElementById('peer_answer').value = "Error: code is invalid.";
-}
 
 }
 

@@ -19,7 +19,6 @@ function parse_offersAnswers(str){
 		return false;
 
 	let tmp = JSON.parse(atob(str));
-	console.log(tmp);
 	if (!tmp.iceCandidates || !tmp.type || !tmp.sdp)
 		return false;
 	return true;

@@ -1,21 +1,42 @@
 async function initConnection(answer){
-	console.log("hello from initConnection")
-	await RTC_o.setRemoteDescription(new RTCSessionDescription(answer));
 
-	if (answer.type == "offer"){
-		console.error('Error : offer submitted');
-	}
-	for (let candidate of answer.iceCandidates){
-		await RTC_o.addIceCandidate(candidate);
-	}
+	try{
+		document.getElementById('submit_answer').setAttribute('disabled', true);
 
-	RTC_o.oniceconnectionstatechange = function() {
-		console.log(`status = ${RTC_o.iceConnectionState}`);
-		if (RTC_o.iceConnectionState === 'connected') {
-			console.log('Connection ok');
-		}
-		else
-			console.log('Not connected');
-	};
+		await RTC_o.setRemoteDescription(new RTCSessionDescription(answer));
+
+		if (answer.type === 'offer')
+			displayStatusBarAlert(getTranslation("Wrong Code Format"));
+		console.log()
+
+		console.log("ICE candidates before adding:", answer.iceCandidates);
+
+		for (let candidate of answer.iceCandidates)
+			await RTC_o.addIceCandidate(candidate);
+		displayStatusBarWarning(getTranslation("Peer Connection Warning"));
+
+		const timeout = setTimeout(() => {
+			console.log(RTC_o);
+			if (RTC_o.iceConnectionState === 'connected') {
+				displayStatusBarSuccess(getTranslation("Peer Connection Success"));
+				return;
+			}
+			else if (RTC_o.iceConnectionState === 'checking'){
+				console.error("checking");
+				return;
+			}
+			else if (RTC_o.iceConnectionState === 'new')
+				displayStatusBarAlert(getTranslation("Peer Connection Timeout"));
+			else{
+				displayStatusBarAlert(getTranslation("Peer Connection Alert"));
+				return
+			}
+		},5000)
+
+	}
+	catch(error){
+		console.error(`Error: ${error}`);
+		displayStatusBarAlert(getTranslation("Peer Connection Alert"));
+	}
 
 }

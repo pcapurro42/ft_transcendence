@@ -45,7 +45,7 @@ function displayMenu()
     let tournament_form = document.getElementById('form_alias')
     tournament_form.style.display = 'none';
 
-    let statusBar = document.getElementById('statusBar');
+    let statusBar = document.getElementById('statusBarSuccess');
     statusBar.style.display = 'none';
 
     start = false;

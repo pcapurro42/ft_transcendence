@@ -52,7 +52,7 @@ async function handleRedirection(){
         if (user_info){
             localStorage.setItem('user_info', JSON.stringify(user_info));
             document.getElementById('intra_login').innerHTML = ` ${user_info.login}`;
-            displayStatusBar(getTranslation("Succesfully logged in! Welcome ") + `${user_info.login}` + ".");
+            displayStatusBarSuccess(getTranslation("42 Auth Success") + `${user_info.login}` + ".");
         }
         else{
             throw("Error: user_info not retrieved.");
@@ -60,7 +60,8 @@ async function handleRedirection(){
     } catch (error) {
         localStorage.setItem("status", "not connected");
         refreshLogin();
-        console.error('Failed to retrieve or process user info:', error);
+        console.error(error);
+        displayStatusBarAlert("42 Auth Failure");
     }
 }
 
