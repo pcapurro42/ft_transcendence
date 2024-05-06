@@ -108,12 +108,12 @@ class LocalGame1v1
             object_width: this.game.infos.ball_width,
             object_heigth: this.game.infos.ball_height,
 
-            x_pos : 0,
-            y_pos : 0,
+            x_pos : this.game.infos.game_width / 2,
+            y_pos : this.game.infos.game_height / 2,
 
             speed: this.game.infos.ball_speed,
             color: this.game.infos.ball_color,
-            direction : 45
+            direction : 225
         }
 
         this.game.ball = new Ball(...Object.values(ball_data));

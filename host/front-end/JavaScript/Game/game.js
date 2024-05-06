@@ -29,22 +29,26 @@ class Ball
 
     moveNO()
     {
-        ;
+        this.x = this.x - this.speed;
+        this.y = this.y + this.speed;
     }
 
     moveNE()
     {
-        ;
+        this.x = this.x + this.speed;
+        this.y = this.y - this.speed;
     }
 
     moveSE()
     {
-        ;
+        this.x = this.x + this.speed;
+        this.y = this.y + this.speed;
     }
 
     moveSO()
     {
-        ;
+        this.x = this.x - this.speed;
+        this.y = this.y - this.speed;
     }
 }
 
