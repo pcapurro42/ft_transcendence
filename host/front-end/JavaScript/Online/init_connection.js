@@ -5,8 +5,10 @@ async function initConnection(answer){
 
 		await RTC_o.setRemoteDescription(new RTCSessionDescription(answer));
 
-		if (answer.type === 'offer')
+		if (answer.type === 'offer'){
 			displayStatusBarAlert(getTranslation("Wrong Code Format"));
+			return;
+		}
 		console.log()
 
 		console.log("ICE candidates before adding:", answer.iceCandidates);
