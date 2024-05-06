@@ -43,7 +43,6 @@ async function offerGenerator(){
 			type: sdp_offer.type,
 			iceCandidates: candidates,
 		}
-		console.log(jsonOffer);
 		let offer = JSON.stringify(jsonOffer);
 		document.getElementById('peer_offer').value = btoa(offer);
 	}
@@ -112,6 +111,7 @@ async function answerGenerator(){
 			iceCandidates: candidates,
 		}
 		document.getElementById('peer_answer').value = btoa(JSON.stringify(jsonAnswer));
+		answerSideTimeout();
 	}
 	catch(error){
 		console.error(`Error: ${error}`);
@@ -120,3 +120,22 @@ async function answerGenerator(){
 
 }
 
+// if (RTC_a != null){
+// 	RTC_a.oniceconnectionstatechange = function(event) {
+// 		console.log()
+// 		if (RTC_o.iceConnectionState === 'connected') {
+// 			displayStatusBarSuccess(getTranslation("Peer Connection Success"));
+// 			document.getElementById('create_classic_lobby').removeAttribute('disabled');
+// 			return;
+// 		}
+// 		else if (RTC_o.iceConnectionState === 'new' || RTC_o.iceConnectionState === 'checking'){
+
+// 			console.log(`Connection state stuck on ${RTC_o.iceConnectionState}`);
+// 			displayStatusBarAlert(getTranslation("Peer Connection Timeout"));
+// 		}
+// 		else{
+// 			displayStatusBarAlert(getTranslation("Peer Connection Alert"));
+// 			return
+// 		}
+// 	}
+// }

@@ -81,6 +81,10 @@ let fr = [
     ["Peer Connection Alert", "Connexion à distance échouée."],
     ["Peer Connection Timeout", "Délai de connexion dépassé... Merci de bien vouloir recommencer."],
 
+    ["Answer Timeout", ` secondes restantes avant l'expiration du code.`],
+    ["Code Expired", `Le code à expiré. Merci de bien vouloir recommencer.`],
+
+
     ["Wrong Code Format", "Erreur: le code n'est pas au bon format."]
 
 ];

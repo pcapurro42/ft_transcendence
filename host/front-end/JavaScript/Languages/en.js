@@ -80,5 +80,9 @@ let en = [
     ["Peer Connection Warning", "Trying to connect with remote peer."],
     ["Peer Connection Alert", "Connection with remote peer failed."],
     ["Peer Connection Timeout", "Connection timeout... Please restart process."],
+
+    ["Answer Timeout", ` seconds left before code expires.`],
+    ["Code Expired", `The code expired. Please restart process.`],
+
     ["Wrong Code Format", "Error: code is formatted incorrectly."]
 ];
