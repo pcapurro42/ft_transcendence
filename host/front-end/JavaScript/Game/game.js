@@ -159,16 +159,16 @@ window.addEventListener('keydown', (event) =>
             else if (event.key == 'ArrowDown')
                 keys.ArrowDown = true;
 
-            if (event.key == 'q')
+            if (event.key == 'e')
                 keys.KeyA = true;
-            else if (event.key == 'a')
+            else if (event.key == 'd')
                 keys.KeyQ = true;
         }
         else if (mode == "local1v2")
         {
-            if (event.key == 'q')
+            if (event.key == 'e')
                 keys.KeyA = true;
-            else if (event.key == 'a')
+            else if (event.key == 'd')
                 keys.KeyQ = true;
 
             if (event.key == 'u')
