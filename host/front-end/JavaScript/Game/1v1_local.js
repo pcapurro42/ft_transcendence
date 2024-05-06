@@ -133,10 +133,30 @@ class LocalGame1v1
         this.game.infos.display.fillText(this.game.scores[0], left_score_x, score_y);
         this.game.infos.display.fillText(this.game.scores[1], right_score_x, score_y);
 
-        // players display
+        this.game.left_player.print();
+        this.game.right_player.print();
+
+    }
+
+    refreshPlayers()
+    {
+        if (keys.KeyA == true)
+            this.game.left_player.moveUp();
+        else if (keys.KeyQ == true)
+            this.game.left_player.moveDown();
+
+        if (keys.ArrowUp == true)
+            this.game.right_player.moveUp();
+        else if (keys.ArrowDown == true)
+            this.game.right_player.moveDown();
 
         this.game.left_player.print();
         this.game.right_player.print();
+    }
+
+    refreshBall()
+    {
+        ;
     }
 }
 
@@ -191,4 +211,14 @@ function initializeLocal1v1()
     the_game.refreshDisplay();
 
     game = the_game;
+    start = true;
+}
+
+function startLocal1v1()
+{
+    game.refreshDisplay();
+    game.refreshPlayers();
+
+    if (start == true)
+        requestAnimationFrame(startLocal1v1);
 }

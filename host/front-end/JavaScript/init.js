@@ -38,6 +38,7 @@ refreshLogin();
 
 let mode;
 let game;
+let start;
 
 // < REFRESH > //
 
