@@ -113,7 +113,7 @@ class LocalGame1v1
 
             speed: this.game.infos.ball_speed,
             color: this.game.infos.ball_color,
-            direction : 315
+            direction : this.game.infos.ball_direction
         }
 
         this.game.ball = new Ball(...Object.values(ball_data));
@@ -226,7 +226,9 @@ function initializeLocal1v1()
         menu_color: null,
         background_color: null,
         bar_color: null,
-        ball_color: null
+        ball_color: null,
+        
+        ball_direction: 45
     }
 
     let game_1v1 = {
