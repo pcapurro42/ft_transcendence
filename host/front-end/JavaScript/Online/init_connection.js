@@ -1,7 +1,6 @@
 async function initConnection(answer){
 
 	try{
-		document.getElementById('submit_answer').setAttribute('disabled', true);
 
 		await RTC_o.setRemoteDescription(new RTCSessionDescription(answer));
 
@@ -9,13 +8,12 @@ async function initConnection(answer){
 			displayStatusBarAlert(getTranslation("Wrong Code Format"));
 			return;
 		}
-		console.log()
+		document.getElementById('submit_answer').setAttribute('disabled', true);
 
-		console.log("ICE candidates before adding:", answer.iceCandidates);
 
 		for (let candidate of answer.iceCandidates)
-			await RTC_o.addIceCandidate(candidate);
-		displayStatusBarWarning(getTranslation("Peer Connection Warning"));
+		await RTC_o.addIceCandidate(candidate);
+	displayStatusBarWarning(getTranslation("Peer Connection Warning"));
 
 		const timeout = setTimeout(() => {
 			console.log(RTC_o);
