@@ -69,12 +69,12 @@ class Ball
     {
         if (this.y >= this.game.left_player.y && this.y <= this.game.left_player.y + this.game.left_player.height)
         {
-            if (this.x >= this.game.infos.game_width + this.game.infos.bar_width)
+            if (this.x <= this.game.left_player.x + this.game.left_player.width)
                 return (true);
         }
         if (this.y >= this.game.right_player.y && this.y <= this.game.right_player.y + this.game.right_player.height)
         {
-            if (this.x >= this.game.infos.game_width - this.game.infos.bar_width)
+            if (this.x >= this.game.right_player.x - this.game.right_player.width * 2)
                 return (true);
         }
         return (false);
@@ -110,7 +110,7 @@ class Ball
             this.y = this.y + this.speed;
         }
 
-        if (this.isUpOrDown() == true || this.isAtPlayer() == true)
+        if (this.isAtPlayer() == true || this.isUpOrDown() == true)
             this.direction = this.getOpposite(this.direction);
     }
 }

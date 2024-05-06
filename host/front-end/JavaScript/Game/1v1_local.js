@@ -215,7 +215,7 @@ function initializeLocal1v1()
         bar_height: 100,
         bar_width: 15,
 
-        ball_speed: 2,
+        ball_speed: 1,
         ball_height: 25,
         ball_width: 25,
 
