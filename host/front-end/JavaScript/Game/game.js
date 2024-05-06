@@ -33,13 +33,13 @@ class Ball
             return (225);
 
         if (value == 225)
-            return (135);
+            return (315);
 
         if (value == 315)
             return (45);
 
         if (value == 45)
-            return (315);
+            return (135);
     }
 
     isOffLimits()
