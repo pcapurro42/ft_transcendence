@@ -45,8 +45,17 @@ async function displayOneVsOneOnlineCreateGame(){
 
     let create_classic_menu = document.getElementById('create_classic_menu');
     create_classic_menu.style.display = 'block';
-    offerGenerator();
 
+    let paste_peer_answer = document.getElementById('paste_peer_answer');
+    paste_peer_answer.value = '';
+
+    let submit_btn = document.getElementById('submit_answer');
+    submit_btn.removeAttribute('disabled');
+
+    RTC_a = null;
+    RTC_o = null;
+
+    offerGenerator();
 }
 
 async function displayOneVsOneOnlineJoinGame(){
@@ -56,8 +65,21 @@ async function displayOneVsOneOnlineJoinGame(){
     let create_classic_menu = document.getElementById('join_classic_menu');
     create_classic_menu.style.display = 'block';
 
-    let countdown = document.getElementById('answer_timeout').style.display = 'none';
+    let countdown = document.getElementById('answer_timeout');
+    countdown.style.display = 'none';
+    clearInterval(timeoutInterval);
 
+    let submit_btn = document.getElementById('submit_offer');
+    submit_btn.removeAttribute('disabled');
+
+    let paste_peer_offer = document.getElementById('paste_peer_offer');
+    paste_peer_offer.value = '';
+
+    let peer_answer = document.getElementById('peer_answer');
+    peer_answer.value = '';
+
+    RTC_a = null;
+    RTC_o = null;
 
 }
 
@@ -70,8 +92,6 @@ function removeTournamentForm()
 }
 
 function displayTournamentForm(){
-    // if (sessionStorage.getItem('alias'))
-    //     return;
     let play_menu = document.getElementById('play_menu');
     play_menu.style.display = "none";
     let tournament_nickname_menu = document.getElementById('form_alias');

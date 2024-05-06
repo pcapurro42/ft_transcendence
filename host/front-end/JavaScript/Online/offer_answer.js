@@ -1,6 +1,8 @@
 let RTC_o = null;
 let RTC_a = null;
 
+let data_channel = null;
+
 function getIceConfig(){
 	let iceConf = {
 		iceTransportPolicy : 'all',
@@ -31,7 +33,7 @@ async function gatherIceCandidates_o(){
 async function offerGenerator(){
 	try{
 		RTC_o = new RTCPeerConnection(getIceConfig());
-		let dataChannel = RTC_o.createDataChannel('mgpDataChan');
+		data_channel = RTC_o.createDataChannel('mgpDataChannel');
 
 		let  sdp_offer = await RTC_o.createOffer();
 		await RTC_o.setLocalDescription(sdp_offer);
@@ -95,6 +97,11 @@ async function answerGenerator(){
 		if(offer.type != 'offer')
 			throw("Error: expecting 'offer' type");
 		RTC_a = new RTCPeerConnection(getIceConfig());
+
+	 	RTC_a.ondatachannel = function(event){
+			data_channel = event.channel;
+		}
+
 		await RTC_a.setRemoteDescription(new RTCSessionDescription(offer));
 		for (let candidate of offer.iceCandidates){
 			await RTC_a.addIceCandidate(candidate);
@@ -117,25 +124,5 @@ async function answerGenerator(){
 		console.error(`Error: ${error}`);
 		displayStatusBarAlert(getTranslation("Wrong Code Format"));
 	}
-
+	
 }
-
-// if (RTC_a != null){
-// 	RTC_a.oniceconnectionstatechange = function(event) {
-// 		console.log()
-// 		if (RTC_o.iceConnectionState === 'connected') {
-// 			displayStatusBarSuccess(getTranslation("Peer Connection Success"));
-// 			document.getElementById('create_classic_lobby').removeAttribute('disabled');
-// 			return;
-// 		}
-// 		else if (RTC_o.iceConnectionState === 'new' || RTC_o.iceConnectionState === 'checking'){
-
-// 			console.log(`Connection state stuck on ${RTC_o.iceConnectionState}`);
-// 			displayStatusBarAlert(getTranslation("Peer Connection Timeout"));
-// 		}
-// 		else{
-// 			displayStatusBarAlert(getTranslation("Peer Connection Alert"));
-// 			return
-// 		}
-// 	}
-// }

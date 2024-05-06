@@ -40,6 +40,10 @@ let mode;
 let game;
 let start;
 
+//<P2P>//
+
+let timeoutInterval;
+
 // < REFRESH > //
 
 displayMenu();

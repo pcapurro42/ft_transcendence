@@ -17,14 +17,14 @@ async function initConnection(answer){
 
 		const timeout = setTimeout(() => {
 			console.log(RTC_o);
-			if (RTC_o.iceConnectionState === 'connected') {
+			if (RTC_o.connectionState === 'connected') {
 				displayStatusBarSuccess(getTranslation("Peer Connection Success"));
 				document.getElementById('create_classic_lobby').removeAttribute('disabled');
 				return;
 			}
-			else if (RTC_o.iceConnectionState === 'new' || RTC_o.iceConnectionState === 'checking'){
+			else if (RTC_o.connectionState === 'new' || RTC_o.connectionState === 'connecting'){
 
-				console.log(`Connection state stuck on ${RTC_o.iceConnectionState}`);
+				console.error(`Connection state stuck on ${RTC_o.connectionState}`);
 				displayStatusBarAlert(getTranslation("Peer Connection Timeout"));
 			}
 			else{
@@ -52,7 +52,7 @@ function answerSideTimeout(){
 	submit_offer.setAttribute('disabled', true);
 
 
-	const timeout = setInterval(function() {
+	timeoutInterval = setInterval(function() {
 		answerTimeout--;
 		countdown.innerHTML = `${answerTimeout}` + getTranslation("Answer Timeout")
 		if (answerTimeout == 0){
@@ -62,7 +62,25 @@ function answerSideTimeout(){
 			document.getElementById('peer_answer').value = "";
 			submit_offer.removeAttribute('disabled');
 			RTC_a = null;
-			clearInterval(timeout);
+			clearInterval(timeoutInterval);
 		}
-	}, 1000)
+		if (RTC_a.connectionState === 'connected') {
+			answerSideConnectionHandler();
+			clearInterval(timeoutInterval);
+		}
+	}, 1000);
+}
+
+function answerSideConnectionHandler(){
+	displayStatusBarSuccess(getTranslation("Peer Connection Success"));
+
+	let countdown = document.getElementById('answer_timeout');
+	countdown.innerHTML = "You're pretty good.";
+
+
+	let join_lobby_btn = document.getElementById('join_classic_lobby');
+	join_lobby_btn.removeAttribute('disabled');
+
+
+
 }
