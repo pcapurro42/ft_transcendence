@@ -205,7 +205,6 @@ function initializeLocal1v2()
 
     let infos_2v2 = {
         canvas: null,
-        /** @type {HTMLCanvasElement} */ display: null,
     
         game_width: 1100,
         game_height: 720,
