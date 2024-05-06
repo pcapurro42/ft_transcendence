@@ -74,9 +74,12 @@ class Ball
         }
         if (this.y >= this.game.right_player.y && this.y <= this.game.right_player.y + this.game.right_player.height)
         {
-            if (this.x >= this.game.right_player.x - this.game.right_player.width * 2)
+            if (this.x + this.width >= this.game.right_player.x)
                 return (true);
         }
+        // return (false);
+
+        console.log(this.x, " ; ", this.game.right_player.x);
         return (false);
     }
 
