@@ -174,8 +174,24 @@ class LocalGame1v2
         this.game.infos.display.font = this.game.infos.text_size + "px " + this.game.infos.text_font;
         this.game.infos.display.fillText(this.game.scores[0], left_score_x, score_y);
         this.game.infos.display.fillText(this.game.scores[1], right_score_x, score_y);
+    }
 
-        // players display
+    refreshPlayers()
+    {
+        if (keys.KeyA == true)
+            this.game.left_player_1.moveUp();
+        if (keys.KeyQ == true)
+            this.game.left_player_1.moveDown();
+
+        if (keys.KeyU == true)
+            this.game.right_player_1.moveUp();
+        if (keys.KeyJ == true)
+            this.game.right_player_1.moveDown();
+
+        if (keys.ArrowUp == true)
+            this.game.right_player_2.moveUp();
+        if (keys.ArrowDown == true)
+            this.game.right_player_2.moveDown();
 
         this.game.left_player_1.print();
         this.game.right_player_1.print();
@@ -237,4 +253,19 @@ function initializeLocal1v2()
     the_game.refreshDisplay();
 
     game = the_game;
+    start = true;
+}
+
+function startLocal1v2()
+{
+    let start_btn = document.getElementById('start_2v1_local');
+    start_btn.classList.add('disabled');
+
+    game.refreshDisplay();
+    game.refreshPlayers();
+
+    if (start == true)
+        requestAnimationFrame(startLocal1v2);
+    else
+        start_btn.classList.remove('disabled');
 }

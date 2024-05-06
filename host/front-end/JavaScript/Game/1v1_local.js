@@ -220,4 +220,6 @@ function startLocal1v1()
 
     if (start == true)
         requestAnimationFrame(startLocal1v1);
+    else
+        start_btn.classList.remove('disabled');
 }

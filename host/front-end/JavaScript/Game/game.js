@@ -1,18 +1,24 @@
 // <<<<<<< GAME >>>>>>> //
 
-let keys = {
-    ArrowUp: false,
-    ArrowDown: false,
-    KeyA: false,
-    KeyQ: false
-};
-
 // < OBJECT > //
 
 class Ball
 {
     ;
 }
+
+// < KEYS > //
+
+let keys = {
+    KeyA: false,
+    KeyQ: false,
+
+    KeyU: false,
+    KeyJ: false,
+
+    ArrowUp: false,
+    ArrowDown: false
+};
 
 // < TRIGGER > //
 
@@ -31,11 +37,23 @@ window.addEventListener('keydown', (event) =>
                 keys.KeyA = true;
             else if (event.key == 'q')
                 keys.KeyQ = true;
-
         }
         else if (mode == "local1v2")
         {
-            ;
+            if (event.key == 'a')
+                keys.KeyA = true;
+            else if (event.key == 'q')
+                keys.KeyQ = true;
+
+            if (event.key == 'u')
+                keys.KeyU = true;
+            else if (event.key == 'j')
+                keys.KeyJ = true;
+
+            if (event.key == 'ArrowUp')
+                keys.ArrowUp = true;
+            else if (event.key == 'ArrowDown')
+                keys.ArrowDown = true;
         }
     }
 });
@@ -51,4 +69,9 @@ window.addEventListener('keyup', (event) =>
         keys.KeyA = false;
     else if (event.key == 'q')
         keys.KeyQ = false;
+
+    if (event.key == 'u')
+        keys.KeyU = false;
+    else if (event.key == 'j')
+        keys.KeyJ = false;
 });

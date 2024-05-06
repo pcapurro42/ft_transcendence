@@ -32,6 +32,7 @@ document.getElementById('play_classic_btn').onclick = displayClassicChoice;
 document.getElementById('classic_back_btn').onclick = removeClassicChoice;
 
 document.getElementById('start_1v1_local').onclick = startLocal1v1;
+document.getElementById('start_2v1_local').onclick = startLocal1v2;
 
 // < CLASSIC > //
 
