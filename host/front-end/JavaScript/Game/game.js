@@ -58,12 +58,25 @@ class Ball
             return (60);
     }
 
-    isOffLimits()
+    isUpOrDown()
     {
-        if (this.x <= 0 || this.x >= this.game.infos.game_width || this.x + this.width >= this.game.infos.game_width)
-            return (true);
         if (this.y <= 0 || this.y >= this.game.infos.game_height || this.y + this.height >= this.game.infos.game_height)
             return (true);
+        return (false);
+    }
+
+    isAtPlayer()
+    {
+        if (this.y >= this.game.left_player.y && this.y <= this.game.left_player.y + this.game.left_player.height)
+        {
+            if (this.x >= this.game.infos.game_width + this.game.infos.bar_width)
+                return (true);
+        }
+        if (this.y >= this.game.right_player.y && this.y <= this.game.right_player.y + this.game.right_player.height)
+        {
+            if (this.x >= this.game.infos.game_width - this.game.infos.bar_width)
+                return (true);
+        }
         return (false);
     }
 
@@ -97,7 +110,7 @@ class Ball
             this.y = this.y + this.speed;
         }
 
-        if (this.isOffLimits() == true)
+        if (this.isUpOrDown() == true || this.isAtPlayer() == true)
             this.direction = this.getOpposite(this.direction);
     }
 }
