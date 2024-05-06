@@ -29,7 +29,6 @@ class Bar1v1
 
     print()
     {
-        this.game.infos.display.fillStyle = this.color;
         this.game.infos.display.fillRect(this.x, this.y, this.width, this.height);
     }
 
@@ -135,13 +134,13 @@ class LocalGame1v1
 
         this.game.infos.display.fillStyle = this.game.infos.background_color;
         this.game.infos.display.fillRect(0, 0, this.game.infos.game_width, this.game.infos.game_height);
+        this.game.infos.display.fillStyle = this.game.infos.menu_color;
 
         // center bar display
 
         let x_bar_center = (this.game.infos.game_width / 2) - (this.game.infos.separator_width / 2);
         let nb = ~~(this.game.infos.game_height / (this.game.infos.separator_height + this.game.infos.separator_space));
 
-        this.game.infos.display.fillStyle = this.game.infos.menu_color;
         for (let value = 0; value != nb; value++)
         {
             this.game.infos.display.fillRect(x_bar_center, ((this.game.infos.separator_height * value) + this.game.infos.separator_space * (value + 1)), this.game.infos.separator_width, this.game.infos.separator_height);
