@@ -184,8 +184,8 @@ function initializeLocal1v1()
         bar_width: 15,
 
         ball_speed: 5,
-        ball_height: 50,
-        ball_width: 50,
+        ball_height: 25,
+        ball_width: 25,
 
         text_size: 100,
         text_font: 'Arial',
