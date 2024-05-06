@@ -167,13 +167,13 @@ class LocalGame1v1
     refreshBall()
     {
         if (this.game.ball.direction == 135)
-            this.game.ball.moveNO();
+            this.game.ball.move135();
         else if (this.game.ball.direction == 45)
-            this.game.ball.moveNE();
+            this.game.ball.move45();
         else if (this.game.ball.direction == 315)
-            this.game.ball.moveSE();
+            this.game.ball.move315();
         else if (this.game.ball.direction == 225)
-            this.game.ball.moveSO();
+            this.game.ball.move225();
 
         this.game.ball.print();
     }

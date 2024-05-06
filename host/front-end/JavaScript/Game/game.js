@@ -51,7 +51,7 @@ class Ball
         return (false);
     }
 
-    moveNO()
+    move135()
     {
         this.x = this.x - this.speed;
         this.y = this.y - this.speed;
@@ -60,7 +60,7 @@ class Ball
             this.direction = this.getOpposite(this.direction);
     }
 
-    moveNE()
+    move45()
     {
         this.x = this.x + this.speed;
         this.y = this.y - this.speed;
@@ -69,7 +69,7 @@ class Ball
             this.direction = this.getOpposite(this.direction);
     }
 
-    moveSE()
+    move315()
     {
         this.x = this.x + this.speed;
         this.y = this.y + this.speed;
@@ -78,7 +78,7 @@ class Ball
             this.direction = this.getOpposite(this.direction);
     }
 
-    moveSO()
+    move225()
     {
         this.x = this.x - this.speed;
         this.y = this.y + this.speed;
