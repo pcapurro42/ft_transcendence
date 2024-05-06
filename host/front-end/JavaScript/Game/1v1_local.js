@@ -57,6 +57,12 @@ class LocalGame1v1
         this.infos = infos;
     }
 
+    generateNumber(limit)
+    {
+        let value = Math.floor(Math.random() * limit) + 1;
+        return (value);
+    }
+
     initialize()
     {
         this.game.enabled = true;
@@ -102,14 +108,41 @@ class LocalGame1v1
 
         // ball creation
 
+        let x, y;
+        let value = this.generateNumber(4);
+
+        if (value == 1)
+        {
+            x = (this.game.infos.game_width / 4);
+            y = this.game.infos.game_height / 2 + this.game.infos.game_height / 4;
+        }
+        if (value == 2)
+        {
+            x = (this.game.infos.game_width / 2 + this.game.infos.game_width / 4);
+            y = this.game.infos.game_height / 4;
+        }
+        if (value == 3)
+        {
+            x = (this.game.infos.game_width / 2 + this.game.infos.game_width / 4);
+            y = this.game.infos.game_height / 4;
+        }
+        if (value == 4)
+        {
+            x = (this.game.infos.game_width / 4);
+            y = this.game.infos.game_height / 2 + this.game.infos.game_height / 4;
+        }
+        
+        console.log(value);
+        console.log(x, " ; ", y);
+
         let ball_data = {
             game: this.game,
 
             object_width: this.game.infos.ball_width,
             object_heigth: this.game.infos.ball_height,
 
-            x_pos : this.game.infos.game_width / 2,
-            y_pos : this.game.infos.game_height / 2,
+            x_pos : x,
+            y_pos : y,
 
             speed: this.game.infos.ball_speed,
             color: this.game.infos.ball_color,
@@ -228,7 +261,7 @@ function initializeLocal1v1()
         bar_color: null,
         ball_color: null,
         
-        ball_direction: 45
+        ball_direction: 30
     }
 
     let game_1v1 = {
