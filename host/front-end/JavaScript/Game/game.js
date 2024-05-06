@@ -51,13 +51,11 @@ class Ball
         return (false);
     }
 
-    move135()
+    // Nord-Est
+
+    move30()
     {
-        this.x = this.x - this.speed;
-        this.y = this.y - this.speed;
-        
-        if (this.isOffLimits() == true)
-            this.direction = this.getOpposite(this.direction);
+        ;
     }
 
     move45()
@@ -69,13 +67,37 @@ class Ball
             this.direction = this.getOpposite(this.direction);
     }
 
-    move315()
+    move60()
     {
-        this.x = this.x + this.speed;
-        this.y = this.y + this.speed;
+        ;
+    }
 
+    // Nord-Ouest
+
+    move120()
+    {
+        ;
+    }
+
+    move135()
+    {
+        this.x = this.x - this.speed;
+        this.y = this.y - this.speed;
+        
         if (this.isOffLimits() == true)
             this.direction = this.getOpposite(this.direction);
+    }
+
+    move150()
+    {
+        ;
+    }
+
+    // Sud-Ouest
+
+    move210()
+    {
+        ;
     }
 
     move225()
@@ -85,6 +107,32 @@ class Ball
 
         if (this.isOffLimits() == true)
             this.direction = this.getOpposite(this.direction);
+    }
+
+    move240()
+    {
+        ;
+    }
+
+    // Sud-Est
+
+    move300()
+    {
+        ;
+    }
+
+    move315()
+    {
+        this.x = this.x + this.speed;
+        this.y = this.y + this.speed;
+
+        if (this.isOffLimits() == true)
+            this.direction = this.getOpposite(this.direction);
+    }
+
+    move330()
+    {
+        ;
     }
 }
 
