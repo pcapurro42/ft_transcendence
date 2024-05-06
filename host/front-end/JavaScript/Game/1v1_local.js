@@ -112,7 +112,8 @@ class LocalGame1v1
             y_pos : 0,
 
             speed: this.game.infos.ball_speed,
-            color: this.game.infos.ball_color
+            color: this.game.infos.ball_color,
+            direction : 45
         }
 
         this.game.ball = new Ball(...Object.values(ball_data));
@@ -165,6 +166,15 @@ class LocalGame1v1
 
     refreshBall()
     {
+        if (this.game.ball.direction == 135)
+            this.game.ball.moveNO();
+        else if (this.game.ball.direction == 45)
+            this.game.ball.moveNE();
+        else if (this.game.ball.direction == 315)
+            this.game.ball.moveSE();
+        else if (this.game.ball.direction == 225)
+            this.game.ball.moveSO();
+
         this.game.ball.print();
     }
 }

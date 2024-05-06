@@ -4,7 +4,7 @@
 
 class Ball
 {
-    constructor(game, width, height, x, y, speed, color)
+    constructor(game, width, height, x, y, speed, color, direction)
     {
         this.game = game;
 
@@ -17,6 +17,8 @@ class Ball
         this.speed = speed;
 
         this.color = color;
+
+        this.direction = direction;
     }
 
     print()
@@ -25,7 +27,22 @@ class Ball
         this.game.infos.display.fillRect(this.x, this.y, this.width, this.height);
     }
 
-    move()
+    moveNO()
+    {
+        ;
+    }
+
+    moveNE()
+    {
+        ;
+    }
+
+    moveSE()
+    {
+        ;
+    }
+
+    moveSO()
     {
         ;
     }
