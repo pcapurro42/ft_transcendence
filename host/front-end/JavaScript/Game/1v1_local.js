@@ -132,10 +132,6 @@ class LocalGame1v1
         this.game.infos.display.font = this.game.infos.text_size + "px " + this.game.infos.text_font;
         this.game.infos.display.fillText(this.game.scores[0], left_score_x, score_y);
         this.game.infos.display.fillText(this.game.scores[1], right_score_x, score_y);
-
-        this.game.left_player.print();
-        this.game.right_player.print();
-
     }
 
     refreshPlayers()
