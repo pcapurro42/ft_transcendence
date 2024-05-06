@@ -1,5 +1,33 @@
 // <<<<<<< GAME >>>>>>> //
 
+// < OBJECTS UTILS > //
+
+function getRandomBallPos(infos)
+{
+    let value = generateNumber(4);
+    if (value == 1) // left
+    {
+        x = (infos.game_width / 4) - (infos.ball_width / 2);
+        y = infos.game_height / 2 + infos.game_height / 4;
+    }
+    if (value == 2) // right
+    {
+        x = (infos.game_width / 2 + infos.game_width / 4) - (infos.ball_width / 2);
+        y = infos.game_height / 4;
+    }
+    if (value == 3) // right
+    {
+        x = (infos.game_width / 2 + infos.game_width / 4) - (infos.ball_width / 2);
+        y = infos.game_height / 2 + infos.game_height / 4;
+    }
+    if (value == 4) // left
+    {
+        x = (infos.game_width / 4) - (infos.ball_width / 2);
+        y = infos.game_height / 2 - infos.game_height / 4;
+    }
+    return ([x, y]);
+}
+
 // < OBJECT > //
 
 class Ball
@@ -77,10 +105,19 @@ class Ball
             if (this.x + this.width >= this.game.right_player.x)
                 return (true);
         }
-        // return (false);
-
-        console.log(this.x, " ; ", this.game.right_player.x);
         return (false);
+    }
+
+    restartRound()
+    {
+        if (this.x >= this.game.infos.game_width)
+            this.game.scores[0]++;
+        else
+            this.game.scores[1]++;
+
+        let [x, y] = getRandomBallPos(this.game.infos);
+        this.x = x;
+        this.y = y;
     }
 
     move()
@@ -115,6 +152,8 @@ class Ball
 
         if (this.isAtPlayer() == true || this.isUpOrDown() == true)
             this.direction = this.getOpposite(this.direction);
+        else if (this.x <= 0 || this.x >= this.game.infos.game_width)
+            this.restartRound();
     }
 }
 

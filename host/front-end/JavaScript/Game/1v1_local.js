@@ -1,5 +1,13 @@
 // <<<<<<< 1V1 >>>>>>> //
 
+// < OBJECTS UTILS > //
+
+function generateNumber(limit)
+{
+    let value = Math.floor(Math.random() * limit) + 1;
+    return (value);
+}
+
 // < OBJECT > //
 
 class Bar1v1
@@ -57,12 +65,6 @@ class LocalGame1v1
         this.infos = infos;
     }
 
-    generateNumber(limit)
-    {
-        let value = Math.floor(Math.random() * limit) + 1;
-        return (value);
-    }
-
     initialize()
     {
         this.game.enabled = true;
@@ -108,29 +110,7 @@ class LocalGame1v1
 
         // ball creation
 
-        let x, y;
-        let value = this.generateNumber(4);
-
-        if (value == 1) // left
-        {
-            x = (this.game.infos.game_width / 4) - (this.game.infos.ball_width / 2);
-            y = this.game.infos.game_height / 2 + this.game.infos.game_height / 4;
-        }
-        if (value == 2) // right
-        {
-            x = (this.game.infos.game_width / 2 + this.game.infos.game_width / 4) - (this.game.infos.ball_width / 2);
-            y = this.game.infos.game_height / 4;
-        }
-        if (value == 3) // right
-        {
-            x = (this.game.infos.game_width / 2 + this.game.infos.game_width / 4) - (this.game.infos.ball_width / 2);
-            y = this.game.infos.game_height / 2 + this.game.infos.game_height / 4;
-        }
-        if (value == 4) // left
-        {
-            x = (this.game.infos.game_width / 4) - (this.game.infos.ball_width / 2);
-            y = this.game.infos.game_height / 2 - this.game.infos.game_height / 4;
-        }
+        let [x, y] = getRandomBallPos(this.game.infos);
 
         let ball_data = {
             game: this.game,
@@ -166,9 +146,10 @@ class LocalGame1v1
         {
             this.game.infos.display.fillRect(x_bar_center, ((this.game.infos.separator_height * value) + this.game.infos.separator_space * (value + 1)), this.game.infos.separator_width, this.game.infos.separator_height);
         }
+    }
 
-        // score display
-
+    refreshScores()
+    {
         let score_y = this.game.infos.game_height / 6;
         let left_score_x = (this.game.infos.game_width / 4) - this.game.infos.text_size / 4;
         let right_score_x = (this.game.infos.game_width - this.game.infos.game_width / 4) - this.game.infos.text_size / 4;
@@ -215,7 +196,7 @@ function initializeLocal1v1()
         bar_height: 100,
         bar_width: 20,
 
-        ball_speed: 1,
+        ball_speed: 4,
         ball_height: 25,
         ball_width: 25,
 
@@ -267,6 +248,7 @@ function startLocal1v1()
     start_btn.classList.add('disabled');
 
     game.refreshDisplay();
+    game.refreshScores();
     game.refreshPlayers();
     game.refreshBall();
 
