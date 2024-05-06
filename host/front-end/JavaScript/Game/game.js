@@ -4,7 +4,31 @@
 
 class Ball
 {
-    ;
+    constructor(game, width, height, x, y, speed, color)
+    {
+        this.game = game;
+
+        this.width = width;
+        this.height = height;
+
+        this.x = x;
+        this.y = y;
+
+        this.speed = speed;
+
+        this.color = color;
+    }
+
+    print()
+    {
+        this.game.infos.display.fillStyle = this.color;
+        this.game.infos.display.fillRect(this.x, this.y, this.width, this.height);
+    }
+
+    move()
+    {
+        ;
+    }
 }
 
 // < KEYS > //

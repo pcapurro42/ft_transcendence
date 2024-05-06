@@ -210,9 +210,12 @@ function initializeLocal1v2()
         game_height: 720,
     
         bar_speed: 10,
-    
         bar_height: 100,
         bar_width: 15,
+
+        ball_speed: 5,
+        ball_height: 50,
+        ball_width: 50,
     
         text_size: 100,
         text_font: 'Arial',
@@ -223,7 +226,8 @@ function initializeLocal1v2()
     
         menu_color: null,
         background_color: null,
-        bar_color: null
+        bar_color: null,
+        ball_color: null
     }
 
     let game_2v2 = {
@@ -243,9 +247,9 @@ function initializeLocal1v2()
     }
 
     if (high_contrast == "true")
-        infos_2v2.menu_color = "white", infos_2v2.background_color = "black", infos_2v2.bar_color = "white";
+        infos_2v2.menu_color = "white", infos_2v2.background_color = "black", infos_2v2.bar_color = "white", infos_2v2.ball_color = "white";
     else
-        infos_2v2.menu_color = "black", infos_2v2.background_color = "white", infos_2v2.bar_color = "black";
+        infos_2v2.menu_color = "black", infos_2v2.background_color = "white", infos_2v2.bar_color = "black", infos_2v2.ball_color = "black";
 
     let the_game = new LocalGame1v2(infos_2v2, game_2v2);
     the_game.initialize();
@@ -262,6 +266,7 @@ function startLocal1v2()
 
     game.refreshDisplay();
     game.refreshPlayers();
+    game.refreshBall();
 
     if (start == true)
         requestAnimationFrame(startLocal1v2);

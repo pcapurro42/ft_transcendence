@@ -102,7 +102,20 @@ class LocalGame1v1
 
         // ball creation
 
-        this.ball = new Ball();
+        let ball_data = {
+            game: this.game,
+
+            object_width: this.game.infos.ball_width,
+            object_heigth: this.game.infos.ball_height,
+
+            x_pos : 0,
+            y_pos : 0,
+
+            speed: this.game.infos.ball_speed,
+            color: this.game.infos.ball_color
+        }
+
+        this.game.ball = new Ball(...Object.values(ball_data));
     }
 
     refreshDisplay()
@@ -152,7 +165,7 @@ class LocalGame1v1
 
     refreshBall()
     {
-        ;
+        this.game.ball.print();
     }
 }
 
@@ -167,9 +180,12 @@ function initializeLocal1v1()
         game_height: 720,
 
         bar_speed: 10,
-
         bar_height: 100,
         bar_width: 15,
+
+        ball_speed: 5,
+        ball_height: 50,
+        ball_width: 50,
 
         text_size: 100,
         text_font: 'Arial',
@@ -180,7 +196,8 @@ function initializeLocal1v1()
 
         menu_color: null,
         background_color: null,
-        bar_color: null
+        bar_color: null,
+        ball_color: null
     }
 
     let game_1v1 = {
@@ -198,9 +215,9 @@ function initializeLocal1v1()
     }
 
     if (high_contrast == "true")
-        infos_1v1.menu_color = "white", infos_1v1.background_color = "black", infos_1v1.bar_color = "white";
+        infos_1v1.menu_color = "white", infos_1v1.background_color = "black", infos_1v1.bar_color = "white", infos_1v1.ball_color = "white";
     else
-        infos_1v1.menu_color = "black", infos_1v1.background_color = "white", infos_1v1.bar_color = "black";
+        infos_1v1.menu_color = "black", infos_1v1.background_color = "white", infos_1v1.bar_color = "black", infos_1v1.ball_color = "black";
 
     let the_game = new LocalGame1v1(infos_1v1, game_1v1);
     the_game.initialize();
@@ -217,6 +234,7 @@ function startLocal1v1()
 
     game.refreshDisplay();
     game.refreshPlayers();
+    game.refreshBall();
 
     if (start == true)
         requestAnimationFrame(startLocal1v1);
