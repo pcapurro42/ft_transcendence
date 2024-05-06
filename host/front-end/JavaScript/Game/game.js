@@ -62,8 +62,8 @@ class Ball
     {
         if (this.x <= 0 || this.x >= this.game.infos.game_width || this.x + this.width >= this.game.infos.game_width)
             return (true);
-        return (true);
         if (this.y <= 0 || this.y >= this.game.infos.game_height || this.y + this.height >= this.game.infos.game_height)
+            return (true);
         return (false);
     }
 
