@@ -21,6 +21,8 @@ let fr = [
     ["Join a game", "Rejoindre une partie"],
     ["Copy", "Copier"],
 
+    ["Start the game", "Lancer la partie"],
+
     ['Peer offer send msg', "Envoyez ce code a un ami pour<br> qu'il autorise la connexion."],
     ['Peer answer send msg', "Envoyez ce code a votre ami <br> en vue d'autoriser la connexion."],
 

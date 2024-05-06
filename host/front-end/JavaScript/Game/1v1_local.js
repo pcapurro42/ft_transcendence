@@ -212,6 +212,9 @@ function initializeLocal1v1()
 
 function startLocal1v1()
 {
+    let start_btn = document.getElementById('start_1v1_local');
+    start_btn.classList.add('disabled');
+
     game.refreshDisplay();
     game.refreshPlayers();
 

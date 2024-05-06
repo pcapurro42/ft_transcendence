@@ -48,6 +48,9 @@ function displayMenu()
     let statusBar = document.getElementById('statusBar');
     statusBar.style.display = 'none';
 
+    start = false;
+    // turn off the game
+
     let main_menu_page = document.getElementById('main_menu_page');
     main_menu_page.style.display = "block";
 
