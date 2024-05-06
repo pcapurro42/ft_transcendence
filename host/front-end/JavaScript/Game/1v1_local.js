@@ -176,6 +176,7 @@ class LocalGame1v1
 
     refreshBall()
     {
+        this.game.ball.print();
         this.game.ball.move();
         this.game.ball.print();
     }
