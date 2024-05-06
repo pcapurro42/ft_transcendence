@@ -57,33 +57,10 @@ class Ball
 
     getOpposite(value)
     {
-        if (value == 30)
-            return (120);
-        if (value == 45)
-            return (135);
-        if (value == 60)
-            return (150);
-
-        if (value == 120)
-            return (210);
-        if (value == 135)
-            return (225);
-        if (value == 150)
-            return (240);
-
-        if (value == 210)
-            return (300);
-        if (value == 225)
-            return (315);
-        if (value == 240)
-            return (330);
-
-        if (value == 300)
-            return (30);
-        if (value == 315)
-            return (45);
-        if (value == 330)
-            return (60);
+        if (value >= 30 && value <= 240)
+            return (value + 90);
+        else
+            return (value - 270);
     }
 
     isUpOrDown()
