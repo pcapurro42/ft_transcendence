@@ -258,7 +258,7 @@ function initializeLocal1v1()
         bar_color: null,
         ball_color: null,
         
-        ball_direction: 30
+        ball_direction: 45
     }
 
     let game_1v1 = {
