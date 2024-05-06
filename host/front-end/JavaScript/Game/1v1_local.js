@@ -113,7 +113,7 @@ class LocalGame1v1
 
             speed: this.game.infos.ball_speed,
             color: this.game.infos.ball_color,
-            direction : 225
+            direction : 315
         }
 
         this.game.ball = new Ball(...Object.values(ball_data));

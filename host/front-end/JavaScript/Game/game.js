@@ -27,28 +27,64 @@ class Ball
         this.game.infos.display.fillRect(this.x, this.y, this.width, this.height);
     }
 
+    getOpposite(value)
+    {
+        if (value == 135)
+            return (225);
+
+        if (value == 225)
+            return (135);
+
+        if (value == 315)
+            return (45);
+
+        if (value == 45)
+            return (315);
+    }
+
+    isOffLimits()
+    {
+        if (this.x <= 0 || this.x >= this.game.infos.game_width)
+            return (true);
+        if (this.y <= 0 || this.y >= this.game.infos.game_height)
+            return (true);
+        return (false);
+    }
+
     moveNO()
     {
         this.x = this.x - this.speed;
-        this.y = this.y + this.speed;
+        this.y = this.y - this.speed;
+        
+        if (this.isOffLimits() == true)
+            this.direction = this.getOpposite(this.direction);
     }
 
     moveNE()
     {
         this.x = this.x + this.speed;
         this.y = this.y - this.speed;
+
+        if (this.isOffLimits() == true)
+            this.direction = this.getOpposite(this.direction);
     }
 
     moveSE()
     {
         this.x = this.x + this.speed;
         this.y = this.y + this.speed;
+
+        if (this.isOffLimits() == true)
+            this.direction = this.getOpposite(this.direction);
     }
 
     moveSO()
     {
         this.x = this.x - this.speed;
-        this.y = this.y - this.speed;
+        this.y = this.y + this.speed;
+
+        if (this.isOffLimits() == true)
+            this.direction = this.getOpposite(this.direction);
     }
 }
 
