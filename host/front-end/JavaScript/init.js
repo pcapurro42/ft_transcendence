@@ -54,5 +54,3 @@ refreshDisplay();
 
 refreshSounds();
 refreshMusics();
-
-console.log(generateNumber(12));
