@@ -110,6 +110,49 @@ class Ball
         }
     }
 
+    moveIncrease(element, sign)
+    {
+        if (element == "x")
+        {
+            if (sign == "-")
+            {
+                for (let i = 0; i != this.speed; i++)
+                {
+                    if (this.isAtPlayer() == false)
+                        this.x = this.x - 1;
+                }
+            }
+            else
+            {
+                for (let i = 0; i != this.speed; i++)
+                {
+                    if (this.isAtPlayer() == false)
+                        this.x = this.x + 1;
+                }
+            }
+        }
+
+        if (element == "y")
+        {
+            if (sign == "-")
+            {
+                for (let i = 0; i != this.speed; i++)
+                {
+                    if (this.isAtPlayer() == false)
+                        this.y = this.y - 1;
+                }
+            }
+            else
+            {
+                for (let i = 0; i != this.speed; i++)
+                {
+                    if (this.isAtPlayer() == false)
+                        this.y = this.y + 1;
+                }
+            }
+        }
+    }
+
     move()
     {
         this.moves++;
@@ -118,92 +161,91 @@ class Ball
         if (this.direction == 30)
         {
             if (this.moves % 2 == 0)
-                this.x = this.x + this.speed;
-            this.y = this.y - this.speed;
+                this.moveIncrease("x", "+");
+            this.moveIncrease("y", "-");
         }
 
         if (this.direction == 45)
         {
-            this.x = this.x + this.speed;
-            this.y = this.y - this.speed;
+            this.moveIncrease("x", "+");
+            this.moveIncrease("y", "-");
         }
 
         if (this.direction == 60)
         {
             if (this.moves % 2 == 0)
-                this.x = this.x + this.speed;
-
-            this.x = this.x + this.speed;
-            this.y = this.y - this.speed;
+                this.moveIncrease("x", "+");
+            this.moveIncrease("x", "+");
+            this.moveIncrease("y", "-");
         }
 
         // Nord-Ouest
         if (this.direction == 120)
         {
             if (this.moves % 2 == 0)
-                this.x = this.x - this.speed;
-            this.y = this.y - this.speed;
+                this.moveIncrease("x", "-");
+            this.moveIncrease("y", "-");
         }
 
         if (this.direction == 135)
         {
-            this.x = this.x - this.speed;
-            this.y = this.y - this.speed;
+            this.moveIncrease("x", "-");
+            this.moveIncrease("y", "-");
         }
 
         if (this.direction == 150)
         {
             if (this.moves % 2 == 0)
-                this.x = this.x - this.speed;
+                this.moveIncrease("x", "-");
 
-            this.x = this.x - this.speed;
-            this.y = this.y - this.speed;
+            this.moveIncrease("x", "-");
+            this.moveIncrease("y", "-");
         }
 
         // Sud-Ouest
         if (this.direction == -120)
         {
             if (this.moves % 2 == 0)
-                this.x = this.x - this.speed;
-            this.y = this.y + this.speed;
+                this.moveIncrease("x", "-");
+            this.moveIncrease("y", "+");
         }
 
         if (this.direction == -135)
         {
-            this.x = this.x - this.speed;
-            this.y = this.y + this.speed;
+            this.moveIncrease("x", "-");
+            this.moveIncrease("y", "+");
         }
 
         if (this.direction == -150)
         {
             if (this.moves % 2 == 0)
-                this.x = this.x - this.speed;
+                this.moveIncrease("x", "-");
 
-            this.x = this.x - this.speed;
-            this.y = this.y + this.speed;
+            this.moveIncrease("x", "-");
+            this.moveIncrease("y", "+");
         }
 
         // Sud-Est
         if (this.direction == -30)
         {
             if (this.moves % 2 == 0)
-                this.x = this.x + this.speed;
-            this.y = this.y + this.speed;
+                this.moveIncrease("x", "+");
+            this.moveIncrease("y", "+");
         }
 
         if (this.direction == -45)
         {
-            this.x = this.x + this.speed;
-            this.y = this.y + this.speed;
+            this.moveIncrease("x", "+");
+            this.moveIncrease("y", "+");
         }
 
         if (this.direction == -60)
         {
             if (this.moves % 2 == 0)
-                this.x = this.x + this.speed;
+                this.moveIncrease("x", "+");
             
-            this.x = this.x + this.speed;
-            this.y = this.y + this.speed;
+            this.moveIncrease("x", "+");
+            this.moveIncrease("y", "+");
         }
 
         if (this.isUpOrDown() == true || this.isLeftOrRight() == true || this.isAtPlayer() == true)
