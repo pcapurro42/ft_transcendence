@@ -188,8 +188,17 @@ class LocalGame1v1
 
     isOver()
     {
-        if (this.game.scores[0] >= 9 || this.game.scores[1] >= 9)
+        if (start == false)
             return (true);
+        if (this.game.scores[0] >= 9 || this.game.scores[1] >= 9)
+        {
+            if (this.game.scores[0] >= 9)
+                ;
+            if (this.game.scores[1] >= 9)
+                ;
+            start = false;
+            return (true);
+        }
         return (false);
     }
 
@@ -280,7 +289,6 @@ function startLocal1v1()
     {
         game.refreshBackground();
         game.reset();
-        start = false;
         removeLocal1v1();
     }
     else
