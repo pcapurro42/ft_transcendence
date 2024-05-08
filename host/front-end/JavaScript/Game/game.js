@@ -80,6 +80,11 @@ class Ball
         return (false);
     }
 
+    isAtPlayer()
+    {
+        return (false);
+    }
+
     restartRound()
     {
         if (this.x >= this.game.infos.game_width / 2)
@@ -201,7 +206,7 @@ class Ball
             this.y = this.y + this.speed;
         }
 
-        if (this.isUpOrDown() == true || this.isLeftOrRight() == true)
+        if (this.isUpOrDown() == true || this.isLeftOrRight() == true || this.isAtPlayer() == true)
             this.direction = this.getOpposite();
     }
 }
