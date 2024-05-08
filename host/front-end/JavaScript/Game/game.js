@@ -118,7 +118,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.isAtPlayer() == false)
+                    if (this.isAtPlayer() == false && (this.x - 1 >= 0 && this.x - 1 <= this.game.infos.game_width))
                         this.x = this.x - 1;
                 }
             }
@@ -126,7 +126,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.isAtPlayer() == false)
+                    if (this.isAtPlayer() == false && (this.x + 1 >= 0 && this.x + this.width + 1 <= this.game.infos.game_width))
                         this.x = this.x + 1;
                 }
             }
@@ -138,7 +138,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.isAtPlayer() == false)
+                    if (this.isAtPlayer() == false && (this.y - 1 >= 0 && this.y - 1 <= this.game.infos.game_height))
                         this.y = this.y - 1;
                 }
             }
@@ -146,7 +146,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.isAtPlayer() == false)
+                    if (this.isAtPlayer() == false && (this.y + this.height + 1 >= 0 && this.y + 1 <= this.game.infos.game_height))
                         this.y = this.y + 1;
                 }
             }
@@ -154,7 +154,7 @@ class Ball
     }
 
     move()
-    {
+    {        
         this.moves++;
         
         // Nord-Est
