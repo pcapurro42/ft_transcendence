@@ -110,15 +110,6 @@ class Ball
         }
     }
 
-    isAtLimit()
-    {
-        if (this.x - 1 <= -1 || this.x + this.width + 1 >= this.game.infos.game_width + 1)
-            return (true);
-        if (this.y - 1 <= -1 || this.y + this.height + 1 >= this.game.infos.game_height + 1)
-            return (true);
-        return (false);
-    }
-
     moveIncrease(element, sign)
     {
         if (element == "x")
@@ -127,7 +118,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.isAtPlayer() == false && this.isAtLimit() == false)
+                    if (this.isAtPlayer() == false && (this.x - 1 >= 0))
                         this.x = this.x - 1;
                 }
             }
@@ -135,7 +126,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.isAtPlayer() == false && this.isAtLimit() == false)
+                    if (this.isAtPlayer() == false && (this.x + this.width + 1 <= this.game.infos.game_width))
                         this.x = this.x + 1;
                 }
             }
@@ -147,7 +138,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.isAtPlayer() == false && this.isAtLimit() == false)
+                    if (this.isAtPlayer() == false && (this.y - 1 >= 0))
                         this.y = this.y - 1;
                 }
             }
@@ -155,7 +146,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.isAtPlayer() == false && this.isAtLimit() == false)
+                    if (this.isAtPlayer() == false && (this.y + this.height + 1 <= this.game.infos.game_height))
                         this.y = this.y + 1;
                 }
             }
