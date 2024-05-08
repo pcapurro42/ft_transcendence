@@ -276,7 +276,7 @@ function removeLocal1v1()
 
 function startLocal1v1()
 {
-    if (game.isOver() == true)
+    if (game.isOver() == true || start == false)
     {
         game.refreshBackground();
         game.reset();
