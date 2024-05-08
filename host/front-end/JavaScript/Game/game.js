@@ -2,37 +2,11 @@
 
 // < OBJECTS UTILS > //
 
-function getRandomBallPos(infos)
-{
-    let value = generateNumber(4);
-    if (value == 1) // left
-    {
-        x = (infos.game_width / 4) - (infos.ball_width / 2);
-        y = infos.game_height / 2 + infos.game_height / 4;
-    }
-    if (value == 2) // right
-    {
-        x = (infos.game_width / 2 + infos.game_width / 4) - (infos.ball_width / 2);
-        y = infos.game_height / 4;
-    }
-    if (value == 3) // right
-    {
-        x = (infos.game_width / 2 + infos.game_width / 4) - (infos.ball_width / 2);
-        y = infos.game_height / 2 + infos.game_height / 4;
-    }
-    if (value == 4) // left
-    {
-        x = (infos.game_width / 4) - (infos.ball_width / 2);
-        y = infos.game_height / 2 - infos.game_height / 4;
-    }
-    return ([x, y]);
-}
-
 // < OBJECT > //
 
 class Ball
 {
-    constructor(game, width, height, x, y, speed, color, direction)
+    constructor(game, width, height, x, y, speed, color, direction, moves)
     {
         this.game = game;
 
@@ -47,6 +21,7 @@ class Ball
         this.color = color;
 
         this.direction = direction;
+        this.moves = moves;
     }
 
     print()
@@ -88,9 +63,8 @@ class Ball
         else
             this.game.scores[1]++;
 
-        let [x, y] = getRandomBallPos(this.game.infos);
-        this.x = x;
-        this.y = y;
+        this.x = this.game.infos.game_width / 2 - (this.game.infos.ball_width / 2);
+        this.y = this.game.infos.game_height / 2 - (this.game.infos.ball_width / 2);
     }
 
     getCollision()
@@ -145,9 +119,27 @@ class Ball
 
     move()
     {
+        this.moves++;
+        
         // Nord-Est
+        if (this.direction == 30)
+        {
+            if (this.moves % 2 == 0)
+                this.x = this.x + this.speed;
+            this.y = this.y - this.speed;
+        }
+
         if (this.direction == 45)
         {
+            this.x = this.x + this.speed;
+            this.y = this.y - this.speed;
+        }
+
+        if (this.direction == 60)
+        {
+            if (this.moves % 2 == 0)
+                this.x = this.x + this.speed;
+
             this.x = this.x + this.speed;
             this.y = this.y - this.speed;
         }

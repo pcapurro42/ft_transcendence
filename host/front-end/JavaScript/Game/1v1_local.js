@@ -109,7 +109,12 @@ class LocalGame1v1
 
         // ball creation
 
-        let [x, y] = getRandomBallPos(this.game.infos);
+        let x, y;
+
+        x = this.game.infos.game_width / 2 - (this.game.infos.ball_width / 2);
+        y = this.game.infos.game_height / 2 - (this.game.infos.ball_width / 2);
+
+        console.log(x, y);
 
         let ball_data = {
             game: this.game,
@@ -122,7 +127,9 @@ class LocalGame1v1
 
             speed: this.game.infos.ball_speed,
             color: this.game.infos.ball_color,
-            direction : this.game.infos.ball_direction
+            
+            direction : this.game.infos.ball_direction,
+            moves: 0
         }
 
         this.game.ball = new Ball(...Object.values(ball_data));
