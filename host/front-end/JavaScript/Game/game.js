@@ -90,7 +90,7 @@ class Ball
 
     restartRound()
     {
-        if (this.x >= this.game.infos.game_width)
+        if (this.x >= this.game.infos.game_width / 2)
             this.game.scores[0]++;
         else
             this.game.scores[1]++;
