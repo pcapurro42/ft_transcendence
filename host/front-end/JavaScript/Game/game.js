@@ -2,6 +2,43 @@
 
 // < OBJECTS UTILS > //
 
+function generateNumber(limit)
+{
+    let value = Math.floor(Math.random() * limit) + 1;
+    return (value);
+}
+
+function getRandomBallDirection()
+{
+    value = generateNumber(12);
+
+    if (value == 1)
+        return (30);
+    else if (value == 2)
+        return (45);
+    else if (value == 3)
+        return (60);
+    else if (value == 4)
+        return (120);
+    else if (value == 5)
+        return (135);
+    else if (value == 6)
+        return (150);
+
+    if (value == 7)
+        return (-30);
+    else if (value == 8)
+        return (-45);
+    else if (value == 9)
+        return (-60);
+    else if (value == 10)
+        return (-120);
+    else if (value == 11)
+        return (-135);
+    else if (value == 12)
+        return (-150);
+}
+
 // < OBJECT > //
 
 class Ball
@@ -145,22 +182,70 @@ class Ball
         }
 
         // Nord-Ouest
+        if (this.direction == 120)
+        {
+            if (this.moves % 2 == 0)
+                this.x = this.x - this.speed;
+            this.y = this.y - this.speed;
+        }
+
         if (this.direction == 135)
         {
             this.x = this.x - this.speed;
             this.y = this.y - this.speed;
         }
 
+        if (this.direction == 150)
+        {
+            if (this.moves % 2 == 0)
+                this.x = this.x - this.speed;
+
+            this.x = this.x - this.speed;
+            this.y = this.y - this.speed;
+        }
+
         // Sud-Ouest
+        if (this.direction == -120)
+        {
+            if (this.moves % 2 == 0)
+                this.x = this.x - this.speed;
+            this.y = this.y + this.speed;
+        }
+
         if (this.direction == -135)
         {
             this.x = this.x - this.speed;
             this.y = this.y + this.speed;
         }
 
+        if (this.direction == -150)
+        {
+            if (this.moves % 2 == 0)
+                this.x = this.x - this.speed;
+
+            this.x = this.x - this.speed;
+            this.y = this.y + this.speed;
+        }
+
         // Sud-Est
+        if (this.direction == -30)
+        {
+            if (this.moves % 2 == 0)
+                this.x = this.x + this.speed;
+            this.y = this.y + this.speed;
+        }
+
         if (this.direction == -45)
         {
+            this.x = this.x + this.speed;
+            this.y = this.y + this.speed;
+        }
+
+        if (this.direction == -60)
+        {
+            if (this.moves % 2 == 0)
+                this.x = this.x + this.speed;
+            
             this.x = this.x + this.speed;
             this.y = this.y + this.speed;
         }

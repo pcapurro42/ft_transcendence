@@ -1,13 +1,5 @@
 // <<<<<<< 1V1 >>>>>>> //
 
-// < OBJECTS UTILS > //
-
-function generateNumber(limit)
-{
-    let value = Math.floor(Math.random() * limit) + 1;
-    return (value);
-}
-
 // < OBJECT > //
 
 class Bar1v1
@@ -114,8 +106,6 @@ class LocalGame1v1
         x = this.game.infos.game_width / 2 - (this.game.infos.ball_width / 2);
         y = this.game.infos.game_height / 2 - (this.game.infos.ball_width / 2);
 
-        console.log(x, y);
-
         let ball_data = {
             game: this.game,
 
@@ -219,7 +209,7 @@ function initializeLocal1v1()
         bar_color: null,
         ball_color: null,
         
-        ball_direction: 45
+        ball_direction: getRandomBallDirection(12)
     }
 
     let game_1v1 = {
