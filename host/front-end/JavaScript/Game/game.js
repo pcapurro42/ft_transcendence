@@ -162,19 +162,19 @@ class Ball
         {
             if (this.moves % 2 == 0)
                 this.moveIncrease("x", "+");
+            this.moveIncrease("x", "+");
+            this.moveIncrease("y", "-");
+        }
+        
+        if (this.direction == 60)
+        {
+            if (this.moves % 2 == 0)
+                this.moveIncrease("x", "+");
             this.moveIncrease("y", "-");
         }
 
         if (this.direction == 45)
         {
-            this.moveIncrease("x", "+");
-            this.moveIncrease("y", "-");
-        }
-
-        if (this.direction == 60)
-        {
-            if (this.moves % 2 == 0)
-                this.moveIncrease("x", "+");
             this.moveIncrease("x", "+");
             this.moveIncrease("y", "-");
         }
@@ -197,7 +197,6 @@ class Ball
         {
             if (this.moves % 2 == 0)
                 this.moveIncrease("x", "-");
-
             this.moveIncrease("x", "-");
             this.moveIncrease("y", "-");
         }
@@ -220,7 +219,6 @@ class Ball
         {
             if (this.moves % 2 == 0)
                 this.moveIncrease("x", "-");
-
             this.moveIncrease("x", "-");
             this.moveIncrease("y", "+");
         }
