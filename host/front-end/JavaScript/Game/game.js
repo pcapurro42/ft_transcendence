@@ -110,6 +110,15 @@ class Ball
         }
     }
 
+    isAtLimit()
+    {
+        if (this.x - 1 <= -1 || this.x + this.width + 1 >= this.game.infos.game_width + 1)
+            return (true);
+        if (this.y - 1 <= -1 || this.y + this.height + 1 >= this.game.infos.game_height + 1)
+            return (true);
+        return (false);
+    }
+
     moveIncrease(element, sign)
     {
         if (element == "x")
@@ -118,7 +127,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.isAtPlayer() == false && (this.x - 1 >= 0 && this.x - 1 <= this.game.infos.game_width))
+                    if (this.isAtPlayer() == false && this.isAtLimit() == false)
                         this.x = this.x - 1;
                 }
             }
@@ -126,7 +135,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.isAtPlayer() == false && (this.x + 1 >= 0 && this.x + this.width + 1 <= this.game.infos.game_width))
+                    if (this.isAtPlayer() == false && this.isAtLimit() == false)
                         this.x = this.x + 1;
                 }
             }
@@ -138,7 +147,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.isAtPlayer() == false && (this.y - 1 >= 0 && this.y - 1 <= this.game.infos.game_height))
+                    if (this.isAtPlayer() == false && this.isAtLimit() == false)
                         this.y = this.y - 1;
                 }
             }
@@ -146,7 +155,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.isAtPlayer() == false && (this.y + this.height + 1 >= 0 && this.y + 1 <= this.game.infos.game_height))
+                    if (this.isAtPlayer() == false && this.isAtLimit() == false)
                         this.y = this.y + 1;
                 }
             }
