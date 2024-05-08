@@ -127,14 +127,22 @@ class LocalGame1v1
 
     refreshDisplay()
     {
-        // background display
+        this.refreshBackground();
+        this.refreshCenterBar();
+        this.refreshScores();
+        this.refreshPlayers();
+        this.refreshBall();
+    }
 
+    refreshBackground()
+    {
         this.game.infos.display.fillStyle = this.game.infos.background_color;
         this.game.infos.display.fillRect(0, 0, this.game.infos.game_width, this.game.infos.game_height);
         this.game.infos.display.fillStyle = this.game.infos.menu_color;
+    }
 
-        // center bar display
-
+    refreshCenterBar()
+    {
         let x_bar_center = (this.game.infos.game_width / 2) - (this.game.infos.separator_width / 2);
         let nb = ~~(this.game.infos.game_height / (this.game.infos.separator_height + this.game.infos.separator_space));
 
@@ -176,6 +184,19 @@ class LocalGame1v1
         this.game.ball.print();
         this.game.ball.move();
         this.game.ball.print();
+    }
+
+    isOver()
+    {
+        if (this.game.scores[0] >= 9 || this.game.scores[1] >= 9)
+            return (true);
+        return (false);
+    }
+
+    reset()
+    {
+        this.game.scores[0] = 0;
+        this.game.scores[1] = 0;
     }
 }
 
@@ -233,24 +254,38 @@ function initializeLocal1v1()
 
     let the_game = new LocalGame1v1(infos_1v1, game_1v1);
     the_game.initialize();
-    the_game.refreshDisplay();
+    the_game.refreshBackground();
 
     game = the_game;
     start = true;
 }
 
-function startLocal1v1()
+function displayLocal1v1()
 {
     let start_btn = document.getElementById('start_1v1_local');
-    start_btn.classList.add('disabled');
+    start_btn.style.display = "none";
+    
+    startLocal1v1();
+}
 
-    game.refreshDisplay();
-    game.refreshScores();
-    game.refreshPlayers();
-    game.refreshBall();
+function removeLocal1v1()
+{
+    let start_btn = document.getElementById('start_1v1_local');
+    start_btn.style.display = "block";
+}
 
-    if (start == true)
-        requestAnimationFrame(startLocal1v1);
+function startLocal1v1()
+{
+    if (game.isOver() == true)
+    {
+        game.refreshBackground();
+        game.reset();
+        start = false;
+        removeLocal1v1();
+    }
     else
-        start_btn.classList.remove('disabled');
+    {
+        game.refreshDisplay();
+        requestAnimationFrame(startLocal1v1);
+    }        
 }
