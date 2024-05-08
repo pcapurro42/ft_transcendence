@@ -213,8 +213,6 @@ class Ball
             this.direction = this.getOpposite();
         else if (this.x <= 0 || this.x >= this.game.infos.game_width)
             this.restartRound();
-
-        console.log("new direction => ", this.direction);
     }
 }
 
