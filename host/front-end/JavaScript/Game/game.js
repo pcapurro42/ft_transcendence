@@ -211,7 +211,7 @@ class Ball
 
         if (this.isAtPlayer() == true || this.isUpOrDown() == true)
             this.direction = this.getOpposite();
-        else if (this.x <= 0 || this.x >= this.game.infos.game_width)
+        else if (this.x <= 0 || this.x + this.width >= this.game.infos.game_width)
             this.restartRound();
     }
 }
