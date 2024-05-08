@@ -54,14 +54,6 @@ class Ball
         this.game.infos.display.fillRect(this.x, this.y, this.width, this.height);
     }
 
-    getOpposite(value)
-    {
-        if (value >= 30 && value <= 240)
-            return (value + 90);
-        else
-            return (value - 270);
-    }
-
     isUpOrDown()
     {
         if (this.y <= 0 || this.y >= this.game.infos.game_height || this.y + this.height >= this.game.infos.game_height)
@@ -69,13 +61,18 @@ class Ball
         return (false);
     }
 
-    isAtPlayer()
+    isAtLeftPlayer()
     {
         if (this.y >= this.game.left_player.y && this.y <= this.game.left_player.y + this.game.left_player.height)
         {
             if (this.x <= this.game.left_player.x + this.game.left_player.width)
                 return (true);
         }
+        return (false);
+    }
+
+    isAtRightPlayer()
+    {
         if (this.y >= this.game.right_player.y && this.y <= this.game.right_player.y + this.game.right_player.height)
         {
             if (this.x + this.width >= this.game.right_player.x)
@@ -96,6 +93,56 @@ class Ball
         this.y = y;
     }
 
+    getCollision()
+    {
+        if (this.isAtLeftPlayer() == true)
+            return ("left");
+        else if (this.isAtRightPlayer() == true)
+            return ("right");
+        else if (this.isUpOrDown() == true)
+        {
+            if (this.y <= 0)
+                return ("up");
+            else
+                return ("down")
+        }
+    }
+
+    getOpposite(value, collision)
+    {
+        if (value == 45)
+        {
+            if (collision == "up")
+                return (-45);
+            else if (collision == "right")
+                return (135);
+        }
+        
+        if (value == 135)
+        {
+            if (collision == "up")
+                return (-135);
+            else if (collision == "left")
+                return (45);
+        }
+
+        if (value == -135)
+        {
+            if (collision == "left")
+                return (-45);
+            else if (collision == "down")
+                return (135);
+        }
+
+        if (value == -45)
+        {
+            if (collision == "right")
+                return (-135);
+            else if (collision == "down")
+                return (45);
+        }
+    }
+
     move()
     {
         // Nord-Est
@@ -113,21 +160,21 @@ class Ball
         }
 
         // Sud-Ouest
-        if (this.direction == 225)
+        if (this.direction == -135)
         {
             this.x = this.x - this.speed;
             this.y = this.y + this.speed;
         }
 
         // Sud-Est
-        if (this.direction == 315)
+        if (this.direction == -45)
         {
             this.x = this.x + this.speed;
             this.y = this.y + this.speed;
         }
 
-        if (this.isAtPlayer() == true || this.isUpOrDown() == true)
-            this.direction = this.getOpposite(this.direction);
+        if (this.isAtLeftPlayer() == true || this.isAtRightPlayer() == true || this.isUpOrDown() == true)
+            this.direction = this.getOpposite(this.direction, this.getCollision());
         else if (this.x <= 0 || this.x >= this.game.infos.game_width)
             this.restartRound();
     }
