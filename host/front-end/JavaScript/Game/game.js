@@ -73,18 +73,13 @@ class Ball
         return (false);
     }
 
-    isAtLeftPlayer()
+    isAtPlayer()
     {
         if (this.y >= this.game.left_player.y && this.y <= this.game.left_player.y + this.game.left_player.height)
         {
             if (this.x <= this.game.left_player.x + this.game.left_player.width)
                 return (true);
         }
-        return (false);
-    }
-
-    isAtRightPlayer()
-    {
         if (this.y >= this.game.right_player.y && this.y <= this.game.right_player.y + this.game.right_player.height)
         {
             if (this.x + this.width >= this.game.right_player.x)
@@ -102,55 +97,19 @@ class Ball
 
         this.x = this.game.infos.game_width / 2 - (this.game.infos.ball_width / 2);
         this.y = this.game.infos.game_height / 2 - (this.game.infos.ball_width / 2);
+        this.direction = getRandomBallDirection(12);
     }
 
-    getCollision()
+    getOpposite()
     {
-        if (this.isAtLeftPlayer() == true)
-            return ("left");
-        else if (this.isAtRightPlayer() == true)
-            return ("right");
-        else if (this.isUpOrDown() == true)
+        if (this.isAtPlayer() == false)
+            return (this.direction * (-1));
+        else
         {
-            if (this.y <= 0)
-                return ("up");
+            if ((this.direction >= 30 && this.direction <= 90) || (this.direction >= -150 && this.direction <= -120))
+                return (this.direction + 90);
             else
-                return ("down")
-        }
-    }
-
-    getOpposite(value, collision)
-    {
-        if (value == 45)
-        {
-            if (collision == "up")
-                return (-45);
-            else if (collision == "right")
-                return (135);
-        }
-        
-        if (value == 135)
-        {
-            if (collision == "up")
-                return (-135);
-            else if (collision == "left")
-                return (45);
-        }
-
-        if (value == -135)
-        {
-            if (collision == "down")
-                return (135);
-            else if (collision == "left")
-                return (-45);
-        }
-
-        if (value == -45)
-        {
-            if (collision == "down")
-                return (45);
-            else if (collision == "right")
-                return (-135);
+                return (this.direction - 90)
         }
     }
 
@@ -250,10 +209,12 @@ class Ball
             this.y = this.y + this.speed;
         }
 
-        if (this.isAtLeftPlayer() == true || this.isAtRightPlayer() == true || this.isUpOrDown() == true)
-            this.direction = this.getOpposite(this.direction, this.getCollision());
+        if (this.isAtPlayer() == true || this.isUpOrDown() == true)
+            this.direction = this.getOpposite();
         else if (this.x <= 0 || this.x >= this.game.infos.game_width)
             this.restartRound();
+
+        console.log("new direction => ", this.direction);
     }
 }
 
