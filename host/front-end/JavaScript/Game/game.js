@@ -68,23 +68,15 @@ class Ball
 
     isUpOrDown()
     {
-        if (this.y <= 0 || this.y >= this.game.infos.game_height || this.y + this.height >= this.game.infos.game_height)
+        if (this.y <= 0 || this.y + this.height >= this.game.infos.game_height)
             return (true);
         return (false);
     }
 
-    isAtPlayer()
+    isLeftOrRight()
     {
-        if (this.y >= this.game.left_player.y && this.y <= this.game.left_player.y + this.game.left_player.height)
-        {
-            if (this.x <= this.game.left_player.x + this.game.left_player.width)
-                return (true);
-        }
-        if (this.y >= this.game.right_player.y && this.y <= this.game.right_player.y + this.game.right_player.height)
-        {
-            if (this.x + this.width >= this.game.right_player.x)
-                return (true);
-        }
+        if (this.x <= 0 || this.x + this.width >= this.game.infos.game_width)
+            return (true);
         return (false);
     }
 
@@ -102,7 +94,7 @@ class Ball
 
     getOpposite()
     {
-        if (this.isAtPlayer() == false)
+        if (this.isUpOrDown() == true)
             return (this.direction * (-1));
         else
         {
@@ -209,10 +201,8 @@ class Ball
             this.y = this.y + this.speed;
         }
 
-        if (this.isAtPlayer() == true || this.isUpOrDown() == true)
+        if (this.isUpOrDown() == true || this.isLeftOrRight() == true)
             this.direction = this.getOpposite();
-        else if (this.x <= 0 || this.x + this.width >= this.game.infos.game_width)
-            this.restartRound();
     }
 }
 
