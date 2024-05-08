@@ -128,18 +128,18 @@ class Ball
 
         if (value == -135)
         {
-            if (collision == "left")
-                return (-45);
-            else if (collision == "down")
+            if (collision == "down")
                 return (135);
+            else if (collision == "left")
+                return (-45);
         }
 
         if (value == -45)
         {
-            if (collision == "right")
-                return (-135);
-            else if (collision == "down")
+            if (collision == "down")
                 return (45);
+            else if (collision == "right")
+                return (-135);
         }
     }
 

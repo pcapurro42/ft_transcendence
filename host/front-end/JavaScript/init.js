@@ -37,6 +37,7 @@ refreshLogin();
 // < GAME > //
 
 let mode;
+let type;
 let game;
 let start;
 
