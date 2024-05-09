@@ -45,12 +45,12 @@ async function submitAnswer(){
 			throw("Error: answer not b64.");
 		answer = atob(answer);
 		RTC_o.onconnectionstatechange = function(event) {
-			if(RTC_o.connectionState == 'disconnected' || RTC_o.connectionState == 'failed'){
+			if(RTC_o.connectionState == 'disconnected' || RTC_o.connectionState == 'failed' || RTC_o.connectionState == 'closed'){
 				handleDisconnection();
 				return;
 			}
 			else if (RTC_o.connectionState == 'connected')
-				hostConnectionHandler();
+				data_channel.onopen = () => hostConnectionHandler()
 		}
 		initConnection(JSON.parse(answer));
 	}

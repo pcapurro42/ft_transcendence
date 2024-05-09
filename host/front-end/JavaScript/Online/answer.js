@@ -19,19 +19,29 @@ async function answerGenerator(){
 	try{
 		if (parse_offersAnswers(offer) == false)
 			throw("Error: offer not b64.");
+
 		offer = JSON.parse(atob(offer));
 		if(offer.type != 'offer')
 			throw("Error: expecting 'offer' type");
+
 		RTC_a = new RTCPeerConnection(getIceConfig());
+
+	 	RTC_a.ondatachannel = function(event){
+			data_channel = event.channel;
+			data_channel.onopen = () => guestConnectionHandler();
+		}
+
 		RTC_a.onconnectionstatechange = function(event) {
-			if(RTC_a.connectionState == 'disconnected' || RTC_a.connectionState == 'failed'){
+			if(RTC_a.connectionState == 'disconnected' || RTC_a.connectionState == 'failed' || RTC_a.connectionState == 'disconnected'){
 				handleDisconnection();
 				return;
 			}
+			else if (RTC_a.connectionState == 'connected'){
+				clearInterval(timeoutInterval);
+				document.getElementById('answer_timeout').innerHTML = "You're pretty good";
+			}
 		}
-	 	RTC_a.ondatachannel = function(event){
-			data_channel = event.channel;
-		}
+
 
 		await RTC_a.setRemoteDescription(new RTCSessionDescription(offer));
 

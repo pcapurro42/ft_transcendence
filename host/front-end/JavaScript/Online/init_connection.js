@@ -46,9 +46,5 @@ function guestSideTimeout(){
 			RTC_a = null;
 			clearInterval(timeoutInterval);
 		}
-		if (RTC_a.connectionState === 'connected') {
-			guestConnectionHandler();
-			clearInterval(timeoutInterval);
-		}
 	}, 1000);
 }
