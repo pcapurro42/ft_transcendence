@@ -2,28 +2,27 @@ async function initConnection(answer){
 
 	try{
 
-		await RTC_o.setRemoteDescription(new RTCSessionDescription(answer));
-
 		if (answer.type === 'offer'){
 			displayStatusBarAlert(getTranslation("Wrong Code Format"));
 			return;
 		}
+
+		await RTC_o.setRemoteDescription(new RTCSessionDescription(answer));
+
 		document.getElementById('submit_answer').setAttribute('disabled', true);
 
 
 		for (let candidate of answer.iceCandidates)
-		await RTC_o.addIceCandidate(candidate);
-	displayStatusBarWarning(getTranslation("Peer Connection Warning"));
+			await RTC_o.addIceCandidate(candidate);
+		displayStatusBarWarning(getTranslation("Peer Connection Warning"));
 
 		const timeout = setTimeout(() => {
-			console.log(RTC_o);
 			if (RTC_o.connectionState === 'connected') {
 				displayStatusBarSuccess(getTranslation("Peer Connection Success"));
 				document.getElementById('create_classic_lobby').removeAttribute('disabled');
 				return;
 			}
 			else if (RTC_o.connectionState === 'new' || RTC_o.connectionState === 'connecting'){
-
 				console.error(`Connection state stuck on ${RTC_o.connectionState}`);
 				displayStatusBarAlert(getTranslation("Peer Connection Timeout"));
 			}
@@ -35,7 +34,7 @@ async function initConnection(answer){
 
 	}
 	catch(error){
-		console.error(`Error: ${error}`);
+		console.error(`${error}`);
 		displayStatusBarAlert(getTranslation("Peer Connection Alert"));
 	}
 
@@ -80,7 +79,4 @@ function answerSideConnectionHandler(){
 
 	let join_lobby_btn = document.getElementById('join_classic_lobby');
 	join_lobby_btn.removeAttribute('disabled');
-
-
-
 }

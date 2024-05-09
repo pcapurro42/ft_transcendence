@@ -1,3 +1,11 @@
+function getIceConfig(){
+	let iceConf = {
+		iceTransportPolicy : 'all',
+		bundlePolicy : 'max-compat',
+	}
+	return iceConf;
+}
+
 function generateGameID(){
 	let gameId = "";
 	let Alphanum = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

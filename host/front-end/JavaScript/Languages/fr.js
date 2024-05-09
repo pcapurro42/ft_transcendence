@@ -61,13 +61,18 @@ let fr = [
     ["Normal", "Normal"],
     ["Large", "Grand"],
 
-    //******* Offer/Answer ******/
+    //******* Online ******/
 
     ['Peer offer send msg', "Envoyez ce code a un ami pour<br> qu'il autorise la connexion."],
     ['Peer answer send msg', "Envoyez ce code a votre ami <br> en vue d'autoriser la connexion."],
 
     ['Peer offer paste msg', "Collez le code d'invitation de votre ami <br> pour générer le code d'autorisation."],
     ['Paste answer msg', "Collez le code d'autorisation de<br> votre ami pour initier la connexion."],
+
+    ['Disconnected', "⚠︎ Connexion pair à pair perdue..."],
+    ['Disconnection Msg', "Désolé ! Il semble y avoir un problème de connexion. Vérifiez le réseau des deux pairs, puis réessayez."],
+    ['Back Main Menu', "Menu Principal"],
+
 
     //******* Status Bar ******/
 

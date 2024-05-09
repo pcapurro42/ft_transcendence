@@ -7,6 +7,7 @@ document.getElementById("logout_btn").onclick = logout;
 // < MAIN MENU > //
 
 document.getElementById('title_logo').onclick = displayMenu;
+document.getElementById('disconnection_back_btn').onclick = displayMenu;
 
 document.getElementById('play_btn').onclick = displayPlay;
 document.getElementById('play_back_btn').onclick = removePlay;

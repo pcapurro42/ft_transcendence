@@ -42,11 +42,11 @@ function displayMenu()
     let join_classic_menu = document.getElementById('join_classic_menu')
     join_classic_menu.style.display = 'none';
 
+    let disconnectionPopup = document.getElementById('disconnectionPopup');
+    disconnectionPopup.style.display = 'none';
+
     let tournament_form = document.getElementById('form_alias')
     tournament_form.style.display = 'none';
-
-    let statusBar = document.getElementById('statusBarSuccess');
-    statusBar.style.display = 'none';
 
     start = false;
     // turn off the game

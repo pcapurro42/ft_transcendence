@@ -29,6 +29,10 @@ function displayOneVsOneChoice()
 
     let play_menu = document.getElementById('play_menu');
     play_menu.style.display = 'none';
+
+    RTC_a = null;
+    RTC_o = null;
+    data_channel = null;
 }
 
 function removeOneVsOneChoice()
@@ -54,6 +58,7 @@ async function displayOneVsOneOnlineCreateGame(){
 
     RTC_a = null;
     RTC_o = null;
+    data_channel = null;
 
     offerGenerator();
 }

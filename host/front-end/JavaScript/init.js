@@ -44,6 +44,9 @@ let start;
 //<P2P>//
 
 let timeoutInterval;
+let RTC_o = null;
+let RTC_a = null;
+let data_channel = null;
 
 // < REFRESH > //
 

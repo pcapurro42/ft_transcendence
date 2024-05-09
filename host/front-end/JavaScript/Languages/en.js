@@ -62,13 +62,18 @@ let en = [
     ["Large", "Large"],
 
 
-    //******* Offer/Answer ******/
+    //******* Online ******/
 
     ['Peer offer send msg', "Send this code to a friend for <br> him to approve connection."],
     ['Peer answer send msg', "Send this code to a friend in <br> order to approve connection."],
 
     ['Peer offer paste msg', "Paste your friend's invitation code <br> to generate the authorization code."],
     ['Paste answer msg', "Paste your friend's authorization <br> code in order to init connection."],
+
+    ['Disconnected', "⚠︎ Lost connection with peer..."],
+    ['Disconnection Msg', "Sorry! It seems like there's a connection problem. Check both peers networks and try again."],
+    ['Back Main Menu', "Main Menu"],
+
 
     //******* Status Bar ******/
 
