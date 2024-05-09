@@ -21,8 +21,10 @@ async function answerGenerator(){
 			throw("Error: offer not b64.");
 
 		offer = JSON.parse(atob(offer));
-		if(offer.type != 'offer')
-			throw("Error: expecting 'offer' type");
+		if(offer.type != 'offer'){
+			displayStatusBarAlert(getTranslation("Wrong Code Format"));
+			return;
+		}
 
 		RTC_a = new RTCPeerConnection(getIceConfig());
 
@@ -60,11 +62,37 @@ async function answerGenerator(){
 			iceCandidates: candidates,
 		}
 		document.getElementById('peer_answer').value = btoa(JSON.stringify(jsonAnswer));
-		guestSideTimeout();
+		answerTimeout();
 	}
 	catch(error){
 		console.error(`Error: ${error}`);
 		displayStatusBarAlert(getTranslation("Wrong Code Format"));
 	}
 
+}
+
+function answerTimeout(){
+	let answerTimeout = 60;
+
+	let countdown = document.getElementById('answer_timeout');
+	countdown.innerHTML = `${answerTimeout}` + getTranslation("Answer Timeout")
+	countdown.style.display = 'block';
+
+	let submit_offer = document.getElementById('submit_offer');
+	submit_offer.setAttribute('disabled', true);
+
+
+	timeoutInterval = setInterval(function() {
+		answerTimeout--;
+		countdown.innerHTML = `${answerTimeout}` + getTranslation("Answer Timeout")
+		if (answerTimeout == 0){
+			countdown.innerHTML = getTranslation("Code Expired")
+			displayStatusBarAlert(getTranslation("Peer Connection Timeout"));
+			document.getElementById('paste_peer_offer').value = "";
+			document.getElementById('peer_answer').value = "";
+			submit_offer.removeAttribute('disabled');
+			RTC_a = null;
+			clearInterval(timeoutInterval);
+		}
+	}, 1000);
 }

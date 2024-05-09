@@ -75,6 +75,7 @@ let en = [
     ['Disconnected', "⚠︎ Lost connection with peer..."],
     ['Disconnection Msg', "Sorry! It seems like there's a connection problem. Check both peers networks and try again."],
     ['Back Main Menu', "Main Menu"],
+    ['Waiting Lobby Creation', "Waiting for host to create lobby..."],
 
 
     //******* Status Bar ******/

@@ -1,20 +1,25 @@
 function readHostMsg(event){
 	console.log(event.data);
+
+	if (event.data === 'lobby ok'){
+		document.getElementById("join_classic_lobby").style.display = 'block';
+		document.getElementById("join_classic_lobby").style = 'text-center'; // i had to put this for the item to be centered despite already having it inside class.
+
+	}
 }
 
 async function guestConnectionHandler(){
-	console.log('test');
+	displayStatusBarSuccess(getTranslation("Peer Connection Success"));
 	data_channel.onerror = function(error) {
     	console.error("Data Channel Error:", error);
 	};
+	data_channel.onmessage = event => readHostMsg(event);
+	data_channel.send('Hello from guest!');
 
-	displayStatusBarSuccess(getTranslation("Peer Connection Success"));
 
 	let countdown = document.getElementById('answer_timeout');
-	countdown.innerHTML = "You're pretty good.";
+	countdown.innerHTML = getTranslation("Waiting Lobby Creation");
 
-		// console.log('hello from dc event');
-		data_channel.onmessage = event => readHostMsg(event);
-		data_channel.send('Hello from guest!');
-
+	let	join_btn = document.getElementById("join_classic_lobby");
+	join_btn.onclick = () => data_channel.send('lobby_ok');
 }

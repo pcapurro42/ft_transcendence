@@ -72,6 +72,7 @@ let fr = [
     ['Disconnected', "⚠︎ Connexion pair à pair perdue..."],
     ['Disconnection Msg', "Désolé ! Il semble y avoir un problème de connexion. Vérifiez le réseau des deux pairs, puis réessayez."],
     ['Back Main Menu', "Menu Principal"],
+    ['Waiting Lobby Creation', "En attente de la création d'un salon par l'hôte..."],
 
 
     //******* Status Bar ******/

@@ -1,4 +1,4 @@
-function eraseConnection(){
+function resetConnection(){
     if (RTC_a != null)
         RTC_a.close();
     if (RTC_o != null)
@@ -15,5 +15,5 @@ function handleDisconnection(){
 	popup.style.display = 'block';
     document.getElementById('alert_sound').play();
 
-    eraseConnection();
+    resetConnection();
 }

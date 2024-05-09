@@ -58,3 +58,28 @@ async function submitAnswer(){
 		displayStatusBarAlert(getTranslation("Wrong Code Format"));
 	}
 }
+
+async function initConnection(answer){
+
+	try{
+
+		if (answer.type === 'offer'){
+			displayStatusBarAlert(getTranslation("Wrong Code Format"));
+			return;
+		}
+
+		await RTC_o.setRemoteDescription(new RTCSessionDescription(answer));
+
+		document.getElementById('submit_answer').setAttribute('disabled', true);
+
+
+		for (let candidate of answer.iceCandidates)
+			await RTC_o.addIceCandidate(candidate);
+
+	}
+	catch(error){
+		console.error(`${error}`);
+		displayStatusBarAlert(getTranslation("Peer Connection Alert"));
+	}
+
+}
