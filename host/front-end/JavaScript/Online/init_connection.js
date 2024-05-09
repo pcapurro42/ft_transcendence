@@ -14,23 +14,6 @@ async function initConnection(answer){
 
 		for (let candidate of answer.iceCandidates)
 			await RTC_o.addIceCandidate(candidate);
-		displayStatusBarWarning(getTranslation("Peer Connection Warning"));
-
-		const timeout = setTimeout(() => {
-			if (RTC_o.connectionState === 'connected') {
-				displayStatusBarSuccess(getTranslation("Peer Connection Success"));
-				document.getElementById('create_classic_lobby').removeAttribute('disabled');
-				return;
-			}
-			else if (RTC_o.connectionState === 'new' || RTC_o.connectionState === 'connecting'){
-				console.error(`Connection state stuck on ${RTC_o.connectionState}`);
-				displayStatusBarAlert(getTranslation("Peer Connection Timeout"));
-			}
-			else{
-				displayStatusBarAlert(getTranslation("Peer Connection Alert"));
-				return
-			}
-		},5000)
 
 	}
 	catch(error){
@@ -40,7 +23,7 @@ async function initConnection(answer){
 
 }
 
-function answerSideTimeout(){
+function guestSideTimeout(){
 	let answerTimeout = 60;
 
 	let countdown = document.getElementById('answer_timeout');
@@ -64,19 +47,8 @@ function answerSideTimeout(){
 			clearInterval(timeoutInterval);
 		}
 		if (RTC_a.connectionState === 'connected') {
-			answerSideConnectionHandler();
+			guestConnectionHandler();
 			clearInterval(timeoutInterval);
 		}
 	}, 1000);
-}
-
-function answerSideConnectionHandler(){
-	displayStatusBarSuccess(getTranslation("Peer Connection Success"));
-
-	let countdown = document.getElementById('answer_timeout');
-	countdown.innerHTML = "You're pretty good.";
-
-
-	let join_lobby_btn = document.getElementById('join_classic_lobby');
-	join_lobby_btn.removeAttribute('disabled');
 }

@@ -50,7 +50,7 @@ async function answerGenerator(){
 			iceCandidates: candidates,
 		}
 		document.getElementById('peer_answer').value = btoa(JSON.stringify(jsonAnswer));
-		answerSideTimeout();
+		guestSideTimeout();
 	}
 	catch(error){
 		console.error(`Error: ${error}`);

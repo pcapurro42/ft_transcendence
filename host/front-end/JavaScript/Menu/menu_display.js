@@ -30,9 +30,7 @@ function displayOneVsOneChoice()
     let play_menu = document.getElementById('play_menu');
     play_menu.style.display = 'none';
 
-    RTC_a = null;
-    RTC_o = null;
-    data_channel = null;
+    eraseConnection();
 }
 
 function removeOneVsOneChoice()
@@ -56,9 +54,7 @@ async function displayOneVsOneOnlineCreateGame(){
     let submit_btn = document.getElementById('submit_answer');
     submit_btn.removeAttribute('disabled');
 
-    RTC_a = null;
-    RTC_o = null;
-    data_channel = null;
+    eraseConnection();
 
     offerGenerator();
 }
@@ -83,8 +79,7 @@ async function displayOneVsOneOnlineJoinGame(){
     let peer_answer = document.getElementById('peer_answer');
     peer_answer.value = '';
 
-    RTC_a = null;
-    RTC_o = null;
+    eraseConnection();
 
 }
 

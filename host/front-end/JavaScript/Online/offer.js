@@ -17,12 +17,6 @@ async function gatherIceCandidates_o(){
 async function offerGenerator(){
 	try{
 		RTC_o = new RTCPeerConnection(getIceConfig());
-		RTC_o.onconnectionstatechange = function(event) {
-			if(RTC_o.connectionState == 'disconnected' || RTC_o.connectionState == 'failed'){
-				handleDisconnection();
-				return;
-			}
-		}
 		data_channel = RTC_o.createDataChannel('mgpDataChannel');
 
 		let  sdp_offer = await RTC_o.createOffer();
@@ -48,8 +42,16 @@ async function submitAnswer(){
 	let answer = document.getElementById('paste_peer_answer').value;
 	try{
 		if (parse_offersAnswers(answer) == false)
-		throw("Error: answer not b64.");
+			throw("Error: answer not b64.");
 		answer = atob(answer);
+		RTC_o.onconnectionstatechange = function(event) {
+			if(RTC_o.connectionState == 'disconnected' || RTC_o.connectionState == 'failed'){
+				handleDisconnection();
+				return;
+			}
+			else if (RTC_o.connectionState == 'connected')
+				hostConnectionHandler();
+		}
 		initConnection(JSON.parse(answer));
 	}
 	catch(error){
