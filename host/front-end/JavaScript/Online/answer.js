@@ -34,17 +34,12 @@ async function answerGenerator(){
 		}
 
 		RTC_a.onconnectionstatechange = function(event) {
-			if(RTC_a.connectionState == 'disconnected' || RTC_a.connectionState == 'failed' || RTC_a.connectionState == 'disconnected'){
-				handleDisconnection();
-				return;
-			}
-			else if (RTC_a.connectionState == 'connected'){
+			if (RTC_a.connectionState == 'connected'){
 				clearInterval(timeoutInterval);
 				document.getElementById('answer_timeout').innerHTML = "You're pretty good";
 			}
 		}
-
-
+		
 		await RTC_a.setRemoteDescription(new RTCSessionDescription(offer));
 
 		for (let candidate of offer.iceCandidates){

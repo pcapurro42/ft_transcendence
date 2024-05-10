@@ -10,6 +10,7 @@ function readHostMsg(event){
 async function guestConnectionHandler(){
 	displayStatusBarSuccess(getTranslation("Peer Connection Success"));
 	data_channel.onerror = function(error) {
+		handleDisconnection();
     	console.error("Data Channel Error:", error);
 	};
 	data_channel.onmessage = event => readHostMsg(event);
