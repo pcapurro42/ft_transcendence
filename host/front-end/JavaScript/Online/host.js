@@ -11,11 +11,10 @@ function hostConnectionHandler(){
 	data_channel.onmessage = event => readGuestMsg(event);
 	data_channel.send('Hello from host!');
 
-	// document.getElementById('create_classic_lobby').removeAttribute('disabled');
-
 	let	create_btn = document.getElementById("create_classic_lobby");
-	create_btn.style.display = 'block';
-	create_btn.style = 'text-center'; // i had to put this for the item to be centered despite already having it inside class.
-	create_btn.onclick = () => data_channel.send('lobby ok');
-
+	create_btn.style.visibility = 'visible';
+	create_btn.onclick = () => {
+		displayGamePage_classic();
+		data_channel.send('lobby ok');
+	}
 }

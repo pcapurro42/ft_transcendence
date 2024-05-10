@@ -55,7 +55,7 @@ async function displayOneVsOneOnlineCreateGame(){
     submit_btn.removeAttribute('disabled');
 
     let create_btn = document.getElementById('create_classic_lobby');
-    create_btn.style.display = 'none';
+    create_btn.style.visibility = 'hidden';
 
     resetConnection();
     offerGenerator();
@@ -82,7 +82,7 @@ async function displayOneVsOneOnlineJoinGame(){
     peer_answer.value = '';
 
      let join_btn = document.getElementById('join_classic_lobby');
-    join_btn.style.display = 'none';
+    join_btn.style.visibility = 'hidden';
 
     resetConnection();
 }
