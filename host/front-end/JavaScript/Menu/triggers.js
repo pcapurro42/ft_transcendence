@@ -58,10 +58,11 @@ document.getElementById('ai_game_btn').onclick = ai;
 
 // < TOURNAMENT > //
 
-document.getElementById('submit_alias').onclick = parse_alias;
 
-document.getElementById('play_tournament_btn').onclick = displayTournamentForm;
-document.getElementById('back_tournament_btn').onclick = removeTournamentForm;
+document.getElementById('play_tournament_btn').onclick = displayTournamentSetup;
+document.getElementById('back_tournament_btn').onclick = removeTournamentSetup;
+
+document.getElementById('back_tournament_form_btn').onclick = removeTournamentForm;
 
 // < CUSTOMIZE > //
 

@@ -27,11 +27,7 @@ let en = [
 
     ["Create Lobby", "Create Lobby"],
     ["Join Lobby", "Join Lobby"],
-    ["Create a tournament", "Create a tournament"],
-    ["Join a tournament", "Join a tournament"],
-    ["Tournament nickname", "Nickname"],
     ["Submit", "Submit"],
-    ["keep42", "Keep 42 username"],
     ["Invalid alias", "Nickname length 4-15.<br>(ABCabc123_-)"],
     ["Checkbox error", "Authentificate with 42 first."],
 
@@ -62,6 +58,17 @@ let en = [
 
     ["Normal", "Normal"],
     ["Large", "Large"],
+
+    //******* Tournament ******/
+
+    ["Create a tournament", "Create a tournament"],
+    ["Join a tournament", "Join a tournament"],
+    ["Tournament nickname", "Nickname"],
+    ["Select Tournament Type", "- Tournament type -"],
+    ["Sixteen", "Round of 16 (16 players)."],
+    ["Eight", "Final eight (8 players)."],
+    ["Four", "Final four (4 players)."],
+    ["Duplicate Nickname", "Warning: several nicknames are duplicated. <br> Please chose unique nicknames."],
 
 
     //******* Online ******/

@@ -1,16 +1,36 @@
 
-function parse_alias(event){
+function parse_alias(nbr, event){
 	event.preventDefault(); // Empêche retour main_menu quand on submit
 
 	const regex = /^[A-Za-z0-9\-_]+$/;
-    var input = document.getElementById('alias_input');
-    var err = document.getElementById('invalid-alias');
+ 	let inputs = document.querySelectorAll('#parent_form input');
+	let err = document.querySelectorAll('#parent_form .invalid-feedback');
 
-    if ((input.value.length >= 4 && input.value.length <= 15) && regex.test(input.value)) {
-		sessionStorage.setItem('alias', input.value);
-    } else {
-		err.style.display = 'block';
-    }
+	for(let i = 0; i < inputs.length; i++){
+		if ((inputs[i].value.length >= 4 && inputs[i].value.length <= 15) && regex.test(inputs[i].value)) {
+			sessionStorage.setItem('alias_' + i, inputs.value);
+			err[i].style.display = 'none';
+
+    	}
+		else{
+			err[i].style.display = 'block';
+		}
+	}
+		if (isDuplicateNicknames(inputs) == true){
+			document.getElementById('duplicate_nick').style.display = 'block';
+		}
+		else
+			document.getElementById('duplicate_nick').style.display = 'none';
+}
+
+function isDuplicateNicknames(nicknames){
+	for (let i = 0; i < nicknames.length - 1; i++){
+		for (let c = i + 1; c < nicknames.length; c++){
+			if (nicknames[i].value == nicknames[c].value)
+				return true;
+		}
+	}
+	return false;
 }
 
 function parse_offersAnswers(str){
@@ -22,23 +42,4 @@ function parse_offersAnswers(str){
 	if (!tmp.iceCandidates || !tmp.type || !tmp.sdp)
 		return false;
 	return true;
-}
-
-document.getElementById('keep42').onclick = checkboxEnabler;
-
-function checkboxEnabler(){
-	let checkbox = document.getElementById('keep42');
-	let input = document.getElementById('alias_input');
-
-	if (localStorage.getItem('status') == 'connected'){
-		document.getElementById('keep42');
-		const user_info = JSON.parse(localStorage.getItem('user_info'));
-		input.value = user_info.login;
-	}
-	else{
-		checkbox.checked = false;
-		document.getElementById('checkbox_err').style.display = "block";
-		document.getElementById('alert_sound').play();
-
-	}
 }

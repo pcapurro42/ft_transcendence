@@ -25,11 +25,7 @@ let fr = [
 
     ["Create Lobby", "Créer un salon"],
     ["Join Lobby", "Rejoindre un salon"],
-    ["Create a tournament", "Créer un tournoi"],
-    ["Join a tournament", "Rejoindre un tournoi"],
-    ["Tournament nickname", "Surnom"],
     ["Submit", "Soumettre"],
-    ["keep42", "Garder le nom d'utilisateur 42"],
     ["Invalid alias", "Longueur du surnom 4-15.<br>(ABCabc123_-)"],
     ["Checkbox error", "Authentifiez vous avec 42."],
 
@@ -60,6 +56,17 @@ let fr = [
 
     ["Normal", "Normal"],
     ["Large", "Grand"],
+
+    //******* Tournament ******/
+
+    ["Create a tournament", "Créer un tournoi"],
+    ["Join a tournament", "Rejoindre un tournoi"],
+    ["Tournament nickname", "Surnom"],
+    ["Select Tournament Type", "- Type de tournoi -"],
+    ["Sixteen", "Huitième de finale (16 joueurs)."],
+    ["Eight", "Quart de finale (8 joueurs)."],
+    ["Four", "Demi-finale (4 joueurs)."],
+    ["Duplicate Nickname", "Attention: des surnoms sont dupliqués.<br> Merci de choisir des surnoms uniques."],
 
     //******* Online ******/
 

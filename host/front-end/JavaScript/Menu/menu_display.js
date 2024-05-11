@@ -87,20 +87,67 @@ async function displayOneVsOneOnlineJoinGame(){
     resetConnection();
 }
 
-function removeTournamentForm()
+function removeTournamentForm(event)
+{
+    event.preventDefault();
+
+    let tournament_nickname_menu = document.getElementById('tournament_nickname_menu');
+	tournament_nickname_menu.style.display = 'none';
+
+    let t_invalid_alias = document.getElementById('invalid-alias');
+    t_invalid_alias.style.display = 'none';
+
+    let t_duplicate = document.getElementById('duplicate_nick');
+    t_duplicate.style.display = 'none';
+    let input = document.getElementById('alias_input');
+    input.value = '';
+
+    let t_setup = document.getElementById('tournament_setup');
+    t_setup.style.display = "block";
+}
+
+function displayTournamentForm(value){
+    let t_setup = document.getElementById('tournament_setup');
+    t_setup.style.display = "none";
+    let tournament_nickname_menu = document.getElementById('tournament_nickname_menu');
+	tournament_nickname_menu.style.display = 'block';
+
+    let elem = document.getElementById('form_block');
+
+    let parent = elem.parentNode;
+    let to_remove = document.querySelectorAll('#parent_form .remover');
+
+    console.log(to_remove[0].id);
+    for (let c = 1; c < to_remove.length; c++){
+        to_remove[c].remove();
+    }
+
+    for (i = 0; i < value - 1; i++){
+        let clone = elem.cloneNode(true);
+        clone.id = 'form_block' + i;
+        let childrens = clone.querySelectorAll('[id]');
+        for (let j = 0; j < childrens.length; j++)
+            childrens[j].id = childrens[j].id + i;
+        document.getElementById('parent_form').append(clone);
+    }
+    document.getElementById('submit_alias').onclick = function(event){parse_alias(i, event)};
+
+}
+
+function displayTournamentSetup(){
+    let play_menu = document.getElementById('play_menu');
+    play_menu.style.display = "none";
+    let tournament_setup = document.getElementById('tournament_setup');
+	tournament_setup.style.display = 'block';
+
+}
+
+function removeTournamentSetup()
 {
     let play_menu = document.getElementById('play_menu');
     play_menu.style.display = "block";
-    let tournament_nickname_menu = document.getElementById('tournament_nickname_menu');
-	tournament_nickname_menu.style.display = 'none';
-}
-
-function displayTournamentForm(){
-    let play_menu = document.getElementById('play_menu');
-    play_menu.style.display = "none";
-    let tournament_nickname_menu = document.getElementById('form_alias');
-	tournament_nickname_menu.style.display = 'block';
-
+    let tournament_setup = document.getElementById('tournament_setup');
+	tournament_setup.style.display = 'none';
 }
 // < DISPLAY/REMOVE > //
 

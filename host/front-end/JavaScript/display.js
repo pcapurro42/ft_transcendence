@@ -51,8 +51,11 @@ function displayMenu()
     let disconnectionPopup = document.getElementById('disconnectionPopup');
     disconnectionPopup.style.display = 'none';
 
-    let tournament_form = document.getElementById('form_alias')
-    tournament_form.style.display = 'none';
+    let tournament_setup = document.getElementById('tournament_setup');
+    tournament_setup.style.display = 'none';
+
+    let tournament_alias = document.getElementById('tournament_nickname_menu')
+    tournament_alias.style.display = 'none';
 
     start = false;
     // turn off the game

@@ -41,7 +41,6 @@
     </head>
 
     <!-- Body -->
-
     <body id="background" class="container my-4">
 
         <!-- Game pages -->
@@ -124,7 +123,7 @@
 
         <!-- Menu Pages -->
 
-        <div id="main_menu">
+        <div id="main_menu_page">
 
             <!-- Main menu toolbar -->
 
@@ -133,7 +132,7 @@
                 <img id="music_toggle" src="./Materials/images/music-off.png" class="img-fluid image" data-isnormal="max-width: 5%" data-islarge="max-width: 6%" data-title="Enable/Disable menu music">
 
                 <div id="login" class="col d-inline-block float-end">
-                    <button id="login_btn" class="btn text border mb-4 btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="LOG IN WITH 42" data-title="LOG IN WITH 42" title=""></a>
+                    <button id="login_btn" class="btn text border mb-4 btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="LOG IN WITH 42" data-title="LOG IN WITH 42" title=""></button>
                 </div>
 
                 <div id="logged" class="col d-inline-block float-end">
@@ -279,28 +278,41 @@
 
                 </div>
 
-                <!-- Tournament nickname -->
+                <!-- Tournament -->
 
+        <!-- Tournament type-->
+
+        <div id="tournament_setup" class="row justify-content-center">
+
+            <div class="col-3 text text-center p-2 container my-4">
+                    <select id = "tournament_players_selector" class="form-select form-select-lg mx-auto">
+                        <option selected value='1' class="btn-simple" data-oname="Select Tournament Type" data-tsnormal="12px" data-tslarge="20px"></option>
+                        <option  value='16' class="btn-simple" data-tsnormal="15px" data-tslarge="20px" data-oname="Sixteen"></option>
+                        <option value='8' class="btn-simple" data-tsnormal="15px" data-tslarge="20px" data-oname="Eight"></option>
+                        <option value='4' class="btn-simple" data-tsnormal="15px" data-tslarge="20px" data-oname="Four"></option>
+                    </select>
+                <button id ="submit_player_nbr" class="btn text btn-lg btn-simple border btn-outline-success mt-4" data-tsnormal="15px" data-tslarge="20px" data-oname="Submit" disabled></button>
+            </div>
+
+            <button id="back_tournament_btn" class="btn text btn-complex mt-5" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
+
+        </div>
                 <div id="tournament_nickname_menu">
 
                     <form id="form_alias" class="container text-center">
-
-                        <div class="form-control-lg p-2">
+                    <div id="parent_form" class="justify-content-center">
+                        <div id="form_block" class="form-control-lg p-2 remover">
                             <input id="alias_input" class="form-control-sm" type="text" placeholder="" data-tsnormal="16px" data-tslarge="21px" data-oname="Tournament nickname" data-title="Tournament nickname" title="">
-                            <button id ="submit_alias" type="submit" class="btn text btn-lg btn-simple border btn-outline-success" data-tsnormal="15px" data-tslarge="20px" data-oname="Submit"></button>
-                            <div id="invalid-alias" class="invalid-feedback" data-tsnormal="20px" data-tslarge="25px" data-oname="Invalid alias"></div>
+                            <div id="invalid-alias" class="invalid-feedback" data-tsnormal="15px" data-tslarge="25px" data-oname="Invalid alias"></div>
                         </div>
+                    </div>
 
                         <div>
-                            <input id="keep42" type="checkbox">
-                            <label class="text" for="keep42" data-tsnormal="20px" data-tslarge="25px" data-oname="keep42" data-title="keep42"></label>
-                            <div id="checkbox_err" class="invalid-feedback" data-tsnormal="20px" data-tslarge="25px" data-oname="Checkbox error">
-                            </div>
+                            <div id="duplicate_nick" class="invalid-feedback mb-4" data-tsnormal="15px" data-tslarge="25px" data-oname="Duplicate Nickname"></div>
+                            <button id ="submit_alias" type="submit" class="btn text btn-lg btn-simple border btn-outline-success" data-tsnormal="15px" data-tslarge="20px" data-oname="Submit"></button>
                         </div>
 
-                        <br>
-
-                        <button id="back_tournament_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
+                        <button id="back_tournament_form_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
 
                     </form>
 
@@ -506,22 +518,23 @@
         <div id="statusBarWarning" class="alert alert-warning fixed-top p-2"></div>
 
         <div class="modal" id="disconnectionPopup" data-bs-backdrop='static'>
+
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                <h4 class="modal-title text text-danger" data-oname="Disconnected" data-tsnormal="30px" data-tslarge="50px"></h4>
+                        <h4 class="modal-title text text-danger" data-oname="Disconnected" data-tsnormal="30px" data-tslarge="50px"></h4>
+                    </div>
+                    <div class="modal-body" data-tsnormal="15px" data-tslarge="30px">
+                        <p class="text" data-oname="Disconnection Msg"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="disconnection_back_btn" class="btn btn-danger btn-complex text" data-oname="Back Main Menu"></button>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body" data-tsnormal="15px" data-tslarge="30px">
-                <p class="text" data-oname="Disconnection Msg"></p>
-            </div>
-            <div class="modal-footer">
-                <button id="disconnection_back_btn" class="btn btn-danger btn-complex text" data-oname="Back Main Menu"></button>
-            </div>
-            </div>
-            </div>
-
         </div>
 
+</div>
         <!-- Scripts -->
 
         <script src="./JavaScript/Languages/en.js"></script>
@@ -539,6 +552,7 @@
         <script src="./JavaScript/Menu/customize.js"></script>
         <script src="./JavaScript/Menu/credits.js"></script>
         <script src="./JavaScript/Menu/form.js"></script>
+        <script src="./JavaScript/Menu/tournament_setup.js"></script>
 
         <script src="./JavaScript/Game/page.js"></script>
 
