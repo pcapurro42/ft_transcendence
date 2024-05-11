@@ -6,6 +6,33 @@ function getIceConfig(){
 	return iceConf;
 }
 
+function freeInputAndForms(){
+	let t_invalid_alias = document.getElementById('invalid-alias');
+    t_invalid_alias.style.display = 'none';
+
+    let t_duplicate = document.getElementById('duplicate_nick');
+    t_duplicate.style.display = 'none';
+
+    let input = document.getElementById('alias_input');
+    input.value = '';
+
+	let paste_peer_answer = document.getElementById('paste_peer_answer');
+	paste_peer_answer.value = ' ';
+
+	let paste_peer_offer = document.getElementById('paste_peer_offer');
+	paste_peer_offer.value = ' ';
+
+	let paste_answer = document.getElementById('peer_answer');
+	paste_answer.value = ' ';
+
+	let paste_offer = document.getElementById('peer_offer');
+	paste_offer.value = ' ';
+}
+
+function sleep(ms){
+	return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function generateGameID(){
 	let gameId = "";
 	let Alphanum = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

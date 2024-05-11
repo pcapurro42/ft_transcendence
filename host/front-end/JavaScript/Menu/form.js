@@ -5,6 +5,8 @@ function parse_alias(nbr, event){
 	const regex = /^[A-Za-z0-9\-_]+$/;
  	let inputs = document.querySelectorAll('#parent_form input');
 	let err = document.querySelectorAll('#parent_form .invalid-feedback');
+	let bool = true;
+	let alias_array = [];
 
 	for(let i = 0; i < inputs.length; i++){
 		if ((inputs[i].value.length >= 4 && inputs[i].value.length <= 15) && regex.test(inputs[i].value)) {
@@ -14,13 +16,21 @@ function parse_alias(nbr, event){
     	}
 		else{
 			err[i].style.display = 'block';
+			bool = false;
 		}
+		alias_array.push(inputs[i].value);
 	}
+
+	if(bool == true){
 		if (isDuplicateNicknames(inputs) == true){
 			document.getElementById('duplicate_nick').style.display = 'block';
 		}
-		else
+		else{
 			document.getElementById('duplicate_nick').style.display = 'none';
+			return alias_array;
+		}
+	}
+	return null;
 }
 
 function isDuplicateNicknames(nicknames){

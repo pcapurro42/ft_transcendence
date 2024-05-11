@@ -39,7 +39,7 @@ async function answerGenerator(){
 				document.getElementById('answer_timeout').innerHTML = "You're pretty good";
 			}
 		}
-		
+
 		await RTC_a.setRemoteDescription(new RTCSessionDescription(offer));
 
 		for (let candidate of offer.iceCandidates){
@@ -83,8 +83,7 @@ function answerTimeout(){
 		if (answerTimeout == 0){
 			countdown.innerHTML = getTranslation("Code Expired")
 			displayStatusBarAlert(getTranslation("Peer Connection Timeout"));
-			document.getElementById('paste_peer_offer').value = "";
-			document.getElementById('peer_answer').value = "";
+			freeInputAndForms();
 			submit_offer.removeAttribute('disabled');
 			RTC_a = null;
 			clearInterval(timeoutInterval);

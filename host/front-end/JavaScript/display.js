@@ -57,6 +57,11 @@ function displayMenu()
     let tournament_alias = document.getElementById('tournament_nickname_menu')
     tournament_alias.style.display = 'none';
 
+    freeInputAndForms();
+
+    let tournament_announcer = document.getElementById('tournament_announcer');
+    tournament_announcer.style.display = 'none';
+
     start = false;
     // turn off the game
 

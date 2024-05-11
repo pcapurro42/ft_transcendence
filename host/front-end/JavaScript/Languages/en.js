@@ -69,7 +69,18 @@ let en = [
     ["Eight", "Final eight (8 players)."],
     ["Four", "Final four (4 players)."],
     ["Duplicate Nickname", "Warning: several nicknames are duplicated. <br> Please chose unique nicknames."],
-
+    ["Round of 16","Round of 16"],
+    ["Final 8","Final 8"],
+    ["Final 4","Final 4"],
+    ["Final","Final"],
+    ["1st Game", "1<sup>st</sup> Game"],
+    ["2nd Game", "2<sup>nd</sup> Game"],
+    ["3rd Game", "3<sup>rd</sup> Game"],
+    ["4th Game", "4<sup>th</sup> Game"],
+    ["5th Game", "5<sup>th</sup> Game"],
+    ["6th Game", "6<sup>th</sup> Game"],
+    ["7th Game", "7<sup>th</sup> Game"],
+    ["8th Game", "8<sup>th</sup> Game"],
 
     //******* Online ******/
 

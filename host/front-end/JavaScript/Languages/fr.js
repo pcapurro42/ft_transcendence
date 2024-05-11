@@ -67,6 +67,18 @@ let fr = [
     ["Eight", "Quart de finale (8 joueurs)."],
     ["Four", "Demi-finale (4 joueurs)."],
     ["Duplicate Nickname", "Attention: des surnoms sont dupliqués.<br> Merci de choisir des surnoms uniques."],
+    ["Round of 16","Huitième de finale"],
+    ["Final 8","Quart de finale"],
+    ["Final 4","Demi-finale"],
+    ["Final","Finale"],
+    ["1st Game", "1<sup>er</sup> Match"],
+    ["2nd Game", "2<sup>e</sup> Match"],
+    ["3rd Game", "3<sup>e</sup> Match"],
+    ["4th Game", "4<sup>e</sup> Match"],
+    ["5th Game", "5<sup>e</sup> Match"],
+    ["6th Game", "6<sup>e</sup> Match"],
+    ["7th Game", "7<sup>e</sup> Match"],
+    ["8th Game", "8<sup>e</sup> Match"],
 
     //******* Online ******/
 

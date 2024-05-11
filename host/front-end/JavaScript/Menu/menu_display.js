@@ -48,8 +48,7 @@ async function displayOneVsOneOnlineCreateGame(){
     let create_classic_menu = document.getElementById('create_classic_menu');
     create_classic_menu.style.display = 'block';
 
-    let paste_peer_answer = document.getElementById('paste_peer_answer');
-    paste_peer_answer.value = '';
+    freeInputAndForms();
 
     let submit_btn = document.getElementById('submit_answer');
     submit_btn.removeAttribute('disabled');
@@ -75,11 +74,7 @@ async function displayOneVsOneOnlineJoinGame(){
     let submit_btn = document.getElementById('submit_offer');
     submit_btn.removeAttribute('disabled');
 
-    let paste_peer_offer = document.getElementById('paste_peer_offer');
-    paste_peer_offer.value = '';
-
-    let peer_answer = document.getElementById('peer_answer');
-    peer_answer.value = '';
+    freeInputAndForms();
 
      let join_btn = document.getElementById('join_classic_lobby');
     join_btn.style.visibility = 'hidden';
@@ -90,17 +85,14 @@ async function displayOneVsOneOnlineJoinGame(){
 function removeTournamentForm(event)
 {
     event.preventDefault();
-
+    console.log('test');
     let tournament_nickname_menu = document.getElementById('tournament_nickname_menu');
 	tournament_nickname_menu.style.display = 'none';
 
-    let t_invalid_alias = document.getElementById('invalid-alias');
-    t_invalid_alias.style.display = 'none';
+    let form_alias =  document.getElementById('form_alias');
+    form_alias.style.display = 'none';
 
-    let t_duplicate = document.getElementById('duplicate_nick');
-    t_duplicate.style.display = 'none';
-    let input = document.getElementById('alias_input');
-    input.value = '';
+
 
     let t_setup = document.getElementById('tournament_setup');
     t_setup.style.display = "block";
@@ -109,8 +101,12 @@ function removeTournamentForm(event)
 function displayTournamentForm(value){
     let t_setup = document.getElementById('tournament_setup');
     t_setup.style.display = "none";
+
     let tournament_nickname_menu = document.getElementById('tournament_nickname_menu');
 	tournament_nickname_menu.style.display = 'block';
+
+    let form_alias =  document.getElementById('form_alias');
+    form_alias.style.display = 'block';
 
     let elem = document.getElementById('form_block');
 
@@ -130,7 +126,9 @@ function displayTournamentForm(value){
             childrens[j].id = childrens[j].id + i;
         document.getElementById('parent_form').append(clone);
     }
-    document.getElementById('submit_alias').onclick = function(event){parse_alias(i, event)};
+    document.getElementById('submit_alias').onclick = function(event){
+            start_tournament(parse_alias(i, event), i + 1);
+    };
 
 }
 
