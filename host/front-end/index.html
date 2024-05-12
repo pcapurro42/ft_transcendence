@@ -110,7 +110,12 @@
             <!-- Tournament -->
 
             <div id="game_page_tournament">
-                <!-- ... -->
+                <div class="display-4 text text-center" id="nick_reminder"></div>
+                 <canvas id="tournament_game" class="col-10 border border-5 w-100"></canvas>
+                <br><br>
+                <button id="start_tournament_game" class="btn btn-simple text border border-5" data-tsnormal="40px" data-tslarge="60px" data-oname="Start the game"></button>
+                <button id="next_game_tournament_btn" class="btn btn-simple text border border-5" data-tsnormal="40px" data-tslarge="60px" data-oname="Next Game"></button>
+            </div>
             </div>
 
             <!-- Vs AI Game page -->
@@ -318,31 +323,34 @@
 
                 </div>
 
-        <div id="tournament_announcer">
+    <!-- Tournament Announcer -->
+
+        <div id="tournament_announcer" class="container">
                 <div id="round_block" class="display-1 text text-center mb-5"></div>
+                <p id="nick_announce" class="display-1 text text-center"></p>
             <div id ='Roundof16'>
-                <div id ='Final8'>
-                    <div id ='Final4'>
-                        <div id ='Final'>
-                            <h4 class="text text-center mt-4" data-oname="1st Game"></h4>
-                            <p id ="1stGameNicks"class="text text-center mb-5"></p>
+                <div id ='Final8' class="rounds_state">
+                    <div id ='Final4' class="rounds_state">
+                        <div id ='Final' class="rounds_state">
+                            <h4 class="text text-center mt-4 game_nbr" data-oname="1st Game"></h4>
+                            <p id ="1stGameNicks"class="text text-center mb-5 nicks"></p>
                         </div>
-                        <h4 class="text text-center mt-4" data-oname="2nd Game"></h4>
-                        <p id ="2ndGameNicks"class="text text-center mb-5"></p>
+                        <h4 class="text text-center mt-4 game_nbr" data-oname="2nd Game"></h4>
+                        <p id ="2ndGameNicks"class="text text-center mb-5 nicks"></p>
                     </div>
-                    <h4 class="text text-center mt-4" data-oname="3rd Game"></h4>
-                    <p id ="3rdGameNicks"class="text text-center mb-5"></p>
-                    <h4 class="text text-center mt-4" data-oname="4th Game"></h4>
-                    <p id ="4thGameNicks"class="text text-center mb-5"></p>
+                    <h4 class="text text-center mt-4 game_nbr" data-oname="3rd Game"></h4>
+                    <p id ="3rdGameNicks"class="text text-center mb-5 nicks"></p>
+                    <h4 class="text text-center mt-4 game_nbr" data-oname="4th Game"></h4>
+                    <p id ="4thGameNicks"class="text text-center mb-5 nicks"></p>
                 </div>
-                <h4 class="text text-center mt-4" data-oname="5th Game"></h4>
-                <p id ="5thGameNicks"class="text text-center mb-5"></p>
-                <h4 class="text text-center mt-4" data-oname="6th Game"></h4>
-                <p id ="6thGameNicks"class="text text-center mb-5"></p>
-                <h4 class="text text-center mt-4" data-oname="7th Game"></h4>
-                <p id ="7thGameNicks"class="text text-center mb-5"></p>
-                <h4 class="text text-center mt-4" data-oname="8th Game"></h4>
-                <p id ="8thGameNicks"class="text text-center mb-5"></p>
+                <h4 class="text text-center mt-4 game_nbr" data-oname="5th Game"></h4>
+                <p id ="5thGameNicks"class="text text-center mb-5 nicks"></p>
+                <h4 class="text text-center mt-4 game_nbr" data-oname="6th Game"></h4>
+                <p id ="6thGameNicks"class="text text-center mb- nicks5"></p>
+                <h4 class="text text-center mt-4 game_nbr" data-oname="7th Game"></h4>
+                <p id ="7thGameNicks"class="text text-center mb-5 nicks"></p>
+                <h4 class="text text-center mt-4 game_nbr" data-oname="8th Game"></h4>
+                <p id ="8thGameNicks"class="text text-center mb-5 nicks"></p>
             </div>
         </div>
     </div>
@@ -583,6 +591,7 @@
         <script src="./JavaScript/Menu/credits.js"></script>
         <script src="./JavaScript/Menu/form.js"></script>
         <script src="./JavaScript/Menu/tournament_setup.js"></script>
+        <script src="./JavaScript/Menu/t_game_announce.js"></script>
 
         <script src="./JavaScript/Game/page.js"></script>
 

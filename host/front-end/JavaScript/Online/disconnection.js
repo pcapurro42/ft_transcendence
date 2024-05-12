@@ -9,6 +9,7 @@ function resetConnection(){
     RTC_o = null;
     data_channel = null;
 }
+
 function handleDisconnection(){
     let popup = document.getElementById('disconnectionPopup');
 

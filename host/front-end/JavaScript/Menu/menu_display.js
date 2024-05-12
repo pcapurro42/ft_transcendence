@@ -85,7 +85,7 @@ async function displayOneVsOneOnlineJoinGame(){
 function removeTournamentForm(event)
 {
     event.preventDefault();
-    console.log('test');
+    freeInputAndForms();
     let tournament_nickname_menu = document.getElementById('tournament_nickname_menu');
 	tournament_nickname_menu.style.display = 'none';
 
@@ -146,6 +146,7 @@ function removeTournamentSetup()
     play_menu.style.display = "block";
     let tournament_setup = document.getElementById('tournament_setup');
 	tournament_setup.style.display = 'none';
+    freeInputAndForms();
 }
 // < DISPLAY/REMOVE > //
 

@@ -81,6 +81,7 @@ let en = [
     ["6th Game", "6<sup>th</sup> Game"],
     ["7th Game", "7<sup>th</sup> Game"],
     ["8th Game", "8<sup>th</sup> Game"],
+    ["Next Game", "Next Game"],
 
     //******* Online ******/
 

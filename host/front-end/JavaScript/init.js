@@ -41,6 +41,8 @@ let type;
 let game;
 let start;
 
+//Tournament//
+let stop_flag = false;
 //<P2P>//
 
 let timeoutInterval;

@@ -6,6 +6,39 @@ function getIceConfig(){
 	return iceConf;
 }
 
+function tournamentResetBlocks(){
+	let ro16 = document.getElementById('Roundof16')
+	ro16.style.visibility = 'hidden';
+	ro16.style.opacity = '1';
+	ro16.style.transition = 'opacity 0s';
+
+	let rounds = document.querySelectorAll('.rounds_state');
+
+	for (let i = 0; i < rounds.length; i++){
+		rounds[i].style.visibility = '';
+		rounds[i].style.transition = 'opacity 0s';
+		rounds[i].style.opacity = '1';
+	}
+
+	let game_nbr = document.querySelectorAll('.game_nbr')
+
+	for (let i = 0; i < game_nbr.length; i++){
+		game_nbr[i].style.visibility = '';
+		game_nbr[i].style.transition = 'opacity 0s';
+		game_nbr[i].style.opacity = '1';
+
+	}
+
+	let players = document.querySelectorAll('.nicks');
+
+	for (let i = 0; i < players.length; i++){
+		players[i].style.visibility = '';
+		players[i].style.transition = 'opacity 0s';
+		players[i].style.opacity = '1';
+		players[i].innerHTML = '';
+	}
+}
+
 function freeInputAndForms(){
 	let t_invalid_alias = document.getElementById('invalid-alias');
     t_invalid_alias.style.display = 'none';
@@ -104,3 +137,4 @@ function displayStatusBarWarning(message){
 		}, 300);
 	}, 4500);
 }
+

@@ -79,6 +79,8 @@ let fr = [
     ["6th Game", "6<sup>e</sup> Match"],
     ["7th Game", "7<sup>e</sup> Match"],
     ["8th Game", "8<sup>e</sup> Match"],
+    ["Next Game", "Match suivant"],
+
 
     //******* Online ******/
 
