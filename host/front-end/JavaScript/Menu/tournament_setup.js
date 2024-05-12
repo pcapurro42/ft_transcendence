@@ -74,7 +74,7 @@ async function start_tournament(names, i){
 		displayNextGame(game_nbr, nicknames)
 }
 
-async function tournamentGameStart(game_nbr, nicknames){
+async function tournamentGameStart(){
 	removeMenu();
 	let game_toolbar = document.getElementById('game_toolbar');
 	let game_page_tournament = document.getElementById('game_page_tournament');
@@ -182,7 +182,7 @@ async function displayNextGame(game_nbr, nicknames){
 		document.getElementById('submit_alias').removeAttribute('disabled');
 		return;
 	}
-	tournamentGameStart(game_nbr, nicknames)
+	tournamentGameStart()
 
 }
 
@@ -274,27 +274,33 @@ async function final(nicknames){
 	document.getElementById('Final8').style.visibility = 'hidden';
 	document.getElementById('Final4').style.visibility = 'hidden';
 
+	fillNicknames(nicknames);
+
 	let round_announce = document.getElementById('round_block')
 	round_announce.innerHTML = getTranslation('Final');
 	round_announce.style.transition = 'opacity 1s';
 	round_announce.style.opacity = '0';
 
 
-	let round = document.getElementById('Final');
-	round.style.transition = 'opacity 1s';
-	round.style.opacity = '0';
-	round.style.visibility = 'visible';
+	let	players = document.getElementById('nick_announce');
+	players.innerHTML = document.getElementById('1stGameNicks').innerHTML;
+	console.log(`test= ${document.getElementById('1stGameNicks').innerHTML}`);
+	players.style.transition = 'opacity 1s';
+	players.style.opacity = '0';
+	players.style.visibility = 'visible';
 
-	fillNicknames(nicknames);
 
 	await sleep(10);
 	round_announce.style.opacity = '1';
 	await sleep(1500);
-	round.style.opacity = '1';
+	players.style.opacity = '1';
+	console.log('hello from final end')
 	await sleep(4000);
 	round_announce.style.opacity = '0';
-	round.style.opacity = '0';
+	players.style.opacity = '0';
 	await sleep(1000);
+	tournamentGameStart();
+
 }
 
 function fillNicknames(nicknames){
