@@ -268,6 +268,11 @@ class Ball
             this.moveIncrease("x", "+");
             this.moveIncrease("y", "+");
         }
+    }
+
+    animate()
+    {
+        this.move();
 
         if (this.isOffLimit() == true)
             this.restartRound();
