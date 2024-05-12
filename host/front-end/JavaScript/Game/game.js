@@ -80,6 +80,20 @@ class Ball
         return (false);
     }
 
+    isAtPlayerLimits()
+    {
+        if (this.x >= this.game.left_player.x && this.x <= this.game.left_player.x + this.game.left_player.width)
+        {
+            if (this.y + this.height == this.game.left_player.y)
+                console.log("yes"); return (true);
+        }
+        if (this.x >= this.game.right_player.x && this.x <= this.game.right_player.x + this.game.right_player.width)
+        {
+            if (this.y + this.height == this.game.right_player.y)
+                console.log("yes"); return (true);
+        }
+    }
+
     isAtPlayer()
     {
         if (this.x == this.game.left_player.x + this.game.left_player.width)
@@ -260,7 +274,7 @@ class Ball
         {
             if (this.isUpOrDown() == true)
                 this.direction = this.getOpposite();
-            if (this.isAtPlayer() == true)
+            if (this.isAtPlayer() == true || this.isAtPlayerLimits() == true)
                 this.direction = this.getOpposite();
         }
     }
