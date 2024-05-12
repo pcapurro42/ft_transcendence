@@ -82,16 +82,16 @@ class Ball
 
     isAtPlayerLimits()
     {
-        if (this.x >= this.game.left_player.x && this.x <= this.game.left_player.x + this.game.left_player.width)
-        {
-            if (this.y + this.height == this.game.left_player.y)
-                console.log("yes"); return (true);
-        }
-        if (this.x >= this.game.right_player.x && this.x <= this.game.right_player.x + this.game.right_player.width)
-        {
-            if (this.y + this.height == this.game.right_player.y)
-                console.log("yes"); return (true);
-        }
+        // if (this.x >= this.game.left_player.x && this.x <= this.game.left_player.x + this.game.left_player.width)
+        // {
+        //     if (this.y + this.height == this.game.left_player.y)
+        //         console.log("yes"); return (true);
+        // }
+        // if (this.x >= this.game.right_player.x && this.x <= this.game.right_player.x + this.game.right_player.width)
+        // {
+        //     if (this.y + this.height == this.game.right_player.y)
+        //         console.log("yes"); return (true);
+        // }
         return (false);
     }
 
