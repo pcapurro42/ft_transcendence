@@ -87,7 +87,7 @@ class Ball
             if (this.y >= this.game.left_player.y && this.y <= this.game.left_player.y + this.game.left_player.height)
                 return (true);
         }
-        if (this.x == this.game.right_player.x)
+        if (this.x + this.width == this.game.right_player.x)
         {
             if (this.y >= this.game.right_player.y && this.y <= this.game.right_player.y + this.game.right_player.height)
                 return (true);
@@ -128,7 +128,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.isAtPlayer() == false && (this.x - 1 >= 0))
+                    if (this.x - 1 >= 0)
                         this.x = this.x - 1, this.moves++;
                 }
             }
@@ -136,7 +136,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.isAtPlayer() == false && (this.x + this.width + 1 <= this.game.infos.game_width))
+                    if (this.x + this.width + 1 <= this.game.infos.game_width)
                         this.x = this.x + 1, this.moves++;
                 }
             }
@@ -148,7 +148,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.isAtPlayer() == false && (this.y - 1 >= 0))
+                    if (this.y - 1 >= 0)
                         this.y = this.y - 1, this.moves++;
                 }
             }
@@ -156,7 +156,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.isAtPlayer() == false && (this.y + this.height + 1 <= this.game.infos.game_height))
+                    if (this.y + this.height + 1 <= this.game.infos.game_height)
                         this.y = this.y + 1, this.moves++;
                 }
             }
