@@ -92,6 +92,7 @@ class Ball
             if (this.y + this.height == this.game.right_player.y)
                 console.log("yes"); return (true);
         }
+        return (false);
     }
 
     isAtPlayer()
