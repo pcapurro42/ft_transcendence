@@ -73,7 +73,7 @@ class Ball
         return (false);
     }
 
-    isLeftOrRight()
+    isOffLimit()
     {
         if (this.x <= 0 || this.x + this.width >= this.game.infos.game_width)
             return (true);
@@ -244,8 +244,15 @@ class Ball
             this.moveIncrease("y", "+");
         }
 
-        if (this.isUpOrDown() == true || this.isLeftOrRight() == true || this.isAtPlayer() == true)
-            this.direction = this.getOpposite();
+        if (this.isOffLimit() == true)
+            this.restartRound();
+        else
+        {
+            if (this.isUpOrDown() == true)
+                this.direction = this.getOpposite();
+            if (this.isAtPlayer() == true)
+                this.direction = this.getOpposite();
+        }
     }
 }
 
