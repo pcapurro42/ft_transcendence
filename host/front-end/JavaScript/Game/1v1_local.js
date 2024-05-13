@@ -26,19 +26,25 @@ class Bar1v1
 
     moveUp()
     {
-        if (this.y > 0)
+        for (let i = 0; i != this.speed; i++)
         {
-            this.y = this.y - this.speed;
-            this.print();
+            if (this.y > 0)
+            {
+                this.y = this.y - 1;
+                this.print();
+            }
         }
     }
 
     moveDown()
     {
-        if (this.y + this.game.infos.bar_height < this.game.infos.game_height)
+        for (let i = 0; i != this.speed; i++)
         {
-            this.y = this.y + this.speed;
-            this.print();
+            if (this.y + this.game.infos.bar_height < this.game.infos.game_height)
+            {
+                this.y = this.y + 1;
+                this.print();
+            }
         }
     }
 
