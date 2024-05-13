@@ -191,7 +191,7 @@ class LocalGame1v1
 
     isOver()
     {
-        if (start == false)
+        if (active == false)
             return (true);
         if (this.game.scores[0] >= 9 || this.game.scores[1] >= 9)
         {
@@ -199,7 +199,7 @@ class LocalGame1v1
                 ;
             if (this.game.scores[1] >= 9)
                 ;
-            start = false;
+            active = false;
             return (true);
         }
         return (false);
@@ -226,7 +226,7 @@ function initializeLocal1v1()
         bar_height: 100,
         bar_width: 20,
 
-        ball_speed: 2,
+        ball_speed: 10,
         ball_height: 20,
         ball_width: 20,
 
@@ -269,26 +269,27 @@ function initializeLocal1v1()
     the_game.refreshBackground();
 
     game = the_game;
-    start = true;
+    active = true;
 }
 
 function displayLocal1v1()
 {
     let start_btn = document.getElementById('start_1v1_local');
-    start_btn.style.display = "none";
-    
+    start_btn.style.visibility = "hidden";
+
+    active = true;
     startLocal1v1();
 }
 
 function removeLocal1v1()
 {
     let start_btn = document.getElementById('start_1v1_local');
-    start_btn.style.display = "block";
+    start_btn.style.visibility = "visible";
 }
 
 function startLocal1v1()
 {
-    if (game.isOver() == true || start == false)
+    if (game.isOver() == true || active == false)
     {
         game.refreshBackground();
         game.reset();

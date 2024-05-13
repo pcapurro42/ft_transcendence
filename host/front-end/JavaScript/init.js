@@ -39,7 +39,7 @@ refreshLogin();
 let mode;
 let type;
 let game;
-let start;
+let active;
 
 //Tournament//
 
