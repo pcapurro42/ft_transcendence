@@ -27,7 +27,8 @@ function parse_alias(nbr, event){
 		}
 		else{
 			document.getElementById('duplicate_nick').style.display = 'none';
-			return alias_array;
+			startTournament(alias_array, nbr);
+			return;
 		}
 	}
 	return null;

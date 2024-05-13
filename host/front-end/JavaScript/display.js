@@ -62,11 +62,10 @@ function displayMenu()
     tournament_announcer.style.display = 'none';
 
     freeInputAndForms();
-    tournamentResetBlocks();
+    tournamentFullReset();
 
 
     stop_flag = true; // stop tournament
-    logo_bool = true; // no UI glitch on tournament first anim
 
     start = false; // turn off the game
 

@@ -42,7 +42,13 @@ let game;
 let start;
 
 //Tournament//
+
 let stop_flag = false;
+let nicknames;
+let winner_array;
+let game_nbr;
+let max_game;
+
 //<P2P>//
 
 let timeoutInterval;

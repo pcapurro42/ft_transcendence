@@ -108,26 +108,9 @@ function displayTournamentForm(value){
     let form_alias =  document.getElementById('form_alias');
     form_alias.style.display = 'block';
 
-    let elem = document.getElementById('form_block');
-
-    let parent = elem.parentNode;
-    let to_remove = document.querySelectorAll('#parent_form .remover');
-
-    console.log(to_remove[0].id);
-    for (let c = 1; c < to_remove.length; c++){
-        to_remove[c].remove();
-    }
-
-    for (i = 0; i < value - 1; i++){
-        let clone = elem.cloneNode(true);
-        clone.id = 'form_block' + i;
-        let childrens = clone.querySelectorAll('[id]');
-        for (let j = 0; j < childrens.length; j++)
-            childrens[j].id = childrens[j].id + i;
-        document.getElementById('parent_form').append(clone);
-    }
+    let i = formDuplicator(value);
     document.getElementById('submit_alias').onclick = function(event){
-            start_tournament(parse_alias(i, event), i + 1);
+        parse_alias(i, event)
     };
 
 }
