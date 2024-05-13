@@ -310,7 +310,7 @@ function displayCountDown(nb)
         timer.innerHTML = getTranslation("Go!")
     else if (nb == -1)
     {
-        timer.style.visibility = "hidden";
+        timer.style.display = "none";
         active = true;
         startLocal1v1();
         return ;
@@ -328,7 +328,7 @@ function displayLocal1v1()
     player_right_won.style.display = "none";
 
     let timer = document.getElementById('1v1_local_timer');
-    timer.style.visibility = "visible";
+    timer.style.display = "block";
     
     displayCountDown(3);
 }
@@ -336,8 +336,9 @@ function displayLocal1v1()
 function removeLocal1v1()
 {
     let timer = document.getElementById('1v1_local_timer');
-    timer.style.visibility = "hidden";
+    timer.style.display = "none";
 
+    let start_btn = document.getElementById('start_1v1_local');
     start_btn.innerHTML = getTranslation("Launch a game");
     start_btn.style.visibility = "visible";
 }
