@@ -18,6 +18,8 @@ let fr = [
     ["1 vs 1 (local)", "1 vs 1 (local)"],
     ["1 vs 2 (local)", "1 vs 2 (local)"],
 
+    ["Go!", "Partez !"],
+
     ["Create a game", "Créer une partie"],
     ["Join a game", "Rejoindre une partie"],
     ["Copy", "Copier"],

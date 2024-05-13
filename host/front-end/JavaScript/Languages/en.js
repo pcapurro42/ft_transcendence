@@ -19,6 +19,8 @@ let en = [
     ["1 vs 1 (local)", "1 vs 1 (local)"],
     ["1 vs 2 (local)", "1 vs 2 (local)"],
 
+    ["Go!", "Go!"],
+
     ["Create a game", "Create a game"],
     ["Join a game", "Join a game"],
     ["Copy", "Copy"],
