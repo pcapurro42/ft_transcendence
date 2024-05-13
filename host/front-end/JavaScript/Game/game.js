@@ -82,10 +82,6 @@ class Ball
             if (this.y >= this.game.right_player.y && this.y <= this.game.right_player.y + this.game.right_player.height)
                 return (true);
         }
-
-        if (this.isAboveUnderPlayer() == true)
-            return (true);
-
         return (false);
     }
 
@@ -273,7 +269,7 @@ class Ball
 
     animate()
     {
-        if (this.isUpOrDown() == true || this.isAtPlayer() == true)
+        if (this.isUpOrDown() == true || this.isAtPlayer() == true || this.isAboveUnderPlayer() == true)
             this.direction = this.getOpposite();
         else if (this.isOffLimit() == true)
             this.restartRound();
