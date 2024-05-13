@@ -298,19 +298,19 @@ function initializeLocal1v1()
 
 function displayCountDown(nb)
 {
-    let start_btn = document.getElementById('start_1v1_local');
+    let timer = document.getElementById('1v1_local_timer');
 
     if (nb == 3)
-        start_btn.innerHTML = "3";
+        timer.innerHTML = "3";
     else if (nb == 2)
-        start_btn.innerHTML = "2";
+        timer.innerHTML = "2";
     else if (nb == 1)
-        start_btn.innerHTML = "1";
+        timer.innerHTML = "1";
     else if (nb == 0)
-        start_btn.innerHTML = getTranslation("Go!")
+        timer.innerHTML = getTranslation("Go!")
     else if (nb == -1)
     {
-        start_btn.style.visibility = "hidden";
+        timer.style.visibility = "hidden";
         active = true;
         startLocal1v1();
         return ;
@@ -321,26 +321,22 @@ function displayCountDown(nb)
 function displayLocal1v1()
 {
     let start_btn = document.getElementById('start_1v1_local');
-
+    start_btn.style.visibility = "hidden";
     let player_left_won = document.getElementById('left_player_won_text');
     player_left_won.style.display = "none";
     let player_right_won = document.getElementById('right_player_won_text');
     player_right_won.style.display = "none";
 
-    start_btn.classList.add("disabled");
-    start_btn.classList.remove("border");
-    start_btn.classList.remove("border-5");
+    let timer = document.getElementById('1v1_local_timer');
+    timer.style.visibility = "visible";
     
     displayCountDown(3);
 }
 
 function removeLocal1v1()
 {
-    let start_btn = document.getElementById('start_1v1_local');
-    
-    start_btn.classList.remove("disabled");
-    start_btn.classList.add("border");
-    start_btn.classList.add("border-5");
+    let timer = document.getElementById('1v1_local_timer');
+    timer.style.visibility = "hidden";
 
     start_btn.innerHTML = getTranslation("Launch a game");
     start_btn.style.visibility = "visible";
