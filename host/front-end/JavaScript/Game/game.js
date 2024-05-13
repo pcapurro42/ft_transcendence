@@ -49,26 +49,6 @@ class Ball
         this.game.infos.display.fillRect(this.x, this.y, this.width, this.height);
     }
 
-    isAboveUnderPlayer()
-    {
-        if (this.x <= this.game.left_player.x + this.game.left_player.width)
-        {
-            if (this.y == this.game.left_player.y + this.game.left_player.height)
-                return (true);
-            if (this.y + this.height == this.game.left_player.y)
-                return (true);
-        }
-
-        if (this.x + this.width >= this.game.right_player.x)
-        {
-            if (this.y == this.game.right_player.y + this.game.right_player.height)
-                return (true);
-            if (this.y + this.height == this.game.right_player.y)
-                return (true);
-        }
-        return (false);
-    }
-
     isAtPlayer()
     {
         if (this.x == this.game.left_player.x + this.game.left_player.width)
@@ -113,7 +93,7 @@ class Ball
 
     getOpposite()
     {
-        if (this.isUpOrDown() == true || this.isAboveUnderPlayer() == true)
+        if (this.isUpOrDown() == true)
             return (this.direction * (-1));
         else
         {
@@ -269,7 +249,7 @@ class Ball
 
     animate()
     {
-        if (this.isUpOrDown() == true || this.isAtPlayer() == true || this.isAboveUnderPlayer() == true)
+        if (this.isUpOrDown() == true || this.isAtPlayer() == true)
             this.direction = this.getOpposite();
         else if (this.isOffLimit() == true)
             this.restartRound();
