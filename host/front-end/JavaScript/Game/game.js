@@ -10,33 +10,16 @@ function generateNumber(limit)
 
 function getRandomBallDirection()
 {
-    value = generateNumber(12);
+    value = generateNumber(4);
 
     if (value == 1)
-        return (30);
-    else if (value == 2)
         return (45);
-    else if (value == 3)
-        return (60);
-    else if (value == 4)
-        return (120);
-    else if (value == 5)
+    else if (value == 2)
         return (135);
-    else if (value == 6)
-        return (150);
-
-    if (value == 7)
-        return (-30);
-    else if (value == 8)
+    else if (value == 3)
         return (-45);
-    else if (value == 9)
-        return (-60);
-    else if (value == 10)
-        return (-120);
-    else if (value == 11)
+    else if (value == 4)
         return (-135);
-    else if (value == 12)
-        return (-150);
 }
 
 // < OBJECT > //
@@ -64,6 +47,23 @@ class Ball
     print()
     {
         this.game.infos.display.fillRect(this.x, this.y, this.width, this.height);
+    }
+
+    isAtPlayer(x, y)
+    {
+        if (this.x == this.game.left_player.x + this.game.left_player.width)
+        {
+            if (this.y >= this.game.left_player.y && this.y <= this.game.left_player.y + this.game.left_player.height)
+                return (true);
+        }
+
+        if (this.x + this.width == this.game.right_player.x)
+        {
+            if (this.y >= this.game.right_player.y && this.y <= this.game.right_player.y + this.game.right_player.height)
+                return (true);
+        }
+
+        return (false);
     }
 
     isUpOrDown()
@@ -113,7 +113,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.x - 1 >= 0)
+                    if (this.x - 1 >= 0 && this.isAtPlayer() == false)
                         this.x = this.x - 1, this.moves++;
                 }
             }
@@ -121,7 +121,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.x + this.width + 1 <= this.game.infos.game_width)
+                    if (this.x + this.width + 1 <= this.game.infos.game_width && this.isAtPlayer() == false)
                         this.x = this.x + 1, this.moves++;
                 }
             }
@@ -133,7 +133,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.y - 1 >= 0)
+                    if (this.y - 1 >= 0 && this.isAtPlayer() == false)
                         this.y = this.y - 1, this.moves++;
                 }
             }
@@ -141,7 +141,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.y + this.height + 1 <= this.game.infos.game_height)
+                    if (this.y + this.height + 1 <= this.game.infos.game_height && this.isAtPlayer() == false)
                         this.y = this.y + 1, this.moves++;
                 }
             }
@@ -242,12 +242,12 @@ class Ball
 
     animate()
     {
-        this.move();
-
         if (this.isUpOrDown() == true)
             this.direction = this.getOpposite();
         else if (this.isOffLimit() == true)
             this.restartRound();
+
+        this.move();
     }
 }
 
