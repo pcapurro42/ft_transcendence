@@ -142,9 +142,30 @@ class LocalGame1v1
 
     refreshBackground()
     {
-        this.game.infos.display.fillStyle = this.game.infos.background_color;
-        this.game.infos.display.fillRect(0, 0, this.game.infos.game_width, this.game.infos.game_height);
-        this.game.infos.display.fillStyle = this.game.infos.menu_color;
+        if (game_map == "none")
+        {
+            this.game.infos.display.fillStyle = this.game.infos.background_color;
+            this.game.infos.display.fillRect(0, 0, this.game.infos.game_width, this.game.infos.game_height);
+            this.game.infos.display.fillStyle = this.game.infos.menu_color;
+        }
+        else if (game_map == "1")
+        {
+            let img = new Image();
+            img.src = 'Materials/images/game_back1.png';
+            this.game.infos.display.drawImage(img, 0, 0);
+        }
+        else if (game_map == "2")
+        {
+            let img = new Image();
+            img.src = 'Materials/images/game_back2.png';
+            this.game.infos.display.drawImage(img, 0, 0);
+        }
+        else if (game_map == "3")
+        {
+            let img = new Image();
+            img.src = 'Materials/images/game_back3.png';
+            this.game.infos.display.drawImage(img, 0, 0);
+        }
     }
 
     refreshCenterBar()
