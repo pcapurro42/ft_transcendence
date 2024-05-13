@@ -28,7 +28,7 @@ class Bar1v1
     {
         if (this.x < this.game.infos.game_width / 2)
         {
-            if (this.game.ball.x == this.x + this.width)
+            if (this.game.ball.x <= this.x + this.width)
             {
                 if (this.game.ball.y >= this.y && this.game.ball.y <= this.y + this.height)
                     return (true);
@@ -37,7 +37,7 @@ class Bar1v1
 
         if (this.x > this.game.infos.game_width / 2)
         {
-            if (this.game.ball.x + this.game.ball.width == this.x)
+            if (this.game.ball.x + this.game.ball.width >= this.x)
             {
                 if (this.game.ball.y >= this.y && this.game.ball.y <= this.y + this.height)
                     return (true);
