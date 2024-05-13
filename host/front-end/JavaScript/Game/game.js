@@ -98,6 +98,8 @@ class Ball
                 {
                     if (this.x - 1 >= 0)
                         this.x = this.x - 1, this.moves++;
+                    if (this.game.left_player.isAtTheBall() == true || this.game.right_player.isAtTheBall() == true)
+                        return ;
                 }
             }
             else
@@ -106,6 +108,8 @@ class Ball
                 {
                     if (this.x + this.width + 1 <= this.game.infos.game_width)
                         this.x = this.x + 1, this.moves++;
+                    if (this.game.left_player.isAtTheBall() == true || this.game.right_player.isAtTheBall() == true)
+                        return ;
                 }
             }
         }
@@ -118,6 +122,8 @@ class Ball
                 {
                     if (this.y - 1 >= 0)
                         this.y = this.y - 1, this.moves++;
+                    if (this.game.left_player.isAtTheBall() == true || this.game.right_player.isAtTheBall() == true)
+                        return ;
                 }
             }
             else
@@ -126,6 +132,8 @@ class Ball
                 {
                     if (this.y + this.height + 1 <= this.game.infos.game_height)
                         this.y = this.y + 1, this.moves++;
+                    if (this.game.left_player.isAtTheBall() == true || this.game.right_player.isAtTheBall() == true)
+                        return ;
                 }
             }
         }

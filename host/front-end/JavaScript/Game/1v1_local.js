@@ -24,11 +24,11 @@ class Bar1v1
         this.game.infos.display.fillRect(this.x, this.y, this.width, this.height);
     }
 
-    isCloseToTheBall()
+    isAtTheBall()
     {
         if (this.x < this.game.infos.game_width / 2)
         {
-            if (this.game.ball.x <= this.x + this.width)
+            if (this.game.ball.x == this.x + this.width)
             {
                 if (this.game.ball.y >= this.y && this.game.ball.y <= this.y + this.height)
                     return (true);
@@ -37,7 +37,7 @@ class Bar1v1
 
         if (this.x > this.game.infos.game_width / 2)
         {
-            if (this.game.ball.x + this.game.ball.width >= this.x)
+            if (this.game.ball.x + this.game.ball.width == this.x)
             {
                 if (this.game.ball.y >= this.y && this.game.ball.y <= this.y + this.height)
                     return (true);
@@ -204,7 +204,7 @@ class LocalGame1v1
 
     refreshBall()
     {
-        if (this.game.left_player.isCloseToTheBall() == true || this.game.right_player.isCloseToTheBall())
+        if (this.game.left_player.isAtTheBall() == true || this.game.right_player.isAtTheBall() == true)
             this.game.ball.direction = this.game.ball.getOpposite();
 
         this.game.ball.print();
