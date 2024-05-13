@@ -75,7 +75,7 @@ class Ball
 
     isOffLimit()
     {
-        if (this.x <= 0 || this.x + this.width >= this.game.infos.game_width)
+        if (this.x + this.width <= 0 || this.x >= this.game.infos.game_width)
             return (true);
         return (false);
     }
