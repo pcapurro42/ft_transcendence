@@ -80,36 +80,6 @@ class Ball
         return (false);
     }
 
-    isAtPlayerLimits()
-    {
-        // if (this.x >= this.game.left_player.x && this.x <= this.game.left_player.x + this.game.left_player.width)
-        // {
-        //     if (this.y + this.height == this.game.left_player.y)
-        //         console.log("yes"); return (true);
-        // }
-        // if (this.x >= this.game.right_player.x && this.x <= this.game.right_player.x + this.game.right_player.width)
-        // {
-        //     if (this.y + this.height == this.game.right_player.y)
-        //         console.log("yes"); return (true);
-        // }
-        return (false);
-    }
-
-    isAtPlayer()
-    {
-        if (this.x == this.game.left_player.x + this.game.left_player.width)
-        {
-            if (this.y >= this.game.left_player.y && this.y <= this.game.left_player.y + this.game.left_player.height)
-                return (true);
-        }
-        if (this.x + this.width == this.game.right_player.x)
-        {
-            if (this.y >= this.game.right_player.y && this.y <= this.game.right_player.y + this.game.right_player.height)
-                return (true);
-        }
-        return (false);
-    }
-
     restartRound()
     {
         if (this.x >= this.game.infos.game_width / 2)
@@ -274,15 +244,10 @@ class Ball
     {
         this.move();
 
-        if (this.isOffLimit() == true)
+        if (this.isUpOrDown() == true)
+            this.direction = this.getOpposite();
+        else if (this.isOffLimit() == true)
             this.restartRound();
-        else
-        {
-            if (this.isUpOrDown() == true)
-                this.direction = this.getOpposite();
-            if (this.isAtPlayer() == true || this.isAtPlayerLimits() == true)
-                this.direction = this.getOpposite();
-        }
     }
 }
 

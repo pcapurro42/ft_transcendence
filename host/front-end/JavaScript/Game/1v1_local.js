@@ -24,6 +24,29 @@ class Bar1v1
         this.game.infos.display.fillRect(this.x, this.y, this.width, this.height);
     }
 
+    isCloseToTheBall()
+    {
+        if (this.x < this.game.infos.game_width / 2)
+        {
+            if (this.game.ball.x <= this.x + this.width)
+            {
+                if (this.game.ball.y >= this.y && this.game.ball.y <= this.y + this.height)
+                    return (true);
+            }
+        }
+
+        if (this.x > this.game.infos.game_width / 2)
+        {
+            if (this.game.ball.x + this.game.ball.width >= this.x)
+            {
+                if (this.game.ball.y >= this.y && this.game.ball.y <= this.y + this.height)
+                    return (true);
+            }
+        }
+
+        return (false);
+    }
+
     moveUp()
     {
         if (this.y > 0)
@@ -75,7 +98,7 @@ class LocalGame1v1
 
             object_width: this.game.infos.bar_width,
             object_heigth : this.game.infos.bar_height,
-    
+
             map_x: 0 + this.game.infos.bar_width,
             map_y: ((this.game.infos.game_height / 2) - this.game.infos.bar_height / 2),
     
@@ -181,6 +204,12 @@ class LocalGame1v1
 
     refreshBall()
     {
+        if (this.game.left_player.isCloseToTheBall() == true || this.game.right_player.isCloseToTheBall())
+        {
+            console.log("yes");
+            this.game.ball.direction = this.game.ball.getOpposite();
+        }
+
         this.game.ball.print();
         this.game.ball.animate();
         this.game.ball.print();
@@ -223,7 +252,7 @@ function initializeLocal1v1()
         bar_height: 100,
         bar_width: 20,
 
-        ball_speed: 4,
+        ball_speed: 3,
         ball_height: 20,
         ball_width: 20,
 
