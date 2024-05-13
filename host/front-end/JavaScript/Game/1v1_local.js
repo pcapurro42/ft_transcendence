@@ -24,29 +24,6 @@ class Bar1v1
         this.game.infos.display.fillRect(this.x, this.y, this.width, this.height);
     }
 
-    isAtTheBall()
-    {
-        if (this.x < this.game.infos.game_width / 2)
-        {
-            if (this.game.ball.x == this.x + this.width)
-            {
-                if (this.game.ball.y >= this.y && this.game.ball.y <= this.y + this.height)
-                    return (true);
-            }
-        }
-
-        if (this.x > this.game.infos.game_width / 2)
-        {
-            if (this.game.ball.x + this.game.ball.width == this.x)
-            {
-                if (this.game.ball.y >= this.y && this.game.ball.y <= this.y + this.height)
-                    return (true);
-            }
-        }
-
-        return (false);
-    }
-
     moveUp()
     {
         if (this.y > 0)
@@ -204,7 +181,7 @@ class LocalGame1v1
 
     refreshBall()
     {
-        if (this.game.left_player.isAtTheBall() == true || this.game.right_player.isAtTheBall() == true)
+        if (this.game.ball.isAtPlayer() == true)
             this.game.ball.direction = this.game.ball.getOpposite();
 
         this.game.ball.print();
@@ -249,7 +226,7 @@ function initializeLocal1v1()
         bar_height: 100,
         bar_width: 20,
 
-        ball_speed: 8,
+        ball_speed: 2,
         ball_height: 20,
         ball_width: 20,
 

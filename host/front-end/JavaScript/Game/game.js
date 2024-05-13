@@ -49,10 +49,24 @@ class Ball
         this.game.infos.display.fillRect(this.x, this.y, this.width, this.height);
     }
 
+    isAboveUnderPlayer()
+    {
+        return (false);
+    }
+
     isAtPlayer()
     {
-        if (this.game.left_player.isAtTheBall() == true || this.game.right_player.isAtTheBall() == true)
-            return (true);
+        if (this.x == this.game.left_player.x + this.game.left_player.width)
+        {
+            if (this.y >= this.game.left_player.y && this.y <= this.game.left_player.y + this.game.left_player.height)
+                return (true);
+        }
+
+        if (this.x + this.width == this.game.right_player.x)
+        {
+            if (this.y >= this.game.right_player.y && this.y <= this.game.right_player.y + this.game.right_player.height)
+                return (true);
+        }
         return (false);
     }
 
@@ -84,7 +98,7 @@ class Ball
 
     getOpposite()
     {
-        if (this.isUpOrDown() == true)
+        if (this.isUpOrDown() == true || this.isAboveUnderPlayer() == true)
             return (this.direction * (-1));
         else
         {
