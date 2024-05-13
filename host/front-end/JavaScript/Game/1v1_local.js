@@ -205,10 +205,7 @@ class LocalGame1v1
     refreshBall()
     {
         if (this.game.left_player.isCloseToTheBall() == true || this.game.right_player.isCloseToTheBall())
-        {
-            console.log("yes");
             this.game.ball.direction = this.game.ball.getOpposite();
-        }
 
         this.game.ball.print();
         this.game.ball.animate();
@@ -252,7 +249,7 @@ function initializeLocal1v1()
         bar_height: 100,
         bar_width: 20,
 
-        ball_speed: 3,
+        ball_speed: 10,
         ball_height: 20,
         ball_width: 20,
 
