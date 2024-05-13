@@ -51,7 +51,7 @@ class Ball
 
     isAboveUnderPlayer()
     {
-        if (this.x == this.game.left_player.x + this.game.left_player.width)
+        if (this.x <= this.game.left_player.x + this.game.left_player.width)
         {
             if (this.y == this.game.left_player.y + this.game.left_player.height)
                 return (true);
@@ -59,7 +59,7 @@ class Ball
                 return (true);
         }
 
-        if (this.x + this.width == this.game.right_player.x)
+        if (this.x + this.width >= this.game.right_player.x)
         {
             if (this.y == this.game.right_player.y + this.game.right_player.height)
                 return (true);
@@ -82,6 +82,10 @@ class Ball
             if (this.y >= this.game.right_player.y && this.y <= this.game.right_player.y + this.game.right_player.height)
                 return (true);
         }
+
+        if (this.isAboveUnderPlayer() == true)
+            return (true);
+
         return (false);
     }
 
