@@ -281,6 +281,7 @@ window.addEventListener('keydown', (event) =>
             else if (event.key == 'ArrowDown')
                 keys.ArrowDown = true;
         }
+        event.preventDefault();
     }
 });
 
