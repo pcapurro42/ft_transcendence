@@ -273,7 +273,7 @@ class Ball
 
     animate()
     {
-        if (this.isUpOrDown() == true)
+        if (this.isUpOrDown() == true || this.isAtPlayer() == true)
             this.direction = this.getOpposite();
         else if (this.isOffLimit() == true)
             this.restartRound();

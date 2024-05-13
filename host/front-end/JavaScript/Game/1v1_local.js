@@ -181,9 +181,6 @@ class LocalGame1v1
 
     refreshBall()
     {
-        if (this.game.ball.isAtPlayer() == true)
-            this.game.ball.direction = this.game.ball.getOpposite();
-
         this.game.ball.print();
         this.game.ball.animate();
         this.game.ball.print();
