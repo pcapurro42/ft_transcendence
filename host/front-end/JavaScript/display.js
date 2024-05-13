@@ -57,17 +57,15 @@ function displayMenu()
     let tournament_alias = document.getElementById('tournament_nickname_menu')
     tournament_alias.style.display = 'none';
 
-
     let tournament_announcer = document.getElementById('tournament_announcer');
     tournament_announcer.style.display = 'none';
 
     freeInputAndForms();
     tournamentFullReset();
 
-
     stop_flag = true; // stop tournament
 
-    start = false; // turn off the game
+    active = false; // turn off the game
 
     let main_menu_page = document.getElementById('main_menu_page');
     main_menu_page.style.display = "block";

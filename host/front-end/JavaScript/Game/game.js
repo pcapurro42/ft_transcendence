@@ -110,7 +110,7 @@ class Ball
             return (this.direction * (-1));
         else
         {
-            this.getExtra();
+            // this.getExtra();
 
             if ((this.direction >= 30 && this.direction <= 90) || (this.direction >= -150 && this.direction <= -120))
                 return (this.direction + 90);
@@ -269,7 +269,7 @@ class Ball
         else if (this.isOffLimit() == true)
             this.restartRound();
 
-        console.log(this.direction)
+        // console.log(this.direction);
 
         this.move();
     }
