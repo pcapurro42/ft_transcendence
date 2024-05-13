@@ -94,14 +94,14 @@ class Ball
     getExtra()
     {
         if ((this.y + this.height / 2) < this.game.right_player.y + (this.game.right_player.y / 3))
-            this.direction = this.direction - 15;
+            this.direction = this.direction + 15;
         if (this.y > this.game.right_player.y + (this.game.right_player.y / 3 * 2))
             this.direction = this.direction + 15;
 
-        if ((this.y + this.height / 2) < this.game.left_player.y + (this.game.left_player.y / 3))
-            this.direction = this.direction - 15;
-        if (this.y > this.game.left_player.y + (this.game.left_player.y / 3 * 2))
-            this.direction = this.direction + 15;
+        // if ((this.y + this.height / 2) < this.game.left_player.y + (this.game.left_player.y / 3))
+        //     this.direction = this.direction - 15;
+        // if (this.y > this.game.left_player.y + (this.game.left_player.y / 3 * 2))
+        //     this.direction = this.direction + 15;
     }
 
     getOpposite()
@@ -110,7 +110,7 @@ class Ball
             return (this.direction * (-1));
         else
         {
-            // this.getExtra();
+            this.getExtra();
 
             if ((this.direction >= 30 && this.direction <= 90) || (this.direction >= -150 && this.direction <= -120))
                 return (this.direction + 90);
