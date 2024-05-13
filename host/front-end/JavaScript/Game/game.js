@@ -46,7 +46,7 @@ class Ball
 
     print()
     {
-        this.game.infos.display.fillRect(this.x, this.y, this.width, this.height);
+        this.game.display.fillRect(this.x, this.y, this.width, this.height);
     }
 
     isAtPlayer()
@@ -67,28 +67,28 @@ class Ball
 
     isUpOrDown()
     {
-        if (this.y <= 0 || this.y + this.height >= this.game.infos.game_height)
+        if (this.y <= 0 || this.y + this.height >= this.game.game_height)
             return (true);
         return (false);
     }
 
     isOffLimit()
     {
-        if (this.x <= 0 || this.x + this.width >= this.game.infos.game_width)
+        if (this.x <= 0 || this.x + this.width >= this.game.game_width)
             return (true);
         return (false);
     }
 
     restartRound()
     {
-        if (this.x >= this.game.infos.game_width / 2)
+        if (this.x >= this.game.game_width / 2)
             this.game.scores[0]++;
         else
             this.game.scores[1]++;
 
-        this.x = this.game.infos.game_width / 2 - (this.game.infos.ball_width / 2);
-        this.y = this.game.infos.game_height / 2 - (this.game.infos.ball_width / 2);
-        this.direction = getRandomBallDirection(12);
+        this.x = this.game.game_width / 2 - (this.game.ball_width / 2);
+        this.y = this.game.game_height / 2 - (this.game.ball_width / 2);
+        this.direction = getRandomBallDirection();
     }
 
     getOpposite()
@@ -122,7 +122,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.x + this.width + 1 <= this.game.infos.game_width)
+                    if (this.x + this.width + 1 <= this.game.game_width)
                         this.x = this.x + 1, this.moves++;
                     if (this.isAtPlayer() == true)
                         return ;
@@ -146,7 +146,7 @@ class Ball
             {
                 for (let i = 0; i != this.speed; i++)
                 {
-                    if (this.y + this.height + 1 <= this.game.infos.game_height)
+                    if (this.y + this.height + 1 <= this.game.game_height)
                         this.y = this.y + 1, this.moves++;
                     if (this.isAtPlayer() == true)
                         return ;
