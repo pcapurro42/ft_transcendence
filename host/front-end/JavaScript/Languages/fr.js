@@ -20,8 +20,9 @@ let fr = [
     ["Join a game", "Rejoindre une partie"],
     ["Copy", "Copier"],
 
-    ["Start the game", "Lancer la partie"],
-
+    ["Launch a game", "Lancer une partie"],
+    ["Left player won the game.", "Le joueur de gauche a gagné la partie."],
+    ["Right player won the game.", "Le joueur de droite a gagné la partie."],
 
     ["Create Lobby", "Créer un salon"],
     ["Join Lobby", "Rejoindre un salon"],

@@ -175,5 +175,10 @@ function displayOneVsOneGameLocal()
     one_vs_one_local_page = document.getElementById('one_vs_one_local_page');
     one_vs_one_local_page.style.display = "block";
 
+    let player_left_won = document.getElementById('left_player_won_text');
+    player_left_won.style.display = "none";
+    let player_right_won = document.getElementById('right_player_won_text');
+    player_right_won.style.display = "none";
+
     initializeLocal1v1();
 }

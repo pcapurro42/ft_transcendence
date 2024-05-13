@@ -196,12 +196,18 @@ class LocalGame1v1
     {
         if (active == false)
             return (true);
-        if (this.game.scores[0] >= 9 || this.game.scores[1] >= 9)
+        if (this.game.scores[0] > 9 || this.game.scores[1] > 9)
         {
-            if (this.game.scores[0] >= 9)
-                ;
-            if (this.game.scores[1] >= 9)
-                ;
+            if (this.game.scores[0] > 9)
+            {
+                let player_left_won = document.getElementById('left_player_won_text');
+                player_left_won.style.display = "block";
+            }
+            if (this.game.scores[1] > 9)
+            {
+                let player_right_won = document.getElementById('right_player_won_text');
+                player_right_won.style.display = "block";
+            }
             active = false;
             return (true);
         }
@@ -229,7 +235,7 @@ function initializeLocal1v1()
         bar_height: 80,
         bar_width: 10,
 
-        ball_speed: 2,
+        ball_speed: 7,
         ball_height: 20,
         ball_width: 20,
 
@@ -279,6 +285,11 @@ function displayLocal1v1()
 {
     let start_btn = document.getElementById('start_1v1_local');
     start_btn.style.visibility = "hidden";
+
+    let player_left_won = document.getElementById('left_player_won_text');
+    player_left_won.style.display = "none";
+    let player_right_won = document.getElementById('right_player_won_text');
+    player_right_won.style.display = "none";
 
     active = true;
     startLocal1v1();

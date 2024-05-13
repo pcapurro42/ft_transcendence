@@ -23,7 +23,9 @@ let en = [
     ["Join a game", "Join a game"],
     ["Copy", "Copy"],
 
-    ["Start the game", "Start the game"],
+    ["Launch a game", "Launch a game"],
+    ["Left player won the game.", "Left player won the game."],
+    ["Right player won the game.", "Right player won the game."],
 
     ["Create Lobby", "Create Lobby"],
     ["Join Lobby", "Join Lobby"],
