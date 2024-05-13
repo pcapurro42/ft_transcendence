@@ -156,93 +156,66 @@ class Ball
     }
 
     move()
-    {        
-        // Nord-Est
-        if (this.direction == 30)
+    {
+        if (this.direction > 0)
         {
-            if (this.moves % 2 == 0)
+            if (this.direction == 30)
+            {
+                if (this.moves % 2 == 0)
+                    this.moveIncrease("x", "+");
                 this.moveIncrease("x", "+");
-            this.moveIncrease("x", "+");
-            this.moveIncrease("y", "-");
-        }
-        
-        if (this.direction == 60)
-        {
-            if (this.moves % 2 == 0)
+            }
+            if (this.direction == 45)
                 this.moveIncrease("x", "+");
-            this.moveIncrease("y", "-");
-        }
-
-        if (this.direction == 45)
-        {
-            this.moveIncrease("x", "+");
-            this.moveIncrease("y", "-");
-        }
-
-        // Nord-Ouest
-        if (this.direction == 120)
-        {
-            if (this.moves % 2 == 0)
+            if (this.direction == 60)
+            {
+                if (this.moves % 2 == 0)
+                    this.moveIncrease("x", "+");
+            }
+            if (this.direction == 120)
+            {
+                if (this.moves % 2 == 0)
+                    this.moveIncrease("x", "-");
+            }
+            if (this.direction == 135)
                 this.moveIncrease("x", "-");
+            if (this.direction == 150)
+            {
+                if (this.moves % 2 == 0)
+                    this.moveIncrease("x", "-");
+                this.moveIncrease("x", "-");
+            }
             this.moveIncrease("y", "-");
         }
-
-        if (this.direction == 135)
+        else
         {
-            this.moveIncrease("x", "-");
-            this.moveIncrease("y", "-");
-        }
-
-        if (this.direction == 150)
-        {
-            if (this.moves % 2 == 0)
+            if (this.direction == -120)
+            {
+                if (this.moves % 2 == 0)
+                    this.moveIncrease("x", "-");
+            }
+            if (this.direction == -135)
                 this.moveIncrease("x", "-");
-            this.moveIncrease("x", "-");
-            this.moveIncrease("y", "-");
-        }
-
-        // Sud-Ouest
-        if (this.direction == -120)
-        {
-            if (this.moves % 2 == 0)
+            if (this.direction == -150)
+            {
+                if (this.moves % 2 == 0)
+                    this.moveIncrease("x", "-");
                 this.moveIncrease("x", "-");
-            this.moveIncrease("y", "+");
-        }
+            }
 
-        if (this.direction == -135)
-        {
-            this.moveIncrease("x", "-");
-            this.moveIncrease("y", "+");
-        }
-
-        if (this.direction == -150)
-        {
-            if (this.moves % 2 == 0)
-                this.moveIncrease("x", "-");
-            this.moveIncrease("x", "-");
-            this.moveIncrease("y", "+");
-        }
-
-        // Sud-Est
-        if (this.direction == -30)
-        {
-            if (this.moves % 2 == 0)
+            if (this.direction == -30)
+            {
+                if (this.moves % 2 == 0)
+                    this.moveIncrease("x", "+");
+            }
+            if (this.direction == -45)
                 this.moveIncrease("x", "+");
-            this.moveIncrease("y", "+");
-        }
-
-        if (this.direction == -45)
-        {
-            this.moveIncrease("x", "+");
-            this.moveIncrease("y", "+");
-        }
-
-        if (this.direction == -60)
-        {
-            if (this.moves % 2 == 0)
+            if (this.direction == -60)
+            {
+                if (this.moves % 2 == 0)
+                    this.moveIncrease("x", "+");
                 this.moveIncrease("x", "+");
-            
-            this.moveIncrease("x", "+");
+            }
             this.moveIncrease("y", "+");
         }
     }
