@@ -11,6 +11,8 @@ let fr = [
     ["Customize", "Personnaliser"],
     ["Settings", "Options"],
     ["Credits", "Crédits"],
+    ["Stats", "Statistiques"],
+    ["History", "Historique"],
 
     ["1 vs 1 (online)", "1 vs 1 (en ligne)"],
     ["1 vs 1 (local)", "1 vs 1 (local)"],
