@@ -252,6 +252,9 @@ window.addEventListener('keydown', (event) =>
 {
     if (mode != null)
     {
+        if (event.key == 'ArrowUp' || event.key == 'ArrowDown')
+            event.preventDefault();
+
         if (mode == "local1v1")
         {
             if (event.key == 'ArrowUp')
@@ -281,7 +284,6 @@ window.addEventListener('keydown', (event) =>
             else if (event.key == 'ArrowDown')
                 keys.ArrowDown = true;
         }
-        event.preventDefault();
     }
 });
 

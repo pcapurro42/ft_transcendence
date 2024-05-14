@@ -24,12 +24,22 @@ class Bar1v1
         this.game.display.fillRect(this.x, this.y, this.width, this.height);
     }
 
+    isAtBall()
+    {
+        if (this.y == this.game.ball.y + this.game.ball.height)
+            return (true);
+        return (false);
+    }
+
     moveUp()
     {
         for (let i = 0; i != this.speed; i++)
         {
             if (this.y > 0)
             {
+                if (this.isAtBall() == true)
+                    this.game.ball.move(), this.game.ball.move();
+                
                 this.y = this.y - 1;
                 this.print();
             }
