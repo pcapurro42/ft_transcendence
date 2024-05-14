@@ -97,8 +97,8 @@
                 <canvas id="one_vs_one_local_game" class="col-10 border border-5 w-100"></canvas>
                 <br><br><br>
                 <div>
-                    <h1 id="left_player_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h2>
-                    <h1 id="right_player_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Right player won the game."></h1>
+                <h1 id="left_player_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h2>
+                <h1 id="right_player_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Right player won the game."></h1>
                     <h1 id="1v1_local_timer" class="text" data-tsnormal="50px" data-tslarge="70px"></h1>
                 </div>
                 <br>
@@ -378,19 +378,18 @@
                         </div>
 
                         <br>
-
-                        <div>
                             <button id="game_map_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Game map" data-title="Game map" title=""></button><br>
-                            <select id="game_map_btn_selector" class="form-select form-select-lg mx-auto">
+                        <div class="position-relative d-flex align-items-start">
+                            <select id="game_map_btn_selector" class="d-flex form-select form-select-lg mx-auto">
                                 <option class="btn-simple" value="none" data-oname="– None –" data-title="None" title=""></option>
                                 <option class="btn-simple" value="1" title="1">1</option>
                                 <option class="btn-simple" value="2" title="2">2</option>
                                 <option class="btn-simple" value="3" title="3">3</option>
                                 <!-- ... -->
                             </select>
+                             <span id="map_tooltip" class="position-absolute start-50 d-none text"><img id="img_tooltip" src=""></span>
 
                         </div>
-
                         <br>
 
                         <div class="d-flex justify-content-center">
