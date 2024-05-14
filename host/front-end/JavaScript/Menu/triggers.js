@@ -104,7 +104,7 @@ document.getElementById('game_map_btn_selector').onmouseover = function(){
 				img.src = "./Materials/images/tooltip_yellow_map.png";
 				break;
 			case '3':
-				img.src = "./Materials/images/tooltip_green_map.png";
+				img.src = "./Materials/images/tooltip_orange_map.png";
 				break;
 		}
 
