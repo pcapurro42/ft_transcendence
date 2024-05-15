@@ -134,7 +134,7 @@ class Ball
                     y_space = (this.game.left_player.y + this.game.left_player.height / 2) - ~~y_ball_pos;
             }
             if (keys.KeyE == true || keys.KeyD == true)
-                y_ball_pos = y_ball_pos + 15;
+                y_space = y_space + 15;
         }
         else
         {
@@ -148,7 +148,7 @@ class Ball
                     y_space = (this.game.right_player.y + this.game.right_player.height / 2) - ~~y_ball_pos;
             }
             if (keys.ArrowUp == true || keys.ArrowDown == true)
-                y_ball_pos = y_ball_pos + 15;
+                y_space = y_space + 15;
         }
         if (this.direction < 0)
             this.direction = this.direction - ~~(y_space / 2);
