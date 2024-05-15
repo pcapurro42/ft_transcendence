@@ -104,119 +104,24 @@ class Ball
         }
     }
 
-    moveIncrease(element, sign)
+    calculateNewDirections()
     {
-        if (element == "x")
-        {
-            if (sign == "-")
-            {
-                for (let i = 0; i != this.speed; i++)
-                {
-                    if (this.x - 1 >= 0)
-                        this.x = this.x - 1, this.moves++;
-                    if (this.isAtPlayer() == true)
-                        return ;
-                }
-            }
-            else
-            {
-                for (let i = 0; i != this.speed; i++)
-                {
-                    if (this.x + this.width + 1 <= this.game.game_width)
-                        this.x = this.x + 1, this.moves++;
-                    if (this.isAtPlayer() == true)
-                        return ;
-                }
-            }
-        }
+        let radian = ((this.direction * (-1)) * Math.PI) / 180;
+        let x_dir = Math.cos(radian);
+        let y_dir = Math.sin(radian);
 
-        if (element == "y")
-        {
-            if (sign == "-")
-            {
-                for (let i = 0; i != this.speed; i++)
-                {
-                    if (this.y - 1 >= 0)
-                        this.y = this.y - 1, this.moves++;
-                    if (this.isAtPlayer() == true)
-                        return ;
-                }
-            }
-            else
-            {
-                for (let i = 0; i != this.speed; i++)
-                {
-                    if (this.y + this.height + 1 <= this.game.game_height)
-                        this.y = this.y + 1, this.moves++;
-                    if (this.isAtPlayer() == true)
-                        return ;
-                }
-            }
-        }
+        return ([x_dir, y_dir]);
     }
 
     move()
     {
-        if (this.direction > 0)
-        {
-            if (this.direction == 30)
-            {
-                if (this.moves % 2 == 0)
-                    this.moveIncrease("x", "+");
-                this.moveIncrease("x", "+");
-            }
-            if (this.direction == 45)
-                this.moveIncrease("x", "+");
-            if (this.direction == 60)
-            {
-                if (this.moves % 2 == 0)
-                    this.moveIncrease("x", "+");
-            }
-            if (this.direction == 120)
-            {
-                if (this.moves % 2 == 0)
-                    this.moveIncrease("x", "-");
-            }
-            if (this.direction == 135)
-                this.moveIncrease("x", "-");
-            if (this.direction == 150)
-            {
-                if (this.moves % 2 == 0)
-                    this.moveIncrease("x", "-");
-                this.moveIncrease("x", "-");
-            }
-            this.moveIncrease("y", "-");
-        }
-        else
-        {
-            if (this.direction == -120)
-            {
-                if (this.moves % 2 == 0)
-                    this.moveIncrease("x", "-");
-            }
-            if (this.direction == -135)
-                this.moveIncrease("x", "-");
-            if (this.direction == -150)
-            {
-                if (this.moves % 2 == 0)
-                    this.moveIncrease("x", "-");
-                this.moveIncrease("x", "-");
-            }
+        let x_dir = this.calculateNewDirections()[0];
+        let y_dir = this.calculateNewDirections()[1];
 
-            if (this.direction == -30)
-            {
-                if (this.moves % 2 == 0)
-                    this.moveIncrease("x", "+");
-            }
-            if (this.direction == -45)
-                this.moveIncrease("x", "+");
-            if (this.direction == -60)
-            {
-                if (this.moves % 2 == 0)
-                    this.moveIncrease("x", "+");
-                this.moveIncrease("x", "+");
-            }
-            this.moveIncrease("y", "+");
+        for (let i = 0; i != this.speed; i++)
+        {
+            this.x = this.x + x_dir;
+            this.y = this.y + y_dir;
         }
     }
 
