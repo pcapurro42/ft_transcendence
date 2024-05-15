@@ -94,7 +94,7 @@ class LocalGame1v1
         this.bar_height = 80;
         this.bar_width = 10;
 
-        this.ball_speed = 10;
+        this.ball_speed = 4;
         this.ball_height = 20;
         this.ball_width = 20;
         this.ball_color = null;

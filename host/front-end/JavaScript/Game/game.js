@@ -208,10 +208,20 @@ class Ball
 
     getAwayFromPlayers()
     {
-        if (this.x < this.game.game_width / 2)
-            this.x = this.x + this.speed;
-        else
-            this.x = this.x - this.speed;
+        if (this.isAtPlayer() == true)
+        {
+            if (this.x < this.game.game_width / 2)
+                this.x = this.x + this.speed;
+            else
+                this.x = this.x - this.speed;
+        }
+        if (this.isAboveOrUnderPlayer() == true)
+        {
+            if (this.y + this.height == this.game.left_player.y || this.y + this.height == this.game.right_player.y)
+                this.y = this.y - this.speed;
+            else
+                this.y = this.y + this.speed;
+        }
     }
 
     reset()
