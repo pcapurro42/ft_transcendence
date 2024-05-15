@@ -64,24 +64,11 @@ class Ball
             if (this.y + this.height >= this.game.right_player.y && this.y <= this.game.right_player.y + this.game.right_player.height)
                 return (true);
         }
+
+        if (this.isAboveOrUnderPlayer() == true)
+            return (true);
+
         return (false);
-    }
-
-    willBeAtPlayer(x_dir, y_dir)
-    {
-        let value;
-        this.x = this.x + x_dir;
-        this.y = this.y + y_dir;
-
-        if (this.isAtPlayer() == true)
-            value = true;
-        else
-            value = false;
-
-        this.x = this.x - x_dir;
-        this.y = this.y - y_dir;
-    
-        return (value);
     }
 
     isAboveOrUnderPlayer()
@@ -111,16 +98,6 @@ class Ball
         if (this.x + this.width <= 0 || this.x >= this.game.game_width)
             return (true);
         return (false);
-    }
-
-    shouldContinue(x_dir, y_dir)
-    {
-        if (this.isAtPlayer() == true || this.isAboveOrUnderPlayer() == true)
-        {
-            if (this.willBeAtPlayer(x_dir, y_dir) == true)
-                return (false);
-        }
-        return (true);
     }
 
     // < Extras > //
@@ -222,11 +199,19 @@ class Ball
         // console.log(x_dir);
         // console.log(y_dir);
 
-        for (let i = 0; this.shouldContinue(x_dir, y_dir) == true && i != (this.speed + this.bonus_speed); i++)
+        for (let i = 0; this.isAtPlayer() == false && i != (this.speed + this.bonus_speed); i++)
         {
             this.x = this.x + x_dir;
             this.y = this.y + y_dir;
         }
+    }
+
+    getAwayFromPlayers()
+    {
+        if (this.x < this.game.game_width / 2)
+            this.x = this.x + this.speed;
+        else
+            this.x = this.x - this.speed;
     }
 
     reset()
@@ -241,7 +226,7 @@ class Ball
     animate()
     {
         if (this.isUpOrDown() == true || this.isAtPlayer() == true)
-            this.direction = this.getOpposite();
+            this.direction = this.getOpposite(), this.getAwayFromPlayers();
         else if (this.isOffLimit() == true)
             this.game.restartRound();
 
