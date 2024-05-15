@@ -74,7 +74,7 @@ class Ball
 
     isOffLimit()
     {
-        if (this.x <= 0 || this.x + this.width >= this.game.game_width)
+        if (this.x + this.width <= 0 || this.x >= this.game.game_width)
             return (true);
         return (false);
     }
@@ -118,6 +118,12 @@ class Ball
         let x_dir = this.calculateNewDirections()[0];
         let y_dir = this.calculateNewDirections()[1];
 
+        x_dir = Math.round(x_dir * 100) / 100;
+        y_dir = Math.round(y_dir * 100) / 100;
+
+        console.log(x_dir);
+        console.log(y_dir);
+
         for (let i = 0; i != this.speed; i++)
         {
             this.x = this.x + x_dir;
@@ -132,7 +138,7 @@ class Ball
         else if (this.isOffLimit() == true)
             this.restartRound();
 
-        // console.log(this.direction);
+        console.log(this.direction);
 
         this.move();
     }
