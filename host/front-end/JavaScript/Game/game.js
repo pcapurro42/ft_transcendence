@@ -230,7 +230,7 @@ class Ball
         else if (this.isOffLimit() == true)
             this.game.restartRound();
 
-        console.log(this.x, " ; ", this.y)
+        // console.log(this.x, " ; ", this.y)
         console.log(this.direction, " ; ", this.speed + this.bonus_speed);
 
         this.move();
