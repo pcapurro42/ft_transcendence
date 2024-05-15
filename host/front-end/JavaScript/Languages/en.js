@@ -12,8 +12,6 @@ let en = [
     ["Customize", "Customize"],
     ["Settings", "Settings"],
     ["Credits", "Credits"],
-    ["Stats", "Stats"],
-    ["History", "History"],
 
     ["1 vs 1 (online)", "1 vs 1 (online)"],
     ["1 vs 1 (local)", "1 vs 1 (local)"],

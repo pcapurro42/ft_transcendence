@@ -51,7 +51,6 @@ document.getElementById('ai_game_btn').onclick = ai;
 
 // < TOURNAMENT > //
 
-
 document.getElementById('play_tournament_btn').onclick = displayTournamentSetup;
 document.getElementById('back_tournament_btn').onclick = removeTournamentSetup;
 document.getElementById('next_game_tournament_btn').onclick = nextGameHandler;

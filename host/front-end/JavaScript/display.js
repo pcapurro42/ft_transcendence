@@ -30,9 +30,6 @@ function displayMenu()
     let settings_menu = document.getElementById('settings_menu');
     settings_menu.style.display = "none";
 
-    let history = document.getElementById('history');
-    history.style.display = "none";
-
     let play_classic_buttons = document.getElementById('one_vs_one_online_choice_menu');
     play_classic_buttons.style.display = "none";
 
