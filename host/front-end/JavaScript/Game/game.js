@@ -161,7 +161,7 @@ class Ball
     {
         if (this.x < this.game_width / 2)
         {
-            if (keys.KeyA == true || keys.ArrowUp == true)
+            if (keys.ArrowUp == true || keys.ArrowDown == true)
                 this.bonus_speed++;
         }
         else
@@ -263,8 +263,8 @@ function displayCountDown(nb)
 // < KEYS > //
 
 let keys = {
-    KeyA: false,
-    KeyQ: false,
+    KeyE: false,
+    KeyD: false,
 
     KeyU: false,
     KeyJ: false,
