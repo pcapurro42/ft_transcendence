@@ -26,7 +26,7 @@ function getRandomBallDirection()
 
 class Ball
 {
-    constructor(game, width, height, x, y, speed, color, direction, moves)
+    constructor(game, width, height, x, y, speed, color, direction, bonus_speed)
     {
         this.game = game;
 
@@ -41,7 +41,7 @@ class Ball
         this.color = color;
 
         this.direction = direction;
-        this.moves = moves;
+        this.bonus_speed = bonus_speed;
     }
 
     print()
@@ -91,12 +91,56 @@ class Ball
         this.direction = getRandomBallDirection();
     }
 
+    addExtraDirection()
+    {
+        let y_ball_pos;
+        let y_space;
+
+        y_ball_pos = (this.y + this.height / 2);
+        if (this.x < this.game.game_width / 2)
+        {
+            if (y_ball_pos == this.game.left_player.y + this.game.left_player.height / 2)
+                return ;
+            else
+            {
+                if (y_ball_pos > this.game.left_player.y + this.game.left_player.height / 2)
+                    y_space = ~~y_ball_pos - (this.game.left_player.y + this.game.left_player.height / 2);
+                else
+                    y_space = (this.game.left_player.y + this.game.left_player.height / 2) - ~~y_ball_pos;
+            }
+        }
+        else
+        {
+            if (y_ball_pos == this.game.right_player.y + this.game.right_player.height / 2)
+                return ;
+            else
+            {
+                if (y_ball_pos > this.game.right_player.y + this.game.right_player.height / 2)
+                    y_space = ~~y_ball_pos - (this.game.right_player.y + this.game.right_player.height / 2);
+                else
+                    y_space = (this.game.right_player.y + this.game.right_player.height / 2) - ~~y_ball_pos;
+            }
+        }
+        if (this.direction < 0)
+            this.direction = this.direction - y_space;
+        else
+            this.direction = this.direction + y_space;
+    }
+
+    addExtraSpeed()
+    {
+        ;
+    }
+
     getOpposite()
     {
         if (this.isUpOrDown() == true)
             return (this.direction * (-1));
         else
         {
+            this.addExtraDirection();
+            this.addExtraSpeed();
+
             if ((this.direction >= 30 && this.direction <= 90) || (this.direction >= -150 && this.direction <= -120))
                 return (this.direction + 90);
             else
@@ -124,7 +168,7 @@ class Ball
         // console.log(x_dir);
         // console.log(y_dir);
 
-        for (let i = 0; i != this.speed; i++)
+        for (let i = 0; i != this.speed + this.bonus_speed; i++)
         {
             this.x = this.x + x_dir;
             this.y = this.y + y_dir;

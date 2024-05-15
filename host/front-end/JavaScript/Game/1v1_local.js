@@ -125,7 +125,7 @@ class LocalGame1v1
             color: this.game.ball_color,
             
             direction : this.game.ball_direction,
-            moves: 0
+            bonus_speed: 0
         }
 
         this.game.ball = new Ball(...Object.values(ball_data));
@@ -267,7 +267,7 @@ function initializeLocal1v1()
         bar_height: 80,
         bar_width: 10,
 
-        ball_speed: 7,
+        ball_speed: 2,
         ball_height: 20,
         ball_width: 20,
 
@@ -283,7 +283,7 @@ function initializeLocal1v1()
         bar_color: null,
         ball_color: null,
         
-        ball_direction: getRandomBallDirection()
+        ball_direction: 45
     }
 
     if (high_contrast == "true")
