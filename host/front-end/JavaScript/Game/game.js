@@ -159,6 +159,9 @@ class Ball
 
     addExtraSpeed() //
     {
+        if (this.bonus_speed == 3)
+            return ;
+
         if (this.x < this.game_width / 2)
         {
             if (keys.ArrowUp == true || keys.ArrowDown == true)
