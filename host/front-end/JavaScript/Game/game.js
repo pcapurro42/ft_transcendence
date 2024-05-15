@@ -49,6 +49,8 @@ class Ball
         this.game.display.fillRect(this.x, this.y, this.width, this.height);
     }
 
+    // < Verifyers > //
+
     isAtPlayer() //
     {
         if (this.x <= this.game.left_player.x + this.game.left_player.width && this.x >= this.game.left_player.x)
@@ -65,27 +67,21 @@ class Ball
         return (false);
     }
 
-    isAndWillBeAtPlayer(x_dir, y_dir)
+    willBeAtPlayer(x_dir, y_dir)
     {
-        if (this.isAtPlayer() == true || this.isAboveOrUnderPlayer() == true)
-        {
-            this.x = this.x + x_dir;
-            this.y = this.y + y_dir;
+        let value;
+        this.x = this.x + x_dir;
+        this.y = this.y + y_dir;
 
-            if (this.isAtPlayer() == true)
-            {
-                this.x = this.x - x_dir;
-                this.y = this.y - y_dir;
-                return (true);
-            }
-            else
-            {
-                this.x = this.x - x_dir;
-                this.y = this.y - y_dir;
-                return (false);
-            }
-        }
-        return (false);
+        if (this.isAtPlayer() == true)
+            value = true;
+        else
+            value = false;
+
+        this.x = this.x - x_dir;
+        this.y = this.y - y_dir;
+    
+        return (value);
     }
 
     isAboveOrUnderPlayer()
@@ -116,6 +112,18 @@ class Ball
             return (true);
         return (false);
     }
+
+    shouldContinue(x_dir, y_dir)
+    {
+        if (this.isAtPlayer() == true || this.isAboveOrUnderPlayer() == true)
+        {
+            if (this.willBeAtPlayer(x_dir, y_dir) == true)
+                return (false);
+        }
+        return (true);
+    }
+
+    // < Extras > //
 
     addExtraDirection() //
     {
@@ -174,6 +182,8 @@ class Ball
         }
     }
 
+    // < Calculate > //
+
     getOpposite()
     {
         if (this.isUpOrDown() == true || this.isAboveOrUnderPlayer() == true)
@@ -199,6 +209,8 @@ class Ball
         return ([x_dir, y_dir]);
     }
 
+    // < Animate > //
+
     move()
     {
         let x_dir = this.calculateNewDirections()[0];
@@ -210,7 +222,7 @@ class Ball
         // console.log(x_dir);
         // console.log(y_dir);
 
-        for (let i = 0; i != (this.speed + this.bonus_speed) && this.isAndWillBeAtPlayer(x_dir, y_dir) == false; i++)
+        for (let i = 0; this.shouldContinue(x_dir, y_dir) == true && i != (this.speed + this.bonus_speed); i++)
         {
             this.x = this.x + x_dir;
             this.y = this.y + y_dir;
@@ -233,7 +245,8 @@ class Ball
         else if (this.isOffLimit() == true)
             this.game.restartRound();
 
-        // console.log(this.direction, " ; ", this.speed + this.bonus_speed);
+        console.log(this.x, " ; ", this.y)
+        console.log(this.direction, " ; ", this.speed + this.bonus_speed);
 
         this.move();
     }
