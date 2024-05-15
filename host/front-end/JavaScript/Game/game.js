@@ -49,7 +49,7 @@ class Ball
         this.game.display.fillRect(this.x, this.y, this.width, this.height);
     }
 
-    isAtPlayer()
+    isAtPlayer() //
     {
         if (this.x <= this.game.left_player.x + this.game.left_player.width && this.x >= this.game.left_player.x)
         {
@@ -61,6 +61,29 @@ class Ball
         {
             if (this.y + this.height >= this.game.right_player.y && this.y <= this.game.right_player.y + this.game.right_player.height)
                 return (true);
+        }
+        return (false);
+    }
+
+    isAndWillBeAtPlayer(x_dir, y_dir)
+    {
+        if (this.isAtPlayer() == true)
+        {
+            this.x = this.x + x_dir;
+            this.y = this.y + y_dir;
+
+            if (this.isAtPlayer() == true)
+            {
+                this.x = this.x - x_dir;
+                this.y = this.y - y_dir;
+                return (true);
+            }
+            else
+            {
+                this.x = this.x - x_dir;
+                this.y = this.y - y_dir;
+                return (false);
+            }
         }
         return (false);
     }
@@ -88,10 +111,12 @@ class Ball
 
         this.x = this.game.game_width / 2 - (this.game.ball_width / 2);
         this.y = this.game.game_height / 2 - (this.game.ball_width / 2);
+
         this.direction = getRandomBallDirection();
+        this.bonus_speed = 0;
     }
 
-    addExtraDirection()
+    addExtraDirection() //
     {
         let y_ball_pos;
         let y_space;
@@ -122,14 +147,23 @@ class Ball
             }
         }
         if (this.direction < 0)
-            this.direction = this.direction - y_space;
+            this.direction = this.direction - ~~(y_space / 2);
         else
-            this.direction = this.direction + y_space;
+            this.direction = this.direction + ~~(y_space / 2);
     }
 
-    addExtraSpeed()
+    addExtraSpeed() //
     {
-        ;
+        if (this.x < this.game_width / 2)
+        {
+            if (keys.KeyA == true || keys.ArrowUp == true)
+                this.bonus_speed++;
+        }
+        else
+        {
+            if (keys.KeyE == true || keys.KeyD == true)
+                this.bonus_speed++;
+        }
     }
 
     getOpposite()
@@ -168,7 +202,7 @@ class Ball
         // console.log(x_dir);
         // console.log(y_dir);
 
-        for (let i = 0; i != this.speed + this.bonus_speed; i++)
+        for (let i = 0; i != (this.speed + this.bonus_speed) && this.isAndWillBeAtPlayer(x_dir, y_dir) == false; i++)
         {
             this.x = this.x + x_dir;
             this.y = this.y + y_dir;
@@ -182,7 +216,7 @@ class Ball
         else if (this.isOffLimit() == true)
             this.restartRound();
 
-        console.log(this.direction);
+        console.log(this.direction, " ; ", this.speed + this.bonus_speed);
 
         this.move();
     }
@@ -218,16 +252,16 @@ window.addEventListener('keydown', (event) =>
                 keys.ArrowDown = true;
 
             if (event.key == 'e')
-                keys.KeyA = true;
+                keys.KeyE = true;
             else if (event.key == 'd')
-                keys.KeyQ = true;
+                keys.KeyD = true;
         }
         else if (mode == 3)
         {
             if (event.key == 'e')
-                keys.KeyA = true;
+                keys.KeyE = true;
             else if (event.key == 'd')
-                keys.KeyQ = true;
+                keys.KeyD = true;
 
             if (event.key == 'u')
                 keys.KeyU = true;
@@ -257,9 +291,9 @@ window.addEventListener('keyup', (event) =>
         keys.ArrowDown = false;
 
     if (event.key == 'e')
-        keys.KeyA = false;
+        keys.KeyE = false;
     else if (event.key == 'd')
-        keys.KeyQ = false;
+        keys.KeyD = false;
 
     if (event.key == 'u')
         keys.KeyU = false;

@@ -192,9 +192,9 @@ class LocalGame1v1
 
     refreshPlayers()
     {
-        if (keys.KeyA == true)
+        if (keys.KeyE == true)
             this.game.left_player.moveUp();
-        else if (keys.KeyQ == true)
+        else if (keys.KeyD == true)
             this.game.left_player.moveDown();
 
         if (keys.ArrowUp == true)
