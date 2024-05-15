@@ -67,7 +67,7 @@ class Ball
 
     isAndWillBeAtPlayer(x_dir, y_dir)
     {
-        if (this.isAtPlayer() == true)
+        if (this.isAtPlayer() == true || this.isAboveOrUnderPlayer() == true)
         {
             this.x = this.x + x_dir;
             this.y = this.y + y_dir;
@@ -88,6 +88,21 @@ class Ball
         return (false);
     }
 
+    isAboveOrUnderPlayer()
+    {
+        if (this.x < this.game.left_player.x + this.game.left_player.width)
+        {
+            if (this.y + this.height >= this.game.left_player.y || this.y <= this.game.left_player.y + this.game.left_player.height)
+                return (true);
+        }
+        if (this.x + this.width > this.game.right_player.x)
+        {
+            if (this.y + this.height >= this.game.right_player.y || this.y <= this.game.right_player.y + this.game.right_player.height)
+                return (true);
+        }
+        return (false);
+    }
+
     isUpOrDown()
     {
         if (this.y <= 0 || this.y + this.height >= this.game.game_height)
@@ -100,20 +115,6 @@ class Ball
         if (this.x + this.width <= 0 || this.x >= this.game.game_width)
             return (true);
         return (false);
-    }
-
-    restartRound()
-    {
-        if (this.x >= this.game.game_width / 2)
-            this.game.scores[0]++;
-        else
-            this.game.scores[1]++;
-
-        this.x = this.game.game_width / 2 - (this.game.ball_width / 2);
-        this.y = this.game.game_height / 2 - (this.game.ball_width / 2);
-
-        this.direction = getRandomBallDirection();
-        this.bonus_speed = 0;
     }
 
     addExtraDirection() //
@@ -133,8 +134,8 @@ class Ball
                 else
                     y_space = (this.game.left_player.y + this.game.left_player.height / 2) - ~~y_ball_pos;
             }
-            if (keys.KeyE == true || keys.KeyD == true)
-                y_space = y_space + 15;
+            // if (keys.KeyE == true || keys.KeyD == true)
+                // y_space = y_space + 15;
         }
         else
         {
@@ -147,8 +148,8 @@ class Ball
                 else
                     y_space = (this.game.right_player.y + this.game.right_player.height / 2) - ~~y_ball_pos;
             }
-            if (keys.ArrowUp == true || keys.ArrowDown == true)
-                y_space = y_space + 15;
+            // if (keys.ArrowUp == true || keys.ArrowDown == true)
+                // y_space = y_space + 15;
         }
         if (this.direction < 0)
             this.direction = this.direction - ~~(y_space / 2);
@@ -172,7 +173,7 @@ class Ball
 
     getOpposite()
     {
-        if (this.isUpOrDown() == true)
+        if (this.isUpOrDown() == true || this.isAboveOrUnderPlayer() == true)
             return (this.direction * (-1));
         else
         {
@@ -180,9 +181,9 @@ class Ball
             this.addExtraSpeed();
 
             if ((this.direction >= 30 && this.direction <= 90) || (this.direction >= -150 && this.direction <= -120))
-                return (this.direction + 90);
+                return (this.direction + 70);
             else
-                return (this.direction - 90)
+                return (this.direction - 70)
         }
     }
 
@@ -213,17 +214,50 @@ class Ball
         }
     }
 
+    reset()
+    {
+        this.x = this.game.game_width / 2 - (this.game.ball_width / 2);
+        this.y = this.game.game_height / 2 - (this.game.ball_width / 2);
+
+        this.direction = getRandomBallDirection();
+        this.bonus_speed = 0;
+    }
+
     animate()
     {
         if (this.isUpOrDown() == true || this.isAtPlayer() == true)
             this.direction = this.getOpposite();
         else if (this.isOffLimit() == true)
-            this.restartRound();
+            this.game.restartRound();
 
-        console.log(this.direction, " ; ", this.speed + this.bonus_speed);
+        // console.log(this.direction, " ; ", this.speed + this.bonus_speed);
 
         this.move();
     }
+}
+
+// < TIMER > //
+
+function displayCountDown(nb)
+{
+    let timer = document.getElementById('1v1_local_timer');
+
+    if (nb == 3)
+        timer.innerHTML = "3";
+    else if (nb == 2)
+        timer.innerHTML = "2";
+    else if (nb == 1)
+        timer.innerHTML = "1";
+    else if (nb == 0)
+        timer.innerHTML = getTranslation("Go!")
+    else if (nb == -1)
+    {
+        timer.style.display = "none";
+        active = true;
+        startLocal1v1();
+        return ;
+    }
+    setTimeout(displayCountDown, 1000, --nb);
 }
 
 // < KEYS > //

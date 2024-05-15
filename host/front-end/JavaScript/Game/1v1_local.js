@@ -1,6 +1,8 @@
 // <<<<<<< 1V1 >>>>>>> //
 
-// < OBJECT > //
+// < OBJECTS > //
+
+// < Player class > //
 
 class Bar1v1
 {
@@ -40,11 +42,25 @@ class Bar1v1
     {
         for (let i = 0; i != this.speed; i++)
         {
-            if (this.y + this.game.bar_height < this.game.game_height)
+            if (this.y + this.bar_height < this.game.game_height)
             {
                 this.y = this.y + 1;
                 this.print();
             }
+        }
+    }
+
+    reset()
+    {
+        if (this.x < this.game.game_width / 2)
+        {
+            this.x = 0 + this.game.bar_width;
+            this.y = ((this.game.game_height / 2) - this.game.bar_height / 2);
+        }
+        else
+        {
+            this.x = ((this.game.game_width - this.game.bar_width) - this.game.bar_width);
+            this.y = ((this.game.game_height / 2) - this.game.bar_height / 2);
         }
     }
 
@@ -54,11 +70,48 @@ class Bar1v1
     }
 }
 
+// < Game class > //
+
 class LocalGame1v1
 {
-    constructor(game)
+    constructor()
     {   
-        this.game = game;
+        this.player_nb = 2;
+        
+        this.left_player = null;
+        this.right_player = null;
+
+        this.ball = null;
+    
+        this.scores = [0, 0];
+
+        this.canvas = null;
+
+        this.game_width = 1100;
+        this.game_height = 720;
+    
+        this.bar_speed = 10;
+        this.bar_height = 80;
+        this.bar_width = 10;
+
+        this.ball_speed = 10;
+        this.ball_height = 20;
+        this.ball_width = 20;
+        this.ball_color = null;
+
+        this.ball_direction = 45;
+
+        this.text_size = 100;
+        this.text_font = "Arial";
+
+        this.separator_height = 20;
+        this.separator_width = 3;
+        this.separator_space = 17;
+
+        if (high_contrast == "true")
+            this.menu_color = "white", this.background_color = "black", this.bar_color = "white", this.ball_color = "white";
+        else
+            this.menu_color = "black", this.background_color = "white", this.bar_color = "black", this.ball_color = "black";
     }
 
     initialize()
@@ -66,69 +119,69 @@ class LocalGame1v1
         // canvas creation
 
         if (type == "tournament")
-            this.game.canvas = document.getElementById('tournament_game');
+            this.canvas = document.getElementById('tournament_game');
         else
-            this.game.canvas = document.getElementById('one_vs_one_local_game');
-        this.game.display = this.game.canvas.getContext('2d');
+            this.canvas = document.getElementById('one_vs_one_local_game');
+        this.display = this.canvas.getContext('2d');
         
-        this.game.canvas.width = this.game.game_width;
-        this.game.canvas.height = this.game.game_height;
+        this.canvas.width = this.game_width;
+        this.canvas.height = this.game_height;
 
         // players creation
 
         let left_player_data = {
-            game: this.game,
+            game: this,
 
-            object_width: this.game.bar_width,
-            object_heigth : this.game.bar_height,
+            object_width: this.bar_width,
+            object_heigth : this.bar_height,
 
-            map_x: 0 + this.game.bar_width,
-            map_y: ((this.game.game_height / 2) - this.game.bar_height / 2),
+            map_x: 0 + this.bar_width,
+            map_y: ((this.game_height / 2) - this.bar_height / 2),
     
-            bar_speed: this.game.bar_speed,
+            bar_speed: this.bar_speed,
             color: this.bar_color
         }
     
         let right_player_data = {
-            game: this.game,
+            game: this,
 
-            object_width: this.game.bar_width,
-            object_heigth : this.game.bar_height,
+            object_width: this.bar_width,
+            object_heigth : this.bar_height,
     
-            map_x: ((this.game.game_width - this.game.bar_width) - this.game.bar_width),
-            map_y: ((this.game.game_height / 2) - this.game.bar_height / 2),
+            map_x: ((this.game_width - this.bar_width) - this.bar_width),
+            map_y: ((this.game_height / 2) - this.bar_height / 2),
     
-            bar_speed: this.game.bar_speed,
+            bar_speed: this.bar_speed,
             color: this.bar_color
         }
     
-        this.game.left_player = new Bar1v1(...Object.values(left_player_data));
-        this.game.right_player = new Bar1v1(...Object.values(right_player_data));
+        this.left_player = new Bar1v1(...Object.values(left_player_data));
+        this.right_player = new Bar1v1(...Object.values(right_player_data));
 
         // ball creation
 
         let x, y;
 
-        x = this.game.game_width / 2 - (this.game.ball_width / 2);
-        y = this.game.game_height / 2 - (this.game.ball_width / 2);
+        x = this.game_width / 2 - (this.ball_width / 2);
+        y = this.game_height / 2 - (this.ball_width / 2);
 
         let ball_data = {
-            game: this.game,
+            game: this,
 
-            object_width: this.game.ball_width,
-            object_heigth: this.game.ball_height,
+            object_width: this.ball_width,
+            object_heigth: this.ball_height,
 
             x_pos : x,
             y_pos : y,
 
-            speed: this.game.ball_speed,
-            color: this.game.ball_color,
+            speed: this.ball_speed,
+            color: this.ball_color,
             
-            direction : this.game.ball_direction,
+            direction : this.ball_direction,
             bonus_speed: 0
         }
 
-        this.game.ball = new Ball(...Object.values(ball_data));
+        this.ball = new Ball(...Object.values(ball_data));
     }
 
     refreshDisplay()
@@ -144,182 +197,133 @@ class LocalGame1v1
     {
         if (game_map == "none")
         {
-            this.game.display.fillStyle = this.game.background_color;
-            this.game.display.fillRect(0, 0, this.game.game_width, this.game.game_height);
-            this.game.display.fillStyle = this.game.menu_color;
+            this.display.fillStyle = this.background_color;
+            this.display.fillRect(0, 0, this.game_width, this.game_height);
+            this.display.fillStyle = this.menu_color;
         }
         else if (game_map == "1")
         {
             let img = new Image();
             img.src = 'Materials/images/game_back1.png';
-            this.game.display.drawImage(img, 0, 0);
+            this.display.drawImage(img, 0, 0);
         }
         else if (game_map == "2")
         {
             let img = new Image();
             img.src = 'Materials/images/game_back2.png';
-            this.game.display.drawImage(img, 0, 0);
+            this.display.drawImage(img, 0, 0);
         }
         else if (game_map == "3")
         {
             let img = new Image();
             img.src = 'Materials/images/game_back3.png';
-            this.game.display.drawImage(img, 0, 0);
+            this.display.drawImage(img, 0, 0);
         }
     }
 
     refreshCenterBar()
     {
-        let x_bar_center = (this.game.game_width / 2) - (this.game.separator_width / 2);
-        let nb = ~~(this.game.game_height / (this.game.separator_height + this.game.separator_space));
+        let x_bar_center = (this.game_width / 2) - (this.separator_width / 2);
+        let nb = ~~(this.game_height / (this.separator_height + this.separator_space));
 
         for (let value = 0; value != nb; value++)
         {
-            this.game.display.fillRect(x_bar_center, ((this.game.separator_height * value) + this.game.separator_space * (value + 1)), this.game.separator_width, this.game.separator_height);
+            this.display.fillRect(x_bar_center, ((this.separator_height * value) + this.separator_space * (value + 1)), this.separator_width, this.separator_height);
         }
     }
 
     refreshScores()
     {
-        let score_y = this.game.game_height / 6;
-        let left_score_x = (this.game.game_width / 4) - this.game.text_size / 4;
-        let right_score_x = (this.game.game_width - this.game.game_width / 4) - this.game.text_size / 4;
+        let score_y = this.game_height / 6;
+        let left_score_x = (this.game_width / 4) - this.text_size / 4;
+        let right_score_x = (this.game_width - this.game_width / 4) - this.text_size / 4;
 
-        this.game.display.font = this.game.text_size + "px " + this.game.text_font;
-        this.game.display.fillText(this.game.scores[0], left_score_x, score_y);
-        this.game.display.fillText(this.game.scores[1], right_score_x, score_y);
+        this.display.font = this.text_size + "px " + this.text_font;
+        this.display.fillText(this.scores[0], left_score_x, score_y);
+        this.display.fillText(this.scores[1], right_score_x, score_y);
     }
 
     refreshPlayers()
     {
         if (keys.KeyE == true)
-            this.game.left_player.moveUp();
+            this.left_player.moveUp();
         else if (keys.KeyD == true)
-            this.game.left_player.moveDown();
+            this.left_player.moveDown();
 
         if (keys.ArrowUp == true)
-            this.game.right_player.moveUp();
+            this.right_player.moveUp();
         else if (keys.ArrowDown == true)
-            this.game.right_player.moveDown();
+            this.right_player.moveDown();
 
-        this.game.left_player.print();
-        this.game.right_player.print();
+        this.left_player.print();
+        this.right_player.print();
     }
 
     refreshBall()
     {
-        this.game.ball.print();
-        this.game.ball.animate();
-        this.game.ball.print();
+        this.ball.print();
+        this.ball.animate();
+        this.ball.print();
+    }
+
+    resetGame()
+    {
+        this.scores[0] = 0;
+        this.scores[1] = 0;
+
+        this.left_player.reset();
+        this.right_player.reset();
+    }
+
+    restartRound()
+    {
+        if (this.ball.x >= this.game_width / 2)
+            this.scores[0]++;
+        else
+            this.scores[1]++;
+
+        this.ball.reset();
     }
 
     isOver()
     {
         if (active == false)
             return (true);
-        if (this.game.scores[0] > 9 || this.game.scores[1] > 9)
+        if (this.scores[0] > 9 || this.scores[1] > 9)
         {
-            if (this.game.scores[0] > 9)
+            if (this.scores[0] > 9)
             {
                 let player_left_won = document.getElementById('left_player_won_text');
                 player_left_won.style.display = "block";
             }
-            if (this.game.scores[1] > 9)
+            if (this.scores[1] > 9)
             {
                 let player_right_won = document.getElementById('right_player_won_text');
                 player_right_won.style.display = "block";
             }
+
+            this.resetGame();
             active = false;
+            
             return (true);
         }
         return (false);
     }
-
-    reset()
-    {
-        this.game.scores[0] = 0;
-        this.game.scores[1] = 0;
-    }
 }
+
+// < Initialisation > //
 
 function initializeLocal1v1()
 {
     mode = 2;
-
-    let game_1v1 = {
-        player_nb: 2,
-
-        left_player: null,
-        right_player: null,
-
-        ball: null,
-
-        scores: [0, 0],
-
-        canvas: null,
-
-        // infos
-
-        game_width: 1100,
-        game_height: 720,
-
-        bar_speed: 10,
-        bar_height: 80,
-        bar_width: 10,
-
-        ball_speed: 10,
-        ball_height: 20,
-        ball_width: 20,
-
-        text_size: 100,
-        text_font: 'Arial',
-
-        separator_height: 20,
-        separator_width: 3,
-        separator_space: 17,
-
-        menu_color: null,
-        background_color: null,
-        bar_color: null,
-        ball_color: null,
-        
-        ball_direction: 45
-    }
-
-    if (high_contrast == "true")
-        game_1v1.menu_color = "white", game_1v1.background_color = "black", game_1v1.bar_color = "white", game_1v1.ball_color = "white";
-    else
-        game_1v1.menu_color = "black", game_1v1.background_color = "white", game_1v1.bar_color = "black", game_1v1.ball_color = "black";
-
-    let the_game = new LocalGame1v1(game_1v1);
-    the_game.initialize();
-    the_game.refreshBackground();
-
-    game = the_game;
+    game = new LocalGame1v1();
+    
+    game.initialize();
+    game.refreshBackground();
     active = true;
 }
 
-function displayCountDown(nb)
-{
-    let timer = document.getElementById('1v1_local_timer');
-
-    if (nb == 3)
-        timer.innerHTML = "3";
-    else if (nb == 2)
-        timer.innerHTML = "2";
-    else if (nb == 1)
-        timer.innerHTML = "1";
-    else if (nb == 0)
-        timer.innerHTML = getTranslation("Go!")
-    else if (nb == -1)
-    {
-        timer.style.display = "none";
-        active = true;
-        startLocal1v1();
-        return ;
-    }
-    setTimeout(displayCountDown, 1000, --nb);
-}
+// < Menu display management > //
 
 function displayLocal1v1()
 {
@@ -351,7 +355,7 @@ function startLocal1v1()
     if (game.isOver() == true || active == false)
     {
         game.refreshBackground();
-        game.reset();
+        game.resetGame();
         removeLocal1v1();
     }
     else
