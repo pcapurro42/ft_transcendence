@@ -36,9 +36,10 @@ refreshLogin();
 
 // < GAME > //
 
-let mode;
-let game;
-let active;
+let type; // local1v1 or tournament (= local1v1) or local2v1 or online1v1
+let mode; // 1 (online), 2 (1v1 local), or 3 (2v1 local)
+let game; // object of the game
+let active; // should display the game or no
 
 //Tournament//
 

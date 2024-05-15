@@ -75,7 +75,10 @@ class LocalGame1v1
     {
         // canvas creation
 
-        this.game.canvas = document.getElementById('one_vs_one_local_game');
+        if (type == "tournament")
+            this.game.canvas = document.getElementById('');
+        else
+            this.game.canvas = document.getElementById('one_vs_one_local_game');
         this.game.display = this.game.canvas.getContext('2d');
         
         this.game.canvas.width = this.game.game_width;
@@ -251,7 +254,7 @@ class LocalGame1v1
 
 function initializeLocal1v1()
 {
-    mode = "local1v1";
+    mode = 2;
 
     let game_1v1 = {
         player_nb: 2,

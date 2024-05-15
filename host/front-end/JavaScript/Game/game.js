@@ -255,7 +255,7 @@ window.addEventListener('keydown', (event) =>
         if (event.key == 'ArrowUp' || event.key == 'ArrowDown')
             event.preventDefault();
 
-        if (mode == "local1v1")
+        if (mode == 2)
         {
             if (event.key == 'ArrowUp')
                 keys.ArrowUp = true;
@@ -267,7 +267,7 @@ window.addEventListener('keydown', (event) =>
             else if (event.key == 'd')
                 keys.KeyQ = true;
         }
-        else if (mode == "local1v2")
+        else if (mode == 3)
         {
             if (event.key == 'e')
                 keys.KeyA = true;
@@ -279,6 +279,13 @@ window.addEventListener('keydown', (event) =>
             else if (event.key == 'j')
                 keys.KeyJ = true;
 
+            if (event.key == 'ArrowUp')
+                keys.ArrowUp = true;
+            else if (event.key == 'ArrowDown')
+                keys.ArrowDown = true;
+        }
+        else if (mode == 3)
+        {
             if (event.key == 'ArrowUp')
                 keys.ArrowUp = true;
             else if (event.key == 'ArrowDown')
