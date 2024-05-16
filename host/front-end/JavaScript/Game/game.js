@@ -94,42 +94,7 @@ class Ball
 
     addExtraDirection() //
     {
-        let y_ball_pos;
-        let y_space;
-
-        y_ball_pos = (this.y + this.height / 2);
-        if (this.x < this.game.game_width / 2)
-        {
-            if (y_ball_pos == this.game.left_player.y + this.game.left_player.height / 2)
-                return ;
-            else
-            {
-                if (y_ball_pos > this.game.left_player.y + this.game.left_player.height / 2)
-                    y_space = ~~y_ball_pos - (this.game.left_player.y + this.game.left_player.height / 2);
-                else
-                    y_space = (this.game.left_player.y + this.game.left_player.height / 2) - ~~y_ball_pos;
-            }
-            // if (keys.KeyE == true || keys.KeyD == true)
-                // y_space = y_space + 15;
-        }
-        else
-        {
-            if (y_ball_pos == this.game.right_player.y + this.game.right_player.height / 2)
-                return ;
-            else
-            {
-                if (y_ball_pos > this.game.right_player.y + this.game.right_player.height / 2)
-                    y_space = ~~y_ball_pos - (this.game.right_player.y + this.game.right_player.height / 2);
-                else
-                    y_space = (this.game.right_player.y + this.game.right_player.height / 2) - ~~y_ball_pos;
-            }
-            // if (keys.ArrowUp == true || keys.ArrowDown == true)
-                // y_space = y_space + 15;
-        }
-        if (this.direction < 0)
-            this.direction = this.direction - ~~(y_space / 2);
-        else
-            this.direction = this.direction + ~~(y_space / 2);
+        ;
     }
 
     addExtraSpeed() //
@@ -157,13 +122,13 @@ class Ball
             return (this.direction * (-1));
         else
         {
-            this.addExtraDirection();
+            // this.addExtraDirection();
             this.addExtraSpeed();
 
             if ((this.direction >= 30 && this.direction <= 90) || (this.direction >= -150 && this.direction <= -120))
-                return (this.direction + 70);
+                return (this.direction + 90);
             else
-                return (this.direction - 70)
+                return (this.direction - 90)
         }
     }
 
@@ -201,16 +166,16 @@ class Ball
         if (this.isAtPlayer() == true)
         {
             if (this.x < this.game.game_width / 2)
-                this.x = this.x + this.speed;
+                this.x = this.x + 1;
             else
-                this.x = this.x - this.speed;
+                this.x = this.x - 1;
         }
         if (this.isAboveOrUnderPlayer() == true)
         {
             if (this.y + this.height >= this.game.left_player.y || this.y + this.height >= this.game.right_player.y)
-                this.y = this.y - this.speed;
+                this.y = this.y - 1;
             else
-                this.y = this.y + this.speed;
+                this.y = this.y + 1;
         }
     }
 
@@ -231,7 +196,8 @@ class Ball
             this.game.restartRound();
 
         // console.log(this.x, " ; ", this.y)
-        console.log(this.direction, " ; ", this.speed + this.bonus_speed);
+        // console.log(this.direction, " ; ", this.speed + this.bonus_speed);
+        console.log(this.direction);
 
         this.move();
     }

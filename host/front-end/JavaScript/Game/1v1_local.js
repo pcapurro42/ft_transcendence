@@ -99,7 +99,7 @@ class LocalGame1v1
         this.ball_width = 20;
         this.ball_color = null;
 
-        this.ball_direction = 45;
+        this.ball_direction = getRandomBallDirection();
 
         this.text_size = 100;
         this.text_font = "Arial";
