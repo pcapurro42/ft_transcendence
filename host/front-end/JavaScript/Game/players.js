@@ -58,6 +58,7 @@ class Bar1v1
             this.x = ((this.game.game_width - this.game.bar_width) - this.game.bar_width);
             this.y = ((this.game.game_height / 2) - this.game.bar_height / 2);
         }
+        this.speed = this.game.player_speed;
     }
 
     getInfo()

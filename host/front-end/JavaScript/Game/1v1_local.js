@@ -152,8 +152,8 @@ class LocalGame1v1
                 object_width: this.ball_width,
                 object_heigth: this.ball_height,
     
-                x_pos : (this.game.game_width / 4),
-                y_pos : (this.game.game_height / 2),
+                x_pos : (this.game_width / 4),
+                y_pos : (this.game_height / 2),
     
                 speed: this.ball_speed,
                 color: this.bonus_color,
@@ -167,8 +167,8 @@ class LocalGame1v1
                 object_width: this.ball_width,
                 object_heigth: this.ball_height,
     
-                x_pos : (this.game.game_width / 2 + (this.game.game_width / 4)),
-                y_pos : (this.game.game_height / 2),
+                x_pos : (this.game_width / 2 + (this.game_width / 4)),
+                y_pos : (this.game_height / 2),
     
                 speed: this.ball_speed,
                 color: this.bonus_color,
@@ -253,12 +253,12 @@ class LocalGame1v1
     refreshBonus()
     {
         this.bonus_one.print();
-        // this.bonus_one.animate();
-        // this.bonus_one.print();
+        this.bonus_one.animate();
+        this.bonus_one.print();
 
         this.bonus_two.print();
-        // this.bonus_two.animate();
-        // this.bonus_two.print();
+        this.bonus_two.animate();
+        this.bonus_two.print();
     }
 
     resetGame()

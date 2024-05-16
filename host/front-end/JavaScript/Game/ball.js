@@ -200,6 +200,7 @@ class Ball
         this.y = this.game.game_height / 2 - (this.game.ball_width / 2);
 
         this.direction = getRandomBallDirection();
+        this.speed = this.game.ball_speed;
         this.bonus_speed = 0;
         
         if (this.bounce == false)
