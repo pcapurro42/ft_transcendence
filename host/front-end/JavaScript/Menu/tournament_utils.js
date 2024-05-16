@@ -1,4 +1,15 @@
 
+function shuffleArray(nicknames){
+	let before_shuffle = nicknames.slice();
+	let after_shuffle = [];
+	for (let i = 0; i < nicknames.length; i++){
+		let c = Math.floor(Math.random() * before_shuffle.length);
+		after_shuffle.push(before_shuffle[c]);
+		before_shuffle.splice(c, 1);
+	}
+	return after_shuffle;
+}
+
 function formDuplicator(value){
 	  let elem = document.getElementById('form_block');
 
@@ -84,9 +95,11 @@ function tournamentFullReset(){
 
 function tournamentFinalReset(){
 	stop_flag = true;
+	final = false;
 	tournamentFullReset();
 	document.getElementById('submit_alias').removeAttribute('disabled');
 	document.getElementById('tournament_announcer').style.display = 'none';
 
 	document.getElementById('main_menu_toolbar').style.transition = '';
+	document.getElementById('main_menu_toolbar').style.opacity = '1';
 }

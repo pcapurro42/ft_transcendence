@@ -83,6 +83,8 @@ let fr = [
     ["7th Game", "7<sup>e</sup> Match"],
     ["8th Game", "8<sup>e</sup> Match"],
     ["Next Game", "Match suivant"],
+    ["Tournament Win Msg","Nous avons un gagnant...<br><br>Félicitations "],
+    ["Restart Tournament", "Recommencer le tournoi"],
 
 
     //******* Online ******/
@@ -95,7 +97,7 @@ let fr = [
 
     ['Disconnected', "⚠︎ Connexion pair à pair perdue..."],
     ['Disconnection Msg', "Désolé ! Il semble y avoir un problème de connexion. Vérifiez le réseau des deux pairs, puis réessayez."],
-    ['Back Main Menu', "Menu Principal"],
+    ['Main Menu', "Menu Principal"],
     ['Waiting Lobby Creation', "En attente de la création d'un salon par l'hôte..."],
 
 

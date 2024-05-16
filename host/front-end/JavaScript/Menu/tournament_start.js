@@ -1,32 +1,31 @@
 async function startTournament(newNicksArray, i){
 	stop_flag = false;
 	turn = false;
-		console.log(stop_flag, turn);
+
 	while (stop_flag == false && turn == false){
-		console.log('test');
-	tournamentResetBlocks();
-	nicknames = newNicksArray;
-	winner_array = [];
-	max_game = i / 2;
-
-	if (nicknames == null)
-		return;
-
-	document.getElementById('main_menu_page').style.opacity = '1';
-	document.getElementById('main_menu_toolbar').style.opacity = '0';
-	document.getElementById('submit_alias').setAttribute('disabled', true);
-	document.getElementById('tournament_nickname_menu').style.display = 'none';
-	document.getElementById('tournament_announcer').style.display = 'block';
-
-	await displayTournamentStage(nicknames);
-
-	if (stop_flag == true){
 		tournamentResetBlocks();
-		document.getElementById('submit_alias').removeAttribute('disabled');
-		return;
-	}
-	if (i != 2)
-		await displayNextGame(game_nbr, nicknames)
+		nicknames = newNicksArray;
+		winner_array = [];
+		max_game = i / 2;
+
+		if (nicknames == null)
+			return;
+
+		document.getElementById('main_menu_page').style.opacity = '1';
+		document.getElementById('main_menu_toolbar').style.opacity = '0';
+		document.getElementById('submit_alias').setAttribute('disabled', true);
+		document.getElementById('tournament_nickname_menu').style.display = 'none';
+		document.getElementById('tournament_announcer').style.display = 'block';
+
+		await displayTournamentStage(nicknames);
+
+		if (stop_flag == true){
+			tournamentResetBlocks();
+			document.getElementById('submit_alias').removeAttribute('disabled');
+			return;
+		}
+		if (i != 2)
+			await displayNextGame(game_nbr, nicknames)
 	}
 }
 

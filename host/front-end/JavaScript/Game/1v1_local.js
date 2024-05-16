@@ -289,27 +289,21 @@ class LocalGame1v1
     {
         if (active == false)
             return (true);
-        if (this.scores[0] > 0 || this.scores[1] > 0)
+        if (this.scores[0] > 9 || this.scores[1] > 9)
         {
             if (type == 'tournament'){
                 if (this.scores[0] > 0)
-                {
-                    let player_left = document.getElementById('nick_reminder');
-                    player_left.innerHTML = player_left.innerHTML.substring(0, player_left.innerHTML.indexOf(' ')) + " won the game!";
-                }
+                    t_LeftWin();
                 if (this.scores[1] > 0)
-                {
-                    let player_right = document.getElementById('nick_reminder');
-                    player_right.innerHTML = player_right.innerHTML.substring(player_right.innerHTML.indexOf(' ', player_right.innerHTML.indexOf(' ') + 1) + 1) + " won the game!";;
-                }
+                    t_RightWin();
             }
             else{
-                if (this.scores[0] > 0)
+                if (this.scores[0] > 9)
                 {
                     let player_left_won = document.getElementById('left_player_won_text');
                     player_left_won.style.display = "block";
                 }
-                if (this.scores[1] > 0)
+                if (this.scores[1] > 9)
                 {
                     let player_right_won = document.getElementById('right_player_won_text');
                     player_right_won.style.display = "block";

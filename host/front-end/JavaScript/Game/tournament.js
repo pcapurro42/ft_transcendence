@@ -41,3 +41,15 @@ function t_displayCountDown(nb)
     }
     setTimeout(t_displayCountDown, 1000, --nb);
 }
+
+function t_LeftWin(){
+    let player_left = document.getElementById('nick_reminder');
+    player_left.innerHTML = player_left.innerHTML.substring(0, player_left.innerHTML.indexOf(' ')) + " won the game!";
+    gameWinner = player_left.innerHTML.substring(0, player_left.innerHTML.indexOf(' '))
+}
+
+function t_RightWin(){
+    let player_right = document.getElementById('nick_reminder');
+    player_right.innerHTML = player_right.innerHTML.substring(player_right.innerHTML.indexOf(' ', player_right.innerHTML.indexOf(' ') + 1) + 1) + " won the game!";
+    gameWinner = player_right.innerHTML.substring(0, player_right.innerHTML.indexOf(' '));
+}

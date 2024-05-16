@@ -54,6 +54,7 @@ let en = [
     ["Enabled", "Enabled"],
     ["Disabled", "Disabled"],
 
+    ['Main Menu', "Main Menu"],
     ["Back", "Back"],
     ["Yes", "Yes"],
     ["No", "No"],
@@ -84,6 +85,8 @@ let en = [
     ["7th Game", "7<sup>th</sup> Game"],
     ["8th Game", "8<sup>th</sup> Game"],
     ["Next Game", "Next Game"],
+    ["Tournament Win Msg","We got a winner...<br><br>Congratulations "],
+    ["Restart Tournament", "Restart Tournament"],
 
     //******* Online ******/
 
@@ -95,7 +98,6 @@ let en = [
 
     ['Disconnected', "⚠︎ Lost connection with peer..."],
     ['Disconnection Msg', "Sorry! It seems like there's a connection problem. Check both peers networks and try again."],
-    ['Back Main Menu', "Main Menu"],
     ['Waiting Lobby Creation', "Waiting for host to create lobby..."],
 
 

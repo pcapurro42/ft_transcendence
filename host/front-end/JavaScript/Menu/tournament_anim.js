@@ -141,31 +141,29 @@ async function displayFinalWinner(){
 
 	top_logo.style.display = 'none';
 	game_page.style.display = 'none';
-	top_logo.style.opacity = '1';
-	game_page.style.opacity = '1';
+	top_logo.style.opacity = '';
+	game_page.style.opacity = '';
+	top_logo.style.transition = '';
+	game_page.style.transition = '';
 
 	document.getElementById('main_page').style.display = 'block';
 	document.getElementById('main_menu_page').style.display = 'block';
+	document.getElementById('Roundof16').style.display = 'none';
 
 	let win_msg = document.getElementById('round_block');
 
-	win_msg.innerHTML = 'We got a winner...<br>Congratulations ' + winner;
+	win_msg.innerHTML = getTranslation('Tournament Win Msg') + winner + '.';
 
-	let winner_block = document.getElementById('1stGameNicks');
+	let end_btn = document.getElementById('end_tournament_btn');
 
-	winner_block.innerHTML = winner;
-
+	end_btn.style.opacity = '0';
+	end_btn.style.transition = 'opacity 1s';
+	end_btn.classList.remove('d-none');
 
 	await sleep(10);
 
 	win_msg.style.opacity = '1';
+	end_btn.style.opacity = '1';
 
-	await sleep(2000);
-
-	win_msg.style.opacity = '0';
-
-	await sleep(1000)
-
-	tournamentFinalReset();
-	displayMenu();
+	await sleep (1000)
 }
