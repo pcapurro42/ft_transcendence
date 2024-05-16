@@ -31,7 +31,31 @@ class PowerUp
         return (false);
     }
 
+    isAtBall()
+    {
+        ;
+    }
+
+    isUpOrDown()
+    {
+        if (this.y <= 0 || this.y + this.height >= this.game.game_height)
+            return (true);
+        return (false);
+    }
+
+    isLeftOrRight()
+    {
+        return (false);
+    }
+
     isAtLimits()
+    {
+        if (this.isUpOrDown() == true || this.isLeftOrRight() == true)
+            return (true);
+        return (false);
+    }
+
+    shouldStop()
     {
         return (false);
     }
@@ -42,7 +66,7 @@ class PowerUp
     {
         if (this.isUpOrDown() == true)
             return (this.direction * (-1));
-        else if (this.isAtPlayer() == true)
+        else if (this.isLeftOrRight() == true)
         {
             if ((this.direction >= 30 && this.direction <= 90) || (this.direction >= -150 && this.direction <= -120))
                 return (this.direction + 90);
@@ -70,11 +94,21 @@ class PowerUp
         x_dir = Math.round(x_dir * 100) / 100;
         y_dir = Math.round(y_dir * 100) / 100;
 
-        for (let i = 0; this.isAtPlayer() == false && i != (this.speed + this.bonus_speed); i++)
+        for (let i = 0; this.shouldStop() == false && i != (this.speed + this.bonus_speed); i++)
         {
             this.x = this.x + x_dir;
             this.y = this.y + y_dir;
         }
+    }
+
+    ApplyPlayerBonus()
+    {
+        ;
+    }
+
+    ApplyBallBonus()
+    {
+        ;
     }
 
     reset()
@@ -90,7 +124,9 @@ class PowerUp
         if (this.isAtLimits() == true)
             this.direction = this.getOpposite();
         else if (this.isAtPlayer() == true)
-            this.reset();
+            this.ApplyPlayerBonus(), this.reset();
+        else if (this.isAtBall() == true)
+            this.ApplyBallBonus(), this.reset();
 
         this.move();
     }

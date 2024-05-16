@@ -15,6 +15,10 @@ class LocalGame1v1
 
         this.ball = null;
 
+        this.bonus_one = null;
+        this.bonus_two = null;
+        this.bonus_color = "yellow";
+
         this.scores = [0, 0];
 
         this.canvas = null;
@@ -137,6 +141,44 @@ class LocalGame1v1
         }
 
         this.ball = new Ball(...Object.values(ball_data));
+
+        // bonus creation
+
+        if (mode != "normal")
+        {
+            let bonus_one_data = {
+                game: this,
+    
+                object_width: this.ball_width,
+                object_heigth: this.ball_height,
+    
+                x_pos : 0,
+                y_pos : 0,
+    
+                speed: this.ball_speed,
+                color: this.bonus_color,
+    
+                direction : this.ball_direction,
+            }
+
+            let bonus_two_data = {
+                game: this,
+    
+                object_width: this.ball_width,
+                object_heigth: this.ball_height,
+    
+                x_pos : 0,
+                y_pos : 0,
+    
+                speed: this.ball_speed,
+                color: this.bonus_color,
+    
+                direction : bonus_one_data + 90,
+            }
+
+            this.bonus_one = new PowerUp(...Object.values(bonus_one_data));
+            this.bonus_two = new PowerUp(...Object.values(bonus_two_data));
+        }
     }
 
     refreshDisplay()
@@ -146,6 +188,9 @@ class LocalGame1v1
         this.refreshScores();
         this.refreshPlayers();
         this.refreshBall();
+
+        if (mode != "normal")
+            this.refreshBonus();
     }
 
     refreshBackground()
@@ -205,6 +250,17 @@ class LocalGame1v1
         this.ball.print();
     }
 
+    refreshBonus()
+    {
+        // this.bonus_one.print();
+        // this.bonus_one.animate();
+        // this.bonus_one.print();
+
+        // this.bonus_two.print();
+        // this.bonus_two.animate();
+        // this.bonus_two.print();
+    }
+
     resetGame()
     {
         this.scores[0] = 0;
@@ -231,9 +287,9 @@ class LocalGame1v1
         if (this.scores[0] > 9 || this.scores[1] > 9)
         {
             if (type == 'tournament'){
-                if (this.scores[0] > 0)
+                if (this.scores[0] > 9)
                     t_LeftWin();
-                if (this.scores[1] > 0)
+                if (this.scores[1] > 9)
                     t_RightWin();
             }
             else{
