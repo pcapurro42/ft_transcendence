@@ -53,6 +53,13 @@ class Ball
 
     isAtPlayer() //
     {
+        if (this.isAboveOrUnderPlayer() == true || this.isFrontPlayer() == true)
+            return (true);
+        return (false);
+    }
+
+    isFrontPlayer()
+    {
         if (this.x <= this.game.left_player.x + this.game.left_player.width && this.x >= this.game.left_player.x)
         {
             if (this.y + this.height >= this.game.left_player.y && this.y <= this.game.left_player.y + this.game.left_player.height)
@@ -64,10 +71,6 @@ class Ball
             if (this.y + this.height >= this.game.right_player.y && this.y <= this.game.right_player.y + this.game.right_player.height)
                 return (true);
         }
-
-        if (this.isAboveOrUnderPlayer() == true)
-            return (true);
-
         return (false);
     }
 
