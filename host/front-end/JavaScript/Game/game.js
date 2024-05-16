@@ -16,6 +16,7 @@ function getRandomBallDirection()
         return (45);
     else if (value == 2)
         return (135);
+
     else if (value == 3)
         return (-45);
     else if (value == 4)
@@ -104,7 +105,9 @@ class Ball
 
     isOffLimit()
     {
-        if (this.x + this.width <= 0 || this.x >= this.game.game_width)
+        if (this.x + this.width < 0 || this.x > this.game.game_width)
+            return (true);
+        if (this.y + this.height < 0 || this.y > this.game.game_height)
             return (true);
         return (false);
     }
@@ -113,7 +116,20 @@ class Ball
 
     addExtraDirection() //
     {
-        ;
+        if (this.x < this.game.game_width / 2)
+        {
+            if (keys.KeyE == true)
+                this.direction = this.direction + 5;
+            else if (keys.KeyD == true)
+                this.direction = this.direction - 5;
+        }
+        else
+        {
+            if (keys.ArrowUp == true)
+                this.direction = this.direction + 5;
+            else if (keys.ArrowDown == true)
+                this.direction = this.direction - 5;
+        }
     }
 
     addExtraSpeed() //
@@ -146,7 +162,7 @@ class Ball
         }
         else if (this.isFrontPlayer() == true)
         {
-            // this.addExtraDirection();
+            this.addExtraDirection();
             this.addExtraSpeed();
 
             if ((this.direction >= 30 && this.direction <= 90) || (this.direction >= -150 && this.direction <= -120))
@@ -217,12 +233,13 @@ class Ball
 
     animate()
     {
-        if (this.isUpOrDown() == true || this.isAtPlayer() == true)
-            this.direction = this.getOpposite(), this.getAwayFromPlayers();
-        else if (this.isOffLimit() == true)
+        if (this.isOffLimit() == true)
             this.game.restartRound();
+        else if (this.isUpOrDown() == true || this.isAtPlayer() == true)
+            this.direction = this.getOpposite(), this.getAwayFromPlayers();
 
         console.log(this.direction)
+        console.log(this.x, " ; ", this.y)
 
         this.move();
     }
