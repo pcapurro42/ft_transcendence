@@ -28,8 +28,19 @@ document.getElementById('switch_classic').onclick = gameTypeSwitch;
 document.getElementById('switch_tournament').onclick = gameTypeSwitch;
 
 function gameTypeSwitch(){
-
     let text = this.nextElementSibling;
+    let other_text;
+    if (this.id == 'switch_classic'){
+        other_switch = document.getElementById('switch_tournament');
+        other_text = document.getElementById('t_switch_text');
+    }
+    else{
+        other_switch = document.getElementById  ('switch_classic');
+        other_text = document.getElementById('c_switch_text');
+
+    }
+
+
     if (this.checked){
         text.innerHTML = getTranslation('Bonus Mode');
         gameMode = 'bonus'
@@ -38,4 +49,6 @@ function gameTypeSwitch(){
         text.innerHTML = getTranslation('Normal Mode');
         gameMode = 'normal';
     }
+    other_switch.checked = this.checked;
+    other_text.innerHTML = text.innerHTML;
 }
