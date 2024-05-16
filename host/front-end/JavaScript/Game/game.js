@@ -42,6 +42,8 @@ class Ball
 
         this.direction = direction;
         this.bonus_speed = bonus_speed;
+
+        this.bounce = true;
     }
 
     print()
@@ -137,7 +139,12 @@ class Ball
     {
         if (this.isUpOrDown() == true || this.isAboveOrUnderPlayer() == true)
             return (this.direction * (-1));
-        else
+        else if (this.isAboveOrUnderPlayer() == true && this.bounce == true)
+        {
+            this.bounce = false;
+            return (this.direction * (-1));
+        }
+        else if (this.isFrontPlayer() == true)
         {
             // this.addExtraDirection();
             this.addExtraSpeed();
@@ -203,6 +210,9 @@ class Ball
 
         this.direction = getRandomBallDirection();
         this.bonus_speed = 0;
+        
+        if (this.bounce == false)
+            this.bounce = true;
     }
 
     animate()

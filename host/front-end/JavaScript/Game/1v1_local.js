@@ -30,7 +30,7 @@ class Bar1v1
     {
         for (let i = 0; i != this.speed; i++)
         {
-            if (this.y > 0)
+            if (this.y > 0 && this.game.ball.isAboveOrUnderPlayer() == false)
             {
                 this.y = this.y - 1;
                 this.print();
@@ -42,7 +42,7 @@ class Bar1v1
     {
         for (let i = 0; i != this.speed; i++)
         {
-            if (this.y + this.height < this.game.game_height)
+            if (this.y + this.height < this.game.game_height && this.game.ball.isAboveOrUnderPlayer() == false)
             {
                 this.y = this.y + 1;
                 this.print();
