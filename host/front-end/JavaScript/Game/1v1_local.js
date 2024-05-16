@@ -78,6 +78,8 @@ class LocalGame1v1
     {
         this.player_nb = 2;
 
+        this.background_img = null;
+
         this.left_player = null;
         this.right_player = null;
 
@@ -126,6 +128,29 @@ class LocalGame1v1
 
         this.canvas.width = this.game_width;
         this.canvas.height = this.game_height;
+
+        // background loading
+
+        if (game_map == "none")
+            this.background_img = null;
+        else
+        {
+            if (game_map == "1")
+            {
+                this.background_img = new Image();
+                this.background_img.src = 'Materials/images/game_back1.png';
+            }
+            else if (game_map == "2")
+            {
+                this.background_img = new Image();
+                this.background_img.src = 'Materials/images/game_back2.png';
+            }
+            else if (game_map == "3")
+            {
+                this.background_img = new Image();
+                this.background_img.src = 'Materials/images/game_back3.png';
+            }
+        }
 
         // players creation
 
@@ -195,30 +220,14 @@ class LocalGame1v1
 
     refreshBackground()
     {
-        if (game_map == "none")
+        if (this.background_img == null)
         {
             this.display.fillStyle = this.background_color;
             this.display.fillRect(0, 0, this.game_width, this.game_height);
             this.display.fillStyle = this.menu_color;
         }
-        else if (game_map == "1")
-        {
-            let img = new Image();
-            img.src = 'Materials/images/game_back1.png';
-            this.display.drawImage(img, 0, 0);
-        }
-        else if (game_map == "2")
-        {
-            let img = new Image();
-            img.src = 'Materials/images/game_back2.png';
-            this.display.drawImage(img, 0, 0);
-        }
-        else if (game_map == "3")
-        {
-            let img = new Image();
-            img.src = 'Materials/images/game_back3.png';
-            this.display.drawImage(img, 0, 0);
-        }
+        else
+            this.display.drawImage(this.background_img, 0, 0);
     }
 
     refreshCenterBar()
