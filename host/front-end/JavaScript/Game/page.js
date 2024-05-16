@@ -21,6 +21,21 @@ function displayGamePage_tournament()
 {
     let game_page = document.getElementById('game_page_tournament');
     game_page.style.display = "block";
-
     removeMenu();
+}
+
+document.getElementById('switch_classic').onclick = gameTypeSwitch;
+document.getElementById('switch_tournament').onclick = gameTypeSwitch;
+
+function gameTypeSwitch(){
+
+    let text = this.nextElementSibling;
+    if (this.checked){
+        text.innerHTML = getTranslation('Bonus Mode');
+        gameMode = 'bonus'
+    }
+    else{
+        text.innerHTML = getTranslation('Normal Mode');
+        gameMode = 'normal';
+    }
 }

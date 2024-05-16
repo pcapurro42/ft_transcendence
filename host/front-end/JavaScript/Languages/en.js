@@ -13,6 +13,9 @@ let en = [
     ["Settings", "Settings"],
     ["Credits", "Credits"],
 
+    ["Normal Mode", "Normal Mode"],
+    ["Bonus Mode", "Bonus Mode"],
+
     ["1 vs 1 (online)", "1 vs 1 (online)"],
     ["1 vs 1 (local)", "1 vs 1 (local)"],
     ["1 vs 2 (local)", "1 vs 2 (local)"],

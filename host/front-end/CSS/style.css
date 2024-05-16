@@ -16,6 +16,10 @@
     aspect-ratio: 1400 / 764;
 }
 
+#switch_classic, #switch_tournament{
+    transform: scale(1.5);
+}
+
 #credit_close
 {
     position: absolute;

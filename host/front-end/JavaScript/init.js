@@ -42,6 +42,7 @@ let mode; // normal or bonus
 
 let game; // object of the game
 let active; // should display the game or no
+let gameMode = 'normal';
 
 //Tournament//
 
