@@ -180,19 +180,19 @@ class Ball
 
     getAwayFromPlayers()
     {
-        if (this.isAtPlayer() == true)
+        if (this.isFrontPlayer() == true)
         {
             if (this.x < this.game.game_width / 2)
-                this.x = this.x + 1;
+                this.x = this.x + this.speed;
             else
-                this.x = this.x - 1;
+                this.x = this.x - this.speed;
         }
         if (this.isAboveOrUnderPlayer() == true)
         {
-            if (this.y + this.height >= this.game.left_player.y || this.y + this.height >= this.game.right_player.y)
-                this.y = this.y - 1;
+            if (Math.ceil(this.y) + this.height == this.game.left_player.y || Math.ceil(this.y) + this.height == this.game.right_player.y)
+                this.y = this.y - this.speed;
             else
-                this.y = this.y + 1;
+                this.y = this.y + this.speed;
         }
     }
 
@@ -208,14 +208,11 @@ class Ball
     animate()
     {
         if (this.isUpOrDown() == true || this.isAtPlayer() == true)
-            this.getAwayFromPlayers(), this.direction = this.getOpposite();
+            this.direction = this.getOpposite(), this.getAwayFromPlayers();
         else if (this.isOffLimit() == true)
             this.game.restartRound();
 
-        console.log(this.x, " ; ", this.y)
-        console.log(this.game.right_player.x, " ; ", this.game.right_player.y);
-        // console.log(this.direction, " ; ", this.speed + this.bonus_speed);
-        console.log(this.direction);
+        console.log(this.direction)
 
         this.move();
     }
