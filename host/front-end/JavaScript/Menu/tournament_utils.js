@@ -31,10 +31,17 @@ function fillNicknames(nicknames){
 	document.getElementById('6thGameNicks').innerHTML = `${nicknames[10]} vs ${nicknames[11]}`;
 	document.getElementById('7thGameNicks').innerHTML = `${nicknames[12]} vs ${nicknames[13]}`;
 	document.getElementById('8thGameNicks').innerHTML = `${nicknames[14]} vs ${nicknames[15]}`;
-
 }
 
 function tournamentResetBlocks(){
+
+	document.getElementById('main_page').style.display = 'block';
+	document.getElementById('main_menu_page').style.display = 'block';
+	document.getElementById('main_page').style.transition = '';
+	document.getElementById('main_menu_page').style.transition = '';
+	document.getElementById('main_page').style.opacity = '';
+	document.getElementById('main_menu_page').style.opacity = '';
+
 	let ro16 = document.getElementById('Roundof16')
 	ro16.style.visibility = 'hidden';
 	ro16.style.opacity = '1';
@@ -73,4 +80,13 @@ function tournamentFullReset(){
 	game_nbr = 1;
 	max_game = null;
 	tournamentResetBlocks();
+}
+
+function tournamentFinalReset(){
+	stop_flag = true;
+	tournamentFullReset();
+	document.getElementById('submit_alias').removeAttribute('disabled');
+	document.getElementById('tournament_announcer').style.display = 'none';
+
+	document.getElementById('main_menu_toolbar').style.transition = '';
 }

@@ -57,6 +57,8 @@ document.getElementById('next_game_tournament_btn').onclick = nextGameHandler;
 document.getElementById('tournament_players_selector').onchange = tournamentTypeHandler;
 document.getElementById('back_tournament_form_btn').onclick = removeTournamentForm;
 
+document.getElementById('start_tournament_game').onclick = displayTournamentGame;
+
 // < CUSTOMIZE > //
 
 document.getElementById('game_theme_btn_selector').onchange = changeGameMusic;

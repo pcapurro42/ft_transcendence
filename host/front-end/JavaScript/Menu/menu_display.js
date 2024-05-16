@@ -154,8 +154,8 @@ function removePlay()
 
 function displayTwoVsOneGameLocal()
 {
-    main_menu_page = document.getElementById('main_menu_page');
-    main_menu_page.style.display = "none";
+    main_page = document.getElementById('main_page');
+    main_page.style.display = "none";
     game_toolbar = document.getElementById('game_toolbar');
     game_toolbar.style.display = "block";
 
@@ -167,8 +167,8 @@ function displayTwoVsOneGameLocal()
 
 function displayOneVsOneGameLocal()
 {
-    main_menu_page = document.getElementById('main_menu_page');
-    main_menu_page.style.display = "none";
+    main_page = document.getElementById('main_page');
+    main_page.style.display = "none";
     game_toolbar = document.getElementById('game_toolbar');
     game_toolbar.style.display = "block";
 

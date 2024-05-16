@@ -14,13 +14,16 @@ async function displayNextGame(game_nbr, nicknames){
 
 	await tournamentGameAnimation(player, round);
 
+	tournamentResetBlocks();
+	fillNicknames(nicknames);
+
 	if (stop_flag == true){
 		tournamentResetBlocks();
 		document.getElementById('submit_alias').removeAttribute('disabled');
 		return;
 	}
 
-	tournamentGameStart()
+	await tournamentGameStart()
 }
 
 async function displayTournamentStage(nicknames){
@@ -53,7 +56,8 @@ async function displayTournamentStage(nicknames){
 	await tournamentStageAnimation(round, incomingGames);
 
 	if (nicknames.length == 2){
-		tournamentGameStart();
+		final = true;
+		await tournamentGameStart();
 	}
 }
 
@@ -82,12 +86,13 @@ async function tournamentStageAnimation(round, incomingGames){
 	await sleep(1000);
 
 }
+
 async function tournamentGameAnimation(player, round)
 {
-	let main_menu = document.getElementById('main_menu_page')
+	let main_page = document.getElementById('main_page')
 
-	main_menu.style.opacity = '0';
-	main_menu.style.display = 'block';
+	main_page.style.opacity = '0';
+	main_page.style.display = 'block';
 
 	player.style.opacity = '0';
 	round.style.opacity = '0';
@@ -96,11 +101,11 @@ async function tournamentGameAnimation(player, round)
 
 	player.style.transition = 'opacity 1s';
 	round.style.transition = 'opacity 1s';
-	main_menu.style.transition = 'opacity 1s';
+	main_page.style.transition = 'opacity 1s';
 
 	await sleep(100);
 
-	main_menu.style.opacity = '1';
+	main_page.style.opacity = '1';
 	round.style.opacity = '1';
 
 	await sleep(1000);
@@ -111,8 +116,56 @@ async function tournamentGameAnimation(player, round)
 
 	player.style.opacity = '0';
 	round.style.opacity = '0';
-	main_menu.style.opacity = '0'
+	main_page.style.opacity = '0'
 	await sleep(1000);
+}
+
+async function displayFinalWinner(){
+	let winner = document.getElementById('nick_reminder').innerHTML
+	winner = winner.substring(0, winner.indexOf(' '));
+
+	let game_page = document.getElementById('game_page_tournament');
+	let top_logo = document.getElementById('game_toolbar');
 
 
+	game_page.style.transition = 'opacity 1s';
+	top_logo.style.transition = 'opacity 1s';
+
+
+	await sleep(10);
+
+	top_logo.style.opacity = '0';
+	game_page.style.opacity = '0';
+
+	await sleep(2000);
+
+	top_logo.style.display = 'none';
+	game_page.style.display = 'none';
+	top_logo.style.opacity = '1';
+	game_page.style.opacity = '1';
+
+	document.getElementById('main_page').style.display = 'block';
+	document.getElementById('main_menu_page').style.display = 'block';
+
+	let win_msg = document.getElementById('round_block');
+
+	win_msg.innerHTML = 'We got a winner...<br>Congratulations ' + winner;
+
+	let winner_block = document.getElementById('1stGameNicks');
+
+	winner_block.innerHTML = winner;
+
+
+	await sleep(10);
+
+	win_msg.style.opacity = '1';
+
+	await sleep(2000);
+
+	win_msg.style.opacity = '0';
+
+	await sleep(1000)
+
+	tournamentFinalReset();
+	displayMenu();
 }

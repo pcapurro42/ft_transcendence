@@ -31,7 +31,7 @@ class Bar1v1
         for (let i = 0; i != this.speed; i++)
         {
             if (this.y > 0)
-            {                
+            {
                 this.y = this.y - 1;
                 this.print();
             }
@@ -75,21 +75,21 @@ class Bar1v1
 class LocalGame1v1
 {
     constructor()
-    {   
+    {
         this.player_nb = 2;
-        
+
         this.left_player = null;
         this.right_player = null;
 
         this.ball = null;
-    
+
         this.scores = [0, 0];
 
         this.canvas = null;
 
         this.game_width = 1100;
         this.game_height = 720;
-    
+
         this.bar_speed = 10;
         this.bar_height = 80;
         this.bar_width = 10;
@@ -123,7 +123,7 @@ class LocalGame1v1
         else
             this.canvas = document.getElementById('one_vs_one_local_game');
         this.display = this.canvas.getContext('2d');
-        
+
         this.canvas.width = this.game_width;
         this.canvas.height = this.game_height;
 
@@ -137,24 +137,24 @@ class LocalGame1v1
 
             map_x: 0 + this.bar_width,
             map_y: ((this.game_height / 2) - this.bar_height / 2),
-    
+
             bar_speed: this.bar_speed,
             color: this.bar_color
         }
-    
+
         let right_player_data = {
             game: this,
 
             object_width: this.bar_width,
             object_heigth : this.bar_height,
-    
+
             map_x: ((this.game_width - this.bar_width) - this.bar_width),
             map_y: ((this.game_height / 2) - this.bar_height / 2),
-    
+
             bar_speed: this.bar_speed,
             color: this.bar_color
         }
-    
+
         this.left_player = new Bar1v1(...Object.values(left_player_data));
         this.right_player = new Bar1v1(...Object.values(right_player_data));
 
@@ -176,7 +176,7 @@ class LocalGame1v1
 
             speed: this.ball_speed,
             color: this.ball_color,
-            
+
             direction : this.ball_direction,
             bonus_speed: 0
         }
@@ -289,22 +289,36 @@ class LocalGame1v1
     {
         if (active == false)
             return (true);
-        if (this.scores[0] > 9 || this.scores[1] > 9)
+        if (this.scores[0] > 0 || this.scores[1] > 0)
         {
-            if (this.scores[0] > 9)
-            {
-                let player_left_won = document.getElementById('left_player_won_text');
-                player_left_won.style.display = "block";
+            if (type == 'tournament'){
+                if (this.scores[0] > 0)
+                {
+                    let player_left = document.getElementById('nick_reminder');
+                    player_left.innerHTML = player_left.innerHTML.substring(0, player_left.innerHTML.indexOf(' ')) + " won the game!";
+                }
+                if (this.scores[1] > 0)
+                {
+                    let player_right = document.getElementById('nick_reminder');
+                    player_right.innerHTML = player_right.innerHTML.substring(player_right.innerHTML.indexOf(' ', player_right.innerHTML.indexOf(' ') + 1) + 1) + " won the game!";;
+                }
             }
-            if (this.scores[1] > 9)
-            {
-                let player_right_won = document.getElementById('right_player_won_text');
-                player_right_won.style.display = "block";
+            else{
+                if (this.scores[0] > 0)
+                {
+                    let player_left_won = document.getElementById('left_player_won_text');
+                    player_left_won.style.display = "block";
+                }
+                if (this.scores[1] > 0)
+                {
+                    let player_right_won = document.getElementById('right_player_won_text');
+                    player_right_won.style.display = "block";
+                }
             }
 
             this.resetGame();
             active = false;
-            
+
             return (true);
         }
         return (false);
@@ -317,7 +331,7 @@ function initializeLocal1v1()
 {
     mode = 2;
     game = new LocalGame1v1();
-    
+
     game.initialize();
     game.refreshBackground();
     active = true;
@@ -336,7 +350,7 @@ function displayLocal1v1()
 
     let timer = document.getElementById('1v1_local_timer');
     timer.style.display = "block";
-    
+
     displayCountDown(3);
 }
 
@@ -357,10 +371,14 @@ function startLocal1v1()
         game.refreshBackground();
         game.resetGame();
         removeLocal1v1();
+        if (final == false)
+            removeTournamentGame();
+        else
+            displayFinalWinner();
     }
     else
     {
         game.refreshDisplay();
         requestAnimationFrame(startLocal1v1);
-    }        
+    }
 }

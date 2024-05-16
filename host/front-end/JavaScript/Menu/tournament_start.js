@@ -1,8 +1,12 @@
 async function startTournament(newNicksArray, i){
+	stop_flag = false;
+	turn = false;
+		console.log(stop_flag, turn);
+	while (stop_flag == false && turn == false){
+		console.log('test');
 	tournamentResetBlocks();
 	nicknames = newNicksArray;
 	winner_array = [];
-	stop_flag = false;
 	max_game = i / 2;
 
 	if (nicknames == null)
@@ -22,16 +26,24 @@ async function startTournament(newNicksArray, i){
 		return;
 	}
 	if (i != 2)
-		displayNextGame(game_nbr, nicknames)
+		await displayNextGame(game_nbr, nicknames)
+	}
 }
 
 async function tournamentGameStart(){
 	removeMenu();
+	document.getElementById('main_page').style.display = 'none';
 	let game_toolbar = document.getElementById('game_toolbar');
 	let game_page_tournament = document.getElementById('game_page_tournament');
 
 	let player_block = document.getElementById('nick_reminder');
 	player_block.innerHTML = document.getElementById('nick_announce').innerHTML;
+
+	let next_game_btn = document.getElementById('t_next_game');
+	let start_game_btn = document.getElementById('t_start_game');
+
+	start_game_btn.style.display = 'block';
+	next_game_btn.style.display = 'none';
 
 	game_toolbar.style.opacity = '0';
 	game_toolbar.style.display = 'block';
@@ -42,7 +54,10 @@ async function tournamentGameStart(){
 	game_page_tournament.style.transition = 'opacity 1s';
 
 	await sleep (10);
+
 	game_page_tournament.style.opacity = '1';
 	game_toolbar.style.opacity = '1';
+
 	await sleep(1000);
+	turn = true;
 }

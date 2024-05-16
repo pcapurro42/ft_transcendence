@@ -15,6 +15,8 @@ function tournamentTypeHandler(){
 
 async function nextGameHandler(){
 
+	active = false;
+	removeTournamentGame();
 	if (game_nbr < max_game){
 		document.getElementById('game_toolbar').style.display = 'none';
 		document.getElementById('game_page_tournament').style.display = 'none';

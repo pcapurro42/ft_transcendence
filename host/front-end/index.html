@@ -119,9 +119,15 @@
                 <div class="display-4 text text-center" id="nick_reminder"></div>
                  <canvas id="tournament_game" class="col-10 border border-5 w-100"></canvas>
                 <br><br>
-                <button id="start_tournament_game" class="btn btn-simple text border border-5" data-tsnormal="40px" data-tslarge="60px" data-oname="Launch a game"></button>
-                <button id="next_game_tournament_btn" class="btn btn-simple text border border-5" data-tsnormal="40px" data-tslarge="60px" data-oname="Next Game"></button>
-            </div>
+                <div>
+                    <h1 id="tournament_timer" class="text" data-tsnormal="50px" data-tslarge="70px"></h1>
+                </div>
+                <div id="t_start_game">
+                    <button id="start_tournament_game" class="btn btn-simple text border border-5" data-tsnormal="40px" data-tslarge="60px" data-oname="Launch a game"></button>
+                </div>
+                <div id="t_next_game">
+                    <button id="next_game_tournament_btn" class="btn-simple text border border-5" data-tsnormal="40px" data-tslarge="60px" data-oname="Next Game"></button>
+                </div>
             </div>
 
             <!-- Vs AI Game page -->
@@ -134,7 +140,7 @@
 
         <!-- Menu Pages -->
 
-        <div id="main_menu_page">
+        <div id="main_page">
 
             <!-- Main menu toolbar -->
 
@@ -356,8 +362,8 @@
                 <h4 class="text text-center mt-4 game_nbr" data-oname="8th Game"></h4>
                 <p id ="8thGameNicks"class="text text-center mb-5 nicks"></p>
             </div>
+
         </div>
-    </div>
                 <!-- Customize menu -->
 
 

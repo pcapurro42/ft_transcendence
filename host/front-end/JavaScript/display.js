@@ -55,11 +55,14 @@ function displayMenu()
     tournament_announcer.style.display = 'none';
 
     freeInputAndForms();
-    tournamentFullReset();
+    tournamentFinalReset();
 
     stop_flag = true; // stop tournament
 
     active = false; // turn off the game
+
+    let main_page = document.getElementById('main_page');
+    main_page.style.display = 'block';
 
     let main_menu_page = document.getElementById('main_menu_page');
     main_menu_page.style.display = "block";

@@ -48,6 +48,8 @@ let nicknames;
 let winner_array;
 let game_nbr;
 let max_game;
+let final = false;
+let turn = false;
 
 //<P2P>//
 
