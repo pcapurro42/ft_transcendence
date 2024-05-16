@@ -1,7 +1,7 @@
 let boolAudio_on;
 
 function theaterCredits(){
-	let website = document.getElementById('main_menu_page');
+	let website = document.getElementById('main_page');
 	let music_menu = document.getElementById('mgs');
 	let cross_exit = document.getElementById('credit_close');
 	let video = document.getElementById('vid_credits');
@@ -28,7 +28,7 @@ function theaterCredits(){
 }
 
 function theaterClose(){
-	let website = document.getElementById('main_menu_page');
+	let website = document.getElementById('main_page');
 	let music_menu = document.getElementById('mgs');
 	let cross_exit = document.getElementById('credit_close');
 	let video = document.getElementById('vid_credits');
