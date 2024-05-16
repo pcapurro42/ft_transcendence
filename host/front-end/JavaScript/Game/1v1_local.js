@@ -332,7 +332,7 @@ class LocalGame1v1
 
 function initializeLocal1v1()
 {
-    mode = 2;
+    players_nb = 2;
     game = new LocalGame1v1();
 
     game.initialize();
