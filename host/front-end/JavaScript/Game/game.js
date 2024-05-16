@@ -60,13 +60,13 @@ class Ball
 
     isFrontPlayer()
     {
-        if (this.x <= this.game.left_player.x + this.game.left_player.width && this.x >= this.game.left_player.x)
+        if (Math.ceil(this.x) == this.game.left_player.x + this.game.left_player.width)
         {
             if (this.y + this.height >= this.game.left_player.y && this.y <= this.game.left_player.y + this.game.left_player.height)
                 return (true);
         }
 
-        if (this.x + this.width >= this.game.right_player.x && this.x + this.width <= this.game.right_player.x + this.game.right_player.width)
+        if (Math.ceil(this.x) + this.width == this.game.right_player.x)
         {
             if (this.y + this.height >= this.game.right_player.y && this.y <= this.game.right_player.y + this.game.right_player.height)
                 return (true);
@@ -76,6 +76,20 @@ class Ball
 
     isAboveOrUnderPlayer()
     {
+        if (this.x + this.width >= this.game.left_player.x && this.x <= this.game.left_player.x + this.game.left_player.width)
+        {
+            if (Math.ceil(this.y) + this.height == this.game.left_player.y)
+                return (true);
+            if (Math.ceil(this.y) == this.game.left_player.y + this.game.left_player.height)
+                return (true);
+        }
+        if (this.x + this.width >= this.game.right_player.x && this.x <= this.game.right_player.x + this.game.right_player.width)
+        {
+            if (Math.ceil(this.y) + this.height == this.game.right_player.y)
+                return (true);
+            if (Math.ceil(this.y) == this.game.right_player.y + this.game.right_player.height)
+                return (true);
+        }
         return (false);
     }
 
@@ -198,7 +212,8 @@ class Ball
         else if (this.isOffLimit() == true)
             this.game.restartRound();
 
-        // console.log(this.x, " ; ", this.y)
+        console.log(this.x, " ; ", this.y)
+        console.log(this.game.right_player.x, " ; ", this.game.right_player.y);
         // console.log(this.direction, " ; ", this.speed + this.bonus_speed);
         console.log(this.direction);
 
