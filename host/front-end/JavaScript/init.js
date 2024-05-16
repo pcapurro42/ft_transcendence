@@ -38,7 +38,6 @@ refreshLogin();
 
 let type; // tournament or no
 let players_nb; // number of local players
-let mode; // normal or bonus
 
 let game; // object of the game
 let active; // should display the game or no

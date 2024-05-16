@@ -86,21 +86,6 @@ class PowerUp
 
     // < Animate > //
 
-    move()
-    {
-        let x_dir = this.calculateNewDirections()[0];
-        let y_dir = this.calculateNewDirections()[1];
-
-        x_dir = Math.round(x_dir * 100) / 100;
-        y_dir = Math.round(y_dir * 100) / 100;
-
-        for (let i = 0; this.shouldStop() == false && i != (this.speed + this.bonus_speed); i++)
-        {
-            this.x = this.x + x_dir;
-            this.y = this.y + y_dir;
-        }
-    }
-
     ApplyPlayerBonus()
     {
         ;
@@ -119,15 +104,30 @@ class PowerUp
         this.direction = getRandomBallDirection();
     }
 
+    move()
+    {
+        let x_dir = this.calculateNewDirections()[0];
+        let y_dir = this.calculateNewDirections()[1];
+
+        x_dir = Math.round(x_dir * 100) / 100;
+        y_dir = Math.round(y_dir * 100) / 100;
+
+        for (let i = 0; this.shouldStop() == false && i != (this.speed + this.bonus_speed); i++)
+        {
+            this.x = this.x + x_dir;
+            this.y = this.y + y_dir;
+        }
+    }
+
     animate()
     {
-        if (this.isAtLimits() == true)
-            this.direction = this.getOpposite();
-        else if (this.isAtPlayer() == true)
-            this.ApplyPlayerBonus(), this.reset();
-        else if (this.isAtBall() == true)
-            this.ApplyBallBonus(), this.reset();
+        // if (this.isAtLimits() == true)
+        //     this.direction = this.getOpposite();
+        // else if (this.isAtPlayer() == true)
+        //     this.ApplyPlayerBonus(), this.reset();
+        // else if (this.isAtBall() == true)
+        //     this.ApplyBallBonus(), this.reset();
 
-        this.move();
+        // this.move();
     }
 }
