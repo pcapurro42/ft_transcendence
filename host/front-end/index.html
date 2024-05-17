@@ -132,8 +132,15 @@
 
             <!-- Vs AI Game page -->
 
-            <div id="game_page_ai">
-                <!-- ... -->
+            <div id="game_page_ai" class="container mx-auto">
+                <canvas id="vs_ai" class="col-10 border border-5 w-100"></canvas>
+                <br><br><br>
+                <div class="container text text-center">
+                <h1 id="you_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h2>
+                <h1 id="ai_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Right player won the game."></h1>
+                    <h1 id="ai_local_timer" class="text" data-tsnormal="50px" data-tslarge="70px"></h1>
+                    <button id="start_vs_ai" class="btn text border border-5" data-tsnormal="40px" data-tslarge="60px" data-oname="Launch a game"></button>
+                </div>
             </div>
 
         </div>

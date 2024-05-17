@@ -34,6 +34,8 @@ document.getElementById('classic_back_btn').onclick = removeClassicChoice;
 
 document.getElementById('start_1v1_local').onclick = displayLocal1v1;
 
+document.getElementById('start_vs_ai').onclick = displayVsAi;
+
 // < CLASSIC > //
 
 document.getElementById('create_one_vs_one_online_btn').onclick = displayOneVsOneOnlineCreateGame;
