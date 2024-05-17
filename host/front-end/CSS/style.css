@@ -57,6 +57,9 @@
     border-width: 1 !important;
 }
 
+#switch_tournament, #switch_classic{
+    cursor: pointer;
+}
 #title_logo
 {
     max-width: 80%;
