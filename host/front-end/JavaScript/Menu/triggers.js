@@ -85,29 +85,6 @@ document.getElementById('submit_offer').onclick = answerGenerator;
 document.getElementById('submit_answer').onclick = submitAnswer;
 // document.getElementById('submit_answer').onclick = offerHandler;
 
-document.getElementById('game_map_btn_selector').onmouseover = function(){
-	let img = document.getElementById('img_tooltip');
-	console.log(this.value);
-	if (this.value != 'none'){
-		document.getElementById('map_tooltip').classList.remove('d-none');
-		img.style.marginLeft = '150px';
-		img.style.boxSizing = 'border-box';
-		img.style.border = '2px solid'
-		switch (this.value){
-			case '1':
-				img.src = "./Materials/images/tooltip_green_map.png";
-				break;
-			case '2':
-				img.src = "./Materials/images/tooltip_yellow_map.png";
-				break;
-			case '3':
-				img.src = "./Materials/images/tooltip_orange_map.png";
-				break;
-		}
+document.getElementById('game_map_btn_selector').onmouseover = showMapTooltip;
 
-	}
-}
-
-document.getElementById('game_map_btn_selector').onmouseout = function(){
-	document.getElementById('map_tooltip').classList.add('d-none');
-}
+document.getElementById('game_map_btn_selector').onmouseout = removeMapTooltip;

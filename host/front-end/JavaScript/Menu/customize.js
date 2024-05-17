@@ -3,7 +3,7 @@
 function changeGameMusic()
 {
     let new_game_music = document.getElementById('game_theme_btn_selector');
-    
+
     game_music = new_game_music.value;
     localStorage.setItem('game_music', game_music);
 }
@@ -11,7 +11,7 @@ function changeGameMusic()
 function changeGameMap()
 {
     let new_game_map = document.getElementById('game_map_btn_selector');
-    
+
     game_map = new_game_map.value;
     localStorage.setItem('game_map', game_map);
 }
@@ -45,8 +45,31 @@ function displayCustomize()
 
     customize_menu.style.display = 'block';
     customize_back_btn.style.display = 'block';
-    
+
     main_menu.style.display = 'none';
+}
+
+function showMapTooltip(){
+	let img = document.getElementById('img_tooltip');
+	if (this.value != 'none'){
+		document.getElementById('map_tooltip').classList.remove('d-none');
+		switch (this.value){
+			case '1':
+				img.src = "./Materials/images/tooltip_green_map.png";
+				break;
+			case '2':
+				img.src = "./Materials/images/tooltip_yellow_map.png";
+				break;
+			case '3':
+				img.src = "./Materials/images/tooltip_orange_map.png";
+				break;
+		}
+
+	}
+}
+
+function removeMapTooltip(){
+	document.getElementById('map_tooltip').classList.add('d-none');
 }
 
 function removeCustomize()
@@ -58,7 +81,7 @@ function removeCustomize()
 
     customize_menu.style.display = 'none';
     customize_back_btn.style.display = 'none';
-    
+
     main_menu.style.display = 'block';
 }
 
@@ -79,3 +102,4 @@ function initializeCustomize()
     setGameMap();
     setGameMusic();
 }
+
