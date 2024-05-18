@@ -34,7 +34,7 @@ document.getElementById('classic_back_btn').onclick = removeClassicChoice;
 
 document.getElementById('start_1v1_local').onclick = displayLocal1v1;
 
-document.getElementById('start_vs_ai').onclick = displayVsAi;
+// document.getElementById('start_vs_ai').onclick = displayVsAi;
 
 // < CLASSIC > //
 

@@ -57,12 +57,15 @@ let keys = {
     KeyJ: false,
 
     ArrowUp: false,
-    ArrowDown: false
+    ArrowDown: false,
+    
+    guestUp: false,
+    guestDown: false,
 };
 
 // < TRIGGER > //
 
-window.addEventListener('keydown', (event) => 
+window.addEventListener('keydown', (event) =>
 {
     if (players_nb != 0 && players_nb != null)
     {
@@ -108,7 +111,7 @@ window.addEventListener('keydown', (event) =>
     }
 });
 
-window.addEventListener('keyup', (event) => 
+window.addEventListener('keyup', (event) =>
 {
     if (event.key == 'ArrowUp')
         keys.ArrowUp = false;

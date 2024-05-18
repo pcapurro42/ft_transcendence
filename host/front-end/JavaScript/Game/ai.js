@@ -19,47 +19,47 @@ function ai()
     displayGamePage_ai();
 }
 
-function displayVsAi()
-{
-    let start_btn = document.getElementById('start_vs_ai');
-    start_btn.style.visibility = "hidden";
+// function displayVsAi()
+// {
+//     let start_btn = document.getElementById('start_vs_ai');
+//     start_btn.style.visibility = "hidden";
 
 
-    let timer = document.getElementById('ai_local_timer');
-    timer.style.display = "block";
+//     let timer = document.getElementById('ai_local_timer');
+//     timer.style.display = "block";
 
-    type = 'ai';
-    ai_displayCountDown(3);
-}
+//     type = 'ai';
+//     ai_displayCountDown(3);
+// }
 
-function removeVsAi()
-{
-    let timer = document.getElementById('ai_local_timer');
-    timer.style.display = "none";
+// function removeVsAi()
+// {
+//     let timer = document.getElementById('ai_local_timer');
+//     timer.style.display = "none";
 
-    let start_btn = document.getElementById('vs_ai_local');
-    start_btn.innerHTML = getTranslation("Launch a game");
-    start_btn.style.visibility = "visible";
-}
+//     let start_btn = document.getElementById('vs_ai_local');
+//     start_btn.innerHTML = getTranslation("Launch a game");
+//     start_btn.style.visibility = "visible";
+// }
 
-function ai_displayCountDown(nb)
-{
-    let timer = document.getElementById('ai_local_timer');
-    if (nb == 3)
-        timer.innerHTML = "3";
-    else if (nb == 2)
-        timer.innerHTML = "2";
-    else if (nb == 1)
-        timer.innerHTML = "1";
-    else if (nb == 0)
-        timer.innerHTML = getTranslation("Go!")
-    else if (nb == -1)
-    {
-        timer.style.display = "none";
-        active = true;
-        startLocal1v1();
-        return ;
-    }
-    console.log(nb)
-    setTimeout(ai_displayCountDown, 1000, --nb);
-}
+// function ai_displayCountDown(nb)
+// {
+//     let timer = document.getElementById('ai_local_timer');
+//     if (nb == 3)
+//         timer.innerHTML = "3";
+//     else if (nb == 2)
+//         timer.innerHTML = "2";
+//     else if (nb == 1)
+//         timer.innerHTML = "1";
+//     else if (nb == 0)
+//         timer.innerHTML = getTranslation("Go!")
+//     else if (nb == -1)
+//     {
+//         timer.style.display = "none";
+//         active = true;
+//         startLocal1v1();
+//         return ;
+//     }
+//     console.log(nb)
+//     setTimeout(ai_displayCountDown, 1000, --nb);
+// }

@@ -28,4 +28,21 @@ async function guestConnectionHandler(){
 		displayGuestPage_classic();
 		data_channel.send('lobby ok')
 	};
+
+}
+
+function moveListener(event){
+
+	if (event.key === 'ArrowDown'){
+		data_channel.send('arrowDown');
+	}
+	else if (event.key === 'ArrowUp'){
+		data_channel.send('arrowUp');
+	}
+}
+
+function stopMoveListener(event){
+
+	if (event.key === 'ArrowDown' || event.key === 'ArrowUp')
+		data_channel.send('noKeys');
 }

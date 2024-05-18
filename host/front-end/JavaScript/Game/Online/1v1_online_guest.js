@@ -2,7 +2,7 @@ function displayGuest1v1()
 {
     let timer = document.getElementById('guest_local_timer');
     timer.classList.remove('d-none');
-
+    type = 'online_guest';
     guestCountDown(3);
 }
 
@@ -45,6 +45,8 @@ function guestCountDown(nb)
         timer.style.display = "none";
         active = true;
         startGuest1v1();
+        document.addEventListener('keydown', moveListener);
+        document.addEventListener('keyup', stopMoveListener);
         return ;
     }
     setTimeout(guestCountDown, 1000, --nb);

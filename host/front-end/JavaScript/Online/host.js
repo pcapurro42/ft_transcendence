@@ -3,6 +3,16 @@ function readGuestMsg(event){
 	if (event.data === 'lobby ok'){
 		document.getElementById('start_1v1_online').classList.remove('d-none');
 	}
+	if (event.data === 'arrowDown'){
+		keys.guestDown = true;
+	}
+	if (event.data ==='arrowUp'){
+		keys.guestUp = true;
+	}
+	if (event.data ==='noKeys'){
+		keys.guestDown = false;
+		keys.guestUp = false;
+	}
 }
 
 function hostConnectionHandler(){

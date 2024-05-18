@@ -8,6 +8,8 @@ function resetConnection(){
     RTC_a = null;
     RTC_o = null;
     data_channel = null;
+    removeEventListener('keydown', moveListener);
+    removeEventListener('keyup', stopMoveListener);
 }
 
 function handleDisconnection(){

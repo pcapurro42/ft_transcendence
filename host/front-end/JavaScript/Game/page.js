@@ -13,9 +13,10 @@ function displayHostPage_classic()
 
     let game_toolbar = document.getElementById('game_toolbar');
     game_toolbar.style.display = 'block';
-    
+
     let game_backgrounds = document.getElementById('game_backgrounds');
     game_backgrounds.style.display = 'block';
+    initializeOnline1v1();
     removeMenu();
 }
 function displayGuestPage_classic()
@@ -29,7 +30,7 @@ function displayGuestPage_classic()
     let game_backgrounds = document.getElementById('game_backgrounds');
 
     game_backgrounds.style.display = 'block';
-
+    initializeOnline1v1();
     removeMenu();
 }
 

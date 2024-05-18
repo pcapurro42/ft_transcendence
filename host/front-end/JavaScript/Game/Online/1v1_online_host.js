@@ -6,7 +6,7 @@ function displayHost1v1()
     let timer = document.getElementById('host_local_timer');
     timer.classList.remove('d-none');
 
-
+    type = 'online_host';
     hostCountDown(3);
 }
 
@@ -27,16 +27,12 @@ function startHost1v1()
     {
         game.refreshBackground();
         game.resetGame();
-        removeLocal1v1();
-        if (final == false)
-            removeTournamentGame();
-        else
-            displayFinalWinner();
+        removeHost1v1();
     }
     else
     {
         game.refreshDisplay();
-        requestAnimationFrame(startLocal1v1);
+        requestAnimationFrame(startHost1v1);
     }
 }
 
