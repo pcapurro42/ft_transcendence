@@ -6,14 +6,30 @@ function displayGamePage_ai()
     removeMenu();
 }
 
-function displayGamePage_classic()
+function displayHostPage_classic()
 {
-    let game_page = document.getElementById('one_vs_one_online_page');
+    let game_page = document.getElementById('one_vs_one_host_page');
     game_page.style.display = "block";
 
-    let peer_offer = document.getElementById('peer_offer');
-    let g_id_reminder = document.getElementById('game_id_reminder');
-    g_id_reminder.value = peer_offer.value;
+    let game_toolbar = document.getElementById('game_toolbar');
+    game_toolbar.style.display = 'block';
+    
+    let game_backgrounds = document.getElementById('game_backgrounds');
+    game_backgrounds.style.display = 'block';
+    removeMenu();
+}
+function displayGuestPage_classic()
+{
+    let game_page = document.getElementById('one_vs_one_guest_page');
+    game_page.style.display = "block";
+
+    let game_toolbar = document.getElementById('game_toolbar');
+    game_toolbar.style.display = 'block';
+
+    let game_backgrounds = document.getElementById('game_backgrounds');
+
+    game_backgrounds.style.display = 'block';
+
     removeMenu();
 }
 
@@ -21,6 +37,10 @@ function displayGamePage_tournament()
 {
     let game_page = document.getElementById('game_page_tournament');
     game_page.style.display = "block";
+
+    let game_backgrounds = document.getElementById('game_backgrounds');
+    game_backgrounds.style.display = 'block';
+
     removeMenu();
 }
 

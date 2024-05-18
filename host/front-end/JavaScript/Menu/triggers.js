@@ -39,7 +39,6 @@ document.getElementById('start_vs_ai').onclick = displayVsAi;
 // < CLASSIC > //
 
 document.getElementById('create_one_vs_one_online_btn').onclick = displayOneVsOneOnlineCreateGame;
-document.getElementById('create_classic_lobby').onclick = displayGamePage_classic;
 document.getElementById('create_classic_back_btn').onclick = displayOneVsOneChoice;
 
 document.getElementById('join_one_vs_one_online_btn').onclick = displayOneVsOneOnlineJoinGame;

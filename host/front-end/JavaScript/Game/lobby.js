@@ -1,5 +1,4 @@
 document.getElementById("cpy_btn_offer").onclick = cpyGameOffer;
-document.getElementById("cpy_btn_reminder").onclick = cpyGameOffer;
 
 function cpyGameOffer(){
 	let content = document.getElementById("peer_offer");

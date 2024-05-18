@@ -1,5 +1,8 @@
 function readGuestMsg(event){
 	console.log(event.data);
+	if (event.data === 'lobby ok'){
+		document.getElementById('start_1v1_online').classList.remove('d-none');
+	}
 }
 
 function hostConnectionHandler(){
@@ -15,7 +18,13 @@ function hostConnectionHandler(){
 	let	create_btn = document.getElementById("create_classic_lobby");
 	create_btn.style.visibility = 'visible';
 	create_btn.onclick = () => {
-		displayGamePage_classic();
+		displayHostPage_classic();
 		data_channel.send('lobby ok');
+	}
+
+	let launch_game = document.getElementById('start_1v1_online');
+	launch_game.onclick = () => {
+		data_channel.send("countdown start");
+		displayHost1v1();
 	}
 }

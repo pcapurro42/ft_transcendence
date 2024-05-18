@@ -19,7 +19,7 @@
 
         <link rel="stylesheet" href="./CSS/style.css">
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" crossorigin="anonymous">
 
         <!-- Audio -->
 
@@ -43,6 +43,10 @@
     <!-- Body -->
     <body id="background" class="container my-4">
 
+    <div id="game_backgrounds" class=" w-100 h-auto">
+        <img id="background_left" src="./Materials/images/background-left.png" class="col-10 w-50">
+        <img id="background_right" src="./Materials/images/background-right.png" class="col-10 w-50">
+    </div>
         <!-- Game pages -->
 
         <div id="game_pages">
@@ -62,33 +66,27 @@
 
             <!-- 1 vs 1 (online) -->
 
-            <div id="one_vs_one_online_page">
-
-                <div id="game_lobby_block" class="d-flex flex-row w-100 h-auto">
-
-                    <div id="game_container" >
-                        <canvas id="game_1v1_online" class="col-10 border border-5 w-100"></canvas>
-                    </div>
-
-                    <div id="lobby_container" class="col-2 border border-5 overflow-auto h-100">
-                        <div id="lobby_container_info" class="border border-2 h-25">
-                            <p class="m-1">info section....</p>
-                        </div>
-                        <div id="lobby_container_chat" class="border border-2 h-75">
-                            <p class="m-1">chat section...</p>
-                        </div>
-                    </div>
-
+            <div id="one_vs_one_host_page" class="container mx-auto">
+                <canvas id="one_vs_one_host_game" class="col-10 border border-5 w-100"></canvas>
+                <br><br><br>
+                <div>
+                <h1 id="h_host_won_text" class="text d-none" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h2>
+                <h1 id="h_guest_won_text" class="text d-none" data-tsnormal="30px" data-tslarge="50px" data-oname="Right player won the game."></h1>
+                    <h1 id="host_local_timer" class="d-flex justify-content-center text d-none" data-tsnormal="50px" data-tslarge="70px"></h1>
                 </div>
+                <br>
+                <button id="start_1v1_online" class="d-flex btn btn-simple text border mx-auto border-5 d-none" data-tsnormal="40px" data-tslarge="60px" data-oname="Launch a game"></button>
+            </div>
 
-                <div id="">
-                    <div class="text-center">
-                        <input type="text" id="game_id_reminder" class="d-inline m-2" data-tsnormal="16px" data-tslarge="21px" readonly></input>
-                        <button id="cpy_btn_reminder" class="btn btn-simple text btn-outline-secondary btn-sm" data-tsnormal="15px" data-tslarge="20px" data-title="Copy" data-oname="Copy"></button>
-                        <p class="text" data-tsnormal="15px" data-tslarge="20px" data-oname="Game Id send msg"></p>
-                    </div>
+            <div id="one_vs_one_guest_page" class="container mx-auto">
+                <canvas id="one_vs_one_guest_game" class="col-10 border border-5 w-100"></canvas>
+                <br><br><br>
+                <div>
+                <h1 id="g_host_won_text" class="text d-none" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h2>
+                <h1 id="g_guest_won_text" class="text d-none" data-tsnormal="30px" data-tslarge="50px" data-oname="Right player won the game."></h1>
+                    <h1 id="guest_local_timer" class="d-flex justify-content-center text d-none" data-tsnormal="50px" data-tslarge="70px"></h1>
                 </div>
-
+                <br>
             </div>
 
             <!-- 1 vs 1 (local) -->
@@ -556,6 +554,8 @@
         <script src="./JavaScript/Game/powerup.js"></script>
         <script src="./JavaScript/Game/1v1_local.js"></script>
         <script src="./JavaScript/Game/1v2_local.js"></script>
+        <script src="./JavaScript/Game/1v1_online_host.js"></script>
+        <script src="./JavaScript/Game/1v1_online_guest.js"></script>
 
         <script src="./JavaScript/Game/ai.js"></script>
         <script src="./JavaScript/Game/tournament.js"></script>

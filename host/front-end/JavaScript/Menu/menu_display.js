@@ -159,6 +159,8 @@ function displayTwoVsOneGameLocal()
     game_toolbar = document.getElementById('game_toolbar');
     game_toolbar.style.display = "block";
 
+    document.getElementById('game_backgrounds').style.display = 'block';
+
     one_vs_two_local_page = document.getElementById('one_vs_two_local_page');
     one_vs_two_local_page.style.display = "block";
 
@@ -167,6 +169,7 @@ function displayTwoVsOneGameLocal()
 
 function displayOneVsOneGameLocal()
 {
+    document.getElementById('game_backgrounds').style.display = 'block';
     main_page = document.getElementById('main_page');
     main_page.style.display = "none";
     game_toolbar = document.getElementById('game_toolbar');

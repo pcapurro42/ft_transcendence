@@ -5,6 +5,9 @@ function readHostMsg(event){
 		document.getElementById("join_classic_lobby").style.visibility = 'visible';
 		 document.getElementById('answer_timeout').style.visibility = 'hidden';
 	}
+
+	if (event.data === 'countdown start')
+		displayGuest1v1();
 }
 
 async function guestConnectionHandler(){
@@ -22,7 +25,7 @@ async function guestConnectionHandler(){
 
 	let	join_btn = document.getElementById("join_classic_lobby");
 	join_btn.onclick = () => {
-		displayGamePage_classic();
-		data_channel.send('lobby_ok')
+		displayGuestPage_classic();
+		data_channel.send('lobby ok')
 	};
 }

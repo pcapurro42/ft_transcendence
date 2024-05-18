@@ -6,14 +6,17 @@ function displayMenu()
     let one_vs_one_online_choice_menu = document.getElementById('one_vs_one_online_choice_menu');
     one_vs_one_online_choice_menu.style.display = "none";
 
-    let game_page_classic = document.getElementById('one_vs_one_online_page');
-    game_page_classic.style.display = "none";
-
     let one_vs_one_local_page = document.getElementById('one_vs_one_local_page');
     one_vs_one_local_page.style.display = "none";
 
     let one_vs_two_local_page = document.getElementById('one_vs_two_local_page');
     one_vs_two_local_page.style.display = "none";
+
+    let game_guest_page = document.getElementById('one_vs_one_guest_page');
+    game_guest_page.style.display = 'none';
+
+    let game_host_page = document.getElementById('one_vs_one_host_page');
+    game_host_page.style.display = 'none';
 
     let game_page_tournament = document.getElementById('game_page_tournament');
     game_page_tournament.style.display = "none";
@@ -54,6 +57,9 @@ function displayMenu()
     let tournament_announcer = document.getElementById('tournament_announcer');
     tournament_announcer.style.display = 'none';
 
+    let game_backgrounds = document.getElementById('game_backgrounds');
+    game_backgrounds.style.display = 'none';
+
     freeInputAndForms();
     tournamentFinalReset();
 
@@ -75,17 +81,22 @@ function displayMenu()
 
 function removeMenu()
 {
-    let main_menu_page = document.getElementById('main_menu_page');
+    let main_menu_page = document.getElementById('main_page');
     main_menu_page.style.display = "none";
 }
 
 function setBackgroundColor(color)
 {
     let background = document.getElementById("background");
-    if (color == "white")
+    if (color == "white"){
         background.style.setProperty("background-color", "white");
-    else
+        document.getElementById("game_backgrounds").classList.remove('d-none')
+
+    }
+    else{
         background.style.setProperty("background-color", "black");
+        document.getElementById("game_backgrounds").classList.add('d-none')
+    }
 }
 
 function setMaterialsColor(color)
