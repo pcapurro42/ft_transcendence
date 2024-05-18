@@ -1,13 +1,40 @@
 function readHostMsg(event){
 	console.log(event.data);
-
-	if (event.data === 'lobby ok'){
+	let msg = event.data;
+	if (msg === 'lobby ok'){
 		document.getElementById("join_classic_lobby").style.visibility = 'visible';
 		 document.getElementById('answer_timeout').style.visibility = 'hidden';
 	}
-
-	if (event.data === 'countdown start')
+	else if (msg ==='normal')
+		gameMode = 'normal';
+	else if(msg ==='bonus')
+		gameMode = 'bonus';
+	else if (msg === 'countdown start')
 		displayGuest1v1();
+	else if (msg.startsWith('rpy:')){
+		game.right_player.y = +(msg.substring(4))
+		console.log(game.right_player.y);
+	}
+	else if (msg.startsWith('lpy:')){
+		game.left_player.y = +(msg.substring(4))
+		console.log(game.left_player.y);
+	}
+	else if (msg.startsWith('bx:')){
+		game.ball.x = +(msg.substring(3))
+		console.log(game.left_player.x);
+	}
+	else if (msg.startsWith('by:')){
+		game.ball.y = +(msg.substring(3))
+		console.log(game.ball.y);
+	}
+	else if (msg.startsWith('lscore:')){
+		game.score[0] = +(msg.substring(7));
+		console.log(game.score[0]);
+	}
+	else if (msg.startsWith('rscore:')){
+		game.score[1] = +(msg.substring(7));
+		console.log(game.score[0]);
+	}
 }
 
 async function guestConnectionHandler(){

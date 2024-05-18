@@ -30,7 +30,7 @@ function displayGuestPage_classic()
     let game_backgrounds = document.getElementById('game_backgrounds');
 
     game_backgrounds.style.display = 'block';
-    initializeOnline1v1();
+    initializeOnlineStream1v1();
     removeMenu();
 }
 

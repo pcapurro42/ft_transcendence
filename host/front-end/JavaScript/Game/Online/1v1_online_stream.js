@@ -2,7 +2,7 @@
 
 // < Game class > //
 
-class OnlineGame1v1
+class OnlineGameStream1v1
 {
     constructor()
     {
@@ -54,7 +54,7 @@ class OnlineGame1v1
     {
         // canvas creation
 
-        this.canvas = document.getElementById('one_vs_one_host_game');
+        this.canvas = document.getElementById('one_vs_one_guest_game');
 
         this.display = this.canvas.getContext('2d');
 
@@ -227,29 +227,12 @@ class OnlineGame1v1
 
     refreshPlayers()
     {
-        if (keys.KeyE == true){
-            this.left_player.moveUp();
-        }
-        else if (keys.KeyD == true)
-            this.left_player.moveDown();
-
-        data_channel.send(`lpy:${this.left_player.y}`)
-
-		if (keys.guestUp == true)
-			this.right_player.moveUp();
-		else if (keys.guestDown == true)
-			this.right_player.moveDown();
-
-        data_channel.send(`rpy:${this.right_player.y}`)
-
 		this.left_player.print();
         this.right_player.print();
     }
 
     refreshBall()
     {
-        data_channel.send(`bx:${this.ball.x}`)
-        data_channel.send(`by:${this.ball.y}`)
         this.ball.print();
         this.ball.animate();
         this.ball.print();
@@ -291,24 +274,16 @@ class OnlineGame1v1
             return (true);
         if (this.scores[0] > 9 || this.scores[1] > 9)
         {
-            if (type == 'tournament'){
-                if (this.scores[0] > 9)
-                    t_LeftWin();
-                if (this.scores[1] > 9)
-                    t_RightWin();
-            }
-            else{
-                if (this.scores[0] > 9)
-                {
-                    let player_left_won = document.getElementById('left_player_won_text');
-                    player_left_won.style.display = "block";
-                }
-                if (this.scores[1] > 9)
-                {
-                    let player_right_won = document.getElementById('right_player_won_text');
-                    player_right_won.style.display = "block";
-                }
-            }
+            if (this.scores[0] > 9)
+            {
+            	let player_left_won = document.getElementById('left_player_won_text');
+            	player_left_won.style.display = "block";
+        	}
+        	if (this.scores[1] > 9)
+        	{
+            	let player_right_won = document.getElementById('right_player_won_text');
+            	player_right_won.style.display = "block";
+        	}
 
             this.resetGame();
             active = false;
@@ -321,10 +296,10 @@ class OnlineGame1v1
 
 // < Initialisation > //
 
-function initializeOnline1v1()
+function initializeOnlineStream1v1()
 {
     players_nb = 2;
-    game = new OnlineGame1v1();
+    game = new OnlineGameStream1v1();
 
     game.initialize();
     game.refreshBackground();
