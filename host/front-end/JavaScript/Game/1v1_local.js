@@ -48,10 +48,7 @@ class LocalGame1v1
             this.menu_color = "white", this.background_color = "black", this.bar_color = "white", this.ball_color = "white";
         else
             this.menu_color = "black", this.background_color = "white", this.bar_color = "black", this.ball_color = "black";
-            // switch (game_map){
-                // case 4:
-                // break;
-            // }
+
     }
 
 
