@@ -46,13 +46,13 @@ function showMapTooltip(){
 	if (this.value != 'none'){
 		document.getElementById('map_tooltip').classList.remove('d-none');
 		switch (this.value){
-			case '1':
+			case 'green':
 				img.src = "./Materials/images/tooltip_green_map.png";
 				break;
-			case '2':
+			case 'yellow':
 				img.src = "./Materials/images/tooltip_yellow_map.png";
 				break;
-			case '3':
+			case 'orange':
 				img.src = "./Materials/images/tooltip_orange_map.png";
 				break;
 		}

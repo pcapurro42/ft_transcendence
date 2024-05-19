@@ -6,7 +6,7 @@ function enableDisableMusic()
 	let other_toggler;
 
 	if (toggler == document.getElementById('music_toggle'))
-		other_toggler = document.getElementById('game_sounds_toggle');
+		other_toggler = document.getElementById('game_music_toggle');
 	else
 		other_toggler = document.getElementById('music_toggle');
 

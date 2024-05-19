@@ -1,3 +1,31 @@
+function enableDisableSounds()
+{
+    let sounds = document.querySelectorAll('.sounds');
+	let toggler = this;
+	let other_toggler;
+
+	if (toggler == document.getElementById('sound_toggle'))
+		other_toggler = document.getElementById('game_sound_toggle');
+	else
+		other_toggler = document.getElementById('sound_toggle');
+
+	let allMuted = Array.from(sounds).every(audio => audio.muted);
+	if (allMuted)
+	{
+		for (let i = 0; i < sounds.length; i++)
+	    	sounds[i].muted = false;
+		toggler.src = './Materials/images/sound-on.png';
+		other_toggler.src = './Materials/images/sound-on.png'
+	}
+	else
+	{
+		for (let i = 0; i < sounds.length; i++)
+	    	sounds[i].muted = true;
+		toggler.src = './Materials/images/sound-off.png';
+		other_toggler.src = './Materials/images/sound-off.png';
+	}
+}
+
 function alertSound(event)
 {
 	let loginSound = document.getElementById('alert_sound');
@@ -40,7 +68,7 @@ function refreshSounds()
 
 	for (let i = 0; i < sounds.length; i++)
 		sounds[i].volume = sounds_volume / 100;
-	
+
 	let sound_slider_label = document.getElementById('sound_volume_slider_label');
     sound_slider_label.innerHTML = "(" + sounds_volume + "%)";
 

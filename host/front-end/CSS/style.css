@@ -12,12 +12,14 @@
     top: 0%;
     left: 0%;
 }
-
+.btn:hover{
+    transform: scale(1.1);
+}
 #game_lobby_block{
     aspect-ratio: 1400 / 764;
 }
 #map_tooltip{
-    left: 57%;
+    left: 58%;
     box-sizing: border-box;
     border: 2px solid;
 }
@@ -54,10 +56,14 @@
     cursor: pointer
 }
 
-#music_toggle, #game_sounds_toggle
+#music_toggle,#game_music_toggle, #sound_toggle, #game_sound_toggle
 {
     max-width: 4%;
     cursor: pointer;
+}
+
+#game_sound_toggle, #sound_toggle{
+    transform: scale(0.88);
 }
 
 #one_vs_one_local_page, #one_vs_two_local_page, #game_page_tournament
@@ -100,7 +106,4 @@
     font-weight: bold;
 }
 
-#play_btn:hover, #customize_btn:hover, #settings_btn:hover, #credits_btn:hover, #play_classic_btn:hover, #ai_game_btn:hover, #play_tournament_btn:hover, #play_back_btn:hover, #settings_back_btn:hover, #customize_back_btn:hover, #classic_back_btn:hover, #join_one_vs_one_online_btn:hover, #create_one_vs_one_online_btn:hover, #create_tournament_btn:hover, #join_tournament_btn:hover, #tournament_back_btn:hover, #back_tournament_btn:hover, #one_vs_one_online_btn:hover, #one_vs_one_local_btn:hover, #two_vs_two_local_btn:hover, #create_classic_back_btn:hover, #join_classic_back_btn:hover, #one_vs_one_online_choice_back_btn:hover
-{
-    text-decoration: underline;
-}
+

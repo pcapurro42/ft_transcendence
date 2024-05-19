@@ -51,6 +51,9 @@ let en = [
 
     ["Game theme", "Game theme"],
     ["Game map", "Game map"],
+    ["Green", "Green"],
+    ["Yellow", "Yellow"],
+    ["Orange", "Orange"],
 
     ["– None –", "– None –"],
 

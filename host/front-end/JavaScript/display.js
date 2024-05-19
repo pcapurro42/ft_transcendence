@@ -120,9 +120,9 @@ function setImagesColor(color)
     for (let i = 0; i != images.length; i++)
     {
         if (color == "white")
-            images[i].style.filter="invert(0%)";
-        else
             images[i].style.filter="invert(100%)";
+        else
+            images[i].style.filter="invert(0%)";
     }
 }
 

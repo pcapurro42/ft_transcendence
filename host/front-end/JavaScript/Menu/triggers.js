@@ -1,7 +1,9 @@
 // < TOOLBAR > //
 
 document.getElementById('music_toggle').onclick = enableDisableMusic;
-document.getElementById('game_sounds_toggle').onclick = enableDisableMusic;
+document.getElementById('sound_toggle').onclick = enableDisableSounds;
+document.getElementById('game_music_toggle').onclick = enableDisableMusic;
+document.getElementById('game_sound_toggle').onclick = enableDisableSounds;
 document.getElementById('game_theme_btn_selector').onchange = gameMusicSelector;
 
 
