@@ -48,6 +48,7 @@ function hostCountDown(nb)
 
 
     if (nb == 3){
+        menu_music.pause();
         document.getElementById('3_sound').play();
         timer.innerHTML = "3";
     }
@@ -65,7 +66,6 @@ function hostCountDown(nb)
     {
         timer.style.display = "none";
         active = true;
-        menu_music.pause();
         game_music.play();
         startHost1v1();
         return ;

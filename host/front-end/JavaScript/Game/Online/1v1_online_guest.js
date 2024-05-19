@@ -41,6 +41,7 @@ function guestCountDown(nb)
     let game_music = gameMusicSelector();
 
     if (nb == 3){
+        menu_music.pause();
         document.getElementById('3_sound').play();
         timer.innerHTML = "3";
     }
@@ -58,7 +59,6 @@ function guestCountDown(nb)
     {
         timer.style.display = "none";
         active = true;
-        menu_music.pause();
         game_music.play();
         startGuest1v1();
         document.addEventListener('keydown', moveListener);
