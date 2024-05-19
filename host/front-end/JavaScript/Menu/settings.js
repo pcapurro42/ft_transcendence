@@ -8,7 +8,7 @@ function changeHighContrast()
         localStorage.setItem("high_contrast", "false");
     }
     else
-    {    
+    {
         high_contrast = "true";
         localStorage.setItem("high_contrast", "true");
     }
@@ -67,7 +67,7 @@ function changeLanguage()
 {
     let language_btn_selector = document.getElementById('language_btn_selector');
     let new_language = language_btn_selector.value;
-    
+
     localStorage.setItem("language", new_language);
     language = new_language;
 
@@ -85,7 +85,7 @@ function displaySettings()
 
     settings_menu.style.display = 'block';
     settings_back_btn.style.display = 'block';
-    
+
     main_menu.style.display = 'none';
 }
 
@@ -130,6 +130,27 @@ function initializeSettings()
         localStorage.setItem("high_contrast", "false"), high_contrast = "false"
     else
         high_contrast = localStorage.getItem("high_contrast");
-    
+
     refreshDisplay();
+}
+
+function initializeGameMode(){
+    let c_switch = document.getElementById('switch_classic');
+    let t_switch = document.getElementById('switch_tournament');
+
+    if (sessionStorage.getItem('game_mode') == 'bonus'){
+        gameMode = 'bonus';
+        t_switch.checked = true;
+        c_switch.checked = true;
+        t_switch.nextElementSibling.innerHTML = getTranslation('Bonus Mode');
+        c_switch.nextElementSibling.innerHTML = getTranslation('Bonus Mode');
+        console.log(t_switch.nextElementSibling);
+    }
+    else{
+        gameMode = 'normal';
+        t_switch.checked = false;
+        c_switch.checked = false;
+        t_switch.nextElementSibling.innerHTML = getTranslation('Normal Mode');
+        c_switch.nextElementSibling.innerHTML = getTranslation('Normal Mode');
+    }
 }
