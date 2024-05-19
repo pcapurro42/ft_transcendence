@@ -1,13 +1,5 @@
 // < CHANGERS > //
 
-function changeGameMusic()
-{
-    let new_game_music = document.getElementById('game_theme_btn_selector');
-
-    game_music = new_game_music.value;
-    localStorage.setItem('game_music', game_music);
-}
-
 function changeGameMap()
 {
     let new_game_map = document.getElementById('game_map_btn_selector');
@@ -89,15 +81,55 @@ function removeCustomize()
 
 function initializeCustomize()
 {
-    if (localStorage.getItem('game_music') == null)
-        localStorage.setItem('game_music', 'none'), game_music = 'none'
-    else
-        game_music = localStorage.getItem('game_music');
+    let game_music_selector = document.getElementById('game_theme_btn_selector');
+    let game_map_selector = document.getElementById('game_map_btn_selector');
+    switch(localStorage.getItem('game_music')){
+        case null:
+            game_music_selector.value = null;
+            break;
+        case "duel-theme":
+            game_music_selector.value = 1;
+            break;
+        case "sneaky-theme":
+            game_music_selector.value = 2;
+            break;
+        case "alert-theme":
+            game_music_selector.value = 3;
+            break;
+    }
 
-    if (localStorage.getItem('game_map') == null)
-        localStorage.setItem('game_map', 'none'), game_map = 'none'
-    else
-        game_map = localStorage.getItem('game_map');
+
+    switch (localStorage.getItem('game_map')){
+          case null:
+            game_map_selector.value = 0;
+            game_map = game_map_selector.value;
+            break;
+        case "green":
+            game_map_selector.value = "green";
+            game_map = game_map_selector.value;
+            break;
+        case "yellow":
+            game_map_selector.value = "yellow";
+            game_map = game_map_selector.value;
+            break;
+        case "orange":
+            game_map_selector.value = "orange";
+            game_map = game_map_selector.value;
+            break;
+        case "mgs1":
+            game_map_selector.value = "mgs1";
+            game_map = game_map_selector.value;
+            break;
+        case "mgs2":
+            game_map_selector.value = "mgs2";
+            game_map = game_map_selector.value;
+            break;
+        case "mgs3":
+            game_map_selector.value = "mgs3";
+            game_map = game_map_selector.value;
+            break;
+    }
+
 
     setGameMap();
     setGameMusic();

@@ -73,35 +73,34 @@ class LocalGame1v1
         this.canvas.height = this.game_height;
 
         // background loading
-
         if (game_map == "none")
             this.background_img = null;
         else
         {
-            if (game_map == "1")
+            if (game_map == "green")
             {
                 this.background_img = new Image();
                 this.background_img.src = 'Materials/images/game_back1.png';
             }
-            else if (game_map == "2")
+            else if (game_map == "yellow")
             {
                 this.background_img = new Image();
                 this.background_img.src = 'Materials/images/game_back2.png';
             }
-            else if (game_map == "3")
+            else if (game_map == "orange")
             {
                 this.background_img = new Image();
                 this.background_img.src = 'Materials/images/game_back3.png';
             }
-            else if (game_map == '4'){
+            else if (game_map == 'mgs1'){
                 this.background_img = new Image();
                 this.background_img.src = "./Materials/images/game_back4.png";
             }
-            else if (game_map == '5'){
+            else if (game_map == 'mgs2'){
                 this.background_img = new Image();
                 this.background_img.src = "./Materials/images/game_back5.png";
             }
-            else if (game_map == '6'){
+            else if (game_map == 'mgs3'){
                 this.background_img = new Image();
                 this.background_img.src = "./Materials/images/game_back6.png";
             }

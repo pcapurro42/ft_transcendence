@@ -14,12 +14,14 @@ function enableDisableMusic()
 	for (let i = 0; i < game_music.length; i++)
 		game_music[i].loop = true;
 	let allMuted = Array.from(game_music).every(audio => audio.muted);
+	let allPaused = Array.from(game_music).every(audio => audio.paused);
 	if (music.muted && allMuted)
 	{
 		music.muted = false;
 		for (let i = 0; i < game_music.length; i++)
 	    	game_music[i].muted = false;
-		music.play();
+		if (allPaused)
+			music.play();
 		toggler.src = './Materials/images/music-on.png';
 		other_toggler.src = './Materials/images/music-on.png'
 	}
@@ -37,10 +39,13 @@ function gameMusicSelector(){
 	let selector = +document.getElementById('game_theme_btn_selector').value;
 	switch (selector){
 		case 1:
+			localStorage.setItem('game_music', 'duel-theme')
 			return document.getElementById('duel-theme');
 		case 2:
+			localStorage.setItem('game_music', 'sneaky-theme')
 			return document.getElementById('sneaky-theme')
 		case 3:
+			localStorage.setItem('game_music', 'alert-theme');
 			return document.getElementById('mgs3-alert-theme')
 	}
 
