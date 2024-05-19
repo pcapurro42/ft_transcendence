@@ -47,14 +47,20 @@ function hostCountDown(nb)
     let game_music = gameMusicSelector();
 
 
-    if (nb == 3)
+    if (nb == 3){
+        document.getElementById('3_sound').play();
         timer.innerHTML = "3";
-    else if (nb == 2)
+    }
+    else if (nb == 2){
+        document.getElementById('2_sound').play();
         timer.innerHTML = "2";
-    else if (nb == 1)
+    }
+    else if (nb == 1){
+        document.getElementById('1_sound').play();
         timer.innerHTML = "1";
+    }
     else if (nb == 0)
-        timer.innerHTML = getTranslation("Go!")
+        timer.innerHTML = getTranslation("Go!");
     else if (nb == -1)
     {
         timer.style.display = "none";
