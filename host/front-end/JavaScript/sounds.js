@@ -36,16 +36,11 @@ function closeSound(event)
 
 function refreshSounds()
 {
-	let hover_sound = document.getElementById('hover_sound');
-	let close_sound = document.getElementById('close_sound');
-	let click_sound = document.getElementById('click_sound');
-	let login_sound = document.getElementById('alert_sound');
+	let sounds = document.querySelectorAll('.sounds');
 
-	hover_sound.volume = sounds_volume / 100;
-	close_sound.volume = sounds_volume / 100;
-	click_sound.volume = sounds_volume / 100;
-	login_sound.volume = sounds_volume / 100;
-
+	for (let i = 0; i < sounds.length; i++)
+		sounds[i].volume = sounds_volume / 100;
+	
 	let sound_slider_label = document.getElementById('sound_volume_slider_label');
     sound_slider_label.innerHTML = "(" + sounds_volume + "%)";
 

@@ -48,6 +48,18 @@ class LocalGame1v1
             this.menu_color = "white", this.background_color = "black", this.bar_color = "white", this.ball_color = "white";
         else
             this.menu_color = "black", this.background_color = "white", this.bar_color = "black", this.ball_color = "black";
+            // switch (game_map){
+                // case 4:
+                // break;
+            // }
+    }
+
+
+    setColors(newColor){
+        this.menu_color = newColor;
+        this.background_color = newColor;
+        this.bar_color = newColor;
+        this.ball_color = newColor;
     }
 
     initialize()
@@ -83,6 +95,18 @@ class LocalGame1v1
             {
                 this.background_img = new Image();
                 this.background_img.src = 'Materials/images/game_back3.png';
+            }
+            else if (game_map == '4'){
+                this.background_img = new Image();
+                this.background_img.src = "./Materials/images/game_back4.png";
+            }
+            else if (game_map == '5'){
+                this.background_img = new Image();
+                this.background_img.src = "./Materials/images/game_back5.png";
+            }
+            else if (game_map == '6'){
+                this.background_img = new Image();
+                this.background_img.src = "./Materials/images/game_back6.png";
             }
         }
 
@@ -148,31 +172,31 @@ class LocalGame1v1
         {
             let bonus_one_data = {
                 game: this,
-    
+
                 object_width: this.ball_width,
                 object_heigth: this.ball_height,
-    
+
                 x_pos : (this.game_width / 4),
                 y_pos : (this.game_height / 2),
-    
+
                 speed: this.ball_speed,
                 color: this.bonus_color,
-    
+
                 direction : this.ball_direction,
             }
 
             let bonus_two_data = {
                 game: this,
-    
+
                 object_width: this.ball_width,
                 object_heigth: this.ball_height,
-    
+
                 x_pos : (this.game_width / 2 + (this.game_width / 4)),
                 y_pos : (this.game_height / 2),
-    
+
                 speed: this.ball_speed,
                 color: this.bonus_color,
-    
+
                 direction : bonus_one_data + 90,
             }
 
@@ -272,6 +296,8 @@ class LocalGame1v1
 
     restartRound()
     {
+        document.getElementById('goal_sound').play();
+
         if (this.ball.x >= this.game_width / 2)
             this.scores[0]++;
         else
@@ -286,6 +312,7 @@ class LocalGame1v1
             return (true);
         if (this.scores[0] > 9 || this.scores[1] > 9)
         {
+            document.getElementById('game_end').play();
             if (type == 'tournament'){
                 if (this.scores[0] > 9)
                     t_LeftWin();
@@ -345,6 +372,11 @@ function displayLocal1v1()
 
 function removeLocal1v1()
 {
+    let menu_music = document.getElementById('mgs');
+    let game_music = gameMusicSelector();
+
+    game_music.pause();
+    menu_music.play();
     let timer = document.getElementById('1v1_local_timer');
     timer.style.display = "none";
 

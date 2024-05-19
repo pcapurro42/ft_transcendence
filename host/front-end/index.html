@@ -24,11 +24,19 @@
         <!-- Audio -->
 
         <audio id="mgs" src="./Materials/musics/mgs2-theme.mp3" autoplay muted></audio>
+        <audio class="game_music" id="duel-theme" src="./Materials/musics/duel-theme.mp3" muted></audio>
+        <audio class="game_music" id="mgs3-alert-theme" src="./Materials/musics/mgs3-alert-theme.mp3" muted></audio>
+        <audio class="game_music" id="sneaky-theme" src="./Materials/musics/Sneaky-theme.mp3" muted></audio>
 
-        <audio id="hover_sound" src="./Materials/sounds/click-hover.mp3"></audio>
-        <audio id="click_sound" src="./Materials/sounds/click-sound.mp3"></audio>
-        <audio id="close_sound" src="./Materials/sounds/close-sound.mp3"></audio>
-        <audio id="alert_sound" src="./Materials/sounds/mgs1-alert.mp3"></audio>
+        <audio id="hover_sound" class="sounds" src="./Materials/sounds/click-hover.mp3"></audio>
+        <audio id="click_sound" class="sounds" src="./Materials/sounds/click-sound.mp3"></audio>
+        <audio id="close_sound" class="sounds" src="./Materials/sounds/close-sound.mp3"></audio>
+        <audio id="alert_sound" class="sounds" src="./Materials/sounds/mgs1-alert.mp3"></audio>
+        <audio id="goal_sound" class="sounds" src="./Materials/sounds/goal_sound.mp3"></audio>
+        <audio id="online_loser" class="sounds" src="./Materials/sounds/online_loser.mp3"></audio>
+        <audio id="online_winner" class="sounds" src="./Materials/sounds/online_winner.mp3"></audio>
+        <audio id="knock_sound" class="sounds" src="./Materials/sounds/knocking_sound.mp3"></audio>
+        <audio id="game_end" class="sounds" src="./Materials/sounds/game_end.mp3"></audio>
 
         <!-- Video -->
 
@@ -56,6 +64,7 @@
             <div id="game_toolbar" class="container">
 
                 <div>
+                    <img id="game_sounds_toggle" src="./Materials/images/music-off.png" class="img-fluid image col d-inline-block float-end mt-4" data-isnormal="max-width: 5%" data-islarge="max-width: 6%" data-title="Enable/Disable music">
                     <img id="top_logo" src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto d-block btn-complex" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'">
 
                     <br><br><br>
@@ -224,7 +233,7 @@
 
                         <div class="mx-auto form-switch custom-switch-lg text-center my-3 scale-75">
                             <input id="switch_classic" class="form-check-input btn-simple me-1" type="checkbox">
-                            <label id ="c_switch_text" class="ms-2" data-oname="Normal Mode"></label>
+                            <label id ="c_switch_text" class="ms-2 text" data-oname="Normal Mode"></label>
                         </div>
 
                         <button id="classic_back_btn" class="btn text btn-complex" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
@@ -317,7 +326,7 @@
                     </select>
                 <div class="mx-auto form-switch custom-switch-lg text-center mt-3">
                     <input id="switch_tournament" class="form-check-input btn-simple me-1" type="checkbox">
-                    <label id ="t_switch_text" class="ms-2" data-oname="Normal Mode"></label>
+                    <label id ="t_switch_text" class="text ms-2" data-oname="Normal Mode"></label>
                 </div>
                 <button id ="submit_player_nbr" class="btn text btn-lg btn-simple border btn-outline-success mt-4" data-tsnormal="15px" data-tslarge="20px" data-oname="Submit" disabled></button>
             </div>
@@ -390,9 +399,9 @@
                         <div>
                             <button id="game_theme_btn" class="btn text btn-simple" data-tsnormal="40px" data-tslarge="50px" data-oname="Game theme" data-title="Game theme" title=""></button><br>
                             <select id="game_theme_btn_selector" class="form-select form-select-lg mx-auto">
-                                <option class="btn-simple" value="none" data-oname="– None –" data-title="None" title=""></option>
-                                <option class="btn-simple" value="MGS 1 - Duel" data-oname="MGS 1 - Duel" data-title="MGS 1 - Duel" title=""></option>
-                                <option class="btn-simple" title="...">...</option>
+                                <option class="btn-simple" value="1" data-title="MGS 1 - Duel" title="">MGS 1 - Duel</option>
+                                <option class="btn-simple" value ="2" title="MGS - Sneaking Theme">MGS - Sneaking Theme</option>
+                                <option class="btn-simple" value="3" title="MGS3 - Alert Theme">MGS3 - Alert Theme</option>
                                 <!-- ... -->
                             </select>
                         </div>
@@ -405,6 +414,9 @@
                                 <option class="btn-simple" value="1" title="1">1</option>
                                 <option class="btn-simple" value="2" title="2">2</option>
                                 <option class="btn-simple" value="3" title="3">3</option>
+                                <option class="btn-simple" value="4" title="4">4</option>
+                                <option class="btn-simple" value="5" title="5">5</option>
+                                <option class="btn-simple" value="6" title="6">6</option>
                                 <!-- ... -->
                             </select>
                              <span id="map_tooltip" class="position-absolute d-none text"><img id="img_tooltip" src=""></span>

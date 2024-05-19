@@ -13,6 +13,12 @@ function displayTournamentGame()
 
 function removeTournamentGame()
 {
+    let menu_music = document.getElementById('mgs');
+    let game_music = gameMusicSelector();
+
+    menu_music.play();
+    game_music.pause();
+
     let timer = document.getElementById('tournament_timer');
     timer.style.display = "none";
 
@@ -23,6 +29,8 @@ function removeTournamentGame()
 function t_displayCountDown(nb)
 {
     let timer = document.getElementById('tournament_timer');
+    let menu_music = document.getElementById('mgs');
+    let game_music = gameMusicSelector();
 
     if (nb == 3)
         timer.innerHTML = "3";
@@ -34,6 +42,8 @@ function t_displayCountDown(nb)
         timer.innerHTML = getTranslation("Go!")
     else if (nb == -1)
     {
+        menu_music.pause();
+        game_music.play();
         timer.style.display = "none";
         active = true;
         startLocal1v1();

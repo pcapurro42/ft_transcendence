@@ -31,8 +31,10 @@ class Ball
 
     isAtPlayer() //
     {
-        if (this.isAboveOrUnderPlayer() == true || this.isFrontPlayer() == true)
+        if (this.isAboveOrUnderPlayer() == true || this.isFrontPlayer() == true){
+            document.getElementById('knock_sound').play();
             return (true);
+        }
         return (false);
     }
 
@@ -73,8 +75,10 @@ class Ball
 
     isUpOrDown()
     {
-        if (this.y <= 0 || this.y + this.height >= this.game.game_height)
+        if (this.y <= 0 || this.y + this.height >= this.game.game_height){
+            document.getElementById('knock_sound').play();
             return (true);
+        }
         return (false);
     }
 
@@ -202,7 +206,7 @@ class Ball
         this.direction = getRandomBallDirection();
         this.speed = this.game.ball_speed;
         this.bonus_speed = 0;
-        
+
         if (this.bounce == false)
             this.bounce = true;
     }

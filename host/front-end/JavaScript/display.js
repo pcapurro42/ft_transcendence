@@ -90,12 +90,9 @@ function setBackgroundColor(color)
     let background = document.getElementById("background");
     if (color == "white"){
         background.style.setProperty("background-color", "white");
-        document.getElementById("game_backgrounds").classList.remove('d-none')
-
     }
     else{
         background.style.setProperty("background-color", "black");
-        document.getElementById("game_backgrounds").classList.add('d-none')
     }
 }
 

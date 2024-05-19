@@ -11,6 +11,12 @@ function removeGuest1v1()
     let timer = document.getElementById('guest_local_timer');
     timer.classList.add('d-none');
 
+    let menu_music = document.getElementById('mgs');
+    let game_music = gameMusicSelector();
+
+    menu_music.play();
+    game_music.pause();
+
 }
 
 function startGuest1v1()
@@ -31,6 +37,8 @@ function startGuest1v1()
 function guestCountDown(nb)
 {
     let timer = document.getElementById('guest_local_timer');
+    let menu_music = document.getElementById('mgs');
+    let game_music = gameMusicSelector();
 
     if (nb == 3)
         timer.innerHTML = "3";
@@ -44,6 +52,8 @@ function guestCountDown(nb)
     {
         timer.style.display = "none";
         active = true;
+        menu_music.pause();
+        game_music.play();
         startGuest1v1();
         document.addEventListener('keydown', moveListener);
         document.addEventListener('keyup', stopMoveListener);

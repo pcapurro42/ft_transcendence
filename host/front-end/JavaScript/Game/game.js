@@ -28,6 +28,8 @@ function getRandomBallDirection()
 function displayCountDown(nb)
 {
     let timer = document.getElementById('1v1_local_timer');
+    let menu_music = document.getElementById('mgs');
+    let game_music = gameMusicSelector();
 
     if (nb == 3)
         timer.innerHTML = "3";
@@ -41,6 +43,8 @@ function displayCountDown(nb)
     {
         timer.style.display = "none";
         active = true;
+        menu_music.pause();
+        game_music.play();
         startLocal1v1();
         return ;
     }
@@ -58,7 +62,7 @@ let keys = {
 
     ArrowUp: false,
     ArrowDown: false,
-    
+
     guestUp: false,
     guestDown: false,
 };

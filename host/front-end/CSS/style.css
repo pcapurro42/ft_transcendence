@@ -54,7 +54,7 @@
     cursor: pointer
 }
 
-#music_toggle
+#music_toggle, #game_sounds_toggle
 {
     max-width: 4%;
     cursor: pointer;

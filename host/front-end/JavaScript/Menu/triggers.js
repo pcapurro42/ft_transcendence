@@ -1,6 +1,10 @@
 // < TOOLBAR > //
 
 document.getElementById('music_toggle').onclick = enableDisableMusic;
+document.getElementById('game_sounds_toggle').onclick = enableDisableMusic;
+document.getElementById('game_theme_btn_selector').onchange = gameMusicSelector;
+
+
 document.getElementById("login_btn").onclick = login;
 document.getElementById("logout_btn").onclick = logout;
 
