@@ -106,22 +106,26 @@ class PowerUp
     ApplyPlayerBonus()
     {
         let value = generateNumber(2);
-        let player;
         
         if (this.x <= this.game.game_width / 2)
-            player = this.game.left_player;
+        {
+            if (value == 1)
+                this.game.left_player.speed = this.game.left_player.speed * 2;
+            else
+                this.game.right_player.height = this.game.right_player.height - 10;
+        }
         else
-            player = this.game.right_player;
-
-        if (value == 1)
-            player.speed = player.speed * 2;
-        else
-            player.height = player.height * 2;
+        {
+            if (value == 1)
+                this.game.right_player.speed = this.game.right_player.speed * 2;
+            else
+                this.game.left_player.height = this.game.left_player.height - 10;
+        }
     }
 
     ApplyBallBonus()
     {
-        this.game.ball.speed = this.game.ball.speed++;
+        this.game.ball.speed = this.game.ball.speed + 2;
     }
 
     reset()
