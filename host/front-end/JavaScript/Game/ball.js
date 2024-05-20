@@ -32,10 +32,8 @@ class Ball
 
     isAtPlayer() //
     {
-        if (this.isAboveOrUnderPlayer() == true || this.isFrontPlayer() == true){
-            document.getElementById('knock_sound').play();
+        if (this.isAboveOrUnderPlayer() == true || this.isFrontPlayer() == true)
             return (true);
-        }
         return (false);
     }
 
@@ -76,10 +74,8 @@ class Ball
 
     isUpOrDown()
     {
-        if (this.y <= 0 || this.y + this.height >= this.game.game_height){
-            document.getElementById('knock_sound').play();
+        if (this.y <= 0 || this.y + this.height >= this.game.game_height)
             return (true);
-        }
         return (false);
     }
 
