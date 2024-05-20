@@ -31,14 +31,25 @@ class PowerUp
 
     isAtPlayer() //
     {
-        if (this.y + this.height >= this.game.left_player.y && this.y <= this.game.left_player.y + this.game.left_player.height)
+        let player;
+        
+        if (this.x <= this.game.game_width / 2)
+            player = this.game.left_player;
+        else
+            player = this.game.right_player;
+
+        if (this.y + this.height >= player.y && this.y <= player.y + player.height)
         {
-            if (this.x <= this.game.left_player.x + this.game.left_player.width)
+            if (this.x <= player.x + player.width && this.x >= player.x + (player.width / 2))
+                return (true);
+            if (this.x + this.width >= player.x && this.x + this.width <= player.x + (player.width / 2))
                 return (true);
         }
-        if (this.y + this.height >= this.game.right_player.y && this.y <= this.game.right_player.y + this.game.right_player.height)
+        if (this.x + this.width >= player.x && this.x <= player.x + player.width)
         {
-            if (this.x + this.width >= this.game.right_player.x)
+            if (this.y <= player.y + player.height && this.y + this.height >= player.y + (player.height / 2))
+                return (true);
+            if (this.y + this.height >= player.y && this.y + this.height <= player.y + (player.height / 2))
                 return (true);
         }
         return (false);
