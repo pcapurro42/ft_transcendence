@@ -48,9 +48,9 @@ class PowerUp
     {
         if (this.y + this.height >= this.game.ball.y && this.y <= this.game.ball.y + this.game.ball.height)
         {
-            if (this.x + this.width == this.game.ball.x)
+            if (this.x + this.width >= this.game.ball.x && this.x + this.width <= this.game.ball.x + (this.game.ball.width / 2))
                 return (true);
-            if (this.x == this.game.ball.x + this.game.ball.width)
+            if (this.x <= this.game.ball.x + this.game.ball.width && this.x >= this.game.ball.x + (this.game.ball.width / 2))
                 return (true);
         }
         return (false);
