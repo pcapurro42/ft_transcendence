@@ -65,12 +65,12 @@ function gameTypeSwitch(){
     if (this.checked){
         text.innerHTML = getTranslation('Bonus Mode');
         gameMode = 'bonus'
-        sessionStorage.setItem('game_mode', 'bonus');
+        localStorage.setItem('game_mode', 'bonus');
     }
     else{
         text.innerHTML = getTranslation('Normal Mode');
         gameMode = 'normal';
-        sessionStorage.setItem('game_mode', 'normal');
+        localStorage.setItem('game_mode', 'normal');
     }
     other_switch.checked = this.checked;
     other_text.innerHTML = text.innerHTML;

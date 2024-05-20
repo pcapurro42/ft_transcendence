@@ -138,7 +138,7 @@ function initializeGameMode(){
     let c_switch = document.getElementById('switch_classic');
     let t_switch = document.getElementById('switch_tournament');
 
-    if (sessionStorage.getItem('game_mode') == 'bonus'){
+    if (localStorage.getItem('game_mode') == 'bonus'){
         gameMode = 'bonus';
         t_switch.checked = true;
         c_switch.checked = true;

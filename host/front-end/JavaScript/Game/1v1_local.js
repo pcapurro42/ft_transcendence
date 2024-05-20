@@ -28,7 +28,7 @@ class LocalGame1v1
         this.bar_height = 80;
         this.bar_width = 10;
 
-        this.ball_speed = 10;
+        this.ball_speed = 2;
         this.ball_height = 20;
         this.ball_width = 20;
         this.ball_color = null;
@@ -135,7 +135,7 @@ class LocalGame1v1
                 x_pos : (this.game_width / 4),
                 y_pos : (this.game_height / 2),
 
-                speed: this.ball_speed,
+                speed: this.ball_speed / 3,
                 color: this.bonus_color,
 
                 direction : this.ball_direction,
@@ -150,7 +150,7 @@ class LocalGame1v1
                 x_pos : (this.game_width / 2 + (this.game_width / 4)),
                 y_pos : (this.game_height / 2),
 
-                speed: this.ball_speed,
+                speed: this.ball_speed / 3,
                 color: this.bonus_color,
 
                 direction : bonus_one_data + 90,
