@@ -35,21 +35,24 @@ function displayCountDown(nb)
         menu_music.pause();
         document.getElementById('3_sound').play();
         timer.innerHTML = "3";
+        game.refreshBackground();
+        game.refreshCenterBar();
     }
     else if (nb == 2){
         document.getElementById('2_sound').play();
         timer.innerHTML = "2";
+        game.refreshScores();
     }
     else if (nb == 1){
         document.getElementById('1_sound').play();
         timer.innerHTML = "1";
+        game.refreshPlayers();
     }
     else if (nb == 0)
         timer.innerHTML = getTranslation("Go!")
     else if (nb == -1)
     {
         timer.style.display = "none";
-        active = true;
         game_music.play();
         startLocal1v1();
         return ;
