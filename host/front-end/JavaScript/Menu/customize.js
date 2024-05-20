@@ -85,7 +85,7 @@ function initializeCustomize()
     let game_map_selector = document.getElementById('game_map_btn_selector');
     switch(localStorage.getItem('game_music')){
         case null:
-            game_music_selector.value = null;
+            game_music_selector.value = 1;
             break;
         case "duel-theme":
             game_music_selector.value = 1;
@@ -101,7 +101,7 @@ function initializeCustomize()
 
     switch (localStorage.getItem('game_map')){
           case null:
-            game_map_selector.value = 0;
+            game_map_selector.value = 'none';
             game_map = game_map_selector.value;
             break;
         case "green":
