@@ -46,6 +46,13 @@ class PowerUp
 
     isAtBall()
     {
+        if (this.y + this.height >= this.game.ball.y && this.y <= this.game.ball.y + this.game.ball.height)
+        {
+            if (this.x + this.width == this.game.ball.x)
+                return (true);
+            if (this.x == this.game.ball.x + this.game.ball.width)
+                return (true);
+        }
         return (false);
     }
 
