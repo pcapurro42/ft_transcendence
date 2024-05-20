@@ -21,6 +21,7 @@ class PowerUp
 
     print()
     {
+        this.game.display.fillStyle = this.color;
         this.game.display.fillRect(this.x, this.y, this.width, this.height);
     }
 

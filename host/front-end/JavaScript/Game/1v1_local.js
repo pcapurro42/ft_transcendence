@@ -177,7 +177,6 @@ class LocalGame1v1
     {
         this.display.fillStyle = this.background_color;
         this.display.fillRect(0, 0, this.game_width, this.game_height);
-        this.display.fillStyle = this.menu_color;
     }
 
     refreshCenterBar()
@@ -185,6 +184,7 @@ class LocalGame1v1
         let x_bar_center = (this.game_width / 2) - (this.separator_width / 2);
         let nb = ~~(this.game_height / (this.separator_height + this.separator_space));
 
+        this.display.fillStyle = this.menu_color;
         for (let value = 0; value != nb; value++)
         {
             this.display.fillRect(x_bar_center, ((this.separator_height * value) + this.separator_space * (value + 1)), this.separator_width, this.separator_height);
