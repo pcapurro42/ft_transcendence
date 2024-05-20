@@ -32,25 +32,8 @@ class Ball
 
     isAtPlayer() //
     {
-        if (this.isAcrossPlayer() == true)
-            return (true);
         if (this.isAboveOrUnderPlayer() == true || this.isFrontPlayer() == true)
             return (true);
-        return (false);
-    }
-
-    isAcrossPlayer()
-    {
-        if (this.y + this.height >= this.game.left_player.y && this.y <= this.game.left_player.y + this.game.left_player.height)
-        {
-            if (this.x <= this.game.left_player.x + this.game.left_player.width)
-                return (true);
-        }
-        if (this.y + this.height >= this.game.right_player.y && this.y <= this.game.right_player.y + this.game.right_player.height)
-        {
-            if (this.x + this.width >= this.game.right_player.x)
-                return (true);
-        }
         return (false);
     }
 
