@@ -115,9 +115,6 @@ class PowerUp
         x_dir = Math.round(x_dir * 100) / 100;
         y_dir = Math.round(y_dir * 100) / 100;
 
-        console.log(x_dir);
-        console.log(y_dir);
-
         for (let i = 0; i != this.speed && this.isAtLimits() == false ; i++)
         {
             this.x = this.x + x_dir;
@@ -125,10 +122,28 @@ class PowerUp
         }
     }
 
+    getAwayFromLimits()
+    {
+        if (this.isUpOrDown() == true)
+        {
+            if (this.y <= 0)
+                this.y = this.y + 1;
+            else
+                this.y = this.y - 1;
+        }
+        else
+        {
+            if (this.x <= 0)
+                this.x = this.x + 1;
+            else
+                this.x = this.x - 1;
+        }
+    }
+
     animate()
     {
         if (this.isAtLimits() == true)
-            this.direction = this.getOpposite();
+            this.direction = this.getOpposite(), this.getAwayFromLimits();
         // else if (this.isAtPlayer() == true)
         //     this.ApplyPlayerBonus(), this.reset();
         // else if (this.isAtBall() == true)

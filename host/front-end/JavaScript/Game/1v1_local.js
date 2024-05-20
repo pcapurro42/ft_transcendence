@@ -135,7 +135,7 @@ class LocalGame1v1
                 x_pos : (this.game_width / 4),
                 y_pos : (this.game_height / 2),
 
-                speed: this.ball_speed / 3,
+                speed: 2,
                 color: this.bonus_color,
 
                 direction : this.ball_direction,
@@ -150,10 +150,10 @@ class LocalGame1v1
                 x_pos : (this.game_width / 2 + (this.game_width / 4)),
                 y_pos : (this.game_height / 2),
 
-                speed: this.ball_speed / 3,
+                speed: 2,
                 color: this.bonus_color,
 
-                direction : bonus_one_data + 90,
+                direction : this.ball_direction + 90,
             }
 
             this.bonus_one = new PowerUp(...Object.values(bonus_one_data));
