@@ -20,6 +20,7 @@ class LocalGame1v1
         this.scores = [0, 0];
 
         this.canvas = null;
+        this.display = null;
 
         this.game_width = 1100;
         this.game_height = 720;
