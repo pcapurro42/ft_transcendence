@@ -69,9 +69,6 @@ class LocalGame1v1
             this.canvas = document.getElementById('one_vs_one_local_game');
         this.display = this.canvas.getContext('2d');
 
-        this.canvas.strokeStyle = 'red';
-        this.canvas.lineWidth = 5;
-
         this.canvas.width = this.game_width;
         this.canvas.height = this.game_height;
 
@@ -232,6 +229,7 @@ class LocalGame1v1
     {
         let x_bar_center = (this.game_width / 2) - (this.separator_width / 2);
         let nb = ~~(this.game_height / (this.separator_height + this.separator_space));
+
         for (let value = 0; value != nb; value++)
         {
             this.display.fillRect(x_bar_center, ((this.separator_height * value) + this.separator_space * (value + 1)), this.separator_width, this.separator_height);
