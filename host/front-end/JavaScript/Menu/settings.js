@@ -144,7 +144,6 @@ function initializeGameMode(){
         c_switch.checked = true;
         t_switch.nextElementSibling.innerHTML = getTranslation('Bonus Mode');
         c_switch.nextElementSibling.innerHTML = getTranslation('Bonus Mode');
-        console.log(t_switch.nextElementSibling);
     }
     else{
         gameMode = 'normal';
