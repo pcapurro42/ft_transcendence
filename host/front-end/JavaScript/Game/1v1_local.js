@@ -17,7 +17,7 @@ class LocalGame1v1
 
         this.bonus_one = null;
         this.bonus_two = null;
-        this.bonus_color = "yellow";
+        this.bonus_color = "green";
 
         this.scores = [0, 0];
 
@@ -51,14 +51,6 @@ class LocalGame1v1
 
     }
 
-
-    setColors(newColor){
-        this.menu_color = newColor;
-        this.background_color = newColor;
-        this.bar_color = newColor;
-        this.ball_color = newColor;
-    }
-
     initialize()
     {
         // canvas creation
@@ -73,6 +65,7 @@ class LocalGame1v1
         this.canvas.height = this.game_height;
 
         // background loading
+
         if (game_map == "none")
             this.background_img = null;
         else
@@ -91,18 +84,6 @@ class LocalGame1v1
             {
                 this.background_img = new Image();
                 this.background_img.src = 'Materials/images/game_back3.png';
-            }
-            else if (game_map == 'mgs1'){
-                this.background_img = new Image();
-                this.background_img.src = "./Materials/images/game_back4.png";
-            }
-            else if (game_map == 'mgs2'){
-                this.background_img = new Image();
-                this.background_img.src = "./Materials/images/game_back5.png";
-            }
-            else if (game_map == 'mgs3'){
-                this.background_img = new Image();
-                this.background_img.src = "./Materials/images/game_back6.png";
             }
         }
 
@@ -292,8 +273,6 @@ class LocalGame1v1
 
     restartRound()
     {
-        document.getElementById('goal_sound').play();
-
         if (this.ball.x >= this.game_width / 2)
             this.scores[0]++;
         else
@@ -308,14 +287,15 @@ class LocalGame1v1
             return (true);
         if (this.scores[0] > 9 || this.scores[1] > 9)
         {
-            document.getElementById('game_end').play();
-            if (type == 'tournament'){
+            if (type == 'tournament')
+            {
                 if (this.scores[0] > 9)
                     t_LeftWin();
                 if (this.scores[1] > 9)
                     t_RightWin();
             }
-            else{
+            else
+            {
                 if (this.scores[0] > 9)
                 {
                     let player_left_won = document.getElementById('left_player_won_text');
