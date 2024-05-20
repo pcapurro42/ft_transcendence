@@ -54,6 +54,7 @@ function displayCountDown(nb)
     {
         timer.style.display = "none";
         game_music.play();
+        active = true;
         startLocal1v1();
         return ;
     }

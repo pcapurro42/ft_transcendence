@@ -350,7 +350,9 @@ function startLocal1v1()
     {
         game.refreshBackground();
         game.resetGame();
+        
         removeLocal1v1();
+
         if (final == false)
             removeTournamentGame();
         else
