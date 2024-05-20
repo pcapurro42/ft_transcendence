@@ -50,9 +50,11 @@ let fr = [
 
     ["Game theme", "Musique du jeu"],
     ["Game map", "Carte du jeu"],
-    ["Green", "Vert"],
-    ["Yellow", "Jaune"],
+    
+    ["Brown", "Marron"],
     ["Orange", "Orange"],
+    ["Purple", "Violet"],
+
     ["– None –", "– Aucun –"],
 
     ["Enabled", "Activé"],
