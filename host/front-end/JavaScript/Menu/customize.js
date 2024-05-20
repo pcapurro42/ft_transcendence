@@ -46,17 +46,16 @@ function showMapTooltip(){
 	if (this.value != 'none'){
 		document.getElementById('map_tooltip').classList.remove('d-none');
 		switch (this.value){
-			case 'green':
-				img.src = "./Materials/images/tooltip_green_map.png";
-				break;
-			case 'yellow':
-				img.src = "./Materials/images/tooltip_yellow_map.png";
+			case 'purple':
+				img.src = "./Materials/images/tooltip_purple_map.png";
 				break;
 			case 'orange':
 				img.src = "./Materials/images/tooltip_orange_map.png";
 				break;
+			case 'red':
+				img.src = "./Materials/images/tooltip_red_map.png";
+				break;
 		}
-
 	}
 }
 
