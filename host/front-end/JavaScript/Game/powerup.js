@@ -17,6 +17,8 @@ class PowerUp
         this.color = color;
 
         this.direction = direction;
+
+        this.alive = true;
     }
 
     print()
@@ -29,12 +31,22 @@ class PowerUp
 
     isAtPlayer() //
     {
+        if (this.y + this.height >= this.game.left_player.y && this.y <= this.game.left_player.y + this.game.left_player.height)
+        {
+            if (this.x <= this.game.left_player.x + this.game.left_player.width)
+                return (true);
+        }
+        if (this.y + this.height >= this.game.right_player.y && this.y <= this.game.right_player.y + this.game.right_player.height)
+        {
+            if (this.x + this.width >= this.game.right_player.x)
+                return (true);
+        }
         return (false);
     }
 
     isAtBall()
     {
-        ;
+        return (false);
     }
 
     isUpOrDown()
@@ -105,6 +117,7 @@ class PowerUp
         this.y = this.game.game_height / 2 - (this.game.ball_width / 2);
 
         this.direction = getRandomBallDirection();
+        this.alive = true;
     }
 
     move()
@@ -144,10 +157,10 @@ class PowerUp
     {
         if (this.isAtLimits() == true)
             this.direction = this.getOpposite(), this.getAwayFromLimits();
-        // else if (this.isAtPlayer() == true)
-        //     this.ApplyPlayerBonus(), this.reset();
-        // else if (this.isAtBall() == true)
-        //     this.ApplyBallBonus(), this.reset();
+        else if (this.isAtPlayer() == true)
+            this.ApplyPlayerBonus(), this.alive = false;
+        else if (this.isAtBall() == true)
+            this.ApplyBallBonus(), this.alive = false;
 
         this.move();
     }

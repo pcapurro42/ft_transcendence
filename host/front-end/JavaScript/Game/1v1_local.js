@@ -28,7 +28,7 @@ class LocalGame1v1
         this.bar_height = 80;
         this.bar_width = 10;
 
-        this.ball_speed = 2;
+        this.ball_speed = 10;
         this.ball_height = 20;
         this.ball_width = 20;
         this.ball_color = null;
@@ -227,13 +227,19 @@ class LocalGame1v1
 
     refreshBonus()
     {
-        this.bonus_one.print();
-        this.bonus_one.animate();
-        this.bonus_one.print();
+        if (this.bonus_one.alive == true && (this.scores[0] >= 2 || this.scores[1] >= 2))
+        {
+            this.bonus_one.print();
+            this.bonus_one.animate();
+            this.bonus_one.print();
+        }
 
-        this.bonus_two.print();
-        this.bonus_two.animate();
-        this.bonus_two.print();
+        if (this.bonus_two.alive == true && (this.scores[0] >= 4 || this.scores[1] >= 4))
+        {
+            this.bonus_two.print();
+            this.bonus_two.animate();
+            this.bonus_two.print();
+        }
     }
 
     resetGame()
@@ -243,6 +249,9 @@ class LocalGame1v1
 
         this.left_player.reset();
         this.right_player.reset();
+
+        if (gameMode != "normal")
+            this.bonus_one.reset(), this.bonus_two.reset();
     }
 
     restartRound()
