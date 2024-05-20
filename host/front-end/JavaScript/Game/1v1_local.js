@@ -64,7 +64,12 @@ class LocalGame1v1
             this.menu_color = "black", this.background_color = "white", this.bar_color = "black", this.ball_color = "black";
 
         if (game_map != null && game_map != "none")
-            this.background_color = game_map;
+        {
+            if (game_map == "red")
+                this.background_color = "brown";
+            else
+                this.background_color = game_map;
+        }
 
         // players creation
 
