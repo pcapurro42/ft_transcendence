@@ -15,6 +15,9 @@ class Bar1v1
         this.speed = speed;
 
         this.color = color;
+
+        this.bonus_speed = 0;
+        this.bonus_height = 0;
     }
 
     print()
@@ -59,7 +62,8 @@ class Bar1v1
             this.x = ((this.game.game_width - this.game.bar_width) - this.game.bar_width);
             this.y = ((this.game.game_height / 2) - this.game.bar_height / 2);
         }
-        this.speed = this.game.player_speed;
+        this.speed = this.game.bar_speed;
+        this.height = this.game.bar_height;
     }
 
     getInfo()

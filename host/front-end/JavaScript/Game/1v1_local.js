@@ -261,7 +261,7 @@ class LocalGame1v1
         else
             this.scores[1]++;
 
-        this.ball.reset();
+        this.ball.replace();
     }
 
     isOver()

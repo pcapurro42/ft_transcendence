@@ -77,11 +77,6 @@ class PowerUp
         return (false);
     }
 
-    shouldStop()
-    {
-        return (false);
-    }
-
     // < Calculators > //
 
     getOpposite()
@@ -110,12 +105,23 @@ class PowerUp
 
     ApplyPlayerBonus()
     {
-        ;
+        let value = generateNumber(2);
+        let player;
+        
+        if (this.x <= this.game.game_width / 2)
+            player = this.game.left_player;
+        else
+            player = this.game.right_player;
+
+        if (value == 1)
+            player.speed = player.speed * 2;
+        else
+            player.height = player.height * 2;
     }
 
     ApplyBallBonus()
     {
-        ;
+        this.game.ball.speed = this.game.ball.speed++;
     }
 
     reset()
