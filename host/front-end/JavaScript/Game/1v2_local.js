@@ -94,7 +94,9 @@ class LocalGame1v2
             map_y: ((this.game_height / 4) - this.bar_height / 2),
 
             bar_speed: this.bar_speed,
-            color: this.bar_color
+            color: this.bar_color,
+
+            pos: "up"
         }
 
         let right_player_two_data = {
@@ -107,7 +109,9 @@ class LocalGame1v2
             map_y: ((this.game_height / 2 + this.game_height / 2) - this.bar_height / 2),
 
             bar_speed: this.bar_speed,
-            color: this.bar_color
+            color: this.bar_color,
+
+            pos: "down"
         }
 
         this.left_player = new Bar1v1(...Object.values(left_player_data))
