@@ -100,11 +100,29 @@ class Bar1v2
         this.game.display.fillRect(this.x, this.y, this.width, this.height);
     }
 
+    willBeAtLimits(sign)
+    {
+        if (players_nb == 3)
+        {
+            if (sign == "+")
+            {
+                if (this.pos == "up" && this.y + this.height + 1 == this.game.game_height / 2)
+                    return (true);
+            }
+            if (sign == "-")
+            {
+                if (this.pos == "down" && this.y - 1 == this.game.game_height / 2)
+                    return (true);
+            }
+        }
+        return (false);
+    }
+
     moveUp()
     {
         for (let i = 0; i != this.speed; i++)
         {
-            if (this.y > 0 && this.game.ball.isAboveOrUnderPlayer() == false)
+            if (this.y > 0 && this.game.ball.isAboveOrUnderPlayer() == false && this.willBeAtLimits("-") == false)
             {
                 this.y = this.y - 1;
                 this.print();
@@ -116,7 +134,7 @@ class Bar1v2
     {
         for (let i = 0; i != this.speed; i++)
         {
-            if (this.y + this.height < this.game.game_height && this.game.ball.isAboveOrUnderPlayer() == false)
+            if (this.y + this.height < this.game.game_height && this.game.ball.isAboveOrUnderPlayer() == false && this.willBeAtLimits("+") == false)
             {
                 this.y = this.y + 1;
                 this.print();
