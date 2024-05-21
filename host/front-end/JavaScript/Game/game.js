@@ -60,7 +60,7 @@ function displayCountDown(nb)
         timer.style.display = "none";
         game_music.play();
         active = true;
-        if (mode == 2)
+        if (players_nb == 2)
             startLocal1v1();
         else
             startLocal1v2();
