@@ -12,7 +12,7 @@
     top: 0%;
     left: 0%;
 }
-.btn:hover{
+.btn:hover:not(.border){
     transition: 1s;
     transform: scale(1.2);
 }
@@ -108,9 +108,12 @@
     border: 0cap;
 }
 
+#footer{
+    position: sticky;
+    right:0;
+    bottom:0;
+}
 #play_back_btn, #settings_back_btn, #customize_back_btn, #classic_back_btn, #back_tournament_btn, #create_classic_back_btn, #join_classic_back_btn, #one_vs_one_online_choice_back_btn
 {
     font-weight: bold;
 }
-
-

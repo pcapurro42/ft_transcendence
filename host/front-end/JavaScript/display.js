@@ -227,4 +227,12 @@ function refreshDisplay()
         setDescriptiveImages("enable");
     else
         setDescriptiveImages("disable");
+
+    let test = document.querySelectorAll('.btn .border');
+
+    for (let i = 0; i < test.length; i++){
+        test[i].onmouseover.style.transform = '';
+    }
+
+
 }
