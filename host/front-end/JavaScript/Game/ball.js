@@ -39,36 +39,103 @@ class Ball
 
     isFrontPlayer()
     {
-        if (Math.ceil(this.x) == this.game.left_player.x + this.game.left_player.width)
+        if (players_nb == 1)
         {
-            if (Math.ceil(this.y) + this.height >= this.game.left_player.y && Math.ceil(this.y) <= this.game.left_player.y + this.game.left_player.height)
-                return (true);
+            ;
         }
 
-        if (Math.ceil(this.x) + this.width == this.game.right_player.x)
+        if (players_nb == 2)
         {
-            if (Math.ceil(this.y) + this.height >= this.game.right_player.y && Math.ceil(this.y) <= this.game.right_player.y + this.game.right_player.height)
-                return (true);
+            if (Math.ceil(this.x) == this.game.left_player.x + this.game.left_player.width)
+            {
+                if (Math.ceil(this.y) + this.height >= this.game.left_player.y && Math.ceil(this.y) <= this.game.left_player.y + this.game.left_player.height)
+                    return (true);
+            }
+
+            if (Math.ceil(this.x) + this.width == this.game.right_player.x)
+            {
+                if (Math.ceil(this.y) + this.height >= this.game.right_player.y && Math.ceil(this.y) <= this.game.right_player.y + this.game.right_player.height)
+                    return (true);
+            }
         }
+        
+        if (players_nb == 3)
+        {
+            if (Math.ceil(this.x) == this.game.left_player.x + this.game.left_player.width)
+            {
+                if (Math.ceil(this.y) + this.height >= this.game.left_player.y && Math.ceil(this.y) <= this.game.left_player.y + this.game.left_player.height)
+                    return (true);
+            }
+
+            if (Math.ceil(this.x) + this.width == this.game.right_player_1.x)
+            {
+                if (Math.ceil(this.y) + this.height >= this.game.right_player_1.y && Math.ceil(this.y) <= this.game.right_player_1.y + this.game.right_player_1.height)
+                    return (true);
+            }
+
+            if (Math.ceil(this.x) + this.width == this.game.right_player_2.x)
+            {
+                if (Math.ceil(this.y) + this.height >= this.game.right_player_2.y && Math.ceil(this.y) <= this.game.right_player_2.y + this.game.right_player_2.height)
+                    return (true);
+            }
+        }
+
         return (false);
     }
 
     isAboveOrUnderPlayer()
     {
-        if (Math.ceil(this.x) + this.width >= this.game.left_player.x && Math.ceil(this.x) <= this.game.left_player.x + this.game.left_player.width)
+        if (players_nb == 1)
         {
-            if (Math.ceil(this.y) + this.height == this.game.left_player.y)
-                return (true);
-            if (Math.ceil(this.y) == this.game.left_player.y + this.game.left_player.height)
-                return (true);
+            ;
         }
-        if (Math.ceil(this.x) + this.width >= this.game.right_player.x && Math.ceil(this.x) <= this.game.right_player.x + this.game.right_player.width)
+
+        if (players_nb == 2)
         {
-            if (Math.ceil(this.y) + this.height == this.game.right_player.y)
-                return (true);
-            if (Math.ceil(this.y) == this.game.right_player.y + this.game.right_player.height)
-                return (true);
+            if (Math.ceil(this.x) + this.width >= this.game.left_player.x && Math.ceil(this.x) <= this.game.left_player.x + this.game.left_player.width)
+            {
+                if (Math.ceil(this.y) + this.height == this.game.left_player.y)
+                    return (true);
+                if (Math.ceil(this.y) == this.game.left_player.y + this.game.left_player.height)
+                    return (true);
+            }
+
+            if (Math.ceil(this.x) + this.width >= this.game.right_player.x && Math.ceil(this.x) <= this.game.right_player.x + this.game.right_player.width)
+            {
+                if (Math.ceil(this.y) + this.height == this.game.right_player.y)
+                    return (true);
+                if (Math.ceil(this.y) == this.game.right_player.y + this.game.right_player.height)
+                    return (true);
+            }
         }
+        
+        if (players_nb == 3)
+        {
+            if (Math.ceil(this.x) + this.width >= this.game.left_player.x && Math.ceil(this.x) <= this.game.left_player.x + this.game.left_player.width)
+            {
+                if (Math.ceil(this.y) + this.height == this.game.left_player.y)
+                    return (true);
+                if (Math.ceil(this.y) == this.game.left_player.y + this.game.left_player.height)
+                    return (true);
+            }
+
+            if (Math.ceil(this.x) + this.width >= this.game.right_player_1.x && Math.ceil(this.x) <= this.game.right_player_1.x + this.game.right_player_1.width)
+            {
+                if (Math.ceil(this.y) + this.height == this.game.right_player_1.y)
+                    return (true);
+                if (Math.ceil(this.y) == this.game.right_player_1.y + this.game.right_player_1.height)
+                    return (true);
+            }
+
+            if (Math.ceil(this.x) + this.width >= this.game.right_player_2.x && Math.ceil(this.x) <= this.game.right_player_2.x + this.game.right_player_2.width)
+            {
+                if (Math.ceil(this.y) + this.height == this.game.right_player_2.y)
+                    return (true);
+                if (Math.ceil(this.y) == this.game.right_player_2.y + this.game.right_player_2.height)
+                    return (true);
+            }
+        }
+
         return (false);
     }
 
@@ -101,9 +168,9 @@ class Ball
         }
         else
         {
-            if (keys.ArrowUp == true)
+            if (keys.ArrowUp == true || (players_nb == 3 && keys.KeyU == true))
                 this.direction = this.direction + 5;
-            else if (keys.ArrowDown == true)
+            else if (keys.ArrowDown == true || (players_nb == 3 && keys.KeyJ == true))
                 this.direction = this.direction - 5;
         }
     }
@@ -113,15 +180,37 @@ class Ball
         if (this.bonus_speed == 3)
             return ;
 
-        if (this.x < this.game_width / 2)
+        if (players_nb == 1)
         {
-            if (keys.ArrowUp == true || keys.ArrowDown == true)
-                this.bonus_speed++;
+            ;
         }
-        else
+
+        if (players_nb == 2)
         {
-            if (keys.KeyE == true || keys.KeyD == true)
-                this.bonus_speed++;
+            if (this.x < this.game_width / 2)
+            {
+                if (keys.ArrowUp == true || keys.ArrowDown == true)
+                    this.bonus_speed++;
+            }
+            else
+            {
+                if (keys.KeyE == true || keys.KeyD == true)
+                    this.bonus_speed++;
+            }
+        }
+
+        if (players_nb == 3)
+        {
+            if (this.x < this.game_width / 2)
+            {
+                if (keys.ArrowUp == true || keys.ArrowDown == true)
+                    this.bonus_speed++;
+            }
+            else
+            {
+                if (keys.KeyE == true || keys.KeyD == true || keys.KeyJ == true)
+                    this.bonus_speed++;
+            }
         }
     }
 
@@ -188,10 +277,26 @@ class Ball
         }
         if (this.isAboveOrUnderPlayer() == true)
         {
-            if (Math.ceil(this.y) + this.height == this.game.left_player.y || Math.ceil(this.y) + this.height == this.game.right_player.y)
-                this.y = this.y - this.speed;
-            else
-                this.y = this.y + this.speed;
+            if (players_nb == 1)
+            {
+                ;
+            }
+
+            if (players_nb == 2)
+            {
+                if (Math.ceil(this.y) + this.height == this.game.left_player.y || Math.ceil(this.y) + this.height == this.game.right_player.y)
+                    this.y = this.y - this.speed;
+                else
+                    this.y = this.y + this.speed;
+            }
+            if (players_nb == 3)
+            {
+                if (Math.ceil(this.y) + this.height == this.game.left_player.yMath.ceil(this.y) + this.height == this.game.right_player_1.y || Math.ceil(this.y) + this.height == this.game.right_player_2.y)
+                    this.y = this.y - this.speed;
+                else
+                    this.y = this.y + this.speed;
+            }
+
         }
     }
 

@@ -106,7 +106,7 @@ class LocalGame1v2
             object_heigth : this.bar_height,
 
             map_x: ((this.game_width - this.bar_width) - this.bar_width),
-            map_y: ((this.game_height / 2 + this.game_height / 2) - this.bar_height / 2),
+            map_y: ((this.game_height / 2 + this.game_height / 4) - this.bar_height / 2),
 
             bar_speed: this.bar_speed,
             color: this.bar_color,
