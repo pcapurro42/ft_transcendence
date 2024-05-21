@@ -68,5 +68,112 @@ class LocalGame1v2
             else
                 this.background_color = game_map;
         }
+
+        // players creation
+
+        let left_player_data = {
+            game: this,
+
+            object_width: this.bar_width,
+            object_heigth : this.bar_height,
+
+            map_x: 0 + this.bar_width,
+            map_y: ((this.game_height / 2) - this.bar_height / 2),
+
+            bar_speed: this.bar_speed,
+            color: this.bar_color
+        }
+
+        let right_player_one_data = {
+            game: this,
+
+            object_width: this.bar_width,
+            object_heigth : this.bar_height,
+
+            map_x: ((this.game_width - this.bar_width) - this.bar_width),
+            map_y: ((this.game_height / 4) - this.bar_height / 2),
+
+            bar_speed: this.bar_speed,
+            color: this.bar_color
+        }
+
+        let right_player_two_data = {
+            game: this,
+
+            object_width: this.bar_width,
+            object_heigth : this.bar_height,
+
+            map_x: ((this.game_width - this.bar_width) - this.bar_width),
+            map_y: ((this.game_height / 2 + this.game_height / 2) - this.bar_height / 2),
+
+            bar_speed: this.bar_speed,
+            color: this.bar_color
+        }
+
+        this.left_player = new Bar1v1(...Object.values(left_player_data))
+        this.right_player_1 = new Bar1v2(...Object.values(right_player_one_data));
+        this.right_player_2 = new Bar1v2(...Object.values(right_player_two_data));
+
+        // ball creation
+
+        let x, y;
+
+        x = this.game_width / 2 - (this.ball_width / 2);
+        y = this.game_height / 2 - (this.ball_width / 2);
+        
+        let ball_data = {
+            game: this,
+        
+            object_width: this.ball_width,
+            object_heigth: this.ball_height,
+        
+            x_pos : x,
+            y_pos : y,
+        
+            speed: this.ball_speed,
+            color: this.ball_color,
+        
+            direction : this.ball_direction,
+            bonus_speed: 0
+        }
+        
+        this.ball = new Ball(...Object.values(ball_data));
+        
+        // bonus creation
+        
+        if (gameMode != "normal")
+        {
+            let bonus_one_data = {
+                game: this,
+        
+                object_width: this.ball_width,
+                object_heigth: this.ball_height,
+        
+                x_pos : (this.game_width / 4),
+                y_pos : (this.game_height / 2),
+        
+                speed: 2,
+                color: this.bonus_color,
+        
+                direction : this.ball_direction,
+            }
+        
+            let bonus_two_data = {
+                game: this,
+        
+                object_width: this.ball_width,
+                object_heigth: this.ball_height,
+        
+                x_pos : (this.game_width / 2 + (this.game_width / 4)),
+                y_pos : (this.game_height / 2),
+                speed: 2,
+                color: this.bonus_color,
+        
+                direction : this.ball_direction + 90,
+            }
+        
+            this.bonus_one = new PowerUp(...Object.values(bonus_one_data));
+            this.bonus_two = new PowerUp(...Object.values(bonus_two_data));
+        }
     }
 }
