@@ -212,12 +212,12 @@ class LocalGame1v1
     {
         if (keys.KeyE == true)
             this.left_player.moveUp();
-        else if (keys.KeyD == true)
+        if (keys.KeyD == true)
             this.left_player.moveDown();
 
         if (keys.ArrowUp == true)
             this.right_player.moveUp();
-        else if (keys.ArrowDown == true)
+        if (keys.ArrowDown == true)
             this.right_player.moveDown();
 
         this.left_player.print();

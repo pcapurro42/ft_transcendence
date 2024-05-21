@@ -27,9 +27,14 @@ function getRandomBallDirection()
 
 function displayCountDown(nb)
 {
-    let timer = document.getElementById('1v1_local_timer');
+    let timer;
     let menu_music = document.getElementById('mgs');
     let game_music = gameMusicSelector();
+
+    if (players_nb == 2)
+        timer = document.getElementById('1v1_local_timer');
+    else
+        timer = document.getElementById('2v1_local_timer');
 
     if (nb == 3){
         menu_music.pause();
@@ -55,7 +60,10 @@ function displayCountDown(nb)
         timer.style.display = "none";
         game_music.play();
         active = true;
-        startLocal1v1();
+        if (mode == 2)
+            startLocal1v1();
+        else
+            startLocal1v2();
         return ;
     }
     setTimeout(displayCountDown, 1000, --nb);

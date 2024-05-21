@@ -30,6 +30,9 @@ let en = [
     ["Left player won the game.", "Left player won the game."],
     ["Right player won the game.", "Right player won the game."],
 
+    ["Left players won the game.", "Left players won the game."],
+    ["Right players won the game.", "Right players won the game."],
+
     ["Create Lobby", "Create Lobby"],
     ["Join Lobby", "Join Lobby"],
     ["Submit", "Submit"],

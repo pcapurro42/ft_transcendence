@@ -29,6 +29,9 @@ let fr = [
     ["Left player won the game.", "Le joueur de gauche a gagné la partie."],
     ["Right player won the game.", "Le joueur de droite a gagné la partie."],
 
+    ["Left players won the game.", "Les joueurs de gauche ont gagné la partie."],
+    ["Right players won the game.", "Les joueurs de droite ont gagné la partie."],
+
     ["Create Lobby", "Créer un salon"],
     ["Join Lobby", "Rejoindre un salon"],
     ["Submit", "Soumettre"],
