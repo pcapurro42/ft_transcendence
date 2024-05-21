@@ -175,141 +175,141 @@ class LocalGame1v2
             this.bonus_one = new PowerUp(...Object.values(bonus_one_data));
             this.bonus_two = new PowerUp(...Object.values(bonus_two_data));
         }
+    }
 
-        refreshDisplay()
-        {
-            this.refreshBackground();
-            this.refreshCenterBar();
-            this.refreshScores();
-            this.refreshPlayers();
-            this.refreshBall();
+    refreshDisplay()
+    {
+        this.refreshBackground();
+        this.refreshCenterBar();
+        this.refreshScores();
+        this.refreshPlayers();
+        this.refreshBall();
     
-            if (gameMode != "normal")
-                this.refreshBonus();
-        }
+        if (gameMode != "normal")
+            this.refreshBonus();
+    }
 
-        refreshBackground()
+    refreshBackground()
+    {
+        this.display.fillStyle = this.background_color;
+        this.display.fillRect(0, 0, this.game_width, this.game_height);
+    }
+    
+    refreshCenterBar()
+    {
+        let x_bar_center = (this.game_width / 2) - (this.separator_width / 2);
+        let nb = ~~(this.game_height / (this.separator_height + this.separator_space));
+    
+        this.display.fillStyle = this.menu_color;
+        for (let value = 0; value != nb; value++)
         {
-            this.display.fillStyle = this.background_color;
-            this.display.fillRect(0, 0, this.game_width, this.game_height);
+            this.display.fillRect(x_bar_center, ((this.separator_height * value) + this.separator_space * (value + 1)), this.separator_width, this.separator_height);
+        }
+    }
+    
+    refreshScores()
+    {
+        let score_y = this.game_height / 6;
+        let left_score_x = (this.game_width / 4) - this.text_size / 4;
+        let right_score_x = (this.game_width - this.game_width / 4) - this.text_size / 4;
+    
+        this.display.font = this.text_size + "px " + this.text_font;
+        this.display.fillText(this.scores[0], left_score_x, score_y);
+        this.display.fillText(this.scores[1], right_score_x, score_y);
+    }
+
+    refreshPlayers()
+    {
+        if (keys.KeyE == true)
+            this.left_player.moveUp();
+        if (keys.KeyD == true)
+            this.left_player.moveDown();
+
+        if (keys.KeyU == true)
+            this.right_player_1.moveUp();
+        if (keys.KeyJ == true)
+            this.right_player_1.moveDown();
+
+        if (keys.ArrowUp == true)
+            this.right_player_2.moveUp();
+        if (keys.ArrowDown == true)
+            this.right_player_2.moveDown();
+
+        this.left_player.print();
+        this.right_player_1.print();
+        this.right_player_2.print();
+    }
+
+    refreshBall()
+    {
+        this.ball.print();
+        this.ball.animate();
+        this.ball.print();
+    }
+    
+    refreshBonus()
+    {
+        if (this.bonus_one.alive == true && (this.scores[0] >= 2 || this.scores[1] >= 2))
+        {
+            this.bonus_one.print();
+            this.bonus_one.animate();
+            this.bonus_one.print();
         }
     
-        refreshCenterBar()
+        if (this.bonus_two.alive == true && (this.scores[0] >= 4 || this.scores[1] >= 4))
         {
-            let x_bar_center = (this.game_width / 2) - (this.separator_width / 2);
-            let nb = ~~(this.game_height / (this.separator_height + this.separator_space));
+            this.bonus_two.print();
+            this.bonus_two.animate();
+            this.bonus_two.print();
+        }
+    }
     
-            this.display.fillStyle = this.menu_color;
-            for (let value = 0; value != nb; value++)
+    resetGame()
+    {
+        this.scores[0] = 0;
+        this.scores[1] = 0;
+    
+        this.left_player.reset();
+        this.right_player_1.reset();
+        this.right_player_2.reset();
+    
+        if (gameMode != "normal")
+            this.bonus_one.reset(), this.bonus_two.reset();
+    }
+
+    restartRound()
+    {
+        if (this.ball.x >= this.game_width / 2)
+            this.scores[0]++;
+        else
+            this.scores[1]++;
+    
+        this.ball.replace();
+    }
+    
+    isOver()
+    {
+        if (active == false)
+            return (true);
+        if (this.scores[0] > 9 || this.scores[1] > 9)
+        {
+            if (this.scores[0] > 9)
             {
-                this.display.fillRect(x_bar_center, ((this.separator_height * value) + this.separator_space * (value + 1)), this.separator_width, this.separator_height);
+                let left_side_won = document.getElementById('left_side_won_text');
+                left_side_won.style.display = "block";
             }
-        }
-    
-        refreshScores()
-        {
-            let score_y = this.game_height / 6;
-            let left_score_x = (this.game_width / 4) - this.text_size / 4;
-            let right_score_x = (this.game_width - this.game_width / 4) - this.text_size / 4;
-    
-            this.display.font = this.text_size + "px " + this.text_font;
-            this.display.fillText(this.scores[0], left_score_x, score_y);
-            this.display.fillText(this.scores[1], right_score_x, score_y);
-        }
-
-        refreshPlayers()
-        {
-            if (keys.KeyE == true)
-                this.left_player.moveUp();
-            if (keys.KeyD == true)
-                this.left_player.moveDown();
-
-            if (keys.KeyU == true)
-                this.right_player_1.moveUp();
-            if (keys.KeyJ == true)
-                this.right_player_1.moveDown();
-
-            if (keys.ArrowUp == true)
-                this.right_player_2.moveUp();
-            if (keys.ArrowDown == true)
-                this.right_player_2.moveDown();
-
-            this.left_player.print();
-            this.right_player_1.print();
-            this.right_player_2.print();
-        }
-
-        refreshBall()
-        {
-            this.ball.print();
-            this.ball.animate();
-            this.ball.print();
-        }
-    
-        refreshBonus()
-        {
-            if (this.bonus_one.alive == true && (this.scores[0] >= 2 || this.scores[1] >= 2))
+            if (this.scores[1] > 9)
             {
-                this.bonus_one.print();
-                this.bonus_one.animate();
-                this.bonus_one.print();
+                let right_side_won = document.getElementById('right_side_won_text');
+                right_side_won.style.display = "block";
             }
-    
-            if (this.bonus_two.alive == true && (this.scores[0] >= 4 || this.scores[1] >= 4))
-            {
-                this.bonus_two.print();
-                this.bonus_two.animate();
-                this.bonus_two.print();
-            }
-        }
-    
-        resetGame()
-        {
-            this.scores[0] = 0;
-            this.scores[1] = 0;
-    
-            this.left_player.reset();
-            this.right_player_1.reset();
-            this.right_player_2.reset();
-    
-            if (gameMode != "normal")
-                this.bonus_one.reset(), this.bonus_two.reset();
-        }
-
-        restartRound()
-        {
-            if (this.ball.x >= this.game_width / 2)
-                this.scores[0]++;
-            else
-                this.scores[1]++;
-    
-            this.ball.replace();
-        }
-    
-        isOver()
-        {
-            if (active == false)
-                return (true);
-            if (this.scores[0] > 9 || this.scores[1] > 9)
-            {
-                if (this.scores[0] > 9)
-                {
-                    let left_side_won = document.getElementById('left_side_won_text');
-                    player_left_won.style.display = "block";
-                }
-                if (this.scores[1] > 9)
-                {
-                    let player_right_won = document.getElementById('right_side_won_text');
-                    player_right_won.style.display = "block";
-                }
                 
-                this.resetGame();
-                active = false;
+            this.resetGame();
+            active = false;
         
-                return (true);
-            }
-            return (false);
+            return (true);
         }
+        return (false);
     }
 }
 
@@ -331,10 +331,10 @@ function displayLocal1v2()
 {
     let start_btn = document.getElementById('start_2v1_local');
     start_btn.style.visibility = "hidden";
-    let player_left_won = document.getElementById('left_side_won_text');
-    player_left_won.style.display = "none";
-    let player_right_won = document.getElementById('right_side_won_text');
-    player_right_won.style.display = "none";
+    let player_side_won = document.getElementById('left_side_won_text');
+    player_side_won.style.display = "none";
+    let right_side_won = document.getElementById('right_side_won_text');
+    right_side_won.style.display = "none";
 
     let timer = document.getElementById('2v1_local_timer');
     timer.style.display = "block";
