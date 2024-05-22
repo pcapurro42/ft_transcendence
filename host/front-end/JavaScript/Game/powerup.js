@@ -36,7 +36,17 @@ class PowerUp
         if (this.x <= this.game.game_width / 2)
             player = this.game.left_player;
         else
-            player = this.game.right_player;
+        {
+            if (players_nb == 2)
+                player = this.game.right_player;
+            else
+            {
+                if (this.y < this.game.game_height / 2)
+                    player = this.game.right_player_1;
+                else
+                    player = this.game.right_player_2;
+            }
+        }
 
         if (this.y + this.height >= player.y && this.y <= player.y + player.height)
         {
@@ -147,7 +157,7 @@ class PowerUp
             }
             else
             {
-                if (this.x < this.game.game_height / 2)
+                if (this.y < this.game.game_height / 2)
                 {
                     if (value == 1)
                         this.game.right_player_1.speed = this.game.right_player_1.speed * 2;

@@ -291,7 +291,7 @@ class Ball
             }
             if (players_nb == 3)
             {
-                if (Math.ceil(this.y) + this.height == this.game.left_player.yMath.ceil(this.y) + this.height == this.game.right_player_1.y || Math.ceil(this.y) + this.height == this.game.right_player_2.y)
+                if (Math.ceil(this.y) + this.height == this.game.left_player.y || Math.ceil(this.y) + this.height == this.game.right_player_1.y || Math.ceil(this.y) + this.height == this.game.right_player_2.y)
                     this.y = this.y - this.speed;
                 else
                     this.y = this.y + this.speed;
