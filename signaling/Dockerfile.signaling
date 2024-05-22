@@ -19,8 +19,8 @@ RUN pip install django-cors-headers
 RUN pip install requests
 COPY ./signaling_server .
 
+COPY start.sh /home/
+
 EXPOSE 8000
 
-RUN python3 manage.py migrate
-
-CMD ["gunicorn", "-c", "gunicorn_config.py", "signalingserv.wsgi"]
+CMD ["sh", "/home/start.sh"]
