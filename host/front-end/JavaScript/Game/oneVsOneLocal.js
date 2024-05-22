@@ -228,7 +228,7 @@ class LocalGame1v1
 
     refreshBall()
     {
-        if (this.alert != 250)
+        if (this.alert != 100)
             this.ball.printAlert(), this.alert++;
 
         this.ball.print();
@@ -244,6 +244,8 @@ class LocalGame1v1
             this.bonus_one.animate();
             this.bonus_one.print();
         }
+        else
+            this.bonus_one.displayBonus();
 
         if (this.bonus_two.alive == true && (this.scores[0] >= 4 || this.scores[1] >= 4))
         {
@@ -251,6 +253,8 @@ class LocalGame1v1
             this.bonus_two.animate();
             this.bonus_two.print();
         }
+        else
+            this.bonus_two.displayBonus();
     }
 
     resetGame()

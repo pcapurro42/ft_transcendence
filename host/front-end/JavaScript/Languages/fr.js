@@ -21,6 +21,9 @@ let fr = [
 
     ["Go!", "Partez !"],
 
+    ["speed", "vitesse"],
+    ["size", "taille"],
+
     ["Create a game", "Créer une partie"],
     ["Join a game", "Rejoindre une partie"],
     ["Copy", "Copier"],

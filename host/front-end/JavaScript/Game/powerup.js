@@ -19,6 +19,9 @@ class PowerUp
         this.direction = direction;
 
         this.alive = true;
+
+        this.bonus = false;
+        this.bonus_message = 0;
     }
 
     print()
@@ -124,7 +127,65 @@ class PowerUp
 
     // < Animate > //
 
-    ApplyPlayerBonus()
+    displayBonusMessage()
+    {
+        this.game.display.font = this.game.text_size / 4 + "px " + this.game.text_font;
+        this.game.display.fillStyle = "green";
+
+        if (this.object == "ball")
+            this.game.display.fillText("+" + getTranslation("speed"), this.game.ball.x + this.game.ball.x + 25, this.game.ball.y);
+        else
+        {
+            if (this.object == "left" && players_nb == 2)
+            {
+                if (this.value == 1)
+                    this.game.display.fillText("+" + getTranslation("speed"), this.game.left_player.x + this.game.left_player.width + 25, this.game.left_player.y);
+                else
+                    this.game.display.fillText("-" + getTranslation("size"), this.game.right_player.x + this.game.right_player.width + 25, this.game.right_player.y);
+            }
+            if (this.object == "right" && players_nb == 2)
+            {
+                if (this.value == 1)
+                    this.game.display.fillText("+" + getTranslation("speed"), this.game.right_player.x - 25, this.game.right_player.y);
+                else
+                    this.game.display.fillText("-" + getTranslation("size"), this.game.left_player.x + this.game.left_player.width + 25, this.game.left_player.y);
+            }
+            if (this.object == "left" && players_nb == 3)
+            {
+                if (this.value == 1)
+                    this.game.display.fillText("+" + getTranslation("speed"), this.game.left_player.x + this.game.left_player.width + 25, this.game.left_player.y);
+                else
+                    this.game.display.fillText("-" + getTranslation("size"), this.game.right_player_1.x + this.game.right_player_1.width + 25, this.game.right_player_1.y), this.game.display.fillText("-" + getTranslation("size"), this.game.right_player_2.x + this.game.right_player_2.width + 25, this.game.right_player_2.y);
+            }
+            if (this.object == "right1")
+            {
+                if (this.value == 1)
+                    this.game.display.fillText("+" + getTranslation("speed"), this.game.right_player_1.x - 25, this.game.right_player_1.y);
+                else
+                    this.game.display.fillText("-" + getTranslation("size"), this.game.left_player.x + this.game.left_player.width + 25, this.game.left_player.y);
+            }
+            if (this.object == "right2")
+            {
+                if (this.value == 1)
+                    this.game.display.fillText("+" + getTranslation("speed"), this.game.right_player_2.x + - 25, this.game.right_player_2.y);
+                else
+                    this.game.display.fillText("-" + getTranslation("size"), this.game.left_player.x + this.game.left_player.width + 25, this.game.left_player.y);
+            }
+        }
+    }
+
+    displayBonus()
+    {
+        if (this.bonus == true)
+        {
+            if (this.bonus_message < 250)
+                this.displayBonusMessage(), this.bonus_message++;
+            else
+                this.bonus = false;
+        }
+    }
+
+    applyPlayerBonus()
     {
         let value = generateNumber(2);
         
@@ -136,6 +197,7 @@ class PowerUp
                     this.game.left_player.speed = this.game.left_player.speed * 2;
                 else
                     this.game.right_player.height = this.game.right_player.height - 40;
+                this.object = "left";
             }
             else
             {
@@ -143,6 +205,7 @@ class PowerUp
                     this.game.right_player.speed = this.game.right_player.speed * 2;
                 else
                     this.game.left_player.height = this.game.left_player.height - 40;
+                this.object = "right";
             }
         }
 
@@ -154,6 +217,7 @@ class PowerUp
                     this.game.left_player.speed = this.game.left_player.speed * 2;
                 else
                     this.game.right_player_1.height = this.game.right_player_1.height - 40, this.game.right_player_2.height = this.game.right_player_2.height - 40;
+                this.object = "left";
             }
             else
             {
@@ -163,6 +227,7 @@ class PowerUp
                         this.game.right_player_1.speed = this.game.right_player_1.speed * 2;
                     else
                         this.game.left_player.height = this.game.left_player.height - 40;
+                    this.object = "right1";
                 }
                 else
                 {
@@ -170,15 +235,21 @@ class PowerUp
                         this.game.right_player_2.speed = this.game.right_player_2.speed * 2;
                     else
                         this.game.left_player.height = this.game.left_player.height - 40;
+                    this.object = "right2";
                 }
             }
         }
-
+        this.bonus = true;
+        this.bonus_message = 0;
     }
 
-    ApplyBallBonus()
+    applyBallBonus()
     {
         this.game.ball.speed = this.game.ball.speed + 2;
+        
+        this.object = "ball";
+        this.bonus = true;
+        this.bonus_message = 0;
     }
 
     reset()
@@ -228,9 +299,9 @@ class PowerUp
         if (this.isAtLimits() == true)
             this.direction = this.getOpposite(), this.getAwayFromLimits();
         else if (this.isAtPlayer() == true)
-            this.ApplyPlayerBonus(), this.alive = false;
+            this.applyPlayerBonus(), this.alive = false;
         else if (this.isAtBall() == true)
-            this.ApplyBallBonus(), this.alive = false;
+            this.applyBallBonus(), this.alive = false;
 
         this.move();
     }

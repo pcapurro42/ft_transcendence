@@ -22,6 +22,9 @@ let en = [
 
     ["Go!", "Go!"],
 
+    ["speed", "speed"],
+    ["size", "size"],
+
     ["Create a game", "Create a game"],
     ["Join a game", "Join a game"],
     ["Copy", "Copy"],
