@@ -160,6 +160,7 @@ class PowerUp
                     this.game.right_player.bonus_message = "+ speed";
                 }
             }
+            this.game.sounds.powerup.play();
         }
 
         if (players_nb == 3)

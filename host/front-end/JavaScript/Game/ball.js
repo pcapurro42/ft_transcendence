@@ -273,8 +273,16 @@ class Ball
         }
     }
 
-    getAwayFromPlayers()
+    getAwayFromLimits()
     {
+        if (this.isUpOrDown() == true)
+        {
+            if (this.y < this.game.game_height / 2)
+                this.y = this.y + this.speed;
+            else
+                this.y = this.y - this.speed;
+        }
+
         if (this.isFrontPlayer() == true)
         {
             if (this.x < this.game.game_width / 2)
@@ -282,6 +290,7 @@ class Ball
             else
                 this.x = this.x - this.speed;
         }
+
         if (this.isAboveOrUnderPlayer() == true)
         {
             if (players_nb == 1)
@@ -303,8 +312,8 @@ class Ball
                 else
                     this.y = this.y + this.speed;
             }
-
         }
+        this.game.sounds.limit.play();
     }
 
     reset()
@@ -330,7 +339,7 @@ class Ball
         if (this.isOffLimit() == true)
             this.game.restartRound();
         else if (this.isUpOrDown() == true || this.isAtPlayer() == true)
-            this.direction = this.getOpposite(), this.getAwayFromPlayers();
+            this.direction = this.getOpposite(), this.getAwayFromLimits();
 
         this.move();
     }

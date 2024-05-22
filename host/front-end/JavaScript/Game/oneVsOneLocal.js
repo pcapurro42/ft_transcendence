@@ -43,6 +43,8 @@ class LocalGame1v1
         this.separator_width = 3;
         this.separator_space = 17;
 
+        this.sounds = null;
+
         this.alert = 0;
     }
 
@@ -167,6 +169,18 @@ class LocalGame1v1
             this.bonus_one = new PowerUp(...Object.values(bonus_one_data));
             this.bonus_two = new PowerUp(...Object.values(bonus_two_data));
         }
+
+        // sounds initialization
+
+        let the_sounds = {
+            alert: document.getElementById('alert_sound'),
+            limit: document.getElementById('knock_sound'),
+            win: document.getElementById('online_winner'),
+            loose: document.getElementById('online_loser'),
+            powerup: document.getElementById('goal_sound')
+        }
+
+        this.sounds = the_sounds;
     }
 
     refreshDisplay()
@@ -232,7 +246,7 @@ class LocalGame1v1
     refreshBall()
     {
         if (this.alert < 100)
-            this.ball.printAlert(), this.alert++;
+            this.ball.printAlert(), this.alert++, this.sounds.alert.play();
 
         this.ball.print();
         this.ball.animate();
