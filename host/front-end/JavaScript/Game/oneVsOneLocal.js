@@ -224,11 +224,14 @@ class LocalGame1v1
 
         this.left_player.print();
         this.right_player.print();
+
+        if (gameMode != "normal")
+            this.left_player.displayBonus(), this.right_player.displayBonus();
     }
 
     refreshBall()
     {
-        if (this.alert != 100)
+        if (this.alert < 100)
             this.ball.printAlert(), this.alert++;
 
         this.ball.print();
@@ -244,8 +247,6 @@ class LocalGame1v1
             this.bonus_one.animate();
             this.bonus_one.print();
         }
-        else
-            this.bonus_one.displayBonus();
 
         if (this.bonus_two.alive == true && (this.scores[0] >= 4 || this.scores[1] >= 4))
         {
@@ -253,8 +254,6 @@ class LocalGame1v1
             this.bonus_two.animate();
             this.bonus_two.print();
         }
-        else
-            this.bonus_two.displayBonus();
     }
 
     resetGame()
@@ -264,6 +263,8 @@ class LocalGame1v1
 
         this.left_player.reset();
         this.right_player.reset();
+
+        this.alert = 0;
 
         if (gameMode != "normal")
             this.bonus_one.reset(), this.bonus_two.reset();
