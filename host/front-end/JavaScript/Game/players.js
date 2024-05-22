@@ -36,19 +36,21 @@ class Bar1v1
 
         if (this.bonus_message == "+ speed")
         {
+            console.log(getTranslation("size").length)
             this.game.display.fillStyle = "green";
             if (this.x < this.game.game_width / 2)
                 this.game.display.fillText("+" + getTranslation("speed"), this.x + this.width + 25, this.y + (this.height / 2));
             else
-                this.game.display.fillText("+" + getTranslation("speed"), this.x - 150, this.y + (this.height / 2));
+                this.game.display.fillText("+" + getTranslation("speed"), this.x - (25 + (getTranslation("size").length * this.game.text_size / 5)), this.y + (this.height / 2));
         }
         if (this.bonus_message == "- size")
         {
+            console.log(getTranslation("size").length)
             this.game.display.fillStyle = "red";
             if (this.x < this.game.game_width / 2)
                 this.game.display.fillText("-" + getTranslation("size"), this.x + this.width + 25, this.y + (this.height / 2));
             else
-                this.game.display.fillText("-" + getTranslation("size"), this.x - 150, this.y + (this.height / 2));
+                this.game.display.fillText("-" + getTranslation("size"), this.x - (25 + (getTranslation("size").length * this.game.text_size / 5)), this.y + (this.height / 2));
         }
     }
 
@@ -154,7 +156,7 @@ class Bar1v2
             if (this.x < this.game.game_width / 2)
                 this.game.display.fillText("+" + getTranslation("speed"), this.x + this.width + 25, this.y + (this.height / 2));
             else
-                this.game.display.fillText("+" + getTranslation("speed"), this.x - 150, this.y + (this.height / 2));
+                this.game.display.fillText("+" + getTranslation("speed"), this.x - (25 + (getTranslation("speed").length * this.game.text_size / 5)), this.y + (this.height / 2));
         }
         if (this.bonus_message == "- size")
         {
@@ -162,7 +164,7 @@ class Bar1v2
             if (this.x < this.game.game_width / 2)
                 this.game.display.fillText("-" + getTranslation("size"), this.x + this.width + 25, this.y + (this.height / 2));
             else
-                this.game.display.fillText("-" + getTranslation("size"), this.x - 150, this.y + (this.height / 2));
+                this.game.display.fillText("-" + getTranslation("size"), this.x - (25 + (getTranslation("size").length * this.game.text_size / 5)), this.y + (this.height / 2));
         }
     }
 
