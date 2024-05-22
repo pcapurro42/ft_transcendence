@@ -327,4 +327,11 @@ class Ball
 
         this.move();
     }
+
+    printAlert()
+    {
+        this.game.display.font = this.game.text_size / 2 + "px " + this.game.text_font;
+        this.game.display.fillStyle = "red";
+        this.game.display.fillText("!", this.x + this.width + 25, this.y);
+    }
 }

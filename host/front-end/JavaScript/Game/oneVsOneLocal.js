@@ -42,6 +42,8 @@ class LocalGame1v1
         this.separator_height = 20;
         this.separator_width = 3;
         this.separator_space = 17;
+
+        this.alert = 0;
     }
 
     initialize()
@@ -226,6 +228,9 @@ class LocalGame1v1
 
     refreshBall()
     {
+        if (this.alert != 250)
+            this.ball.printAlert(), this.alert++;
+
         this.ball.print();
         this.ball.animate();
         this.ball.print();
