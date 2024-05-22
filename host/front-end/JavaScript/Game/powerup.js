@@ -138,7 +138,30 @@ class PowerUp
 
         if (players_nb == 3)
         {
-            ;
+            if (this.x <= this.game.game_width / 2)
+            {
+                if (value == 1)
+                    this.game.left_player.speed = this.game.left_player.speed * 2;
+                else
+                    this.game.right_player.height = this.game.right_player.height - 40;
+            }
+            else
+            {
+                if (this.x < this.game.game_height / 2)
+                {
+                    if (value == 1)
+                        this.game.right_player_1.speed = this.game.right_player_1.speed * 2;
+                    else
+                        this.game.left_player.height = this.game.left_player.height - 40;
+                }
+                else
+                {
+                    if (value == 1)
+                        this.game.right_player_2.speed = this.game.right_player_2.speed * 2;
+                    else
+                        this.game.left_player.height = this.game.left_player.height - 40;
+                }
+            }
         }
 
     }
