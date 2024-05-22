@@ -38,17 +38,17 @@ class Bar1v1
         {
             this.game.display.fillStyle = "green";
             if (this.x < this.game.game_width / 2)
-                this.game.display.fillText("+" + getTranslation("speed"), this.x + this.width + 25, this.y);
+                this.game.display.fillText("+" + getTranslation("speed"), this.x + this.width + 25, this.y + (this.height / 2));
             else
-                this.game.display.fillText("+" + getTranslation("speed"), this.x - 150, this.y);
+                this.game.display.fillText("+" + getTranslation("speed"), this.x - 150, this.y + (this.height / 2));
         }
         if (this.bonus_message == "- size")
         {
             this.game.display.fillStyle = "red";
             if (this.x < this.game.game_width / 2)
-                this.game.display.fillText("-" + getTranslation("size"), this.x + this.width + 25, this.y);
+                this.game.display.fillText("-" + getTranslation("size"), this.x + this.width + 25, this.y + (this.height / 2));
             else
-                this.game.display.fillText("-" + getTranslation("size"), this.x - 150, this.y);
+                this.game.display.fillText("-" + getTranslation("size"), this.x - 150, this.y + (this.height / 2));
         }
     }
 
@@ -62,7 +62,7 @@ class Bar1v1
                 this.bonus_time++;
             }
             else
-                this.bonus = false;
+                this.bonus = false, this.bonus_time = 0;
         }
     }
 
@@ -152,17 +152,17 @@ class Bar1v2
         {
             this.game.display.fillStyle = "green";
             if (this.x < this.game.game_width / 2)
-                this.game.display.fillText("+" + getTranslation("speed"), this.x + this.width + 25, this.y);
+                this.game.display.fillText("+" + getTranslation("speed"), this.x + this.width + 25, this.y + (this.height / 2));
             else
-                this.game.display.fillText("+" + getTranslation("speed"), this.x - 150, this.y);
+                this.game.display.fillText("+" + getTranslation("speed"), this.x - 150, this.y + (this.height / 2));
         }
         if (this.bonus_message == "- size")
         {
             this.game.display.fillStyle = "red";
             if (this.x < this.game.game_width / 2)
-                this.game.display.fillText("-" + getTranslation("size"), this.x + this.width + 25, this.y);
+                this.game.display.fillText("-" + getTranslation("size"), this.x + this.width + 25, this.y + (this.height / 2));
             else
-                this.game.display.fillText("-" + getTranslation("size"), this.x - 150, this.y);
+                this.game.display.fillText("-" + getTranslation("size"), this.x - 150, this.y + (this.height / 2));
         }
     }
 
@@ -176,7 +176,7 @@ class Bar1v2
                 this.bonus_time++;
             }
             else
-                this.bonus = false;
+                this.bonus = false, this.bonus_time = 0;
         }
     }
 
