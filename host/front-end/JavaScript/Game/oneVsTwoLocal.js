@@ -42,6 +42,8 @@ class LocalGame1v2
         this.separator_height = 20;
         this.separator_width = 3;
         this.separator_space = 17;
+
+        this.alert = 0;
     }
 
     initialize()
@@ -242,10 +244,16 @@ class LocalGame1v2
         this.left_player.print();
         this.right_player_1.print();
         this.right_player_2.print();
+
+        if (gameMode != "normal")
+            this.left_player.displayBonus(), this.right_player_1.displayBonus(), this.right_player_2.displayBonus();
     }
 
     refreshBall()
     {
+        if (this.alert < 100)
+            this.ball.printAlert(), this.alert++;
+
         this.ball.print();
         this.ball.animate();
         this.ball.print();
@@ -276,6 +284,8 @@ class LocalGame1v2
         this.left_player.reset();
         this.right_player_1.reset();
         this.right_player_2.reset();
+
+        this.alert = 0;
     
         if (gameMode != "normal")
             this.bonus_one.reset(), this.bonus_two.reset();

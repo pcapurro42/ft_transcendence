@@ -166,37 +166,42 @@ class PowerUp
         {
             if (this.x <= this.game.game_width / 2)
             {
-                if (value == 1)
+                if (value == 1 && this.game.right_player_1.height == this.game.bar_height && this.game.right_player_2.height == this.game.bar_height)
                 {
-                    this.game.left_player.speed = this.game.left_player.speed * 2;
+                    this.game.right_player_1.height = this.game.right_player_1.height - (this.game.right_player_1.height / 2), this.game.right_player_2.height = this.game.right_player_2.height - (this.game.right_player_2.height / 2);
+                    this.game.right_player_1.bonus = true;
+                    this.game.right_player_1.bonus_message = "- size";
+                    this.game.right_player_2.bonus = true;
+                    this.game.right_player_2.bonus_message = "- size";
                 }
                 else
                 {
-                    this.game.right_player_1.height = this.game.right_player_1.height - 40, this.game.right_player_2.height = this.game.right_player_2.height - 40;
+                    this.game.left_player.speed = this.game.left_player.speed * 2;
+                    this.game.left_player.bonus = true;
+                    this.game.left_player.bonus_message = "+ speed";
                 }
             }
             else
             {
-                if (this.y < this.game.game_height / 2)
+                if (value == 1 && this.game.left_player.height == this.game.bar_height)
                 {
-                    if (value == 1)
-                    {
-                        this.game.right_player_1.speed = this.game.right_player_1.speed * 2;
-                    }
-                    else
-                    {
-                        this.game.left_player.height = this.game.left_player.height - 40;
-                    }
+                    this.game.left_player.height = this.game.left_player.height - (this.game.left_player.height / 2);
+                    this.game.left_player.bonus = true;
+                    this.game.left_player.bonus_message = "- size";
                 }
                 else
                 {
-                    if (value == 1)
+                    if (this.y < this.game.game_height / 2)
                     {
-                        this.game.right_player_2.speed = this.game.right_player_2.speed * 2;
+                        this.game.right_player_1.speed = this.game.right_player_1.speed * 2;
+                        this.game.right_player_1.bonus = true;
+                        this.game.right_player_1.bonus_message = "+ speed";
                     }
                     else
                     {
-                        this.game.left_player.height = this.game.left_player.height - 40;
+                        this.game.right_player_2.speed = this.game.right_player_2.speed * 2;
+                        this.game.right_player_2.bonus = true;
+                        this.game.right_player_2.bonus_message = "+ speed";
                     }
                 }
             }

@@ -64,7 +64,6 @@ class Bar1v1
             else
                 this.bonus = false;
         }
-
     }
 
     moveUp()
@@ -133,12 +132,52 @@ class Bar1v2
         this.bonus_height = 0;
 
         this.pos = pos;
+
+        this.bonus = false;
+        this.bonus_message = null;
+        this.bonus_time = 0;
     }
 
     print()
     {
         this.game.display.fillStyle = this.color;
         this.game.display.fillRect(this.x, this.y, this.width, this.height);
+    }
+
+    displayBonusMessage()
+    {
+        this.game.display.font = this.game.text_size / 4 + "px " + this.game.text_font;
+
+        if (this.bonus_message == "+ speed")
+        {
+            this.game.display.fillStyle = "green";
+            if (this.x < this.game.game_width / 2)
+                this.game.display.fillText("+" + getTranslation("speed"), this.x + this.width + 25, this.y);
+            else
+                this.game.display.fillText("+" + getTranslation("speed"), this.x - 150, this.y);
+        }
+        if (this.bonus_message == "- size")
+        {
+            this.game.display.fillStyle = "red";
+            if (this.x < this.game.game_width / 2)
+                this.game.display.fillText("-" + getTranslation("size"), this.x + this.width + 25, this.y);
+            else
+                this.game.display.fillText("-" + getTranslation("size"), this.x - 150, this.y);
+        }
+    }
+
+    displayBonus()
+    {
+        if (this.bonus == true)
+        {
+            if (this.bonus_time < 150)
+            {
+                this.displayBonusMessage(); 
+                this.bonus_time++;
+            }
+            else
+                this.bonus = false;
+        }
     }
 
     willBeAtLimits(sign)
