@@ -12,7 +12,7 @@
     top: 0%;
     left: 0%;
 }
-.btn:hover:not(.border){
+.btn:hover:not(.border, .btn-outline-success, .btn-outline-secondary, .btn-outline-danger){
     transition: 1s;
     transform: scale(1.2);
 }
