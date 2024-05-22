@@ -187,8 +187,6 @@ class LocalGame1v2
         let the_sounds = {
             alert: document.getElementById('alert_sound'),
             limit: document.getElementById('knock_sound'),
-            win: document.getElementById('online_winner'),
-            loose: document.getElementById('online_loser'),
             powerup: document.getElementById('goal_sound')
         }
 
