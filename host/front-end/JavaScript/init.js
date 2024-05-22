@@ -86,4 +86,4 @@ async function fetchCsrfToken() {
         credentials: 'include'
 	});
 }
-console.log(document.cookie);
+// console.log(document.cookie);

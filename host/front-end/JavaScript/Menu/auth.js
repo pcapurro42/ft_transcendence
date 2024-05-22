@@ -21,7 +21,7 @@ async function handleRedirection(){
     const query = new URLSearchParams(window.location.search);
 
     const code = query.get('code');
-    console.log(code);
+    // console.log(code);
     if (!code || localStorage.getItem('status') == 'connected'){
         refreshLogin();
         return;
