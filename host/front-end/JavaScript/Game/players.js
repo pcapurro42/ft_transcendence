@@ -36,7 +36,6 @@ class Bar1v1
 
         if (this.bonus_message == "+ speed")
         {
-            console.log(getTranslation("size").length)
             this.game.display.fillStyle = "green";
             if (this.x < this.game.game_width / 2)
                 this.game.display.fillText("+" + getTranslation("speed"), this.x + this.width + 25, this.y + (this.height / 2));
@@ -45,7 +44,6 @@ class Bar1v1
         }
         if (this.bonus_message == "- size")
         {
-            console.log(getTranslation("size").length)
             this.game.display.fillStyle = "red";
             if (this.x < this.game.game_width / 2)
                 this.game.display.fillText("-" + getTranslation("size"), this.x + this.width + 25, this.y + (this.height / 2));
