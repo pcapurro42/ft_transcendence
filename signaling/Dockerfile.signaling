@@ -19,7 +19,6 @@ RUN pip install django-cors-headers
 RUN pip install requests
 COPY ./signaling_server .
 
-RUN
 EXPOSE 8000
 
 RUN python3 manage.py migrate
