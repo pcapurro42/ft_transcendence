@@ -67,13 +67,13 @@ class PowerUp
 
     isAtBall()
     {
-        if (this.y + this.height >= this.game.ball.y && this.y <= this.game.ball.y + this.game.ball.height)
-        {
-            if (this.x + this.width >= this.game.ball.x && this.x + this.width <= this.game.ball.x + (this.game.ball.width / 2))
-                return (true);
-            if (this.x <= this.game.ball.x + this.game.ball.width && this.x >= this.game.ball.x + (this.game.ball.width / 2))
-                return (true);
-        }
+        // if (this.y + this.height >= this.game.ball.y && this.y <= this.game.ball.y + this.game.ball.height)
+        // {
+        //     if (this.x + this.width >= this.game.ball.x && this.x + this.width <= this.game.ball.x + (this.game.ball.width / 2))
+        //         return (true);
+        //     if (this.x <= this.game.ball.x + this.game.ball.width && this.x >= this.game.ball.x + (this.game.ball.width / 2))
+        //         return (true);
+        // }
         return (false);
     }
 
@@ -153,7 +153,7 @@ class PowerUp
                 if (value == 1)
                     this.game.left_player.speed = this.game.left_player.speed * 2;
                 else
-                    this.game.right_player.height = this.game.right_player.height - 40;
+                    this.game.right_player_1.height = this.game.right_player_1.height - 40, this.game.right_player_2.height = this.game.right_player_2.height - 40;
             }
             else
             {
