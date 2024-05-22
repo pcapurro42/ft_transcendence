@@ -5,9 +5,6 @@ async function login()
 {
     setTimeout(() => {window.location.href = `https://api.intra.42.fr/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`;}, 800);
 
-
-    localStorage.setItem("status", "connected");
-    account_status = "connected";
 }
 
 async function logout()
@@ -15,103 +12,65 @@ async function logout()
     setTimeout(() => {window.location.href = `https://127.0.0.1/`;}, 800);
 
     localStorage.setItem("status", "not connected");
-    localStorage.removeItem("user_info");
-    account_status = "not connected";
+    localStorage.removeItem("login");
 }
 
 /********************************************** API UTILS ************************************************/
 
 async function handleRedirection(){
     const query = new URLSearchParams(window.location.search);
+
     const code = query.get('code');
-    const err = query.get('error');
+    console.log(code);
+    if (!code || localStorage.getItem('status') == 'connected'){
+        refreshLogin();
+        return;
+    }
 
-    if (user_info && user_info.login){
-        document.getElementById('intra_login').innerHTML = ` ${user_info.login}`;
-        return;
-    }
-    if ((!code && !err) || localStorage.getItem("status") == "not connected"){
-        localStorage.setItem("status", "not connected");
-        account_status == "not connected";
-        refreshLogin();
-        return;
-    }
-    else if (err){
-        localStorage.setItem("status", "not connected");
-        account_status == "not connected";
-        refreshLogin();
-        console.error(`Error during login: ${err}`);
-        return;
-    }
-    sessionStorage.setItem('auth_code', code);
-    if (!sessionStorage.getItem('access_token'))
-        await getAccessToken(code);
-
-    try {
-        user_info = await sendAccessToken();
-        if (user_info){
-            localStorage.setItem('user_info', JSON.stringify(user_info));
-            document.getElementById('intra_login').innerHTML = ` ${user_info.login}`;
-            displayStatusBarSuccess(getTranslation("42 Auth Success") + `${user_info.login}` + ".");
-        }
-        else{
-            throw("Error: user_info not retrieved.");
-        }
-    } catch (error) {
-        localStorage.setItem("status", "not connected");
-        refreshLogin();
-        console.error(error);
-        displayStatusBarAlert("42 Auth Failure");
-    }
+    let response = await getAccessToken(code);
+    storeUserLogin(response);
 }
 
-async function sendAccessToken(){
-    const endpoint = 'https://127.0.0.1:8080/v2/me';
-    const request = await fetch(endpoint, {
-        method: 'GET',
-        headers: {'Authorization' : `Bearer ${sessionStorage.getItem('accessToken')}`}
-    })
-    const response = await request.json();
-    if (!response){
-        console.log("Error: No response received.");
-        return;
-    }
+async function storeUserLogin(response){
     localStorage.setItem("status", "connected");
-    account_status == "connected";
+    localStorage.setItem('login', response['login']);
+    displayStatusBarSuccess(getTranslation('42 Auth Success') + response['login'])
+    localStorage.setItem("status", "connected");
     refreshLogin();
-    return response;
 }
 
 async function getAccessToken(auth_code){
-    const endpoint = 'https://127.0.0.1:8080/oauth/token';
+    const endpoint = 'https://127.0.0.1:8080/backend/token/';
 
-    const url = new URLSearchParams({
-        code: auth_code,
-        grant_type : 'authorization_code',
-        redirect_uri: redirect_uri,
-    });
 
-    const request = await fetch(endpoint, {
-        method: 'POST',
-        headers: {'Content-type' : 'application/x-www-form-urlencoded'},
-        body: url
-    });
 
-    const response = await request.json();
-    if (response.access_token)
-        sessionStorage.setItem('accessToken', response.access_token);
-    else{
-        const err = new URLSearchParams(window.location.href).get('error');
-        console.error(`Error: ${err}`);
+    try{
+        const request = await fetch(endpoint, {
+            method: 'POST',
+            headers: {'X-CSRFToken': csrfToken,}, //token du cookie csrf
+            credentials: 'include', //cookie csrf
+            body: auth_code,
+        });
+
+        document.getElementById('login').style.display = 'none';
+        const response = await request.json();
+        return (response)
     }
+    catch(error)
+    {
+        displayStatusBarAlert(getTranslation("42 Auth Failure"));
+        console.log(error);
+    }
+
 }
 
 // < DISPLAY > //
 
 function refreshLogin()
 {
-    if (account_status == "connected")
+    if (localStorage.getItem('status') == "connected")
     {
+        document.getElementById('intra_login').innerHTML = localStorage.getItem('login');
         document.getElementById('intra_login').style.display = "block";
         document.getElementById('login_btn').style.display = "none";
     }
@@ -119,6 +78,7 @@ function refreshLogin()
     {
         document.getElementById('login_btn').style.display = "block";
         document.getElementById('intra_login').style.display = "none";
+        localStorage.removeItem('login');
 
         // document.getElementById('play_classic_btn').classList.add('disabled');
         // document.getElementById('play_tournament_btn').classList.add('disabled');
@@ -138,9 +98,5 @@ function initializeAuth()
         localStorage.setItem("status", "not connected");
         account_status = "not connected";
     }
-    else if (localStorage.getItem("status") == "not connected")
-        account_status = "not connected";
-    else
-        account_status = "connected";
+
 }
-/*  */

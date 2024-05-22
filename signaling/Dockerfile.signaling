@@ -1,0 +1,27 @@
+FROM python:3.8
+
+WORKDIR /app
+
+RUN apt-get -y update ; \
+apt-get -y install openssl
+
+RUN mkdir ssl
+RUN openssl req \
+    -x509 \
+    -nodes \
+    -out ssl/signaling.crt \
+    -keyout ssl/signaling.key \
+    -subj "/C=FR/ST=PACA/L=Nice/O=42/OU=42Nice/CN=0.0.0.0"
+
+COPY ./signaling_server/requirements.txt .
+RUN pip install -r requirements.txt
+RUN pip install django-cors-headers
+RUN pip install requests
+COPY ./signaling_server .
+
+RUN
+EXPOSE 8000
+
+RUN python3 manage.py migrate
+
+CMD ["gunicorn", "-c", "gunicorn_config.py", "signalingserv.wsgi"]

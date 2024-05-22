@@ -1,15 +1,16 @@
 version: '3.8'
 
 services:
-  
   host:
     container_name: host
     build:
       context: host/
       dockerfile: Dockerfile.host
-    ports: 
+    depends_on:
+      - signaling
+    ports:
       - 443:443
-  
+
   proxy:
     container_name: proxy
     build:
@@ -20,4 +21,15 @@ services:
     ports:
       - 8080:8080
     depends_on:
-      - host
+      - signaling
+
+  signaling:
+    container_name: signaling
+    build:
+      context: signaling/
+      dockerfile: Dockerfile.signaling
+    ports:
+      - 8000:8000
+    env_file:
+      - .env
+
