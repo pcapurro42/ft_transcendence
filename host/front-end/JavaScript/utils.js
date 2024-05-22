@@ -16,17 +16,11 @@ function freeInputAndForms(){
     let input = document.getElementById('alias_input');
     input.value = '';
 
-	let paste_peer_answer = document.getElementById('paste_peer_answer');
-	paste_peer_answer.value = '';
+	let paste_inv_code = document.getElementById('paste_inv_code');
+	paste_inv_code.value = '';
 
-	let paste_peer_offer = document.getElementById('paste_peer_offer');
-	paste_peer_offer.value = '';
-
-	let paste_answer = document.getElementById('peer_answer');
-	paste_answer.value = '';
-
-	let paste_offer = document.getElementById('peer_offer');
-	paste_offer.value = '';
+	let inv_code = document.getElementById('invitation_code');
+	inv_code.value = '';
 }
 
 function sleep(ms){

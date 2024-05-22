@@ -62,6 +62,7 @@ function displayMenu()
 
     freeInputAndForms();
     tournamentFinalReset();
+    resetConnection();
 
     stop_flag = true; // stop tournament
 
@@ -88,11 +89,15 @@ function removeMenu()
 function setBackgroundColor(color)
 {
     let background = document.getElementById("background");
+    let modal = document.getElementById('modal_color_switch');
+    
     if (color == "white"){
         background.style.setProperty("background-color", "white");
+        modal.style.setProperty("background-color", "white");
     }
     else{
         background.style.setProperty("background-color", "black");
+        modal.style.setProperty("background-color", "black");
     }
 }
 

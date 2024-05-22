@@ -29,45 +29,85 @@ async function offerGenerator(){
 			type: sdp_offer.type,
 			iceCandidates: candidates,
 		}
-		let offer = JSON.stringify(jsonOffer);
-		document.getElementById('peer_offer').value = btoa(offer);
+		let offer = JSON.stringify(jsonOffer)
+		sendOffer(offer)
+		RTC_o.onconnectionstatechange = function(event){
+			if (RTC_o.connectionState =='connected')
+			 	data_channel.onopen = () => hostConnectionHandler();
+		}
 	}
 	catch(error){
 		console.error(`Error: ${error}`);
-		document.getElementById('peer_offer').value = "Error generating offer.";
+		document.getElementById('invitation_code').value = `Error: ${error}`;
 	}
 }
 
-async function submitAnswer(){
-	let answer = document.getElementById('paste_peer_answer').value;
-	try{
-		if (parse_offersAnswers(answer) == false)
-			throw("Error: answer not b64.");
-		answer = atob(answer);
-		RTC_o.onconnectionstatechange = function(event) {
-			if (RTC_o.connectionState == 'connected')
-				data_channel.onopen = () => hostConnectionHandler()
-		}
-		initConnection(JSON.parse(answer));
+async function sendOffer(offer){
+	const endpoint = 'https://127.0.0.1:8080/backend/signal/';
+    const login = localStorage.getItem('login');
+
+	const request = await fetch(endpoint, {
+        method: 'POST',
+		credentials: 'include',
+		headers: {
+            'Content-Type': 'application/json',
+			'X-CSRFToken': csrfToken
+        },
+		body : JSON.stringify({
+				'login' : login,
+				'offer' : offer,
+		}),
+	})
+
+	let response = await request.text();
+
+    if (!response){
+		displayStatusBarAlert(getTranslation('Connection Init Failed'));
+		resetConnection();
+		displayMenu();
+        return;
+    }
+	document.getElementById('invitation_code').value = response;
+}
+
+
+async function fetchAnswer(){
+	const endpoint = 'https://127.0.0.1:8080/backend/signal/getAnswer/';
+    const login = localStorage.getItem('login');
+	let code = document.getElementById('invitation_code').value;
+
+	document.getElementById('init_p2p').setAttribute('disabled', true);
+	const request = await fetch(endpoint, {
+        method: 'POST',
+		credentials: 'include',
+		headers: {
+            'Content-Type': 'application/json',
+			'X-CSRFToken': csrfToken
+        },
+		body : code,
+	})
+	if (request.status == 404){
+		displayStatusBarAlert(getTranslation('Peer 404'));
+		document.getElementById('init_p2p').removeAttribute('disabled');
+		return;
 	}
-	catch(error){
-		displayStatusBarAlert(getTranslation("Wrong Code Format"));
-	}
+	let response = await request.text();
+	initConnection(response);
+
 }
 
 async function initConnection(answer){
 
 	try{
 
-		if (answer.type === 'offer'){
-			displayStatusBarAlert(getTranslation("Wrong Code Format"));
-			return;
+		answer = JSON.parse(answer);
+		if (parse_offersAnswers(answer) == false || answer.type == 'offer'){
+			displayStatusBarAlert(getTranslation('Wrong Code Format'));
+			resetConnection();
+			displayMenu();
+       		return;
 		}
-
 		await RTC_o.setRemoteDescription(new RTCSessionDescription(answer));
-
-		document.getElementById('submit_answer').setAttribute('disabled', true);
-
 
 		for (let candidate of answer.iceCandidates)
 			await RTC_o.addIceCandidate(candidate);

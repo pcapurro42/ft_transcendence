@@ -54,7 +54,6 @@ let en = [
 
     ["Game theme", "Game theme"],
     ["Game map", "Game map"],
-    
     ["Red", "Red"],
     ["Orange", "Orange"],
     ["Purple", "Purple"],
@@ -100,11 +99,25 @@ let en = [
 
     //******* Online ******/
 
-    ['Peer offer send msg', "Send this code to a friend for <br> him to approve connection."],
-    ['Peer answer send msg', "Send this code to a friend in <br> order to approve connection."],
+    ['Peer offer send msg', "Send this code to a friend <br> to start a game."],
 
-    ['Peer offer paste msg', "Paste your friend's invitation code <br> to generate the authorization code."],
-    ['Paste answer msg', "Paste your friend's authorization <br> code in order to init connection."],
+    ['Init Connection Msg', 'Once your friend submitted the <br> code, click the above button.'],
+    ['Connect', 'Connect'],
+
+    ['Paste Code Msg', 'Please paste the invitation code provided <br> by your friend to start an online game.'],
+
+    ["Peer Connection Success", "Succesfully connected to remote peer."],
+    ["Peer Connection Warning", "Trying to connect with remote peer."],
+    ["Peer Connection Alert", "Connection with remote peer failed."],
+    ["Peer Connection Timeout", "Connection timeout... Please restart process."],
+    ["Peer 404", "Erreur: connexion failure. Be sure that all peers are ready, and that the invitation code is valid."],
+
+    ["Connection Init Failed", "Invitation code generation failed... Please restart process."],
+    ["Answer Timeout", ` seconds left before code expires.`],
+    ["Code Expired", `The code expired. Please restart process.`],
+
+    ["Wrong Code Format", "Error: peer sent unnaproved data. Connection window closed."],
+    ["Wrong Code Guest", "Error: invitation code is misformatted."],
 
     ['Disconnected', "⚠︎ Lost connection with peer..."],
     ['Disconnection Msg', "Sorry! It seems like there's a connection problem. Check both peers networks and try again."],
@@ -117,13 +130,4 @@ let en = [
     ["42 Auth Failure", "Connection failed."],
     ["Copy Success", "Succesfully copied to clipboard."],
 
-    ["Peer Connection Success", "Succesfully connected to remote peer."],
-    ["Peer Connection Warning", "Trying to connect with remote peer."],
-    ["Peer Connection Alert", "Connection with remote peer failed."],
-    ["Peer Connection Timeout", "Connection timeout... Please restart process."],
-
-    ["Answer Timeout", ` seconds left before code expires.`],
-    ["Code Expired", `The code expired. Please restart process.`],
-
-    ["Wrong Code Format", "Error: code is formatted incorrectly."]
 ];

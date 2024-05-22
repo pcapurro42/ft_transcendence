@@ -275,20 +275,23 @@
 
                         <div id="game_id_div" class="d-flex flex-row justify-content-center">
                             <div class="border border-2">
-                                <input type="text" id="peer_offer" class="d-inline m-2" data-tsnormal="16px" data-tslarge="21px" readonly></input>
-                                <button id="cpy_btn_offer" class="btn btn-simple text btn-outline-secondary btn-sm m-1" data-tsnormal="15px" data-tslarge="20px" data-title="Copy" data-oname="Copy"></button>
+                                <input type="text" id="invitation_code" class="d-inline ms-2 mt-4" data-tsnormal="16px" data-tslarge="21px" readonly></input>
+                                <button id="cpy_inv_code" class="btn btn-simple text btn-outline-secondary btn-sm me-2 ms-0" data-tsnormal="15px" data-tslarge="20px" data-title="Copy" data-oname="Copy"></button>
                                 <p class="text" data-oname="Peer offer send msg" data-tsnormal="15px" data-tslarge="20px"></p>
                             </div>
-                        <div class="border border-2">
-                                <input type="text" id="paste_peer_answer" class="d-inline m-2" data-tsnormal="16px" data-tslarge="21px"></input>
-                                <button id ="submit_answer" type="submit" class="btn text btn-lg btn-simple border btn-outline-success" data-tsnormal="15px" data-tslarge="20px" data-oname="Submit"></button>
-                                <p class="text" data-oname="Paste answer msg" data-tsnormal="15px" data-tslarge="20px"></p>
+                        <div class="d-flex flex-row justify-content-center">
+                            <div class="border border-2">
+                                <button id="init_p2p" class = "btn text btn-outline-success btn-simple mt-3" data-oname="Connect" data-tsnormal="20px" data-tslarge="25px"></button>
+                                <p class="text mx-2" data-tsnormal="15px" data-tslarge="20px" data-oname="Init Connection Msg"></p>
                             </div>
+                        </div>
                         </div>
                         <div>
                             <button id="create_classic_lobby" class="btn btn-lg text btn-outline-danger btn-simple me-2 my-3" data-title="Create Lobby" data-oname="Create Lobby"></button>
                         </div>
-                        <button id="create_classic_back_btn" class="btn text btn-complex mt-5" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
+                        <div>
+                            <button id="create_classic_back_btn" class="btn text btn-complex mt-5" data-tsnormal="40px" data-tslarge="50px" data-oname="Back" data-title="Back" title=""></button>
+                        </div>
                     </div>
 
                     <div id="join_classic_menu" class="text-center mt-4">
@@ -298,14 +301,9 @@
                         <div id="game_id_div_join" class="d-flex flex-row justify-content-center">
 
                             <div class="border border-2">
-                                <input type="text" id="paste_peer_offer" class="d-inline m-2" data-tsnormal="16px" data-tslarge="21px"></input>
-                                <button id ="submit_offer" type="submit" class="btn text btn-lg btn-simple border btn-outline-success me-2" data-tsnormal="15px" data-tslarge="20px" data-oname="Submit"></button>
-                                <p class="text" data-oname="Peer offer paste msg" data-tsnormal="15px" data-tslarge="20px"></p>
-                            </div>
-                            <div class="border border-2">
-                                <input type="text" id="peer_answer" class="d-inline m-2" data-tsnormal="16px" data-tslarge="21px" readonly></input>
-                                <button id="cpy_btn_answer" class="btn btn-simple text btn-outline-secondary btn-sm me-2" data-tsnormal="15px" data-tslarge="20px" data-title="Copy" data-oname="Copy"></button>
-                                <p class="text" data-oname="Peer answer send msg" data-tsnormal="15px" data-tslarge="20px"></p>
+                                <input type="text" id="paste_inv_code" class="d-inline m-2" data-tsnormal="16px" data-tslarge="21px"></input>
+                                <button id ="submit_inv_code" type="submit" class="btn text btn-lg btn-simple border btn-outline-success me-2" data-tsnormal="15px" data-tslarge="20px" data-oname="Submit"></button>
+                                <p class="text" data-oname="Paste Code Msg" data-tsnormal="15px" data-tslarge="20px"></p>
                             </div>
 
                         </div>
@@ -526,8 +524,8 @@
 
         <div class="modal" id="disconnectionPopup" data-bs-backdrop='static'>
 
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
+            <div class="modal-dialog modal-dialog-centered text">
+                <div id="modal_color_switch" class="modal-content border border-2">
                     <div class="modal-header">
                         <h4 class="modal-title text text-danger" data-oname="Disconnected" data-tsnormal="30px" data-tslarge="50px"></h4>
                     </div>
@@ -574,7 +572,6 @@
 
         <script src="./JavaScript/Game/ai.js"></script>
         <script src="./JavaScript/Game/tournament.js"></script>
-        <script src="./JavaScript/Game/lobby.js"></script>
 
         <script src="./JavaScript/Online/offer.js"></script>
         <script src="./JavaScript/Online/answer.js"></script>

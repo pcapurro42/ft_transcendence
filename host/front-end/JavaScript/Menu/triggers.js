@@ -86,9 +86,8 @@ document.getElementById('top_logo').onclick = displayMenu;
 
 // < PEER ANSWERS/OFFERS> //
 
-document.getElementById('submit_offer').onclick = answerGenerator;
-document.getElementById('submit_answer').onclick = submitAnswer;
-// document.getElementById('submit_answer').onclick = offerHandler;
+document.getElementById('init_p2p').onclick = fetchAnswer;
+document.getElementById('submit_inv_code').onclick = fetchOffer;
 
 document.getElementById('game_map_btn_selector').onmouseover = showMapTooltip;
 

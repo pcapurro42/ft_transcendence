@@ -52,7 +52,7 @@ async function guestConnectionHandler(){
 
 	let	join_btn = document.getElementById("join_classic_lobby");
 	join_btn.onclick = () => {
-		displayGuestPage_classic();
+		// displayGuestPage_classic();
 		data_channel.send('lobby ok')
 	};
 

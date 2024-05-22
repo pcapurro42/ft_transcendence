@@ -35,6 +35,11 @@ function parse_alias(nbr, event){
 	return null;
 }
 
+function parseInvitationCode(code){
+	const regex = /^[A-Za-z0-9\_]+$/;
+	return regex.test(code);
+}
+
 function isDuplicateNicknames(nicknames){
 	for (let i = 0; i < nicknames.length - 1; i++){
 		for (let c = i + 1; c < nicknames.length; c++){
@@ -45,13 +50,9 @@ function isDuplicateNicknames(nicknames){
 	return false;
 }
 
-function parse_offersAnswers(str){
-	const regex = /^[A-Za-z0-9+\/=\r\n]+$/;
-	if(regex.test(str) == false)
-		return false;
+function parse_offersAnswers(strJson){
 
-	let tmp = JSON.parse(atob(str));
-	if (!tmp.iceCandidates || !tmp.type || !tmp.sdp)
+	if (!strJson.iceCandidates || !strJson.type || !strJson.sdp)
 		return false;
 	return true;
 }

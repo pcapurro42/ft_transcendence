@@ -1,3 +1,12 @@
+document.getElementById("cpy_inv_code").onclick = cpyGameCode;
+
+function cpyGameCode(){
+	let content = document.getElementById("invitation_code");
+
+	navigator.clipboard.writeText(content.value);
+	displayStatusBarSuccess(getTranslation("Copy Success"));
+}
+
 function readGuestMsg(event){
 	console.log(event.data);
 	if (event.data === 'lobby ok'){
@@ -28,7 +37,7 @@ function hostConnectionHandler(){
 	let	create_btn = document.getElementById("create_classic_lobby");
 	create_btn.style.visibility = 'visible';
 	create_btn.onclick = () => {
-		displayHostPage_classic();
+		// displayHostPage_classic();
 		data_channel.send('lobby ok');
 	}
 

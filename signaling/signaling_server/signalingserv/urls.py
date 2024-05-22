@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.urls import path
 from . import views
+from . import invitation_code
 
 urlpatterns = [
 	path('', views.home),
@@ -22,4 +23,7 @@ urlpatterns = [
 	path('token/', views.token),
 	path('sendtoken/', views.sendToken),
     path('signal/', views.signal),
+
+	path('signal/getAnswer/', invitation_code.getAnswer),
+	path('signal/getOffer/', invitation_code.getOffer),
 ]

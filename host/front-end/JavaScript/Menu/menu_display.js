@@ -50,8 +50,8 @@ async function displayOneVsOneOnlineCreateGame(){
 
     freeInputAndForms();
 
-    let submit_btn = document.getElementById('submit_answer');
-    submit_btn.removeAttribute('disabled');
+    let init_p2p_btn = document.getElementById('init_p2p');
+    init_p2p_btn.removeAttribute('disabled');
 
     let create_btn = document.getElementById('create_classic_lobby');
     create_btn.style.visibility = 'hidden';
@@ -71,7 +71,7 @@ async function displayOneVsOneOnlineJoinGame(){
     countdown.style.display = 'none';
     clearInterval(timeoutInterval);
 
-    let submit_btn = document.getElementById('submit_offer');
+    let submit_btn = document.getElementById('submit_inv_code');
     submit_btn.removeAttribute('disabled');
 
     freeInputAndForms();

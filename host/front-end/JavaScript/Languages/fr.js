@@ -99,16 +99,31 @@ let fr = [
 
     //******* Online ******/
 
-    ['Peer offer send msg', "Envoyez ce code a un ami pour<br> qu'il autorise la connexion."],
+    ['Peer offer send msg', "Envoyez ce code a un ami pour<br> commencer une partie."],
     ['Peer answer send msg', "Envoyez ce code a votre ami <br> en vue d'autoriser la connexion."],
 
-    ['Peer offer paste msg', "Collez le code d'invitation de votre ami <br> pour générer le code d'autorisation."],
-    ['Paste answer msg', "Collez le code d'autorisation de<br> votre ami pour initier la connexion."],
+    ['Init Connection Msg', 'Après que votre ami ait saisi le code,<br> cliquez sur le bouton ci-dessus.'],
+    ['Connect', 'Se connecter'],
+    ['Paste Code Msg', 'Collez le code d\'invitation fourni par votre<br>ami pour démarrer une partie en ligne.'],
 
     ['Disconnected', "⚠︎ Connexion pair à pair perdue..."],
     ['Disconnection Msg', "Désolé ! Il semble y avoir un problème de connexion. Vérifiez le réseau des deux pairs, puis réessayez."],
     ['Main Menu', "Menu Principal"],
     ['Waiting Lobby Creation', "En attente de la création d'un salon par l'hôte..."],
+
+    ["Peer Connection Success", "Succès de la connexion à distance."],
+    ["Peer Connection Warning", "Connexion à distance en cours..."],
+    ["Peer Connection Alert", "Connexion à distance échouée."],
+    ["Peer 404", "Erreur: échec de la connexion. Soyez sûr que tous les pairs sont bien présents, ainsi que de la validité du code d'invitation."],
+    ["Peer Connection Timeout", "Délai de connexion dépassé... Merci de bien vouloir recommencer."],
+    ["Connection Init Failed", "Échec de la génération du code d'invitation... Merci de bien vouloir recommencer."],
+
+    ["Answer Timeout", ` secondes restantes avant l'expiration du code.`],
+    ["Code Expired", `Le code à expiré. Merci de bien vouloir recommencer.`],
+
+
+    ["Wrong Code Format", "Erreur: récéption de données non-approuvées. Processus de connexion désactivé."],
+    ["Wrong Code Guest", "Erreur: le code d'invitation n'est pas au bon format."],
 
 
     //******* Status Bar ******/
@@ -118,15 +133,5 @@ let fr = [
 
     ["Copy Success", "Copié dans le presse-papier avec succès."],
 
-    ["Peer Connection Success", "Succès de la connexion à distance."],
-    ["Peer Connection Warning", "Connexion à distance en cours..."],
-    ["Peer Connection Alert", "Connexion à distance échouée."],
-    ["Peer Connection Timeout", "Délai de connexion dépassé... Merci de bien vouloir recommencer."],
-
-    ["Answer Timeout", ` secondes restantes avant l'expiration du code.`],
-    ["Code Expired", `Le code à expiré. Merci de bien vouloir recommencer.`],
-
-
-    ["Wrong Code Format", "Erreur: le code n'est pas au bon format."]
 
 ];

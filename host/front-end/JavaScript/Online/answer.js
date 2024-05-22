@@ -13,15 +13,41 @@ async function gatherIceCandidates_a(){
 	})
 }
 
-async function answerGenerator(){
-	let offer = document.getElementById('paste_peer_offer').value;
+async function fetchOffer(){
+	const endpoint = 'https://127.0.0.1:8080/backend/signal/getOffer/';
+	let code = document.getElementById('paste_inv_code').value;
+
+	if (parseInvitationCode(code) == false){
+		displayStatusBarWarning(getTranslation('Wrong Code Guest'));
+		return;
+	}
+
+	document.getElementById('submit_inv_code').setAttribute('disabled', true);
+
+	const request = await fetch(endpoint, {
+        method: 'POST',
+		credentials: 'include',
+		headers: {
+            'Content-Type': 'application/json',
+			'X-CSRFToken': csrfToken
+        },
+		body : code,
+	})
+	if (request.status == 404){
+		displayStatusBarAlert(getTranslation('Peer 404'));
+		document.getElementById('submit_inv_code').removeAttribute('disabled');
+		return;
+	}
+	let response = await request.text();
+	answerGenerator(response)
+}
+
+async function answerGenerator(offer){
 
 	try{
-		if (parse_offersAnswers(offer) == false)
-			throw("Error: offer not b64.");
+		offer = JSON.parse(offer);
 
-		offer = JSON.parse(atob(offer));
-		if(offer.type != 'offer'){
+		if(offer.type != 'offer' || parse_offersAnswers(offer) == false){
 			displayStatusBarAlert(getTranslation("Wrong Code Format"));
 			return;
 		}
@@ -56,7 +82,7 @@ async function answerGenerator(){
 			type: answer.type,
 			iceCandidates: candidates,
 		}
-		document.getElementById('peer_answer').value = btoa(JSON.stringify(jsonAnswer));
+		sendAnswer(JSON.stringify(jsonAnswer));
 		answerTimeout();
 	}
 	catch(error){
@@ -66,6 +92,35 @@ async function answerGenerator(){
 
 }
 
+async function sendAnswer(answer){
+	const endpoint = 'https://127.0.0.1:8080/backend/signal/';
+    const login = localStorage.getItem('login');
+	const code = document.getElementById('paste_inv_code').value;
+	console.log(answer);
+	const request = await fetch(endpoint, {
+        method: 'POST',
+		credentials: 'include',
+		headers: {
+            'Content-Type': 'application/json',
+			'X-CSRFToken': csrfToken
+        },
+		 body: JSON.stringify({
+				'code' : code,
+				'answer' : answer,
+		}),
+	})
+
+	let response = await request.text();
+
+    if (!response){
+		displayStatusBarAlert(getTranslation('Connection Init Failed'));
+		resetConnection();
+		displayMenu();
+        return;
+    }
+	document.getElementById('invitation_code').value = response;
+}
+
 function answerTimeout(){
 	let answerTimeout = 60;
 
@@ -73,8 +128,8 @@ function answerTimeout(){
 	countdown.innerHTML = `${answerTimeout}` + getTranslation("Answer Timeout")
 	countdown.style.display = 'block';
 
-	let submit_offer = document.getElementById('submit_offer');
-	submit_offer.setAttribute('disabled', true);
+	let submit_inv_code = document.getElementById('submit_inv_code');
+	submit_inv_code.setAttribute('disabled', true);
 
 
 	timeoutInterval = setInterval(function() {
@@ -84,7 +139,7 @@ function answerTimeout(){
 			countdown.innerHTML = getTranslation("Code Expired")
 			displayStatusBarAlert(getTranslation("Peer Connection Timeout"));
 			freeInputAndForms();
-			submit_offer.removeAttribute('disabled');
+			submit_inv_code.removeAttribute('disabled');
 			RTC_a = null;
 			clearInterval(timeoutInterval);
 		}

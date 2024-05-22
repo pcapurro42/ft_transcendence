@@ -12,8 +12,13 @@ def home(request):
 		return HttpResponse("test")
 
 def signal(request):
-		return HttpResponse(
-			content= invitation_code.generate_code(request))
+	requestJson = json.loads(request.body)
+
+	if requestJson.get('answer') != None:
+		return invitation_code.postAnswer(request)
+
+	else:
+		return HttpResponse(content= invitation_code.generate_code(request))
 
 def sendToken(response):
 	try:
