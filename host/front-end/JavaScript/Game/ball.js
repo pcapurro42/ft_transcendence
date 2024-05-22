@@ -20,9 +20,6 @@ class Ball
         this.bonus_speed = bonus_speed;
 
         this.bounce = true;
-
-        this.bonus = false;
-        this.bonus_time = 0;
     }
 
     print()
@@ -36,20 +33,6 @@ class Ball
         this.game.display.font = this.game.text_size / 2 + "px " + this.game.text_font;
         this.game.display.fillStyle = "red";
         this.game.display.fillText("!", this.x + this.width + 25, this.y);
-    }
-
-    displayBonus()
-    {
-        if (this.bonus_time < 150)
-        {
-            this.game.display.font = this.game.text_size / 4 + "px " + this.game.text_font;
-            this.game.display.fillStyle = "green";
-            this.game.display.fillText("+" + getTranslation("speed"), this.game.ball.x + this.game.ball.x + 25, this.game.ball.y);
-
-            this.bonus_time++;
-        }
-        else
-            this.bonus = false;
     }
 
     // < Verifyers > //
@@ -350,8 +333,5 @@ class Ball
             this.direction = this.getOpposite(), this.getAwayFromPlayers();
 
         this.move();
-
-        if (gameMode != "normal" && this.bonus == true)
-            this.displayBonus();
     }
 }
