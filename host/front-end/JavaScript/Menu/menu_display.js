@@ -154,9 +154,16 @@ function removePlay()
 function displayOneVsOneGameOnline()
 {
     if (role == "host")
+    {
         document.getElementById('one_vs_one_host_page').style.display = "block";
+        document.getElementById('waiting_host').style.display = "none";
+    }
     else
+    {
         document.getElementById('one_vs_one_guest_page').style.display = "block";
+        document.getElementById('waiting_host').style.display = "block";
+        data_channel.send("ready");
+    }
 
     document.getElementById('game_backgrounds').style.display = 'block';
     document.getElementById('main_page').style.display = "none";

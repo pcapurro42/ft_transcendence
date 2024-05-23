@@ -346,13 +346,12 @@ function displayOnline1v1()
 {
     let start_btn = document.getElementById('start_1v1_local');
     start_btn.style.visibility = "hidden";
-    let player_left_won = document.getElementById('left_player_won_text');
-    player_left_won.style.display = "none";
-    let player_right_won = document.getElementById('right_player_won_text');
-    player_right_won.style.display = "none";
 
-    let timer = document.getElementById('1v1_local_timer');
+    let timer = document.getElementById('1v1_online_timer');
     timer.style.display = "block";
+
+    if (role == "host")
+        data_channel.send("go");
 
     displayCountDown(3);
 }
@@ -372,7 +371,7 @@ function removeOnline1v1()
     start_btn.style.visibility = "visible";
 }
 
-function startLocal1v1()
+function startOnline1v1()
 {
     if (game.isOver() == true || active == false)
     {

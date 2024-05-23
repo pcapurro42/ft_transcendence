@@ -31,7 +31,9 @@ function displayCountDown(nb)
     let menu_music = document.getElementById('mgs');
     let game_music = gameMusicSelector();
 
-    if (players_nb == 2)
+    if (players_nb == 1)
+        timer = document.getElementById('1v1_online_timer');
+    else if (players_nb == 2)
         timer = document.getElementById('1v1_local_timer');
     else
         timer = document.getElementById('2v1_local_timer');
@@ -60,7 +62,9 @@ function displayCountDown(nb)
         timer.style.display = "none";
         game_music.play();
         active = true;
-        if (players_nb == 2)
+        if (players_nb == 1)
+            startOnline1v1();
+        else if (players_nb == 2)
             startLocal1v1();
         else
             startLocal1v2();

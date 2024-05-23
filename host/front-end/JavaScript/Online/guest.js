@@ -9,8 +9,8 @@ function readHostMsg(event){
 		gameMode = 'normal';
 	else if(msg ==='bonus')
 		gameMode = 'bonus';
-	else if (msg === 'countdown start')
-		displayGuest1v1();
+	else if (msg === 'go')
+		displayOnline1v1();
 	else if (msg.startsWith('rpy:')){
 		game.right_player.y = +(msg.substring(4))
 		console.log(game.right_player.y);

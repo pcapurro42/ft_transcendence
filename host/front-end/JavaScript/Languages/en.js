@@ -30,6 +30,8 @@ let en = [
     ["Copy", "Copy"],
 
     ["Launch a game", "Launch a game"],
+    ["Waiting for the host to launch the game...", "Waiting for the host to launch the game..."],
+
     ["Left player won the game.", "Left player won the game."],
     ["Right player won the game.", "Right player won the game."],
 

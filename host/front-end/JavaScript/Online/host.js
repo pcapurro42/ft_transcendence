@@ -9,7 +9,7 @@ function cpyGameCode(){
 
 function readGuestMsg(event){
 	console.log(event.data);
-	if (event.data === 'lobby ok'){
+	if (event.data === 'ready'){
 		document.getElementById('start_1v1_online').classList.remove('d-none');
 	}
 	if (event.data === 'arrowDown'){
@@ -40,15 +40,13 @@ function hostConnectionHandler(){
 	create_btn.onclick = () => {
 		pos = "left";
 		role = "host";
+		if (gameMode == "normal")
+			data_channel.send('normal');
+		else
+			data_channel.send("bonus");
 		data_channel.send('lobby ok');
 		console.log("displaying game page...");
 		data_channel.send('displaying game page...')
 		displayOneVsOneGameOnline();
-	}
-
-	let launch_game = document.getElementById('start_1v1_online');
-	launch_game.onclick = () => {
-		data_channel.send("countdown start");
-		displayHost1v1();
 	}
 }
