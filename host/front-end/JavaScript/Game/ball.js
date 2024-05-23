@@ -266,8 +266,8 @@ class Ball
         let x_dir = this.calculateNewDirections()[0];
         let y_dir = this.calculateNewDirections()[1];
 
-        x_dir = Math.round(x_dir * 100) / 100;
-        y_dir = Math.round(y_dir * 100) / 100;
+        x_dir = Math.round(x_dir * 10) / 10;
+        y_dir = Math.round(y_dir * 10) / 10;
 
         // console.log(x_dir);
         // console.log(y_dir);

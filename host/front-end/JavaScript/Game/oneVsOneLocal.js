@@ -56,7 +56,7 @@ class LocalGame1v1
             this.canvas = document.getElementById('tournament_game');
         else
             this.canvas = document.getElementById('one_vs_one_local_game');
-        this.display = this.canvas.getContext('2d');
+        this.display = this.canvas.getContext('2d', { alpha: false });
 
         this.canvas.width = this.game_width;
         this.canvas.height = this.game_height;
