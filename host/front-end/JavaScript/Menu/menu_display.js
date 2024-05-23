@@ -154,7 +154,7 @@ function removePlay()
 function displayOneVsOneGameOnline()
 {
     if (role == "host")
-        document.getElementById('game_toolbar').style.display = "block";
+        document.getElementById('one_vs_one_host_page').style.display = "block";
     else
         document.getElementById('one_vs_one_guest_page').style.display = "block";
 
