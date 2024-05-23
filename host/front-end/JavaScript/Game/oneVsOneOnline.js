@@ -224,15 +224,20 @@ class OnlineGame1v1
 
     refreshPlayers()
     {
-        if (keys.KeyE == true)
-            this.left_player.moveUp();
-        if (keys.KeyD == true)
-            this.left_player.moveDown();
-
-        if (keys.ArrowUp == true)
-            this.right_player.moveUp();
-        if (keys.ArrowDown == true)
-            this.right_player.moveDown();
+        if (role == "host")
+        {
+            if (keys.KeyE == true)
+                this.left_player.moveUp();
+            if (keys.KeyD == true)
+                this.left_player.moveDown();
+        }
+        else
+        {
+            if (keys.ArrowUp == true)
+                this.right_player.moveUp();
+            if (keys.ArrowDown == true)
+                this.right_player.moveDown();
+        }
 
         this.left_player.print();
         this.right_player.print();

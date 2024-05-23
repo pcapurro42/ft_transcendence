@@ -13,10 +13,10 @@ function readGuestMsg(event){
 		document.getElementById('start_1v1_online').classList.remove('d-none');
 	}
 	if (event.data === 'up'){
-		game.right_player.y--;
+		game.right_player.moveUp();
 	}
 	if (event.data ==='down'){
-		game.right_player.y++;
+		game.right_player.moveDown();
 	}
 }
 
