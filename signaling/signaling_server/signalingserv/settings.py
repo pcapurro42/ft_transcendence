@@ -122,10 +122,6 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 CSRF_TRUSTED_ORIGINS = ['https://127.0.0.1', 'https://127.0.0.1:8080']
 
-CORS_ORIGIN_WHITELIST = [
-    'https://127.0.0.1',
-    'https://127.0.0.1:8080',
-]
 
 CORS_ALLOW_METHODS = [
     "DELETE",
