@@ -207,8 +207,7 @@ class LocalGame1v2
 
     refreshBackground()
     {
-        this.display.fillStyle = this.background_color;
-        this.display.fillRect(0, 0, this.game_width, this.game_height);
+        this.display.clearRect(0, 0, this.game_width, this.game_height);
     }
     
     refreshCenterBar()
