@@ -370,6 +370,9 @@ function initializeOnline1v1()
     // if (role == "host")
     // {
     //     data_channel.send("");
+    //     // ...
+           // envoyer les données de base au guest avant que la partie ne commence
+           // (ex: la direction de la balle (définie dans game.initialize()), la position de la balle, etc)
     // }
 }
 
