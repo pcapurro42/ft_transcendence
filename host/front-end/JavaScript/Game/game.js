@@ -43,7 +43,6 @@ function displayCountDown(nb)
         document.getElementById('3_sound').play();
         timer.innerHTML = "3";
         game.refreshBackground();
-        game.refreshCenterBar();
     }
     else if (nb == 2){
         document.getElementById('2_sound').play();
