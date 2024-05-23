@@ -12,15 +12,11 @@ function readGuestMsg(event){
 	if (event.data === 'ready'){
 		document.getElementById('start_1v1_online').classList.remove('d-none');
 	}
-	if (event.data === 'arrowDown'){
-		keys.guestDown = true;
+	if (event.data === 'up'){
+		game.right_player.y--;
 	}
-	if (event.data ==='arrowUp'){
-		keys.guestUp = true;
-	}
-	if (event.data ==='noKeys'){
-		keys.guestDown = false;
-		keys.guestUp = false;
+	if (event.data ==='down'){
+		game.right_player.y++;
 	}
 }
 

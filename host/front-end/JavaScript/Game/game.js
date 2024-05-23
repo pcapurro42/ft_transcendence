@@ -59,7 +59,7 @@ function displayCountDown(nb)
         timer.innerHTML = getTranslation("Go!")
     else if (nb == -1)
     {
-        timer.style.display = "none";
+        timer.classList.add("d-none");
         game_music.play();
         active = true;
         if (players_nb == 1)
@@ -84,9 +84,6 @@ let keys = {
 
     ArrowUp: false,
     ArrowDown: false,
-
-    guestUp: false,
-    guestDown: false,
 };
 
 // < TRIGGER > //
@@ -95,9 +92,23 @@ window.addEventListener('keydown', (event) =>
 {
     if (players_nb != 0 && players_nb != null)
     {
-        if (event.key == 'ArrowUp' || event.key == 'ArrowDown')
-            event.preventDefault();
-
+        if (players_nb == 1)
+        {
+            if (role == "host")
+            {
+                if (event.key == 'e')
+                    keys.KeyE = true;
+                else if (event.key == 'd')
+                    keys.KeyD = true;
+            }
+            else
+            {
+                if (event.key == 'ArrowUp')
+                    keys.ArrowUp = true
+                else if (event.key == 'ArrowDown')
+                    keys.ArrowDown = true
+            }
+        }
         if (players_nb == 2)
         {
             if (event.key == 'ArrowUp')
@@ -139,18 +150,41 @@ window.addEventListener('keydown', (event) =>
 
 window.addEventListener('keyup', (event) =>
 {
-    if (event.key == 'ArrowUp')
-        keys.ArrowUp = false;
-    else if (event.key == 'ArrowDown')
-        keys.ArrowDown = false;
+    if (players_nb == 1)
+    {
+        if (role == "host")
+        {
+            if (event.key == 'e')
+                keys.KeyE = false;
+            else if (event.key == 'd')
+                keys.KeyD = false;
+        }
+        else
+        {
+            if (event.key == 'ArrowUp')
+                keys.ArrowUp = false
+            else if (event.key == 'ArrowDown')
+                keys.ArrowDown = false
+        }
+    }
+    else
+    {
+        if (event.key == 'ArrowUp')
+            keys.ArrowUp = false;
+        else if (event.key == 'ArrowDown')
+            keys.ArrowDown = false;
 
-    if (event.key == 'e')
-        keys.KeyE = false;
-    else if (event.key == 'd')
-        keys.KeyD = false;
+        if (event.key == 'e')
+            keys.KeyE = false;
+        else if (event.key == 'd')
+            keys.KeyD = false;
 
-    if (event.key == 'u')
-        keys.KeyU = false;
-    else if (event.key == 'j')
-        keys.KeyJ = false;
+        if (players_nb == 3)
+        {
+            if (event.key == 'u')
+                keys.KeyU = false;
+            else if (event.key == 'j')
+                keys.KeyJ = false;
+        }
+    }
 });

@@ -73,6 +73,9 @@ class Bar1v1
             if (this.y > 0 && this.game.ball.isAboveOrUnderPlayer() == false)
             {
                 this.y = this.y - 1;
+
+                if (players_nb == 1)
+                    data_channel.send("up")
                 this.print();
             }
         }
@@ -85,6 +88,9 @@ class Bar1v1
             if (this.y + this.height < this.game.game_height && this.game.ball.isAboveOrUnderPlayer() == false)
             {
                 this.y = this.y + 1;
+
+                if (players_nb == 1)
+                    data_channel.send("down")
                 this.print();
             }
         }

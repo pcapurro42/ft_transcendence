@@ -1,9 +1,12 @@
-function readHostMsg(event){
+function readHostMsg(event)
+{
 	console.log(event.data);
 	let msg = event.data;
-	if (msg === 'lobby ok'){
+	
+	if (msg === 'lobby ok')
+	{
 		document.getElementById("join_classic_lobby").style.visibility = 'visible';
-		 document.getElementById('answer_timeout').style.visibility = 'hidden';
+		document.getElementById('answer_timeout').style.visibility = 'hidden';
 	}
 	else if (msg ==='normal')
 		gameMode = 'normal';
@@ -11,27 +14,28 @@ function readHostMsg(event){
 		gameMode = 'bonus';
 	else if (msg === 'go')
 		displayOnline1v1();
-	else if (msg.startsWith('rpy:')){
-		game.right_player.y = +(msg.substring(4))
+	else if (msg.startsWith('rpy:'))
+	{
+		game.left_player.y = +(msg.substring(4))
 		console.log(game.right_player.y);
 	}
-	else if (msg.startsWith('lpy:')){
-		game.left_player.y = +(msg.substring(4))
-		console.log(game.left_player.y);
-	}
-	else if (msg.startsWith('bx:')){
+	else if (msg.startsWith('bx:'))
+	{
 		game.ball.x = +(msg.substring(3))
-		console.log(game.left_player.x);
+		console.log(game.ball.x);
 	}
-	else if (msg.startsWith('by:')){
+	else if (msg.startsWith('by:'))
+	{
 		game.ball.y = +(msg.substring(3))
 		console.log(game.ball.y);
 	}
-	else if (msg.startsWith('lscore:')){
+	else if (msg.startsWith('lscore:'))
+	{
 		game.score[0] = +(msg.substring(7));
 		console.log(game.score[0]);
 	}
-	else if (msg.startsWith('rscore:')){
+	else if (msg.startsWith('rscore:'))
+	{
 		game.score[1] = +(msg.substring(7));
 		console.log(game.score[0]);
 	}
