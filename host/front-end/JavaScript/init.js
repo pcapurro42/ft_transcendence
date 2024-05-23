@@ -45,7 +45,7 @@ let active; // should display the game or no
 let gameMode; // bonus or normal;
 
 let pos; // left or right (online)
-let status; // host or guest
+let role; // host or guest (online)
 
 initializeGameMode();
 

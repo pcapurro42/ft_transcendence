@@ -38,8 +38,12 @@ function hostConnectionHandler(){
 	let	create_btn = document.getElementById("create_classic_lobby");
 	create_btn.style.visibility = 'visible';
 	create_btn.onclick = () => {
-		// displayHostPage_classic();
+		pos = "left";
+		role = "host";
 		data_channel.send('lobby ok');
+		console.log("displaying game page...");
+		data_channel.send('displaying game page...')
+		displayOneVsOneGameOnline();
 	}
 
 	let launch_game = document.getElementById('start_1v1_online');
