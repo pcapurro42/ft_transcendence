@@ -246,8 +246,6 @@ class LocalGame1v1
         if (this.alert < 100)
             this.ball.printAlert(), this.alert++, this.sounds.alert.play();
 
-        // this.ball.print();
-        this.ball.unprint();
         this.ball.animate();
         this.ball.print();
     }
