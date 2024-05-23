@@ -22,6 +22,12 @@ class Ball
         this.bounce = true;
     }
 
+    unprint()
+    {
+        this.game.display.fillStyle = this.game.background_color;
+        this.game.display.fillRect(this.x, this.y, this.width, this.height);
+    }
+
     print()
     {
         this.game.display.fillStyle = this.color;
