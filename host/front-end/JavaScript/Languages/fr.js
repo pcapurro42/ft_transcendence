@@ -56,7 +56,7 @@ let fr = [
 
     ["Game theme", "Musique du jeu"],
     ["Game map", "Carte du jeu"],
-    
+
     ["Red", "Rouge"],
     ["Orange", "Orange"],
     ["Purple", "Violet"],
@@ -112,9 +112,10 @@ let fr = [
     ['Disconnected', "⚠︎ Connexion pair à pair perdue..."],
     ['Disconnection Msg', "Désolé ! Il semble y avoir un problème de connexion. Vérifiez le réseau des deux pairs, puis réessayez."],
     ['Main Menu', "Menu Principal"],
-    ['Waiting Lobby Creation', "En attente de la création d'un salon par l'hôte..."],
+    ['Waiting Lobby Creation', "En attente de la création d'un salon par "],
+    ['Please Create Lobby', 'Cliquez sur le bouton de création de salon pour démarrer une partie avec '],
 
-    ["Peer Connection Success", "Succès de la connexion à distance."],
+    ["Peer Connection Success", "Succès de la connexion à distance avec "],
     ["Peer Connection Warning", "Connexion à distance en cours..."],
     ["Peer Connection Alert", "Connexion à distance échouée."],
     ["Peer 404", "Erreur: échec de la connexion. Soyez sûr que tous les pairs sont bien présents, ainsi que de la validité du code d'invitation."],

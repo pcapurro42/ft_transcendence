@@ -3,6 +3,7 @@ from django.middleware.csrf import get_token
 from http.client import HTTPSConnection
 from urllib.parse import urlencode
 from . import invitation_code
+from . import parse_input
 import json
 import os
 
@@ -13,6 +14,10 @@ def home(request):
 
 def signal(request):
 	requestJson = json.loads(request.body)
+
+	if requestJson.get('login') != None:
+		if parse_input.parse_input(requestJson['login']) == False :
+			return HttpResponseServerError('Error: data has unexpected content.')
 
 	if requestJson.get('answer') != None:
 		return invitation_code.postAnswer(request)

@@ -39,7 +39,9 @@ async function fetchOffer(){
 		return;
 	}
 	let response = await request.text();
-	answerGenerator(response)
+	response = JSON.parse(response);
+	sessionStorage.setItem('opponent_login', response['login']);
+	answerGenerator(response['offer'])
 }
 
 async function answerGenerator(offer){
@@ -107,6 +109,7 @@ async function sendAnswer(answer){
 		 body: JSON.stringify({
 				'code' : code,
 				'answer' : answer,
+				'login' : localStorage.getItem('login'),
 		}),
 	})
 

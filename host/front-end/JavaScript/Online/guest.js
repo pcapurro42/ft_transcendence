@@ -38,7 +38,7 @@ function readHostMsg(event){
 }
 
 async function guestConnectionHandler(){
-	displayStatusBarSuccess(getTranslation("Peer Connection Success"));
+	displayStatusBarSuccess(getTranslation("Peer Connection Success") + sessionStorage.getItem('opponent_login') +'!');
 	data_channel.onerror = function(error) {
 		handleDisconnection();
     	console.error("Data Channel Error:", error);
@@ -48,7 +48,7 @@ async function guestConnectionHandler(){
 
 
 	let countdown = document.getElementById('answer_timeout');
-	countdown.innerHTML = getTranslation("Waiting Lobby Creation");
+	countdown.innerHTML = getTranslation("Waiting Lobby Creation") + sessionStorage.getItem('opponent_login') + '...';
 
 	let	join_btn = document.getElementById("join_classic_lobby");
 	join_btn.onclick = () => {

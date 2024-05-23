@@ -91,8 +91,9 @@ async function fetchAnswer(){
 		document.getElementById('init_p2p').removeAttribute('disabled');
 		return;
 	}
-	let response = await request.text();
-	initConnection(response);
+	let response = await request.json();
+	sessionStorage.setItem('opponent_login', response['login']);
+	initConnection(response['answer']);
 
 }
 

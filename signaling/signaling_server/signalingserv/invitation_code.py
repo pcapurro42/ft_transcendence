@@ -26,7 +26,8 @@ def generate_code(request):
 	code = requestJson['login'] + '_' + str
 
 	invitation_codes[code] = {
-        'from': requestJson['login'],
+        'host_login': requestJson['login'],
+		'guest_login': None,
 		'offer': requestJson['offer'],
 		'answer': None,
         'created_at': datetime.now(),
@@ -40,17 +41,31 @@ def postAnswer(request):
 	answerJson = json.loads(requestJson['answer'])
 	if invitation_codes.get(requestJson['code']) != None:
 		invitation_codes[requestJson['code']]['answer'] = requestJson['answer']
+		invitation_codes[requestJson['code']]['guest_login'] = requestJson['login']
+
 	return HttpResponse('Answer well-received.')
 
 
 def getAnswer(request):
-	if invitation_codes[request.body.decode('utf-8')] != None and invitation_codes[request.body.decode('utf-8')]['answer'] != None:
-		return HttpResponse(invitation_codes[request.body.decode('utf-8')]['answer'])
+	code = request.body.decode('utf-8')
+
+	if invitation_codes[code] != None and invitation_codes[code]['answer'] != None:
+		responseJson = {
+			'login': invitation_codes[code]['guest_login'],
+			'answer': invitation_codes[code]['answer']
+		}
+		return JsonResponse(responseJson)
 	else:
 		return HttpResponseNotFound('Error: no answer received from guest.')
 
 def getOffer(request):
-	if invitation_codes[request.body.decode('utf-8')] != None and invitation_codes[request.body.decode('utf-8')]['offer'] != None:
-		return HttpResponse(invitation_codes[request.body.decode('utf-8')]['offer'])
+	code = request.body.decode('utf-8')
+
+	if invitation_codes[code] != None and invitation_codes[code]['offer'] != None:
+		responseJson = {
+			'login': invitation_codes[code]['host_login'],
+			'offer': invitation_codes[code]['offer'],
+		}
+		return JsonResponse(responseJson)
 	else:
 		return HttpResponseNotFound('Error: offer not found.')

@@ -29,7 +29,7 @@ function displayOneVsOneChoice()
 
     let play_menu = document.getElementById('play_menu');
     play_menu.style.display = 'none';
-
+    freeInputAndForms();
     resetConnection();
 }
 

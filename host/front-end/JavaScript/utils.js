@@ -21,6 +21,9 @@ function freeInputAndForms(){
 
 	let inv_code = document.getElementById('invitation_code');
 	inv_code.value = '';
+
+	let create_lobby_msg = document.getElementById('create_lobby_msg');
+	create_lobby_msg.innerHTML = '';
 }
 
 function sleep(ms){

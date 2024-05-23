@@ -109,7 +109,7 @@ let en = [
 
     ['Paste Code Msg', 'Please paste the invitation code provided <br> by your friend to start an online game.'],
 
-    ["Peer Connection Success", "Succesfully connected to remote peer."],
+    ["Peer Connection Success", "Succesfully connected to "],
     ["Peer Connection Warning", "Trying to connect with remote peer."],
     ["Peer Connection Alert", "Connection with remote peer failed."],
     ["Peer Connection Timeout", "Connection timeout... Please restart process."],
@@ -124,7 +124,8 @@ let en = [
 
     ['Disconnected', "⚠︎ Lost connection with peer..."],
     ['Disconnection Msg', "Sorry! It seems like there's a connection problem. Check both peers networks and try again."],
-    ['Waiting Lobby Creation', "Waiting for host to create lobby..."],
+    ['Waiting Lobby Creation', "Waiting lobby creation from "],
+    ['Please Create Lobby', 'Please click the create lobby button to start a game with '],
 
 
     //******* Status Bar ******/
