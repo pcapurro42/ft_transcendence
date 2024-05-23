@@ -42,7 +42,10 @@ let players_nb; // number of local players
 let game; // object of the game
 let active; // should display the game or no
 
-let gameMode;
+let gameMode; // bonus or normal;
+
+let pos; // left or right (online)
+let status; // host or guest
 
 initializeGameMode();
 

@@ -332,7 +332,7 @@ class OnlineGame1v1
 
 function initializeOnline1v1()
 {
-    players_nb = 2;
+    players_nb = 1;
     game = new OnlineGame1v1();
 
     game.initialize();
