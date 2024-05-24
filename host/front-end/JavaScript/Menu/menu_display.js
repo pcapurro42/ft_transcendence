@@ -76,9 +76,11 @@ async function displayOneVsOneOnlineJoinGame(){
 
     freeInputAndForms();
 
-     let join_btn = document.getElementById('join_classic_lobby');
+    let join_btn = document.getElementById('join_classic_lobby');
     join_btn.style.visibility = 'hidden';
 
+    let win_msg = document.getElementById('g_win_text');
+    win_msg.style.display = 'none';
     resetConnection();
 }
 
@@ -156,16 +158,20 @@ function displayOneVsOneGameOnline()
     if (role == "host")
     {
         document.getElementById('one_vs_one_host_page').style.display = "block";
+        document.getElementById('h_host_name').innerHTML = localStorage.getItem('login');
+        document.getElementById('h_guest_name').innerHTML = sessionStorage.getItem('opponent_login');
         document.getElementById('waiting_host').style.display = "none";
     }
     else
     {
         document.getElementById('one_vs_one_guest_page').style.display = "block";
+        document.getElementById('g_host_name').innerHTML = sessionStorage.getItem('opponent_login');
+        document.getElementById('g_guest_name').innerHTML = localStorage.getItem('login');
         document.getElementById('waiting_host').style.display = "block";
         data_channel.send("ready");
     }
 
-    document.getElementById('game_backgrounds').style.display = 'block';
+    // document.getElementById('game_backgrounds').style.display = 'block';
     document.getElementById('main_page').style.display = "none";
     document.getElementById('game_toolbar').style.display = "block";
 
@@ -174,7 +180,7 @@ function displayOneVsOneGameOnline()
 
 function displayTwoVsOneGameLocal()
 {
-    document.getElementById('game_backgrounds').style.display = 'block';
+    // document.getElementById('game_backgrounds').style.display = 'block';
 
     main_page = document.getElementById('main_page');
     main_page.style.display = "none";
@@ -194,7 +200,7 @@ function displayTwoVsOneGameLocal()
 
 function displayOneVsOneGameLocal()
 {
-    document.getElementById('game_backgrounds').style.display = 'block';
+    // document.getElementById('game_backgrounds').style.display = 'block';
 
     main_page = document.getElementById('main_page');
     main_page.style.display = "none";

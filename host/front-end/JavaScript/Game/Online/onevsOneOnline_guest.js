@@ -1,12 +1,13 @@
+
 // <<<<<<< 1V1 >>>>>>> //
 
 // < Game class > //
 
-class LocalGame1v1
+class OnlineGame1v1_guest
 {
     constructor()
     {
-        this.player_nb = 2;
+        this.player_nb = 1;
 
         this.left_player = null;
         this.right_player = null;
@@ -58,11 +59,12 @@ class LocalGame1v1
     {
         // canvas creation
 
-        if (type == "tournament")
-            this.canvas = document.getElementById('tournament_game');
+        if (role == "host")
+            this.canvas = document.getElementById('one_vs_one_host_game');
         else
-            this.canvas = document.getElementById('one_vs_one_local_game');
+            this.canvas = document.getElementById('one_vs_one_guest_game');
         this.display = this.canvas.getContext('2d');
+
 
         this.canvas.width = this.game_width;
         this.canvas.height = this.game_height;
@@ -73,8 +75,10 @@ class LocalGame1v1
             this.menu_color = "white", this.background_color = "black", this.bar_color = "white", this.ball_color = "white";
         else
             this.menu_color = "black", this.background_color = "white", this.bar_color = "black", this.ball_color = "black";
+            console.log(game_map)
         if (game_map != null && game_map != "none")
         {
+            console.log('toto')
             if (game_map == "red")
                 this.background_color = "brown";
             else
@@ -226,31 +230,33 @@ class LocalGame1v1
         this.display.drawImage(this.scores_c, 0, 0);
     }
 
+
     refreshPlayers()
     {
-        if (keys.KeyE == true)
-            this.left_player.moveUp();
-        if (keys.KeyD == true)
-            this.left_player.moveDown();
+            if (keys.ArrowUp == true){
+                data_channel.send(`rpy:${this.right_player.y}`)
+                this.right_player.moveUp();
+            }
+            if (keys.ArrowDown == true){
+                data_channel.send(`rpy:${this.right_player.y}`)
+                this.right_player.moveDown();
+            }
 
-        if (keys.ArrowUp == true)
-            this.right_player.moveUp();
-        if (keys.ArrowDown == true)
-            this.right_player.moveDown();
+            this.left_player.print();
+            this.right_player.print();
 
-        this.left_player.print();
-        this.right_player.print();
+            this.left_player.displayBonus();
+            this.right_player.displayBonus();
 
-        if (gameMode != "normal")
-            this.left_player.displayBonus(), this.right_player.displayBonus();
     }
+
 
     refreshBall()
     {
         if (this.alert < 100)
             this.ball.printAlert(), this.alert++, this.sounds.alert.play();
-
-        this.ball.animate();
+        if (this.ball.isOffLimit() == true)
+            this.game,this.restartRound();
         this.ball.print();
     }
 
@@ -309,36 +315,34 @@ class LocalGame1v1
             this.scores[0]++;
         else
             this.scores[1]++;
+
         this.drawScores();
-        this.ball.replace();
     }
 
-    isOver()
+  isOver()
     {
         if (active == false)
             return (true);
-        if (this.scores[0] > 9 || this.scores[1] > 9)
+        if (this.scores[0] > 9)
         {
-            if (type == 'tournament')
-            {
-                if (this.scores[0] > 9)
-                    t_LeftWin();
-                if (this.scores[1] > 9)
-                    t_RightWin();
-            }
-            else
-            {
-                if (this.scores[0] > 9)
-                {
-                    let player_left_won = document.getElementById('left_player_won_text');
-                    player_left_won.style.display = "block";
-                }
-                if (this.scores[1] > 9)
-                {
-                    let player_right_won = document.getElementById('right_player_won_text');
-                    player_right_won.style.display = "block";
-                }
-            }
+            let player_left_won = document.getElementById('g_win_text');
+            player_left_won.innerHTML = sessionStorage.getItem('opponent_login') + getTranslation('Online Win');
+            player_left_won.style.display = "block";
+
+            document.getElementById('online_loser').play();
+
+            this.resetGame();
+            active = false;
+
+            return (true);
+        }
+        if (this.scores[1] > 9)
+        {
+            let player_right_won = document.getElementById('g_win_text');
+            player_right_won.innerHTML = localStorage.getItem('login') + getTranslation('Online Win');
+            player_right_won.style.display = "block";
+
+            document.getElementById('online_winner').play();
 
             this.resetGame();
             active = false;
@@ -346,76 +350,6 @@ class LocalGame1v1
             return (true);
         }
         return (false);
-    }
+	}
 }
 
-// < Initialisation > //
-
-function initializeLocal1v1()
-{
-    players_nb = 2;
-    game = new LocalGame1v1();
-
-    game.initialize();
-    game.refreshBackground();
-    active = true;
-}
-
-// < Menu display management > //
-
-function displayLocal1v1()
-{
-    let start_btn = document.getElementById('start_1v1_local');
-    start_btn.style.visibility = "hidden";
-    let player_left_won = document.getElementById('left_player_won_text');
-    player_left_won.style.display = "none";
-    let player_right_won = document.getElementById('right_player_won_text');
-    player_right_won.style.display = "none";
-
-    let timer = document.getElementById('1v1_local_timer');
-    timer.style.display = "block";
-
-    displayCountDown(3);
-}
-
-function removeLocal1v1()
-{
-    let menu_music = document.getElementById('mgs');
-    let game_music = gameMusicSelector();
-
-    game_music.pause();
-    menu_music.play();
-    let timer = document.getElementById('1v1_local_timer');
-    timer.style.display = "none";
-
-    let start_btn = document.getElementById('start_1v1_local');
-    start_btn.innerHTML = getTranslation("Launch a game");
-    start_btn.style.visibility = "visible";
-}
-
-function startLocal1v1()
-{
-    const frame = 1000/120; // = 120fps
-
-        setTimeout(()=> {
-
-        if (game.isOver() == true || active == false)
-        {
-            game.refreshBackground();
-            game.resetGame();
-
-            removeLocal1v1();
-
-            if (final == false)
-                removeTournamentGame();
-            else
-                displayFinalWinner();
-            return;
-        }
-        else
-        {
-            game.refreshDisplay();
-            requestAnimationFrame(startLocal1v1);
-        }
-        }, frame);
-}

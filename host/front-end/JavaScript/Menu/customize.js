@@ -8,14 +8,6 @@ function changeGameMap()
     localStorage.setItem('game_map', game_map);
 }
 
-function setGameMap()
-{
-    if (game_map == "none")
-        document.getElementById('game_map_btn_selector').selectedIndex = 0;
-    else if (game_map == "...")
-        document.getElementById('game_map_btn_selector').selectedIndex = 1;
-}
-
 function setGameMusic()
 {
     if (game_music == "none")
@@ -103,34 +95,21 @@ function initializeCustomize()
             game_map_selector.value = 'none';
             game_map = game_map_selector.value;
             break;
-        case "green":
-            game_map_selector.value = "green";
-            game_map = game_map_selector.value;
-            break;
-        case "yellow":
-            game_map_selector.value = "yellow";
+        case "purple":
+            game_map_selector.value = "purple";
             game_map = game_map_selector.value;
             break;
         case "orange":
             game_map_selector.value = "orange";
             game_map = game_map_selector.value;
             break;
-        case "mgs1":
-            game_map_selector.value = "mgs1";
-            game_map = game_map_selector.value;
-            break;
-        case "mgs2":
-            game_map_selector.value = "mgs2";
-            game_map = game_map_selector.value;
-            break;
-        case "mgs3":
-            game_map_selector.value = "mgs3";
+        case "red":
+            game_map_selector.value = "red";
             game_map = game_map_selector.value;
             break;
     }
 
 
-    setGameMap();
     setGameMusic();
 }
 

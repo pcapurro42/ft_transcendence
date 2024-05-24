@@ -1,8 +1,7 @@
 function readHostMsg(event)
 {
-	console.log(event.data);
 	let msg = event.data;
-	
+
 	if (msg === 'lobby ok')
 	{
 		document.getElementById("join_classic_lobby").style.visibility = 'visible';
@@ -14,31 +13,13 @@ function readHostMsg(event)
 		gameMode = 'bonus';
 	else if (msg === 'go')
 		displayOnline1v1();
-	else if (msg.startsWith('rpy:'))
-	{
-		game.left_player.y = +(msg.substring(4))
-		console.log(game.right_player.y);
-	}
-	else if (msg.startsWith('bx:'))
-	{
-		game.ball.x = +(msg.substring(3))
-		console.log(game.ball.x);
-	}
+	else if (msg.startsWith('lpy:'))
+		game.left_player.y = +(msg.substring(4));
 	else if (msg.startsWith('by:'))
-	{
-		game.ball.y = +(msg.substring(3))
-		console.log(game.ball.y);
-	}
-	else if (msg.startsWith('lscore:'))
-	{
-		game.score[0] = +(msg.substring(7));
-		console.log(game.score[0]);
-	}
-	else if (msg.startsWith('rscore:'))
-	{
-		game.score[1] = +(msg.substring(7));
-		console.log(game.score[0]);
-	}
+		game.ball.y = +(msg.substring(3));
+	else if (msg.startsWith('bx:'))
+		game.ball.x = +(msg.substring(3));
+
 }
 
 async function guestConnectionHandler(){
@@ -64,18 +45,4 @@ async function guestConnectionHandler(){
 
 }
 
-function moveListener(event){
 
-	if (event.key === 'ArrowDown'){
-		data_channel.send('arrowDown');
-	}
-	else if (event.key === 'ArrowUp'){
-		data_channel.send('arrowUp');
-	}
-}
-
-function stopMoveListener(event){
-
-	if (event.key === 'ArrowDown' || event.key === 'ArrowUp')
-		data_channel.send('noKeys');
-}

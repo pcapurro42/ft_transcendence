@@ -8,16 +8,20 @@ function cpyGameCode(){
 }
 
 function readGuestMsg(event){
-	console.log(event.data);
-	if (event.data === 'ready'){
+	let msg = event.data;
+	if (msg === 'ready'){
 		document.getElementById('start_1v1_online').classList.remove('d-none');
 	}
-	if (event.data === 'up'){
+	if (msg === 'up'){
 		game.right_player.moveUp();
 	}
-	if (event.data ==='down'){
+	if (msg ==='down'){
 		game.right_player.moveDown();
 	}
+	else if (msg === 'go')
+		displayOnline1v1();
+	else if (msg.startsWith('rpy:'))
+		game.right_player.y = +(msg.substring(4));
 }
 
 function hostConnectionHandler(){
@@ -41,8 +45,6 @@ function hostConnectionHandler(){
 		else
 			data_channel.send("bonus");
 		data_channel.send('lobby ok');
-		console.log("displaying game page...");
-		data_channel.send('displaying game page...')
 		displayOneVsOneGameOnline();
 	}
 }

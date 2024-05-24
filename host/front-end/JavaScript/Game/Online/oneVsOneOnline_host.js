@@ -1,12 +1,13 @@
+
 // <<<<<<< 1V1 >>>>>>> //
 
 // < Game class > //
 
-class OnlineGame1v1
+class OnlineGame1v1_host
 {
     constructor()
     {
-        this.player_nb = 2;
+        this.player_nb = 1;
 
         this.left_player = null;
         this.right_player = null;
@@ -62,7 +63,8 @@ class OnlineGame1v1
             this.canvas = document.getElementById('one_vs_one_host_game');
         else
             this.canvas = document.getElementById('one_vs_one_guest_game');
-        this.display = this.canvas.getContext('2d', { alpha: false });
+        this.display = this.canvas.getContext('2d');
+
 
         this.canvas.width = this.game_width;
         this.canvas.height = this.game_height;
@@ -73,7 +75,7 @@ class OnlineGame1v1
             this.menu_color = "white", this.background_color = "black", this.bar_color = "white", this.ball_color = "white";
         else
             this.menu_color = "black", this.background_color = "white", this.bar_color = "black", this.ball_color = "black";
-
+            console.log(game_map)
         if (game_map != null && game_map != "none")
         {
             if (game_map == "red")
@@ -209,9 +211,9 @@ class OnlineGame1v1
         this.refreshScores();
         this.refreshPlayers();
         this.refreshBall();
-
         if (gameMode != "normal")
-            this.refreshBonus();
+                this.refreshBonus();
+
     }
 
     refreshBackground()
@@ -227,29 +229,26 @@ class OnlineGame1v1
         this.display.drawImage(this.scores_c, 0, 0);
     }
 
+
     refreshPlayers()
     {
-        if (role == "host")
-        {
-            if (keys.KeyE == true)
+            if (keys.KeyE == true){
+                data_channel.send(`lpy:${this.left_player.y}`)
                 this.left_player.moveUp();
-            if (keys.KeyD == true)
+            }
+            if (keys.KeyD == true){
+                data_channel.send(`lpy:${this.left_player.y}`)
                 this.left_player.moveDown();
-        }
-        else
-        {
-            if (keys.ArrowUp == true)
-                this.right_player.moveUp();
-            if (keys.ArrowDown == true)
-                this.right_player.moveDown();
-        }
+            }
 
-        this.left_player.print();
-        this.right_player.print();
+            this.left_player.print();
+            this.right_player.print();
 
-        if (gameMode != "normal")
-            this.left_player.displayBonus(), this.right_player.displayBonus();
+            this.left_player.displayBonus();
+            this.right_player.displayBonus();
+
     }
+
 
     refreshBall()
     {
@@ -257,6 +256,8 @@ class OnlineGame1v1
             this.ball.printAlert(), this.alert++, this.sounds.alert.play();
 
         this.ball.animate();
+        data_channel.send(`by:${this.ball.y}`);
+        data_channel.send(`bx:${this.ball.x}`);
         this.ball.print();
     }
 
@@ -304,7 +305,6 @@ class OnlineGame1v1
         this.right_player.reset();
 
         this.alert = 0;
-
         if (gameMode != "normal")
             this.bonus_one.reset(), this.bonus_two.reset();
     }
@@ -320,32 +320,31 @@ class OnlineGame1v1
         this.ball.replace();
     }
 
-    isOver()
+ async  isOver()
     {
         if (active == false)
             return (true);
-        if (this.scores[0] > 9 || this.scores[1] > 9)
+        if (this.scores[0] > 9)
         {
-            if (type == 'tournament')
-            {
-                if (this.scores[0] > 9)
-                    t_LeftWin();
-                if (this.scores[1] > 9)
-                    t_RightWin();
-            }
-            else
-            {
-                if (this.scores[0] > 9)
-                {
-                    let player_left_won = document.getElementById('left_player_won_text');
-                    player_left_won.style.display = "block";
-                }
-                if (this.scores[1] > 9)
-                {
-                    let player_right_won = document.getElementById('right_player_won_text');
-                    player_right_won.style.display = "block";
-                }
-            }
+            console.log('toto');
+            let player_left_won = document.getElementById('h_win_text');
+            player_left_won.innerHTML = localStorage.getItem('login') + getTranslation('Online Win');
+            player_left_won.style.display = "block";
+            document.getElementById('online_winner').play();
+
+            this.resetGame();
+            active = false;
+
+            return (true);
+        }
+        if (this.scores[1] > 9)
+        {
+            console.log('toto');
+            let player_right_won = document.getElementById('h_win_text');
+            player_right_won.innerHTML = sessionStorage.getItem('opponent_login') + getTranslation('Online Win');
+            player_right_won.style.display = "block";
+
+            document.getElementById('online_loser').play();
 
             this.resetGame();
             active = false;
@@ -353,79 +352,6 @@ class OnlineGame1v1
             return (true);
         }
         return (false);
-    }
+	}
 }
 
-// < Initialisation > //
-
-function initializeOnline1v1()
-{
-    players_nb = 1;
-    game = new OnlineGame1v1();
-
-    game.initialize();
-    game.refreshBackground();
-    active = true;
-
-    // if (role == "host")
-    // {
-    //     data_channel.send("");
-    //     // ...
-           // envoyer les données de base au guest avant que la partie ne commence
-           // (ex: la direction de la balle (définie dans game.initialize()), la position de la balle, etc)
-    // }
-}
-
-// < Menu display management > //
-
-function displayOnline1v1()
-{
-    let timer = document.getElementById('1v1_online_timer');
-    timer.classList.remove('d-none');
-    timer.style.display = "block";
-
-    if (role == "host")
-    {
-        let start_btn = document.getElementById('start_1v1_online');
-        start_btn.style.visibility = "hidden";
-        data_channel.send("go");
-    }
-    else
-    {
-        let waiting_msg = document.getElementById('waiting_host');
-        waiting_msg.style.visibility = "hidden";
-    }
-
-    displayCountDown(3);
-}
-
-function removeOnline1v1()
-{
-    let menu_music = document.getElementById('mgs');
-    let game_music = gameMusicSelector();
-
-    game_music.pause();
-    menu_music.play();
-    let timer = document.getElementById('1v1_local_timer');
-    timer.style.display = "none";
-
-    let start_btn = document.getElementById('start_1v1_local');
-    start_btn.innerHTML = getTranslation("Launch a game");
-    start_btn.style.visibility = "visible";
-}
-
-function startOnline1v1()
-{
-    if (game.isOver() == true || active == false)
-    {
-        game.refreshBackground();
-        game.resetGame();
-        
-        removeOnline1v1();
-    }
-    else
-    {
-        game.refreshDisplay();
-        requestAnimationFrame(startOnline1v1);
-    }
-}
