@@ -64,16 +64,19 @@ function removeOnline1v1()
 
 function startOnline1v1()
 {
-    if (game.isOver() == true || active == false)
-    {
-        game.refreshBackground();
-        game.resetGame();
+    const frame = 1000 / 120; //=120fps
+    setTimeout(() => {
+        if (game.isOver() == true || active == false)
+        {
+            game.refreshBackground();
+            game.resetGame();
 
-        removeOnline1v1();
-    }
-    else
-    {
-        game.refreshDisplay();
-        requestAnimationFrame(startOnline1v1);
-    }
+            removeOnline1v1();
+        }
+        else
+        {
+            game.refreshDisplay();
+            requestAnimationFrame(startOnline1v1);
+        }
+    }, frame);
 }

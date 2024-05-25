@@ -397,8 +397,7 @@ function startLocal1v1()
 {
     const frame = 1000/120; // = 120fps
 
-        setTimeout(()=> {
-
+    setTimeout(()=> {
         if (game.isOver() == true || active == false)
         {
             game.refreshBackground();
@@ -417,5 +416,5 @@ function startLocal1v1()
             game.refreshDisplay();
             requestAnimationFrame(startLocal1v1);
         }
-        }, frame);
+    }, frame);
 }
