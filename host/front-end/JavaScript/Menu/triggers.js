@@ -21,8 +21,8 @@ document.getElementById('play_back_btn').onclick = removePlay;
 document.getElementById('customize_btn').onclick = displayCustomize;
 document.getElementById('customize_back_btn').onclick = removeCustomize;
 
-// document.getElementById('stats_btn').onclick = displayStats;
-// document.getElementById('stats_back_btn').onclick = removeStats;
+document.getElementById('stats_btn').onclick = displayStats;
+document.getElementById('stats_back_btn').onclick = removeStats;
 
 document.getElementById('settings_btn').onclick = displaySettings;
 document.getElementById('settings_back_btn').onclick = removeSettings;

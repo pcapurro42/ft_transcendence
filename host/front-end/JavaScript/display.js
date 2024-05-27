@@ -30,6 +30,9 @@ function displayMenu()
     let customize_menu = document.getElementById('customize_menu');
     customize_menu.style.display = "none";
 
+    let stats_menu = document.getElementById('stats_menu');
+    stats_menu.style.display = "none";
+
     let settings_menu = document.getElementById('settings_menu');
     settings_menu.style.display = "none";
 
