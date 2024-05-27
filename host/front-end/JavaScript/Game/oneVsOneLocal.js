@@ -83,21 +83,33 @@ class LocalGame1v1
                 this.background_color = game_map;
         }
 
-        // pre rendering background
+        // displaying background
 
-        this.background = document.createElement('canvas');
-        this.background.width = this.game_width;
-        this.background.height = this.game_height;
-        this.background_ctx = this.background.getContext('2d');
+        this.display.fillStyle = this.background_color;
+        this.display.fillRect(0, 0, this.game_width, this.game_height);
+
+        // displaying center bar
 
         let x_bar_center = (this.game_width / 2) - (this.separator_width / 2);
         let nb = ~~(this.game_height / (this.separator_height + this.separator_space));
 
-        this.background_ctx.fillStyle = this.menu_color;
+        this.display.fillStyle = this.menu_color;
         for (let value = 0; value != nb; value++)
         {
-            this.background_ctx.fillRect(x_bar_center, ((this.separator_height * value) + this.separator_space * (value + 1)), this.separator_width, this.separator_height);
+            this.display.fillRect(x_bar_center, ((this.separator_height * value) + this.separator_space * (value + 1)), this.separator_width, this.separator_height);
         }
+
+        // displaying scores
+
+        let score_y = this.game_height / 6;
+        let left_score_x = (this.game_width / 4) - this.text_size / 4;
+        let right_score_x = (this.game_width - this.game_width / 4) - this.text_size / 4;
+
+        this.display.fillStyle = this.bar_color;
+
+        this.display.font = this.text_size + "px " + this.text_font;
+        this.display.fillText(this.scores[0], left_score_x, score_y);
+        this.display.fillText(this.scores[1], right_score_x, score_y);
 
         // players creation
 
@@ -217,15 +229,30 @@ class LocalGame1v1
 
     refreshBackground()
     {
-        this.display.clearRect(0, 0, this.game_width, this.game_height);
-        this.display.drawImage(this.background, 0, 0);
+        this.display.fillStyle = this.background_color;
+        this.display.fillRect(0, 0, this.game_width, this.game_height);
+
+        let x_bar_center = (this.game_width / 2) - (this.separator_width / 2);
+        let nb = ~~(this.game_height / (this.separator_height + this.separator_space));
+
+        this.display.fillStyle = this.menu_color;
+        for (let value = 0; value != nb; value++)
+        {
+            this.display.fillRect(x_bar_center, ((this.separator_height * value) + this.separator_space * (value + 1)), this.separator_width, this.separator_height);
+        }
     }
 
     refreshScores()
     {
-        if (this.scores_c == null)
-            this.drawScores();
-        this.display.drawImage(this.scores_c, 0, 0);
+        let score_y = this.game_height / 6;
+        let left_score_x = (this.game_width / 4) - this.text_size / 4;
+        let right_score_x = (this.game_width - this.game_width / 4) - this.text_size / 4;
+
+        this.display.fillStyle = this.bar_color;
+
+        this.display.font = this.text_size + "px " + this.text_font;
+        this.display.fillText(this.scores[0], left_score_x, score_y);
+        this.display.fillText(this.scores[1], right_score_x, score_y);
     }
 
     refreshPlayers()
@@ -273,24 +300,6 @@ class LocalGame1v1
         }
     }
 
-    drawScores()
-    {
-        this.scores_c = document.createElement('canvas');
-        this.scores_c.width = this.game_width;
-        this.scores_c.height = this.game_height;
-        this.scores_ctx = this.scores_c.getContext('2d');
-
-        let score_y = this.game_height / 6;
-        let left_score_x = (this.game_width / 4) - this.text_size / 4;
-        let right_score_x = (this.game_width - this.game_width / 4) - this.text_size / 4;
-
-        this.scores_ctx.fillStyle = this.bar_color;
-
-        this.scores_ctx.font = this.text_size + "px " + this.text_font;
-        this.scores_ctx.fillText(this.scores[0], left_score_x, score_y);
-        this.scores_ctx.fillText(this.scores[1], right_score_x, score_y);
-    }
-
     resetGame()
     {
         this.scores[0] = 0;
@@ -311,8 +320,9 @@ class LocalGame1v1
             this.scores[0]++;
         else
             this.scores[1]++;
-        this.drawScores();
+
         this.ball.replace();
+        this.refreshDisplay();
     }
 
     isOver()
