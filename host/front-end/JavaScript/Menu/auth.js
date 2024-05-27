@@ -3,13 +3,12 @@ window.onload = handleRedirection;
 
 async function login()
 {
-    setTimeout(() => {window.location.href = `https://api.intra.42.fr/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`;}, 800);
-
+    setTimeout(() => {window.location.href = `https://api.intra.42.fr/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`;}, 800); //
 }
 
 async function logout()
 {
-    setTimeout(() => {window.location.href = `https://127.0.0.1/`;}, 800);
+    setTimeout(() => {window.location.href = `https://127.0.0.1/`;}, 800); //
 
     localStorage.setItem("status", "not connected");
     localStorage.removeItem("login");
@@ -40,7 +39,7 @@ async function storeUserLogin(response){
 }
 
 async function getAccessToken(auth_code){
-    const endpoint = 'https://127.0.0.1:8080/backend/token/';
+    const endpoint = 'https://127.0.0.1:8080/backend/token/'; //
 
 
 
@@ -91,7 +90,7 @@ function initializeAuth()
 {
     client_id = 'u-s4t2ud-328d5957a0e78853f7b035bed31812c4bd82ea90773c43b8686b35f1ae4d1353';
     redirect_uri = 'https://127.0.0.1';
-    user_info = JSON.parse(localStorage.getItem('user_info'));
+    user_info = JSON.parse(localStorage.getItem('user_info')); //
 
     if (localStorage.getItem("status") == null && !user_info)
     {

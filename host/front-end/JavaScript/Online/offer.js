@@ -43,7 +43,7 @@ async function offerGenerator(){
 }
 
 async function sendOffer(offer){
-	const endpoint = 'https://127.0.0.1:8080/backend/signal/';
+	const endpoint = 'https://127.0.0.1:8080/backend/signal/'; //
     const login = localStorage.getItem('login');
 
 	const request = await fetch(endpoint, {
@@ -72,7 +72,7 @@ async function sendOffer(offer){
 
 
 async function fetchAnswer(){
-	const endpoint = 'https://127.0.0.1:8080/backend/signal/getAnswer/';
+	const endpoint = 'https://127.0.0.1:8080/backend/signal/getAnswer/'; //
     const login = localStorage.getItem('login');
 	let code = document.getElementById('invitation_code').value;
 
