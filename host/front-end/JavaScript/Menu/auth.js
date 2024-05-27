@@ -74,7 +74,6 @@ function refreshLogin()
         document.getElementById('login_btn').style.display = "none";
 
         document.getElementById('one_vs_one_online_btn').classList.remove('disabled');
-        // document.getElementById('stats_btn').classList.remove('disabled');
     }
     else
     {
@@ -83,7 +82,6 @@ function refreshLogin()
         localStorage.removeItem('login');
 
         document.getElementById('one_vs_one_online_btn').classList.add('disabled');
-        // document.getElementById('stats_btn').classList.add('disabled');
     }
 }
 
