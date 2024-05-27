@@ -6,10 +6,12 @@ services:
     build:
       context: host/
       dockerfile: Dockerfile.host
+    env_file:
+      - .env
     depends_on:
       - signaling
     ports:
-      - 443:443
+      - 1025:1025
 
   proxy:
     container_name: proxy

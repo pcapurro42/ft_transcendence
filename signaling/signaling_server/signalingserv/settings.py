@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1'] #
+ALLOWED_HOSTS = ['hostname']
 
 
 # Application definition
@@ -120,7 +120,7 @@ USE_X_FORWARDED_PORT = True
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-CSRF_TRUSTED_ORIGINS = ['https://127.0.0.1', 'https://127.0.0.1:8080'] #
+CSRF_TRUSTED_ORIGINS = ['https://hostname', 'https://hostname:8080']
 
 
 CORS_ALLOW_METHODS = [
