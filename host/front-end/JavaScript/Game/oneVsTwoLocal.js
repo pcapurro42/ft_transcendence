@@ -37,7 +37,7 @@ class LocalGame1v2
 
         this.ball_direction = getRandomBallDirection();
 
-        this.text_size = 100;
+        this.text_size = 85;
         this.text_font = "Arial";
 
         this.separator_height = 20;
