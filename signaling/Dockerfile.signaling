@@ -3,9 +3,10 @@ FROM python:3.8
 WORKDIR /app
 
 RUN apt-get -y update ; \
-apt-get -y install openssl
+    apt-get -y install openssl
 
 RUN mkdir ssl
+
 RUN openssl req \
     -x509 \
     -nodes \
@@ -13,14 +14,16 @@ RUN openssl req \
     -keyout ssl/signaling.key \
     -subj "/C=FR/ST=PACA/L=Nice/O=42/OU=42Nice/CN=0.0.0.0"
 
-COPY ./signaling_server/requirements.txt .
-RUN pip install -r requirements.txt
-RUN pip install django-cors-headers
-RUN pip install requests
-COPY ./signaling_server .
+COPY ./server/requirements.txt .
 
-COPY start.sh /home/
+COPY ./server .
+
+RUN pip install -r requirements.txt ; \
+    pip install django-cors-headers ; \
+    pip install requests
+
+COPY init.sh /home/
 
 EXPOSE 8000
 
-CMD ["sh", "/home/start.sh"]
+CMD ["sh", "/home/init.sh"]

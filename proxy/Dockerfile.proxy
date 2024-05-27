@@ -16,8 +16,8 @@ RUN openssl req \
 
 COPY nginx.conf /etc/nginx/conf.d/nginx.conf
 
-COPY start.sh /home/
+COPY init.sh /home/
 
 EXPOSE 8080
 
-CMD ["sh", "/home/start.sh"]
+CMD ["sh", "/home/init.sh"]

@@ -1,6 +1,6 @@
-bind = '0.0.0.0:8000'
+bind = 'hostname:8000'
 certfile = 'ssl/signaling.crt'
 keyfile = 'ssl/signaling.key'
-accesslog = '/dev/stdout'
+accesslog = '/dev/null'
 loglevel = 'debug'
 access_log_format = '%(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"'
