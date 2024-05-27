@@ -9,6 +9,7 @@ let fr = [
 
     ["Play", "Jouer"],
     ["Customize", "Personnaliser"],
+    ["Statistics", "Statistiques"],
     ["Settings", "Options"],
     ["Credits", "Crédits"],
 

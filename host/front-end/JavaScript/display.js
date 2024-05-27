@@ -80,6 +80,11 @@ function displayMenu()
     refreshLogin();
 }
 
+function refreshSite()
+{
+    window.location.reload();
+}
+
 function removeMenu()
 {
     let main_menu_page = document.getElementById('main_page');

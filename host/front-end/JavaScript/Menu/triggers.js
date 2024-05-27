@@ -18,11 +18,14 @@ document.getElementById('disconnection_back_btn').onclick = displayMenu;
 document.getElementById('play_btn').onclick = displayPlay;
 document.getElementById('play_back_btn').onclick = removePlay;
 
-document.getElementById('settings_btn').onclick = displaySettings;
-document.getElementById('settings_back_btn').onclick = removeSettings;
-
 document.getElementById('customize_btn').onclick = displayCustomize;
 document.getElementById('customize_back_btn').onclick = removeCustomize;
+
+// document.getElementById('stats_btn').onclick = displayStats;
+// document.getElementById('stats_back_btn').onclick = removeStats;
+
+document.getElementById('settings_btn').onclick = displaySettings;
+document.getElementById('settings_back_btn').onclick = removeSettings;
 
 document.getElementById('credits_btn').onclick = theaterCredits;
 document.getElementById('vid_credits').onended = theaterClose;
@@ -83,7 +86,7 @@ document.getElementById('image_desc_btn_yn').onclick = changeDescriptiveImages;
 
 // < GAME > //
 
-document.getElementById('top_logo').onclick = displayMenu;
+document.getElementById('top_logo').onclick = refreshSite;
 
 // < PEER ANSWERS/OFFERS> //
 

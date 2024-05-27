@@ -10,6 +10,7 @@ let en = [
 
     ["Play", "Play"],
     ["Customize", "Customize"],
+    ["Statistics", "Statistics"],
     ["Settings", "Settings"],
     ["Credits", "Credits"],
 
@@ -77,8 +78,6 @@ let en = [
     ["Normal", "Normal"],
     ["Large", "Large"],
 
-    //******* Tournament ******/
-
     ["Create a tournament", "Create a tournament"],
     ["Join a tournament", "Join a tournament"],
     ["Tournament nickname", "Nickname"],
@@ -102,8 +101,6 @@ let en = [
     ["Next Game", "Next Game"],
     ["Tournament Win Msg","We got a winner...<br><br>Congratulations "],
     ["Restart Tournament", "Restart Tournament"],
-
-    //******* Online ******/
 
     ['Peer offer send msg', "Send this code to a friend <br> to start a game."],
 
@@ -130,11 +127,7 @@ let en = [
     ['Waiting Lobby Creation', "Waiting lobby creation from "],
     ['Please Create Lobby', 'Please click the create lobby button to start a game with '],
 
-
-    //******* Status Bar ******/
-
     ["42 Auth Success", "Succesfully logged in! Welcome "],
     ["42 Auth Failure", "Connection failed."],
     ["Copy Success", "Succesfully copied to clipboard."],
-
 ];
