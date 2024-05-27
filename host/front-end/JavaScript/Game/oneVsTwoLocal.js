@@ -58,7 +58,9 @@ class LocalGame1v2
         // canvas creation
 
         this.canvas = document.getElementById('one_vs_two_local_game');
-        this.display = this.canvas.getContext('2d', { alpha: false });
+        this.display = this.canvas.getContext('2d');
+
+        this.canvas.tabIndex = 1;
 
         this.canvas.width = this.game_width;
         this.canvas.height = this.game_height;
