@@ -9,7 +9,7 @@ let en = [
     ["Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'", "Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'"],
 
     ["Play", "Play"],
-    ["Customize", "Customize"],
+    ["Customization", "Customization"],
     ["Statistics", "Statistics"],
     ["Settings", "Settings"],
     ["Credits", "Credits"],
