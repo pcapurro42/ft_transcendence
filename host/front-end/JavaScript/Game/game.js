@@ -38,6 +38,8 @@ function displayCountDown(nb)
     else
         timer = document.getElementById('2v1_local_timer');
 
+    timer.classList.remove("d-none");
+
     if (nb == 3){
         menu_music.pause();
         document.getElementById('3_sound').play();
