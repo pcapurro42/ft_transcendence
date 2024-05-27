@@ -22,12 +22,6 @@ class LocalGame1v1
         this.canvas = null;
         this.display = null;
 
-        this.background = null;
-        this.background_ctx = null;
-
-        this.scores_c = null;
-        this.scores_ctx = null;
-
         this.game_width = 1100;
         this.game_height = 720;
 
@@ -46,7 +40,7 @@ class LocalGame1v1
         this.text_font = "Arial";
 
         this.separator_height = 20;
-        this.separator_width = 3;
+        this.separator_width = 2;
         this.separator_space = 17;
 
         this.sounds = null;
