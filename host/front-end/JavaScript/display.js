@@ -39,6 +39,15 @@ function displayMenu()
     let play_classic_buttons = document.getElementById('one_vs_one_online_choice_menu');
     play_classic_buttons.style.display = "none";
 
+    let online_stats = document.getElementById('online_stats');
+    online_stats.style.display = "none";
+
+    let local_stats = document.getElementById('local_stats');
+    local_stats.style.display = "none";
+
+    let history = document.getElementById('history');
+    history.style.display = "none";
+
     let classic_buttons = document.getElementById('classic_buttons');
     classic_buttons.style.display = "none";
 
@@ -85,14 +94,23 @@ function displayMenu()
 
 function refreshStats()
 {
+    // load global variables from local storage
+
+    // ...
+
+    // load html data from variables
+
     document.getElementById('lcl_game_played_nb').innerHTML = "[ " + lcl_played + " ]";
     document.getElementById('lcl_bonus_taken_nb').innerHTML = "[ " + lcl_bonus_taken + " ]";
     document.getElementById('lcl_ball_exit_nb').innerHTML = "[ " + lcl_ball_out + " ]";
     document.getElementById('lcl_ball_bounce_nb').innerHTML = "[ " + lcl_ball_hit + " ]";
 
+    let win_rate = ~~(onl_victory * 100 / onl_played);
+    let lose_rate = ~~(onl_defeat * 100 / onl_played);
+
     document.getElementById('onl_game_played_nb').innerHTML = "[ " + onl_played + " ]";
-    document.getElementById('onl_game_won_nb').innerHTML = "[ " + onl_victory + " ]";
-    document.getElementById('onl_game_lost_nb').innerHTML = "[ " + onl_defeat + " ]";
+    document.getElementById('onl_game_won_nb').innerHTML = "[ " + onl_victory + " ] [ " + win_rate + "% ]";
+    document.getElementById('onl_game_lost_nb').innerHTML = "[ " + onl_defeat + " ] [ " + lose_rate + "% ]";
     document.getElementById('onl_bonus_taken_nb').innerHTML = "[ " + onl_bonus_taken + " ]";
     document.getElementById('onl_ball_exit_nb').innerHTML = "[ " + onl_ball_out + " ]";
     document.getElementById('onl_ball_bounce_nb').innerHTML = "[ " + onl_ball_hit + " ]";
