@@ -17,6 +17,8 @@ let en = [
     ["Local", "Local"],
     ["Online", "Online"],
 
+    ["Visual", "Visual"],
+
     ["Normal Mode", "Normal Mode"],
     ["Bonus Mode", "Bonus Mode"],
 

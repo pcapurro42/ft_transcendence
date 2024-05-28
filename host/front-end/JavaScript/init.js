@@ -51,21 +51,23 @@ initializeGameMode();
 
 // < STATS > //
 
-let onl_games;
+let visual = false;
 
-let onl_played;
-let onl_victory;
-let onl_defeat;
-let onl_ball_out;
-let onl_ball_hit;
-let onl_bonus_taken;
+let onl_games = null;
 
-let lcl_played;
-let lcl_victory;
-let lcl_defeat;
-let lcl_ball_out;
-let lcl_ball_hit;
-let lcl_bonus_taken;
+let onl_played = 24;
+let onl_victory = 16;
+let onl_defeat = 8;
+let onl_ball_out = 61;
+let onl_ball_hit = 134;
+let onl_bonus_taken = 21;
+
+let lcl_played = 64;
+let lcl_victory = 60;
+let lcl_defeat = 4;
+let lcl_ball_out = 131;
+let lcl_ball_hit = 256;
+let lcl_bonus_taken = 21;
 
 //Tournament//
 

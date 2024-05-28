@@ -75,6 +75,13 @@ document.getElementById('start_tournament_game').onclick = displayTournamentGame
 
 document.getElementById('game_map_btn_selector').onchange = changeGameMap;
 
+// < STATS > //
+
+document.getElementById('local_stats_btn').onclick = displayLocalStats;
+document.getElementById('online_stats_btn').onclick = displayOnlineStats;
+document.getElementById('local_stats_back_btn').onclick = removeLocalStats;
+document.getElementById('online_stats_back_btn').onclick = removeOnlineStats;
+
 // < SETTINGS > //
 
 document.getElementById('language_btn_selector').onchange = changeLanguage;

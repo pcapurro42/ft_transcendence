@@ -423,16 +423,65 @@
 
                 <div id="stats_menu" class="container">
                     
-                    <div class="p-2 text-center">
-                        <button id="local_stats" class="text btn btn-simple" data-oname="Local" data-tsnormal="35px" data-tslarge="45px"></button>
+                    <div id="stats_menu_buttons" class="p-2 text-center">
+                        
+                        <button id="local_stats_btn" class="text btn btn-simple" data-oname="Local" data-tsnormal="35px" data-tslarge="45px"></button>
+                        
                         <br>
-                        <button id="local_stats" class="text btn btn-simple" data-oname="Online" data-tsnormal="35px" data-tslarge="45px"></button>
+                        
+                        <button id="online_stats_btn" class="text btn btn-simple" data-oname="Online" data-tsnormal="35px" data-tslarge="45px"></button>
+                        
+                        <br>
+                        <br>
+
+                        <div class="d-flex justify-content-center">
+                            <button id="stats_back_btn" class="btn text btn-complex" data-tsnormal="35px" data-tslarge="45px" data-oname="Back" data-title="Back" title=""></button>
+                        </div>
+
                     </div>
 
-                    <br>
+                    <div id="local_stats">
+                        
+                        <div id="local_stats_v">
 
-                    <div class="d-flex justify-content-center">
-                        <button id="stats_back_btn" class="btn text btn-complex" data-tsnormal="35px" data-tslarge="45px" data-oname="Back" data-title="Back" title=""></button>
+                            <h1 class="text-center">local stats visual</h1>
+
+                        </div>
+
+                        <div id="local_stats_nv">
+
+                            <h1 class="text-center">local stats no visual</h1>
+
+                        </div>
+
+                        <br>
+
+                        <div class="d-flex justify-content-center">
+                            <button id="local_stats_back_btn" class="btn text btn-complex" data-tsnormal="35px" data-tslarge="45px" data-oname="Back" data-title="Back" title=""></button>
+                        </div>
+
+                    </div>
+
+                    <div id="online_stats">
+
+                        <div id="online_stats_v">
+
+                            <h1 class="text-center">online stats visual</h1>
+
+                        </div>
+
+                        <div id="online_stats_nv">
+
+                            <h1 class="text-center">online stats no visual</h1>
+
+                        </div>
+
+                        <br>
+
+                        <div class="d-flex justify-content-center">
+                            <button id="online_stats_back_btn" class="btn text btn-complex" data-tsnormal="35px" data-tslarge="45px" data-oname="Back" data-title="Back" title=""></button>
+                        </div>
+
                     </div>
 
                 </div>
