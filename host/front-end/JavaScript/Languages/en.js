@@ -14,6 +14,9 @@ let en = [
     ["Settings", "Settings"],
     ["Credits", "Credits"],
 
+    ["Local", "Local"],
+    ["Online", "Online"],
+
     ["Normal Mode", "Normal Mode"],
     ["Bonus Mode", "Bonus Mode"],
 

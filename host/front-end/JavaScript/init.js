@@ -49,6 +49,24 @@ let role; // host or guest (online)
 
 initializeGameMode();
 
+// < STATS > //
+
+let onl_games;
+
+let onl_played;
+let onl_victory;
+let onl_defeat;
+let onl_ball_out;
+let onl_ball_hit;
+let onl_bonus_taken;
+
+let lcl_played;
+let lcl_victory;
+let lcl_defeat;
+let lcl_ball_out;
+let lcl_ball_hit;
+let lcl_bonus_taken;
+
 //Tournament//
 
 let stop_flag = false;
