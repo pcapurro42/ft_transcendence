@@ -81,6 +81,8 @@ document.getElementById('local_stats_btn').onclick = displayLocalStats;
 document.getElementById('online_stats_btn').onclick = displayOnlineStats;
 document.getElementById('local_stats_back_btn').onclick = removeLocalStats;
 document.getElementById('online_stats_back_btn').onclick = removeOnlineStats;
+document.getElementById('history_btn').onclick = displayHistory;
+document.getElementById('history_back_btn').onclick = removeHistory;
 
 // < SETTINGS > //
 

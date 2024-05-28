@@ -16,6 +16,7 @@ let en = [
 
     ["Local", "Local"],
     ["Online", "Online"],
+    ["History", "History"],
 
     ["Visual", "Visual"],
 

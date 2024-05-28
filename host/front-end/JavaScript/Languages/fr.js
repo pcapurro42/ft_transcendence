@@ -15,6 +15,7 @@ let fr = [
 
     ["Local", "Local"],
     ["Online", "En ligne"],
+    ["History", "Historique"],
 
     ["Visual", "Visuel"],
 

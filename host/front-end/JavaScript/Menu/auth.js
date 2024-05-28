@@ -72,16 +72,12 @@ function refreshLogin()
         document.getElementById('intra_login').innerHTML = localStorage.getItem('login');
         document.getElementById('intra_login').style.display = "block";
         document.getElementById('login_btn').style.display = "none";
-
-        document.getElementById('one_vs_one_online_btn').classList.remove('disabled');
     }
     else
     {
         document.getElementById('login_btn').style.display = "block";
         document.getElementById('intra_login').style.display = "none";
         localStorage.removeItem('login');
-
-        document.getElementById('one_vs_one_online_btn').classList.add('disabled');
     }
 }
 

@@ -63,14 +63,6 @@ function displayMenu()
     let game_backgrounds = document.getElementById('game_backgrounds');
     game_backgrounds.style.display = 'none';
 
-    freeInputAndForms();
-    tournamentFinalReset();
-    resetConnection();
-
-    stop_flag = true; // stop tournament
-
-    active = false; // turn off the game
-
     let main_page = document.getElementById('main_page');
     main_page.style.display = 'block';
 
@@ -80,6 +72,12 @@ function displayMenu()
     let main_menu_buttons = document.getElementById('main_menu_buttons');
     main_menu_buttons.style.display = "block";
 
+    stop_flag = true; // stop tournament
+    active = false; // turn off the game
+
+    freeInputAndForms();
+    tournamentFinalReset();
+    resetConnection();
     refreshLogin();
 }
 
@@ -247,5 +245,16 @@ function refreshDisplay()
         test[i].onmouseover.style.transform = '';
     }
 
-
+    if (localStorage.getItem('status') == "connected")
+    {
+        document.getElementById('one_vs_one_online_btn').classList.remove('disabled');
+        // document.getElementById('history_btn').classList.remove('disabled');
+        // document.getElementById('online_stats_btn').classList.remove('disabled');
+    }
+    else
+    {
+        document.getElementById('one_vs_one_online_btn').classList.add('disabled');
+        // document.getElementById('history_btn').classList.add('disabled');
+        // document.getElementById('online_stats_btn').classList.add('disabled');
+    }
 }

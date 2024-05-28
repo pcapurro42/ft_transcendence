@@ -91,3 +91,25 @@ function removeOnlineStats()
     stats_back_btn.style.display = 'block';
     online_stats.style.display = 'none';
 }
+
+function displayHistory()
+{
+    let stats_menu = document.getElementById('stats_menu_buttons');
+    let stats_back_btn = document.getElementById('stats_back_btn');
+    let history = document.getElementById('history');
+
+    stats_menu.style.display = 'none';
+    stats_back_btn.style.display = 'none';
+    history.style.display = 'block';
+}
+
+function removeHistory()
+{
+    let stats_menu = document.getElementById('stats_menu_buttons');
+    let stats_back_btn = document.getElementById('stats_back_btn');
+    let history = document.getElementById('history');
+
+    stats_menu.style.display = 'block';
+    stats_back_btn.style.display = 'block';
+    history.style.display = 'none';
+}
