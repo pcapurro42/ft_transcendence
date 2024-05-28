@@ -63,8 +63,6 @@ let onl_ball_hit = 134;
 let onl_bonus_taken = 21;
 
 let lcl_played = 64;
-let lcl_victory = 60;
-let lcl_defeat = 4;
 let lcl_ball_out = 131;
 let lcl_ball_hit = 256;
 let lcl_bonus_taken = 21;

@@ -20,6 +20,13 @@ let en = [
 
     ["Visual", "Visual"],
 
+    ["Game(s) played", "Game(s) played"],
+    ["Game(s) won", "Game(s) won"],
+    ["Game(s) lost", "Game(s) lost"],
+    ["Ball exit(s)", "Ball exit(s)"],
+    ["Ball bounce(s)", "Ball bounce(s)"],
+    ["Bonus taken", "Bonus taken"],
+
     ["Normal Mode", "Normal Mode"],
     ["Bonus Mode", "Bonus Mode"],
 

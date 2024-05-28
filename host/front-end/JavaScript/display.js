@@ -78,7 +78,24 @@ function displayMenu()
     freeInputAndForms();
     tournamentFinalReset();
     resetConnection();
+
+    refreshStats();
     refreshLogin();
+}
+
+function refreshStats()
+{
+    document.getElementById('lcl_game_played_nb').innerHTML = "[ " + lcl_played + " ]";
+    document.getElementById('lcl_bonus_taken_nb').innerHTML = "[ " + lcl_bonus_taken + " ]";
+    document.getElementById('lcl_ball_exit_nb').innerHTML = "[ " + lcl_ball_out + " ]";
+    document.getElementById('lcl_ball_bounce_nb').innerHTML = "[ " + lcl_ball_hit + " ]";
+
+    document.getElementById('onl_game_played_nb').innerHTML = "[ " + onl_played + " ]";
+    document.getElementById('onl_game_won_nb').innerHTML = "[ " + onl_victory + " ]";
+    document.getElementById('onl_game_lost_nb').innerHTML = "[ " + onl_defeat + " ]";
+    document.getElementById('onl_bonus_taken_nb').innerHTML = "[ " + onl_bonus_taken + " ]";
+    document.getElementById('onl_ball_exit_nb').innerHTML = "[ " + onl_ball_out + " ]";
+    document.getElementById('onl_ball_bounce_nb').innerHTML = "[ " + onl_ball_hit + " ]";
 }
 
 function refreshSite()
