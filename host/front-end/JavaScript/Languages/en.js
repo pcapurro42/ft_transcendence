@@ -25,6 +25,8 @@ let en = [
     ["Game(s) lost", "Game(s) lost"],
     ["Ball exit(s)", "Ball exit(s)"],
     ["Ball bounce(s)", "Ball bounce(s)"],
+    ["Longest exchange", "Longest exchange"],
+    ["Shortest game", "Shortest game"],
     ["Distance covered", "Distance covered"],
     ["Ball return(s)", "Ball return(s)"],
     ["Bonus taken", "Bonus taken"],
