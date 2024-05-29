@@ -1,3 +1,8 @@
+function changeStatsDisplayMode()
+{
+    let switch_box = document.getElementById('switch_visual_input');
+}
+
 function displayStats()
 {
     let main_menu = document.getElementById('main_menu_buttons');
@@ -36,16 +41,7 @@ function displayLocalStats()
     stats_back_btn.style.display = 'none';
     local_stats.style.display = 'block';
 
-    if (visual == true)
-    {
-        document.getElementById('local_stats_v').style.display = 'block';
-        document.getElementById('local_stats_nv').style.display = 'none';
-    }
-    else
-    {
-        document.getElementById('local_stats_nv').style.display = 'block';
-        document.getElementById('local_stats_v').style.display = 'none';
-    }
+    document.getElementById('local_stats_nv').style.display = 'block';
 }
 
 function removeLocalStats()

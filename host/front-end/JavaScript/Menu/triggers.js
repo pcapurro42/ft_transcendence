@@ -84,6 +84,8 @@ document.getElementById('online_stats_back_btn').onclick = removeOnlineStats;
 document.getElementById('history_btn').onclick = displayHistory;
 document.getElementById('history_back_btn').onclick = removeHistory;
 
+document.getElementById('switch_visual_input').onchange = changeStatsDisplayMode;
+
 // < SETTINGS > //
 
 document.getElementById('language_btn_selector').onchange = changeLanguage;

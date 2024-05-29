@@ -17,6 +17,11 @@
     transform: scale(1.2);
 }
 
+#switch_visual_input
+{
+    transform: scale(1.5);
+}
+
 .btn:active{
     transform: scale(1.0);
     opacity: 0.6;
