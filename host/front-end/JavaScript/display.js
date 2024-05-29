@@ -111,9 +111,9 @@ function refreshStats()
     document.getElementById('onl_game_played_nb').innerHTML = "[ " + onl_played + " ]";
     document.getElementById('onl_game_won_nb').innerHTML = "[ " + onl_victory + " ] [ " + win_rate + "% ]";
     document.getElementById('onl_game_lost_nb').innerHTML = "[ " + onl_defeat + " ] [ " + lose_rate + "% ]";
+    document.getElementById('onl_dist').innerHTML = "[ " + onl_dist + " px ]";
+    document.getElementById('onl_ball_return').innerHTML = "[ " + onl_ball_return + " ]";
     document.getElementById('onl_bonus_taken_nb').innerHTML = "[ " + onl_bonus_taken + " ]";
-    document.getElementById('onl_ball_exit_nb').innerHTML = "[ " + onl_ball_out + " ]";
-    document.getElementById('onl_ball_bounce_nb').innerHTML = "[ " + onl_ball_hit + " ]";
 }
 
 function refreshSite()

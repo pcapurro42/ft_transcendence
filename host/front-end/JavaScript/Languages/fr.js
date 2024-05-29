@@ -22,8 +22,8 @@ let fr = [
     ["Game(s) played", "Partie(s) jouée(s)"],
     ["Game(s) won", "Partie(s) remportée(s)"],
     ["Game(s) lost", "Partie(s) perdue(s)"],
-    ["Ball exit(s)", "Sortie(s) de balle"],
-    ["Ball bounce(s)", "Rebond(s) de balle"],
+    ["Distance covered", "Distance parcourue"],
+    ["Ball return(s)", "Renvoi(s) de balle"],
     ["Bonus taken", "Bonus récupéré(s)"],
 
     ["Normal Mode", "Mode Normal"],

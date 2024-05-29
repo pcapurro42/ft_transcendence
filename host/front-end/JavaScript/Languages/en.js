@@ -23,8 +23,8 @@ let en = [
     ["Game(s) played", "Game(s) played"],
     ["Game(s) won", "Game(s) won"],
     ["Game(s) lost", "Game(s) lost"],
-    ["Ball exit(s)", "Ball exit(s)"],
-    ["Ball bounce(s)", "Ball bounce(s)"],
+    ["Distance covered", "Distance covered"],
+    ["Ball return(s)", "Ball return(s)"],
     ["Bonus taken", "Bonus taken"],
 
     ["Normal Mode", "Normal Mode"],
