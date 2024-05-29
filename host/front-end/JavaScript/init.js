@@ -59,8 +59,12 @@ let onl_played = 24;
 let onl_victory = 16;
 let onl_defeat = 8;
 let onl_dist = 42;
+
 let onl_ball_return = 61;
+let onl_ball_received = 100;
+
 let onl_bonus_taken = 21;
+let onl_bonus_received = 42;
 
 let lcl_played = 64;
 let lcl_ball_out = 131;
