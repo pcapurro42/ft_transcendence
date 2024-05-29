@@ -53,6 +53,7 @@ initializeGameMode();
 
 let visual = false;
 
+let stats;
 let onl_games = null;
 
 let onl_played = 24;

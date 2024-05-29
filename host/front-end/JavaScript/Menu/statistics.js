@@ -1,3 +1,72 @@
+// < visual stats > //
+
+class VisualStats
+{
+    constructor()
+    {
+        this.width = 900;
+        this.height = 520;
+
+        this.canvas = null;
+        this.display = null;
+
+        this.background_color = null;
+        this.global_color = null;
+    }
+
+    initialize()
+    {
+        this.canvas = document.getElementById('stats_canvas');
+        this.display = this.canvas.getContext('2d');
+
+        this.canvas.width = this.width;
+        this.canvas.height = this.height;
+
+        if (high_contrast == "false")
+            this.global_color = "white", this.background_color = "black";
+        else
+            this.global_color = "black", this.background_color = "white";
+
+        this.display.fillStyle = this.background_color;
+        this.display.fillRect(0, 0, this.width, this.height);
+    }
+
+    displayCamembert()
+    {
+        this.clean();
+
+        // ...
+    }
+
+    displaySizeGraph()
+    {
+        this.clean();
+
+        // ...
+    }
+
+    displayBarChartOne()
+    {
+        this.clean();
+
+        // ...
+    }
+
+    displayBarChartTwo()
+    {
+        this.clean();
+
+        // ...
+    }
+
+    clean()
+    {
+        ;
+    }
+}
+
+// < display > //
+
 function refreshStats()
 {
     // load global variables from local storage
@@ -113,6 +182,9 @@ function displayOnlineStats()
     {
         document.getElementById('online_stats_v').style.display = 'block';
         document.getElementById('online_stats_nv').style.display = 'none';
+
+        stats = new VisualStats();
+        stats.initialize();
     }
     else
     {
