@@ -1,6 +1,22 @@
 function changeStatsDisplayMode()
 {
     let switch_box = document.getElementById('switch_visual_input');
+
+    if (switch_box.checked == true)
+        localStorage.setItem('visual_mode', 'true'), visual = true;
+    else
+        localStorage.setItem('visual_mode', 'false'), visual = false;
+
+    if (document.getElementById('online_stats').style.display == 'block')
+        displayOnlineStats();
+}
+
+function refreshStatsDisplaySwitch()
+{
+    if (localStorage.getItem('visual_mode') == true)
+        document.getElementById('switch_visual_input').checked = true, visual = true;
+    else
+        document.getElementById('switch_visual_input').checked = false, visual = false;
 }
 
 function displayStats()

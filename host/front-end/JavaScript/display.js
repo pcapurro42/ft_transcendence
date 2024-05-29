@@ -89,6 +89,7 @@ function displayMenu()
     resetConnection();
 
     refreshStats();
+    refreshStatsDisplaySwitch();
     refreshLogin();
 }
 
