@@ -13,6 +13,9 @@ class VisualStats
         this.background_color = null;
         this.global_color = null;
 
+        this.text_color = null;
+        this.text_format = "25px Arial";
+
         this.circle = null;
         this.histograph = null;
     }
@@ -26,9 +29,9 @@ class VisualStats
         this.canvas.height = this.height;
 
         if (high_contrast == "true")
-            this.global_color = "white", this.background_color = "black";
+            this.global_color = "white", this.text_color = "white", this.background_color = "black";
         else
-            this.global_color = "black", this.background_color = "white";
+            this.global_color = "black", this.text_color = "black", this.background_color = "white";
 
         this.circle = new Image();
         if (this.global_color == "white")
@@ -41,13 +44,19 @@ class VisualStats
             this.histograph.src = 'Materials/images/histograph_white.png';
         else
             this.histograph.src = 'Materials/images/histograph_black.png';
+        
+        this.display.font = this.text_format;
     }
 
     displayCamembert()
     {
         this.clean();
 
-        this.display.drawImage(this.circle, 0, 0);
+        this.display.drawImage(this.circle, 0, 25);
+
+        this.display.fillStyle = this.text_color;
+        let text_size = this.display.measureText("– Game(s) played –").width;
+        this.display.fillText("– Game(s) played –", this.width / 2 - (text_size / 2), 35);
 
         // ...
     }
@@ -58,6 +67,10 @@ class VisualStats
 
         this.display.drawImage(this.histograph, 0, 0);
 
+        this.display.fillStyle = this.text_color;
+        let text_size = this.display.measureText("– Ball return(s) –").width;
+        this.display.fillText("– Ball return(s) –", this.width / 2 - (text_size / 2), 35);
+
         // ...
     }
 
@@ -66,6 +79,10 @@ class VisualStats
         this.clean();
 
         this.display.drawImage(this.histograph, 0, 0);
+
+        this.display.fillStyle = this.text_color;
+        let text_size = this.display.measureText("– Bonus received –").width;
+        this.display.fillText("– Bonus received –", this.width / 2 - (text_size / 2), 35);
 
         // ...
     }
