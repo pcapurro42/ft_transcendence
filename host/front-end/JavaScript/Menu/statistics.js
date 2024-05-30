@@ -55,8 +55,9 @@ class VisualStats
         this.display.drawImage(this.circle, 0, 25);
 
         this.display.fillStyle = this.text_color;
-        let text_size = this.display.measureText("– Game(s) played –").width;
-        this.display.fillText("– Game(s) played –", this.width / 2 - (text_size / 2), 35);
+        let text = getTranslation("Game(s) played");
+        let text_size = this.display.measureText("– " + text + " –").width;
+        this.display.fillText("– " + text + " –", this.width / 2 - (text_size / 2), 35);
 
         // ...
     }
@@ -68,8 +69,9 @@ class VisualStats
         this.display.drawImage(this.histograph, 0, 0);
 
         this.display.fillStyle = this.text_color;
-        let text_size = this.display.measureText("– Ball return(s) –").width;
-        this.display.fillText("– Ball return(s) –", this.width / 2 - (text_size / 2), 35);
+        let text = getTranslation("Ball return(s)");
+        let text_size = this.display.measureText("– " + text + " –").width;
+        this.display.fillText("– " + text + " –", this.width / 2 - (text_size / 2), 35);
 
         // ...
     }
@@ -81,8 +83,9 @@ class VisualStats
         this.display.drawImage(this.histograph, 0, 0);
 
         this.display.fillStyle = this.text_color;
-        let text_size = this.display.measureText("– Bonus received –").width;
-        this.display.fillText("– Bonus received –", this.width / 2 - (text_size / 2), 35);
+        let text = getTranslation("Bonus taken");
+        let text_size = this.display.measureText("– " + text + " –").width;
+        this.display.fillText("– " + text + " –", this.width / 2 - (text_size / 2), 35);
 
         // ...
     }
@@ -238,6 +241,7 @@ function displayOnlineStats()
 
         stats = new VisualStats();
         stats.initialize();
+        stats.displayObject();
         stats.displayObject();
     }
     else
