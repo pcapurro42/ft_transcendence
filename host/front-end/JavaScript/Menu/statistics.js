@@ -22,7 +22,7 @@ class VisualStats
         this.canvas.width = this.width;
         this.canvas.height = this.height;
 
-        if (high_contrast == "false")
+        if (high_contrast == "true")
             this.global_color = "white", this.background_color = "black";
         else
             this.global_color = "black", this.background_color = "white";
@@ -35,12 +35,12 @@ class VisualStats
     {
         this.clean();
 
-        // ...
-    }
-
-    displaySizeGraph()
-    {
-        this.clean();
+        let image = new Image();
+        if (this.global_color == "white")
+            image.src = 'Materials/images/circle_white.png';
+        else
+            image.src = 'Materials/images/circle_black.png';
+        this.display.drawImage(image, 0, 0);
 
         // ...
     }
@@ -49,6 +49,13 @@ class VisualStats
     {
         this.clean();
 
+        let image = new Image();
+        if (this.global_color == "white")
+            image.src = 'Materials/images/histograph_white.png';
+        else
+            image.src = 'Materials/images/histograph_black.png';
+        this.display.drawImage(image, 0, 0);
+
         // ...
     }
 
@@ -56,12 +63,20 @@ class VisualStats
     {
         this.clean();
 
+        let image = new Image();
+        if (this.global_color == "white")
+            image.src = 'Materials/images/histograph_white.png';
+        else
+            image.src = 'Materials/images/histograph_black.png';
+        this.display.drawImage(image, 0, 0);
+
         // ...
     }
 
     clean()
     {
-        ;
+        this.display.fillStyle = this.background_color;
+        this.display.fillRect(0, 0, this.width, this.height);
     }
 }
 
@@ -185,6 +200,9 @@ function displayOnlineStats()
 
         stats = new VisualStats();
         stats.initialize();
+        // stats.displayBarChartOne();
+        // stats.displayBarChartTwo();
+        // stats.displayCamembert();
     }
     else
     {
