@@ -192,16 +192,16 @@ class Ball
     {
         if (this.x < this.game.game_width / 2)
         {
-            if (keys.KeyE == true)
+            if (gameKeys.KeyE == true)
                 this.direction = this.direction + 5;
-            else if (keys.KeyD == true)
+            else if (gameKeys.KeyD == true)
                 this.direction = this.direction - 5;
         }
         else
         {
-            if (keys.ArrowUp == true || (players_nb == 3 && keys.KeyU == true))
+            if (gameKeys.ArrowUp == true || (players_nb == 3 && gameKeys.KeyU == true))
                 this.direction = this.direction + 5;
-            else if (keys.ArrowDown == true || (players_nb == 3 && keys.KeyJ == true))
+            else if (gameKeys.ArrowDown == true || (players_nb == 3 && gameKeys.KeyJ == true))
                 this.direction = this.direction - 5;
         }
     }
@@ -215,12 +215,12 @@ class Ball
         {
              if (this.x < this.game_width / 2)
             {
-                if (keys.ArrowUp == true || keys.ArrowDown == true)
+                if (gameKeys.ArrowUp == true || gameKeys.ArrowDown == true)
                     this.bonus_speed++;
             }
             else
             {
-                if (keys.KeyE == true || keys.KeyD == true)
+                if (gameKeys.KeyE == true || gameKeys.KeyD == true)
                     this.bonus_speed++;
             }
         }
@@ -229,12 +229,12 @@ class Ball
         {
             if (this.x < this.game_width / 2)
             {
-                if (keys.ArrowUp == true || keys.ArrowDown == true)
+                if (gameKeys.ArrowUp == true || gameKeys.ArrowDown == true)
                     this.bonus_speed++;
             }
             else
             {
-                if (keys.KeyE == true || keys.KeyD == true)
+                if (gameKeys.KeyE == true || gameKeys.KeyD == true)
                     this.bonus_speed++;
             }
         }
@@ -243,12 +243,12 @@ class Ball
         {
             if (this.x < this.game_width / 2)
             {
-                if (keys.ArrowUp == true || keys.ArrowDown == true)
+                if (gameKeys.ArrowUp == true || gameKeys.ArrowDown == true)
                     this.bonus_speed++;
             }
             else
             {
-                if (keys.KeyE == true || keys.KeyD == true || keys.KeyJ == true)
+                if (gameKeys.KeyE == true || gameKeys.KeyD == true || gameKeys.KeyJ == true)
                     this.bonus_speed++;
             }
         }

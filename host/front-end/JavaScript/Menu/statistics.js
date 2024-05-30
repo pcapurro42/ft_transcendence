@@ -12,6 +12,9 @@ class VisualStats
 
         this.background_color = null;
         this.global_color = null;
+
+        this.circle = null;
+        this.histograph = null;
     }
 
     initialize()
@@ -27,20 +30,24 @@ class VisualStats
         else
             this.global_color = "black", this.background_color = "white";
 
-        this.display.fillStyle = this.background_color;
-        this.display.fillRect(0, 0, this.width, this.height);
+        this.circle = new Image();
+        if (this.global_color == "white")
+            this.circle.src = 'Materials/images/circle_white.png';
+        else
+            this.circle.src = 'Materials/images/circle_black.png';
+
+        this.histograph = new Image();
+        if (this.global_color == "white")
+            this.histograph.src = 'Materials/images/histograph_white.png';
+        else
+            this.histograph.src = 'Materials/images/histograph_black.png';
     }
 
     displayCamembert()
     {
         this.clean();
 
-        let image = new Image();
-        if (this.global_color == "white")
-            image.src = 'Materials/images/circle_white.png';
-        else
-            image.src = 'Materials/images/circle_black.png';
-        this.display.drawImage(image, 0, 0);
+        this.display.drawImage(this.circle, 0, 0);
 
         // ...
     }
@@ -49,12 +56,7 @@ class VisualStats
     {
         this.clean();
 
-        let image = new Image();
-        if (this.global_color == "white")
-            image.src = 'Materials/images/histograph_white.png';
-        else
-            image.src = 'Materials/images/histograph_black.png';
-        this.display.drawImage(image, 0, 0);
+        this.display.drawImage(this.histograph, 0, 0);
 
         // ...
     }
@@ -63,14 +65,19 @@ class VisualStats
     {
         this.clean();
 
-        let image = new Image();
-        if (this.global_color == "white")
-            image.src = 'Materials/images/histograph_white.png';
-        else
-            image.src = 'Materials/images/histograph_black.png';
-        this.display.drawImage(image, 0, 0);
+        this.display.drawImage(this.histograph, 0, 0);
 
         // ...
+    }
+
+    displayObject()
+    {
+        if (stats_tab == 0)
+            this.displayCamembert();
+        if (stats_tab == 1)
+            this.displayBarChartOne();
+        if (stats_tab == 2)
+            this.displayBarChartTwo();
     }
 
     clean()
@@ -79,6 +86,20 @@ class VisualStats
         this.display.fillRect(0, 0, this.width, this.height);
     }
 }
+
+// < controls > //
+
+window.addEventListener('keydown', (event) =>
+{
+    if (visual == true)
+    {
+        if (event.key == 'ArrowLeft' && stats_tab > 0)
+            stats_tab--, stats.displayObject();
+        if (event.key == 'ArrowRight' && stats_tab < 2)
+            stats_tab++, stats.displayObject();
+    }
+});
+
 
 // < display > //
 
@@ -200,9 +221,7 @@ function displayOnlineStats()
 
         stats = new VisualStats();
         stats.initialize();
-        // stats.displayBarChartOne();
-        // stats.displayBarChartTwo();
-        // stats.displayCamembert();
+        stats.displayObject();
     }
     else
     {

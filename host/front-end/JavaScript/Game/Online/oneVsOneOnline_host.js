@@ -253,11 +253,11 @@ class OnlineGame1v1_host
 
     refreshPlayers()
     {
-        if (keys.KeyE == true){
+        if (gameKeys.KeyE == true){
             data_channel.send(`lpy:${this.left_player.y}`)
             this.left_player.moveUp();
         }
-        if (keys.KeyD == true){
+        if (gameKeys.KeyD == true){
             data_channel.send(`lpy:${this.left_player.y}`)
             this.left_player.moveDown();
         }
