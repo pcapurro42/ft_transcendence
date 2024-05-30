@@ -17,7 +17,13 @@ class VisualStats
         this.text_format = "25px Arial";
 
         this.circle = null;
-        this.histograph = null;
+        this.histogram = null;
+
+        this.histogram_center_x = 0;
+        this.histogram_left_x = 0;
+        this.histogram_right_x = 0;
+
+        this.histogram_data_width = 100;
     }
 
     initialize()
@@ -39,13 +45,15 @@ class VisualStats
         else
             this.circle.src = 'Materials/images/circle_black.png';
 
-        this.histograph = new Image();
+        this.histogram = new Image();
         if (this.global_color == "white")
-            this.histograph.src = 'Materials/images/histograph_white.png';
+            this.histogram.src = 'Materials/images/histograph_white.png';
         else
-            this.histograph.src = 'Materials/images/histograph_black.png';
+            this.histogram.src = 'Materials/images/histograph_black.png';
         
         this.display.font = this.text_format;
+
+        this.histogram_center_x = (this.width / 2) - this.histogram_data_width / 2;
     }
 
     displayCamembert()
@@ -66,12 +74,15 @@ class VisualStats
     {
         this.clean();
 
-        this.display.drawImage(this.histograph, 0, 0);
+        this.display.drawImage(this.histogram, 0, 0);
 
         this.display.fillStyle = this.text_color;
         let text = getTranslation("Ball return(s)");
         let text_size = this.display.measureText("– " + text + " –").width;
         this.display.fillText("– " + text + " –", this.width / 2 - (text_size / 2), 35);
+
+        this.display.fillStyle = "green";
+        this.display.fillRect(this.histogram_center_x, 101, this.histogram_data_width, 350);
 
         // ...
     }
@@ -80,7 +91,7 @@ class VisualStats
     {
         this.clean();
 
-        this.display.drawImage(this.histograph, 0, 0);
+        this.display.drawImage(this.histogram, 0, 0);
 
         this.display.fillStyle = this.text_color;
         let text = getTranslation("Bonus taken");
