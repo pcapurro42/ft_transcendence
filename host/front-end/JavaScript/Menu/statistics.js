@@ -24,6 +24,7 @@ class VisualStats
         this.histogram_right_x = 0;
 
         this.histogram_data_width = 100;
+        this.histogram_data_max_height = 350;
     }
 
     initialize()
@@ -60,7 +61,7 @@ class VisualStats
     {
         this.clean();
 
-        this.display.drawImage(this.circle, 0, 25);
+        this.circle.onload = this.display.drawImage(this.circle, 0, 25);
 
         this.display.fillStyle = this.text_color;
         let text = getTranslation("Game(s) played");
@@ -74,7 +75,7 @@ class VisualStats
     {
         this.clean();
 
-        this.display.drawImage(this.histogram, 0, 0);
+        this.histogram.onload = this.display.drawImage(this.histogram, 0, 0);
 
         this.display.fillStyle = this.text_color;
         let text = getTranslation("Ball return(s)");
@@ -82,23 +83,22 @@ class VisualStats
         this.display.fillText("– " + text + " –", this.width / 2 - (text_size / 2), 35);
 
         this.display.fillStyle = "green";
-        this.display.fillRect(this.histogram_center_x, 101, this.histogram_data_width, 350);
-
-        // ...
+        this.display.fillRect(this.histogram_center_x, 101, this.histogram_data_width, this.histogram_data_max_height);
     }
 
     displayBarChartTwo()
     {
         this.clean();
 
-        this.display.drawImage(this.histogram, 0, 0);
+        this.histogram.onload = this.display.drawImage(this.histogram, 0, 0);
 
         this.display.fillStyle = this.text_color;
         let text = getTranslation("Bonus taken");
         let text_size = this.display.measureText("– " + text + " –").width;
         this.display.fillText("– " + text + " –", this.width / 2 - (text_size / 2), 35);
 
-        // ...
+        this.display.fillStyle = "yellow";
+        this.display.fillRect(this.histogram_center_x, 101, this.histogram_data_width, this.histogram_data_max_height);
     }
 
     displayObject()
@@ -252,7 +252,6 @@ function displayOnlineStats()
 
         stats = new VisualStats();
         stats.initialize();
-        stats.displayObject();
         stats.displayObject();
     }
     else
