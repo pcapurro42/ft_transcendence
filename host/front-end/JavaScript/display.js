@@ -195,12 +195,12 @@ function setTextSize(size)
 
 function setHighContrast(value)
 {
-    btn = document.querySelectorAll('.btn, .btn_image, #title_logo, #top_logo');
+    btn = document.querySelectorAll('.btn, .btn_image, .slider, .selector, #title_logo, #top_logo');
     if (high_contrast == "true")
     {
         btn.forEach(element => {
             element.classList.add('focus-white');
-            element.classList.remove('focus-yellow');
+            element.classList.remove('focus-black');
         });
 
         document.getElementById('high_contrast_btn_yn').setAttribute('data-oname', 'Enabled');

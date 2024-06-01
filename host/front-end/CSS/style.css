@@ -28,6 +28,11 @@
     transform: scale(1.2);
 }
 
+.btn:focus-visible:not(.border, .btn-outline-success, .btn-outline-secondary, .btn-outline-danger){
+    transition: 1s;
+    transform: scale(1.05);
+}
+
 #switch_visual_input
 {
     transform: scale(1.5);

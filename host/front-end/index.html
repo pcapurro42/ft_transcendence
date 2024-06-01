@@ -344,7 +344,7 @@
         <div id="tournament_setup" class="row justify-content-center">
 
             <div class="col-3 text text-center p-2 container my-4">
-                    <select id = "tournament_players_selector" class="form-select form-select-lg mx-auto">
+                    <select id = "tournament_players_selector" class="form-select form-select-lg mx-auto selector">
                         <option selected value='1' class="btn-simple" data-oname="Select Tournament Type" data-tsnormal="12px" data-tslarge="20px"></option>
                         <option  value='16' class="btn-simple" data-tsnormal="15px" data-tslarge="20px" data-oname="Sixteen"></option>
                         <option value='8' class="btn-simple" data-tsnormal="15px" data-tslarge="20px" data-oname="Eight"></option>
@@ -564,7 +564,7 @@
 
                         <div>
                             <p id="game_theme" class="text mb-0 user-select-none" data-tsnormal="35px" data-tslarge="45px" data-oname="Game theme" data-title="Game theme" title=""></p><br>
-                            <select id="game_theme_btn_selector" class="form-select form-select-lg mx-auto">
+                            <select id="game_theme_btn_selector" class="form-select form-select-lg mx-auto selector">
                                 <option class="btn-simple" value="1" data-title="MGS 1 - Duel" title="">MGS 1 - Duel</option>
                                 <option class="btn-simple" value ="2" title="MGS - Sneaking Theme">MGS - Sneaking Theme</option>
                                 <option class="btn-simple" value="3" title="MGS3 - Alert Theme">MGS3 - Alert Theme</option>
@@ -575,7 +575,7 @@
                         <br>
                             <p id="game_map" class="user-select-none text" data-tsnormal="35px" data-tslarge="45px" data-oname="Game map" data-title="Game map" title=""></button><br>
                         <div class="position-relative d-flex align-items-start justify-content-center">
-                            <select id="game_map_btn_selector" class="d-flex form-select form-select-lg mx-auto">
+                            <select id="game_map_btn_selector" class="d-flex form-select form-select-lg mx-auto selector">
                                 <option class="btn-simple" value="none" data-oname="– None –" data-title="None" title=""></option>
                                 <option class="btn-simple" value="purple" title="purple" data-oname="Purple"></option>
                                 <option class="btn-simple" value="orange" title="orange" data-oname="Orange"></option>
@@ -607,7 +607,7 @@
 
                             <div>
                                 <p id="language" class="user-select-none text mb-0" data-tsnormal="35px" data-tslarge="45px" data-oname="Language" data-title="Language" title=""></p><br>
-                                <select id="language_btn_selector" class="form-select form-select-lg mx-auto">
+                                <select id="language_btn_selector" class="form-select form-select-lg mx-auto selector">
                                     <option class="btn-simple" value="en">English</option>
                                     <option class="btn-simple" value="fr">Français</option>
                                     <!-- ... -->
@@ -619,7 +619,7 @@
                             <div>
                                 <p id="sound_volume" class="user-select-none text mb-0" data-tsnormal="35px" data-tslarge="45px" data-oname="Sound volume" data-title="Sound volume" title=""></p><br>
                                 <label id="sound_volume_slider_label" for="sound_volume_slider" class="form-label text" data-tsnormal="20px" data-tslarge="30px"></label><br>
-                                <input id="sound_volume_slider" type="range" class="form-range btn-simple" value="">
+                                <input id="sound_volume_slider" type="range" class="form-range btn-simple slider" value="">
                             </div>
 
                             <br>
@@ -627,7 +627,7 @@
                             <div>
                                 <p id="music_volume" class="user-select-none text mb-0" data-tsnormal="35px" data-tslarge="45px" data-oname="Music volume" data-title="Music volume" title=""></p><br>
                                 <label id="music_volume_slider_label" for="music_volume_slider" class="form-label text" data-tsnormal="20px" data-tslarge="30px"></label><br>
-                                <input id="music_volume_slider" type="range" class="form-range btn-simple" value="">
+                                <input id="music_volume_slider" type="range" class="form-range btn-simple slider" value="">
                             </div>
 
                             <br>
@@ -638,7 +638,7 @@
 
                             <div>
                                 <p id="text_size" class="user-select-none text mb-0" data-tsnormal="35px" data-tslarge="45px" data-oname="Text size" data-title="Text size" title=""></p><br>
-                                <select id="text_size_btn_selector" class="form-select form-select-lg mx-auto">
+                                <select id="text_size_btn_selector" class="form-select form-select-lg mx-auto selector">
                                     <option class="text btn-simple" value="normal" data-oname="Normal" data-title="Normal" title=""></option>
                                     <option class="text btn-simple" value="large" data-oname="Large" data-title="Large" title=""></option>
                                 </select>
@@ -662,7 +662,7 @@
                             <br>
 
                         </div>
-                        
+
                         <div class="d-flex justify-content-center">
                             <button id="settings_back_btn" class="btn text btn-complex" data-tsnormal="35px" data-tslarge="45px" data-oname="Back" data-title="Back" title=""></button>
                         </div>
