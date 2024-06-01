@@ -9,11 +9,13 @@ function enableDisableSounds()
 	else
 		other_toggler = document.getElementById('sound_toggle');
 
-	let allMuted = Array.from(sounds).every(audio => audio.muted);
+	let allMuted = Array.from(sounds).every(sounds => sounds.muted);
+	console.log(allMuted);
 	if (allMuted)
 	{
 		for (let i = 0; i < sounds.length; i++)
 	    	sounds[i].muted = false;
+		localStorage.setItem('sound', 'on');
 		toggler.src = './Materials/images/sound-on.png';
 		other_toggler.src = './Materials/images/sound-on.png'
 	}
@@ -21,6 +23,7 @@ function enableDisableSounds()
 	{
 		for (let i = 0; i < sounds.length; i++)
 	    	sounds[i].muted = true;
+		localStorage.setItem('sound', 'off');
 		toggler.src = './Materials/images/sound-off.png';
 		other_toggler.src = './Materials/images/sound-off.png';
 	}
@@ -65,6 +68,21 @@ function closeSound(event)
 function refreshSounds()
 {
 	let sounds = document.querySelectorAll('.sounds');
+	let sound_togglers = document.querySelectorAll('.sound_togglers')
+
+	if (localStorage.getItem('sound') == 'off'){
+		console.log('toto');
+		for (let i = 0; i < sounds.length; i++)
+			sounds[i].muted = true;
+		let allMuted = Array.from(sounds).every(sounds => sounds.muted);
+		console.log(allMuted);
+		sound_togglers[0].src = './Materials/images/sound-off.png';
+		sound_togglers[1].src = './Materials/images/sound-off.png';
+	}
+	else{
+		sound_togglers[0].src = './Materials/images/sound-on.png';
+		sound_togglers[1].src = './Materials/images/sound-on.png';
+	}
 
 	for (let i = 0; i < sounds.length; i++)
 		sounds[i].volume = sounds_volume / 100;

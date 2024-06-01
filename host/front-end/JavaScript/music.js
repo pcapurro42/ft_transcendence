@@ -22,6 +22,7 @@ function enableDisableMusic()
 	    	game_music[i].muted = false;
 		if (allPaused)
 			music.play();
+		localStorage.setItem('music', 'on');
 		toggler.src = './Materials/images/music-on.png';
 		other_toggler.src = './Materials/images/music-on.png'
 	}
@@ -30,6 +31,7 @@ function enableDisableMusic()
 		for (let i = 0; i < game_music.length; i++)
 	    	game_music[i].muted = true;
 		music.muted = true;
+		localStorage.setItem('music', 'off');
 		toggler.src = './Materials/images/music-off.png';
 		other_toggler.src = './Materials/images/music-off.png'
 	}
@@ -55,6 +57,22 @@ function refreshMusics()
 	let menu_theme = document.getElementById('mgs');
 	let game_theme = gameMusicSelector();
 	let credits_theme = document.getElementById('vid_credits');
+	let music_togglers = document.querySelectorAll('.music-togglers');
+
+	if (localStorage.getItem('music') == 'on'){
+		music_togglers[0].src = './Materials/images/music-on.png';
+		music_togglers[1].src = './Materials/images/music-on.png';
+		menu_theme.muted = false;
+		window.addEventListener('click', () =>{
+			menu_theme.play();
+		}, {once: true});
+	}
+	else{
+		menu_theme.muted = true;
+		music_togglers[0].src = './Materials/images/music-off.png'
+		music_togglers[1].src = './Materials/images/music-off.png'
+
+	}
 
 	menu_theme.volume = music_volume / 100;
 	game_theme.volume = music_volume / 100;
