@@ -57,7 +57,7 @@ function refreshMusics()
 	let menu_theme = document.getElementById('mgs');
 	let game_theme = gameMusicSelector();
 	let credits_theme = document.getElementById('vid_credits');
-	let music_togglers = document.querySelectorAll('.music-togglers');
+	let music_togglers = document.querySelectorAll('.music_togglers');
 
 	if (localStorage.getItem('music') == 'on'){
 		music_togglers[0].src = './Materials/images/music-on.png';

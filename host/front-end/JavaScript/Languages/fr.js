@@ -3,9 +3,10 @@ let fr = [
     ["LOG OUT", "SE DÉCONNECTER"],
 
 
-    ["Enable/Disable menu music", "Activer/désactiver la musique du menu"],
+    ["Enable/Disable menu music", "Activer/désactiver la musique"],
+    ["Enable/Disable menu sounds", "Activer/désactiver les sons"],
 
-    ["Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'", "Logo titre central: 'Tactical Tennis Action, Metal Gear: Pong'"],
+    ["Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'", "Bouton : Menu Principal. Logo titre central: 'Tactical Tennis Action, Metal Gear: Pong'"],
 
     ["Play", "Jouer"],
     ["Customization", "Personnalisation"],
@@ -32,6 +33,9 @@ let fr = [
 
     ["Normal Mode", "Mode Normal"],
     ["Bonus Mode", "Mode Bonus"],
+    ["Mode Switch", "Interrupteur du mode de jeu."],
+    ['Selected','Sélectionné'],
+
 
     ["1 vs 1 (online)", "1 vs 1 (en ligne)"],
     ["1 vs 1 (local)", "1 vs 1 (local)"],

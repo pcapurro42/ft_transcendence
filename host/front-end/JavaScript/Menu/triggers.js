@@ -99,6 +99,22 @@ document.getElementById('image_desc_btn_yn').onclick = changeDescriptiveImages;
 
 document.getElementById('top_logo').onclick = refreshSite;
 
+{/* < ACCESSIBILITY > // */}
+document.addEventListener('keydown', function(event){
+	if (event.key== "Enter"){
+		event.preventDefault();
+		document.activeElement.click();
+	}
+})
+
+document.getElementById('text_size_btn_selector').addEventListener('keydown', function(event) {
+    if (event.key === "Enter") {
+        this.click();  // Toggle dropdown
+    }
+});
+
+
+
 // < PEER ANSWERS/OFFERS> //
 
 document.getElementById('init_p2p').onclick = fetchAnswer;

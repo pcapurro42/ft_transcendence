@@ -108,7 +108,6 @@ function setBackgroundColor(color)
 {
     let background = document.getElementById("background");
     let modal = document.getElementById('modal_color_switch');
-    
     if (color == "white"){
         background.style.setProperty("background-color", "white");
         modal.style.setProperty("background-color", "white");
@@ -196,8 +195,14 @@ function setTextSize(size)
 
 function setHighContrast(value)
 {
+    btn = document.querySelectorAll('.btn, .btn_image, #title_logo, #top_logo');
     if (high_contrast == "true")
     {
+        btn.forEach(element => {
+            element.classList.add('focus-white');
+            element.classList.remove('focus-yellow');
+        });
+
         document.getElementById('high_contrast_btn_yn').setAttribute('data-oname', 'Enabled');
         document.getElementById('high_contrast_btn_yn').style.backgroundColor = "red";
 
@@ -208,6 +213,11 @@ function setHighContrast(value)
     }
     else
     {
+        btn.forEach(element => {
+            element.classList.add('focus-black')
+            element.classList.remove('focus-white');
+        });
+
         document.getElementById('high_contrast_btn_yn').setAttribute('data-oname', 'Disabled');
         document.getElementById('high_contrast_btn_yn').style.backgroundColor = "";
 

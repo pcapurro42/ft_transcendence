@@ -91,6 +91,8 @@ let gameKeys = {
 
 window.addEventListener('keydown', (event) =>
 {
+    if (event.key == 'ArrowUp' || event.key == 'ArrowDown')
+        event.preventDefault();
     if (players_nb != 0 && players_nb != null)
     {
         if (players_nb == 1)
@@ -104,7 +106,6 @@ window.addEventListener('keydown', (event) =>
             }
             else
             {
-                event.preventDefault();
 
                 if (event.key == 'ArrowUp')
                     gameKeys.ArrowUp = true
@@ -114,10 +115,10 @@ window.addEventListener('keydown', (event) =>
         }
         if (players_nb == 2)
         {
-            event.preventDefault();
 
-            if (event.key == 'ArrowUp')
+            if (event.key == 'ArrowUp'){
                 gameKeys.ArrowUp = true;
+            }
             else if (event.key == 'ArrowDown')
                 gameKeys.ArrowDown = true;
 
@@ -128,7 +129,6 @@ window.addEventListener('keydown', (event) =>
         }
         else if (players_nb == 3)
         {
-            event.preventDefault();
 
             if (event.key == 'e')
                 gameKeys.KeyE = true;

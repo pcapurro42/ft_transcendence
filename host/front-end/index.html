@@ -69,15 +69,14 @@
                 <div class="container">
 
                     <div>
-                        <img id="top_logo" src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto d-block btn-complex" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'">
+                        <img id="top_logo" src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto d-block btn-complex" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" tabindex="0">
                     </div>
 
-                    <br>
 
                     <div class="col d-flex align-items-center ">
-                        <img id="game_music_toggle" src="./Materials/images/music-off.png" class="img-fluid image col d-inline-block float-end mt-4 music-togglers" data-isnormal="max-width: 4%" data-islarge="max-width: 5%" data-title="Enable/Disable music">
+                        <img id="game_music_toggle" src="./Materials/images/music-off.png" class="img-fluid image col d-inline-block float-end mt-4 music_togglers btn_image" data-isnormal="max-width: 4%" data-islarge="max-width: 5%" data-title="Enable/Disable music" tabindex="0">
 
-                        <img id="game_sound_toggle" src="./Materials/images/sound-on.png" class="img-fluid image col d-inline-block float-end mt-4 sound_togglers" data-isnormal="max-width: 5%" data-islarge="max-width: 6%" data-title="Enable/Disable music">
+                        <img id="game_sound_toggle" src="./Materials/images/sound-on.png" class="img-fluid image col d-inline-block float-end mt-4 sound_togglers btn_image" data-isnormal="max-width: 5%" data-islarge="max-width: 6%" data-title="Enable/Disable music" tabindex="0">
 
                     </div>
 
@@ -93,7 +92,7 @@
                     <p class="text mx-auto" data-tsnormal="30px" data-tslarge="50px">vs</p>
                     <p id ='h_guest_name' class="text" data-tsnormal="30px" data-tslarge="50px"></p>
                 </div>
-                <canvas id="one_vs_one_host_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100"></canvas>
+                <canvas id="one_vs_one_host_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1"></canvas>
                 <br><br><br>
                 <div>
                     <h1 id="h_win_text" class="text text-center" data-tsnormal="30px" data-tslarge="50px"></h1>
@@ -108,7 +107,7 @@
                     <p class="text mx-auto" data-tsnormal="30px" data-tslarge="50px">vs</p>
                     <p id ='g_guest_name' class="text" data-tsnormal="30px" data-tslarge="50px"></p>
                 </div>
-                <canvas id="one_vs_one_guest_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100"></canvas>
+                <canvas id="one_vs_one_guest_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1"></canvas>
                 <br><br><br>
                 <div>
                     <h1 id="g_win_text" class="text text-center" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h2>
@@ -122,7 +121,7 @@
             <!-- 1 vs 1 (local) -->
 
             <div id="one_vs_one_local_page" class="container mx-auto">
-                <canvas id="one_vs_one_local_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100"></canvas>
+                <canvas id="one_vs_one_local_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1"></canvas>
                 <br><br><br>
                 <div>
                     <h1 id="left_player_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h1>
@@ -136,7 +135,7 @@
             <!-- 2 vs 1 (local) -->
 
             <div id="one_vs_two_local_page">
-                <canvas id="one_vs_two_local_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100"></canvas>
+                <canvas id="one_vs_two_local_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1"></canvas>
                 <br><br><br>
                 <div>
                     <h1 id="left_side_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left players won the game."></h2>
@@ -151,7 +150,7 @@
 
             <div id="game_page_tournament">
                 <div class="display-4 text text-center" id="nick_reminder"></div>
-                <canvas id="tournament_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100"></canvas>
+                <canvas id="tournament_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1"></canvas>
                 <br><br>
                 <div>
                     <h1 id="tournament_timer" class="text" data-tsnormal="45px" data-tslarge="55px"></h1>
@@ -167,7 +166,7 @@
             <!-- Vs AI Game page -->
 
             <div id="game_page_ai" class="container mx-auto">
-                <canvas id="vs_ai" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100"></canvas>
+                <canvas id="vs_ai" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1"></canvas>
                 <br><br><br>
                 <div class="container text text-center">
                 <h1 id="you_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h2>
@@ -187,9 +186,8 @@
 
             <div id="main_menu_toolbar" class="container my-5">
 
-                <img id="music_toggle" alt="" src="./Materials/images/music-off.png" class="img-fluid image music-togglers" data-isnormal="max-width: 4%" data-islarge="max-width: 5%" data-title="Enable/Disable menu music">
-
-                <img id="sound_toggle" alt="" src="./Materials/images/sound-on.png" class="img-fluid image sound_togglers" data-isnormal="max-width: 5%" data-islarge="max-width: 6%" data-title="Enable/Disable menu sounds">
+                <img id="music_toggle" alt="" src="./Materials/images/music-off.png" class="img-fluid image music_togglers btn_image" data-isnormal="max-width: 4%" data-islarge="max-width: 5%" data-title="Enable/Disable menu music" tabindex="1">
+                <img id="sound_toggle" alt="" src="./Materials/images/sound-on.png" class="img-fluid image sound_togglers btn_image" data-isnormal="max-width: 5%" data-islarge="max-width: 6%" data-title="Enable/Disable menu sounds" tabindex="2">
 
                 <div id="login" class="col d-inline-block float-end">
                     <button id="login_btn" class="btn text border mb-4 btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="LOG IN WITH 42" data-title="LOG IN WITH 42" title=""></button>
@@ -207,7 +205,7 @@
             <!-- Title -->
 
             <div id="title" class="d-flex flex-column py-5 px-5">
-                <img id="title_logo" src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'">
+                <img id="title_logo" alt="" src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" tabindex="3">
             </div>
 
             <!-- Main menu center -->
@@ -219,7 +217,7 @@
                 <div id="main_menu_buttons" class="container">
 
                     <div class="p-2 text-center">
-                        <button id="play_btn" class="btn text btn-simple" data-tsnormal="35px" data-tslarge="45px" data-oname="Play" data-title="Play" title=""></button><br>
+                        <button id="play_btn" class="btn text btn-simple" data-tsnormal="35px" data-tslarge="45px" data-oname="Play" data-title="Aria-Play" title=""></button><br>
 
                         <button id="customize_btn" class="btn text btn-simple" data-tsnormal="35px" data-tslarge="45px" data-oname="Customization" data-title="Customization" title=""></button><br>
 
@@ -263,7 +261,7 @@
                         <button id="two_vs_two_local_btn" class="btn text btn-simple" data-tsnormal="35px" data-tslarge="45px" data-oname="1 vs 2 (local)" data-title="1 vs 2 (local)" title=""></button><br>
 
                         <div class="mx-auto form-switch custom-switch-lg text-center my-3 scale-75">
-                            <input id="switch_classic" class="form-check-input btn-simple me-1" type="checkbox">
+                            <input id="switch_classic" type="checkbox" class="form-check-input btn-simple me-1 mode_switch">
                             <label id ="c_switch_text" class="ms-2 text"></label>
                         </div>
 
@@ -354,7 +352,7 @@
                         <option value='4' class="btn-simple" data-tsnormal="15px" data-tslarge="20px" data-oname="Four"></option>
                     </select>
                 <div class="mx-auto form-switch custom-switch-lg text-center mt-3">
-                    <input id="switch_tournament" class="form-check-input btn-simple me-1" type="checkbox">
+                    <input id="switch_tournament" class="form-check-input btn-simple me-1 mode_switch" type="checkbox">
                     <label id ="t_switch_text" class="text ms-2"></label>
                 </div>
                 <button id ="submit_player_nbr" class="btn text btn-lg btn-simple border btn-outline-success mt-4" data-tsnormal="15px" data-tslarge="20px" data-oname="Submit" disabled></button>
@@ -664,7 +662,7 @@
                             <br>
 
                         </div>
-
+                        
                         <div class="d-flex justify-content-center">
                             <button id="settings_back_btn" class="btn text btn-complex" data-tsnormal="35px" data-tslarge="45px" data-oname="Back" data-title="Back" title=""></button>
                         </div>
@@ -708,6 +706,7 @@
         <script src="./JavaScript/Languages/language.js"></script>
 
         <script src="./JavaScript/display.js"></script>
+        <script src="./JavaScript/accessibiliy.js"></script>
         <script src="./JavaScript/utils.js"></script>
 
         <script src="./JavaScript/Menu/auth.js"></script>

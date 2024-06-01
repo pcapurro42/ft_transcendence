@@ -54,7 +54,6 @@ class LocalGame1v2
         this.canvas = document.getElementById('one_vs_two_local_game');
         this.display = this.canvas.getContext('2d');
 
-        this.canvas.tabIndex = 1;
 
         this.canvas.width = this.game_width;
         this.canvas.height = this.game_height;
@@ -157,58 +156,58 @@ class LocalGame1v2
 
         x = this.game_width / 2 - (this.ball_width / 2);
         y = this.game_height / 2 - (this.ball_width / 2);
-        
+
         let ball_data = {
             game: this,
-        
+
             object_width: this.ball_width,
             object_heigth: this.ball_height,
-        
+
             x_pos : x,
             y_pos : y,
-        
+
             speed: this.ball_speed,
             color: this.ball_color,
-        
+
             direction : this.ball_direction,
             bonus_speed: 0
         }
-        
+
         this.ball = new Ball(...Object.values(ball_data));
-        
+
         // bonus creation
-        
+
         if (gameMode != "normal")
         {
             let bonus_one_data = {
                 game: this,
-        
+
                 object_width: this.ball_width,
                 object_heigth: this.ball_height,
-        
+
                 x_pos : (this.game_width / 4),
                 y_pos : (this.game_height / 2),
-        
+
                 speed: 2,
                 color: this.bonus_color,
-        
+
                 direction : this.ball_direction,
             }
-        
+
             let bonus_two_data = {
                 game: this,
-        
+
                 object_width: this.ball_width,
                 object_heigth: this.ball_height,
-        
+
                 x_pos : (this.game_width / 2 + (this.game_width / 4)),
                 y_pos : (this.game_height / 2),
                 speed: 2,
                 color: this.bonus_color,
-        
+
                 direction : this.ball_direction + 90,
             }
-        
+
             this.bonus_one = new PowerUp(...Object.values(bonus_one_data));
             this.bonus_two = new PowerUp(...Object.values(bonus_two_data));
         }
@@ -297,7 +296,7 @@ class LocalGame1v2
         this.ball.animate();
         this.ball.print();
     }
-    
+
     refreshBonus()
     {
         if (this.bonus_one.alive == true && (this.scores[0] >= 2 || this.scores[1] >= 2))
@@ -306,7 +305,7 @@ class LocalGame1v2
             this.bonus_one.animate();
             this.bonus_one.print();
         }
-    
+
         if (this.bonus_two.alive == true && (this.scores[0] >= 4 || this.scores[1] >= 4))
         {
             this.bonus_two.print();
@@ -314,18 +313,18 @@ class LocalGame1v2
             this.bonus_two.print();
         }
     }
-    
+
     resetGame()
     {
         this.scores[0] = 0;
         this.scores[1] = 0;
-    
+
         this.left_player.reset();
         this.right_player_1.reset();
         this.right_player_2.reset();
 
         this.alert = 0;
-    
+
         if (gameMode != "normal")
             this.bonus_one.reset(), this.bonus_two.reset();
     }
@@ -340,7 +339,7 @@ class LocalGame1v2
         this.ball.replace();
         this.refreshDisplay();
     }
-    
+
     isOver()
     {
         if (active == false)
@@ -357,10 +356,10 @@ class LocalGame1v2
                 let right_side_won = document.getElementById('right_side_won_text');
                 right_side_won.style.display = "block";
             }
-                
+
             this.resetGame();
             active = false;
-        
+
             return (true);
         }
         return (false);
@@ -417,7 +416,7 @@ function startLocal1v2()
     {
         game.refreshBackground();
         game.resetGame();
-        
+
         removeLocal1v2();
     }
     else

@@ -3,6 +3,17 @@
     display: none;
 }
 
+.focus-white:focus-visible{
+    outline: 3px solid white !important;
+    outline-offset: 2px !important;
+}
+
+.focus-black:focus-visible{
+    outline: 3px solid black !important;
+    outline-offset: 2px !important;
+}
+
+
 #vid_credits
 {
     display: none;
