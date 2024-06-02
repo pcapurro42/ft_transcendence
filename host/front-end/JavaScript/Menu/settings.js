@@ -153,3 +153,27 @@ function initializeGameMode(){
         c_switch.nextElementSibling.innerHTML = getTranslation('Normal Mode');
     }
 }
+
+function ARIASoundsSlider(){
+	sound_slide = document.getElementById('sound_volume_slider');
+	music_slide = document.getElementById('music_volume_slider');
+
+	sound_slide.setAttribute('aria-label', getTranslation("Sound volume") + sound_slide.value + "%");
+	music_slide.setAttribute('aria-label', getTranslation("Music volume") + music_slide.value + "%");
+}
+
+function ARIAButtonState(){
+    btns = document.querySelectorAll('.btn_state');
+
+    btns.forEach(element => {
+        element.nextElementSibling.setAttribute('aria-label', (getTranslation(element.getAttribute('data-oname')) + ' ' + getTranslation(element.nextElementSibling.getAttribute('data-oname'))));
+    });
+
+    selectors = document.querySelectorAll('.selector');
+
+    selectors.forEach(element => {
+        element.setAttribute('aria-label',
+        getTranslation(element.previousElementSibling.getAttribute('data-oname')));
+    });
+
+}

@@ -6,6 +6,9 @@ let fr = [
     ["Enable/Disable menu music", "Activer/désactiver la musique"],
     ["Enable/Disable menu sounds", "Activer/désactiver les sons"],
 
+    ["Enabled", "Activé"],
+    ["Disabled", "Désactivé"],
+
     ["Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'", "Bouton : Menu Principal. Logo titre central: 'Tactical Tennis Action, Metal Gear: Pong'"],
 
     ["Play", "Jouer"],
@@ -17,6 +20,7 @@ let fr = [
     ["Local", "Local"],
     ["Online", "En ligne"],
     ["History", "Historique"],
+
 
     ["Visual", "Visuel"],
 
@@ -40,6 +44,7 @@ let fr = [
     ["1 vs 1 (online)", "1 vs 1 (en ligne)"],
     ["1 vs 1 (local)", "1 vs 1 (local)"],
     ["1 vs 2 (local)", "1 vs 2 (local)"],
+    ["1 vs ai (local)", "1 vs ai (local)"],
 
     ["Go!", "Partez !"],
 
@@ -103,6 +108,7 @@ let fr = [
     ["Join a tournament", "Rejoindre un tournoi"],
     ["Tournament nickname", "Surnom"],
     ["Select Tournament Type", "- Type de tournoi -"],
+    ["Tournament Type", "Type de tournoi"],
     ["Sixteen", "Huitième de finale (16 joueurs)."],
     ["Eight", "Quart de finale (8 joueurs)."],
     ["Four", "Demi-finale (4 joueurs)."],
@@ -153,6 +159,15 @@ let fr = [
     ["Wrong Code Format", "Erreur: récéption de données non-approuvées. Processus de connexion désactivé."],
     ["Wrong Code Guest", "Erreur: le code d'invitation n'est pas au bon format."],
 
+    //******* ARIA ******/
+
+    ["ARIA stats", "Emplacement des graphiques de statistiques."],
+    ["ARIA 1 vs 1 (online)", "Emplacement du jeu : 1 vs 1 (en ligne)"],
+    ["ARIA 1 vs 1 (local)", "Emplacement du jeu: 1 vs 1 (local)"],
+    ["ARIA 1 vs 2 (local)", "Emplacement du jeu: 1 vs 2 (local)"],
+    ["ARIA 1 vs ai (local)", "Emplacement du jeu: 1 vs ai (local)"],
+    ["ARIA Tournament Match", "Emplacement du jeu : 1 vs 1... Match de tournoi (local)"],
+    ["ARIA Main Menu", "Bouton : retour au menu principal."],
 
     //******* Status Bar ******/
 

@@ -1,16 +1,8 @@
 function tournamentTypeHandler(){
 	let submit_btn = document.getElementById('submit_player_nbr');
 
-	if (this.value == 1)
-		submit_btn.setAttribute('disabled', true);
-	else
-		submit_btn.removeAttribute('disabled');
-
 	tournamentFullReset();
-
-	document.getElementById('submit_player_nbr').onclick = () =>{
-		displayTournamentForm(this.value);
-	};
+	displayTournamentForm(tournament_players_selector.value);
 }
 
 async function nextGameHandler(){
@@ -54,7 +46,7 @@ async function end_tournament(){
 	let win_msg = document.getElementById('round_block');
 	document.getElementById('restart_tournament').setAttribute('disabled', true);
 	document.getElementById('end_tournament').setAttribute('disabled', true);
-	
+
 	win_msg.style.opacity = '0';
 	end_btn.style.opacity = '0'
 

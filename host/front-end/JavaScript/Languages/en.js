@@ -7,6 +7,9 @@ let en = [
     ["Enable/Disable menu music", "Enable/Disable musics"],
     ["Enable/Disable menu sounds", "Enable/Disable sounds"],
 
+    ["Enabled", "Enabled"],
+    ["Disabled", "Disabled"],
+
     ["Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'", "Button: main menu. Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'"],
 
     ["Play", "Play"],
@@ -40,7 +43,7 @@ let en = [
     ["1 vs 1 (online)", "1 vs 1 (online)"],
     ["1 vs 1 (local)", "1 vs 1 (local)"],
     ["1 vs 2 (local)", "1 vs 2 (local)"],
-
+    ["Tournament Match", "1 vs 1... Tournament Match (local)"],
     ["Go!", "Go!"],
 
     ["speed", "speed"],
@@ -98,10 +101,13 @@ let en = [
     ["Normal", "Normal"],
     ["Large", "Large"],
 
+    //******* Tournament ******/
+
     ["Create a tournament", "Create a tournament"],
     ["Join a tournament", "Join a tournament"],
     ["Tournament nickname", "Nickname"],
     ["Select Tournament Type", "- Tournament type -"],
+    ["Tournament Type", "Tournament type"],
     ["Sixteen", "Round of 16 (16 players)."],
     ["Eight", "Final eight (8 players)."],
     ["Four", "Final four (4 players)."],
@@ -121,6 +127,8 @@ let en = [
     ["Next Game", "Next Game"],
     ["Tournament Win Msg","We got a winner...<br><br>Congratulations "],
     ["Restart Tournament", "Restart Tournament"],
+
+    //******* Online ******/
 
     ['Peer offer send msg', "Send this code to a friend <br> to start a game."],
 
@@ -146,6 +154,19 @@ let en = [
     ['Disconnection Msg', "Sorry! It seems like there's a connection problem. Check both peers networks and try again."],
     ['Waiting Lobby Creation', "Waiting lobby creation from "],
     ['Please Create Lobby', 'Please click the create lobby button to start a game with '],
+
+
+    //******* ARIA ******/
+
+    ["ARIA stats", "Game statistics frame."],
+    ["ARIA 1 vs 1 (online)", "Game Frame : 1 vs 1 (online)"],
+    ["ARIA 1 vs 1 (local)", "Game Frame: 1 vs 1 (local)"],
+    ["ARIA 1 vs 2 (local)", "Game Frame: 1 vs 2 (local)"],
+    ["ARIA 1 vs ai (local)", "Game Frame: 1 vs ai (local)"],
+    ["ARIA Tournament Match", "Game Frame : 1 vs 1... Tournament Match (local)"],
+
+
+    //******* Status Bar ******/
 
     ["42 Auth Success", "Succesfully logged in! Welcome "],
     ["42 Auth Failure", "Connection failed."],

@@ -279,4 +279,6 @@ function refreshDisplay()
         // document.getElementById('history_btn').classList.add('disabled');
         // document.getElementById('online_stats_btn').classList.add('disabled');
     }
+    ARIAButtonState();
+    ARIASoundsSlider();
 }

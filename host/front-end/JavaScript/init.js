@@ -108,6 +108,8 @@ refreshDisplay();
 
 refreshSounds();
 refreshMusics();
+ARIAButtonState();
+
 
 //<Backend> //
 

@@ -47,7 +47,8 @@
             <source src="./Materials/video/credits.mp4" type="video/mp4">
         </video>
 
-        <button id="credit_close" class="btn btn-simple text-white flex float-end">&#x2717</button>
+        <button id="credit_close" data-title="Main Menu" class="btn btn-simple text-white flex float-end">&#x2717</button>
+        <label for="credit_close" data-title="Main Menu"></label>
 
     </head>
 
@@ -74,9 +75,9 @@
 
 
                     <div class="col d-flex align-items-center ">
-                        <img id="game_music_toggle" src="./Materials/images/music-off.png" class="img-fluid image col d-inline-block float-end mt-4 music_togglers btn_image" data-isnormal="max-width: 4%" data-islarge="max-width: 5%" data-title="Enable/Disable music" tabindex="0">
+                        <img id="game_music_toggle" alt="" src="./Materials/images/music-off.png" class="img-fluid image col d-inline-block float-end mt-4 music_togglers btn_image" data-isnormal="max-width: 4%" data-islarge="max-width: 5%" data-title="Enable/Disable menu music" tabindex="0">
 
-                        <img id="game_sound_toggle" src="./Materials/images/sound-on.png" class="img-fluid image col d-inline-block float-end mt-4 sound_togglers btn_image" data-isnormal="max-width: 5%" data-islarge="max-width: 6%" data-title="Enable/Disable music" tabindex="0">
+                        <img id="game_sound_toggle" src="./Materials/images/sound-on.png" class="img-fluid image col d-inline-block float-end mt-4 sound_togglers btn_image" data-isnormal="max-width: 5%" data-islarge="max-width: 6%" alt="" data-title="Enable/Disable menu sounds" tabindex="0">
 
                     </div>
 
@@ -92,7 +93,8 @@
                     <p class="text mx-auto" data-tsnormal="30px" data-tslarge="50px">vs</p>
                     <p id ='h_guest_name' class="text" data-tsnormal="30px" data-tslarge="50px"></p>
                 </div>
-                <canvas id="one_vs_one_host_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1"></canvas>
+                <canvas id="one_vs_one_host_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="h_1v1_label"></canvas>
+                <label id="h_1v1_label" data-title="ARIA 1 vs 1 (online)"></label>
                 <br><br><br>
                 <div>
                     <h1 id="h_win_text" class="text text-center" data-tsnormal="30px" data-tslarge="50px"></h1>
@@ -107,7 +109,8 @@
                     <p class="text mx-auto" data-tsnormal="30px" data-tslarge="50px">vs</p>
                     <p id ='g_guest_name' class="text" data-tsnormal="30px" data-tslarge="50px"></p>
                 </div>
-                <canvas id="one_vs_one_guest_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1"></canvas>
+                <canvas id="one_vs_one_guest_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="g_1v1_label"></canvas>
+                <label id="g_1v1_label" data-title="ARIA 1 vs 1 (online)"></label>
                 <br><br><br>
                 <div>
                     <h1 id="g_win_text" class="text text-center" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h2>
@@ -121,7 +124,8 @@
             <!-- 1 vs 1 (local) -->
 
             <div id="one_vs_one_local_page" class="container mx-auto">
-                <canvas id="one_vs_one_local_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1"></canvas>
+                <canvas id="one_vs_one_local_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="l_1v1_label"></canvas>
+                <label id="l_1v1_label" alt="" data-title="ARIA 1 vs 1 (local)"></label>
                 <br><br><br>
                 <div>
                     <h1 id="left_player_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h1>
@@ -135,7 +139,8 @@
             <!-- 2 vs 1 (local) -->
 
             <div id="one_vs_two_local_page">
-                <canvas id="one_vs_two_local_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1"></canvas>
+                <canvas id="one_vs_two_local_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="1v2_label"></canvas>
+                <label id="1v2_label" data-title="ARIA 1 vs 2 (local)"></label>
                 <br><br><br>
                 <div>
                     <h1 id="left_side_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left players won the game."></h2>
@@ -150,7 +155,8 @@
 
             <div id="game_page_tournament">
                 <div class="display-4 text text-center" id="nick_reminder"></div>
-                <canvas id="tournament_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1"></canvas>
+                <canvas id="tournament_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="t_label"></canvas>
+                <label id="t_label" alt="" data-title="ARIA Tournament Match"></label>
                 <br><br>
                 <div>
                     <h1 id="tournament_timer" class="text" data-tsnormal="45px" data-tslarge="55px"></h1>
@@ -166,7 +172,8 @@
             <!-- Vs AI Game page -->
 
             <div id="game_page_ai" class="container mx-auto">
-                <canvas id="vs_ai" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1"></canvas>
+                <canvas id="vs_ai" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="vs_ai_label"></canvas>
+                <label id="vs_ai_label" alt="" data-title="ARIA 1 vs ai (local)"></label>
                 <br><br><br>
                 <div class="container text text-center">
                 <h1 id="you_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h2>
@@ -205,7 +212,7 @@
             <!-- Title -->
 
             <div id="title" class="d-flex flex-column py-5 px-5">
-                <img id="title_logo" alt="" src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" tabindex="3">
+                <img id="title_logo" alt="" src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" tabindex="0">
             </div>
 
             <!-- Main menu center -->
@@ -217,7 +224,7 @@
                 <div id="main_menu_buttons" class="container">
 
                     <div class="p-2 text-center">
-                        <button id="play_btn" class="btn text btn-simple" data-tsnormal="35px" data-tslarge="45px" data-oname="Play" data-title="Aria-Play" title=""></button><br>
+                        <button id="play_btn" class="btn text btn-simple" data-tsnormal="35px" data-tslarge="45px" data-oname="Play" data-title="Play" title=""></button><br>
 
                         <button id="customize_btn" class="btn text btn-simple" data-tsnormal="35px" data-tslarge="45px" data-oname="Customization" data-title="Customization" title=""></button><br>
 
@@ -262,7 +269,7 @@
 
                         <div class="mx-auto form-switch custom-switch-lg text-center my-3 scale-75">
                             <input id="switch_classic" type="checkbox" class="form-check-input btn-simple me-1 mode_switch">
-                            <label id ="c_switch_text" class="ms-2 text"></label>
+                            <label id ="c_switch_text" for="switch_classic" class="ms-2 text"></label>
                         </div>
 
                         <button id="classic_back_btn" class="btn text btn-complex" data-tsnormal="35px" data-tslarge="45px" data-oname="Back" data-title="Back" title=""></button>
@@ -344,18 +351,18 @@
         <div id="tournament_setup" class="row justify-content-center">
 
             <div class="col-3 text text-center p-2 container my-4">
+                    <p id="t_type_text" class="text mx-auto" data-oname="Tournament Type"></p>
                     <select id = "tournament_players_selector" class="form-select form-select-lg mx-auto selector">
-                        <option selected value='1' class="btn-simple" data-oname="Select Tournament Type" data-tsnormal="12px" data-tslarge="20px"></option>
-                        <option  value='16' class="btn-simple" data-tsnormal="15px" data-tslarge="20px" data-oname="Sixteen"></option>
+                        <option selected value='16' class="btn-simple" data-tsnormal="15px" data-tslarge="20px" data-oname="Sixteen"></option>
                         <option value='8' class="btn-simple" data-tsnormal="15px" data-tslarge="20px" data-oname="Eight"></option>
 
                         <option value='4' class="btn-simple" data-tsnormal="15px" data-tslarge="20px" data-oname="Four"></option>
                     </select>
                 <div class="mx-auto form-switch custom-switch-lg text-center mt-3">
                     <input id="switch_tournament" class="form-check-input btn-simple me-1 mode_switch" type="checkbox">
-                    <label id ="t_switch_text" class="text ms-2"></label>
+                    <label id ="t_switch_text" for="switch_tournament" class="text ms-2"></label>
                 </div>
-                <button id ="submit_player_nbr" class="btn text btn-lg btn-simple border btn-outline-success mt-4" data-tsnormal="15px" data-tslarge="20px" data-oname="Submit" disabled></button>
+                <button id ="submit_player_nbr" class="btn text btn-lg btn-simple border btn-outline-success mt-4" data-tsnormal="15px" data-tslarge="20px" data-oname="Submit"></button>
             </div>
 
             <button id="back_tournament_btn" class="btn text btn-complex mt-5" data-tsnormal="35px" data-tslarge="45px" data-oname="Back" data-title="Back" title=""></button>
@@ -485,7 +492,8 @@
                     <div id="online_stats">
 
                         <div id="online_stats_v" class="container text-center">
-                            <canvas id="stats_canvas" width="900" height="520"></canvas>
+                            <canvas id="stats_canvas" width="900" height="520" aria-labelledby="stats_label"></canvas>
+                            <label id="stats_label" data-title="ARIA Stats" alt=""></label>
                         </div>
 
                         <div id="online_stats_nv" class="container text-center">
@@ -563,7 +571,7 @@
                     <div class="p-2 text-center">
 
                         <div>
-                            <p id="game_theme" class="text mb-0 user-select-none" data-tsnormal="35px" data-tslarge="45px" data-oname="Game theme" data-title="Game theme" title=""></p><br>
+                            <p id="game_theme" class="text mb-0 user-select-none" data-tsnormal="35px" data-tslarge="45px" data-oname="Game theme" data-title="Game theme" title=""></p>
                             <select id="game_theme_btn_selector" class="form-select form-select-lg mx-auto selector">
                                 <option class="btn-simple" value="1" data-title="MGS 1 - Duel" title="">MGS 1 - Duel</option>
                                 <option class="btn-simple" value ="2" title="MGS - Sneaking Theme">MGS - Sneaking Theme</option>
@@ -573,8 +581,8 @@
                         </div>
 
                         <br>
-                            <p id="game_map" class="user-select-none text" data-tsnormal="35px" data-tslarge="45px" data-oname="Game map" data-title="Game map" title=""></button><br>
                         <div class="position-relative d-flex align-items-start justify-content-center">
+                            <p id="game_map" class="user-select-none text" data-tsnormal="35px" data-tslarge="45px" data-oname="Game map" data-title="Game map" title=""></p>
                             <select id="game_map_btn_selector" class="d-flex form-select form-select-lg mx-auto selector">
                                 <option class="btn-simple" value="none" data-oname="– None –" data-title="None" title=""></option>
                                 <option class="btn-simple" value="purple" title="purple" data-oname="Purple"></option>
@@ -605,8 +613,8 @@
 
                         <div id="settings_left_panel" class="col-sm text-center">
 
-                            <div>
-                                <p id="language" class="user-select-none text mb-0" data-tsnormal="35px" data-tslarge="45px" data-oname="Language" data-title="Language" title=""></p><br>
+                            <div class="mb-3">
+                                <p id="language" class="user-select-none text mb-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Language" data-title="Language" title=""></p>
                                 <select id="language_btn_selector" class="form-select form-select-lg mx-auto selector">
                                     <option class="btn-simple" value="en">English</option>
                                     <option class="btn-simple" value="fr">Français</option>
@@ -614,52 +622,44 @@
                                 </select>
                             </div>
 
-                            <br>
 
-                            <div>
-                                <p id="sound_volume" class="user-select-none text mb-0" data-tsnormal="35px" data-tslarge="45px" data-oname="Sound volume" data-title="Sound volume" title=""></p><br>
-                                <label id="sound_volume_slider_label" for="sound_volume_slider" class="form-label text" data-tsnormal="20px" data-tslarge="30px"></label><br>
-                                <input id="sound_volume_slider" type="range" class="form-range btn-simple slider" value="">
+
+                            <div class="mb-3">
+                                <p id="sound_volume" class="user-select-none text mb-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Sound volume" data-title="Sound volume"></p>
+                                <input id="sound_volume_slider" type="range" class="form-range btn-simple slider" value="" aria-label="sound_volume_slider_label" data-title="Sound volume">
+                                <label id="sound_volume_slider_label" for="sound_volume_slider" class="form-label text ms-1 my-auto" data-tsnormal="20px" data-tslarge="30px"></label>
                             </div>
 
-                            <br>
 
-                            <div>
-                                <p id="music_volume" class="user-select-none text mb-0" data-tsnormal="35px" data-tslarge="45px" data-oname="Music volume" data-title="Music volume" title=""></p><br>
-                                <label id="music_volume_slider_label" for="music_volume_slider" class="form-label text" data-tsnormal="20px" data-tslarge="30px"></label><br>
-                                <input id="music_volume_slider" type="range" class="form-range btn-simple slider" value="">
+                            <div class="mb-3">
+                                <p id="music_volume" class="user-select-none text mb-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Music volume" data-title="Music volume" title=""></p>
+                                <input id="music_volume_slider" type="range" class="form-range btn-simple slider"
+                                data-title="Music volume" value="">
+                                <label id="music_volume_slider_label" for="music_volume_slider" class="form-label text ms-1 mb-1" data-tsnormal="20px" data-tslarge="30px"></label>
                             </div>
 
-                            <br>
 
                         </div>
 
                         <div id="settings_right_panel" class="col-sm text-center">
 
-                            <div>
-                                <p id="text_size" class="user-select-none text mb-0" data-tsnormal="35px" data-tslarge="45px" data-oname="Text size" data-title="Text size" title=""></p><br>
+                            <div class="mb-3">
+                                <p id="text_size" class="user-select-none text mb-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Text size" data-title="Text size" title=""></p>
                                 <select id="text_size_btn_selector" class="form-select form-select-lg mx-auto selector">
                                     <option class="text btn-simple" value="normal" data-oname="Normal" data-title="Normal" title=""></option>
                                     <option class="text btn-simple" value="large" data-oname="Large" data-title="Large" title=""></option>
                                 </select>
                             </div>
 
-                            <br>
-
-                            <div>
-                                <p id="image_desc" class="user-select-none text mb-0" data-tsnormal="35px" data-tslarge="45px" data-oname="Image description" data-title="Image description" title=""></p><br>
+                            <div class="mb-3">
+                                <p id="image_desc" class="user-select-none text mb-3 btn_state" data-tsnormal="35px" data-tslarge="45px" data-oname="Image description" data-title="Image description" title=""></p>
                                 <button id="image_desc_btn_yn" class="border border-2 btn btn-lg btn-simple text" data-oname="" data-title="" title=""></button>
                             </div>
 
-                            <br>
-                            <br>
-
-                            <div>
-                                <p id="high_contrast" class="user-select-none text mb-0" data-tsnormal="35px" data-tslarge="45px" data-oname="High contrast" data-title="High contrast" title=""></p><br>
+                            <div class="mb-3">
+                                <p id="high_contrast" class="user-select-none text mb-3 btn_state" data-tsnormal="35px" data-tslarge="45px" data-oname="High contrast" data-title="High contrast" title=""></p>
                                 <button id="high_contrast_btn_yn" class="border border-2 btn btn-lg btn-simple text" data-oname="" data-title="" title=""></button>
                             </div>
-
-                            <br>
 
                         </div>
 
@@ -716,10 +716,6 @@
         <script src="./JavaScript/Menu/customize.js"></script>
         <script src="./JavaScript/Menu/settings.js"></script>
         <script src="./JavaScript/Menu/credits.js"></script>
-        <script src="./JavaScript/Menu/tournament_setup.js"></script>
-        <script src="./JavaScript/Menu/tournament_start.js"></script>
-        <script src="./JavaScript/Menu/tournament_anim.js"></script>
-        <script src="./JavaScript/Menu/tournament_utils.js"></script>
         <script src="./JavaScript/Menu/form.js"></script>
 
         <script src="./JavaScript/Game/page.js"></script>
@@ -736,13 +732,18 @@
         <script src="./JavaScript/Game/Online/onevsOneOnline_guest.js"></script>
 
         <script src="./JavaScript/Game/ai.js"></script>
-        <script src="./JavaScript/Game/tournament.js"></script>
 
         <script src="./JavaScript/Online/offer.js"></script>
         <script src="./JavaScript/Online/answer.js"></script>
         <script src="./JavaScript/Online/host.js"></script>
         <script src="./JavaScript/Online/guest.js"></script>
         <script src="./JavaScript/Online/disconnection.js"></script>
+
+        <script src="./JavaScript/Tournament/tournament_setup.js"></script>
+        <script src="./JavaScript/Tournament/tournament_start.js"></script>
+        <script src="./JavaScript/Tournament/tournament_anim.js"></script>
+        <script src="./JavaScript/Tournament/tournament_utils.js"></script>
+        <script src="./JavaScript/Tournament/tournament.js"></script>
 
         <script src="./JavaScript/sounds.js"></script>
         <script src="./JavaScript/music.js"></script>

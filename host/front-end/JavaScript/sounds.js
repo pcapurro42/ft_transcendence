@@ -97,6 +97,7 @@ function updateSoundsSlider()
 {
 	let sound_volume_slider = document.getElementById('sound_volume_slider');
 	sound_volume_slider.value = sounds_volume;
+	ARIASoundsSlider();
 }
 
 function initializeSounds()

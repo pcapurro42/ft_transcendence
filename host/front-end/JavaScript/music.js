@@ -88,6 +88,7 @@ function updateMusicsSlider()
 {
 	let music_volume_slider = document.getElementById('music_volume_slider');
 	music_volume_slider.value = music_volume;
+	ARIASoundsSlider();
 }
 
 function initializeMusics()
