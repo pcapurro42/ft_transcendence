@@ -196,6 +196,8 @@ function setTextSize(size)
 function setHighContrast(value)
 {
     btn = document.querySelectorAll('.btn, .btn_image, .slider, .selector, #title_logo, #top_logo');
+    btn_image = document.querySelectorAll('.btn_image');
+
     if (high_contrast == "true")
     {
         btn.forEach(element => {
@@ -203,6 +205,10 @@ function setHighContrast(value)
             element.classList.remove('focus-black');
         });
 
+        btn_image.forEach(element => {
+            element.classList.add('focus-black');
+            element.classList.remove('focus-white');
+        });
         document.getElementById('high_contrast_btn_yn').setAttribute('data-oname', 'Enabled');
         document.getElementById('high_contrast_btn_yn').style.backgroundColor = "red";
 
