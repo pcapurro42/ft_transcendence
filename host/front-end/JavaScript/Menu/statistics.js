@@ -14,7 +14,8 @@ class VisualStats
         this.global_color = null;
 
         this.text_color = null;
-        this.text_format = "25px Arial";
+        this.title_text_format = "27px Arial";
+        this.basic_text_format = "18px Arial";
 
         this.circle = null;
         this.histogram = null;
@@ -22,6 +23,10 @@ class VisualStats
         this.histogram_center_x;
         this.histogram_left_x;
         this.histogram_right_x;
+
+        this.left_text_x;
+        this.center_text_x;
+        this.right_text_x;
 
         this.histogram_data_width;
         this.histogram_data_max_height;
@@ -52,11 +57,13 @@ class VisualStats
             this.histogram.src = 'Materials/images/histogram_white.png';
         else
             this.histogram.src = 'Materials/images/histogram_black.png';
-        
-        this.display.font = this.text_format;
 
         this.histogram_data_width = 100;
-        this.histogram_data_max_height = 350;
+        this.histogram_data_max_height = 325;
+
+        this.center_text_x = (this.width / 2);
+        this.left_text_x = this.center_text_x - 175;
+        this.right_text_x = this.center_text_x + 175;
 
         this.histogram_center_x = (this.width / 2) - this.histogram_data_width / 2;
         this.histogram_left_x = this.histogram_center_x - 175;
@@ -69,7 +76,9 @@ class VisualStats
 
         this.circle.onload = this.display.drawImage(this.circle, 0, 25);
 
+        this.display.font = this.title_text_format;
         this.display.fillStyle = this.text_color;
+
         let text = getTranslation("Game(s) played");
         let text_size = this.display.measureText("– " + text + " –").width;
         this.display.fillText("– " + text + " –", this.width / 2 - (text_size / 2), 35);
@@ -85,10 +94,26 @@ class VisualStats
 
         // texts
 
+        this.display.font = this.title_text_format;
         this.display.fillStyle = this.text_color;
+
         let title = getTranslation("Ball return(s)");
         let title_size = this.display.measureText("– " + title + " –").width;
         this.display.fillText("– " + title + " –", this.width / 2 - (title_size / 2), 35);
+
+        this.display.font = this.basic_text_format;
+
+        let left_text = getTranslation("Returned");
+        let left_text_size = this.display.measureText(left_text).width;
+        this.display.fillText(left_text, this.left_text_x - (left_text_size / 2), 500);
+
+        let center_text = getTranslation("Received");
+        let center_text_size = this.display.measureText(center_text).width;
+        this.display.fillText(center_text, this.center_text_x - (center_text_size / 2), 500);
+
+        let right_text = getTranslation("Missed");
+        let right_text_size = this.display.measureText(right_text).width;
+        this.display.fillText(right_text, this.right_text_x - (right_text_size / 2), 500);
 
         // total
 
@@ -124,16 +149,32 @@ class VisualStats
 
         // texts
 
+        this.display.font = this.title_text_format;
         this.display.fillStyle = this.text_color;
+
         let title = getTranslation("Bonus taken");
         let title_size = this.display.measureText("– " + title + " –").width;
         this.display.fillText("– " + title + " –", this.width / 2 - (title_size / 2), 35);
+
+        this.display.font = this.basic_text_format;
+
+        let left_text = getTranslation("Taken");
+        let left_text_size = this.display.measureText(left_text).width;
+        this.display.fillText(left_text, this.left_text_x - (left_text_size / 2), 500);
+
+        let center_text = getTranslation("Received");
+        let center_text_size = this.display.measureText(center_text).width;
+        this.display.fillText(center_text, this.center_text_x - (center_text_size / 2), 500);
+
+        let right_text = getTranslation("Missed");
+        let right_text_size = this.display.measureText(right_text).width;
+        this.display.fillText(right_text, this.right_text_x - (right_text_size / 2), 500);
 
         // total
 
         let y_pos_total = this.histogram_last_line_y - this.histogram_data_max_height;
         
-        this.display.fillStyle = "green";
+        this.display.fillStyle = "yellow";
         this.display.fillRect(this.histogram_center_x, y_pos_total, this.histogram_data_width, this.histogram_data_max_height);
 
         // returned
@@ -142,7 +183,7 @@ class VisualStats
         let taken_height = ((taken_value) * this.histogram_data_max_height) / 100;
         let y_pos_taken = this.histogram_last_line_y - taken_height;
         
-        this.display.fillStyle = "yellow";
+        this.display.fillStyle = "purple";
         this.display.fillRect(this.histogram_left_x, y_pos_taken, this.histogram_data_width, taken_height);
 
         // missed
@@ -151,7 +192,7 @@ class VisualStats
         let missed_height = ((missed_value) * this.histogram_data_max_height) / 100;
         let y_pos_missed = this.histogram_last_line_y - missed_height;
         
-        this.display.fillStyle = "purple";
+        this.display.fillStyle = "green";
         this.display.fillRect(this.histogram_right_x, y_pos_missed, this.histogram_data_width, missed_height);
     }
 

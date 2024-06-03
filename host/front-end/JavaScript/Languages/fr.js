@@ -21,7 +21,6 @@ let fr = [
     ["Online", "En ligne"],
     ["History", "Historique"],
 
-
     ["Visual", "Visuel"],
 
     ["Game(s) played", "Partie(s) jouée(s)"],
@@ -34,6 +33,11 @@ let fr = [
     ["Distance covered", "Distance parcourue"],
     ["Ball return(s)", "Renvoi(s) de balle"],
     ["Bonus taken", "Bonus récupéré(s)"],
+
+    ["Taken", "Récupéré(e)(s)"],
+    ["Returned", "Renvoyée(s)"],
+    ["Received", "Reçu(e)(s)"],
+    ["Missed", "Manqué(e)(s)"],
 
     ["Normal Mode", "Mode Normal"],
     ["Bonus Mode", "Mode Bonus"],

@@ -35,6 +35,11 @@ let en = [
     ["Ball return(s)", "Ball return(s)"],
     ["Bonus taken", "Bonus taken"],
 
+    ["Taken", "Taken"],
+    ["Returned", "Returned"],
+    ["Received", "Received"],
+    ["Missed", "Missed"],
+
     ["Normal Mode", "Normal Mode"],
     ["Bonus Mode", "Bonus Mode"],
     ["Mode Switch", "Game mode switch"],
