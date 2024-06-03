@@ -66,7 +66,7 @@ class VisualStats
     drawMainCircle()
     {
         this.display.beginPath();
-        this.display.arc(this.width / 2, this.height / 2 + 15, 190, 0, ((360 * Math.PI) / 180));
+        this.display.arc(this.width / 2, this.height / 2, 190, 0, ((360 * Math.PI) / 180));
         this.display.lineWidth = 3;
         this.display.strokeStyle = this.global_color;
         this.display.stroke();
@@ -75,8 +75,8 @@ class VisualStats
     drawCircleSurface(surface, color)
     {
         this.display.beginPath();
-        this.display.moveTo(this.width / 2, this.height / 2 + 15);
-        this.display.arc(this.width / 2, this.height / 2 + 15, 190, 0, ((surface * Math.PI) / 180));
+        this.display.moveTo(this.width / 2, this.height / 2);
+        this.display.arc(this.width / 2, this.height / 2, 190, 0, ((surface * Math.PI) / 180));
         this.display.fillStyle = color;
         this.display.fill();
         this.display.stroke();
@@ -89,21 +89,29 @@ class VisualStats
         this.display.font = this.title_text_format;
         this.display.fillStyle = this.text_color;
 
-        let text = getTranslation("Game(s) played");
-        let text_size = this.display.measureText("– " + text + " –").width;
-        this.display.fillText("– " + text + " –", this.width / 2 - (text_size / 2), 35);
+        let title = getTranslation("Game(s) played");
+        let title_size = this.display.measureText("– " + title + " –").width;
+        this.display.fillText("– " + title + " –", this.width / 2 - (title_size / 2), 35);
+
+        this.display.font = this.basic_text_format;
+
+        let legend_one = getTranslation("Red: Game(s) won")
+        let legend_one_size = this.display.measureText(legend_one).width;
+        this.display.fillText(legend_one, this.width / 2 - (legend_one_size / 2), 485);
+    
+        let legend_two = getTranslation("Yellow: Game(s) lost")
+        let legend_two_size = this.display.measureText(legend_two).width;
+        this.display.fillText(legend_two, this.width / 2 - (legend_two_size / 2), 510);
 
         let victory = (onl_victory * 360) / onl_played;
         let defeat = (onl_defeat * 360) / onl_played;
 
         if (victory >= defeat)
-            this.drawCircleSurface(victory, "red");
+            this.drawCircleSurface(360, "red"), this.drawCircleSurface(defeat, "yellow");
         else
-            this.drawCircleSurface(defeat, "yellow");
+            this.drawCircleSurface(360, "yellow"), this.drawCircleSurface(victory, "red")
 
         this.drawMainCircle();
-
-        // ...
     }
 
     displayBarChartOne()
