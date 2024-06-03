@@ -19,12 +19,13 @@ class VisualStats
         this.circle = null;
         this.histogram = null;
 
-        this.histogram_center_x = 0;
-        this.histogram_left_x = 0;
-        this.histogram_right_x = 0;
+        this.histogram_center_x;
+        this.histogram_left_x;
+        this.histogram_right_x;
 
-        this.histogram_data_width = 100;
-        this.histogram_data_max_height = 350;
+        this.histogram_data_width;
+        this.histogram_data_max_height;
+        this.histogram_last_line_y = 451;
     }
 
     initialize()
@@ -54,7 +55,12 @@ class VisualStats
         
         this.display.font = this.text_format;
 
+        this.histogram_data_width = 100;
+        this.histogram_data_max_height = 350;
+
         this.histogram_center_x = (this.width / 2) - this.histogram_data_width / 2;
+        this.histogram_left_x = this.histogram_center_x - 175;
+        this.histogram_right_x = this.histogram_center_x + 175;
     }
 
     displayCamembert()
@@ -77,13 +83,37 @@ class VisualStats
 
         this.histogram.onload = this.display.drawImage(this.histogram, 0, 0);
 
-        this.display.fillStyle = this.text_color;
-        let text = getTranslation("Ball return(s)");
-        let text_size = this.display.measureText("– " + text + " –").width;
-        this.display.fillText("– " + text + " –", this.width / 2 - (text_size / 2), 35);
+        // texts
 
+        this.display.fillStyle = this.text_color;
+        let title = getTranslation("Ball return(s)");
+        let title_size = this.display.measureText("– " + title + " –").width;
+        this.display.fillText("– " + title + " –", this.width / 2 - (title_size / 2), 35);
+
+        // total
+
+        let y_pos_total = this.histogram_last_line_y - this.histogram_data_max_height;
+        
         this.display.fillStyle = "green";
-        this.display.fillRect(this.histogram_center_x, 101, this.histogram_data_width, this.histogram_data_max_height);
+        this.display.fillRect(this.histogram_center_x, y_pos_total, this.histogram_data_width, this.histogram_data_max_height);
+
+        // returned
+
+        let returned_value = (onl_ball_return * 100) / onl_ball_received;
+        let returned_height = ((returned_value) * this.histogram_data_max_height) / 100;
+        let y_pos_returned = this.histogram_last_line_y - returned_height;
+        
+        this.display.fillStyle = "yellow";
+        this.display.fillRect(this.histogram_left_x, y_pos_returned, this.histogram_data_width, returned_height);
+
+        // missed
+
+        let missed_value = (onl_ball_missed * 100) / onl_ball_received;
+        let missed_height = ((missed_value) * this.histogram_data_max_height) / 100;
+        let y_pos_missed = this.histogram_last_line_y - missed_height;
+        
+        this.display.fillStyle = "purple";
+        this.display.fillRect(this.histogram_right_x, y_pos_missed, this.histogram_data_width, missed_height);
     }
 
     displayBarChartTwo()
@@ -92,13 +122,37 @@ class VisualStats
 
         this.histogram.onload = this.display.drawImage(this.histogram, 0, 0);
 
-        this.display.fillStyle = this.text_color;
-        let text = getTranslation("Bonus taken");
-        let text_size = this.display.measureText("– " + text + " –").width;
-        this.display.fillText("– " + text + " –", this.width / 2 - (text_size / 2), 35);
+        // texts
 
+        this.display.fillStyle = this.text_color;
+        let title = getTranslation("Bonus taken");
+        let title_size = this.display.measureText("– " + title + " –").width;
+        this.display.fillText("– " + title + " –", this.width / 2 - (title_size / 2), 35);
+
+        // total
+
+        let y_pos_total = this.histogram_last_line_y - this.histogram_data_max_height;
+        
+        this.display.fillStyle = "green";
+        this.display.fillRect(this.histogram_center_x, y_pos_total, this.histogram_data_width, this.histogram_data_max_height);
+
+        // returned
+
+        let taken_value = (onl_bonus_taken * 100) / onl_bonus_received;
+        let taken_height = ((taken_value) * this.histogram_data_max_height) / 100;
+        let y_pos_taken = this.histogram_last_line_y - taken_height;
+        
         this.display.fillStyle = "yellow";
-        this.display.fillRect(this.histogram_center_x, 101, this.histogram_data_width, this.histogram_data_max_height);
+        this.display.fillRect(this.histogram_left_x, y_pos_taken, this.histogram_data_width, taken_height);
+
+        // missed
+
+        let missed_value = (onl_bonus_missed * 100) / onl_bonus_received;
+        let missed_height = ((missed_value) * this.histogram_data_max_height) / 100;
+        let y_pos_missed = this.histogram_last_line_y - missed_height;
+        
+        this.display.fillStyle = "purple";
+        this.display.fillRect(this.histogram_right_x, y_pos_missed, this.histogram_data_width, missed_height);
     }
 
     displayObject()
