@@ -49,9 +49,9 @@ class VisualStats
 
         this.histogram = new Image();
         if (this.global_color == "white")
-            this.histogram.src = 'Materials/images/histograph_white.png';
+            this.histogram.src = 'Materials/images/histogram_white.png';
         else
-            this.histogram.src = 'Materials/images/histograph_black.png';
+            this.histogram.src = 'Materials/images/histogram_black.png';
         
         this.display.font = this.text_format;
 
