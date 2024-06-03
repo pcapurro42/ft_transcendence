@@ -387,6 +387,9 @@ function displayOnlineStats()
         document.getElementById('online_stats_v').style.display = 'block';
         document.getElementById('online_stats_nv').style.display = 'none';
 
+        document.getElementById('visual_info').style.display = 'block';
+        document.getElementById('visual_info').style.visibility = 'visible';
+
         stats = new VisualStats();
         stats.initialize();
         stats.displayObject();
@@ -395,6 +398,9 @@ function displayOnlineStats()
     {
         document.getElementById('online_stats_nv').style.display = 'block';
         document.getElementById('online_stats_v').style.display = 'none';
+
+        document.getElementById('visual_info').style.display = 'none';
+        document.getElementById('visual_info').style.visibility = 'hidden';
     }
 }
 

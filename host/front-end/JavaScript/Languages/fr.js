@@ -22,6 +22,7 @@ let fr = [
     ["History", "Historique"],
 
     ["Visual", "Visuel"],
+    ["←/→", "←/→"],
 
     ["Game(s) played", "Partie(s) jouée(s)"],
     ["Game(s) won", "Partie(s) remportée(s)"],
