@@ -63,23 +63,15 @@ class VisualStats
         this.histogram_right_x = this.histogram_center_x + 175;
     }
 
-    drawMainCircle()
-    {
-        this.display.beginPath();
-        this.display.arc(this.width / 2, this.height / 2, 190, 0, ((360 * Math.PI) / 180));
-        this.display.lineWidth = 3;
-        this.display.strokeStyle = this.global_color;
-        this.display.stroke();
-    }
-
     drawCircleSurface(surface, color)
     {
         this.display.beginPath();
+
         this.display.moveTo(this.width / 2, this.height / 2);
         this.display.arc(this.width / 2, this.height / 2, 190, 0, ((surface * Math.PI) / 180));
+
         this.display.fillStyle = color;
         this.display.fill();
-        this.display.stroke();
     }
 
     displayCamembert()
@@ -110,8 +102,6 @@ class VisualStats
             this.drawCircleSurface(360, "red"), this.drawCircleSurface(defeat, "yellow");
         else
             this.drawCircleSurface(360, "yellow"), this.drawCircleSurface(victory, "red")
-
-        this.drawMainCircle();
     }
 
     displayBarChartOne()

@@ -208,50 +208,8 @@ class Ball
 
     addExtraSpeed() //
     {
-        if (this.bonus_speed == 3)
-            return ;
-
-        if (players_nb == 1)
-        {
-             if (this.x < this.game_width / 2)
-            {
-                if (gameKeys.ArrowUp == true || gameKeys.ArrowDown == true)
-                    this.bonus_speed++;
-            }
-            else
-            {
-                if (gameKeys.KeyE == true || gameKeys.KeyD == true)
-                    this.bonus_speed++;
-            }
-        }
-
-        if (players_nb == 2)
-        {
-            if (this.x < this.game_width / 2)
-            {
-                if (gameKeys.ArrowUp == true || gameKeys.ArrowDown == true)
-                    this.bonus_speed++;
-            }
-            else
-            {
-                if (gameKeys.KeyE == true || gameKeys.KeyD == true)
-                    this.bonus_speed++;
-            }
-        }
-
-        if (players_nb == 3)
-        {
-            if (this.x < this.game_width / 2)
-            {
-                if (gameKeys.ArrowUp == true || gameKeys.ArrowDown == true)
-                    this.bonus_speed++;
-            }
-            else
-            {
-                if (gameKeys.KeyE == true || gameKeys.KeyD == true || gameKeys.KeyJ == true)
-                    this.bonus_speed++;
-            }
-        }
+        if (this.bonus_speed < 4)
+            this.bonus_speed++;
     }
 
     // < Calculate > //
