@@ -122,6 +122,10 @@ class VisualStats
         this.display.fillStyle = "green";
         this.display.fillRect(this.histogram_center_x, y_pos_total, this.histogram_data_width, this.histogram_data_max_height);
 
+        this.display.fillStyle = this.text_color;
+        let center_data_size = this.display.measureText("100%").width;
+        this.display.fillText("100%", this.center_text_x - (center_data_size / 2), (y_pos_total - 10));
+
         // returned
 
         let returned_value = (onl_ball_return * 100) / onl_ball_received;
@@ -131,6 +135,10 @@ class VisualStats
         this.display.fillStyle = "yellow";
         this.display.fillRect(this.histogram_left_x, y_pos_returned, this.histogram_data_width, returned_height);
 
+        this.display.fillStyle = this.text_color;
+        let left_data_size = this.display.measureText(returned_value + "%").width;
+        this.display.fillText(returned_value + "%", this.left_text_x - (left_data_size / 2), (y_pos_returned - 10));
+
         // missed
 
         let missed_value = (onl_ball_missed * 100) / onl_ball_received;
@@ -139,6 +147,10 @@ class VisualStats
         
         this.display.fillStyle = "purple";
         this.display.fillRect(this.histogram_right_x, y_pos_missed, this.histogram_data_width, missed_height);
+
+        this.display.fillStyle = this.text_color;
+        let right_data_size = this.display.measureText(missed_value + "%").width;
+        this.display.fillText(missed_value + "%", this.right_text_x - (right_data_size / 2), (y_pos_missed - 10));
     }
 
     displayBarChartTwo()
@@ -177,6 +189,10 @@ class VisualStats
         this.display.fillStyle = "yellow";
         this.display.fillRect(this.histogram_center_x, y_pos_total, this.histogram_data_width, this.histogram_data_max_height);
 
+        this.display.fillStyle = this.text_color;
+        let center_data_size = this.display.measureText("100%").width;
+        this.display.fillText("100%", this.center_text_x - (center_data_size / 2), (y_pos_total - 10));
+
         // returned
 
         let taken_value = (onl_bonus_taken * 100) / onl_bonus_received;
@@ -186,6 +202,10 @@ class VisualStats
         this.display.fillStyle = "purple";
         this.display.fillRect(this.histogram_left_x, y_pos_taken, this.histogram_data_width, taken_height);
 
+        this.display.fillStyle = this.text_color;
+        let left_data_size = this.display.measureText(taken_value + "%").width;
+        this.display.fillText(taken_value + "%", this.left_text_x - (left_data_size / 2), (y_pos_taken - 10));
+
         // missed
 
         let missed_value = (onl_bonus_missed * 100) / onl_bonus_received;
@@ -194,6 +214,10 @@ class VisualStats
         
         this.display.fillStyle = "green";
         this.display.fillRect(this.histogram_right_x, y_pos_missed, this.histogram_data_width, missed_height);
+
+        this.display.fillStyle = this.text_color;
+        let right_data_size = this.display.measureText(missed_value + "%").width;
+        this.display.fillText(missed_value + "%", this.right_text_x - (right_data_size / 2), (y_pos_missed - 10));
     }
 
     displayObject()
