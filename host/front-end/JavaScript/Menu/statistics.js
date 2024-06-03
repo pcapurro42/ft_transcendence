@@ -83,6 +83,16 @@ class VisualStats
         let text_size = this.display.measureText("– " + text + " –").width;
         this.display.fillText("– " + text + " –", this.width / 2 - (text_size / 2), 35);
 
+        let x = this.width / 2;
+        let y = this.height / 2;
+
+        for (let i = 0; i != 360; i++)
+        {
+            let radian = ((i * (-1)) * Math.PI) / 180;
+            let x_dir = Math.round(Math.cos(radian) * 10) / 10;
+            let y_dir = Math.round(Math.sin(radian) * 10) / 10;
+        }
+
         // ...
     }
 
