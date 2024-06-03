@@ -75,6 +75,7 @@ class VisualStats
     drawCircleSurface(surface, color)
     {
         this.display.beginPath();
+        this.display.moveTo(this.width / 2, this.height / 2 + 15);
         this.display.arc(this.width / 2, this.height / 2 + 15, 190, 0, ((surface * Math.PI) / 180));
         this.display.fillStyle = color;
         this.display.fill();
