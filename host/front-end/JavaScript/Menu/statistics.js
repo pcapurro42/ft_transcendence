@@ -74,7 +74,11 @@ class VisualStats
 
     drawCircleSurface(surface, color)
     {
-        ;
+        this.display.beginPath();
+        this.display.arc(this.width / 2, this.height / 2 + 15, 190, 0, ((surface * Math.PI) / 180));
+        this.display.fillStyle = color;
+        this.display.fill();
+        this.display.stroke();
     }
 
     displayCamembert()
@@ -88,8 +92,8 @@ class VisualStats
         let text_size = this.display.measureText("– " + text + " –").width;
         this.display.fillText("– " + text + " –", this.width / 2 - (text_size / 2), 35);
 
-        let victory = (onl_victory * 360) / 100;
-        let defeat = (onl_defeat * 360) / 100;
+        let victory = (onl_victory * 360) / onl_played;
+        let defeat = (onl_defeat * 360) / onl_played;
 
         if (victory >= defeat)
             this.drawCircleSurface(victory, "red");
