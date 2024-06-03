@@ -17,7 +17,6 @@ class VisualStats
         this.title_text_format = "27px Arial";
         this.basic_text_format = "18px Arial";
 
-        this.circle = null;
         this.histogram = null;
 
         this.histogram_center_x;
@@ -46,12 +45,6 @@ class VisualStats
         else
             this.global_color = "black", this.text_color = "black", this.background_color = "white";
 
-        this.circle = new Image();
-        if (this.global_color == "white")
-            this.circle.src = 'Materials/images/circle_white.png';
-        else
-            this.circle.src = 'Materials/images/circle_black.png';
-
         this.histogram = new Image();
         if (this.global_color == "white")
             this.histogram.src = 'Materials/images/histogram_white.png';
@@ -73,35 +66,6 @@ class VisualStats
     displayCamembert()
     {
         this.clean();
-
-        this.display.fillStyle = "yellow";
-
-        let victory = (onl_victory * 100) / onl_played;
-        let defeat = 100 - victory;
-
-        let x = this.width / 2;
-        let y = this.height / 2 + 15;
-
-        for (let i = 0; i != 361; i++)
-        {
-            let radian = ((i * (-1)) * Math.PI) / 180;
-            let x_dir = Math.cos(radian);
-            let y_dir = Math.sin(radian);
-
-            if (i )
-
-            for (let j = 0; j != 250; j++)
-            {
-                this.display.fillRect(x, y, 4, 4);
-                x = x + x_dir;
-                y = y + y_dir;
-            }
-
-            x = this.width / 2;
-            y = this.height / 2 + 15;
-        }
-
-        this.circle.onload = this.display.drawImage(this.circle, 0, 25);
 
         this.display.font = this.title_text_format;
         this.display.fillStyle = this.text_color;
