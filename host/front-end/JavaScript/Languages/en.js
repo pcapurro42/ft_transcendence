@@ -58,7 +58,7 @@ let en = [
     ["Join a game", "Join a game"],
     ["Copy", "Copy"],
 
-    ["Launch a game", "Launch a game"],
+    ["Launch a game", "Start Game"],
     ["Waiting for the host to launch the game...", "Waiting for the host to launch the game..."],
 
     ["Left player won the game.", "Left player won the game."],

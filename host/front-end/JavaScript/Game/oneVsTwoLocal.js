@@ -392,6 +392,7 @@ function displayLocal1v2()
     let timer = document.getElementById('2v1_local_timer');
     timer.style.display = "block";
 
+    stopKeysAnim();
     displayCountDown(3);
 }
 
@@ -408,6 +409,8 @@ function removeLocal1v2()
     let start_btn = document.getElementById('start_2v1_local');
     start_btn.innerHTML = getTranslation("Launch a game");
     start_btn.style.visibility = "visible";
+
+    resumeKeysAnim();
 }
 
 function startLocal1v2()

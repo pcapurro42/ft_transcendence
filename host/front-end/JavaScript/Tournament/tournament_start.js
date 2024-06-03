@@ -31,6 +31,8 @@ async function startTournament(newNicksArray, i){
 
 async function tournamentGameStart(){
 	removeMenu();
+	let keys_anim = document.querySelectorAll('.keysup, .keysdown');
+    (keys_anim).forEach(element => { element.style.transition = 'opacity 1s';});
 	document.getElementById('main_page').style.display = 'none';
 	let game_toolbar = document.getElementById('game_toolbar');
 	let game_page_tournament = document.getElementById('game_page_tournament');
@@ -61,6 +63,7 @@ async function tournamentGameStart(){
 	game_page_tournament.style.opacity = '1';
 	game_backgrounds.style.opacity = '1';
 	game_toolbar.style.opacity = '1';
+	resumeKeysAnim();
 
 	await sleep(1000);
 	turn = true;

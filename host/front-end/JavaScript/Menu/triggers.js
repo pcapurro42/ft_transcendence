@@ -65,11 +65,11 @@ document.getElementById('ai_game_btn').onclick = ai;
 
 document.getElementById('play_tournament_btn').onclick = displayTournamentSetup;
 document.getElementById('back_tournament_btn').onclick = removeTournamentSetup;
-document.getElementById('next_game_tournament_btn').onclick = nextGameHandler;
+document.getElementById('t_next_game').onclick = nextGameHandler;
 document.getElementById('submit_player_nbr').onclick = tournamentTypeHandler;
 document.getElementById('back_tournament_form_btn').onclick = removeTournamentForm;
 
-document.getElementById('start_tournament_game').onclick = displayTournamentGame;
+document.getElementById('t_start_game').onclick = displayTournamentGame;
 
 // < CUSTOMIZE > //
 

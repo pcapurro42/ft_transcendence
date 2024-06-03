@@ -2,6 +2,7 @@ function displayTournamentGame()
 {
     let start_btn = document.getElementById('t_start_game');
     start_btn.style.display = "none";
+    stopKeysAnim();
 
     let timer = document.getElementById('tournament_timer');
     timer.style.display = "block";

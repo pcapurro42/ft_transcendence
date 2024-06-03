@@ -371,6 +371,7 @@ function displayLocal1v1()
 {
     let start_btn = document.getElementById('start_1v1_local');
     start_btn.style.visibility = "hidden";
+
     let player_left_won = document.getElementById('left_player_won_text');
     player_left_won.style.display = "none";
     let player_right_won = document.getElementById('right_player_won_text');
@@ -379,6 +380,7 @@ function displayLocal1v1()
     let timer = document.getElementById('1v1_local_timer');
     timer.style.display = "block";
 
+    stopKeysAnim();
     displayCountDown(3);
 }
 
@@ -395,6 +397,8 @@ function removeLocal1v1()
     let start_btn = document.getElementById('start_1v1_local');
     start_btn.innerHTML = getTranslation("Launch a game");
     start_btn.style.visibility = "visible";
+    if (type != 'tournament')
+        resumeKeysAnim();
 }
 
 function startLocal1v1()

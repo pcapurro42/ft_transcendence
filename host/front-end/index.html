@@ -75,9 +75,9 @@
 
 
                     <div class="col d-flex align-items-center ">
-                        <img id="game_music_toggle" alt="" src="./Materials/images/music-off.png" class="img-fluid image col d-inline-block float-end mt-4 music_togglers btn_image" data-isnormal="max-width: 4%" data-islarge="max-width: 5%" data-title="Enable/Disable menu music" tabindex="0">
+                        <img id="game_music_toggle" alt="" src="./Materials/images/music-off.png" class="img-fluid image col d-inline-block float-end mt-4 music_togglers btn_image" data-isnormal="4%" data-islarge="5%" data-title="Enable/Disable menu music" tabindex="0">
 
-                        <img id="game_sound_toggle" src="./Materials/images/sound-on.png" class="img-fluid image col d-inline-block float-end mt-4 sound_togglers btn_image" data-isnormal="max-width: 5%" data-islarge="max-width: 6%" alt="" data-title="Enable/Disable menu sounds" tabindex="0">
+                        <img id="game_sound_toggle" src="./Materials/images/sound-on.png" class="img-fluid image col d-inline-block float-end mt-4 sound_togglers btn_image" data-isnormal="5%" data-islarge="6%" alt="" data-title="Enable/Disable menu sounds" tabindex="0">
 
                     </div>
 
@@ -126,14 +126,22 @@
             <div id="one_vs_one_local_page" class="container mx-auto">
                 <canvas id="one_vs_one_local_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="l_1v1_label"></canvas>
                 <label id="l_1v1_label" alt="" data-title="ARIA 1 vs 1 (local)"></label>
-                <br><br><br>
-                <div>
+                <div class="mb-1">
                     <h1 id="left_player_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h1>
                     <h1 id="right_player_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Right player won the game."></h1>
                     <h1 id="1v1_local_timer" class="text" data-tsnormal="45px" data-tslarge="55px"></h1>
                 </div>
-                <br>
-                <button id="start_1v1_local" class="btn btn-simple btn-outline-danger text border border-5" data-tsnormal="35px" data-tslarge="55px" data-oname="Launch a game"></button>
+                    <div id="l_1v1_foot" class="d-flex flex-column align-items-center">
+                        <div class="game_keys w-100">
+                            <img class="keysup float-start mb-2" data-isnormal="10%" data-islarge="14%" src="./Materials/images/E.png">
+                            <img class="float-end keysup img-fluid mb-0" data-isnormal="10%" data-islarge="14%" src="./Materials/images/ArrowUp.png">
+                            <button id="start_1v1_local" class="btn btn-lg btn-simple btn-outline-danger mx-auto" data-tsnormal="30px" data-tslarge="40px" data-oname="Launch a game" data-title="Launch a Game"></button>
+                        </div>
+                        <div class="game_keys w-100">
+                            <img class="keysdown float-start" src="./Materials/images/D.png" data-isnormal="10%" data-islarge="14%">
+                            <img class="keysdown float-end" src="./Materials/images/ArrowDown.png" data-isnormal="10%" data-islarge="14%">
+                        </div>
+                    </div>
             </div>
 
             <!-- 2 vs 1 (local) -->
@@ -141,14 +149,24 @@
             <div id="one_vs_two_local_page">
                 <canvas id="one_vs_two_local_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="1v2_label"></canvas>
                 <label id="1v2_label" data-title="ARIA 1 vs 2 (local)"></label>
-                <br><br><br>
                 <div>
                     <h1 id="left_side_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left players won the game."></h2>
                     <h1 id="right_side_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Right players won the game."></h1>
                     <h1 id="2v1_local_timer" class="text" data-tsnormal="45px" data-tslarge="55px"></h1>
                 </div>
-                <br>
-                <button id="start_2v1_local" class="btn btn-simple btn-outline-danger text border border-5" data-tsnormal="35px" data-tslarge="55px" data-oname="Launch a game"></button>
+                <div id="l_1v2_foot" class="d-flex flex-column align-items-center">
+                        <button id="start_2v1_local" class="btn btn-lg btn-simple btn-outline-danger mt-0" data-tsnormal="30px" data-tslarge="40px" data-oname="Launch a game"></button>
+                    <div class="game_keys w-100">
+                        <img class="keysup d-inline-block float-start mb-2" data-isnormal="10%" data-islarge="14%" src="./Materials/images/E.png">
+                        <img class="d-inline-block float-end keysup img-fluid mb-0" data-isnormal="10%" data-islarge="14%" src="./Materials/images/ArrowUp.png">
+                        <img class="d-inline-block float-end keysup img-fluid mb-0" data-isnormal="10%" data-islarge="14%" src="./Materials/images/U.png">
+                    </div>
+                    <div class="game_keys w-100">
+                        <img class="keysdown d-inline-block float-start" src="./Materials/images/D.png" data-isnormal="10%" data-islarge="14%">
+                        <img class="keysdown d-inline-block float-end img-fluid mb-0" src="./Materials/images/ArrowDown.png" data-isnormal="10%" data-islarge="14%">
+                        <img class="keysdown d-inline-block float-end img-fluid mb-0" src="./Materials/images/J.png" data-isnormal="10%" data-islarge="14%">
+                    </div>
+                </div>
             </div>
 
             <!-- Tournament -->
@@ -157,16 +175,21 @@
                 <div class="display-4 text text-center" id="nick_reminder"></div>
                 <canvas id="tournament_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="t_label"></canvas>
                 <label id="t_label" alt="" data-title="ARIA Tournament Match"></label>
-                <br><br>
                 <div>
                     <h1 id="tournament_timer" class="text" data-tsnormal="45px" data-tslarge="55px"></h1>
                 </div>
-                <div id="t_start_game">
-                    <button id="start_tournament_game" class="btn btn-simple btn-outline-danger text border border-5" data-tsnormal="35px" data-tslarge="55px" data-oname="Launch a game"></button>
-                </div>
-                <div id="t_next_game">
-                    <button id="next_game_tournament_btn" class="btn-simple text border border-5" data-tsnormal="35px" data-tslarge="55px" data-oname="Next Game"></button>
-                </div>
+                <div id="t_foot" class="d-flex flex-column align-items-center">
+                        <div class="game_keys w-100">
+                            <img class="keysup float-start mb-2" data-isnormal="10%" data-islarge="14%" src="./Materials/images/E.png">
+                            <img class= "float-end keysup img-fluid mb-0" data-isnormal="10%" data-islarge="14%" src="./Materials/images/ArrowUp.png">
+                            <button id="t_start_game" class="btn btn-lg btn-simple btn-outline-danger mx-auto" data-tsnormal="30px" data-tslarge="40px" data-oname="Launch a game" data-title="Launch a Game"></button>
+                            <button id="t_next_game" class="btn btn-lg btn-simple btn-outline-danger mx-auto" data-tsnormal="30px" data-tslarge="40px" data-oname="Next Game"></button>
+                        </div>
+                        <div class="game_keys w-100">
+                            <img class="keysdown float-start" src="./Materials/images/D.png" data-isnormal="10%" data-islarge="14%">
+                            <img class="keysdown float-end" src="./Materials/images/ArrowDown.png" data-isnormal="10%" data-islarge="14%">
+                        </div>
+                    </div>
             </div>
 
             <!-- Vs AI Game page -->
@@ -193,8 +216,8 @@
 
             <div id="main_menu_toolbar" class="container mb-5">
 
-                <img id="music_toggle" alt="" src="./Materials/images/music-off.png" class="img-fluid image music_togglers btn_image" data-isnormal="max-width: 4%" data-islarge="max-width: 5%" data-title="Enable/Disable menu music" tabindex="1">
-                <img id="sound_toggle" alt="" src="./Materials/images/sound-on.png" class="img-fluid image sound_togglers btn_image" data-isnormal="max-width: 5%" data-islarge="max-width: 6%" data-title="Enable/Disable menu sounds" tabindex="2">
+                <img id="music_toggle" alt="" src="./Materials/images/music-off.png" class="img-fluid image music_togglers btn_image" data-isnormal="4%" data-islarge="5%" data-title="Enable/Disable menu music" tabindex="1">
+                <img id="sound_toggle" alt="" src="./Materials/images/sound-on.png" class="img-fluid image sound_togglers btn_image" data-isnormal="5%" data-islarge="6%" data-title="Enable/Disable menu sounds" tabindex="2">
 
                 <div id="login" class="col d-inline-block float-end">
                     <button id="login_btn" class="btn text border mb-4 btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="LOG IN WITH 42" data-title="LOG IN WITH 42" title=""></button>

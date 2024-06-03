@@ -172,8 +172,7 @@ function setImageSize(size)
     for (let i = 0; i != images.length; i++)
     {
         let value = images[i].getAttribute(size);
-        let nb = value[value.length - 2] + value[value.length - 1];
-        images[i].style.maxWidth = nb;
+        images[i].style.maxWidth = value;
     }
 }
 

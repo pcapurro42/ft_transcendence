@@ -13,6 +13,30 @@
     outline-offset: 2px !important;
 }
 
+@keyframes gamekeys {
+
+    30%{transform: translateY(0px) scale(1, 1);
+        filter: drop-shadow(0px 1px 0.5px #111111) drop-shadow(0px -1px 0.5px #111111);
+    }
+    40%{transform: translateY(4px) scale(1, 0.95);
+        filter: drop-shadow(0px 4px 1.5px #111111) drop-shadow(0px -1px 0.5px #111111);
+    }
+
+    47%{transform: translateY(0px) scale(1, 1);
+        filter: drop-shadow(0px 1px 0.5px #111111) drop-shadow(0px -1px 0.5px #111111);
+    }
+}
+
+.keysup{
+    filter: drop-shadow(0px 1px 0.5px #111111) drop-shadow(0px -1px 0.5px #111111);
+    animation: gamekeys forwards 3s infinite;
+}
+
+.keysdown{
+    filter: drop-shadow(0px 1px 0.5px #111111) drop-shadow(0px -1px 0.5px #111111);
+    animation: gamekeys forwards 3s infinite;
+    animation-delay: 1s;
+}
 
 #vid_credits
 {
@@ -46,6 +70,7 @@
 #game_lobby_block{
     aspect-ratio: 1400 / 764;
 }
+
 #map_tooltip{
     left: 58%;
     box-sizing: border-box;

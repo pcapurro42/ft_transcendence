@@ -1,3 +1,24 @@
+function stopKeysAnim(){
+	 let keys_anim = document.querySelectorAll('.keysup, .keysdown');
+    (keys_anim).forEach(element => {
+		element.getAnimations().forEach	(animation => animation.pause());
+		element.style.display = 'none';
+		element.style.visibility ='hidden';
+		element.style.opacity = '0';
+	});
+}
+
+function resumeKeysAnim(){
+	 let keys_anim = document.querySelectorAll('.keysup, .keysdown');
+    (keys_anim).forEach(element => {
+		element.getAnimations().forEach(animation => animation.play());
+		element.style.display = 'block';
+		element.style.visibility ='visible';
+		element.style.opacity = '1';
+
+	});
+}
+
 function getIceConfig(){
 	let iceConf = {
 		iceTransportPolicy : 'all',
