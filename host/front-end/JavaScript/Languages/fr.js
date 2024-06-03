@@ -59,7 +59,7 @@ let fr = [
     ["Join a game", "Rejoindre une partie"],
     ["Copy", "Copier"],
 
-    ["Launch a game", "Lancer une partie"],
+    ["Launch a game", "Lancer La Partie"],
     ["Waiting for the host to launch the game...", "En attente de l'hôte pour démarrer la partie..."],
 
     ["Left player won the game.", "Le joueur de gauche a gagné la partie."],
