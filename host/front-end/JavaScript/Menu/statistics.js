@@ -74,6 +74,33 @@ class VisualStats
     {
         this.clean();
 
+        this.display.fillStyle = "yellow";
+
+        let victory = (onl_victory * 100) / onl_played;
+        let defeat = 100 - victory;
+
+        let x = this.width / 2;
+        let y = this.height / 2 + 15;
+
+        for (let i = 0; i != 361; i++)
+        {
+            let radian = ((i * (-1)) * Math.PI) / 180;
+            let x_dir = Math.cos(radian);
+            let y_dir = Math.sin(radian);
+
+            if (i )
+
+            for (let j = 0; j != 250; j++)
+            {
+                this.display.fillRect(x, y, 4, 4);
+                x = x + x_dir;
+                y = y + y_dir;
+            }
+
+            x = this.width / 2;
+            y = this.height / 2 + 15;
+        }
+
         this.circle.onload = this.display.drawImage(this.circle, 0, 25);
 
         this.display.font = this.title_text_format;
@@ -82,16 +109,6 @@ class VisualStats
         let text = getTranslation("Game(s) played");
         let text_size = this.display.measureText("– " + text + " –").width;
         this.display.fillText("– " + text + " –", this.width / 2 - (text_size / 2), 35);
-
-        let x = this.width / 2;
-        let y = this.height / 2;
-
-        for (let i = 0; i != 360; i++)
-        {
-            let radian = ((i * (-1)) * Math.PI) / 180;
-            let x_dir = Math.round(Math.cos(radian) * 10) / 10;
-            let y_dir = Math.round(Math.sin(radian) * 10) / 10;
-        }
 
         // ...
     }
