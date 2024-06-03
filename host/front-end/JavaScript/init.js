@@ -58,9 +58,10 @@ let history = null;
 let stats;
 let stats_tab = 0;
 
-let onl_played = 24;
-let onl_victory = 16;
-let onl_defeat = 8;
+let onl_played = 100;
+let onl_victory = 70;
+let onl_defeat = onl_played - onl_victory;
+
 let onl_dist = 42;
 
 let onl_ball_return = 61;

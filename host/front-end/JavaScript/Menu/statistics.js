@@ -63,6 +63,20 @@ class VisualStats
         this.histogram_right_x = this.histogram_center_x + 175;
     }
 
+    drawMainCircle()
+    {
+        this.display.beginPath();
+        this.display.arc(this.width / 2, this.height / 2 + 15, 190, 0, ((360 * Math.PI) / 180));
+        this.display.lineWidth = 3;
+        this.display.strokeStyle = this.global_color;
+        this.display.stroke();
+    }
+
+    drawCircleSurface(surface, color)
+    {
+        ;
+    }
+
     displayCamembert()
     {
         this.clean();
@@ -73,6 +87,16 @@ class VisualStats
         let text = getTranslation("Game(s) played");
         let text_size = this.display.measureText("– " + text + " –").width;
         this.display.fillText("– " + text + " –", this.width / 2 - (text_size / 2), 35);
+
+        let victory = (onl_victory * 360) / 100;
+        let defeat = (onl_defeat * 360) / 100;
+
+        if (victory >= defeat)
+            this.drawCircleSurface(victory, "red");
+        else
+            this.drawCircleSurface(defeat, "yellow");
+
+        this.drawMainCircle();
 
         // ...
     }
