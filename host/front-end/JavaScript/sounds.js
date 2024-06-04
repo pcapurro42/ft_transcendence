@@ -35,7 +35,6 @@ function alertSound(event)
 
 	loginSound.play();
 
-	event.stopPropagation();
 }
 
 function hoverSound(event)
@@ -44,7 +43,6 @@ function hoverSound(event)
 
     hoverSound.play();
 
-    event.stopPropagation();
 }
 
 function clickSound(event)
@@ -53,7 +51,6 @@ function clickSound(event)
 
     clickSound.play();
 
-    event.stopPropagation();
 }
 
 function closeSound(event)
@@ -62,7 +59,6 @@ function closeSound(event)
 
     closeSound.play();
 
-	event.stopPropagation();
 }
 
 function refreshSounds()

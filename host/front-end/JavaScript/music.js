@@ -55,7 +55,7 @@ function gameMusicSelector(){
 function refreshMusics()
 {
 	let menu_theme = document.getElementById('mgs');
-	let game_theme = gameMusicSelector();
+	let game_theme = document.querySelectorAll('.game_music');
 	let credits_theme = document.getElementById('vid_credits');
 	let music_togglers = document.querySelectorAll('.music_togglers');
 
@@ -63,6 +63,7 @@ function refreshMusics()
 		music_togglers[0].src = './Materials/images/music-on.png';
 		music_togglers[1].src = './Materials/images/music-on.png';
 		menu_theme.muted = false;
+		game_theme.forEach(element => {element.muted = false;});
 		window.addEventListener('click', () =>{
 			menu_theme.play();
 		}, {once: true});
