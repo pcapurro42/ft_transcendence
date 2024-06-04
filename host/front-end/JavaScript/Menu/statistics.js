@@ -489,6 +489,9 @@ function displayHistory()
     let stats_back_btn = document.getElementById('stats_back_btn');
     let history = document.getElementById('history');
 
+    document.getElementById('history_info').style.display = 'block';
+    document.getElementById('history_info').style.visibility = 'visible';
+
     stats_menu.style.display = 'none';
     stats_back_btn.style.display = 'none';
     history.style.display = 'block';
@@ -499,6 +502,9 @@ function removeHistory()
     let stats_menu = document.getElementById('stats_menu_buttons');
     let stats_back_btn = document.getElementById('stats_back_btn');
     let history = document.getElementById('history');
+
+    document.getElementById('history_info').style.display = 'none';
+    document.getElementById('history_info').style.visibility = 'hidden';
 
     stats_menu.style.display = 'block';
     stats_back_btn.style.display = 'block';
