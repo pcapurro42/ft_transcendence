@@ -273,16 +273,26 @@ window.addEventListener('keydown', (event) =>
 
 function refreshStats()
 {
-    // load global variables from local storage
+    // init if uninit
 
-    // ...
+    if (localStorage.getItem('lcl_game_played_nb') == null)
+        localStorage.setItem('lcl_game_played_nb', 0);
+
+    if (localStorage.getItem('lcl_bonus_taken_nb') == null)
+        localStorage.setItem('lcl_bonus_taken_nb', 0);
+
+    if (localStorage.getItem('lcl_ball_exit_nb') == null)
+        localStorage.setItem('lcl_ball_exit_nb', 0);
+
+    if (localStorage.getItem('lcl_ball_bounce_nb') == null)
+        localStorage.setItem('lcl_ball_bounce_nb', 0);
 
     // load html data from variables
 
-    document.getElementById('lcl_game_played_nb').innerHTML = "[ " + lcl_played + " ]";
-    document.getElementById('lcl_bonus_taken_nb').innerHTML = "[ " + lcl_bonus_taken + " ]";
-    document.getElementById('lcl_ball_exit_nb').innerHTML = "[ " + lcl_ball_out + " ]";
-    document.getElementById('lcl_ball_bounce_nb').innerHTML = "[ " + lcl_ball_hit + " ]";
+    document.getElementById('lcl_game_played_nb').innerHTML = "[ " + (localStorage.getItem('lcl_game_played_nb')) + " ]";
+    document.getElementById('lcl_bonus_taken_nb').innerHTML = "[ " + (localStorage.getItem('lcl_bonus_taken_nb')) + " ]";
+    document.getElementById('lcl_ball_exit_nb').innerHTML = "[ " + (localStorage.getItem('lcl_ball_exit_nb')) + " ]";
+    document.getElementById('lcl_ball_bounce_nb').innerHTML = "[ " + (localStorage.getItem('lcl_ball_bounce_nb')) + " ]";
 
     let win_rate = ~~(onl_victory * 100 / onl_played);
     let lose_rate = ~~(onl_defeat * 100 / onl_played);

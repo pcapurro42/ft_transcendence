@@ -331,9 +331,19 @@ class Ball
     animate()
     {
         if (this.isOffLimit() == true)
+        {
             this.game.restartRound();
+
+            if (players_nb == 2 || players_nb == 3)
+                localStorage.setItem('lcl_ball_exit_nb', (parseInt(localStorage.getItem('lcl_ball_exit_nb')) + 1).toString());
+        }
         else if (this.isUpOrDown() == true || this.isAtPlayer() == true)
+        {
             this.direction = this.getOpposite(), this.getAwayFromLimits();
+
+            if (players_nb == 2 || players_nb == 3)
+                localStorage.setItem('lcl_ball_bounce_nb', (parseInt(localStorage.getItem('lcl_ball_bounce_nb')) + 1).toString());
+        }
 
         this.move();
     }

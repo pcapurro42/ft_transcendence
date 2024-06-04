@@ -261,7 +261,13 @@ class PowerUp
         if (this.isAtLimits() == true)
             this.direction = this.getOpposite(), this.getAwayFromLimits();
         else if (this.isAtPlayer() == true)
-            this.applyPlayerBonus(), this.alive = false;
+        {
+            this.applyPlayerBonus();
+            this.alive = false;
+
+            if (players_nb == 2 || players_nb == 3)
+                localStorage.setItem('lcl_bonus_taken_nb', (parseInt(localStorage.getItem('lcl_bonus_taken_nb')) + 1).toString());
+        }
         else if (this.isAtBall() == true)
             this.applyBallBonus(), this.alive = false;
 

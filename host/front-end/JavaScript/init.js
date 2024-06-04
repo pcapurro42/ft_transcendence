@@ -75,11 +75,6 @@ let onl_bonus_missed = onl_bonus_received - onl_bonus_taken;
 let onl_longest_exchange = 21;
 let onl_shortest_game = 30;
 
-let lcl_played = 64;
-let lcl_ball_out = 131;
-let lcl_ball_hit = 256;
-let lcl_bonus_taken = 21;
-
 let lcl_longest_exchange = 21;
 let lcl_shortest_game = 30;
 

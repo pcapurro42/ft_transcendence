@@ -347,6 +347,8 @@ class LocalGame1v1
             this.resetGame();
             active = false;
 
+            localStorage.setItem('lcl_game_played_nb', (parseInt(localStorage.getItem('lcl_game_played_nb')) + 1).toString());
+
             return (true);
         }
         return (false);
