@@ -54,29 +54,10 @@ initializeGameMode();
 let visual = false;
 
 let history = null;
+let history_tab = 0;
 
-let stats;
+let stats = null;
 let stats_tab = 0;
-
-let onl_played = 100;
-let onl_victory = 70;
-let onl_defeat = onl_played - onl_victory;
-
-let onl_dist = 42;
-
-let onl_ball_return = 61;
-let onl_ball_received = 100;
-let onl_ball_missed = onl_ball_received - onl_ball_return;
-
-let onl_bonus_taken = 21;
-let onl_bonus_received = 42;
-let onl_bonus_missed = onl_bonus_received - onl_bonus_taken;
-
-let onl_longest_exchange = 21;
-let onl_shortest_game = 30;
-
-let lcl_longest_exchange = 21;
-let lcl_shortest_game = 30;
 
 //Tournament//
 

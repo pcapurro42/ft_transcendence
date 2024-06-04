@@ -30,6 +30,14 @@ class VisualStats
         this.histogram_data_width;
         this.histogram_data_max_height;
         this.histogram_last_line_y = 451;
+
+        this.onl_victory;
+        this.onl_defeat;
+        this.onl_played;
+        this.onl_ball_return;
+        this.onl_ball_received;
+        this.onl_bonus_taken;
+        this.onl_bonus_received;
     }
 
     initialize()
@@ -61,17 +69,29 @@ class VisualStats
         this.histogram_center_x = (this.width / 2) - this.histogram_data_width / 2;
         this.histogram_left_x = this.histogram_center_x - 175;
         this.histogram_right_x = this.histogram_center_x + 175;
+
+        this.onl_victory = parseInt(localStorage.getItem('onl_victory'));
+        this.onl_defeat = parseInt(localStorage.getItem('onl_defeat'));
+        this.onl_played = parseInt(localStorage.getItem('onl_played'));
+        this.onl_ball_return = parseInt(localStorage.getItem('onl_ball_return'));
+        this.onl_ball_received = parseInt(localStorage.getItem('onl_ball_received'));
+        this.onl_bonus_taken = parseInt(localStorage.getItem('onl_bonus_taken'));
+        this.onl_bonus_received = parseInt(localStorage.getItem('onl_bonus_received'));
     }
 
     drawCircleSurface(surface, color)
     {
         this.display.beginPath();
 
-        this.display.moveTo(this.width / 2, this.height / 2);
+        if (color != this.background_color)
+            this.display.moveTo(this.width / 2, this.height / 2);
         this.display.arc(this.width / 2, this.height / 2, 190, 0, ((surface * Math.PI) / 180));
 
         this.display.fillStyle = color;
         this.display.fill();
+
+        if (color == this.background_color)
+            this.display.lineWidth = 3, this.display.strokeStyle = this.global_color, this.display.stroke();
     }
 
     displayCamembert()
@@ -95,13 +115,19 @@ class VisualStats
         let legend_two_size = this.display.measureText(legend_two).width;
         this.display.fillText(legend_two, this.width / 2 - (legend_two_size / 2), 510);
 
-        let victory = (onl_victory * 360) / onl_played;
-        let defeat = (onl_defeat * 360) / onl_played;
-
-        if (victory >= defeat)
-            this.drawCircleSurface(360, "red"), this.drawCircleSurface(defeat, "yellow");
+        if (this.onl_played != 0)
+        {
+            let victory = (this.onl_victory * 360) / this.onl_played;
+            let defeat = (this.onl_defeat * 360) / this.onl_played;
+    
+            if (victory >= defeat)
+                this.drawCircleSurface(360, "red"), this.drawCircleSurface(defeat, "yellow");
+            else
+                this.drawCircleSurface(360, "yellow"), this.drawCircleSurface(victory, "red")
+        }
         else
-            this.drawCircleSurface(360, "yellow"), this.drawCircleSurface(victory, "red")
+            this.drawCircleSurface(360, this.background_color);
+
     }
 
     displayBarChartOne()
@@ -133,42 +159,45 @@ class VisualStats
         let right_text_size = this.display.measureText(right_text).width;
         this.display.fillText(right_text, this.right_text_x - (right_text_size / 2), 500);
 
-        // total
+        if (this.onl_ball_received != 0)
+        {
+            // total
 
-        let y_pos_total = this.histogram_last_line_y - this.histogram_data_max_height;
-        
-        this.display.fillStyle = "green";
-        this.display.fillRect(this.histogram_center_x, y_pos_total, this.histogram_data_width, this.histogram_data_max_height);
+            let y_pos_total = this.histogram_last_line_y - this.histogram_data_max_height;
+            
+            this.display.fillStyle = "green";
+            this.display.fillRect(this.histogram_center_x, y_pos_total, this.histogram_data_width, this.histogram_data_max_height);
 
-        this.display.fillStyle = this.text_color;
-        let center_data_size = this.display.measureText("100%").width;
-        this.display.fillText("100%", this.center_text_x - (center_data_size / 2), (y_pos_total - 10));
+            this.display.fillStyle = this.text_color;
+            let center_data_size = this.display.measureText("100%").width;
+            this.display.fillText("100%", this.center_text_x - (center_data_size / 2), (y_pos_total - 10));
 
-        // returned
+            // returned
 
-        let returned_value = (onl_ball_return * 100) / onl_ball_received;
-        let returned_height = ((returned_value) * this.histogram_data_max_height) / 100;
-        let y_pos_returned = this.histogram_last_line_y - returned_height;
-        
-        this.display.fillStyle = "yellow";
-        this.display.fillRect(this.histogram_left_x, y_pos_returned, this.histogram_data_width, returned_height);
+            let returned_value = (this.onl_ball_return * 100) / this.onl_ball_received;
+            let returned_height = ((returned_value) * this.histogram_data_max_height) / 100;
+            let y_pos_returned = this.histogram_last_line_y - returned_height;
+            
+            this.display.fillStyle = "yellow";
+            this.display.fillRect(this.histogram_left_x, y_pos_returned, this.histogram_data_width, returned_height);
 
-        this.display.fillStyle = this.text_color;
-        let left_data_size = this.display.measureText(returned_value + "%").width;
-        this.display.fillText(returned_value + "%", this.left_text_x - (left_data_size / 2), (y_pos_returned - 10));
+            this.display.fillStyle = this.text_color;
+            let left_data_size = this.display.measureText(returned_value + "%").width;
+            this.display.fillText(returned_value + "%", this.left_text_x - (left_data_size / 2), (y_pos_returned - 10));
 
-        // missed
+            // missed
 
-        let missed_value = (onl_ball_missed * 100) / onl_ball_received;
-        let missed_height = ((missed_value) * this.histogram_data_max_height) / 100;
-        let y_pos_missed = this.histogram_last_line_y - missed_height;
-        
-        this.display.fillStyle = "purple";
-        this.display.fillRect(this.histogram_right_x, y_pos_missed, this.histogram_data_width, missed_height);
+            let missed_value = (this.onl_ball_missed * 100) / this.onl_ball_received;
+            let missed_height = ((missed_value) * this.histogram_data_max_height) / 100;
+            let y_pos_missed = this.histogram_last_line_y - missed_height;
+            
+            this.display.fillStyle = "purple";
+            this.display.fillRect(this.histogram_right_x, y_pos_missed, this.histogram_data_width, missed_height);
 
-        this.display.fillStyle = this.text_color;
-        let right_data_size = this.display.measureText(missed_value + "%").width;
-        this.display.fillText(missed_value + "%", this.right_text_x - (right_data_size / 2), (y_pos_missed - 10));
+            this.display.fillStyle = this.text_color;
+            let right_data_size = this.display.measureText(missed_value + "%").width;
+            this.display.fillText(missed_value + "%", this.right_text_x - (right_data_size / 2), (y_pos_missed - 10));
+        }
     }
 
     displayBarChartTwo()
@@ -200,42 +229,45 @@ class VisualStats
         let right_text_size = this.display.measureText(right_text).width;
         this.display.fillText(right_text, this.right_text_x - (right_text_size / 2), 500);
 
-        // total
+        if (this.onl_bonus_received != 0)
+        {
+            // total
 
-        let y_pos_total = this.histogram_last_line_y - this.histogram_data_max_height;
-        
-        this.display.fillStyle = "yellow";
-        this.display.fillRect(this.histogram_center_x, y_pos_total, this.histogram_data_width, this.histogram_data_max_height);
+            let y_pos_total = this.histogram_last_line_y - this.histogram_data_max_height;
+            
+            this.display.fillStyle = "yellow";
+            this.display.fillRect(this.histogram_center_x, y_pos_total, this.histogram_data_width, this.histogram_data_max_height);
 
-        this.display.fillStyle = this.text_color;
-        let center_data_size = this.display.measureText("100%").width;
-        this.display.fillText("100%", this.center_text_x - (center_data_size / 2), (y_pos_total - 10));
+            this.display.fillStyle = this.text_color;
+            let center_data_size = this.display.measureText("100%").width;
+            this.display.fillText("100%", this.center_text_x - (center_data_size / 2), (y_pos_total - 10));
 
-        // returned
+            // returned
 
-        let taken_value = (onl_bonus_taken * 100) / onl_bonus_received;
-        let taken_height = ((taken_value) * this.histogram_data_max_height) / 100;
-        let y_pos_taken = this.histogram_last_line_y - taken_height;
-        
-        this.display.fillStyle = "purple";
-        this.display.fillRect(this.histogram_left_x, y_pos_taken, this.histogram_data_width, taken_height);
+            let taken_value = (this.onl_bonus_taken * 100) / this.onl_bonus_received;
+            let taken_height = ((taken_value) * this.histogram_data_max_height) / 100;
+            let y_pos_taken = this.histogram_last_line_y - taken_height;
+            
+            this.display.fillStyle = "purple";
+            this.display.fillRect(this.histogram_left_x, y_pos_taken, this.histogram_data_width, taken_height);
 
-        this.display.fillStyle = this.text_color;
-        let left_data_size = this.display.measureText(taken_value + "%").width;
-        this.display.fillText(taken_value + "%", this.left_text_x - (left_data_size / 2), (y_pos_taken - 10));
+            this.display.fillStyle = this.text_color;
+            let left_data_size = this.display.measureText(taken_value + "%").width;
+            this.display.fillText(taken_value + "%", this.left_text_x - (left_data_size / 2), (y_pos_taken - 10));
 
-        // missed
+            // missed
 
-        let missed_value = (onl_bonus_missed * 100) / onl_bonus_received;
-        let missed_height = ((missed_value) * this.histogram_data_max_height) / 100;
-        let y_pos_missed = this.histogram_last_line_y - missed_height;
-        
-        this.display.fillStyle = "green";
-        this.display.fillRect(this.histogram_right_x, y_pos_missed, this.histogram_data_width, missed_height);
+            let missed_value = (this.onl_bonus_missed * 100) / this.onl_bonus_received;
+            let missed_height = ((missed_value) * this.histogram_data_max_height) / 100;
+            let y_pos_missed = this.histogram_last_line_y - missed_height;
+            
+            this.display.fillStyle = "green";
+            this.display.fillRect(this.histogram_right_x, y_pos_missed, this.histogram_data_width, missed_height);
 
-        this.display.fillStyle = this.text_color;
-        let right_data_size = this.display.measureText(missed_value + "%").width;
-        this.display.fillText(missed_value + "%", this.right_text_x - (right_data_size / 2), (y_pos_missed - 10));
+            this.display.fillStyle = this.text_color;
+            let right_data_size = this.display.measureText(missed_value + "%").width;
+            this.display.fillText(missed_value + "%", this.right_text_x - (right_data_size / 2), (y_pos_missed - 10));
+        }
     }
 
     displayObject()
@@ -275,6 +307,8 @@ function refreshStats()
 {
     // init if uninit
 
+    // local
+
     if (localStorage.getItem('lcl_game_played_nb') == null)
         localStorage.setItem('lcl_game_played_nb', 0);
 
@@ -287,22 +321,48 @@ function refreshStats()
     if (localStorage.getItem('lcl_ball_bounce_nb') == null)
         localStorage.setItem('lcl_ball_bounce_nb', 0);
 
+    // online
+
+    if (localStorage.getItem('onl_played') == null)
+        localStorage.setItem('onl_played', 0);
+
+    if (localStorage.getItem('onl_victory') == null)
+        localStorage.setItem('onl_victory', 0);
+
+    if (localStorage.getItem('onl_defeat') == null)
+        localStorage.setItem('onl_defeat', 0);
+
+    if (localStorage.getItem('onl_dist') == null)
+        localStorage.setItem('onl_dist', 0);
+
+    if (localStorage.getItem('onl_ball_return') == null)
+        localStorage.setItem('onl_ball_return', 0);
+
+    if (localStorage.getItem('onl_ball_received') == null)
+        localStorage.setItem('onl_ball_received', 0);
+
+    if (localStorage.getItem('onl_bonus_taken') == null)
+        localStorage.setItem('onl_bonus_taken', 0);
+
+    if (localStorage.getItem('onl_bonus_received') == null)
+        localStorage.setItem('onl_bonus_received', 0);
+
     // load html data from variables
 
-    document.getElementById('lcl_game_played_nb').innerHTML = "[ " + (localStorage.getItem('lcl_game_played_nb')) + " ]";
-    document.getElementById('lcl_bonus_taken_nb').innerHTML = "[ " + (localStorage.getItem('lcl_bonus_taken_nb')) + " ]";
-    document.getElementById('lcl_ball_exit_nb').innerHTML = "[ " + (localStorage.getItem('lcl_ball_exit_nb')) + " ]";
-    document.getElementById('lcl_ball_bounce_nb').innerHTML = "[ " + (localStorage.getItem('lcl_ball_bounce_nb')) + " ]";
+    document.getElementById('lcl_game_played_nb').innerHTML = "[ " + localStorage.getItem('lcl_game_played_nb') + " ]";
+    document.getElementById('lcl_bonus_taken_nb').innerHTML = "[ " + localStorage.getItem('lcl_bonus_taken_nb') + " ]";
+    document.getElementById('lcl_ball_exit_nb').innerHTML = "[ " + localStorage.getItem('lcl_ball_exit_nb') + " ]";
+    document.getElementById('lcl_ball_bounce_nb').innerHTML = "[ " + localStorage.getItem('lcl_ball_bounce_nb') + " ]";
 
-    let win_rate = ~~(onl_victory * 100 / onl_played);
-    let lose_rate = ~~(onl_defeat * 100 / onl_played);
+    let win_rate = ~~(parseInt(localStorage.getItem('onl_victory')) * 100 / parseInt(localStorage.getItem('onl_played')));
+    let lose_rate = ~~(parseInt(localStorage.getItem('onl_defeat')) * 100 / parseInt(localStorage.getItem('onl_played')));
 
-    document.getElementById('onl_game_played_nb').innerHTML = "[ " + onl_played + " ]";
-    document.getElementById('onl_game_won_nb').innerHTML = "[ " + onl_victory + " ] [ " + win_rate + "% ]";
-    document.getElementById('onl_game_lost_nb').innerHTML = "[ " + onl_defeat + " ] [ " + lose_rate + "% ]";
-    document.getElementById('onl_dist').innerHTML = "[ " + onl_dist + " px ]";
-    document.getElementById('onl_ball_return').innerHTML = "[ " + onl_ball_return + "/" + onl_ball_received + " ]";
-    document.getElementById('onl_bonus_taken_nb').innerHTML = "[ " + onl_bonus_taken + "/" + onl_bonus_received + " ]";
+    document.getElementById('onl_game_played_nb').innerHTML = "[ " + localStorage.getItem('onl_played') + " ]";
+    document.getElementById('onl_game_won_nb').innerHTML = "[ " + localStorage.getItem('onl_victory') + " ] [ " + win_rate + "% ]";
+    document.getElementById('onl_game_lost_nb').innerHTML = "[ " + localStorage.getItem('onl_defeat') + " ] [ " + lose_rate + "% ]";
+    document.getElementById('onl_dist').innerHTML = "[ " + localStorage.getItem('onl_dist') + " px ]";
+    document.getElementById('onl_ball_return').innerHTML = "[ " + localStorage.getItem('onl_ball_return') + "/" + localStorage.getItem('onl_ball_received') + " ]";
+    document.getElementById('onl_bonus_taken_nb').innerHTML = "[ " + localStorage.getItem('onl_bonus_taken') + "/" + localStorage.getItem('onl_bonus_received') + " ]";
 }
 
 function changeStatsDisplayMode()
