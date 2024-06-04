@@ -75,8 +75,10 @@ class VisualStats
         this.onl_played = parseInt(localStorage.getItem('onl_played'));
         this.onl_ball_return = parseInt(localStorage.getItem('onl_ball_return'));
         this.onl_ball_received = parseInt(localStorage.getItem('onl_ball_received'));
+        this.onl_ball_missed = this.onl_ball_received - this.onl_ball_return;
         this.onl_bonus_taken = parseInt(localStorage.getItem('onl_bonus_taken'));
         this.onl_bonus_received = parseInt(localStorage.getItem('onl_bonus_received'));
+        this.onl_bonus_missed = this.onl_bonus_received - this.onl_bonus_taken;
     }
 
     drawCircleSurface(surface, color)
@@ -174,7 +176,7 @@ class VisualStats
 
             // returned
 
-            let returned_value = (this.onl_ball_return * 100) / this.onl_ball_received;
+            let returned_value = ((this.onl_ball_return * 100) / this.onl_ball_received).toFixed(1);
             let returned_height = ((returned_value) * this.histogram_data_max_height) / 100;
             let y_pos_returned = this.histogram_last_line_y - returned_height;
             
@@ -187,7 +189,7 @@ class VisualStats
 
             // missed
 
-            let missed_value = (this.onl_ball_missed * 100) / this.onl_ball_received;
+            let missed_value = ((this.onl_ball_missed * 100) / this.onl_ball_received).toFixed(1);
             let missed_height = ((missed_value) * this.histogram_data_max_height) / 100;
             let y_pos_missed = this.histogram_last_line_y - missed_height;
             
@@ -244,7 +246,7 @@ class VisualStats
 
             // returned
 
-            let taken_value = (this.onl_bonus_taken * 100) / this.onl_bonus_received;
+            let taken_value = ((this.onl_bonus_taken * 100) / this.onl_bonus_received).toFixed(1);
             let taken_height = ((taken_value) * this.histogram_data_max_height) / 100;
             let y_pos_taken = this.histogram_last_line_y - taken_height;
             
@@ -257,7 +259,7 @@ class VisualStats
 
             // missed
 
-            let missed_value = (this.onl_bonus_missed * 100) / this.onl_bonus_received;
+            let missed_value = ((this.onl_bonus_missed * 100) / this.onl_bonus_received).toFixed(1);
             let missed_height = ((missed_value) * this.histogram_data_max_height) / 100;
             let y_pos_missed = this.histogram_last_line_y - missed_height;
             
