@@ -29,8 +29,6 @@ let fr = [
     ["Game(s) lost", "Partie(s) perdue(s)"],
     ["Ball exit(s)", "Sortie(s) de balle"],
     ["Ball bounce(s)", "Rebond(s) de balle"],
-    ["Longest exchange", "Échange le plus long"],
-    ["Shortest game", "Partie la plus courte"],
     ["Distance covered", "Distance parcourue"],
     ["Ball return(s)", "Renvoi(s) de balle"],
     ["Bonus taken", "Bonus récupéré(s)"],
