@@ -44,6 +44,8 @@ class OnlineGame1v1_host
         this.separator_width = 2;
         this.separator_space = 17;
 
+        this.dist = 0;
+
         this.sounds = null;
 
         this.alert = 0;
@@ -255,10 +257,12 @@ class OnlineGame1v1_host
         if (gameKeys.KeyE == true){
             data_channel.send(`lpy:${this.left_player.y}`)
             this.left_player.moveUp();
+            this.dist++;
         }
         if (gameKeys.KeyD == true){
             data_channel.send(`lpy:${this.left_player.y}`)
             this.left_player.moveDown();
+            this.dist++;
         }
 
         this.left_player.print();
@@ -305,7 +309,10 @@ class OnlineGame1v1_host
         this.left_player.reset();
         this.right_player.reset();
 
+        this.dist = 0;
+
         this.alert = 0;
+
         if (gameMode != "normal")
             this.bonus_one.reset(), this.bonus_two.reset();
     }
@@ -327,28 +334,26 @@ class OnlineGame1v1_host
             return (true);
         if (this.scores[0] > 9)
         {
-            console.log('toto');
             let player_left_won = document.getElementById('h_win_text');
             player_left_won.innerHTML = localStorage.getItem('login') + getTranslation('Online Win');
             player_left_won.style.display = "block";
-            document.getElementById('online_winner').play();
+            localStorage.setItem('onl_victory', (parseInt(localStorage.getItem('onl_victory')) + 1).toString());
+            localStorage.setItem('onl_dist', (parseInt(localStorage.getItem('onl_dist')) + this.dist).toString());
 
-            this.resetGame();
-            active = false;
+            document.getElementById('online_winner').play();
 
             return (true);
         }
         if (this.scores[1] > 9)
         {
-            console.log('toto');
             let player_right_won = document.getElementById('h_win_text');
             player_right_won.innerHTML = sessionStorage.getItem('opponent_login') + getTranslation('Online Win');
             player_right_won.style.display = "block";
 
-            document.getElementById('online_loser').play();
+            localStorage.setItem('onl_victory', (parseInt(localStorage.getItem('onl_defeat')) + 1).toString());
+            localStorage.setItem('onl_dist', (parseInt(localStorage.getItem('onl_dist')) + this.dist).toString());
 
-            this.resetGame();
-            active = false;
+            document.getElementById('online_loser').play();
 
             return (true);
         }

@@ -70,6 +70,9 @@ function startOnline1v1()
         {
             game.refreshBackground();
             game.resetGame();
+            active = false;
+
+            localStorage.setItem('onl_played', (parseInt(localStorage.getItem('onl_played')) + 1).toString());
 
             removeOnline1v1();
         }

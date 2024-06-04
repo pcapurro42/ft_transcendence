@@ -44,6 +44,8 @@ class OnlineGame1v1_guest
         this.separator_width = 2;
         this.separator_space = 17;
 
+        this.dist = 0;
+
         this.sounds = null;
 
         this.alert = 0;
@@ -253,20 +255,22 @@ class OnlineGame1v1_guest
 
     refreshPlayers()
     {
-            if (gameKeys.ArrowUp == true){
-                data_channel.send(`rpy:${this.right_player.y}`)
-                this.right_player.moveUp();
-            }
-            if (gameKeys.ArrowDown == true){
-                data_channel.send(`rpy:${this.right_player.y}`)
-                this.right_player.moveDown();
-            }
+        if (gameKeys.ArrowUp == true){
+            data_channel.send(`rpy:${this.right_player.y}`)
+            this.right_player.moveUp();
+            this.dist++;
+        }
+        if (gameKeys.ArrowDown == true){
+            data_channel.send(`rpy:${this.right_player.y}`)
+            this.right_player.moveDown();
+            this.dist++;
+        }
 
-            this.left_player.print();
-            this.right_player.print();
+        this.left_player.print();
+        this.right_player.print();
 
-            this.left_player.displayBonus();
-            this.right_player.displayBonus();
+        this.left_player.displayBonus();
+        this.right_player.displayBonus();
 
     }
 
@@ -304,6 +308,8 @@ class OnlineGame1v1_guest
         this.left_player.reset();
         this.right_player.reset();
 
+        this.dist = 0;
+
         this.alert = 0;
 
         if (gameMode != "normal")
@@ -331,6 +337,9 @@ class OnlineGame1v1_guest
             player_left_won.innerHTML = sessionStorage.getItem('opponent_login') + getTranslation('Online Win');
             player_left_won.style.display = "block";
 
+            localStorage.setItem('onl_defeat', (parseInt(localStorage.getItem('onl_defeat')) + 1).toString());
+            localStorage.setItem('onl_dist', (parseInt(localStorage.getItem('onl_dist')) + this.dist).toString());
+
             document.getElementById('online_loser').play();
 
             this.resetGame();
@@ -343,6 +352,9 @@ class OnlineGame1v1_guest
             let player_right_won = document.getElementById('g_win_text');
             player_right_won.innerHTML = localStorage.getItem('login') + getTranslation('Online Win');
             player_right_won.style.display = "block";
+
+            localStorage.setItem('onl_victory', (parseInt(localStorage.getItem('onl_victory')) + 1).toString());
+            localStorage.setItem('onl_dist', (parseInt(localStorage.getItem('onl_dist')) + this.dist).toString());
 
             document.getElementById('online_winner').play();
 

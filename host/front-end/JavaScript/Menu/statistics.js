@@ -107,7 +107,7 @@ class VisualStats
 
         this.display.font = this.basic_text_format;
 
-        let legend_one = getTranslation("Red: Game(s) won")
+        let legend_one = getTranslation("Purple: Game(s) won")
         let legend_one_size = this.display.measureText(legend_one).width;
         this.display.fillText(legend_one, this.width / 2 - (legend_one_size / 2), 485);
     
@@ -121,9 +121,9 @@ class VisualStats
             let defeat = (this.onl_defeat * 360) / this.onl_played;
     
             if (victory >= defeat)
-                this.drawCircleSurface(360, "red"), this.drawCircleSurface(defeat, "yellow");
+                this.drawCircleSurface(360, "purple"), this.drawCircleSurface(defeat, "yellow");
             else
-                this.drawCircleSurface(360, "yellow"), this.drawCircleSurface(victory, "red")
+                this.drawCircleSurface(360, "yellow"), this.drawCircleSurface(victory, "purple")
         }
         else
             this.drawCircleSurface(360, this.background_color);

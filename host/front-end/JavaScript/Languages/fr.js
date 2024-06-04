@@ -33,7 +33,7 @@ let fr = [
     ["Ball return(s)", "Renvoi(s) de balle"],
     ["Bonus taken", "Bonus récupéré(s)"],
 
-    ["Red: Game(s) won", "Rouge : Partie(s) remportée(s)"],
+    ["Purple: Game(s) won", "Violet : Partie(s) remportée(s)"],
     ["Yellow: Game(s) lost", "Jaune : Partie(s) perdue(s)"],
 
     ["Taken", "Récupéré(e)(s)"],
