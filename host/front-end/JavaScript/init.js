@@ -97,7 +97,7 @@ let csrfToken = document.cookie.replace("csrftoken=", "");
 document.addEventListener('DOMContentLoaded', function() {fetchCsrfToken();});
 
 async function fetchCsrfToken() {
-    const response = await fetch('https://hostname:8080/backend/csrf/', {
+    const response = await fetch('https://hostname:8080/backend/csrf/', { //ICI
         credentials: 'include'
 	});
 }

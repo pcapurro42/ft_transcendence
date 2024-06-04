@@ -1,4 +1,4 @@
-bind = 'hostname:8000'
+bind = '0.0.0.0:8000'
 certfile = 'ssl/signaling.crt'
 keyfile = 'ssl/signaling.key'
 accesslog = '/dev/stdout'

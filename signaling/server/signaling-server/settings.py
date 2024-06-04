@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['hostname']
+ALLOWED_HOSTS = ['*'] #ICI
 
 
 # Application definition
@@ -120,7 +120,7 @@ USE_X_FORWARDED_PORT = True
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-CSRF_TRUSTED_ORIGINS = ['https://hostname', 'https://hostname:8080']
+CSRF_TRUSTED_ORIGINS = ['https://hostname:1025/', 'https://hostname:8080/' ,"hostname:1025"] #ICI
 
 
 CORS_ALLOW_METHODS = [

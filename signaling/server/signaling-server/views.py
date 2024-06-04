@@ -47,7 +47,7 @@ def token(request):
 				'client_id': CLIENT_ID,
 				'code': request.body,
 				'grant_type': 'authorization_code',
-				'redirect_uri': 'https://hostname', #
+				'redirect_uri': 'https://127.0.0.1:1025', #ICI
 				'client_secret': CLIENT_SECRET,
 			}
 
