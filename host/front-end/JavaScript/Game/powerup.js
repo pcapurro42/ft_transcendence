@@ -140,7 +140,7 @@ class PowerUp
                 }
                 else
                 {
-                    this.game.left_player.speed = this.game.left_player.speed * 2;
+                    this.game.left_player.speed = this.game.left_player.speed + 5;
                     this.game.left_player.bonus = true;
                     this.game.left_player.bonus_message = "+ speed";
                 }
@@ -155,7 +155,7 @@ class PowerUp
                 }
                 else
                 {
-                    this.game.right_player.speed = this.game.right_player.speed * 2;
+                    this.game.right_player.speed = this.game.right_player.speed + 5;
                     this.game.right_player.bonus = true;
                     this.game.right_player.bonus_message = "+ speed";
                 }
