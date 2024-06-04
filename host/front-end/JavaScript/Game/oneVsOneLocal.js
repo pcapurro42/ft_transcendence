@@ -294,6 +294,8 @@ class LocalGame1v1
 
     resetGame()
     {
+        console.log("ok")
+
         this.scores[0] = 0;
         this.scores[1] = 0;
 
@@ -343,9 +345,6 @@ class LocalGame1v1
                     player_right_won.style.display = "block";
                 }
             }
-
-            this.resetGame();
-            active = false;
 
             localStorage.setItem('lcl_game_played_nb', (parseInt(localStorage.getItem('lcl_game_played_nb')) + 1).toString());
 
@@ -412,6 +411,7 @@ function startLocal1v1()
         {
             game.refreshBackground();
             game.resetGame();
+            active = false;
 
             removeLocal1v1();
 
