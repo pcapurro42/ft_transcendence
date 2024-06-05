@@ -295,7 +295,7 @@ class History
     {
         this.history_data = history_data;
 
-        this.score_text_format = "50px Arial";
+        this.score_text_format = "47px Arial";
         this.title_text_format = "32px Arial";
         this.medium_text_format = "23px Arial";
         this.small_text_format = "18px Arial";
@@ -340,6 +340,21 @@ class History
             this.graph.src = 'Materials/images/graph_white.png';
         else
             this.graph.src = 'Materials/images/graph_black.png';
+
+        this.graph.onload = () => {this.graph_display.drawImage(this.graph, 0, 20, 570, 338)};
+
+        this.graph_display.font = this.medium_text_format;
+        this.graph_display.fillStyle = this.global_color;
+
+        let title = getTranslation("Game timelapse");
+        let title_size = this.graph_display.measureText("– " + title + " –").width;
+        this.graph_display.fillText("– " + title + " –", this.graph_width / 2 - (title_size / 2), 35);
+
+        this.graph_display.font = this.ridiculous_text_format;
+        this.graph_display.fillText("20%", 143, 335);
+        this.graph_display.fillText("40%", 230, 335);
+        this.graph_display.fillText("60%", 320, 335);
+        this.graph_display.fillText("80%", 410, 335);
     }
 
     initializeHistogram()
@@ -349,6 +364,13 @@ class History
 
         this.histogram_canvas.width = this.histogram_width;
         this.histogram_canvas.height = this.histogram_height;
+
+        this.histogram_display.font = this.medium_text_format;
+        this.histogram_display.fillStyle = this.global_color;
+
+        let title = getTranslation("Game domination");
+        let title_size = this.histogram_display.measureText("– " + title + " –").width;
+        this.histogram_display.fillText("– " + title + " –", this.histogram_width / 2 - (title_size / 2), 35);
     }
 
     initialize()
@@ -397,7 +419,7 @@ class History
             this.data_display.fillText(player2, 20 + player1_len + versus_len, 50);
 
             this.data_display.font = this.score_text_format;
-            let score = "[" + this.history_data.data[history_tab][2][0] + " - " + this.history_data.data[history_tab][2][1] + "]";
+            let score = "[ " + this.history_data.data[history_tab][2][0] + " – " + this.history_data.data[history_tab][2][1] + " ]";
             let score_len = this.data_display.measureText(score).width;
             this.data_display.fillText(score, this.data_width / 2 - (score_len / 2), this.data_height / 2 + 25);
         }
@@ -407,18 +429,6 @@ class History
     {
         this.graph_display.font = this.medium_text_format;
         this.graph_display.fillStyle = this.global_color;
-
-        let title = getTranslation("Game timelapse");
-        let title_size = this.graph_display.measureText("– " + title + " –").width;
-        this.graph_display.fillText("– " + title + " –", this.graph_width / 2 - (title_size / 2), 35);
-
-        this.graph_display.font = this.ridiculous_text_format;
-        this.graph_display.fillText("20%", 143, 335);
-        this.graph_display.fillText("40%", 230, 335);
-        this.graph_display.fillText("60%", 320, 335);
-        this.graph_display.fillText("80%", 410, 335);
-        
-        this.graph.onload = () => {this.graph_display.drawImage(this.graph, 0, 20, 570, 338)};
 
         if (this.history_data != null)
         {
@@ -446,26 +456,33 @@ class History
         this.histogram_display.font = this.medium_text_format;
         this.histogram_display.fillStyle = this.global_color;
 
-        let title = getTranslation("Game domination");
-        let title_size = this.histogram_display.measureText("– " + title + " –").width;
-        this.histogram_display.fillText("– " + title + " –", this.histogram_width / 2 - (title_size / 2), 35);
+        let value_p1 = 0;
+        let value_p2 = 0;
 
         if (this.history_data == null)
             this.drawCircleSurface(360, this.background_color);
         else
         {
-            let victory = 0
-            let defeat = 0
-    
-            if (victory >= defeat)
-                this.drawCircleSurface(360, "purple"), this.drawCircleSurface(defeat, "yellow");
+            if (value_p1 >= value_p2)
+                this.drawCircleSurface(360, "purple"), this.drawCircleSurface(value_p1, "yellow");
             else
-                this.drawCircleSurface(360, "yellow"), this.drawCircleSurface(victory, "purple")
+                this.drawCircleSurface(360, "yellow"), this.drawCircleSurface(value_p2, "purple")
         }
+    }
+
+    clean()
+    {
+        this.data_display.fillStyle = this.background_color;
+        this.graph_display.fillStyle = this.background_color;
+
+        this.data_display.fillRect(0, 0, this.data_width, this.data_height);
+        this.graph_display.fillRect(75, 75, this.graph_width - 130, this.graph_height - 120);
     }
 
     display()
     {
+        this.clean();
+
         this.displayInfos();
         this.displayGraph();
         this.displayHistogram();
@@ -492,7 +509,7 @@ window.addEventListener('keydown', (event) =>
     {
         if (event.key == 'ArrowLeft' && history_tab > 0)
             history_tab--, history.display();
-        if (event.key == 'ArrowRight' && history_tab < history.length)
+        if (event.key == 'ArrowRight' && history_tab < history.length() - 1)
             history_tab++, history.display();
     }
 });
