@@ -650,7 +650,15 @@ function removeOnlineStats()
 
 function refreshHistory()
 {
-    ;
+    if (localStorage.getItem('history_data') == null)
+    {
+        let history_data = {
+            exist: false,
+            length: 0,
+            data: null
+        }
+        localStorage.setItem('history_data', JSON.stringify(history_data));
+    }
 }
 
 function displayHistory()
@@ -666,9 +674,9 @@ function displayHistory()
     stats_back_btn.style.display = 'none';
     history.style.display = 'block';
 
-    let history_data = localStorage.getItem('history_data');
-    if (history_data != null)
-        history_data = JSON.parse(history_data);
+    let history_data = JSON.parse(localStorage.getItem('history_data'));
+    if (history_data.exist != true)
+        history_data = null;
 
     history = new History(history_data);
     history.initialize();
