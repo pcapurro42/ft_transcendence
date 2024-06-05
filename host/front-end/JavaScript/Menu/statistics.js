@@ -386,7 +386,7 @@ class History
         let title_size = this.graph_display.measureText("– " + title + " –").width;
         this.graph_display.fillText("– " + title + " –", this.graph_width / 2 - (title_size / 2), 35);
         
-        this.graph.onload = this.graph_display.drawImage(this.graph, 0, 0);
+        this.graph.onload = this.graph_display.drawImage(this.graph, 0, 20, 550, 318);
 
         if (this.history_data == null)
         {
