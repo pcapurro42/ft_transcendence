@@ -388,17 +388,14 @@ class History
         this.graph_display.fillText("– " + title + " –", this.graph_width / 2 - (title_size / 2), 35);
 
         this.graph_display.font = this.ridiculous_text_format;
-        this.graph_display.fillText("0%", 57, 335), this.graph_display.fillText("20%", 143, 335);
-        this.graph_display.fillText("40%", 230, 335), this.graph_display.fillText("60%", 320, 335);
-        this.graph_display.fillText("80%", 410, 335), this.graph_display.fillText("100%", 495, 335);
+        this.graph_display.fillText("20%", 143, 335);
+        this.graph_display.fillText("40%", 230, 335);
+        this.graph_display.fillText("60%", 320, 335);
+        this.graph_display.fillText("80%", 410, 335);
         
         this.graph.onload = () => {this.graph_display.drawImage(this.graph, 0, 20, 570, 338)};
 
-        if (this.history_data == null)
-        {
-            ;
-        }
-        else
+        if (this.history_data != null)
         {
             ;
         }
