@@ -652,12 +652,17 @@ function refreshHistory()
 {
     if (localStorage.getItem('history_data') == null)
     {
-        let history_data = {
-            exist: false,
-            length: 0,
-            data: null
+        let history = JSON.parse(localStorage.getItem('history_data'));
+        if (history.login != login)
+        {
+            let history_data = {
+                exist: false,
+                login: login,
+                length: 0,
+                data: null
+            }
+            localStorage.setItem('history_data', JSON.stringify(history_data));
         }
-        localStorage.setItem('history_data', JSON.stringify(history_data));
     }
 }
 

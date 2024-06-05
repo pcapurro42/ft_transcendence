@@ -33,6 +33,7 @@ async function handleRedirection(){
 async function storeUserLogin(response){
     localStorage.setItem("status", "connected");
     localStorage.setItem('login', response['login']);
+    login = response['login'];
     displayStatusBarSuccess(getTranslation('42 Auth Success') + response['login'])
     localStorage.setItem("status", "connected");
     refreshLogin();
