@@ -302,16 +302,17 @@ class History
         this.data_canvas = null;
         this.data_display = null;
         this.data_width = 900;
-        this.data_height = 250;
+        this.data_height = 200;
 
+        this.graph = null;
         this.graph_canvas = null;
         this.graph_display = null;
-        this.graph_width = 425;
+        this.graph_width = 550;
         this.graph_height = 350;
 
         this.histogram_canvas = null;
         this.histogram_display = null;
-        this.histogram_width = 425;
+        this.histogram_width = 300;
         this.histogram_height = 350;
     }
 
@@ -331,6 +332,12 @@ class History
 
         this.graph_canvas.width = this.graph_width;
         this.graph_canvas.height = this.graph_height;
+
+        this.graph = new Image();
+        if (this.global_color == "white")
+            this.graph.src = 'Materials/images/graph_black.png';
+        else
+            this.graph.src = 'Materials/images/graph_white.png';
     }
 
     initializeHistogram()
@@ -372,6 +379,15 @@ class History
 
     displayGraph()
     {
+        this.graph_display.font = this.medium_text_format;
+        this.graph_display.fillStyle = this.global_color;
+
+        let title = getTranslation("Game timelapse");
+        let title_size = this.graph_display.measureText("– " + title + " –").width;
+        this.graph_display.fillText("– " + title + " –", this.graph_width / 2 - (title_size / 2), 35);
+        
+        this.graph.onload = this.graph_display.drawImage(this.graph, 0, 0);
+
         if (this.history_data == null)
         {
             ;
@@ -399,6 +415,23 @@ class History
 
     displayHistogram()
     {
+        this.histogram_display.font = this.medium_text_format;
+        this.histogram_display.fillStyle = this.global_color;
+
+        let title = getTranslation("Game domination");
+        let title_size = this.histogram_display.measureText("– " + title + " –").width;
+        this.histogram_display.fillText("– " + title + " –", this.histogram_width / 2 - (title_size / 2), 35);
+
+        this.histogram_display.font = this.small_text_format;
+
+        let legend_one = getTranslation("Purple: you")
+        let legend_one_size = this.histogram_display.measureText(legend_one).width;
+        this.histogram_display.fillText(legend_one, this.histogram_width / 2 - (legend_one_size / 2), 320);
+    
+        let legend_two = getTranslation("Yellow: opponent")
+        let legend_two_size = this.histogram_display.measureText(legend_two).width;
+        this.histogram_display.fillText(legend_two, this.histogram_width / 2 - (legend_two_size / 2), 340);
+
         if (this.history_data == null)
             this.drawCircleSurface(360, this.background_color);
         else
@@ -411,22 +444,6 @@ class History
             else
                 this.drawCircleSurface(360, "yellow"), this.drawCircleSurface(victory, "purple")
         }
-        this.histogram_display.font = this.medium_text_format;
-        this.histogram_display.fillStyle = this.global_color;
-
-        let title = getTranslation("Game Domination");
-        let title_size = this.histogram_display.measureText("– " + title + " –").width;
-        this.histogram_display.fillText("– " + title + " –", this.histogram_width / 2 - (title_size / 2), 35);
-
-        this.histogram_display.font = this.small_text_format;
-
-        let legend_one = getTranslation("Purple: you")
-        let legend_one_size = this.histogram_display.measureText(legend_one).width;
-        this.histogram_display.fillText(legend_one, this.histogram_width / 2 - (legend_one_size / 2), 320);
-    
-        let legend_two = getTranslation("Yellow: your opponent")
-        let legend_two_size = this.histogram_display.measureText(legend_two).width;
-        this.histogram_display.fillText(legend_two, this.histogram_width / 2 - (legend_two_size / 2), 340);
     }
 
     display()
