@@ -87,11 +87,6 @@ function displayMenu()
     freeInputAndForms();
     tournamentFinalReset();
     resetConnection();
-
-    refreshStats();
-    refreshHistory();
-    refreshStatsDisplaySwitch();
-    refreshLogin();
 }
 
 function refreshSite()

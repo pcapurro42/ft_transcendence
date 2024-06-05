@@ -468,7 +468,7 @@ window.addEventListener('keydown', (event) =>
 });
 
 
-// < display > //
+// < stats > //
 
 function refreshStats()
 {
@@ -648,22 +648,46 @@ function removeOnlineStats()
     online_stats.style.display = 'none';
 }
 
+// < history > //
+
+function initializeHistory()
+{
+    let new_history_data = {
+        exist: false,
+        login: login42,
+        length: 0,
+        data: null
+    }
+    localStorage.setItem('history_data', JSON.stringify(new_history_data));
+}
+
+function addHistoryEntry(player1, player2, final_score, length, scores)
+{
+    let new_data = [];
+
+    new_data = [player1, player2, final_score, length, scores];
+    
+    let history_data = JSON.parse(localStorage.getItem('history_data'));
+    if (history_data.data == null)
+        history_data.data = [];
+    history_data.data.push(new_data);
+    history_data.length++;
+    localStorage.setItem('history_data', JSON.stringify(history_data));
+
+    refreshHistory();
+}
+
 function refreshHistory()
 {
     if (localStorage.getItem('history_data') == null)
+        initializeHistory();
+    else
     {
-        let history = JSON.parse(localStorage.getItem('history_data'));
-        if (history.login != login)
-        {
-            let history_data = {
-                exist: false,
-                login: login,
-                length: 0,
-                data: null
-            }
-            localStorage.setItem('history_data', JSON.stringify(history_data));
-        }
+        let history_data = JSON.parse(localStorage.getItem('history_data'));
+        if (history_data.login != login42)
+            initializeHistory();
     }
+    history = JSON.parse(localStorage.getItem('history_data'));
 }
 
 function displayHistory()

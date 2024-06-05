@@ -1,5 +1,3 @@
-// localStorage.clear();
-
 // < CUSTOMIZE > //
 
 let game_music;
@@ -26,7 +24,7 @@ initializeSounds();
 
 // < 42 CONNECT > //
 
-let login;
+let login42;
 
 let account_status;
 let user_info;
@@ -89,8 +87,13 @@ refreshDisplay();
 
 refreshSounds();
 refreshMusics();
-ARIAButtonState();
 
+refreshStats();
+refreshHistory();
+refreshStatsDisplaySwitch();
+refreshLogin();
+
+ARIAButtonState();
 
 //<Backend> //
 
@@ -104,3 +107,11 @@ async function fetchCsrfToken() {
 	});
 }
 // console.log(document.cookie);
+
+localStorage.removeItem('history_data');
+
+refreshHistory();
+
+addHistoryEntry('pcapurro', 'bgales', '10-2', '700', ["17|2", "64|1", "145|1", "200|1", "250|2", "300|1", "350|1", "360|1", "370|1", "400|1", "500|1", "700|1"]);
+
+addHistoryEntry('pcapurro', 'bgales', '9-10', '1065', ["17|2", "64|2", "145|1", "200|1", "250|2", "300|1", "350|1", "360|1", "370|1", "400|1", "500|1", "700|1", "800|2", "900|2", "1005|2", "1010|2", "1050|2", "1065|2"]);
