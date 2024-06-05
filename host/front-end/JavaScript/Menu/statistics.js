@@ -298,6 +298,7 @@ class History
         this.title_text_format = "32px Arial";
         this.medium_text_format = "23px Arial";
         this.small_text_format = "18px Arial";
+        this.ridiculous_text_format = "12px Arial";
 
         this.data_canvas = null;
         this.data_display = null;
@@ -385,6 +386,11 @@ class History
         let title = getTranslation("Game timelapse");
         let title_size = this.graph_display.measureText("– " + title + " –").width;
         this.graph_display.fillText("– " + title + " –", this.graph_width / 2 - (title_size / 2), 35);
+
+        this.graph_display.font = this.ridiculous_text_format;
+        this.graph_display.fillText("0%", 57, 335), this.graph_display.fillText("20%", 143, 335);
+        this.graph_display.fillText("40%", 230, 335), this.graph_display.fillText("60%", 320, 335);
+        this.graph_display.fillText("80%", 410, 335), this.graph_display.fillText("100%", 495, 335);
         
         this.graph.onload = () => {this.graph_display.drawImage(this.graph, 0, 20, 570, 338)};
 
