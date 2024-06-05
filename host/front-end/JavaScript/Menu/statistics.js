@@ -136,7 +136,7 @@ class VisualStats
     {
         this.clean();
 
-        this.histogram.onload = () => {this.display.drawImage(this.histogram, 0, 0)};
+        this.histogram.onload = this.display.drawImage(this.histogram, 0, 0);
 
         // texts
 
@@ -206,7 +206,7 @@ class VisualStats
     {
         this.clean();
 
-        this.histogram.onload = () => {this.display.drawImage(this.histogram, 0, 0)};
+        this.histogram.onload = this.display.drawImage(this.histogram, 0, 0);
 
         // texts
 
