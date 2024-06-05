@@ -296,7 +296,8 @@ class History
         this.history_data = history_data;
 
         this.title_text_format = "32px Arial";
-        this.basic_text_format = "23px Arial";
+        this.medium_text_format = "23px Arial";
+        this.small_text_format = "18px Arial";
 
         this.data_canvas = null;
         this.data_display = null;
@@ -381,16 +382,51 @@ class History
         }
     }
 
+    drawCircleSurface(surface, color)
+    {
+        this.histogram_display.beginPath();
+
+        if (color != this.background_color)
+            this.histogram_display.moveTo(this.histogram_width / 2, this.histogram_height / 2);
+        this.histogram_display.arc(this.histogram_width / 2, this.histogram_height / 2, 120, 0, ((surface * Math.PI) / 180));
+
+        this.histogram_display.fillStyle = color;
+        this.histogram_display.fill();
+
+        if (color == this.background_color)
+            this.histogram_display.lineWidth = 3, this.histogram_display.strokeStyle = this.global_color, this.histogram_display.stroke();
+    }
+
     displayHistogram()
     {
         if (this.history_data == null)
-        {
-            ;
-        }
+            this.drawCircleSurface(360, this.background_color);
         else
         {
-            ;
+            let victory = 0
+            let defeat = 0
+    
+            if (victory >= defeat)
+                this.drawCircleSurface(360, "purple"), this.drawCircleSurface(defeat, "yellow");
+            else
+                this.drawCircleSurface(360, "yellow"), this.drawCircleSurface(victory, "purple")
         }
+        this.histogram_display.font = this.medium_text_format;
+        this.histogram_display.fillStyle = this.global_color;
+
+        let title = getTranslation("Game Domination");
+        let title_size = this.histogram_display.measureText("– " + title + " –").width;
+        this.histogram_display.fillText("– " + title + " –", this.histogram_width / 2 - (title_size / 2), 35);
+
+        this.histogram_display.font = this.small_text_format;
+
+        let legend_one = getTranslation("Purple: you")
+        let legend_one_size = this.histogram_display.measureText(legend_one).width;
+        this.histogram_display.fillText(legend_one, this.histogram_width / 2 - (legend_one_size / 2), 320);
+    
+        let legend_two = getTranslation("Yellow: your opponent")
+        let legend_two_size = this.histogram_display.measureText(legend_two).width;
+        this.histogram_display.fillText(legend_two, this.histogram_width / 2 - (legend_two_size / 2), 340);
     }
 
     display()

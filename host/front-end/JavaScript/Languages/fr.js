@@ -34,6 +34,9 @@ let fr = [
     ["Bonus taken", "Bonus récupéré(s)"],
 
     ["[No availaible data to display]", "[Pas de donnée(s) disponible(s) à afficher]"],
+    ["Game Domination", "Domination de la partie"],
+    ["Purple: you", "Violet: vous"],
+    ["Yellow: your opponent", "Jaune: votre adversaire"],
 
     ["Purple: Game(s) won", "Violet : Partie(s) remportée(s)"],
     ["Yellow: Game(s) lost", "Jaune : Partie(s) perdue(s)"],

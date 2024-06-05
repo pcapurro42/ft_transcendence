@@ -35,6 +35,9 @@ let en = [
     ["Bonus taken", "Bonus taken"],
 
     ["[No availaible data to display]", "[No availaible data to display]"],
+    ["Game Domination", "Game Domination"],
+    ["Purple: you", "Purple: you"],
+    ["Yellow: your opponent", "Yellow: your opponent"],
 
     ["Purple: Game(s) won", "Purple: Game(s) won"],
     ["Yellow: Game(s) lost", "Yellow: Game(s) lost"],
