@@ -295,6 +295,7 @@ class History
     {
         this.history_data = history_data;
 
+        this.score_text_format = "50px Arial";
         this.title_text_format = "32px Arial";
         this.medium_text_format = "23px Arial";
         this.small_text_format = "18px Arial";
@@ -374,7 +375,31 @@ class History
         }
         else
         {
-            ;
+            this.data_display.fillStyle = this.global_color;
+
+            this.data_display.font = "bold " + this.title_text_format;
+            let player1 = this.history_data.data[history_tab][0];
+            let player1_len = this.data_display.measureText(player1).width;
+            
+            this.data_display.font = "italic " + this.title_text_format;
+            let versus = "     vs     ";
+            let versus_len = this.data_display.measureText(versus).width;
+            
+            this.data_display.font = "bold " + this.title_text_format;
+            let player2 = this.history_data.data[history_tab][1];
+
+            this.data_display.fillText(player1, 20, 50);
+            
+            this.data_display.font = "italic " + this.title_text_format;
+            this.data_display.fillText("     vs     ", 20 + player1_len, 50);
+            
+            this.data_display.font = "bold " + this.title_text_format;
+            this.data_display.fillText(player2, 20 + player1_len + versus_len, 50);
+
+            this.data_display.font = this.score_text_format;
+            let score = "[" + this.history_data.data[history_tab][2][0] + " - " + this.history_data.data[history_tab][2][1] + "]";
+            let score_len = this.data_display.measureText(score).width;
+            this.data_display.fillText(score, this.data_width / 2 - (score_len / 2), this.data_height / 2 + 25);
         }
     }
 
@@ -445,6 +470,11 @@ class History
         this.displayGraph();
         this.displayHistogram();
     }
+
+    length()
+    {
+        return (this.history_data.length);
+    }
 }
 
 // < controls > //
@@ -458,13 +488,13 @@ window.addEventListener('keydown', (event) =>
         if (event.key == 'ArrowRight' && stats_tab < 2)
             stats_tab++, stats.displayObject();
     }
-    // if (document.getElementById('history').style.display == 'block')
-    // {
-    //     if (event.key == 'ArrowLeft')
-    //         history_tab--, history.display();
-    //     if (event.key == 'ArrowRight')
-    //         history_tab++, history.display();
-    // }
+    if (history != null)
+    {
+        if (event.key == 'ArrowLeft' && history_tab > 0)
+            history_tab--, history.display();
+        if (event.key == 'ArrowRight' && history_tab < history.length)
+            history_tab++, history.display();
+    }
 });
 
 
@@ -669,7 +699,7 @@ function addHistoryEntry(player1, player2, final_score, length, scores)
     
     let history_data = JSON.parse(localStorage.getItem('history_data'));
     if (history_data.data == null)
-        history_data.data = [];
+        history_data.data = [], history_data.exist = true;
     history_data.data.push(new_data);
     history_data.length++;
     localStorage.setItem('history_data', JSON.stringify(history_data));
@@ -694,14 +724,14 @@ function displayHistory()
 {
     let stats_menu = document.getElementById('stats_menu_buttons');
     let stats_back_btn = document.getElementById('stats_back_btn');
-    let history = document.getElementById('history');
+    let history_menu = document.getElementById('history');
 
     document.getElementById('history_info').style.display = 'block';
     document.getElementById('history_info').style.visibility = 'visible';
 
     stats_menu.style.display = 'none';
     stats_back_btn.style.display = 'none';
-    history.style.display = 'block';
+    history_menu.style.display = 'block';
 
     let history_data = JSON.parse(localStorage.getItem('history_data'));
     if (history_data.exist != true)
@@ -724,4 +754,6 @@ function removeHistory()
     stats_menu.style.display = 'block';
     stats_back_btn.style.display = 'block';
     history.style.display = 'none';
+
+    history = null;
 }
