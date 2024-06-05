@@ -291,8 +291,13 @@ class VisualStats
 
 class History
 {
-    constructor()
+    constructor(history_data)
     {
+        this.history_data = history_data;
+
+        this.title_text_format = "32px Arial";
+        this.basic_text_format = "23px Arial";
+
         this.data_canvas = null;
         this.data_display = null;
         this.data_width = 900;
@@ -348,33 +353,51 @@ class History
             this.global_color = "black", this.background_color = "white";
     }
 
-    displayBackground()
-    {
-        ;
-    }
-
     displayInfos()
     {
-        let data;
+        if (this.history_data == null)
+        {
+            this.data_display.font = this.title_text_format;
+            this.data_display.fillStyle = this.global_color;
+            let text = getTranslation("[No availaible data to display]");
+            let center_text = this.data_display.measureText(text).width;
+            this.data_display.fillText(text, this.data_width / 2 - (center_text / 2), this.data_height / 2);
+        }
+        else
+        {
+            ;
+        }
     }
 
     displayGraph()
     {
-        let data;
+        if (this.history_data == null)
+        {
+            ;
+        }
+        else
+        {
+            ;
+        }
     }
 
-    displayCamembert()
+    displayHistogram()
     {
-        let data;
+        if (this.history_data == null)
+        {
+            ;
+        }
+        else
+        {
+            ;
+        }
     }
 
     display()
     {
-        this.displayBackground();
-
         this.displayInfos();
         this.displayGraph();
-        this.displayCamembert();
+        this.displayHistogram();
     }
 }
 
@@ -389,6 +412,13 @@ window.addEventListener('keydown', (event) =>
         if (event.key == 'ArrowRight' && stats_tab < 2)
             stats_tab++, stats.displayObject();
     }
+    // if (document.getElementById('history').style.display == 'block')
+    // {
+    //     if (event.key == 'ArrowLeft')
+    //         history_tab--, history.display();
+    //     if (event.key == 'ArrowRight')
+    //         history_tab++, history.display();
+    // }
 });
 
 
@@ -572,6 +602,11 @@ function removeOnlineStats()
     online_stats.style.display = 'none';
 }
 
+function refreshHistory()
+{
+    ;
+}
+
 function displayHistory()
 {
     let stats_menu = document.getElementById('stats_menu_buttons');
@@ -585,7 +620,11 @@ function displayHistory()
     stats_back_btn.style.display = 'none';
     history.style.display = 'block';
 
-    history = new History();
+    let history_data = localStorage.getItem('history_data');
+    if (history_data != null)
+        history_data = JSON.parse(history_data);
+
+    history = new History(history_data);
     history.initialize();
     history.display();
 }

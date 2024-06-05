@@ -33,6 +33,8 @@ let fr = [
     ["Ball return(s)", "Renvoi(s) de balle"],
     ["Bonus taken", "Bonus récupéré(s)"],
 
+    ["[No availaible data to display]", "[Pas de donnée(s) disponible(s) à afficher]"],
+
     ["Purple: Game(s) won", "Violet : Partie(s) remportée(s)"],
     ["Yellow: Game(s) lost", "Jaune : Partie(s) perdue(s)"],
 

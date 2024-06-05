@@ -34,6 +34,8 @@ let en = [
     ["Ball return(s)", "Ball return(s)"],
     ["Bonus taken", "Bonus taken"],
 
+    ["[No availaible data to display]", "[No availaible data to display]"],
+
     ["Purple: Game(s) won", "Purple: Game(s) won"],
     ["Yellow: Game(s) lost", "Yellow: Game(s) lost"],
 
