@@ -289,6 +289,95 @@ class VisualStats
     }
 }
 
+class History
+{
+    constructor()
+    {
+        this.data_canvas = null;
+        this.data_display = null;
+        this.data_width = 900;
+        this.data_height = 250;
+
+        this.graph_canvas = null;
+        this.graph_display = null;
+        this.graph_width = 425;
+        this.graph_height = 350;
+
+        this.histogram_canvas = null;
+        this.histogram_display = null;
+        this.histogram_width = 425;
+        this.histogram_height = 350;
+    }
+
+    initializeData()
+    {
+        this.data_canvas = document.getElementById('history_data');
+        this.data_display = this.data_canvas.getContext('2d');
+
+        this.data_canvas.width = this.data_width;
+        this.data_canvas.height = this.data_height;
+    }
+
+    initializeGraph()
+    {
+        this.graph_canvas = document.getElementById('history_time_data');
+        this.graph_display = this.graph_canvas.getContext('2d');
+
+        this.graph_canvas.width = this.graph_width;
+        this.graph_canvas.height = this.graph_height;
+    }
+
+    initializeHistogram()
+    {
+        this.histogram_canvas = document.getElementById('history_diagram_data');
+        this.histogram_display = this.histogram_canvas.getContext('2d');
+
+        this.histogram_canvas.width = this.histogram_width;
+        this.histogram_canvas.height = this.histogram_height;
+    }
+
+    initialize()
+    {
+        this.initializeData();
+        this.initializeGraph();
+        this.initializeHistogram();
+
+        if (high_contrast == "true")
+            this.global_color = "white", this.background_color = "black";
+        else
+            this.global_color = "black", this.background_color = "white";
+    }
+
+    displayBackground()
+    {
+        ;
+    }
+
+    displayInfos()
+    {
+        let data;
+    }
+
+    displayGraph()
+    {
+        let data;
+    }
+
+    displayCamembert()
+    {
+        let data;
+    }
+
+    display()
+    {
+        this.displayBackground();
+
+        this.displayInfos();
+        this.displayGraph();
+        this.displayCamembert();
+    }
+}
+
 // < controls > //
 
 window.addEventListener('keydown', (event) =>
@@ -495,6 +584,10 @@ function displayHistory()
     stats_menu.style.display = 'none';
     stats_back_btn.style.display = 'none';
     history.style.display = 'block';
+
+    history = new History();
+    history.initialize();
+    history.display();
 }
 
 function removeHistory()
