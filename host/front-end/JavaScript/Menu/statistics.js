@@ -316,6 +316,9 @@ class History
         this.histogram_display = null;
         this.histogram_width = 300;
         this.histogram_height = 350;
+
+        this.left_player_color = "green";
+        this.right_player_color = "red";
     }
 
     initializeData()
@@ -421,7 +424,27 @@ class History
             this.data_display.font = this.score_text_format;
             let score = "[ " + this.history_data.data[history_tab][2][0] + " – " + this.history_data.data[history_tab][2][1] + " ]";
             let score_len = this.data_display.measureText(score).width;
-            this.data_display.fillText(score, this.data_width / 2 - (score_len / 2), this.data_height / 2 + 25);
+            this.data_display.fillText(score, this.data_width / 2 - (score_len / 2), this.data_height / 2 + 35);
+
+            this.data_display.font = "bold " + this.title_text_format;
+
+            let underline_left_len = player1_len;
+            let underline_right_len = this.data_display.measureText(player2).width;
+
+            this.data_display.fillStyle = this.left_player_color;
+            this.data_display.fillRect(20, 60, underline_left_len, 2);
+
+            this.data_display.fillStyle = this.right_player_color;
+            this.data_display.fillRect(20 + player1_len + versus_len, 60, underline_right_len, 2);
+
+            this.data_display.fillStyle = this.global_color;
+            this.data_display.font = this.medium_text_format;
+
+            this.data_display.fillText(this.history_data.data[history_tab][3], 20, this.data_height - 20);
+
+            let duration = this.history_data.data[history_tab][4] + "s";
+            let duration_size = this.data_display.measureText(duration).width;
+            this.data_display.fillText(duration, this.data_width - 20 - duration_size, this.data_height - 20);
         }
     }
 
@@ -464,9 +487,9 @@ class History
         else
         {
             if (value_p1 >= value_p2)
-                this.drawCircleSurface(360, "purple"), this.drawCircleSurface(value_p1, "yellow");
+                this.drawCircleSurface(360, "green"), this.drawCircleSurface(value_p1, "red");
             else
-                this.drawCircleSurface(360, "yellow"), this.drawCircleSurface(value_p2, "purple")
+                this.drawCircleSurface(360, "red"), this.drawCircleSurface(value_p2, "green")
         }
     }
 
@@ -697,6 +720,21 @@ function removeOnlineStats()
 
 // < history > //
 
+function getActualDate()
+{
+    let date = new Date();
+    let day = date.getDate();
+    let month = (parseInt(date.getMonth()) + 1);
+    let year = date.getFullYear();
+
+    if (parseInt(day) < 10)
+        day = "0" + day;
+    if (parseInt(month) < 10)
+        month = "0" + month;
+
+    return (day + "/" + month + "/" + year);
+}
+
 function initializeHistory()
 {
     let new_history_data = {
@@ -750,9 +788,13 @@ function displayHistory()
     stats_back_btn.style.display = 'none';
     history_menu.style.display = 'block';
 
+    console.log(getActualDate());
+
     let history_data = JSON.parse(localStorage.getItem('history_data'));
     if (history_data.exist != true)
         history_data = null;
+    else
+        history_tab = history_data.length - 1;
 
     history = new History(history_data);
     history.initialize();
