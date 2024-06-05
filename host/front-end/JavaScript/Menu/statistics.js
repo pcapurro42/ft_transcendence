@@ -336,9 +336,9 @@ class History
 
         this.graph = new Image();
         if (this.global_color == "white")
-            this.graph.src = 'Materials/images/graph_black.png';
-        else
             this.graph.src = 'Materials/images/graph_white.png';
+        else
+            this.graph.src = 'Materials/images/graph_black.png';
     }
 
     initializeHistogram()
@@ -352,14 +352,14 @@ class History
 
     initialize()
     {
-        this.initializeData();
-        this.initializeGraph();
-        this.initializeHistogram();
-
         if (high_contrast == "true")
             this.global_color = "white", this.background_color = "black";
         else
             this.global_color = "black", this.background_color = "white";
+
+        this.initializeData();
+        this.initializeGraph();
+        this.initializeHistogram();
     }
 
     displayInfos()
