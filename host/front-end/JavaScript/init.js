@@ -120,5 +120,6 @@ ARIAButtonState();
 //<Backend> //
 
 handleRedirection();
-// handleLocation();
+handleLocation();
+
 //<Backend> //

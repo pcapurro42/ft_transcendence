@@ -45,8 +45,6 @@ document.getElementById('start_1v1_local').onclick = displayLocal1v1;
 document.getElementById('start_2v1_local').onclick = displayLocal1v2;
 document.getElementById('start_1v1_online').onclick = displayOnline1v1;
 
-// document.getElementById('start_vs_ai').onclick = displayVsAi;
-
 // < CLASSIC > //
 
 document.getElementById('create_one_vs_one_online_btn').onclick = nav.displayOneVsOneOnlineCreateGame;
@@ -56,10 +54,6 @@ document.getElementById('join_one_vs_one_online_btn').onclick = nav.displayOneVs
 document.getElementById('join_classic_back_btn').onclick = nav.displayOneVsOneChoice;
 
 document.getElementById('one_vs_one_online_choice_back_btn').onclick = nav.removeOneVsOneChoice;
-
-// < AI > //
-
-document.getElementById('ai_game_btn').onclick = ai;
 
 // < TOURNAMENT > //
 

@@ -280,14 +280,14 @@ function refreshDisplay()
     if (localStorage.getItem('status') == "connected")
     {
         document.getElementById('one_vs_one_online_btn').classList.remove('disabled');
-        // document.getElementById('history_btn').classList.remove('disabled');
-        // document.getElementById('online_stats_btn').classList.remove('disabled');
+        document.getElementById('history_btn').classList.remove('disabled');
+        document.getElementById('online_stats_btn').classList.remove('disabled');
     }
     else
     {
         document.getElementById('one_vs_one_online_btn').classList.add('disabled');
-        // document.getElementById('history_btn').classList.add('disabled');
-        // document.getElementById('online_stats_btn').classList.add('disabled');
+        document.getElementById('history_btn').classList.add('disabled');
+        document.getElementById('online_stats_btn').classList.add('disabled');
     }
     ARIAButtonState();
     ARIASoundsSlider();
