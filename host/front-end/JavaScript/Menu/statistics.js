@@ -460,21 +460,22 @@ class History
 
     displayGraph()
     {
-        this.graph_display.font = this.medium_text_format;
-        this.graph_display.fillStyle = this.global_color;
-
         if (this.history_data != null)
         {
-            let start_x = 60;
-            let total = 450;
+            let total = 450 - 60;
             let length = this.history_data.data[history_tab][4];
-            let scores = this.history_data.data[history_tab][5];
+            let scores_data = this.history_data.data[history_tab][5];
 
-            let i = 0;
-            while (scores[i][0] != length)
+            for (let i = 0; scores_data[i][0] != length; i++)
             {
-                
-                i++;
+                if (scores_data[i][0] == '1')
+                    this.graph_display.fillStyle = "red";
+                else
+                    this.graph_display.fillStyle = "red";
+
+                let part = parseInt(scores_data[i][0]) * 100 / length;
+                let x_pos = part * 100 / total;
+                this.graph_display.fillRect(x_pos + 60, 150, 4, 4);
             }
         }
     }
@@ -767,8 +768,6 @@ function initializeHistory()
 function addHistoryEntry(player1, player2, final_score, date, duration, scores)
 {
     let new_data = [];
-
-    console.log(scores)
 
     new_data = [player1, player2, final_score, date, duration, scores];
 

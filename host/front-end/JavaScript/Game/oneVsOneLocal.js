@@ -294,8 +294,6 @@ class LocalGame1v1
 
     resetGame()
     {
-        console.log("ok")
-
         this.scores[0] = 0;
         this.scores[1] = 0;
 

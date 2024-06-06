@@ -71,7 +71,6 @@ class OnlineGame1v1_guest
             this.menu_color = "white", this.background_color = "black", this.bar_color = "white", this.ball_color = "white";
         else
             this.menu_color = "black", this.background_color = "white", this.bar_color = "black", this.ball_color = "black";
-            console.log(game_map)
         if (game_map != null && game_map != "none")
         {
             if (game_map == "red")
