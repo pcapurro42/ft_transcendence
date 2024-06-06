@@ -469,22 +469,41 @@ class History
             let game_length = this.history_data.data[history_tab][4];
             let scores_data = this.history_data.data[history_tab][5];
 
+            let old_x, old_y;
             for (let i = 0; i != scores_nb; i++)
             {
+                let color;
                 if (scores_data[i][1] == '1')
-                    this.graph_display.fillStyle = this.left_player_color;
+                    color = this.left_player_color;
                 else if (scores_data[i][1] == '2')
-                    this.graph_display.fillStyle = this.right_player_color;
+                    color = this.right_player_color;
                 else
-                    this.graph_display.fillStyle = this.global_color;
+                    color = this.global_color;
+                this.graph_display.fillStyle = color;
 
                 let x_pos = 63 + (parseInt(scores_data[i][0]) * total_distance) / game_length;
+                let y_pos = bottom_y - (i * 13);
                 if (i == scores_nb - 1)
-                    this.graph_display.fillRect(x_pos - this.graph_point_size, bottom_y - (i * 10), this.graph_point_size, this.graph_point_size);
+                    x_pos = x_pos - this.graph_point_size;
                 else if (i == 0)
-                    this.graph_display.fillRect(x_pos, bottom_y - (i * 10), this.graph_point_size, this.graph_point_size);
+                    x_pos = x_pos;
                 else
-                    this.graph_display.fillRect(x_pos - (this.graph_point_size / 2), bottom_y - (i * 10), this.graph_point_size, this.graph_point_size);
+                    x_pos = x_pos - (this.graph_point_size / 2);
+
+                if (i != 0)
+                {
+                    this.graph_display.beginPath();
+                    this.graph_display.moveTo(old_x + (this.graph_point_size / 2), old_y + (this.graph_point_size / 2));
+                    this.graph_display.lineTo(x_pos + (this.graph_point_size / 2), y_pos + (this.graph_point_size / 2));
+                    this.graph_display.lineWidth = 1.5
+                    this.graph_display.strokeStyle = color;
+                    this.graph_display.stroke();
+                }
+
+                this.graph_display.fillRect(x_pos, y_pos, this.graph_point_size, this.graph_point_size);
+
+                old_x = x_pos;
+                old_y = y_pos;
             }
         }
     }
