@@ -311,6 +311,7 @@ class History
         this.graph_display = null;
         this.graph_width = 550;
         this.graph_height = 350;
+        this.graph_point_size = 6;
 
         this.histogram_canvas = null;
         this.histogram_display = null;
@@ -446,13 +447,13 @@ class History
             let duration_size = this.data_display.measureText(duration).width;
             this.data_display.fillText(duration, this.data_width - 20 - duration_size, this.data_height - 20);
 
-            this.data_display.font = "bold " + this.title_text_format;
+            this.data_display.font = "bold italic " + this.title_text_format;
 
             let end;
             if (this.history_data.data[history_tab][2][0] == '10')
-                end = "[" + getTranslation("victory") + "]";
+                end = getTranslation("victory");
             else
-                end = "[" + getTranslation("defeat") + "]";
+                end = getTranslation("defeat");
             let end_size = this.data_display.measureText(end).width;
             this.data_display.fillText(end, this.data_width - 20 - end_size, 50);
         }
@@ -462,20 +463,28 @@ class History
     {
         if (this.history_data != null)
         {
-            let total = 450 - 60;
-            let length = this.history_data.data[history_tab][4];
+            let total_distance = 444;
+            let bottom_y = this.graph_height - 43;
+            let scores_nb = this.history_data.data[history_tab][5].length;
+            let game_length = this.history_data.data[history_tab][4];
             let scores_data = this.history_data.data[history_tab][5];
 
-            for (let i = 0; scores_data[i][0] != length; i++)
+            for (let i = 0; i != scores_nb; i++)
             {
-                if (scores_data[i][0] == '1')
-                    this.graph_display.fillStyle = "red";
+                if (scores_data[i][1] == '1')
+                    this.graph_display.fillStyle = this.left_player_color;
+                else if (scores_data[i][1] == '2')
+                    this.graph_display.fillStyle = this.right_player_color;
                 else
-                    this.graph_display.fillStyle = "red";
+                    this.graph_display.fillStyle = this.global_color;
 
-                let part = parseInt(scores_data[i][0]) * 100 / length;
-                let x_pos = part * 100 / total;
-                this.graph_display.fillRect(x_pos + 60, 150, 4, 4);
+                let x_pos = 63 + (parseInt(scores_data[i][0]) * total_distance) / game_length;
+                if (i == scores_nb - 1)
+                    this.graph_display.fillRect(x_pos - this.graph_point_size, bottom_y - (i * 10), this.graph_point_size, this.graph_point_size);
+                else if (i == 0)
+                    this.graph_display.fillRect(x_pos, bottom_y - (i * 10), this.graph_point_size, this.graph_point_size);
+                else
+                    this.graph_display.fillRect(x_pos - (this.graph_point_size / 2), bottom_y - (i * 10), this.graph_point_size, this.graph_point_size);
             }
         }
     }
@@ -518,7 +527,7 @@ class History
         this.graph_display.fillStyle = this.background_color;
 
         this.data_display.fillRect(0, 0, this.data_width, this.data_height);
-        this.graph_display.fillRect(75, 75, this.graph_width - 130, this.graph_height - 120);
+        this.graph_display.fillRect(63, 66, 444, this.graph_height - 102);
     }
 
     display()
