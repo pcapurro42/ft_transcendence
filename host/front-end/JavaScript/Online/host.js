@@ -45,6 +45,6 @@ function hostConnectionHandler(){
 		else
 			data_channel.send("bonus");
 		data_channel.send('lobby ok');
-		displayOneVsOneGameOnline();
+		nav.displayOneVsOneGameOnline();
 	}
 }

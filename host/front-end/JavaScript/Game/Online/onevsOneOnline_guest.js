@@ -74,7 +74,6 @@ class OnlineGame1v1_guest
             console.log(game_map)
         if (game_map != null && game_map != "none")
         {
-            console.log('toto')
             if (game_map == "red")
                 this.background_color = "brown";
             else

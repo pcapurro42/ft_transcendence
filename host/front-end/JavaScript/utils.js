@@ -1,3 +1,16 @@
+function addBeforeUnloadWarning() {
+    window.addEventListener('beforeunload', handleBeforeUnload);
+}
+
+function removeBeforeUnloadWarning() {
+    window.removeEventListener('beforeunload', handleBeforeUnload);
+}
+
+function handleBeforeUnload(event){
+	event.preventDefault();
+	return getTranslation('Refresh Warning');
+}
+
 function stopKeysAnim(){
 	 let keys_anim = document.querySelectorAll('.keysup, .keysdown');
     (keys_anim).forEach(element => {

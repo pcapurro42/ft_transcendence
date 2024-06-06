@@ -1,4 +1,28 @@
+// localStorage.clear();
+
+
+//   ⚠️⚠️⚠️ Laisser ici ⚠️⚠️⚠️
+let originalUrl = window.location.pathname;
+let csrfToken = document.cookie.replace("csrftoken=", "");
+
+document.addEventListener('DOMContentLoaded', function() {fetchCsrfToken();});
+
+async function fetchCsrfToken() {
+    const response = await fetch('https://hostname:8080/backend/csrf/', { //ICI
+        credentials: 'include'
+	});
+}
+
+sessionStorage.removeItem('auth_code');
+const auth_code = new URLSearchParams(window.location.search).get('code');
+if (auth_code)
+    sessionStorage.setItem('auth_code', auth_code);
 // < CUSTOMIZE > //
+
+let previous_url_path = window.location.pathname;
+window.addEventListener('popstate', function(event){
+    handleLocation();
+});
 
 let game_music;
 let game_map;
@@ -53,7 +77,7 @@ initializeGameMode();
 
 let visual = false;
 
-let history = null;
+let historic = null;
 let history_tab = 0;
 
 let stats = null;
@@ -80,7 +104,6 @@ let data_channel;
 
 // < REFRESH > //
 
-displayMenu();
 
 refreshLanguage();
 refreshDisplay();
@@ -97,17 +120,6 @@ ARIAButtonState();
 
 //<Backend> //
 
-let csrfToken = document.cookie.replace("csrftoken=", "");
-
-document.addEventListener('DOMContentLoaded', function() {fetchCsrfToken();});
-
-async function fetchCsrfToken() {
-    const response = await fetch('https://hostname:8080/backend/csrf/', { //ICI
-        credentials: 'include'
-	});
-}
-// console.log(document.cookie);
-
 localStorage.removeItem('history_data');
 
 refreshHistory();
@@ -120,3 +132,7 @@ addHistoryEntry('pcapurro', 'bgales', ['9', '10'], '04/06', '1065', ["17|2", "64
 addHistoryEntry('pcapurro', 'bgales', ['10', '2'], '06/06', '700', ["17|2", "64|1", "145|1", "200|1", "250|2", "300|1", "350|1", "360|1", "370|1", "400|1", "500|1", "700|1"]);
 
 refreshHistory();
+handleRedirection();
+handleLocation();
+//<Backend> //
+

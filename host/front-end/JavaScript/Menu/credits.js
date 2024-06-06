@@ -1,6 +1,6 @@
 let boolAudio_on;
 
-function theaterCredits(){
+nav.theaterCredits = function(){
 	let website = document.getElementById('main_page');
 	let music_menu = document.getElementById('mgs');
 	let cross_exit = document.getElementById('credit_close');
@@ -25,9 +25,11 @@ function theaterCredits(){
 		boolAudio_on = true;
 	}
 	video.play();
+	history.pushState(getTranslation('Credits'), null, getTranslation('/credits'));
+	document.title = getTranslation('Credits');
 }
 
-function theaterClose(){
+nav.theaterClose = function(){
 	let website = document.getElementById('main_page');
 	let music_menu = document.getElementById('mgs');
 	let cross_exit = document.getElementById('credit_close');
@@ -50,4 +52,6 @@ function theaterClose(){
 		music_menu.muted = false;
 		music_menu.play();
 	}
+	history.pushState(getTranslation('Home'), null, getTranslation('/home'));
+	document.title = getTranslation('Home');
 }

@@ -112,7 +112,7 @@ class VisualStats
         let legend_one = getTranslation("Purple: Game(s) won")
         let legend_one_size = this.display.measureText(legend_one).width;
         this.display.fillText(legend_one, this.width / 2 - (legend_one_size / 2), 485);
-    
+
         let legend_two = getTranslation("Yellow: Game(s) lost")
         let legend_two_size = this.display.measureText(legend_two).width;
         this.display.fillText(legend_two, this.width / 2 - (legend_two_size / 2), 510);
@@ -121,7 +121,7 @@ class VisualStats
         {
             let victory = (this.onl_victory * 360) / this.onl_played;
             let defeat = (this.onl_defeat * 360) / this.onl_played;
-    
+
             if (victory >= defeat)
                 this.drawCircleSurface(360, "purple"), this.drawCircleSurface(defeat, "yellow");
             else
@@ -166,7 +166,7 @@ class VisualStats
             // total
 
             let y_pos_total = this.histogram_last_line_y - this.histogram_data_max_height;
-            
+
             this.display.fillStyle = "green";
             this.display.fillRect(this.histogram_center_x, y_pos_total, this.histogram_data_width, this.histogram_data_max_height);
 
@@ -179,7 +179,7 @@ class VisualStats
             let returned_value = ((this.onl_ball_return * 100) / this.onl_ball_received).toFixed(1);
             let returned_height = ((returned_value) * this.histogram_data_max_height) / 100;
             let y_pos_returned = this.histogram_last_line_y - returned_height;
-            
+
             this.display.fillStyle = "yellow";
             this.display.fillRect(this.histogram_left_x, y_pos_returned, this.histogram_data_width, returned_height);
 
@@ -192,7 +192,7 @@ class VisualStats
             let missed_value = ((this.onl_ball_missed * 100) / this.onl_ball_received).toFixed(1);
             let missed_height = ((missed_value) * this.histogram_data_max_height) / 100;
             let y_pos_missed = this.histogram_last_line_y - missed_height;
-            
+
             this.display.fillStyle = "purple";
             this.display.fillRect(this.histogram_right_x, y_pos_missed, this.histogram_data_width, missed_height);
 
@@ -236,7 +236,7 @@ class VisualStats
             // total
 
             let y_pos_total = this.histogram_last_line_y - this.histogram_data_max_height;
-            
+
             this.display.fillStyle = "yellow";
             this.display.fillRect(this.histogram_center_x, y_pos_total, this.histogram_data_width, this.histogram_data_max_height);
 
@@ -249,7 +249,7 @@ class VisualStats
             let taken_value = ((this.onl_bonus_taken * 100) / this.onl_bonus_received).toFixed(1);
             let taken_height = ((taken_value) * this.histogram_data_max_height) / 100;
             let y_pos_taken = this.histogram_last_line_y - taken_height;
-            
+
             this.display.fillStyle = "purple";
             this.display.fillRect(this.histogram_left_x, y_pos_taken, this.histogram_data_width, taken_height);
 
@@ -262,7 +262,7 @@ class VisualStats
             let missed_value = ((this.onl_bonus_missed * 100) / this.onl_bonus_received).toFixed(1);
             let missed_height = ((missed_value) * this.histogram_data_max_height) / 100;
             let y_pos_missed = this.histogram_last_line_y - missed_height;
-            
+
             this.display.fillStyle = "green";
             this.display.fillRect(this.histogram_right_x, y_pos_missed, this.histogram_data_width, missed_height);
 
@@ -405,19 +405,19 @@ class History
             this.data_display.font = "bold " + this.title_text_format;
             let player1 = this.history_data.data[history_tab][0];
             let player1_len = this.data_display.measureText(player1).width;
-            
+
             this.data_display.font = "italic " + this.title_text_format;
             let versus = "     vs     ";
             let versus_len = this.data_display.measureText(versus).width;
-            
+
             this.data_display.font = "bold " + this.title_text_format;
             let player2 = this.history_data.data[history_tab][1];
 
             this.data_display.fillText(player1, 20, 50);
-            
+
             this.data_display.font = "italic " + this.title_text_format;
             this.data_display.fillText("     vs     ", 20 + player1_len, 50);
-            
+
             this.data_display.font = "bold " + this.title_text_format;
             this.data_display.fillText(player2, 20 + player1_len + versus_len, 50);
 
@@ -536,7 +536,7 @@ window.addEventListener('keydown', (event) =>
         if (event.key == 'ArrowRight' && stats_tab < 2)
             stats_tab++, stats.displayObject();
     }
-    if (history != null)
+    if (historic != null)
     {
         if (event.key == 'ArrowLeft' && history_tab > 0)
             history_tab--, history.display();
@@ -620,7 +620,7 @@ function changeStatsDisplayMode()
         localStorage.setItem('visual_mode', 'false'), visual = false;
 
     if (document.getElementById('online_stats').style.display == 'block')
-        displayOnlineStats();
+        nav.displayOnlineStats();
 }
 
 function refreshStatsDisplaySwitch()
@@ -631,7 +631,7 @@ function refreshStatsDisplaySwitch()
         document.getElementById('switch_visual_input').checked = false, visual = false;
 }
 
-function displayStats()
+nav.displayStats = function()
 {
     let main_menu = document.getElementById('main_menu_buttons');
 
@@ -644,22 +644,23 @@ function displayStats()
     stats_back_btn.style.display = 'block';
 
     main_menu.style.display = 'none';
+
+    history.pushState(null, null, getTranslation('/statistics'));
+    document.title = getTranslation('Statistics');
 }
 
-function removeStats()
+nav.removeStats = function()
 {
-    let main_menu = document.getElementById('main_menu_buttons');
-
     let stats_menu = document.getElementById('stats_menu');
     let stats_back_btn = document.getElementById('stats_back_btn');
 
     stats_menu.style.display = 'none';
     stats_back_btn.style.display = 'none';
 
-    main_menu.style.display = 'block';
+    nav.displayMenu();
 }
 
-function displayLocalStats()
+nav.displayLocalStats = function()
 {
     let stats_menu = document.getElementById('stats_menu_buttons');
     let stats_back_btn = document.getElementById('stats_back_btn');
@@ -670,20 +671,20 @@ function displayLocalStats()
     local_stats.style.display = 'block';
 
     document.getElementById('local_stats_nv').style.display = 'block';
+    history.pushState(null, null, getTranslation('/local-stats'));
+
+    document.title = getTranslation('Local Stats');
 }
 
-function removeLocalStats()
+nav.removeLocalStats = function()
 {
-    let stats_menu = document.getElementById('stats_menu_buttons');
-    let stats_back_btn = document.getElementById('stats_back_btn');
     let local_stats = document.getElementById('local_stats');
 
-    stats_menu.style.display = 'block';
-    stats_back_btn.style.display = 'block';
     local_stats.style.display = 'none';
+    nav.displayStats();
 }
 
-function displayOnlineStats()
+nav.displayOnlineStats = function()
 {
     let stats_menu = document.getElementById('stats_menu_buttons');
     let stats_back_btn = document.getElementById('stats_back_btn');
@@ -713,17 +714,17 @@ function displayOnlineStats()
         document.getElementById('visual_info').style.display = 'none';
         document.getElementById('visual_info').style.visibility = 'hidden';
     }
+
+    history.pushState(null, null, getTranslation('/online-stats'));
+    document.title = getTranslation('Online Stats');
 }
 
-function removeOnlineStats()
+nav.removeOnlineStats = function()
 {
-    let stats_menu = document.getElementById('stats_menu_buttons');
-    let stats_back_btn = document.getElementById('stats_back_btn');
     let online_stats = document.getElementById('online_stats');
 
-    stats_menu.style.display = 'block';
-    stats_back_btn.style.display = 'block';
     online_stats.style.display = 'none';
+    nav.displayStats();
 }
 
 // < history > //
@@ -758,7 +759,7 @@ function addHistoryEntry(player1, player2, final_score, length, scores)
     let new_data = [];
 
     new_data = [player1, player2, final_score, length, scores];
-    
+
     let history_data = JSON.parse(localStorage.getItem('history_data'));
     if (history_data.data == null)
         history_data.data = [], history_data.exist = true;
@@ -779,10 +780,11 @@ function refreshHistory()
         if (history_data.login != login42)
             initializeHistory();
     }
-    history = JSON.parse(localStorage.getItem('history_data'));
+    historic = JSON.parse(localStorage.getItem('history_data'));
 }
 
-function displayHistory()
+
+nav.displayHistory = function()
 {
     let stats_menu = document.getElementById('stats_menu_buttons');
     let stats_back_btn = document.getElementById('stats_back_btn');
@@ -801,23 +803,30 @@ function displayHistory()
     else
         history_tab = history_data.length - 1;
 
-    history = new History(history_data);
-    history.initialize();
-    history.display();
+    historic = new History(history_data);
+    historic.initialize();
+    historic.display();
+
+    history.pushState(null, null, getTranslation('/game-history'));
+    document.title = getTranslation('Game History');
 }
 
-function removeHistory()
+
+ nav.removeHistory = function()
 {
     let stats_menu = document.getElementById('stats_menu_buttons');
     let stats_back_btn = document.getElementById('stats_back_btn');
-    let history = document.getElementById('history');
+    let historic = document.getElementById('history');
 
     document.getElementById('history_info').style.display = 'none';
     document.getElementById('history_info').style.visibility = 'hidden';
 
     stats_menu.style.display = 'block';
     stats_back_btn.style.display = 'block';
-    history.style.display = 'none';
+    historic.style.display = 'none';
 
-    history = null;
+    historic = null;
+
+    history.pushState(null, null, getTranslation('/statistics'));
+    document.title = getTranslation('Statistics');
 }

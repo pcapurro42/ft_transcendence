@@ -3,7 +3,7 @@ function displayGamePage_ai()
     let game_page = document.getElementById('game_page_ai');
     game_page.style.display = "block";
 
-    removeMenu();
+    nav.removeMenu();
 }
 
 function displayHostPage_classic()
@@ -17,7 +17,7 @@ function displayHostPage_classic()
     let game_backgrounds = document.getElementById('game_backgrounds');
     game_backgrounds.style.display = 'block';
     initializeOnline1v1();
-    removeMenu();
+    nav.removeMenu();
 }
 function displayGuestPage_classic()
 {
@@ -31,7 +31,7 @@ function displayGuestPage_classic()
 
     game_backgrounds.style.display = 'block';
     initializeOnlineStream1v1();
-    removeMenu();
+    nav.removeMenu();
 }
 
 function displayGamePage_tournament()
@@ -42,7 +42,7 @@ function displayGamePage_tournament()
     let game_backgrounds = document.getElementById('game_backgrounds');
     game_backgrounds.style.display = 'block';
 
-    removeMenu();
+    nav.removeMenu();
 }
 
 document.getElementById('switch_classic').onclick = gameTypeSwitch;

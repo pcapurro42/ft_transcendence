@@ -12,34 +12,34 @@ document.getElementById("logout_btn").onclick = logout;
 
 // < MAIN MENU > //
 
-document.getElementById('title_logo').onclick = displayMenu;
-document.getElementById('disconnection_back_btn').onclick = displayMenu;
+document.getElementById('title_logo').onclick = nav.displayMenu;
+document.getElementById('disconnection_back_btn').onclick = nav.displayMenu;
 
-document.getElementById('play_btn').onclick = displayPlay;
-document.getElementById('play_back_btn').onclick = removePlay;
+document.getElementById('play_btn').onclick = nav.displayPlay;
+document.getElementById('play_back_btn').onclick = nav.removePlay;
 
-document.getElementById('customize_btn').onclick = displayCustomize;
-document.getElementById('customize_back_btn').onclick = removeCustomize;
+document.getElementById('customize_btn').onclick = nav.displayCustomize;
+document.getElementById('customize_back_btn').onclick = nav.removeCustomize;
 
-document.getElementById('stats_btn').onclick = displayStats;
-document.getElementById('stats_back_btn').onclick = removeStats;
+document.getElementById('stats_btn').onclick = nav.displayStats;
+document.getElementById('stats_back_btn').onclick = nav.removeStats;
 
-document.getElementById('settings_btn').onclick = displaySettings;
-document.getElementById('settings_back_btn').onclick = removeSettings;
+document.getElementById('settings_btn').onclick = nav.displaySettings;
+document.getElementById('settings_back_btn').onclick = nav.removeSettings;
 
-document.getElementById('credits_btn').onclick = theaterCredits;
-document.getElementById('vid_credits').onended = theaterClose;
-document.getElementById('credit_close').onclick = theaterClose;
+document.getElementById('credits_btn').onclick = nav.theaterCredits;
+document.getElementById('vid_credits').onended = nav.theaterClose;
+document.getElementById('credit_close').onclick = nav.theaterClose;
 
 // < PLAY > //
 
-document.getElementById('one_vs_one_online_btn').onclick = displayOneVsOneChoice;
+document.getElementById('one_vs_one_online_btn').onclick = nav.displayOneVsOneChoice;
 
-document.getElementById('one_vs_one_local_btn').onclick = displayOneVsOneGameLocal;
-document.getElementById('two_vs_two_local_btn').onclick = displayTwoVsOneGameLocal;
+document.getElementById('one_vs_one_local_btn').onclick = nav.displayOneVsOneGameLocal;
+document.getElementById('two_vs_two_local_btn').onclick = nav.displayTwoVsOneGameLocal;
 
-document.getElementById('play_classic_btn').onclick = displayClassicChoice;
-document.getElementById('classic_back_btn').onclick = removeClassicChoice;
+document.getElementById('play_classic_btn').onclick = nav.displayClassicChoice;
+document.getElementById('classic_back_btn').onclick = nav.removeClassicChoice;
 
 document.getElementById('start_1v1_local').onclick = displayLocal1v1;
 document.getElementById('start_2v1_local').onclick = displayLocal1v2;
@@ -49,13 +49,13 @@ document.getElementById('start_1v1_online').onclick = displayOnline1v1;
 
 // < CLASSIC > //
 
-document.getElementById('create_one_vs_one_online_btn').onclick = displayOneVsOneOnlineCreateGame;
-document.getElementById('create_classic_back_btn').onclick = displayOneVsOneChoice;
+document.getElementById('create_one_vs_one_online_btn').onclick = nav.displayOneVsOneOnlineCreateGame;
+document.getElementById('create_classic_back_btn').onclick = nav.displayOneVsOneChoice;
 
-document.getElementById('join_one_vs_one_online_btn').onclick = displayOneVsOneOnlineJoinGame;
-document.getElementById('join_classic_back_btn').onclick = displayOneVsOneChoice;
+document.getElementById('join_one_vs_one_online_btn').onclick = nav.displayOneVsOneOnlineJoinGame;
+document.getElementById('join_classic_back_btn').onclick = nav.displayOneVsOneChoice;
 
-document.getElementById('one_vs_one_online_choice_back_btn').onclick = removeOneVsOneChoice;
+document.getElementById('one_vs_one_online_choice_back_btn').onclick = nav.removeOneVsOneChoice;
 
 // < AI > //
 
@@ -63,11 +63,11 @@ document.getElementById('ai_game_btn').onclick = ai;
 
 // < TOURNAMENT > //
 
-document.getElementById('play_tournament_btn').onclick = displayTournamentSetup;
-document.getElementById('back_tournament_btn').onclick = removeTournamentSetup;
+document.getElementById('play_tournament_btn').onclick = nav.displayTournamentSetup;
+document.getElementById('back_tournament_btn').onclick = nav.removeTournamentSetup;
 document.getElementById('t_next_game').onclick = nextGameHandler;
 document.getElementById('submit_player_nbr').onclick = tournamentTypeHandler;
-document.getElementById('back_tournament_form_btn').onclick = removeTournamentForm;
+document.getElementById('back_tournament_form_btn').onclick = nav.removeTournamentForm;
 
 document.getElementById('t_start_game').onclick = displayTournamentGame;
 
@@ -77,12 +77,12 @@ document.getElementById('game_map_btn_selector').onchange = changeGameMap;
 
 // < STATS > //
 
-document.getElementById('local_stats_btn').onclick = displayLocalStats;
-document.getElementById('online_stats_btn').onclick = displayOnlineStats;
-document.getElementById('local_stats_back_btn').onclick = removeLocalStats;
-document.getElementById('online_stats_back_btn').onclick = removeOnlineStats;
-document.getElementById('history_btn').onclick = displayHistory;
-document.getElementById('history_back_btn').onclick = removeHistory;
+document.getElementById('local_stats_btn').onclick = nav.displayLocalStats;
+document.getElementById('online_stats_btn').onclick = nav.displayOnlineStats;
+document.getElementById('local_stats_back_btn').onclick = nav.removeLocalStats;
+document.getElementById('online_stats_back_btn').onclick = nav.removeOnlineStats;
+document.getElementById('history_btn').onclick = nav.displayHistory;
+document.getElementById('history_back_btn').onclick = nav.removeHistory;
 
 document.getElementById('switch_visual_input').onchange = changeStatsDisplayMode;
 
@@ -97,7 +97,10 @@ document.getElementById('image_desc_btn_yn').onclick = changeDescriptiveImages;
 
 // < GAME > //
 
-document.getElementById('top_logo').onclick = refreshSite;
+document.getElementById('top_logo').onclick = function(){
+	nav.displayMenu();
+	refreshSite();
+};
 
 {/* < ACCESSIBILITY > // */}
 document.addEventListener('keydown', function(event){

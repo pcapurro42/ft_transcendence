@@ -194,4 +194,42 @@ let fr = [
     ["Copy Success", "Copié dans le presse-papier avec succès."],
 
 
+    //******* Navigation ******/
+
+    ['/home', '/accueil'],
+    ['Home', 'Metal Gear Pong'],
+    ['/classic', '/classique'],
+    ['/play', '/jouer'],
+    ['/online', '/en-ligne']
+    ['/create-lobby', '/creer-un-salon'],
+    ['/join-lobby', '/rejoindre-un-salon'],
+    ['/online-game', '/partie-en-ligne'],
+    ['/1vs1', '/1-vs-1'],
+    ['/1vs2', '/1-vs-2'],
+    ['/vs-ai', '/vs-ia'],
+    ['Play vs AI', 'Partie vs IA'],
+    ['/tournament', '/tournoi'],
+    ['/tournament-nicknames', '/tournoi-surnoms'],
+    ['/tournament-game', '/tournoi-partie'],
+    ['Tournament Game', 'Partie de Tournoi'],
+    ['Online Game', 'En ligne - Partie'],
+    ["Tournament - Nicknames", "Tournoi - surnoms"],
+    ['/customize', '/personnaliser'],
+    ['/statistics', '/statistiques'],
+    ['/game-history', '/historique-des-parties'],
+    ['Game History', 'Historique des Parties'],
+    ['/local-stats', '/stats-local'],
+    ['/online-stats', '/stats-en-ligne'],
+    ['/settings', '/parametres'],
+    ['/credits', '/credits'],
+    ['Local Stats', 'Statistiques - local'],
+    ['Online Stats', 'Statistics - en ligne'],
+
+    ['Refresh Alert Tournament', 'Attention : Après un rafraîchissement, il n’est pas possible de revenir sur le tournoi qui était en cours.'],
+    ['Refresh Alert Online', 'Attention : La connexion à été perdu lors du rafraichissement de la page.'],
+    ['Refresh Warning', 'Avertissement: Rafraichir cette page entraînera la perte de toutes les données en cours d\'exécution'],
+    ['Leaving Popup', 'Êtes vous sûr(e) de vouloir partir ?'],
+    ['Leaving msg', 'Quitter cette page entraînera la perte de toutes les données en cours d\'exécution.'],
+    ['Confirm', 'Confirmer'],
+    ['Resume', 'Reprendre'],
 ];

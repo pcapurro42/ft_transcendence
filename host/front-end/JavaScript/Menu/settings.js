@@ -74,9 +74,10 @@ function changeLanguage()
     refreshLanguage();
 }
 
-// < DISPLAY/REMOVE > //
+// < DIPLAY/REMOVE > //
 
-function displaySettings()
+
+nav.displaySettings = function()
 {
     let main_menu = document.getElementById('main_menu_buttons');
 
@@ -87,9 +88,11 @@ function displaySettings()
     settings_back_btn.style.display = 'block';
 
     main_menu.style.display = 'none';
+    history.pushState(null, null, getTranslation('/settings'));
+    document.title = getTranslation('Settings');
 }
 
-function removeSettings()
+nav.removeSettings = function()
 {
     let main_menu = document.getElementById('main_menu_buttons');
 
@@ -99,7 +102,7 @@ function removeSettings()
     settings_menu.style.display = 'none';
     settings_back_btn.style.display = 'none';
 
-    main_menu.style.display = 'block';
+    nav.displayMenu();
 }
 
 // < INIT > //

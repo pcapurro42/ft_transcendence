@@ -1,4 +1,4 @@
-function displayGamePage_ai()
+nav.displayGamePage_ai = function()
 {
     let game_toolbar = document.getElementById('game_toolbar');
     let game_page_ai = document.getElementById('game_page_ai');
@@ -12,11 +12,13 @@ function displayGamePage_ai()
     main_page.style.display = "none";
     game_toolbar.style.display = "block";
     game_page_ai.style.display = "block";
+    history.pushState(getTranslation('Play vs AI'), null, '/vs-ai');
+    document.title = getTranslation('Play vs AI');
 }
 
 function ai()
 {
-    displayGamePage_ai();
+    nav.displayGamePage_ai();
 }
 
 // function displayVsAi()

@@ -1,4 +1,4 @@
-function displayMenu()
+nav.displayMenu = function()
 {
     let game_toolbar = document.getElementById('game_toolbar');
     game_toolbar.style.display = "none";
@@ -45,8 +45,8 @@ function displayMenu()
     let local_stats = document.getElementById('local_stats');
     local_stats.style.display = "none";
 
-    let history = document.getElementById('history');
-    history.style.display = "none";
+    let historic = document.getElementById('history');
+    historic.style.display = "none";
 
     let classic_buttons = document.getElementById('classic_buttons');
     classic_buttons.style.display = "none";
@@ -59,6 +59,9 @@ function displayMenu()
 
     let disconnectionPopup = document.getElementById('disconnectionPopup');
     disconnectionPopup.style.display = 'none';
+
+    let leavingPopup = document.getElementById('leavingPopup');
+    leavingPopup.style.display = 'none';
 
     let tournament_setup = document.getElementById('tournament_setup');
     tournament_setup.style.display = 'none';
@@ -87,17 +90,23 @@ function displayMenu()
     freeInputAndForms();
     tournamentFinalReset();
     resetConnection();
+
+    refreshStats();
+    refreshStatsDisplaySwitch();
+    refreshLogin();
+    history.pushState(getTranslation('Home'), null, getTranslation('/home'));
+    document.title = getTranslation('Home');
+}
+
+nav.removeMenu = function()
+{
+    let main_menu_page = document.getElementById('main_page');
+    main_menu_page.style.display = "none";
 }
 
 function refreshSite()
 {
     window.location.reload();
-}
-
-function removeMenu()
-{
-    let main_menu_page = document.getElementById('main_page');
-    main_menu_page.style.display = "none";
 }
 
 function setBackgroundColor(color)

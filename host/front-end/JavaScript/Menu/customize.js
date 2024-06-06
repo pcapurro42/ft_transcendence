@@ -20,7 +20,7 @@ function setGameMusic()
 
 // < DISPLAY/REMOVE > //
 
-function displayCustomize()
+nav.displayCustomize = function()
 {
     let main_menu = document.getElementById('main_menu_buttons');
 
@@ -31,6 +31,22 @@ function displayCustomize()
     customize_back_btn.style.display = 'block';
 
     main_menu.style.display = 'none';
+
+    history.pushState(getTranslation('Customize'), null, getTranslation('/customize'));
+    document.title = getTranslation('Customize');
+}
+
+nav.removeCustomize = function()
+{
+    let main_menu = document.getElementById('main_menu_buttons');
+
+    let customize_menu = document.getElementById('customize_menu');
+    let customize_back_btn = document.getElementById('customize_back_btn');
+
+    customize_menu.style.display = 'none';
+    customize_back_btn.style.display = 'none';
+
+    nav.displayMenu();
 }
 
 function showMapTooltip(){
@@ -53,19 +69,6 @@ function showMapTooltip(){
 
 function removeMapTooltip(){
 	document.getElementById('map_tooltip').classList.add('d-none');
-}
-
-function removeCustomize()
-{
-    let main_menu = document.getElementById('main_menu_buttons');
-
-    let customize_menu = document.getElementById('customize_menu');
-    let customize_back_btn = document.getElementById('customize_back_btn');
-
-    customize_menu.style.display = 'none';
-    customize_back_btn.style.display = 'none';
-
-    main_menu.style.display = 'block';
 }
 
 // < INIT > //

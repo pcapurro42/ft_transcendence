@@ -1,7 +1,7 @@
 async function startTournament(newNicksArray, i){
 	stop_flag = false;
 	turn = false;
-
+	addBeforeUnloadWarning();
 	while (stop_flag == false && turn == false){
 		tournamentResetBlocks();
 		nicknames = newNicksArray;
@@ -30,7 +30,7 @@ async function startTournament(newNicksArray, i){
 }
 
 async function tournamentGameStart(){
-	removeMenu();
+	nav.removeMenu();
 	let keys_anim = document.querySelectorAll('.keysup, .keysdown');
     (keys_anim).forEach(element => { element.style.transition = 'opacity 1s';});
 	document.getElementById('main_page').style.display = 'none';

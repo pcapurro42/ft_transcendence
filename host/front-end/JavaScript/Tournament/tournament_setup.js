@@ -1,8 +1,7 @@
 function tournamentTypeHandler(){
 	let submit_btn = document.getElementById('submit_player_nbr');
-
 	tournamentFullReset();
-	displayTournamentForm(tournament_players_selector.value);
+	nav.displayTournamentForm();
 }
 
 async function nextGameHandler(){
@@ -59,6 +58,6 @@ async function end_tournament(){
 	document.getElementById('Roundof16').style.display = '';
 	tournamentFinalReset();
 
-	displayMenu();
+	nav.displayMenu();
 }
 

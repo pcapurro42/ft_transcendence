@@ -64,7 +64,7 @@ async function sendOffer(offer){
     if (!response){
 		displayStatusBarAlert(getTranslation('Connection Init Failed'));
 		resetConnection();
-		displayMenu();
+		nav.displayMenu();
         return;
     }
 	document.getElementById('invitation_code').value = response;
@@ -105,7 +105,7 @@ async function initConnection(answer){
 		if (parse_offersAnswers(answer) == false || answer.type == 'offer'){
 			displayStatusBarAlert(getTranslation('Wrong Code Format'));
 			resetConnection();
-			displayMenu();
+			nav.displayMenu();
        		return;
 		}
 		await RTC_o.setRemoteDescription(new RTCSessionDescription(answer));

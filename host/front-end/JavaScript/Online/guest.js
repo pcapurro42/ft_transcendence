@@ -40,7 +40,7 @@ async function guestConnectionHandler(){
 		pos = "right";
 		role = "guest";
 		data_channel.send('lobby ok')
-		displayOneVsOneGameOnline();
+		nav.displayOneVsOneGameOnline();
 	};
 
 }

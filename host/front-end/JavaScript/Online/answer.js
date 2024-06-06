@@ -98,7 +98,6 @@ async function sendAnswer(answer){
 	const endpoint = 'https://127.0.0.1:8080/backend/signal/'; //ICI
     const login = localStorage.getItem('login'); //
 	const code = document.getElementById('paste_inv_code').value;
-	console.log(answer);
 	const request = await fetch(endpoint, {
         method: 'POST',
 		credentials: 'include',
@@ -118,7 +117,7 @@ async function sendAnswer(answer){
     if (!response){
 		displayStatusBarAlert(getTranslation('Connection Init Failed'));
 		resetConnection();
-		displayMenu();
+		nav.displayMenu();
         return;
     }
 	document.getElementById('invitation_code').value = response;

@@ -1,4 +1,3 @@
-window.onload = handleRedirection;
 /****************************************** Log in | Log Out ***********************************************/
 
 async function login()
@@ -17,17 +16,15 @@ async function logout()
 /********************************************** API UTILS ************************************************/
 
 async function handleRedirection(){
-    const query = new URLSearchParams(window.location.search);
 
-    const code = query.get('code');
-    // console.log(code);
-    if (!code || localStorage.getItem('status') == 'connected'){
+
+    if (localStorage.getItem
+    ('status') == 'connected' || !sessionStorage.getItem('auth_code')){
         refreshLogin();
         return;
     }
-
-    let response = await getAccessToken(code);
-    storeUserLogin(response);
+    let response = await getAccessToken(sessionStorage.getItem('auth_code'));
+    await storeUserLogin(response);
 }
 
 async function storeUserLogin(response){
@@ -35,8 +32,8 @@ async function storeUserLogin(response){
     localStorage.setItem('login', response['login']);
     login42 = response['login'];
     displayStatusBarSuccess(getTranslation('42 Auth Success') + response['login'])
-    localStorage.setItem("status", "connected");
     refreshLogin();
+    auth_code = '';
 }
 
 async function getAccessToken(auth_code){
@@ -54,12 +51,12 @@ async function getAccessToken(auth_code){
 
         document.getElementById('login').style.display = 'none';
         const response = await request.json();
+
         return (response)
     }
     catch(error)
     {
         displayStatusBarAlert(getTranslation("42 Auth Failure"));
-        console.log(error);
     }
 
 }
