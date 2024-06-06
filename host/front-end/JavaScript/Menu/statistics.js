@@ -870,11 +870,23 @@ nav.removeHistory = function()
     document.title = getTranslation('Statistics');
 }
 
-// < code to test history graph > //
+// < code to test history and online stats > //
 
 // -> init.js :
 
 // localStorage.removeItem('history_data');
+
+// refreshStats();
+
+// localStorage.setItem('onl_victory', '64');
+// localStorage.setItem('onl_defeat', '25');
+// localStorage.setItem('onl_played', '89');
+// localStorage.setItem('onl_ball_return', '210');
+// localStorage.setItem('onl_ball_received', '500');
+// localStorage.setItem('onl_bonus_taken', '21');
+// localStorage.setItem('onl_bonus_received', '42');
+
+// refreshStats();
 
 // refreshHistory();
 
