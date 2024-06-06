@@ -467,6 +467,15 @@ class History
         {
             let start_x = 60;
             let total = 450;
+            let length = this.history_data.data[history_tab][4];
+            let scores = this.history_data.data[history_tab][5];
+
+            let i = 0;
+            while (scores[i][0] != length)
+            {
+                
+                i++;
+            }
         }
     }
 
@@ -755,11 +764,13 @@ function initializeHistory()
     localStorage.setItem('history_data', JSON.stringify(new_history_data));
 }
 
-function addHistoryEntry(player1, player2, final_score, length, scores)
+function addHistoryEntry(player1, player2, final_score, date, duration, scores)
 {
     let new_data = [];
 
-    new_data = [player1, player2, final_score, length, scores];
+    console.log(scores)
+
+    new_data = [player1, player2, final_score, date, duration, scores];
 
     let history_data = JSON.parse(localStorage.getItem('history_data'));
     if (history_data.data == null)
