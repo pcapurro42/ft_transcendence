@@ -36,6 +36,9 @@ let en = [
 
     ["[No availaible data to display]", "[No availaible data to display]"],
     
+    ["victory", "victory"],
+    ["defeat", "defeat"],
+
     ["Game timelapse", "Game timelapse"],
     
     ["Game domination", "Game domination"],

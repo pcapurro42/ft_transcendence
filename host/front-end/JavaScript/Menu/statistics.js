@@ -317,8 +317,8 @@ class History
         this.histogram_width = 300;
         this.histogram_height = 350;
 
-        this.left_player_color = "green";
-        this.right_player_color = "red";
+        this.left_player_color = "purple";
+        this.right_player_color = "yellow";
     }
 
     initializeData()
@@ -445,6 +445,16 @@ class History
             let duration = this.history_data.data[history_tab][4] + "s";
             let duration_size = this.data_display.measureText(duration).width;
             this.data_display.fillText(duration, this.data_width - 20 - duration_size, this.data_height - 20);
+
+            this.data_display.font = "bold " + this.title_text_format;
+
+            let end;
+            if (this.history_data.data[history_tab][2][0] == '10')
+                end = "[" + getTranslation("victory") + "]";
+            else
+                end = "[" + getTranslation("defeat") + "]";
+            let end_size = this.data_display.measureText(end).width;
+            this.data_display.fillText(end, this.data_width - 20 - end_size, 50);
         }
     }
 
@@ -476,20 +486,18 @@ class History
 
     displayHistogram()
     {
-        this.histogram_display.font = this.medium_text_format;
-        this.histogram_display.fillStyle = this.global_color;
-
-        let value_p1 = 0;
-        let value_p2 = 0;
-
         if (this.history_data == null)
             this.drawCircleSurface(360, this.background_color);
         else
         {
-            if (value_p1 >= value_p2)
-                this.drawCircleSurface(360, "green"), this.drawCircleSurface(value_p1, "red");
+            let total = parseInt(this.history_data.data[history_tab][2][0]) + parseInt(this.history_data.data[history_tab][2][1])
+            let value_p1 = (parseInt(this.history_data.data[history_tab][2][0]) * 100 / total) * 360 / 100;
+            let value_p2 = (parseInt(this.history_data.data[history_tab][2][1]) * 100 / total) * 360 / 100;
+
+            if (value_p1.toFixed(1) > value_p2.toFixed(1))
+                this.drawCircleSurface(360, this.left_player_color), this.drawCircleSurface(value_p2.toFixed(1), this.right_player_color);
             else
-                this.drawCircleSurface(360, "red"), this.drawCircleSurface(value_p2, "green")
+                this.drawCircleSurface(360, this.right_player_color), this.drawCircleSurface(value_p1.toFixed(1), this.left_player_color)
         }
     }
 
@@ -725,14 +733,13 @@ function getActualDate()
     let date = new Date();
     let day = date.getDate();
     let month = (parseInt(date.getMonth()) + 1);
-    let year = date.getFullYear();
 
     if (parseInt(day) < 10)
         day = "0" + day;
     if (parseInt(month) < 10)
         month = "0" + month;
 
-    return (day + "/" + month + "/" + year);
+    return (day + "/" + month);
 }
 
 function initializeHistory()
