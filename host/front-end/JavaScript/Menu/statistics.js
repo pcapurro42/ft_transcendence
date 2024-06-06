@@ -795,8 +795,6 @@ function displayHistory()
     stats_back_btn.style.display = 'none';
     history_menu.style.display = 'block';
 
-    console.log(getActualDate());
-
     let history_data = JSON.parse(localStorage.getItem('history_data'));
     if (history_data.exist != true)
         history_data = null;
