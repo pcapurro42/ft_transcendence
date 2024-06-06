@@ -465,7 +465,8 @@ class History
 
         if (this.history_data != null)
         {
-            ;
+            let start_x = 60;
+            let total = 450;
         }
     }
 
