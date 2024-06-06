@@ -12,7 +12,7 @@ nav.displayGamePage_ai = function()
     main_page.style.display = "none";
     game_toolbar.style.display = "block";
     game_page_ai.style.display = "block";
-    history.pushState(getTranslation('Play vs AI'), null, '/vs-ai');
+    // history.pushState(getTranslation('Play vs AI'), null, '/vs-ai');
     document.title = getTranslation('Play vs AI');
 }
 

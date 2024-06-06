@@ -28,7 +28,7 @@ function parse_alias(nbr, event){
 		else{
 			document.getElementById('duplicate_nick').style.display = 'none';
 			originalNicknames = shuffleArray(alias_array);
-            history.pushState(getTranslation('Tournament Game'), null, getTranslation('/tournament-game'));
+            // history.pushState(getTranslation('Tournament Game'), null, getTranslation('/tournament-game'));
 			previous_url_path = window.location.pathname;
 			document.title = getTranslation('Tournament Game');
 			startTournament(originalNicknames, nbr);

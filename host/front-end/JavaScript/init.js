@@ -20,9 +20,9 @@ if (auth_code)
 // < CUSTOMIZE > //
 
 let previous_url_path = window.location.pathname;
-window.addEventListener('popstate', function(event){
-    handleLocation();
-});
+// window.addEventListener('popstate', function(event){
+//     handleLocation();
+// });
 
 let game_music;
 let game_map;
@@ -133,6 +133,6 @@ addHistoryEntry('pcapurro', 'bgales', ['10', '2'], '06/06', '700', ["17|2", "64|
 
 refreshHistory();
 handleRedirection();
-handleLocation();
+// handleLocation();
 //<Backend> //
 
