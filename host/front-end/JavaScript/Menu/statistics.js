@@ -684,7 +684,7 @@ nav.displayStats = function()
 
     main_menu.style.display = 'none';
 
-    // history.pushState(null, null, getTranslation('/statistics'));
+    history.pushState(null, null, getTranslation('/statistics'));
     document.title = getTranslation('Statistics');
 }
 
@@ -710,7 +710,7 @@ nav.displayLocalStats = function()
     local_stats.style.display = 'block';
 
     document.getElementById('local_stats_nv').style.display = 'block';
-    // history.pushState(null, null, getTranslation('/local-stats'));
+    history.pushState(null, null, getTranslation('/local-stats'));
 
     document.title = getTranslation('Local Stats');
 }
@@ -754,7 +754,7 @@ nav.displayOnlineStats = function()
         document.getElementById('visual_info').style.visibility = 'hidden';
     }
 
-    // history.pushState(null, null, getTranslation('/online-stats'));
+    history.pushState(null, null, getTranslation('/online-stats'));
     document.title = getTranslation('Online Stats');
 }
 
@@ -846,7 +846,7 @@ nav.displayHistory = function()
     historic.initialize();
     historic.display();
 
-    // history.pushState(null, null, getTranslation('/game-history'));
+    history.pushState(null, null, getTranslation('/game-history'));
     document.title = getTranslation('Game History');
 }
 
@@ -866,7 +866,7 @@ nav.removeHistory = function()
 
     historic = null;
 
-    // history.pushState(null, null, getTranslation('/statistics'));
+    history.pushState(null, null, getTranslation('/statistics'));
     document.title = getTranslation('Statistics');
 }
 

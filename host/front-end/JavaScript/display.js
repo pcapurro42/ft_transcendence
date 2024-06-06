@@ -94,7 +94,7 @@ nav.displayMenu = function()
     refreshStats();
     refreshStatsDisplaySwitch();
     refreshLogin();
-    // history.pushState(getTranslation('Home'), null, getTranslation('/home'));
+    history.pushState(getTranslation('Home'), null, getTranslation('/home'));
     document.title = getTranslation('Home');
 }
 

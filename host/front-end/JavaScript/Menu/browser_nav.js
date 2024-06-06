@@ -99,7 +99,7 @@ const no_history_nav = {
         refreshStats();
         refreshStatsDisplaySwitch();
         refreshLogin();
-        // history.replaceState(null, null, getTranslation('/home'));
+        history.replaceState(null, null, getTranslation('/home'));
         document.title = getTranslation('Home');
     },
 
@@ -155,7 +155,7 @@ const no_history_nav = {
         main_page.style.display = "none";
         game_toolbar.style.display = "block";
         game_page_ai.style.display = "block";
-        // history.replaceState(null, null, '/vs-ai');
+        history.replaceState(null, null, '/vs-ai');
         document.title = getTranslation('Play vs AI');
 
     },
@@ -172,7 +172,7 @@ const no_history_nav = {
 
         main_menu.style.display = 'none';
 
-        // history.replaceState(null, null, getTranslation('/customize'));
+        history.replaceState(null, null, getTranslation('/customize'));
         document.title = getTranslation('Customize');
 
     },
@@ -203,7 +203,7 @@ const no_history_nav = {
 
         main_menu.style.display = 'none';
 
-        // history.replaceState(null, null, getTranslation('/settings'));
+        history.replaceState(null, null, getTranslation('/settings'));
 
         document.title = getTranslation('Settings');
     },
@@ -230,7 +230,7 @@ const no_history_nav = {
         play_menu.style.display = 'none';
         document.title = getTranslation('Classic');
 
-        // history.replaceState(null, null, getTranslation('/classic'));
+        history.replaceState(null, null, getTranslation('/classic'));
 
     },
 
@@ -258,7 +258,7 @@ const no_history_nav = {
         freeInputAndForms();
         resetConnection();
 
-        // history.replaceState(null, null, getTranslation('/create-lobby'));
+        history.replaceState(null, null, getTranslation('/create-lobby'));
         document.title = getTranslation('Online');
     },
 
@@ -288,7 +288,7 @@ const no_history_nav = {
         resetConnection();
         offerGenerator();
 
-        // history.replaceState(null, null, getTranslation('/create-lobby'));
+        history.replaceState(null, null, getTranslation('/create-lobby'));
         document.title = getTranslation('Create Lobby');
     },
 
@@ -315,7 +315,7 @@ const no_history_nav = {
         win_msg.style.display = 'none';
         resetConnection();
 
-        // history.replaceState(null, null, getTranslation('/join-lobby'));
+        history.replaceState(null, null, getTranslation('/join-lobby'));
         document.title = getTranslation('Join Lobby');
     },
 
@@ -326,7 +326,7 @@ const no_history_nav = {
         let tournament_setup = document.getElementById('tournament_setup');
 	    tournament_setup.style.display = 'block';
         document.title = getTranslation('Tournament');
-        // history.replaceState(null, null, getTranslation('/tournament'));
+        history.replaceState(null, null, getTranslation('/tournament'));
 
     },
 
@@ -354,7 +354,7 @@ const no_history_nav = {
             parse_alias(i, event)
         };
 
-        // history.replaceState(null, null, getTranslation('/tournament-nicknames'));
+        history.replaceState(null, null, getTranslation('/tournament-nicknames'));
         document.title = getTranslation('Tournament - Nicknames');
     },
 
@@ -380,7 +380,7 @@ const no_history_nav = {
         play_menu.style.display = 'block';
         main_menu.style.display = 'none';
 
-        // history.replaceState(null, null, getTranslation('/play'));
+        history.replaceState(null, null, getTranslation('/play'));
         document.title = getTranslation("Play");
     },
 
@@ -414,7 +414,7 @@ const no_history_nav = {
         document.getElementById('game_toolbar').style.display = "block";
 
 
-        // history.replaceState(null, null, getTranslation('/online-game'));
+        history.replaceState(null, null, getTranslation('/online-game'));
         document.title = getTranslation('Online Game');
 
         initializeOnline1v1();
@@ -435,7 +435,7 @@ const no_history_nav = {
         let right_side_won = document.getElementById('right_side_won_text');
         right_side_won.style.display = "none";
 
-        // history.replaceState(null, null, getTranslation('/1vs2'));
+        history.replaceState(null, null, getTranslation('/1vs2'));
         document.title = getTranslation('1 vs 2 (local)');
         initializeLocal1v2();
     },
@@ -454,7 +454,7 @@ const no_history_nav = {
         player_left_won.style.display = "none";
         let player_right_won = document.getElementById('right_player_won_text');
         player_right_won.style.display = "none";
-        // history.replaceState(null, null, getTranslation('/1vs1'));
+        history.replaceState(null, null, getTranslation('/1vs1'));
         document.title = getTranslation("1 vs 1 (local)");
 
         initializeLocal1v1();
@@ -475,7 +475,7 @@ const no_history_nav = {
 
         main_menu.style.display = 'none';
 
-        // history.replaceState(null, null, getTranslation('/statistics'));
+        history.replaceState(null, null, getTranslation('/statistics'));
         document.title = getTranslation('Statistics');
     },
 
@@ -505,7 +505,7 @@ const no_history_nav = {
 
         document.getElementById('local_stats_nv').style.display = 'block';
 
-        // history.replaceState(null, null, getTranslation('/local-stats'));
+        history.replaceState(null, null, getTranslation('/local-stats'));
         document.title = getTranslation('Local Stats');
     },
 
@@ -549,7 +549,7 @@ const no_history_nav = {
             document.getElementById('visual_info').style.display = 'none';
             document.getElementById('visual_info').style.visibility = 'hidden';
         }
-        // history.replaceState(null, null, getTranslation('/online-stats'));
+        history.replaceState(null, null, getTranslation('/online-stats'));
         document.title = getTranslation('Online Stats');
     },
 
@@ -587,7 +587,7 @@ const no_history_nav = {
         historic.initialize();
         historic.display();
 
-        // history.replaceState(null, null, getTranslation('/game-history'));
+        history.replaceState(null, null, getTranslation('/game-history'));
         getTranslation('Game History');
     },
 
@@ -606,7 +606,7 @@ const no_history_nav = {
 
         historic = null;
 
-        // history.replaceState(null, null, getTranslation('/statistics'));
+        history.replaceState(null, null, getTranslation('/statistics'));
         document.title = getTranslation('Statistics');
     },
 
@@ -637,7 +637,7 @@ const no_history_nav = {
 	    }
 	    video.play();
 
-        // history.replaceState(null, null, getTranslation('/credits'));
+        history.replaceState(null, null, getTranslation('/credits'));
 	    document.title = getTranslation('Credits');
     },
 
@@ -665,7 +665,7 @@ const no_history_nav = {
 		    music_menu.muted = false;
 	    	music_menu.play();
     	}
-        // history.replaceState(null, null, getTranslation('/home'));
+        history.replaceState(null, null, getTranslation('/home'));
 	    document.title = getTranslation('Home');
     },
 
@@ -678,113 +678,114 @@ async function userLeaveConfirmation(){
         document.getElementById('resume_btn').onclick =  () => resolve(false);
     })
 }
-// async function handleLocation(){
 
-//     let path;
-//     if (!originalUrl)
-//         path = window.location.pathname;
-//     else
-//         path = originalUrl;
+async function handleLocation(){
 
-//     if (previous_url_path == '/tournament-game' || previous_url_path == '/online-game'){
-//         let bool = await userLeaveConfirmation();
-//         document.getElementById('leavingPopup').style.display = 'none';
-//         if (bool == false){
-//             // history.replaceState(null, null, previous_url_path);
-//             return;
-//         }
-//         else
-//             previous_url_path = '';
-//     }
+    let path;
+    if (!originalUrl)
+        path = window.location.pathname;
+    else
+        path = originalUrl;
 
-//     no_history_nav.hideEveryDiv();
-//     originalUrl = null;
+    if (previous_url_path == '/tournament-game' || previous_url_path == '/online-game'){
+        let bool = await userLeaveConfirmation();
+        document.getElementById('leavingPopup').style.display = 'none';
+        if (bool == false){
+            history.replaceState(null, null, previous_url_path);
+            return;
+        }
+        else
+            previous_url_path = '';
+    }
 
-//     switch (path){
-//         case '':
-//         case '/':
-//         case getTranslation('/home'):
-//         case '/home':
-//             no_history_nav.displayMenu();
-//             return;
-//         case getTranslation('/play'):
-//         case '/play':
-//             no_history_nav.displayPlay();
-//             return;
-//         case getTranslation('/classic'):
-//         case '/classic':
-//             no_history_nav.displayClassicChoice()
-//             return;
-//         case getTranslation('/1vs1'):
-//         case '/1vs1':
-//             no_history_nav.displayOneVsOneGameLocal();
-//             return;
-//         case getTranslation('/1vs2'):
-//         case '/1vs2':
-//             no_history_nav.displayTwoVsOneGameLocal();
-//             return;
-//         case getTranslation('/online'):
-//         case '/online':
-//             no_history_nav.displayOneVsOneChoice();
-//             return;
-//         case getTranslation('/create-lobby'):
-//         case '/create-lobby':
-//             no_history_nav.displayOneVsOneOnlineCreateGame()
-//             return;
-//         case getTranslation('/join-lobby'):
-//         case '/join-lobby':
-//             no_history_nav.displayOneVsOneOnlineJoinGame();
-//             return;
-//         case getTranslation('/online-game'):
-//         case '/online-game':
-//             displayStatusBarWarning(getTranslation('Refresh Alert Online'))
-//             no_history_nav.displayMenu();
-//             return;
-//         case getTranslation('/tournament'):
-//         case '/tournament':
-//             no_history_nav.displayTournamentSetup();
-//             return;
-//         case getTranslation('/tournament-nicknames'):
-//         case '/tournament-nicknames':
-//             no_history_nav.displayTournamentForm(sessionStorage.getItem('t_player_nbr'));
-//             return;
-//         case getTranslation('/tournament-game'):
-//         case '/tournament-game':
-//             no_history_nav.displayTournamentForm(sessionStorage.getItem('t_player_nbr'));
-//             displayStatusBarWarning(getTranslation('Refresh Alert Tournament'))
-//             return;
-//         case getTranslation('/vs-ai'):
-//         case '/vs-ai':
-//             no_history_nav.displayGamePage_ai();
-//             return;
-//         case getTranslation('/customize'):
-//         case '/customize':
-//             no_history_nav.displayCustomize();
-//             return;
-//         case getTranslation('/statistics'):
-//         case '/statistics':
-//             no_history_nav.displayStats();
-//             return;
-//         case getTranslation('/game-history'):
-//         case '/game-history':
-//             no_history_nav.displayHistory();
-//             return;
-//         case getTranslation('/local-stats'):
-//         case 'local-stats':
-//             no_history_nav.displayLocalStats();
-//             return;
-//         case getTranslation('/online-stats'):
-//         case '/online-stats':
-//             no_history_nav.displayOnlineStats();
-//             return;
-//         case getTranslation('/settings'):
-//         case '/settings':
-//             no_history_nav.displaySettings();
-//             return;
-//         case getTranslation('/credits'):
-//         case '/credits':
-//             no_history_nav.theaterCredits();
-//             return;
-//     }
-//     window.location.href = 'https://127.0.0.1:1025/404.html';
-// }
+    no_history_nav.hideEveryDiv();
+    originalUrl = null;
+
+    switch (path){
+        case '':
+        case '/':
+        case getTranslation('/home'):
+        case '/home':
+            no_history_nav.displayMenu();
+            return;
+        case getTranslation('/play'):
+        case '/play':
+            no_history_nav.displayPlay();
+            return;
+        case getTranslation('/classic'):
+        case '/classic':
+            no_history_nav.displayClassicChoice()
+            return;
+        case getTranslation('/1vs1'):
+        case '/1vs1':
+            no_history_nav.displayOneVsOneGameLocal();
+            return;
+        case getTranslation('/1vs2'):
+        case '/1vs2':
+            no_history_nav.displayTwoVsOneGameLocal();
+            return;
+        case getTranslation('/online'):
+        case '/online':
+            no_history_nav.displayOneVsOneChoice();
+            return;
+        case getTranslation('/create-lobby'):
+        case '/create-lobby':
+            no_history_nav.displayOneVsOneOnlineCreateGame()
+            return;
+        case getTranslation('/join-lobby'):
+        case '/join-lobby':
+            no_history_nav.displayOneVsOneOnlineJoinGame();
+            return;
+        case getTranslation('/online-game'):
+        case '/online-game':
+            displayStatusBarWarning(getTranslation('Refresh Alert Online'))
+            no_history_nav.displayMenu();
+            return;
+        case getTranslation('/tournament'):
+        case '/tournament':
+            no_history_nav.displayTournamentSetup();
+            return;
+        case getTranslation('/tournament-nicknames'):
+        case '/tournament-nicknames':
+            no_history_nav.displayTournamentForm(sessionStorage.getItem('t_player_nbr'));
+            return;
+        case getTranslation('/tournament-game'):
+        case '/tournament-game':
+            no_history_nav.displayTournamentForm(sessionStorage.getItem('t_player_nbr'));
+            displayStatusBarWarning(getTranslation('Refresh Alert Tournament'))
+            return;
+        case getTranslation('/vs-ai'):
+        case '/vs-ai':
+            no_history_nav.displayGamePage_ai();
+            return;
+        case getTranslation('/customize'):
+        case '/customize':
+            no_history_nav.displayCustomize();
+            return;
+        case getTranslation('/statistics'):
+        case '/statistics':
+            no_history_nav.displayStats();
+            return;
+        case getTranslation('/game-history'):
+        case '/game-history':
+            no_history_nav.displayHistory();
+            return;
+        case getTranslation('/local-stats'):
+        case 'local-stats':
+            no_history_nav.displayLocalStats();
+            return;
+        case getTranslation('/online-stats'):
+        case '/online-stats':
+            no_history_nav.displayOnlineStats();
+            return;
+        case getTranslation('/settings'):
+        case '/settings':
+            no_history_nav.displaySettings();
+            return;
+        case getTranslation('/credits'):
+        case '/credits':
+            no_history_nav.theaterCredits();
+            return;
+    }
+    window.location.href = 'https://127.0.0.1:1025/404.html';
+}

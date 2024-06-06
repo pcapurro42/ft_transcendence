@@ -25,7 +25,7 @@ nav.theaterCredits = function(){
 		boolAudio_on = true;
 	}
 	video.play();
-	// history.pushState(getTranslation('Credits'), null, getTranslation('/credits'));
+	history.pushState(getTranslation('Credits'), null, getTranslation('/credits'));
 	document.title = getTranslation('Credits');
 }
 
@@ -52,6 +52,6 @@ nav.theaterClose = function(){
 		music_menu.muted = false;
 		music_menu.play();
 	}
-	// history.pushState(getTranslation('Home'), null, getTranslation('/home'));
+	history.pushState(getTranslation('Home'), null, getTranslation('/home'));
 	document.title = getTranslation('Home');
 }
