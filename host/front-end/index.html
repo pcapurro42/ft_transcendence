@@ -95,12 +95,21 @@
                 </div>
                 <canvas id="one_vs_one_host_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="h_1v1_label"></canvas>
                 <label id="h_1v1_label" data-title="ARIA 1 vs 1 (online)"></label>
-                <br><br><br>
                 <div>
                     <h1 id="h_win_text" class="text text-center" data-tsnormal="30px" data-tslarge="50px"></h1>
                 </div>
-                <br>
+
                 <button id="start_1v1_online" class="d-flex btn btn-simple btn-outline-danger text border mx-auto border-2 d-none" data-tsnormal="35px" data-tslarge="55px" data-oname="Launch a game"></button>
+                <h1 id="1v1_host_timer" class="text text-center mx-auto d-none" data-tsnormal="45px" data-tslarge="55px"></h1>
+
+                <div id="o_host_foot" class="d-flex flex-column align-items-center">
+                        <div class="game_keys w-100 d-flex flex-row">
+                            <img class="keysup float-start mb-2" data-isnormal="10%" data-islarge="14%" src="./Materials/images/E.png">
+                        </div>
+                        <div class="game_keys w-100">
+                            <img class="keysdown float-start" src="./Materials/images/D.png" data-isnormal="10%" data-islarge="14%">
+                        </div>
+                </div>
             </div>
 
             <div id="one_vs_one_guest_page" class="container mx-auto">
@@ -111,15 +120,22 @@
                 </div>
                 <canvas id="one_vs_one_guest_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="g_1v1_label"></canvas>
                 <label id="g_1v1_label" data-title="ARIA 1 vs 1 (online)"></label>
-                <br><br><br>
                 <div>
                     <h1 id="g_win_text" class="text text-center" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h2>
                 </div>
-                <br>
                 <h1 id="waiting_host" class="d-flex justify-content-center text" data-tsnormal="30px" data-tslarge="50px" data-oname="Waiting for the host to launch the game..."></h1>
+                <h1 id="1v1_guest_timer" class="d-flex justify-content-center text d-none" data-tsnormal="45px" data-tslarge="55px"></h1>
+                <div id="o_guest_foot" class="d-flex flex-column align-items-center">
+                        <div class="game_keys w-100">
+                            <img class="float-end keysup img-fluid mb-0" data-isnormal="10%" data-islarge="14%" src="./Materials/images/ArrowUp.png">
+                        </div>
+                        <div class="game_keys w-100">
+                            <img class="keysdown float-end" src="./Materials/images/ArrowDown.png" data-isnormal="10%" data-islarge="14%">
+                        </div>
+                </div>
             </div>
 
-            <h1 id="1v1_online_timer" class="d-flex justify-content-center text d-none" data-tsnormal="45px" data-tslarge="55px"></h1>
+
 
             <!-- 1 vs 1 (local) -->
 
@@ -546,7 +562,7 @@
                     <div id="online_stats">
 
                         <div id="online_stats_v" class="container text-center">
-                            <canvas id="stats_canvas" width="900" height="520" aria-labelledby="stats_label"></canvas>
+                            <canvas id="stats_canvas" class="col-10 w-100" width="900" height="520" aria-labelledby="stats_label"></canvas>
                             <label id="stats_label" data-title="ARIA Stats" alt=""></label>
                         </div>
 
@@ -605,21 +621,24 @@
 
                         <div>
                             <div class="container text-center">
-                                <canvas id="history_data" class="border border-5" width="900" height="200"></canvas>
+                                <canvas id="history_data" class="w-100 border border-5" width="900" height="200"></canvas>
                             </div>
                         </div>
 
                         <br>
 
                         <div>
-                            <div class="container text-center">
-                                <canvas id="history_time_data" width="550" height="350"></canvas>
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                <canvas id="history_diagram_data" width="300" height="350"></canvas>
+                            <div class="d-flex container justify-content-center align-items-stretch text-center">
+                                <div>
+                                    <canvas id="history_time_data" class="w-100 h-auto flex-grow-1" width="550" height="350"></canvas>
+                                </div>
+                                <div>
+                                    <canvas id="history_diagram_data" class="flex-grow-1 w-100 h-auto" width="300" height="350"></canvas>
+                                </div>
                             </div>
-    
+
                             <br>
-    
+
                             <div id="history_info" class="d-flex justify-content-center">
                                 <h1 class="text" data-tsnormal="20px" data-tslarge="30px" data-oname="←/→"></h1>
                             </div>
@@ -741,7 +760,7 @@
                         <p class="text" data-oname="Leaving msg"></p>
                     </div>
                     <div class="modal-footer">
-                        <button id="leave_page_btn" class="btn btn-danger btn-complex text" data-oname="Confirm"></button>
+                        <button id="leave_page_btn" class="btn btn-danger btn-complex text" data-oname="Main Menu"></button>
                         <button id="resume_btn" class="btn btn-secondary btn-complex text" data-oname="Resume"></button>
                     </div>
                 </div>
