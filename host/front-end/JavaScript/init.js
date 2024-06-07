@@ -20,9 +20,8 @@ if (auth_code)
 // < CUSTOMIZE > //
 
 let previous_url_path = window.location.pathname;
-window.addEventListener('popstate', function(event){
-    handleLocation();
-});
+
+window.addEventListener('popstate', handleLocation);
 
 let game_music;
 let game_map;

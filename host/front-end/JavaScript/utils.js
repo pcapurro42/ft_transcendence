@@ -1,14 +1,22 @@
+
 function addBeforeUnloadWarning() {
     window.addEventListener('beforeunload', handleBeforeUnload);
+	window.addEventListener('unload', handleUnload);
 }
 
 function removeBeforeUnloadWarning() {
     window.removeEventListener('beforeunload', handleBeforeUnload);
+	window.removeEventListener('unload', handleUnload);
+
 }
 
 function handleBeforeUnload(event){
 	event.preventDefault();
 	return getTranslation('Refresh Warning');
+}
+
+function handleUnload(){
+	sessionStorage.setItem('no_confirmation', 'true');
 }
 
 function stopKeysAnim(){

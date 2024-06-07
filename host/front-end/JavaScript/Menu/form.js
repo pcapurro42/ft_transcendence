@@ -10,7 +10,6 @@ function parse_alias(nbr, event){
 
 	for(let i = 0; i < inputs.length; i++){
 		if ((inputs[i].value.length >= 4 && inputs[i].value.length <= 15) && regex.test(inputs[i].value)) {
-			sessionStorage.setItem('alias_' + i, inputs.value);
 			err[i].style.display = 'none';
 
     	}

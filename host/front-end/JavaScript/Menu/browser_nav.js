@@ -674,7 +674,10 @@ const no_history_nav = {
 async function userLeaveConfirmation(){
     return new Promise(resolve => {
         document.getElementById('leavingPopup').style.display = 'block';
-        document.getElementById('leave_page_btn').onclick = () => resolve(true);
+        document.getElementById('leave_page_btn').onclick = () => {
+            resolve(true);
+            removeBeforeUnloadWarning();
+        }
         document.getElementById('resume_btn').onclick =  () => resolve(false);
     })
 }
@@ -687,16 +690,20 @@ async function handleLocation(){
     else
         path = originalUrl;
 
-    if (previous_url_path == '/tournament-game' || previous_url_path == '/online-game'){
+    if ((previous_url_path == getTranslation('/tournament-game') || previous_url_path == getTranslation('/online-game') && !sessionStorage.getItem('no_confirmation'))){
         let bool = await userLeaveConfirmation();
         document.getElementById('leavingPopup').style.display = 'none';
         if (bool == false){
+            history.pushState(null, null, '');
             history.replaceState(null, null, previous_url_path);
             return;
         }
-        else
+        else{
             previous_url_path = '';
+            path = '/home';
+        }
     }
+    sessionStorage.removeItem('no_confirmation');
 
     no_history_nav.hideEveryDiv();
     originalUrl = null;
@@ -739,6 +746,7 @@ async function handleLocation(){
         case getTranslation('/online-game'):
         case '/online-game':
             displayStatusBarWarning(getTranslation('Refresh Alert Online'))
+            previous_url_path = "";
             no_history_nav.displayMenu();
             return;
         case getTranslation('/tournament'):
@@ -751,7 +759,8 @@ async function handleLocation(){
             return;
         case getTranslation('/tournament-game'):
         case '/tournament-game':
-            no_history_nav.displayTournamentForm(sessionStorage.getItem('t_player_nbr'));
+            previous_url_path = "";
+            no_history_nav.displayMenu();
             displayStatusBarWarning(getTranslation('Refresh Alert Tournament'))
             return;
         case getTranslation('/vs-ai'):
