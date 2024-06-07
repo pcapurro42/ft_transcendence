@@ -31,8 +31,10 @@ function displayCountDown(nb)
     let menu_music = document.getElementById('mgs');
     let game_music = gameMusicSelector();
 
-    if (players_nb == 1)
-        timer = document.getElementById('1v1_online_timer');
+    if (players_nb == 1 && role == 'guest')
+        timer = document.getElementById('1v1_guest_timer');
+    else if (players_nb == 1 && role == 'host')
+        timer = document.getElementById('1v1_host_timer');
     else if (players_nb == 2)
         timer = document.getElementById('1v1_local_timer');
     else
@@ -63,8 +65,10 @@ function displayCountDown(nb)
         timer.classList.add("d-none");
         game_music.play();
         active = true;
-        if (players_nb == 1)
+        if (players_nb == 1){
             startOnline1v1();
+        
+        }
         else if (players_nb == 2)
             startLocal1v1();
         else

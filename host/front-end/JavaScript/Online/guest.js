@@ -1,24 +1,32 @@
 function readHostMsg(event)
 {
 	let msg = event.data;
-
-	if (msg === 'lobby ok')
-	{
-		document.getElementById("join_classic_lobby").style.visibility = 'visible';
-		document.getElementById('answer_timeout').style.visibility = 'hidden';
-	}
-	else if (msg ==='normal')
-		gameMode = 'normal';
-	else if(msg ==='bonus')
-		gameMode = 'bonus';
-	else if (msg === 'go')
-		displayOnline1v1();
-	else if (msg.startsWith('lpy:'))
+	if (msg.startsWith('lpy:')){
 		game.left_player.y = +(msg.substring(4));
-	else if (msg.startsWith('by:'))
-		game.ball.y = +(msg.substring(3));
-	else if (msg.startsWith('bx:'))
-		game.ball.x = +(msg.substring(3));
+		return;
+	}
+	else if (msg.startsWith('bpos:')){
+		game.ball.y = +msg.substring(5, msg.indexOf('/'));
+		game.ball.x = +msg.substring(msg.indexOf('/') + 1, msg.indexOf('_'));
+		return;
+	}
+	else{
+	switch (msg){
+			case 'lobby ok' :
+				document.getElementById("join_classic_lobby").style.visibility = 'visible';
+				document.getElementById('answer_timeout').	style.visibility = 'hidden';
+				return;
+			case 'normal':
+				gameMode = 'normal';
+				return;
+			case 'bonus':
+				gameMode = 'bonus';
+				return;
+			case 'go':
+				displayOnline1v1();
+				return;
+		}
+	}
 
 }
 

@@ -218,7 +218,7 @@ class OnlineGame1v1_host
         this.refreshScores();
         this.refreshPlayers();
         this.refreshBall();
-
+        data_channel.send(`bpos:${this.ball.y}/${this.ball.x}_${this.ball_direction}`);
         if (gameMode != "normal")
             this.refreshBonus();
     }
@@ -278,8 +278,6 @@ class OnlineGame1v1_host
             this.ball.printAlert(), this.alert++, this.sounds.alert.play();
 
         this.ball.animate();
-        data_channel.send(`by:${this.ball.y}`);
-        data_channel.send(`bx:${this.ball.x}`);
         this.ball.print();
     }
 
@@ -327,7 +325,7 @@ class OnlineGame1v1_host
         this.refreshDisplay();
     }
 
-    async  isOver()
+    isOver()
     {
         if (active == false)
             return (true);

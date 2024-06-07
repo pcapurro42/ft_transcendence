@@ -17,14 +17,14 @@ function initializeOnline1v1()
 
 function displayOnline1v1()
 {
-    let timer = document.getElementById('1v1_online_timer');
-    timer.classList.remove('d-none');
-    timer.style.display = "block";
 	document.getElementById('online_winner').pause();
 	document.getElementById('online_loser').pause();
 
     if (role == "host")
     {
+        let timer = document.getElementById('1v1_host_timer');
+        timer.classList.remove('d-none');
+        timer.style.display = "block";
 		let won_msg = document.getElementById('h_win_text');
         won_msg.style.display = 'none';
 
@@ -34,6 +34,9 @@ function displayOnline1v1()
     }
     else
     {
+        let timer = document.getElementById('1v1_guest_timer');
+        timer.classList.remove('d-none');
+        timer.style.display = "block";
 		let won_msg = document.getElementById('g_win_text');
         won_msg.style.display = 'none';
 
@@ -51,7 +54,9 @@ function removeOnline1v1()
 
     game_music.pause();
     menu_music.play();
-    let timer = document.getElementById('1v1_online_timer');
+    let timer = document.getElementById('1v1_host_timer');
+    timer.style.display = "none";
+    timer = document.getElementById('1v1_guest_timer');
     timer.style.display = "none";
 
     let start_btn = document.getElementById('start_1v1_online');
@@ -64,7 +69,11 @@ function removeOnline1v1()
 
 function startOnline1v1()
 {
-    const frame = 1000 / 120; //=120fps
+    let frame;  //=120fps
+    if (role == 'host')
+        frame = 1000 / 120;
+    else
+        frame = 1000 / 119;
     setTimeout(() => {
         if (game.isOver() == true || active == false)
         {
