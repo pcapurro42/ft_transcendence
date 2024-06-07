@@ -19,6 +19,22 @@ function handleUnload(){
 	sessionStorage.setItem('no_confirmation', 'true');
 }
 
+function backBtnColor_toBlack(){
+	this.style.transition = '0.15s';
+	this.classList.replace("text-white", "text-black");
+}
+
+function backBtnColor_toWhite(){
+	this.style.transition = '0.15s';
+	this.classList.replace("text-black", "text-white");
+}
+
+fu
+
+function removeChangeBackColor(){
+
+}
+
 function stopKeysAnim(){
 	 let keys_anim = document.querySelectorAll('.keysup, .keysdown');
     (keys_anim).forEach(element => {

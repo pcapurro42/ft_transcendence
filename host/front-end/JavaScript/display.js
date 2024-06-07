@@ -201,9 +201,16 @@ function setHighContrast(value)
 {
     btn = document.querySelectorAll('.btn, .btn_image, .slider, .selector, #title_logo, #top_logo');
     btn_image = document.querySelectorAll('.btn_image');
-
+    color_btn = document.querySelectorAll('.color_btn')
     if (high_contrast == "true")
     {
+        color_btn.forEach(element =>{
+            element.classList.remove('btn-outline-dark')
+            element.classList.add('btn-outline-light')
+            element.addEventListener('mouseover', backBtnColor_toBlack);
+		    element.addEventListener('mouseout', backBtnColor_toWhite);
+        });
+
         btn.forEach(element => {
             element.classList.add('focus-white');
             element.classList.remove('focus-black');
@@ -223,6 +230,13 @@ function setHighContrast(value)
     }
     else
     {
+        color_btn.forEach(element =>{
+            element.classList.remove('btn-outline-light')
+            element.classList.add('btn-outline-dark')
+            element.removeEventListener('mouseover', backBtnColor_toBlack);
+		    element.removeEventListener('mouseout', backBtnColor_toWhite);
+        });
+
         btn.forEach(element => {
             element.classList.add('focus-black')
             element.classList.remove('focus-white');
