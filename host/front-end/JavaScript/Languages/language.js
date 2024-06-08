@@ -34,6 +34,8 @@ function refreshLanguage()
     let placeholders = document.querySelectorAll('[placeholder]');
     let alt_text = document.querySelectorAll('[data-alt]');
     let titles = document.querySelectorAll('[data-title');
+    let aria_label = document.querySelectorAll('[aria-label]');
+    document.documentElement.lang = lang;
 
     if (lang == "en")
     {
@@ -43,9 +45,11 @@ function refreshLanguage()
             words[i].innerHTML = getElement(en, words[i].getAttribute("data-oname"));
         for (let i = 0; i != placeholders.length; i++)
             placeholders[i].setAttribute('placeholder', getElement(en, placeholders[i].getAttribute("data-oname")));
-        for (let i = 0; i != alt_text.length; i++){
-                alt_text[i].setAttribute('alt', getElement(en, alt_text[i].getAttribute('data-alt')));
-        }
+        for (let i = 0; i != alt_text.length; i++)
+            alt_text[i].setAttribute('alt', getElement(en, alt_text[i].getAttribute('data-alt')));
+
+        for (let i = 0; i != aria_label.length; i++)
+            aria_label[i].setAttribute('aria-label', getElement(en, aria_label[i].getAttribute('data-title')));
 
         if (descriptive_images == "true")
         {
@@ -74,6 +78,9 @@ function refreshLanguage()
        for (let i = 0; i != alt_text.length; i++)
             alt_text[i].setAttribute('alt', getElement(fr, alt_text[i].getAttribute('data-alt')));
 
+        for (let i = 0; i != aria_label.length; i++)
+            aria_label[i].setAttribute('aria-label', getElement(fr, aria_label[i].getAttribute('data-title')));
+
         if (descriptive_images == "true")
         {
             for (let i = 0; i != titles.length; i++)
@@ -89,6 +96,8 @@ function refreshLanguage()
             }
         }
     }
+    ARIAButtonState();
+    ARIASoundsSlider();
 }
 
 function initializeLanguage()

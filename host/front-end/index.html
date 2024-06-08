@@ -2,8 +2,6 @@
 
 <html id="lang" lang="">
 
-    <!-- Head -->
-
     <head>
 
         <!-- General -->
@@ -21,39 +19,10 @@
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-        <!-- Audio -->
-
-        <audio id="mgs" src="./Materials/musics/mgs2-theme.mp3" autoplay muted></audio>
-        <audio class="game_music" id="duel-theme" src="./Materials/musics/duel-theme.mp3" muted></audio>
-        <audio class="game_music" id="mgs3-alert-theme" src="./Materials/musics/mgs3-alert-theme.mp3" muted></audio>
-        <audio class="game_music" id="sneaky-theme" src="./Materials/musics/Sneaky-theme.mp3" muted></audio>
-
-        <audio id="hover_sound" class="sounds" src="./Materials/sounds/click-hover.mp3"></audio>
-        <audio id="click_sound" class="sounds" src="./Materials/sounds/click-sound.mp3"></audio>
-        <audio id="close_sound" class="sounds" src="./Materials/sounds/close-sound.mp3"></audio>
-        <audio id="alert_sound" class="sounds" src="./Materials/sounds/mgs1-alert.mp3"></audio>
-        <audio id="1_sound" class="sounds" src="./Materials/sounds/1.mp3"></audio>
-        <audio id="2_sound" class="sounds" src="./Materials/sounds/2.mp3"></audio>
-        <audio id="3_sound" class="sounds" src="./Materials/sounds/3.mp3"></audio>
-        <audio id="goal_sound" class="sounds" src="./Materials/sounds/goal_sound.mp3"></audio>
-        <audio id="online_loser" class="sounds" src="./Materials/sounds/online_loser.mp3"></audio>
-        <audio id="online_winner" class="sounds" src="./Materials/sounds/online_winner.mp3"></audio>
-        <audio id="knock_sound" class="sounds" src="./Materials/sounds/knocking_sound.mp3"></audio>
-        <audio id="game_end" class="sounds" src="./Materials/sounds/game_end.mp3"></audio>
-
-        <!-- Video -->
-
-        <video id="vid_credits">
-            <source src="./Materials/video/credits.mp4" type="video/mp4">
-        </video>
-
-        <button id="credit_close" data-tsnormal="30px" data-tslarge="50px" data-title="Main Menu" class="btn btn-simple text-white flex float-end" data-link="home">&#x2717</button>
-        <label for="credit_close" data-title="Main Menu"></label>
 
     </head>
 
-    <!-- Body -->
-    <body id="background" class="container my-4">
+    <body class="container my-4">
 
     <div id="game_backgrounds" class=" w-100 h-auto d-none">
         <img id="background_left" alt="" src="./Materials/images/background-left.png" class="col-10 w-50">
@@ -93,7 +62,7 @@
                     <p class="text mx-auto" data-tsnormal="30px" data-tslarge="50px">vs</p>
                     <p id ='h_guest_name' class="text" data-tsnormal="30px" data-tslarge="50px"></p>
                 </div>
-                <canvas id="one_vs_one_host_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="h_1v1_label"></canvas>
+                <canvas id="one_vs_one_host_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="h_1v1_label"></canvas>
                 <label id="h_1v1_label" data-title="ARIA 1 vs 1 (online)"></label>
                 <div>
                     <h1 id="h_win_text" class="text text-center" data-tsnormal="30px" data-tslarge="50px"></h1>
@@ -118,10 +87,10 @@
                     <p class="text mx-auto" data-tsnormal="30px" data-tslarge="50px">vs</p>
                     <p id ='g_guest_name' class="text" data-tsnormal="30px" data-tslarge="50px"></p>
                 </div>
-                <canvas id="one_vs_one_guest_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="g_1v1_label"></canvas>
+                <canvas id="one_vs_one_guest_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="g_1v1_label"></canvas>
                 <label id="g_1v1_label" data-title="ARIA 1 vs 1 (online)"></label>
                 <div>
-                    <h1 id="g_win_text" class="text text-center" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h2>
+                    <h1 id="g_win_text" class="text text-center" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h1>
                 </div>
                 <h1 id="waiting_host" class="d-flex justify-content-center text" data-tsnormal="30px" data-tslarge="50px" data-oname="Waiting for the host to launch the game..."></h1>
                 <h1 id="1v1_guest_timer" class="d-flex justify-content-center text d-none" data-tsnormal="45px" data-tslarge="55px"></h1>
@@ -140,8 +109,8 @@
             <!-- 1 vs 1 (local) -->
 
             <div id="one_vs_one_local_page" class="container mx-auto">
-                <canvas id="one_vs_one_local_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="l_1v1_label"></canvas>
-                <label id="l_1v1_label" alt="" data-title="ARIA 1 vs 1 (local)"></label>
+                <canvas id="one_vs_one_local_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="l_1v1_label"></canvas>
+                <label id="l_1v1_label" aria-label="" data-title="ARIA 1 vs 1 (local)"></label>
                 <div class="mb-1">
                     <h1 id="left_player_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h1>
                     <h1 id="right_player_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Right player won the game."></h1>
@@ -163,10 +132,10 @@
             <!-- 2 vs 1 (local) -->
 
             <div id="one_vs_two_local_page">
-                <canvas id="one_vs_two_local_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="1v2_label"></canvas>
+                <canvas id="one_vs_two_local_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="1v2_label"></canvas>
                 <label id="1v2_label" data-title="ARIA 1 vs 2 (local)"></label>
                 <div>
-                    <h1 id="left_side_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left players won the game."></h2>
+                    <h1 id="left_side_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left players won the game."></h1>
                     <h1 id="right_side_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Right players won the game."></h1>
                     <h1 id="2v1_local_timer" class="text" data-tsnormal="45px" data-tslarge="55px"></h1>
                 </div>
@@ -189,7 +158,7 @@
 
             <div id="game_page_tournament">
                 <div class="display-4 text text-center" id="nick_reminder"></div>
-                <canvas id="tournament_game" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="t_label"></canvas>
+                <canvas id="tournament_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="t_label"></canvas>
                 <label id="t_label" alt="" data-title="ARIA Tournament Match"></label>
                 <div>
                     <h1 id="tournament_timer" class="text" data-tsnormal="45px" data-tslarge="55px"></h1>
@@ -211,11 +180,11 @@
             <!-- Vs AI Game page -->
 
             <div id="game_page_ai" class="container mx-auto">
-                <canvas id="vs_ai" moz-opaque width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="vs_ai_label"></canvas>
+                <canvas id="vs_ai" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="vs_ai_label"></canvas>
                 <label id="vs_ai_label" alt="" data-title="ARIA 1 vs ai (local)"></label>
                 <div class="container text text-center">
-                <h1 id="you_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h2>
-                <h1 id="ai_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Right player won the game."></h1>
+                    <h1 id="you_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h1>
+                    <h1 id="ai_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Right player won the game."></h1>
                     <h1 id="ai_local_timer" class="text" data-tsnormal="45px" data-tslarge="55px"></h1>
                     <button id="start_vs_ai" class="btn text border btn-outline-danger border-5" data-tsnormal="35px" data-tslarge="55px" data-oname="Launch a game"></button>
                 </div>
@@ -317,7 +286,7 @@
 
                         <div class="mx-auto form-switch custom-switch-lg text-center my-3 scale-75">
                             <input id="switch_classic" type="checkbox" class="form-check-input btn-simple me-1 mode_switch" data-tsnormal="15px" data-tslarge="20px">
-                            <label id ="c_switch_text" for="switch_classic" class="ms-2 text" data-tsnormal="20px" data-tslarge="25px"></label>
+                            <label for="switch_classic" id="c_switch_text" for="switch_classic" class="ms-2 text" data-tsnormal="20px" data-tslarge="25px"></label>
                         </div>
 
                         <button id="classic_back_btn" class="mt-5 btn text btn-complex btn-outline-dark color_btn" data-tsnormal="20px" data-tslarge="30px" data-oname="Back" data-title="Back" title="" data-link="play"></button>
@@ -339,7 +308,7 @@
                         <button id="join_one_vs_one_online_btn" class="btn text btn-simple" data-tsnormal="35px" data-tslarge="45px" data-oname="Join a game" data-title="Join a game" title="" data-link="join-lobby"></button>
                     </div>
                     <div>
-                        <button id="one_vs_one_online_choice_back_btn" class="btn-outline-dark btn text btn-complex color_btn" data-tsnormal="20px" data-tslarge="30px" data-oname="Back" data-title="Back" title="" data-link="classic"></button>
+                        <button id="one_vs_one_online_choice_back_btn" class="mt-5 btn-outline-dark btn text btn-complex color_btn" data-tsnormal="20px" data-tslarge="30px" data-oname="Back" data-title="Back" title="" data-link="classic"></button>
                     </div>
 
                     </div>
@@ -354,9 +323,12 @@
                         <p id="create_lobby_msg" class="text" data-tsnormal="16px" data-tslarge="21px"></p>
                         <div id="game_id_div" class="d-flex flex-row justify-content-center">
                             <div class="border border-2">
-                                <input type="text" id="invitation_code" class="d-inline ms-2 mt-4" data-tsnormal="16px" data-tslarge="21px" readonly></input>
-                                <button id="cpy_inv_code" class="btn btn-simple text btn-outline-secondary btn-sm me-2 ms-0" data-tsnormal="15px" data-tslarge="20px" data-title="Copy" data-oname="Copy"></button>
-                                <p class="text" data-oname="Peer offer send msg" data-tsnormal="15px" data-tslarge="20px"></p>
+                                <input type="text" name="invitation_code" id="invitation_code" class="d-inline ms-2 mt-4" data-tsnormal="16px" data-tslarge="21px" readonly></input>
+                                <button id="cpy_inv_code" class="btn btn-simple text btn-outline-secondary btn-sm me-2 ms-0" data-tsnormal="15px" data-tslarge="20px" data-title="Copy Inv Code" data-oname="Copy"
+                                aria-label=""></button>
+                                <div>
+                                    <label for="invitation_code" class="text" data-oname="Peer offer send msg" data-tsnormal="15px" data-tslarge="20px"></label>
+                                </div>
                             </div>
                         <div class="d-flex flex-row justify-content-center">
                             <div class="border border-2">
@@ -380,9 +352,12 @@
                         <div id="game_id_div_join" class="d-flex flex-row justify-content-center">
 
                             <div class="border border-2">
-                                <input type="text" id="paste_inv_code" class="d-inline m-2" data-tsnormal="16px" data-tslarge="21px"></input>
-                                <button id ="submit_inv_code" type="submit" class="btn text btn-lg btn-simple border btn-outline-success me-2" data-tsnormal="15px" data-tslarge="20px" data-oname="Submit"></button>
-                                <p class="text" data-oname="Paste Code Msg" data-tsnormal="15px" data-tslarge="20px"></p>
+                                <input type="text" name="pase_inv_code" id="paste_inv_code" class="d-inline m-2" data-tsnormal="16px" data-tslarge="21px"></input>
+                                <button id ="submit_inv_code" type="submit" class="btn text btn-lg btn-simple border btn-outline-success me-2" data-tsnormal="15px" data-tslarge="20px" data-oname="Submit"
+                                data-title="Submit Inv Code" aria-label=""></button>
+                                <div>
+                                    <label for="paste_inv_code" class="text" data-oname="Paste Code Msg" data-tsnormal="15px" data-tslarge="20px"></label>
+                                </div>
                             </div>
 
                         </div>
@@ -403,8 +378,7 @@
         <div id="tournament_setup" class="row justify-content-center">
             <p id="t_type_text" class="text text-center mx-auto mb-4" data-oname="Tournament Type" data-tsnormal="30px" data-tslarge="40px"></p>
             <div class="d-flex text-center p-2 container mb-3 justify-content-center">
-                    <label data-oname="Tournament Type" class="d-none"></label>
-                    <select id = "tournament_players_selector" class="d-inline-block form-select form-select-lg selector text-center w-auto" data-tsnormal="20px" data-tslarge="30px">
+                    <select id = "tournament_players_selector" class="d-inline-block form-select form-select-lg selector text-center w-auto" data-tsnormal="20px" data-tslarge="30px" title="" aria-label="" data-title="ARIA Tournament Type">
                         <option selected value='16' class="btn-simple"  data-oname="Sixteen"></option>
                         <option value='8' class="btn-simple" data-oname="Eight"></option>
 
@@ -412,9 +386,10 @@
                     </select>
                     <button id ="submit_player_nbr" class="btn text btn-lg btn-simple border btn-outline-success ms-4" data-tsnormal="20px" data-tslarge="30px" data-oname="Submit" data-link="tournament-nicknames"></button>
             </div>
+                    <label for="tournament_players_selector" class="d-none" data-oname="ARIA Tournament Type" aria-label="" data-title="ARIA Tournament Type"></label>
                 <div class="mx-auto form-switch custom-switch-lg text-center mb-0">
                     <input id="switch_tournament" class="form-check-input btn-simple me-1 mode_switch" type="checkbox" data-tsnormal="15px" data-tslarge="20px">
-                    <label id ="t_switch_text" for="switch_tournament" class="text ms-2" data-tsnormal="20px" data-tslarge="25px"></label>
+                    <label for="switch_tournament"id="t_switch_text" class="text ms-2" data-tsnormal="20px" data-tslarge="25px"></label>
                 </div>
             <div class="d-flex text-center p-2 container mb-5 justify-content-center">
                 <button id="back_tournament_btn" class="btn color_btn btn-outline-dark btn-lg text btn-complex mt-5" data-tsnormal="20px" data-tslarge="30px" data-oname="Back" data-title="Back" title="" data-link="classic"></button>
@@ -425,8 +400,9 @@
                     <form id="form_alias" class="container text-center">
                     <div id="parent_form" class="justify-content-center">
                         <div id="form_block" class="form-control-lg p-2 remover">
-                            <input id="alias_input" class="form-control-sm" type="text" placeholder="" data-tsnormal="16px" data-tslarge="21px" data-oname="Tournament nickname" data-title="Tournament nickname" title="">
+                            <input id="alias_input" class="form-control-sm" type="text" placeholder="" data-tsnormal="16px" data-tslarge="21px" data-oname="Tournament nickname" data-title="ARIA Tournament Nick Form" title="" aria-label="">
                             <div id="invalid-alias" class="invalid-feedback" data-tsnormal="15px" data-tslarge="25px" data-oname="Invalid alias"></div>
+                            <label for="alias_input" id="duplicate_label" data-oname="ARIA Tournament Nick Form"class="d-none"></label>
                         </div>
                     </div>
 
@@ -487,25 +463,29 @@
 
                         <div class="mb-4">
                             <p id="game_theme" class="text mb-2 user-select-none" data-tsnormal="35px" data-tslarge="45px" data-oname="Game theme" data-title="Game theme" title=""></p>
-                            <select id="game_theme_btn_selector" class="d-inline-block form-select form-select-lg selector text-center w-auto" data-tsnormal="20px" data-tslarge="30px">
+                            <select id="game_theme_btn_selector" class="d-inline-block form-select form-select-lg selector text-center w-auto" data-tsnormal="20px" data-tslarge="30px" data-title="ARIA Theme Selector" title="" aria-label="">
                             <option class="btn-simple" value="1" data-title="MGS 1 - Duel" title="">MGS 1 - Duel Theme</option>
                             <option class="btn-simple" value ="2" title="MGS - Sneaking Theme">MGS - Sneaking Theme</option>
                             <option class="btn-simple" value="3" title="MGS3 - Alert Theme">MGS3 - Alert Theme</option>
                             </select>
                         </div>
 
+                        <label for="game_theme_btn_selector" class="d-none" aria-label="" data-oname="ARIA Theme Selector"data-title="ARIA Theme Selector"></label>
+
                         <div>
                             <p id="game_map" class="user-select-none text mb-2" data-tsnormal="35px" data-tslarge="45px" data-oname="Game map" data-title="Game map" title=""></p>
-                            <select id="game_map_btn_selector" class="d-flex form-select form-select-lg mx-auto selector" data-tsnormal="20px" data-tslarge="30px">
+                            <select id="game_map_btn_selector" class="d-flex form-select form-select-lg mx-auto selector" data-tsnormal="20px" data-tslarge="30px" data-title="ARIA Map Selector" aria-label="" title="">
                             <option class="btn-simple" value="none" data-oname="– None –" data-title="None" title=""></option>
                             <option class="btn-simple" value="purple" title="purple" data-oname="Purple"></option>
                             <option class="btn-simple" value="orange" title="orange" data-oname="Orange"></option>
                             <option class="btn-simple" value="red" title="red" data-oname="Red"></option>
                             </select>
-                            <span id="map_tooltip" data-alt="Map Tooltip" class="ms-1 position-absolute d-none text"><img id="img_tooltip" src=""></span>
+                            <span id="map_tooltip"  class="ms-1 position-absolute d-none text">
+                            <img id="img_tooltip" src="" data-alt="Map Tooltip"></span>
 
                         </div>
 
+                        <label for="game_map_btn_selector" class="d-none" aria-label="" data-title="ARIA Map Selector" data-oname="ARIA Map Selector"></label>
 
                     </div>
 
@@ -671,18 +651,19 @@
 
                             <div class="mb-3">
                                 <p id="language" class="user-select-none text mb-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Language" data-title="Language" title=""></p>
-                                <select id="language_btn_selector" class="form-select form-select-lg mx-auto selector" data-tsnormal="20px" data-tslarge="30px">
+                                <select id="language_btn_selector" class="form-select form-select-lg mx-auto selector" data-tsnormal="20px" data-tslarge="30px" data-title="ARIA Language Selector" aria-label="" title="">
                                     <option class="btn-simple" value="en">English</option>
                                     <option class="btn-simple" value="fr">Français</option>
                                     <!-- ... -->
                                 </select>
                             </div>
 
-
+                            <label for="language_btn_selector" class="d-none" aria-label="" data-title="ARIA Language Selector" data-oname="ARIA Language Selector"></label>
 
                             <div class="mb-4">
-                                <p id="sound_volume" class="user-select-none text mb-4" data-tsnormal="35px" data-tslarge="45px" data-oname="Sound volume" data-title="Sound volume"></p>
-                                <input id="sound_volume_slider" type="range" class="form-range btn-simple slider" value="" aria-label="sound_volume_slider_label" data-title="Sound volume">
+                                <p id="sound_volume"
+                                class="user-select-none text mb-4" data-tsnormal="35px" data-tslarge="45px" data-oname="Sound volume" data-title="Sound volume"></p>
+                                <input id="sound_volume_slider" type="range" class="form-range btn-simple slider" value="" data-title="Sound volume" name="soud_volume_slider">
                                 <div>
                                     <label id="sound_volume_slider_label" for="sound_volume_slider" class="form-label text ms-1 my-auto mb-1" data-tsnormal="20px" data-tslarge="30px"></label>
                                 </div>
@@ -705,11 +686,13 @@
 
                             <div class="mb-3">
                                 <p id="text_size" class="user-select-none text mb-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Text size" data-title="Text size" title=""></p>
-                                <select id="text_size_btn_selector" class="form-select form-select-lg mx-auto selector" data-tsnormal="20px" data-tslarge="30px">
+                                <select id="text_size_btn_selector" class="form-select form-select-lg mx-auto selector" data-tsnormal="20px" data-tslarge="30px" data-title="ARIA Textsize Selector" aria-label="" title="">
                                     <option class="text btn-simple" value="normal" data-oname="Normal" data-title="Normal" title=""></option>
                                     <option class="text btn-simple" value="large" data-oname="Large" data-title="Large" title=""></option>
                                 </select>
                             </div>
+
+                            <label for="text_size_btn_selector" class="d-none" aria-label="" data-title="ARIA Textsize Selector" data-oname="ARIA Textsize Selector"></label>
 
                             <div class="mb-3">
                                 <p id="image_desc" class="user-select-none text mb-3 btn_state" data-tsnormal="35px" data-tslarge="45px" data-oname="Image description" data-title="Image description" title=""></p>
@@ -744,7 +727,7 @@
         <div class="modal" id="disconnectionPopup" data-bs-backdrop='static'>
 
             <div class="modal-dialog modal-dialog-centered text">
-                <div id="modal_color_switch" class="modal-content border border-2">
+                <div id="modal_color_disco" class="modal-content border border-2">
                     <div class="modal-header">
                         <h4 class="modal-title text text-danger" data-oname="Disconnected" data-tsnormal="30px" data-tslarge="50px"></h4>
                     </div>
@@ -761,7 +744,7 @@
          <div class="modal" id="leavingPopup" data-bs-backdrop='static'>
 
             <div class="modal-dialog modal-dialog-centered text">
-                <div id="modal_color_switch" class="modal-content border border-2">
+                <div id="modal_color_leaving" class="modal-content border border-2">
                     <div class="modal-header">
                         <h4 class="modal-title text text-danger" data-oname="Leaving Popup" data-tsnormal="30px" data-tslarge="50px"></h4>
                     </div>
@@ -775,6 +758,35 @@
                 </div>
             </div>
         </div>
+
+    <!-- Audio -->
+
+        <audio id="mgs" src="./Materials/musics/mgs2-theme.mp3" autoplay muted></audio>
+        <audio class="game_music" id="duel-theme" src="./Materials/musics/duel-theme.mp3" muted></audio>
+        <audio class="game_music" id="mgs3-alert-theme" src="./Materials/musics/mgs3-alert-theme.mp3" muted></audio>
+        <audio class="game_music" id="sneaky-theme" src="./Materials/musics/Sneaky-theme.mp3" muted></audio>
+
+        <audio id="hover_sound" class="sounds" src="./Materials/sounds/click-hover.mp3"></audio>
+        <audio id="click_sound" class="sounds" src="./Materials/sounds/click-sound.mp3"></audio>
+        <audio id="close_sound" class="sounds" src="./Materials/sounds/close-sound.mp3"></audio>
+        <audio id="alert_sound" class="sounds" src="./Materials/sounds/mgs1-alert.mp3"></audio>
+        <audio id="1_sound" class="sounds" src="./Materials/sounds/1.mp3"></audio>
+        <audio id="2_sound" class="sounds" src="./Materials/sounds/2.mp3"></audio>
+        <audio id="3_sound" class="sounds" src="./Materials/sounds/3.mp3"></audio>
+        <audio id="goal_sound" class="sounds" src="./Materials/sounds/goal_sound.mp3"></audio>
+        <audio id="online_loser" class="sounds" src="./Materials/sounds/online_loser.mp3"></audio>
+        <audio id="online_winner" class="sounds" src="./Materials/sounds/online_winner.mp3"></audio>
+        <audio id="knock_sound" class="sounds" src="./Materials/sounds/knocking_sound.mp3"></audio>
+        <audio id="game_end" class="sounds" src="./Materials/sounds/game_end.mp3"></audio>
+
+        <!-- Video -->
+
+        <video id="vid_credits">
+            <source src="./Materials/video/credits.mp4" type="video/mp4">
+        </video>
+
+        <button id="credit_close" data-tsnormal="30px" data-tslarge="50px" data-title="Main Menu" class="btn btn-simple text-white flex float-end" data-link="home">&#x2717;</button>
+        <label for="credit_close" data-title="Main Menu"></label>
 
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
@@ -826,5 +838,8 @@
         <script src="./JavaScript/Menu/triggers.js"></script>
 
         <script src="./JavaScript/init.js"></script>
+
+
     </body>
+
 </html>

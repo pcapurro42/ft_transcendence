@@ -111,15 +111,18 @@ function refreshSite()
 
 function setBackgroundColor(color)
 {
-    let background = document.getElementById("background");
-    let modal = document.getElementById('modal_color_switch');
+    let background = document.body;
+    let modal_disco = document.getElementById('modal_color_disco');
+    let modal_leaving = document.getElementById('modal_color_leaving');
     if (color == "white"){
         background.style.setProperty("background-color", "white");
-        modal.style.setProperty("background-color", "white");
+        modal_disco.style.setProperty("background-color", "white");
+        modal_leaving.style.setProperty("background-color", "white");
     }
     else{
         background.style.setProperty("background-color", "black");
-        modal.style.setProperty("background-color", "black");
+        modal_disco.style.setProperty("background-color", "black");
+        modal_leaving.style.setProperty("background-color", "black");
     }
 }
 

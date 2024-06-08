@@ -176,15 +176,6 @@ let fr = [
     ["Wrong Code Format", "Erreur: récéption de données non-approuvées. Processus de connexion désactivé."],
     ["Wrong Code Guest", "Erreur: le code d'invitation n'est pas au bon format."],
 
-    //******* ARIA ******/
-
-    ["ARIA stats", "Emplacement des graphiques de statistiques."],
-    ["ARIA 1 vs 1 (online)", "Emplacement du jeu : 1 vs 1 (en ligne)"],
-    ["ARIA 1 vs 1 (local)", "Emplacement du jeu: 1 vs 1 (local)"],
-    ["ARIA 1 vs 2 (local)", "Emplacement du jeu: 1 vs 2 (local)"],
-    ["ARIA 1 vs ai (local)", "Emplacement du jeu: 1 vs ai (local)"],
-    ["ARIA Tournament Match", "Emplacement du jeu : 1 vs 1... Match de tournoi (local)"],
-    ["ARIA Main Menu", "Bouton : retour au menu principal."],
 
     //******* Status Bar ******/
 
@@ -232,4 +223,38 @@ let fr = [
     ['Leaving msg', 'Quitter cette page entraînera la perte de toutes les données en cours d\'exécution.'],
     ['Confirm', 'Confirmer'],
     ['Resume', 'Reprendre'],
+
+    //******* ARIA ******/
+
+    ["ARIA stats", "Emplacement des graphiques de statistiques."],
+    ["ARIA 1 vs 1 (online)", "Emplacement du jeu : 1 vs 1 (en ligne)"],
+    ["ARIA 1 vs 1 (local)", "Emplacement du jeu: 1 vs 1 (local)"],
+    ["ARIA 1 vs 2 (local)", "Emplacement du jeu: 1 vs 2 (local)"],
+    ["ARIA 1 vs ai (local)", "Emplacement du jeu: 1 vs ai (local)"],
+    ["ARIA Tournament Match", "Emplacement du jeu : 1 vs 1... Match de tournoi (local)"],
+
+    ["ARIA Tournament Type", "Sélectionnez le type de tournoi."],
+    ["ARIA Theme Selector", "Sélectionnez quel thème musical sera joué pendant une partie."],
+    ["ARIA Map Selector", "Sélectionnez la carte utilisée pendant une partie."],
+    ["ARIA Language Selector", "Sélectionnez la langue du site web."],
+    ["ARIA Tournament Nick Form", "Formulaire pour surnom de joueur du tournoi."],
+    ["ARIA Textsize Selector", "Sélectionnez la taille du texte sur le site web."],
+
+
+    ["Top Logo Alt", "Metal Gear Pong logo. Cliquez pour retourner au menu principal."],
+
+    ["Keyboard U Tuto", "Touche  U du clavier. Informe l'utilisateur en haut à droite de la touche clavier à utiliser pour aller vers le haut."],
+    ["Keyboard J Tuto", "Touche  J du clavier. Informe l'utilisateur en haut a droite de la touche clavier à utiliser pour aller vers le bas."],
+    ["Keyboard E Tuto", "Touche  E du clavier. Informe l'utilisateur de gauche de la touche clavier à utiliser pour aller vers le haut."],
+    ["Keyboard D Tuto", "Touche  D du clavier. Informe l'utilisateur de la touche clavier à utiliser pour aller vers le bas."],
+    ["Keyboard Up Tuto", "Touche flèche du haut du clavier. Informe l'utilisateur de la touche clavier à utiliser pour aller vers le haut."],
+    ["Keyboard Down Tuto", "Touche flèche du bas du clavier. Informe l'utilisateur de la touche clavier à utiliser pour aller vers le bas."],
+
+    ["Music Icon", "Icòne de la musique. Cliquez pour activer/désactiver la musique"],
+    ["Sound Icon", "Icône du son. Cliquez pour activer/désactiver les sons"],
+
+    ["Map Tooltip", "Aperçu de la carte sélectionnée."],
+
+    ["Copy Inv Code", "Copier le code d'invitation."],
+    ["Submit Inv Code", "Soumettre le code d'invitation."],
 ];

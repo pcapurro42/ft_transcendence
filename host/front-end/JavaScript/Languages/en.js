@@ -228,18 +228,28 @@ let en = [
     ["ARIA 1 vs 2 (local)", "Game Frame: 1 vs 2 (local)"],
     ["ARIA 1 vs ai (local)", "Game Frame: 1 vs ai (local)"],
     ["ARIA Tournament Match", "Game Frame : 1 vs 1... Tournament Match (local)"],
+    ["ARIA Tournament Type", "Select which type of tournament you want to play."],
+    ["ARIA Theme Selector", "Select which music theme will play in-game"],
+    ["ARIA Map Selector", "Select which map will be used in-game"],
+    ["ARIA Language Selector", "Select a language for the website"],
+    ["ARIA Tournament Nick Form", "Form for tournament player's nickname"],
+    ["ARIA Textsize Selector", "Select the text size for the website."],
 
-    ["Top Logo Alt", "Clickable Metal Gear Pong logo: bring back to main menu."],
 
-    ["Keyboard U Tuto", "Informative : image of the U key, this input is used to go up in the game."],
-    ["Keyboard J Tuto", "Informative : image of a J arrow key, this input is used to go up in the game."],
-    ["Keyboard E Tuto", "Informative : image of the E key, this input is used to go up in the game."],
-    ["Keyboard D Tuto", "Informative : image of a D arrow key, this input is used to go up in the game."],
-    ["Keyboard Up Tuto", "Informative : image of an up arrow key, this input is used to go up in the game."],
-    ["Keyboard Down Tuto", "Informative : image of a down arrow key, this input is used to go up in the game."],
+    ["Top Logo Alt", "Metal Gear Pong logo. Click to get back to main menu."],
 
-    ["Music Icon", "Music icon to toggle musics on or off."],
-    ["Sound Icon", "Sound icon to toggle sounds on or off."],
+    ["Keyboard U Tuto", "U keyboard key, inform the top-right player that this input is used to go up in the game."],
+    ["Keyboard J Tuto", "J keyboard key, inform the top-right player that this input is used to go down in the game."],
+    ["Keyboard E Tuto", "E keyboard key, inform the left player that, this input is used to go up in the game."],
+    ["Keyboard D Tuto", "D keyboard key, inform the left player that this input is used to go down in the game."],
+    ["Keyboard Up Tuto", "Up Arrow keyboard key, inform the right player that this input is used to go up in the game."],
+    ["Keyboard Down Tuto", "Down Arrow keyboard key, inform the right player that this input is used to go down in the game."],
+
+    ["Music Icon", "Music icon. Click to toggle musics on or off."],
+    ["Sound Icon", "Sound icon. Click to toggle sounds on or off."],
 
     ["Map Tooltip", "Map tooltip of the map currently selected."],
+
+    ["Copy Inv Code", "Copy invitation code."],
+    ["Submit Inv Code", "Submit invitation code."],
 ];
