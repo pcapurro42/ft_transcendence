@@ -32,7 +32,7 @@ function refreshLanguage()
     let lang = localStorage.getItem("language");
     let words = document.querySelectorAll('[data-oname]');
     let placeholders = document.querySelectorAll('[placeholder]');
-    let alt_text = document.querySelectorAll('[alt]');
+    let alt_text = document.querySelectorAll('[data-alt]');
     let titles = document.querySelectorAll('[data-title');
 
     if (lang == "en")
@@ -44,20 +44,22 @@ function refreshLanguage()
         for (let i = 0; i != placeholders.length; i++)
             placeholders[i].setAttribute('placeholder', getElement(en, placeholders[i].getAttribute("data-oname")));
         for (let i = 0; i != alt_text.length; i++){
-            if (getElement(en, alt_text[i].getAttribute('data-title') == undefined))
-                alt_text[i].setAttribute('alt', getElement(en, alt_text[i].getAttribute('data-oname')));
-            else
-                alt_text[i].setAttribute('alt', getElement(en, alt_text[i].getAttribute('data-title')));
+                alt_text[i].setAttribute('alt', getElement(en, alt_text[i].getAttribute('data-alt')));
         }
+
         if (descriptive_images == "true")
         {
             for (let i = 0; i != titles.length; i++)
             {
-                if (getElement(en, titles[i].getAttribute("data-oname")) == undefined){
-                    titles[i].setAttribute('title', getElement(en, titles[i].getAttribute("data-title")));
+                if (getElement(en, titles[i].getAttribute("alt")) == undefined){
+                    if (getElement(en, titles[i].getAttribute("data-oname")) == undefined){
+                        titles[i].setAttribute('title', getElement(en,  titles[i].getAttribute("data-title")));
+                    }
+                    else
+                        titles[i].setAttribute('title', getElement(en, titles[i].getAttribute("data-oname")));
                 }
                 else
-                    titles[i].setAttribute('title', getElement(en, titles[i].getAttribute("data-oname")));
+                    titles[i].setAttribute('title', getElement(en, titles[i].getAttribute('alt')));
             }
         }
     }
@@ -69,21 +71,21 @@ function refreshLanguage()
             words[i].innerHTML = getElement(fr, words[i].getAttribute("data-oname"));
         for (let i = 0; i != placeholders.length; i++)
             placeholders[i].setAttribute('placeholder', getElement(fr, placeholders[i].getAttribute("data-oname")));
-       for (let i = 0; i != alt_text.length; i++){
-            if (getElement(en, alt_text[i].getAttribute('data-title') == undefined))
-                alt_text[i].setAttribute('alt', getElement(fr, alt_text[i].getAttribute('data-oname')));
-            else
-                alt_text[i].setAttribute('alt', getElement(fr, alt_text[i].getAttribute('data-title')));
-        }
+       for (let i = 0; i != alt_text.length; i++)
+            alt_text[i].setAttribute('alt', getElement(fr, alt_text[i].getAttribute('data-alt')));
 
         if (descriptive_images == "true")
         {
             for (let i = 0; i != titles.length; i++)
             {
-                if (getElement(fr, titles[i].getAttribute("data-oname")) == undefined)
-                    titles[i].setAttribute('title', getElement(fr, titles[i].getAttribute("data-title")));
+                if (getElement(fr, titles[i].getAttribute("alt") == undefined)){
+                    if (getElement(fr, titles[i].getAttribute("data-oname")) == undefined)
+                        titles[i].setAttribute('title', getElement(fr, titles[i].getAttribute("data-title")));
+                    else
+                        titles[i].setAttribute('title', getElement(fr, titles[i].getAttribute("data-oname")));
+                }
                 else
-                    titles[i].setAttribute('title', getElement(fr, titles[i].getAttribute("data-oname")));
+                    titles[i].setAttribute('title', getElement(fr, titles[i].getAttribute('alt')));
             }
         }
     }

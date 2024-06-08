@@ -35,12 +35,10 @@ let en = [
     ["Bonus taken", "Bonus taken"],
 
     ["[No availaible data to display]", "[No availaible data to display]"],
-    
     ["victory", "victory"],
     ["defeat", "defeat"],
 
     ["Game timelapse", "Game timelapse"],
-    
     ["Game domination", "Game domination"],
     ["Purple: you", "Purple: you"],
     ["Yellow: opponent", "Yellow: opponent"],
@@ -174,14 +172,6 @@ let en = [
     ['Please Create Lobby', 'Please click the create lobby button to start a game with '],
 
 
-    //******* ARIA ******/
-
-    ["ARIA stats", "Game statistics frame."],
-    ["ARIA 1 vs 1 (online)", "Game Frame : 1 vs 1 (online)"],
-    ["ARIA 1 vs 1 (local)", "Game Frame: 1 vs 1 (local)"],
-    ["ARIA 1 vs 2 (local)", "Game Frame: 1 vs 2 (local)"],
-    ["ARIA 1 vs ai (local)", "Game Frame: 1 vs ai (local)"],
-    ["ARIA Tournament Match", "Game Frame : 1 vs 1... Tournament Match (local)"],
 
 
     //******* Status Bar ******/
@@ -229,4 +219,27 @@ let en = [
     ['Confirm', 'Confirm'],
     ['Resume', 'Resume'],
 
+
+    //******* ARIA ******/
+
+    ["ARIA stats", "Game statistics frame."],
+    ["ARIA 1 vs 1 (online)", "Game Frame : 1 vs 1 (online)"],
+    ["ARIA 1 vs 1 (local)", "Game Frame: 1 vs 1 (local)"],
+    ["ARIA 1 vs 2 (local)", "Game Frame: 1 vs 2 (local)"],
+    ["ARIA 1 vs ai (local)", "Game Frame: 1 vs ai (local)"],
+    ["ARIA Tournament Match", "Game Frame : 1 vs 1... Tournament Match (local)"],
+
+    ["Top Logo Alt", "Clickable Metal Gear Pong logo: bring back to main menu."],
+
+    ["Keyboard U Tuto", "Informative : image of the U key, this input is used to go up in the game."],
+    ["Keyboard J Tuto", "Informative : image of a J arrow key, this input is used to go up in the game."],
+    ["Keyboard E Tuto", "Informative : image of the E key, this input is used to go up in the game."],
+    ["Keyboard D Tuto", "Informative : image of a D arrow key, this input is used to go up in the game."],
+    ["Keyboard Up Tuto", "Informative : image of an up arrow key, this input is used to go up in the game."],
+    ["Keyboard Down Tuto", "Informative : image of a down arrow key, this input is used to go up in the game."],
+
+    ["Music Icon", "Music icon to toggle musics on or off."],
+    ["Sound Icon", "Sound icon to toggle sounds on or off."],
+
+    ["Map Tooltip", "Map tooltip of the map currently selected."],
 ];

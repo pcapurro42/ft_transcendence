@@ -29,8 +29,6 @@ function backBtnColor_toWhite(){
 	this.classList.replace("text-black", "text-white");
 }
 
-fu
-
 function removeChangeBackColor(){
 
 }
