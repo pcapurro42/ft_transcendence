@@ -395,7 +395,7 @@ class History
         {
             this.data_display.font = this.title_text_format;
             this.data_display.fillStyle = this.global_color;
-            let text = getTranslation("[No availaible data to display]");
+            let text = getTranslation("[No available data to display]");
             let center_text = this.data_display.measureText(text).width;
             this.data_display.fillText(text, this.data_width / 2 - (center_text / 2), this.data_height / 2);
         }

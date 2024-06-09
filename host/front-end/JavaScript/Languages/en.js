@@ -13,7 +13,7 @@ let en = [
     ["Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'", "Button: main menu. Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'"],
 
     ["Play", "Play"],
-    ["Customization", "Customization"],
+    ["Customization", "Customize"],
     ["Statistics", "Statistics"],
     ["Settings", "Settings"],
     ["Credits", "Credits"],
@@ -34,7 +34,7 @@ let en = [
     ["Ball return(s)", "Ball return(s)"],
     ["Bonus taken", "Bonus taken"],
 
-    ["[No availaible data to display]", "[No availaible data to display]"],
+    ["[No available data to display]", "[No available data to display]"],
     ["victory", "victory"],
     ["defeat", "defeat"],
 

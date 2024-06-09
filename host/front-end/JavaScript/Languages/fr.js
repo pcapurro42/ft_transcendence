@@ -12,7 +12,7 @@ let fr = [
     ["Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'", "Bouton : Menu Principal. Logo titre central: 'Tactical Tennis Action, Metal Gear: Pong'"],
 
     ["Play", "Jouer"],
-    ["Customization", "Personnalisation"],
+    ["Customization", "Personnaliser"],
     ["Statistics", "Statistiques"],
     ["Settings", "Options"],
     ["Credits", "Crédits"],
@@ -33,7 +33,7 @@ let fr = [
     ["Ball return(s)", "Renvoi(s) de balle"],
     ["Bonus taken", "Bonus récupéré(s)"],
 
-    ["[No availaible data to display]", "[Pas de donnée(s) disponible(s) à afficher]"],
+    ["[No available data to display]", "[Pas de donnée(s) disponible(s) à afficher]"],
 
     ["victory", "victoire"],
     ["defeat", "défaite"],
@@ -191,7 +191,7 @@ let fr = [
     ['Home', 'Metal Gear Pong'],
     ['/classic', '/classique'],
     ['/play', '/jouer'],
-    ['/online', '/en-ligne']
+    ['/online', '/en-ligne'],
     ['/create-lobby', '/creer-un-salon'],
     ['/join-lobby', '/rejoindre-un-salon'],
     ['/online-game', '/partie-en-ligne'],
@@ -239,7 +239,6 @@ let fr = [
     ["ARIA Language Selector", "Sélectionnez la langue du site web."],
     ["ARIA Tournament Nick Form", "Formulaire pour surnom de joueur du tournoi."],
     ["ARIA Textsize Selector", "Sélectionnez la taille du texte sur le site web."],
-
 
     ["Top Logo Alt", "Metal Gear Pong logo. Cliquez pour retourner au menu principal."],
 
