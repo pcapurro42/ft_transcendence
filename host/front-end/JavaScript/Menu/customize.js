@@ -54,6 +54,12 @@ function showMapTooltip(){
 	if (this.value != 'none'){
 		document.getElementById('map_tooltip').classList.remove('d-none');
 		switch (this.value){
+            case 'default':
+                if (high_contrast == 'true')
+                    img.src = "./Materials/images/tooltip_black_map.png";
+                else
+                    img.src = "./Materials/images/tooltip_white_map.png";
+                return;
 			case 'purple':
 				img.src = "./Materials/images/tooltip_purple_map.png";
 				break;

@@ -87,7 +87,6 @@ let en = [
 
     ["Classic", "Classic"],
     ["Tournament", "Tournament"],
-    ["Against AI", "Against AI"],
 
     ["MGS 1 - Duel", "MGS 1 - Duel"],
 
@@ -104,7 +103,7 @@ let en = [
     ["Orange", "Orange"],
     ["Purple", "Purple"],
 
-    ["– None –", "– None –"],
+    ["Default", "- Default -"],
 
     ["Enabled", "Enabled"],
     ["Disabled", "Disabled"],
@@ -192,8 +191,6 @@ let en = [
     ['/online-game', '/online-game'],
     ['/1vs1', '/1-vs-1'],
     ['/1vs2', '/1-vs-2'],
-    ['/vs-ai', '/vs-ai'],
-    ['Play vs AI', 'Play vs AI'],
     ['/tournament', '/tournament'],
     ['/tournament-nicknames', '/tournament-nicknames'],
     ['/tournament-game', '/tournament-game'],
@@ -221,12 +218,11 @@ let en = [
 
 
     //******* ARIA ******/
-
+    ["ARIA 42", "Connect with 42. This button will redirect you to the 42 login page."],
     ["ARIA stats", "Game statistics frame."],
     ["ARIA 1 vs 1 (online)", "Game Frame : 1 vs 1 (online)"],
     ["ARIA 1 vs 1 (local)", "Game Frame: 1 vs 1 (local)"],
     ["ARIA 1 vs 2 (local)", "Game Frame: 1 vs 2 (local)"],
-    ["ARIA 1 vs ai (local)", "Game Frame: 1 vs ai (local)"],
     ["ARIA Tournament Match", "Game Frame : 1 vs 1... Tournament Match (local)"],
     ["ARIA Tournament Type", "Select which type of tournament you want to play."],
     ["ARIA Theme Selector", "Select which music theme will play in-game"],
@@ -236,7 +232,7 @@ let en = [
     ["ARIA Textsize Selector", "Select the text size for the website."],
 
 
-    ["Top Logo Alt", "Metal Gear Pong logo. Click to get back to main menu."],
+    ["Top Logo Alt", "Website logo : Tactical Tennis Action Metal Gear Pong. Get back to main menu."],
 
     ["Keyboard U Tuto", "U keyboard key, inform the top-right player that this input is used to go up in the game."],
     ["Keyboard J Tuto", "J keyboard key, inform the top-right player that this input is used to go down in the game."],
@@ -248,7 +244,7 @@ let en = [
     ["Music Icon", "Music icon. Click to toggle musics on or off."],
     ["Sound Icon", "Sound icon. Click to toggle sounds on or off."],
 
-    ["Map Tooltip", "Map tooltip of the map currently selected."],
+    ["Map Tooltip", "Preview of the currently selected map."],
 
     ["Copy Inv Code", "Copy invitation code."],
     ["Submit Inv Code", "Submit invitation code."],

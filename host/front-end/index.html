@@ -25,8 +25,8 @@
     <body class="container my-4">
 
     <div id="game_backgrounds" class=" w-100 h-auto d-none">
-        <img id="background_left" alt="" src="./Materials/images/background-left.png" class="col-10 w-50">
-        <img id="background_right" alt="" src="./Materials/images/background-right.png" class="col-10 w-50">
+        <img id="background_left" src="./Materials/images/background-left.png" class="col-10 w-50">
+        <img id="background_right" src="./Materials/images/background-right.png" class="col-10 w-50">
     </div>
         <!-- Game pages -->
 
@@ -39,14 +39,14 @@
                 <div class="container">
 
                     <div>
-                        <img id="top_logo" src="./Materials/images/mgp-title-r.png" data-alt="Top Logo Alt" class="img-fluid mx-auto d-block btn-complex" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" tabindex="0" data-link="home">
+                        <img id="top_logo" src="./Materials/images/mgp-title-r.png" data-alt="Top Logo Alt" class="img-fluid mx-auto d-block btn-complex" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" tabindex="0" data-link="home" role="button">
                     </div>
 
 
                     <div class="col d-flex align-items-center ">
-                        <img id="game_music_toggle" data-alt="Music Icon" src="./Materials/images/music-off.png" class="img-fluid image col d-inline-block float-end mt-4 music_togglers btn_image" data-isnormal="4%" data-islarge="5%" data-title="Enable/Disable menu music" tabindex="0">
+                        <img id="game_music_toggle" data-alt="Music Icon" src="./Materials/images/music-off.png" class="img-fluid image col d-inline-block float-end mt-4 music_togglers btn_image" data-isnormal="4%" data-islarge="5%" data-title="Enable/Disable menu music" tabindex="0" role="button">
 
-                        <img id="game_sound_toggle" src="./Materials/images/sound-on.png" class="img-fluid image col d-inline-block float-end mt-4 sound_togglers btn_image" data-isnormal="5%" data-islarge="6%" data-alt="Sound Icon" data-title="Enable/Disable menu sounds" tabindex="0">
+                        <img id="game_sound_toggle" src="./Materials/images/sound-on.png" class="img-fluid image col d-inline-block float-end mt-4 sound_togglers btn_image" data-isnormal="5%" data-islarge="6%" data-alt="Sound Icon" data-title="Enable/Disable menu sounds" tabindex="0" role="button">
 
                     </div>
 
@@ -62,8 +62,8 @@
                     <p class="text mx-auto" data-tsnormal="30px" data-tslarge="50px">vs</p>
                     <p id ='h_guest_name' class="text" data-tsnormal="30px" data-tslarge="50px"></p>
                 </div>
-                <canvas id="one_vs_one_host_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="h_1v1_label"></canvas>
-                <label id="h_1v1_label" data-title="ARIA 1 vs 1 (online)"></label>
+                <canvas id="one_vs_one_host_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-label="" data-title="ARIA 1 vs 1 (online)" role="application"></canvas>
+                <label id="h_1v1_label" class="d-none" aria-label="" data-title="ARIA 1 vs 1 (local)"></label>
                 <div>
                     <h1 id="h_win_text" class="text text-center" data-tsnormal="30px" data-tslarge="50px"></h1>
                 </div>
@@ -73,10 +73,10 @@
 
                 <div id="o_host_foot" class="d-flex flex-column align-items-center">
                         <div class="game_keys w-100 d-flex flex-row">
-                            <img class="keysup float-start mb-2" data-isnormal="10%" data-alt="Keyboard E Tuto" data-islarge="14%" src="./Materials/images/E.png">
+                            <img class="keysup float-start mb-2" data-isnormal="10%" data-alt="Keyboard E Tuto" data-islarge="14%" src="./Materials/images/E.png" tabindex="-1">
                         </div>
                         <div class="game_keys w-100">
-                            <img class="keysdown float-start" data-alt="Keyboard D Tuto" src="./Materials/images/D.png" data-isnormal="10%" data-islarge="14%">
+                            <img class="keysdown float-start" data-alt="Keyboard D Tuto" src="./Materials/images/D.png" data-isnormal="10%" data-islarge="14%" tabindex="-1">
                         </div>
                 </div>
             </div>
@@ -87,8 +87,8 @@
                     <p class="text mx-auto" data-tsnormal="30px" data-tslarge="50px">vs</p>
                     <p id ='g_guest_name' class="text" data-tsnormal="30px" data-tslarge="50px"></p>
                 </div>
-                <canvas id="one_vs_one_guest_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="g_1v1_label"></canvas>
-                <label id="g_1v1_label" data-title="ARIA 1 vs 1 (online)"></label>
+                <canvas id="one_vs_one_guest_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-label="" role="application" data-title="ARIA 1 vs 1 (online)"></canvas>
+                <label id="g_1v1_label" class="d-none" aria-label="" data-title="ARIA 1 vs 1 (online)"></label>
                 <div>
                     <h1 id="g_win_text" class="text text-center" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h1>
                 </div>
@@ -96,10 +96,10 @@
                 <h1 id="1v1_guest_timer" class="d-flex justify-content-center text d-none" data-tsnormal="45px" data-tslarge="55px"></h1>
                 <div id="o_guest_foot" class="d-flex flex-column align-items-center">
                         <div class="game_keys w-100">
-                            <img class="float-end keysup img-fluid mb-0" data-isnormal="6%" data-islarge="10%" data-alt="Keyboard Up Tuto" src="./Materials/images/ArrowUp.png">
+                            <img class="float-end keysup img-fluid mb-0" data-isnormal="6%" data-islarge="10%" data-alt="Keyboard Up Tuto" src="./Materials/images/ArrowUp.png"  tabindex="-1">
                         </div>
                         <div class="game_keys w-100">
-                            <img class="keysdown float-end" src="./Materials/images/ArrowDown.png" data-alt="Keyboard Down Tuto" data-isnormal="6%" data-islarge="10%">
+                            <img class="keysdown float-end" src="./Materials/images/ArrowDown.png" data-alt="Keyboard Down Tuto" data-isnormal="6%" data-islarge="10%"  tabindex="-1">
                         </div>
                 </div>
             </div>
@@ -109,8 +109,8 @@
             <!-- 1 vs 1 (local) -->
 
             <div id="one_vs_one_local_page" class="container mx-auto">
-                <canvas id="one_vs_one_local_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="l_1v1_label"></canvas>
-                <label id="l_1v1_label" aria-label="" data-title="ARIA 1 vs 1 (local)"></label>
+                <canvas id="one_vs_one_local_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-label="" role="application" data-title="ARIA 1 vs 1 (local)"></canvas>
+                <label id="l_1v1_label" class="d-none" aria-label="" data-title="ARIA 1 vs 1 (local)"></label>
                 <div class="mb-1">
                     <h1 id="left_player_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h1>
                     <h1 id="right_player_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Right player won the game."></h1>
@@ -118,13 +118,13 @@
                 </div>
                     <div id="l_1v1_foot" class="d-flex flex-column align-items-center">
                         <div class="game_keys w-100">
-                            <img class="keysup float-start mb-2" data-isnormal="6%" data-alt="Keyboard E Tuto" data-islarge="10%" src="./Materials/images/E.png">
-                            <img class="float-end keysup img-fluid mb-0" data-isnormal="6%" data-alt="Keyboard Up Tuto" data-islarge="10%" src="./Materials/images/ArrowUp.png">
+                            <img class="keysup float-start mb-2" data-isnormal="6%" data-alt="Keyboard E Tuto" data-islarge="10%" src="./Materials/images/E.png"  tabindex="-1">
+                            <img class="float-end keysup img-fluid mb-0" data-isnormal="6%" data-alt="Keyboard Up Tuto" data-islarge="10%" src="./Materials/images/ArrowUp.png"  tabindex="-1">
                             <button id="start_1v1_local" class="btn btn-lg btn-simple btn-outline-danger mx-auto" data-tsnormal="30px" data-tslarge="40px" data-oname="Launch a game" data-title="Launch a Game"></button>
                         </div>
                         <div class="game_keys w-100">
-                            <img class="keysdown float-start" src="./Materials/images/D.png" data-isnormal="6%" data-alt="Keyboard D Tuto" data-islarge="10%">
-                            <img class="keysdown float-end" src="./Materials/images/ArrowDown.png" data-alt="Keyboard Down Tuto" data-isnormal="6%" data-islarge="10%">
+                            <img class="keysdown float-start" src="./Materials/images/D.png" data-isnormal="6%" data-alt="Keyboard D Tuto" data-islarge="10%" tabindex="-1">
+                            <img class="keysdown float-end" src="./Materials/images/ArrowDown.png" data-alt="Keyboard Down Tuto" data-isnormal="6%" data-islarge="10%" tabindex="-1">
                         </div>
                     </div>
             </div>
@@ -132,8 +132,8 @@
             <!-- 2 vs 1 (local) -->
 
             <div id="one_vs_two_local_page">
-                <canvas id="one_vs_two_local_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="1v2_label"></canvas>
-                <label id="1v2_label" data-title="ARIA 1 vs 2 (local)"></label>
+                <canvas id="one_vs_two_local_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-label="" data-title="ARIA 1 vs 2 (local)" role="application"></canvas>
+                <label id="1v2_label" class="d-none" aria-label="" data-title="ARIA 1 vs 2 (local)"></label>
                 <div>
                     <h1 id="left_side_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left players won the game."></h1>
                     <h1 id="right_side_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Right players won the game."></h1>
@@ -142,14 +142,14 @@
                 <div id="l_1v2_foot" class="d-flex flex-column align-items-center">
                         <button id="start_2v1_local" class="btn btn-lg btn-simple btn-outline-danger mt-0" data-tsnormal="30px" data-tslarge="40px" data-oname="Launch a game"></button>
                     <div class="game_keys w-100">
-                        <img class="keysup d-inline-block float-start mb-2" data-isnormal="6%" data-alt="Keyboard E Tuto" data-islarge="10%" src="./Materials/images/E.png">
-                        <img class="d-inline-block float-end keysup img-fluid mb-0" data-isnormal="6%" data-islarge="10%" data-alt="Keyboard Up Tuto" src="./Materials/images/ArrowUp.png">
-                        <img class="d-inline-block float-end keysup img-fluid mb-0" data-alt="Keyboard U Tuto" data-isnormal="6%" data-islarge="10%" src="./Materials/images/U.png">
+                        <img class="keysup d-inline-block float-start mb-2" data-isnormal="6%" data-alt="Keyboard E Tuto" data-islarge="10%" src="./Materials/images/E.png" tabindex="-1">
+                        <img class="d-inline-block float-end keysup img-fluid mb-0" data-isnormal="6%" data-islarge="10%" data-alt="Keyboard Up Tuto" src="./Materials/images/ArrowUp.png" tabindex="-1">
+                        <img class="d-inline-block float-end keysup img-fluid mb-0" data-alt="Keyboard U Tuto" data-isnormal="6%" data-islarge="10%" src="./Materials/images/U.png" tabindex="-1">
                     </div>
-                    <div class="game_keys w-60">
-                        <img class="keysdown d-inline-block float-start" src="./Materials/images/D.png" data-alt="Keyboard D Tuto" data-isnormal="6%" data-islarge="10%">
-                        <img class="keysdown d-inline-block float-end img-fluid mb-0" src="./Materials/images/ArrowDown.png" data-alt="Keyboard Down Tuto" data-isnormal="6%" data-islarge="10%">
-                        <img class="keysdown d-inline-block float-end img-fluid mb-0" src="./Materials/images/J.png" data-alt="Keyboard J Tuto" data-isnormal="6%" data-islarge="10%">
+                    <div class="game_keys w-100">
+                        <img class="keysdown d-inline-block float-start" src="./Materials/images/D.png" data-alt="Keyboard D Tuto" data-isnormal="6%" data-islarge="10%" tabindex="-1">
+                        <img class="keysdown d-inline-block float-end img-fluid mb-0" src="./Materials/images/ArrowDown.png" data-alt="Keyboard Down Tuto" data-isnormal="6%" data-islarge="10%" tabindex="-1">
+                        <img class="keysdown d-inline-block float-end img-fluid mb-0" src="./Materials/images/J.png" data-alt="Keyboard J Tuto" data-isnormal="6%" data-islarge="10%" tabindex="-1">
                     </div>
                 </div>
             </div>
@@ -158,39 +158,26 @@
 
             <div id="game_page_tournament">
                 <div class="display-4 text text-center" id="nick_reminder"></div>
-                <canvas id="tournament_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="t_label"></canvas>
-                <label id="t_label" alt="" data-title="ARIA Tournament Match"></label>
+                <canvas id="tournament_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-label="" data-title="ARIA Tournament Match" role="application"></canvas>
+                <label id="t_label" class="d-none" data-title="ARIA Tournament Match" aria-label=""></label>
                 <div>
                     <h1 id="tournament_timer" class="text" data-tsnormal="45px" data-tslarge="55px"></h1>
                 </div>
                 <div id="t_foot" class="d-flex flex-column align-items-center">
                         <div class="game_keys w-100">
-                            <img class="keysup float-start mb-2" data-isnormal="6%" data-islarge="10%" data-alt="Keyboard E Tuto" src="./Materials/images/E.png">
-                            <img class= "float-end keysup img-fluid mb-0" data-isnormal="6%" data-islarge="10%" data-alt="Keyboard Up Tuto" src="./Materials/images/ArrowUp.png">
+                            <img class="keysup float-start mb-2" data-isnormal="6%" data-islarge="10%" data-alt="Keyboard E Tuto" src="./Materials/images/E.png" tabindex="-1">
+                            <img class= "float-end keysup img-fluid mb-0" data-isnormal="6%" data-islarge="10%" data-alt="Keyboard Up Tuto" src="./Materials/images/ArrowUp.png" tabindex="-1">
                             <button id="t_start_game" class="btn btn-lg btn-simple btn-outline-danger mx-auto" data-tsnormal="30px" data-tslarge="40px" data-oname="Launch a game" data-title="Launch a Game"></button>
                             <button id="t_next_game" class="btn btn-lg btn-simple btn-outline-danger mx-auto" data-tsnormal="30px" data-tslarge="40px" data-oname="Next Game"></button>
                         </div>
                         <div class="game_keys w-10">
-                            <img class="keysdown float-start" data-alt="Keyboard D Tuto" src="./Materials/images/D.png" data-isnormal="6%" data-islarge="10%">
-                            <img class="keysdown float-end" data-alt="Keyboard Down Tuto" src="./Materials/images/ArrowDown.png" data-isnormal="6%" data-islarge="10%">
+                            <img class="keysdown float-start" data-alt="Keyboard D Tuto" src="./Materials/images/D.png" data-isnormal="6%" data-islarge="10%" tabindex="-1">
+                            <img class="keysdown float-end" data-alt="Keyboard Down Tuto" src="./Materials/images/ArrowDown.png" data-isnormal="6%" data-islarge="10%" tabindex="-1">
                         </div>
                     </div>
             </div>
 
-            <!-- Vs AI Game page -->
-
-            <div id="game_page_ai" class="container mx-auto">
-                <canvas id="vs_ai" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-labelledby="vs_ai_label"></canvas>
-                <label id="vs_ai_label" alt="" data-title="ARIA 1 vs ai (local)"></label>
-                <div class="container text text-center">
-                    <h1 id="you_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h1>
-                    <h1 id="ai_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Right player won the game."></h1>
-                    <h1 id="ai_local_timer" class="text" data-tsnormal="45px" data-tslarge="55px"></h1>
-                    <button id="start_vs_ai" class="btn text border btn-outline-danger border-5" data-tsnormal="35px" data-tslarge="55px" data-oname="Launch a game"></button>
-                </div>
-            </div>
-
-        </div>
+    </div>
 
         <!-- Menu Pages -->
 
@@ -200,11 +187,11 @@
 
             <div id="main_menu_toolbar" class="container">
 
-                <img id="music_toggle" alt="" src="./Materials/images/music-off.png" class="img-fluid image music_togglers btn_image" data-isnormal="4%" data-islarge="5%" data-title="Enable/Disable menu music" tabindex="1">
-                <img id="sound_toggle" alt="" src="./Materials/images/sound-on.png" class="img-fluid image sound_togglers btn_image" data-isnormal="5%" data-islarge="6%" data-title="Enable/Disable menu sounds" tabindex="2">
+                <img id="music_toggle" data-alt="Music Icon" src="./Materials/images/music-off.png" class="img-fluid image music_togglers btn_image" data-isnormal="4%" data-islarge="5%" data-title="Enable/Disable menu music" tabindex="1" role="button">
+                <img id="sound_toggle" data-alt="Sound Icon" src="./Materials/images/sound-on.png" class="img-fluid image sound_togglers btn_image" data-isnormal="5%" data-islarge="6%" data-title="Enable/Disable menu sounds" tabindex="2" role="button">
 
                 <div id="login" class="col d-inline-block float-end">
-                    <button id="login_btn" class="btn color_btn btn-outline-dark text mt-3 btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="LOG IN WITH 42" data-title="LOG IN WITH 42" title=""></button>
+                    <button id="login_btn" class="btn color_btn btn-outline-dark text mt-3 btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="LOG IN WITH 42" data-title="ARIA 42" title="" aria-label="" role="button"></button>
                 </div>
 
                 <div id="logged" class="dropdown col d-inline-block float-end">
@@ -219,7 +206,7 @@
             <!-- Title -->
 
             <div id="title" class="text-center my-5">
-                <img id="title_logo" alt="" src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" tabindex="0" data-link="home">
+                <img id="title_logo" src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto" data-alt="Top Logo Alt" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" tabindex="0" data-link="home" role="button">
             </div>
 
             <!-- Main menu center -->
@@ -477,7 +464,7 @@
                         <div>
                             <p id="game_map" class="user-select-none text mb-2" data-tsnormal="35px" data-tslarge="45px" data-oname="Game map" data-title="Game map" title=""></p>
                             <select id="game_map_btn_selector" class="d-flex form-select form-select-lg mx-auto selector" data-tsnormal="20px" data-tslarge="30px" data-title="ARIA Map Selector" aria-label="" title="">
-                            <option class="btn-simple" value="none" data-oname="– None –" data-title="None" title=""></option>
+                            <option class="btn-simple" value="default" data-oname="Default" data-title="None" title=""></option>
                             <option class="btn-simple" value="purple" title="purple" data-oname="Purple"></option>
                             <option class="btn-simple" value="orange" title="orange" data-oname="Orange"></option>
                             <option class="btn-simple" value="red" title="red" data-oname="Red"></option>
@@ -560,7 +547,7 @@
 
                         <div id="online_stats_v" class="container text-center">
                             <canvas id="stats_canvas" class="col-10 w-100" width="900" height="520" aria-labelledby="stats_label"></canvas>
-                            <label id="stats_label" data-title="ARIA Stats" alt=""></label>
+                            <label id="stats_label" data-title="ARIA Stats"></label>
                         </div>
 
                         <div id="online_stats_nv" class="container text-center">

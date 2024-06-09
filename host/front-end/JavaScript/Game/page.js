@@ -1,11 +1,3 @@
-function displayGamePage_ai()
-{
-    let game_page = document.getElementById('game_page_ai');
-    game_page.style.display = "block";
-
-    nav.removeMenu();
-}
-
 function displayHostPage_classic()
 {
     let game_page = document.getElementById('one_vs_one_host_page');

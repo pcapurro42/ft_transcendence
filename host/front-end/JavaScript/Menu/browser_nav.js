@@ -26,9 +26,6 @@ const no_history_nav = {
         let game_page_tournament = document.getElementById('game_page_tournament');
         game_page_tournament.style.display = "none";
 
-        let game_page_ai = document.getElementById('game_page_ai');
-        game_page_ai.style.display = "none";
-
         let play_menu = document.getElementById('play_menu');
         play_menu.style.display = "none";
 
@@ -110,7 +107,6 @@ const no_history_nav = {
         document.getElementById('one_vs_one_local_page').style.display = 'none';
         document.getElementById('one_vs_two_local_page').style.display = 'none';
         document.getElementById('game_page_tournament').style.display = 'none';
-        document.getElementById('game_page_ai').style.display = 'none';
         document.getElementById('play_menu').style.display = 'none';
         document.getElementById('customize_menu').style.display = 'none';
         document.getElementById('stats_menu').style.display = 'none';
@@ -139,25 +135,6 @@ const no_history_nav = {
         refreshStatsDisplaySwitch();
         refreshLogin();
         removeBeforeUnloadWarning();
-    },
-
-    displayGamePage_ai : function()
-    {
-        let game_toolbar = document.getElementById('game_toolbar');
-        let game_page_ai = document.getElementById('game_page_ai');
-        let main_page = document.getElementById('main_page');
-        let player_left_won = document.getElementById('you_won_text');
-        player_left_won.style.display = "none";
-
-        let player_right_won = document.getElementById('ai_won_text');
-        player_right_won.style.display = "none";
-
-        main_page.style.display = "none";
-        game_toolbar.style.display = "block";
-        game_page_ai.style.display = "block";
-        history.replaceState(null, null, '/vs-ai');
-        document.title = getTranslation('Play vs AI');
-
     },
 
     displayCustomize : function()
@@ -762,10 +739,6 @@ async function handleLocation(){
             previous_url_path = "";
             no_history_nav.displayMenu();
             displayStatusBarWarning(getTranslation('Refresh Alert Tournament'))
-            return;
-        case getTranslation('/vs-ai'):
-        case '/vs-ai':
-            no_history_nav.displayGamePage_ai();
             return;
         case getTranslation('/customize'):
         case '/customize':

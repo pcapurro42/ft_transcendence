@@ -16,8 +16,6 @@ async function logout()
 /********************************************** API UTILS ************************************************/
 
 async function handleRedirection(){
-
-
     if (localStorage.getItem
     ('status') == 'connected' || !sessionStorage.getItem('auth_code')){
         refreshLogin();
@@ -28,17 +26,25 @@ async function handleRedirection(){
 }
 
 async function storeUserLogin(response){
+    try{
+            localStorage.setItem('login', response['login']);
+            login42 = response['login'];
+            auth_code = '';
+    }
+    catch(error){
+        console.log('error:', error);
+
+        displayStatusBarAlert(getTranslation("42 Auth Failure"));
+        return;
+    }
     localStorage.setItem("status", "connected");
-    localStorage.setItem('login', response['login']);
-    login42 = response['login'];
     displayStatusBarSuccess(getTranslation('42 Auth Success') + response['login'])
     refreshLogin();
-    auth_code = '';
+    document.getElementById('login').style.display = 'none';
 }
 
 async function getAccessToken(auth_code){
     const endpoint = 'https://127.0.0.1:8080/backend/token/'; //ICI
-
 
 
     try{
@@ -49,13 +55,12 @@ async function getAccessToken(auth_code){
             body: auth_code,
         });
 
-        document.getElementById('login').style.display = 'none';
         const response = await request.json();
-
         return (response)
     }
     catch(error)
     {
+        console.log('error:', error);
         displayStatusBarAlert(getTranslation("42 Auth Failure"));
     }
 

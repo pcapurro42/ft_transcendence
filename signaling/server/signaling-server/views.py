@@ -38,7 +38,7 @@ def sendToken(response):
 
 
 	except Exception as error:
-			return HttpResponseServerError(str(error))
+			return HttpResponseServerError(response)
 
 def token(request):
 		try:

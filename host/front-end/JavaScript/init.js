@@ -14,9 +14,10 @@ async function fetchCsrfToken() {
 }
 
 sessionStorage.removeItem('auth_code');
-const auth_code = new URLSearchParams(window.location.search).get('code');
+let auth_code = new URLSearchParams(window.location.search).get('code');
 if (auth_code)
     sessionStorage.setItem('auth_code', auth_code);
+
 // < CUSTOMIZE > //
 
 let previous_url_path = window.location.pathname;
