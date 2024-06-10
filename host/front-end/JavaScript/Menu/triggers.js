@@ -39,7 +39,7 @@ document.getElementById('one_vs_one_local_btn').onclick = nav.displayOneVsOneGam
 document.getElementById('two_vs_two_local_btn').onclick = nav.displayTwoVsOneGameLocal;
 
 document.getElementById('play_classic_btn').onclick = nav.displayClassicChoice;
-document.getElementById('classic_back_btn').onclick = nav.removeClassicChoice;
+document.getElementById('classic_back_btn').onclick = nav.displayPlay;
 
 document.getElementById('start_1v1_local').onclick = displayLocal1v1;
 document.getElementById('start_2v1_local').onclick = displayLocal1v2;

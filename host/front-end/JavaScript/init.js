@@ -21,7 +21,7 @@ if (auth_code)
 // < CUSTOMIZE > //
 
 let previous_url_path = window.location.pathname;
-
+let pushHistory;
 window.addEventListener('popstate', handleLocation);
 
 let game_music;
@@ -94,6 +94,8 @@ let gameWinner;
 let max_game;
 let final = false;
 let turn = false;
+setTournamentSelector();
+
 
 //<P2P>//
 

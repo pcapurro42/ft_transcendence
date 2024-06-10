@@ -565,14 +565,14 @@ class History
 }
 
 // < controls > //
-function addStatKeyboardMonitoring(){
-    window.addEventListener('keydown', statKeyboardMonitoring);
+function addStatKeyboardMonitoring(alert){
+    window.addEventListener('keydown', event => statKeyboardMonitoring(alert, event));
 }
 function removeStatKeyboardMonitoring(){
-    window.removeEventListener('keydown', statKeyboardMonitoring);
+    window.removeEventListener('keydown', event => statKeyboardMonitoring(alert, event));
 }
 
-function statKeyboardMonitoring(event){
+function statKeyboardMonitoring(alert, event){
     try{
         if (visual == true)
         {
@@ -581,8 +581,10 @@ function statKeyboardMonitoring(event){
             if (event.key == 'ArrowRight' && stats_tab < 2)
                 stats_tab++, stats.displayObject();
         }
-        else
-            throw('Switch to visual!');
+        else if (visual == false && alert == true){
+            if (event.key == 'ArrowLeft' || event.key == 'ArrowRight')
+                throw('Switch to visual');
+        }
         if (historic != null)
         {
             if (event.key == 'ArrowLeft' && history_tab > 0)
@@ -593,7 +595,7 @@ function statKeyboardMonitoring(event){
     }
     catch(error){
         document.getElementById('alert_sound').play();
-        displayStatusBarWarning(getTranslation("Switch to Visual"));
+        displayStatusBarWarning(getTranslation(error));
     }
 }
 
@@ -697,7 +699,13 @@ nav.displayStats = function()
 
     main_menu.style.display = 'none';
 
-    history.pushState(null, null, getTranslation('/statistics'));
+    removeStatKeyboardMonitoring();
+    if (pushHistory == true)
+        history.pushState(null, null, getTranslation('/statistics'));
+    else{
+        history.replaceState(null, null, getTranslation('/statistics'));
+        pushHistory = true;
+    }
     document.title = getTranslation('Statistics');
 }
 
@@ -714,16 +722,23 @@ nav.removeStats = function()
 
 nav.displayLocalStats = function()
 {
-    let stats_menu = document.getElementById('stats_menu_buttons');
+    let stat_menu = document.getElementById('stats_menu');
+    let stats_menu_btn = document.getElementById('stats_menu_buttons');
     let stats_back_btn = document.getElementById('stats_back_btn');
     let local_stats = document.getElementById('local_stats');
 
-    stats_menu.style.display = 'none';
+    stat_menu.style.display = 'block';
+    stats_menu_btn.style.display = 'none';
     stats_back_btn.style.display = 'none';
     local_stats.style.display = 'block';
 
     document.getElementById('local_stats_nv').style.display = 'block';
-    history.pushState(null, null, getTranslation('/local-stats'));
+    if (pushHistory == true)
+        history.pushState(null, null, getTranslation('/local-stats'));
+    else{
+        history.replaceState(null, null, getTranslation('/local-stats'));
+        pushHistory = true;
+    }
 
     document.title = getTranslation('Local Stats');
 }
@@ -738,16 +753,18 @@ nav.removeLocalStats = function()
 
 nav.displayOnlineStats = function()
 {
-    let stats_menu = document.getElementById('stats_menu_buttons');
+    let stat_menu = document.getElementById('stats_menu');
+    let stats_menu_btn = document.getElementById('stats_menu_buttons');
     let stats_back_btn = document.getElementById('stats_back_btn');
     let online_stats = document.getElementById('online_stats');
 
 
-    stats_menu.style.display = 'none';
+    stat_menu.style.display = 'block';
+    stats_menu_btn.style.display = 'none';
     stats_back_btn.style.display = 'none';
     online_stats.style.display = 'block';
 
-    addStatKeyboardMonitoring();
+    addStatKeyboardMonitoring(true);
 
     if (visual == true)
     {
@@ -769,8 +786,12 @@ nav.displayOnlineStats = function()
         document.getElementById('visual_info').style.display = 'none';
         document.getElementById('visual_info').style.visibility = 'hidden';
     }
-
-    history.pushState(null, null, getTranslation('/online-stats'));
+    if (pushHistory == true)
+        history.pushState(null, null, getTranslation('/online-stats'));
+    else{
+        history.replaceState(null, null, getTranslation('/online-stats'));
+        pushHistory = true;
+    }
     document.title = getTranslation('Online Stats');
 }
 
@@ -842,7 +863,8 @@ function refreshHistory()
 
 nav.displayHistory = function()
 {
-    let stats_menu = document.getElementById('stats_menu_buttons');
+    let stat_menu = document.getElementById('stats_menu');
+    let stats_menu_btn = document.getElementById('stats_menu_buttons');
     let stats_back_btn = document.getElementById('stats_back_btn');
     let history_menu = document.getElementById('history');
 
@@ -850,11 +872,12 @@ nav.displayHistory = function()
     document.getElementById('history_info').style.display = 'block';
     document.getElementById('history_info').style.visibility = 'visible';
 
-    stats_menu.style.display = 'none';
+    stat_menu.style.display = 'block';
+    stats_menu_btn.style.display = 'none';
     stats_back_btn.style.display = 'none';
     history_menu.style.display = 'block';
 
-    addStatKeyboardMonitoring();
+    addStatKeyboardMonitoring(false);
 
     let history_data = JSON.parse(localStorage.getItem('history_data'));
     if (history_data.exist != true)
@@ -865,8 +888,12 @@ nav.displayHistory = function()
     historic = new History(history_data);
     historic.initialize();
     historic.display();
-
-    history.pushState(null, null, getTranslation('/game-history'));
+    if (pushHistory == true)
+        history.pushState(null, null, getTranslation('/game-history'));
+    else{
+        history.replaceState(null, null, getTranslation('/game-history'));
+        pushHistory = true;
+    }
     document.title = getTranslation('Game History');
 }
 
@@ -886,8 +913,12 @@ nav.removeHistory = function()
 
     historic = null;
     removeStatKeyboardMonitoring();
-
-    history.pushState(null, null, getTranslation('/statistics'));
+    if (pushHistory == true)
+        history.pushState(null, null, getTranslation('/statistics'));
+    else{
+        history.replaceState(null, null, getTranslation('/statistics'));
+        pushHistory = true;
+    }
     document.title = getTranslation('Statistics');
 }
 

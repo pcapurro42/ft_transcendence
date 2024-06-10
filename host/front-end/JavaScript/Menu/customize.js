@@ -32,7 +32,12 @@ nav.displayCustomize = function()
 
     main_menu.style.display = 'none';
 
-    history.pushState(getTranslation('Customization'), null, getTranslation('/customize'));
+    if (pushHistory == true)
+        history.pushState(null, null, getTranslation('/customize'));
+    else{
+        history.replaceState(null, null, getTranslation('/customize'));
+        pushHistory = true;
+    }
     document.title = getTranslation('Customize');
 }
 

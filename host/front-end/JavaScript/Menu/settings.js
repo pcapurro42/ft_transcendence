@@ -88,7 +88,12 @@ nav.displaySettings = function()
     settings_back_btn.style.display = 'block';
 
     main_menu.style.display = 'none';
-    history.pushState(null, null, getTranslation('/settings'));
+    if (pushHistory == true)
+        history.pushState(null, null, getTranslation('/settings'));
+    else{
+        history.replaceState(null, null, getTranslation('/settings'));
+        pushHistory = true;
+    }
     document.title = getTranslation('Settings');
 }
 
