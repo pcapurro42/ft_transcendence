@@ -592,25 +592,21 @@ function statKeyboardMonitoring(alert, event)
 
 // < stats > //
 
-function displayStatsPage(event)
+function displayNextStatsPage()
 {
     if (visual == true)
     {
-        if (event.originalTarget.id == 'prev_stats' == 'left' && stats_tab > 0)
-            stats_tab--, stats.displayObject();
-        if (event.originalTarget.id == 'next_stats' == 'right' && stats_tab < 2)
+        if (stats_tab < 2)
             stats_tab++, stats.displayObject();
     }
 }
 
-function displayHistoryPage(event)
+function displayPrevStatsPage()
 {
-    if (historic != null)
+    if (visual == true)
     {
-        if (event.originalTarget.id == 'prev_history' && history_tab > 0)
-            history_tab--, historic.display();
-        if (event.originalTarget.id == 'next_history' && history_tab < historic.length - 1)
-            history_tab++, historic.display();
+        if (stats_tab > 0)
+            stats_tab--, stats.displayObject();
     }
 }
 
@@ -830,6 +826,24 @@ function getActualDate()
         month = "0" + month;
 
     return (day + "/" + month);
+}
+
+function displayPrevHistoryPage()
+{
+    if (historic != null)
+    {
+        if (history_tab > 0)
+            history_tab--, historic.display();
+    }
+}
+
+function displayNextHistoryPage()
+{
+    if (historic != null)
+    {
+        if (history_tab < historic.length() - 1)
+            history_tab++, historic.display();
+    }
 }
 
 function initializeHistory()

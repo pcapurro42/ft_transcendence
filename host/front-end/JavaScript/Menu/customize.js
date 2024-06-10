@@ -106,7 +106,7 @@ function initializeCustomize()
 
     switch (localStorage.getItem('game_map')){
           case null:
-            game_map_selector.value = 'none';
+            game_map_selector.value = 'default';
             game_map = game_map_selector.value;
             break;
         case "purple":
