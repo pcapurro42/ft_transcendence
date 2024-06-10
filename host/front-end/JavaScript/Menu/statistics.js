@@ -565,24 +565,37 @@ class History
 }
 
 // < controls > //
+function addStatKeyboardMonitoring(){
+    window.addEventListener('keydown', statKeyboardMonitoring);
+}
+function removeStatKeyboardMonitoring(){
+    window.removeEventListener('keydown', statKeyboardMonitoring);
+}
 
-window.addEventListener('keydown', (event) =>
-{
-    if (visual == true)
-    {
-        if (event.key == 'ArrowLeft' && stats_tab > 0)
-            stats_tab--, stats.displayObject();
-        if (event.key == 'ArrowRight' && stats_tab < 2)
-            stats_tab++, stats.displayObject();
+function statKeyboardMonitoring(event){
+    try{
+        if (visual == true)
+        {
+            if (event.key == 'ArrowLeft' && stats_tab > 0)
+                stats_tab--, stats.displayObject();
+            if (event.key == 'ArrowRight' && stats_tab < 2)
+                stats_tab++, stats.displayObject();
+        }
+        else
+            throw('Switch to visual!');
+        if (historic != null)
+        {
+            if (event.key == 'ArrowLeft' && history_tab > 0)
+                history_tab--, historic.display();
+            if (event.key == 'ArrowRight' && history_tab < historic.length - 1)
+                history_tab++, historic.display();
+        }
     }
-    if (historic != null)
-    {
-        if (event.key == 'ArrowLeft' && history_tab > 0)
-            history_tab--, historic.display();
-        if (event.key == 'ArrowRight' && history_tab < historic.length() - 1)
-            history_tab++, historic.display();
+    catch(error){
+        document.getElementById('alert_sound').play();
+        displayStatusBarWarning(getTranslation("Switch to Visual"));
     }
-});
+}
 
 
 // < stats > //
@@ -729,9 +742,12 @@ nav.displayOnlineStats = function()
     let stats_back_btn = document.getElementById('stats_back_btn');
     let online_stats = document.getElementById('online_stats');
 
+
     stats_menu.style.display = 'none';
     stats_back_btn.style.display = 'none';
     online_stats.style.display = 'block';
+
+    addStatKeyboardMonitoring();
 
     if (visual == true)
     {
@@ -763,6 +779,7 @@ nav.removeOnlineStats = function()
     let online_stats = document.getElementById('online_stats');
 
     online_stats.style.display = 'none';
+    removeStatKeyboardMonitoring();
     nav.displayStats();
 }
 
@@ -829,12 +846,15 @@ nav.displayHistory = function()
     let stats_back_btn = document.getElementById('stats_back_btn');
     let history_menu = document.getElementById('history');
 
+
     document.getElementById('history_info').style.display = 'block';
     document.getElementById('history_info').style.visibility = 'visible';
 
     stats_menu.style.display = 'none';
     stats_back_btn.style.display = 'none';
     history_menu.style.display = 'block';
+
+    addStatKeyboardMonitoring();
 
     let history_data = JSON.parse(localStorage.getItem('history_data'));
     if (history_data.exist != true)
@@ -865,6 +885,7 @@ nav.removeHistory = function()
     historic.style.display = 'none';
 
     historic = null;
+    removeStatKeyboardMonitoring();
 
     history.pushState(null, null, getTranslation('/statistics'));
     document.title = getTranslation('Statistics');

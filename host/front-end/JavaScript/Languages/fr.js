@@ -179,8 +179,9 @@ let fr = [
 
     ["42 Auth Success", "Connexion réussie ! Bienvenue "],
     ["42 Auth Failure", "La connexion a echoué."],
-
     ["Copy Success", "Copié dans le presse-papier avec succès."],
+
+    ["Switch to Visual", "Passez en mode visuel !"],
 
 
     //******* Navigation ******/

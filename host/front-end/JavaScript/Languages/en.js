@@ -178,6 +178,7 @@ let en = [
     ["42 Auth Success", "Succesfully logged in! Welcome "],
     ["42 Auth Failure", "Connection failed."],
     ["Copy Success", "Succesfully copied to clipboard."],
+    ["Switch to Visual", "Switch to visual first !"],
 
     //******* Navigation ******/
 
