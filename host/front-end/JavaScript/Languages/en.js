@@ -23,7 +23,6 @@ let en = [
     ["History", "History"],
 
     ["Visual", "Visual"],
-    ["←/→", "←/→"],
 
     ["Game(s) played", "Game(s) played"],
     ["Game(s) won", "Game(s) won"],

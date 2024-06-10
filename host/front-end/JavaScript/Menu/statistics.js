@@ -565,6 +565,7 @@ class History
 }
 
 // < controls > //
+
 function addStatKeyboardMonitoring(alert){
     window.addEventListener('keydown', event => statKeyboardMonitoring(alert, event));
 }
@@ -572,35 +573,46 @@ function removeStatKeyboardMonitoring(){
     window.removeEventListener('keydown', event => statKeyboardMonitoring(alert, event));
 }
 
-function statKeyboardMonitoring(alert, event){
-    try{
-        if (visual == true)
+function statKeyboardMonitoring(alert, event)
+{
+    try
+    {
+        if (visual == false && alert == true)
         {
-            if (event.key == 'ArrowLeft' && stats_tab > 0)
-                stats_tab--, stats.displayObject();
-            if (event.key == 'ArrowRight' && stats_tab < 2)
-                stats_tab++, stats.displayObject();
-        }
-        else if (visual == false && alert == true){
             if (event.key == 'ArrowLeft' || event.key == 'ArrowRight')
                 throw('Switch to visual');
         }
-        if (historic != null)
-        {
-            if (event.key == 'ArrowLeft' && history_tab > 0)
-                history_tab--, historic.display();
-            if (event.key == 'ArrowRight' && history_tab < historic.length - 1)
-                history_tab++, historic.display();
-        }
     }
-    catch(error){
+    catch(error)
+    {
         document.getElementById('alert_sound').play();
         displayStatusBarWarning(getTranslation(error));
     }
 }
 
-
 // < stats > //
+
+function displayStatsPage(event)
+{
+    if (visual == true)
+    {
+        if (event.originalTarget.id == 'prev_stats' == 'left' && stats_tab > 0)
+            stats_tab--, stats.displayObject();
+        if (event.originalTarget.id == 'next_stats' == 'right' && stats_tab < 2)
+            stats_tab++, stats.displayObject();
+    }
+}
+
+function displayHistoryPage(event)
+{
+    if (historic != null)
+    {
+        if (event.originalTarget.id == 'prev_history' && history_tab > 0)
+            history_tab--, historic.display();
+        if (event.originalTarget.id == 'next_history' && history_tab < historic.length - 1)
+            history_tab++, historic.display();
+    }
+}
 
 function refreshStats()
 {

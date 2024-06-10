@@ -65,6 +65,9 @@ function refreshSounds()
 	let sounds = document.querySelectorAll('.sounds');
 	let sound_togglers = document.querySelectorAll('.sound_togglers')
 
+	if (localStorage.getItem('sound') == null)
+		localStorage.setItem('sound', 'off');
+
 	if (localStorage.getItem('sound') == 'off'){
 		for (let i = 0; i < sounds.length; i++)
 			sounds[i].muted = true;

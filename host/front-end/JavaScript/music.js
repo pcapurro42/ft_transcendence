@@ -59,6 +59,9 @@ function refreshMusics()
 	let credits_theme = document.getElementById('vid_credits');
 	let music_togglers = document.querySelectorAll('.music_togglers');
 
+	if (localStorage.getItem('music') == null)
+		localStorage.setItem('music', 'off');
+
 	if (localStorage.getItem('music') == 'on'){
 		music_togglers[0].src = './Materials/images/music-on.png';
 		music_togglers[1].src = './Materials/images/music-on.png';

@@ -78,6 +78,12 @@ document.getElementById('online_stats_back_btn').onclick = nav.removeOnlineStats
 document.getElementById('history_btn').onclick = nav.displayHistory;
 document.getElementById('history_back_btn').onclick = nav.removeHistory;
 
+document.getElementById('prev_stats').onclick = displayStatsPage;
+document.getElementById('next_stats').onclick = displayStatsPage;
+document.getElementById('prev_history').onclick = displayHistoryPage;
+document.getElementById('next_history').onclick = displayHistoryPage;
+
+
 document.getElementById('switch_visual_input').onchange = changeStatsDisplayMode;
 
 // < SETTINGS > //
