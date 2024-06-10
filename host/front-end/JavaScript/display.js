@@ -91,7 +91,7 @@ nav.displayMenu = function()
     refreshStats();
     refreshStatsDisplaySwitch();
     refreshLogin();
-    console.log(pushHistory);
+    // console.log(pushHistory);
     if (pushHistory == true)
         history.pushState(null, null, getTranslation('/home'));
     else{
