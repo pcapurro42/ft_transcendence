@@ -65,9 +65,9 @@ function displayCountDown(nb)
         timer.classList.add("d-none");
         game_music.play();
         active = true;
+        addKeyboardMonitoring();
         if (players_nb == 1){
             startOnline1v1();
-        
         }
         else if (players_nb == 2)
             startLocal1v1();
@@ -84,111 +84,119 @@ let gameKeys = {
     KeyE: false,
     KeyD: false,
 
-    KeyU: false,
-    KeyJ: false,
+    KeyY: false,
+    KeyH: false,
 
-    ArrowUp: false,
-    ArrowDown: false,
+    KeyO: false,
+    KeyL: false,
 };
 
 // < TRIGGER > //
 
-window.addEventListener('keydown', (event) =>
-{
+function addKeyboardMonitoring(){
+    window.addEventListener('keydown', keyboardMonitoring_keyDown);
+    window.addEventListener('keyup', keyboardMonitoring_keyUp);
+}
+
+function removeKeyboardMonitoring(){
+    window.removeEventListener('keydown', keyboardMonitoring_keyDown);
+    window.removeEventListener('keyup', keyboardMonitoring_keyUp);
+}
+
+function keyboardMonitoring_keyDown(event){
+    let key = event.key.toLowerCase();
     if (players_nb != 0 && players_nb != null)
     {
-        if (event.key == 'ArrowUp' || event.key == 'ArrowDown')
-            event.preventDefault();
         if (players_nb == 1)
         {
             if (role == "host")
             {
-                if (event.key == 'e')
+                if (key == 'e')
                     gameKeys.KeyE = true;
-                else if (event.key == 'd')
+                else if (key == 'd')
                     gameKeys.KeyD = true;
             }
             else
             {
 
-                if (event.key == 'ArrowUp')
-                    gameKeys.ArrowUp = true
-                else if (event.key == 'ArrowDown')
-                    gameKeys.ArrowDown = true
+                if (key == 'o')
+                    gameKeys.KeyO = true
+                else if (key == 'l')
+                    gameKeys.KeyL = true
             }
         }
         if (players_nb == 2)
         {
 
-            if (event.key == 'ArrowUp'){
-                gameKeys.ArrowUp = true;
+            if (key == 'o'){
+                gameKeys.KeyO = true;
             }
-            else if (event.key == 'ArrowDown')
-                gameKeys.ArrowDown = true;
+            else if (key == 'l')
+                gameKeys.KeyL = true;
 
-            if (event.key == 'e')
+            if (key == 'e')
                 gameKeys.KeyE = true;
-            else if (event.key == 'd')
+            else if (key == 'd')
                 gameKeys.KeyD = true;
         }
         else if (players_nb == 3)
         {
 
-            if (event.key == 'e')
+            if (key == 'e')
                 gameKeys.KeyE = true;
-            else if (event.key == 'd')
+            else if (key == 'd')
                 gameKeys.KeyD = true;
 
-            if (event.key == 'u')
-                gameKeys.KeyU = true;
-            else if (event.key == 'j')
-                gameKeys.KeyJ = true;
+            if (key == 'y')
+                gameKeys.KeyY = true;
+            else if (key == 'h')
+                gameKeys.KeyH = true;
 
-            if (event.key == 'ArrowUp')
-                gameKeys.ArrowUp = true;
-            else if (event.key == 'ArrowDown')
-                gameKeys.ArrowDown = true;
+            if (key == 'o')
+                gameKeys.KeyO = true;
+            else if (key == 'l')
+                gameKeys.KeyL = true;
         }
     }
-});
+}
 
-window.addEventListener('keyup', (event) =>
-{
+function keyboardMonitoring_keyUp(event){
+    let key = event.key.toLowerCase()
     if (players_nb == 1)
     {
         if (role == "host")
         {
-            if (event.key == 'e')
+            if (key == 'e')
                 gameKeys.KeyE = false;
-            else if (event.key == 'd')
+            else if (key == 'd')
                 gameKeys.KeyD = false;
         }
         else
         {
-            if (event.key == 'ArrowUp')
-                gameKeys.ArrowUp = false
-            else if (event.key == 'ArrowDown')
-                gameKeys.ArrowDown = false
+            if (key == 'o')
+                gameKeys.KeyO = false
+            else if (key == 'l')
+                gameKeys.KeyL = false
         }
     }
     else
     {
-        if (event.key == 'ArrowUp')
-            gameKeys.ArrowUp = false;
-        else if (event.key == 'ArrowDown')
-            gameKeys.ArrowDown = false;
+        if (key == 'o')
+            gameKeys.KeyO = false;
+        else if (key == 'l')
+            gameKeys.KeyL = false;
 
-        if (event.key == 'e')
+        if (key == 'e')
             gameKeys.KeyE = false;
-        else if (event.key == 'd')
+        else if (key == 'd')
             gameKeys.KeyD = false;
 
         if (players_nb == 3)
         {
-            if (event.key == 'u')
-                gameKeys.KeyU = false;
-            else if (event.key == 'j')
-                gameKeys.KeyJ = false;
+            if (key == 'y')
+                gameKeys.KeyY = false;
+            else if (key == 'h')
+                gameKeys.KeyH = false;
         }
     }
-});
+}

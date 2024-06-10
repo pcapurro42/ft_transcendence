@@ -253,12 +253,12 @@ class OnlineGame1v1_guest
 
     refreshPlayers()
     {
-        if (gameKeys.ArrowUp == true){
+        if (gameKeys.KeyO == true){
             data_channel.send(`rpy:${this.right_player.y}`)
             this.right_player.moveUp();
             this.dist++;
         }
-        if (gameKeys.ArrowDown == true){
+        if (gameKeys.KeyL == true){
             data_channel.send(`rpy:${this.right_player.y}`)
             this.right_player.moveDown();
             this.dist++;

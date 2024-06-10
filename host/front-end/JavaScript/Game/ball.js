@@ -199,9 +199,9 @@ class Ball
         }
         else
         {
-            if (gameKeys.ArrowUp == true || (players_nb == 3 && gameKeys.KeyU == true))
+            if (gameKeys.KeyO == true || (players_nb == 3 && gameKeys.KeyY == true))
                 this.direction = this.direction + 5;
-            else if (gameKeys.ArrowDown == true || (players_nb == 3 && gameKeys.KeyJ == true))
+            else if (gameKeys.KeyL == true || (players_nb == 3 && gameKeys.KeyH == true))
                 this.direction = this.direction - 5;
         }
     }

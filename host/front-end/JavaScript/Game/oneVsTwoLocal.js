@@ -269,14 +269,14 @@ class LocalGame1v2
         if (gameKeys.KeyD == true)
             this.left_player.moveDown();
 
-        if (gameKeys.KeyU == true)
+        if (gameKeys.KeyY == true)
             this.right_player_1.moveUp();
-        if (gameKeys.KeyJ == true)
+        if (gameKeys.KeyH == true)
             this.right_player_1.moveDown();
 
-        if (gameKeys.ArrowUp == true)
+        if (gameKeys.KeyO == true)
             this.right_player_2.moveUp();
-        if (gameKeys.ArrowDown == true)
+        if (gameKeys.KeyL == true)
             this.right_player_2.moveDown();
 
         this.left_player.print();
@@ -416,6 +416,7 @@ function startLocal1v2()
 {
     if (game.isOver() == true || active == false)
     {
+        removeKeyboardMonitoring();
         game.refreshBackground();
         game.resetGame();
         active = false;

@@ -254,9 +254,9 @@ class LocalGame1v1
         if (gameKeys.KeyD == true)
             this.left_player.moveDown();
 
-        if (gameKeys.ArrowUp == true)
+        if (gameKeys.KeyO == true)
             this.right_player.moveUp();
-        if (gameKeys.ArrowDown == true)
+        if (gameKeys.KeyL == true)
             this.right_player.moveDown();
 
         this.left_player.print();
@@ -407,6 +407,7 @@ function startLocal1v1()
     setTimeout(()=> {
         if (game.isOver() == true || active == false)
         {
+            removeKeyboardMonitoring();
             game.refreshBackground();
             game.resetGame();
             active = false;

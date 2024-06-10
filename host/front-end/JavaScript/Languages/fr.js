@@ -238,12 +238,14 @@ let fr = [
 
     ["Top Logo Alt", "Logo du site web. Tactical Tennis Action Metal Gear Pong. Retour au menu principal."],
 
-    ["Keyboard U Tuto", "Touche  U du clavier. Informe l'utilisateur en haut à droite de la touche clavier à utiliser pour aller vers le haut."],
-    ["Keyboard J Tuto", "Touche  J du clavier. Informe l'utilisateur en haut a droite de la touche clavier à utiliser pour aller vers le bas."],
+    ["Keyboard Y Tuto", "Touche  Y du clavier. Informe l'utilisateur en haut à droite de la touche clavier à utiliser pour aller vers le haut."],
+    ["Keyboard H Tuto", "Touche  H du clavier. Informe l'utilisateur en haut a droite de la touche clavier à utiliser pour aller vers le bas."],
     ["Keyboard E Tuto", "Touche  E du clavier. Informe l'utilisateur de gauche de la touche clavier à utiliser pour aller vers le haut."],
     ["Keyboard D Tuto", "Touche  D du clavier. Informe l'utilisateur de gauche de la touche clavier à utiliser pour aller vers le bas."],
-    ["Keyboard Up Tuto", "Touche flèche du haut du clavier. Informe l'utilisateur de droite de la touche clavier à utiliser pour aller vers le haut."],
-    ["Keyboard Down Tuto", "Touche flèche du bas du clavier. Informe l'utilisateur de droite de la touche clavier à utiliser pour aller vers le bas."],
+    ["Keyboard O Tuto", "Touche O du clavier. Informe l'utilisateur de droite de la touche clavier à utiliser pour aller vers le haut."],
+    ["Keyboard L Tuto", "Touche L du clavier. Informe l'utilisateur de droite de la touche clavier à utiliser pour aller vers le bas."],
+    ["Keyboard O Tuto 2v1", "Touche O du clavier. Informe l'utilisateur en bas à droite de la touche clavier à utiliser pour aller vers le haut."],
+    ["Keyboard L Tuto 2v1", "Touche L du clavier. Informe l'utilisateur en bas à droite de la touche clavier à utiliser pour aller vers le bas."],
 
     ["Music Icon", "Icòne de la musique. Cliquez pour activer ou désactiver la musique"],
     ["Sound Icon", "Icône du son. Cliquez pour activer ou désactiver les sons"],

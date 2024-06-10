@@ -234,12 +234,14 @@ let en = [
 
     ["Top Logo Alt", "Website logo : Tactical Tennis Action Metal Gear Pong. Get back to main menu."],
 
-    ["Keyboard U Tuto", "U keyboard key, inform the top-right player that this input is used to go up in the game."],
-    ["Keyboard J Tuto", "J keyboard key, inform the top-right player that this input is used to go down in the game."],
+    ["Keyboard Y Tuto", "Y keyboard key, inform the top-right player that this input is used to go up in the game."],
+    ["Keyboard H Tuto", "H keyboard key, inform the top-right player that this input is used to go down in the game."],
     ["Keyboard E Tuto", "E keyboard key, inform the left player that, this input is used to go up in the game."],
     ["Keyboard D Tuto", "D keyboard key, inform the left player that this input is used to go down in the game."],
-    ["Keyboard Up Tuto", "Up Arrow keyboard key, inform the right player that this input is used to go up in the game."],
-    ["Keyboard Down Tuto", "Down Arrow keyboard key, inform the right player that this input is used to go down in the game."],
+    ["Keyboard O Tuto", "O keyboard key, inform the right player that this input is used to go up in the game."],
+    ["Keyboard L Tuto", "L keyboard key, inform the right player that this input is used to go down in the game."],
+    ["Keyboard O Tuto 2v1", "O keyboard key, inform the bottom-right player that this input is used to go up in the game."],
+    ["Keyboard L Tuto 2v1", "L keyboard key, inform the bottom-right player that this input is used to go down in the game."],
 
     ["Music Icon", "Music icon. Click to toggle musics on or off."],
     ["Sound Icon", "Sound icon. Click to toggle sounds on or off."],
