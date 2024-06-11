@@ -12,7 +12,7 @@ let fr = [
     ["Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'", "Bouton : Menu Principal. Logo titre central: 'Tactical Tennis Action, Metal Gear: Pong'"],
 
     ["Play", "Jouer"],
-    ["Customization", "Personnaliser"],
+    ["Customize", "Personnaliser"],
     ["Statistics", "Statistiques"],
     ["Settings", "Options"],
     ["Credits", "Crédits"],
