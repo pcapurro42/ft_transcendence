@@ -4,44 +4,42 @@ class VisualStats
 {
     constructor()
     {
+        // global infos initialization
+
         this.width = 900;
         this.height = 520;
 
-        this.canvas = null;
-        this.display = null;
-
-        this.background_color = null;
-        this.global_color = null;
-
-        this.text_color = null;
         this.title_text_format = "27px Arial";
         this.basic_text_format = "18px Arial";
 
-        this.histogram = null;
-
-        this.histogram_center_x;
-        this.histogram_left_x;
-        this.histogram_right_x;
-
-        this.left_text_x;
-        this.center_text_x;
-        this.right_text_x;
-
-        this.histogram_data_width;
-        this.histogram_data_max_height;
         this.histogram_last_line_y = 451;
 
-        this.onl_victory;
-        this.onl_defeat;
-        this.onl_played;
-        this.onl_ball_return;
-        this.onl_ball_received;
-        this.onl_bonus_taken;
-        this.onl_bonus_received;
-    }
+        this.histogram_data_width = 100;
+        this.histogram_data_max_height = 325;
 
-    initialize()
-    {
+        this.center_text_x = (this.width / 2);
+        this.left_text_x = this.center_text_x - 175;
+        this.right_text_x = this.center_text_x + 175;
+
+        this.histogram_center_x = (this.width / 2) - this.histogram_data_width / 2;
+        this.histogram_left_x = this.histogram_center_x - 175;
+        this.histogram_right_x = this.histogram_center_x + 175;
+
+        this.onl_victory = parseInt(localStorage.getItem('onl_victory'));
+        this.onl_defeat = parseInt(localStorage.getItem('onl_defeat'));
+        
+        this.onl_played = parseInt(localStorage.getItem('onl_played'));
+        
+        this.onl_ball_return = parseInt(localStorage.getItem('onl_ball_return'));
+        this.onl_ball_received = parseInt(localStorage.getItem('onl_ball_received'));
+        this.onl_ball_missed = this.onl_ball_received - this.onl_ball_return;
+        
+        this.onl_bonus_taken = parseInt(localStorage.getItem('onl_bonus_taken'));
+        this.onl_bonus_received = parseInt(localStorage.getItem('onl_bonus_received'));
+        this.onl_bonus_missed = this.onl_bonus_received - this.onl_bonus_taken;
+
+        // canvas creation and config
+
         this.canvas = document.getElementById('stats_canvas');
         this.display = this.canvas.getContext('2d');
 
@@ -58,27 +56,6 @@ class VisualStats
             this.histogram.src = 'Materials/images/histogram_white.png';
         else
             this.histogram.src = 'Materials/images/histogram_black.png';
-
-        this.histogram_data_width = 100;
-        this.histogram_data_max_height = 325;
-
-        this.center_text_x = (this.width / 2);
-        this.left_text_x = this.center_text_x - 175;
-        this.right_text_x = this.center_text_x + 175;
-
-        this.histogram_center_x = (this.width / 2) - this.histogram_data_width / 2;
-        this.histogram_left_x = this.histogram_center_x - 175;
-        this.histogram_right_x = this.histogram_center_x + 175;
-
-        this.onl_victory = parseInt(localStorage.getItem('onl_victory'));
-        this.onl_defeat = parseInt(localStorage.getItem('onl_defeat'));
-        this.onl_played = parseInt(localStorage.getItem('onl_played'));
-        this.onl_ball_return = parseInt(localStorage.getItem('onl_ball_return'));
-        this.onl_ball_received = parseInt(localStorage.getItem('onl_ball_received'));
-        this.onl_ball_missed = this.onl_ball_received - this.onl_ball_return;
-        this.onl_bonus_taken = parseInt(localStorage.getItem('onl_bonus_taken'));
-        this.onl_bonus_received = parseInt(localStorage.getItem('onl_bonus_received'));
-        this.onl_bonus_missed = this.onl_bonus_received - this.onl_bonus_taken;
     }
 
     drawCircleSurface(surface, color)
@@ -301,25 +278,27 @@ class History
         this.small_text_format = "18px Arial";
         this.ridiculous_text_format = "12px Arial";
 
-        this.data_canvas = null;
-        this.data_display = null;
         this.data_width = 900;
         this.data_height = 200;
 
-        this.graph = null;
-        this.graph_canvas = null;
-        this.graph_display = null;
         this.graph_width = 550;
         this.graph_height = 350;
         this.graph_point_size = 6;
 
-        this.histogram_canvas = null;
-        this.histogram_display = null;
         this.histogram_width = 300;
         this.histogram_height = 350;
 
         this.left_player_color = "purple";
         this.right_player_color = "yellow";
+
+        if (high_contrast == "true")
+            this.global_color = "white", this.background_color = "black";
+        else
+            this.global_color = "black", this.background_color = "white";
+
+        this.initializeData();
+        this.initializeGraph();
+        this.initializeHistogram();
     }
 
     initializeData()
@@ -375,18 +354,6 @@ class History
         let title = getTranslation("Game domination");
         let title_size = this.histogram_display.measureText("– " + title + " –").width;
         this.histogram_display.fillText("– " + title + " –", this.histogram_width / 2 - (title_size / 2), 35);
-    }
-
-    initialize()
-    {
-        if (high_contrast == "true")
-            this.global_color = "white", this.background_color = "black";
-        else
-            this.global_color = "black", this.background_color = "white";
-
-        this.initializeData();
-        this.initializeGraph();
-        this.initializeHistogram();
     }
 
     displayInfos()
@@ -754,7 +721,6 @@ nav.displayOnlineStats = function()
         document.getElementById('visual_info').style.visibility = 'visible';
 
         stats = new VisualStats();
-        stats.initialize();
         stats.displayObject();
     }
     else
@@ -880,7 +846,6 @@ nav.displayHistory = function()
         history_tab = history_data.length - 1;
 
     historic = new History(history_data);
-    historic.initialize();
     historic.display();
     if (pushHistory == true  &&  window.location.pathname != getTranslation('/game-history'))
         history.pushState(null, null, getTranslation('/game-history'));
