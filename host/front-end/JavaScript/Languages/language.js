@@ -99,6 +99,7 @@ function refreshLanguage()
     }
     ARIAButtonState();
     ARIASoundsSlider();
+    dropdownAddSvg();
 }
 
 function initializeLanguage()

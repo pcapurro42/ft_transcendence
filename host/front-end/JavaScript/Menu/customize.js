@@ -31,8 +31,7 @@ nav.displayCustomize = function()
     customize_back_btn.style.display = 'block';
 
     main_menu.style.display = 'none';
-
-    if (pushHistory == true)
+    if (pushHistory == true &&  window.location.pathname != getTranslation('/customize'))
         history.pushState(null, null, getTranslation('/customize'));
     else{
         history.replaceState(null, null, getTranslation('/customize'));

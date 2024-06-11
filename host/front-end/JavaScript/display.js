@@ -95,11 +95,10 @@ nav.displayMenu = function()
     refreshStatsDisplaySwitch();
     refreshLogin();
     // console.log(pushHistory);
-    if (pushHistory == true)
+    if (pushHistory == true && window.location.pathname != getTranslation('/home'))
         history.pushState(null, null, getTranslation('/home'));
     else{
         history.replaceState(null, null, getTranslation('/home'));
-        pushHistory = true;
     }
 
     document.title = getTranslation('Home');
@@ -156,7 +155,7 @@ function setMaterialsColor(color)
 function setImagesColor(color)
 {
     let images = document.getElementsByClassName("image");
-
+    let svg = document.querySelectorAll('#svg');
     for (let i = 0; i != images.length; i++)
     {
         if (color == "white")
@@ -164,6 +163,13 @@ function setImagesColor(color)
         else
             images[i].style.filter="invert(0%)";
     }
+
+    svg.forEach(element => {
+        if (color == "white")
+            element.style.filter="invert(100%)";
+        else
+            element.style.filter="invert(0%)";
+    });
 }
 
 function setTextColor(color)
@@ -320,18 +326,23 @@ function refreshDisplay()
     ARIASoundsSlider();
 }
 
-async function displayDropdownMenu(){
+function displayDropdownMenu(){
     let dropdown_toggler = document.getElementById('intra_login');
     let login_dropdown = document.getElementById('login_dropdown');
     login_dropdown.classList.remove('d-none');
-
-    await sleep(100)
-    function outsideDropdownClick(event){
-        if (!login_dropdown.contains(event.target) && !dropdown_toggler.contains(event.target)){
-            login_dropdown.classList.add('d-none');
-            document.removeEventListener('click', outsideDropdownClick)
-        }
-    }
+    addOutsideDropdown();
+}
+function addOutsideDropdown(){
     document.addEventListener('click', outsideDropdownClick)
 }
+function removeOutsideDropdown(){
+    document.removeEventListener('click', outsideDropdownClick)
+}
+function outsideDropdownClick(event){
+    let dropdown_toggler = document.getElementById('intra_login');
 
+    if (!dropdown_toggler.contains(event.target)){
+        login_dropdown.classList.add('d-none');
+        removeOutsideDropdown();
+    }
+}

@@ -18,11 +18,14 @@ body
     inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 50px);
 }
 
+.dropdown_btn:hover{
+    opacity: 0.5;
+}
 .btn_img{
     border : 0px;
     max-width: 0%;
 }
-.btn_img, .btn_img:hover, .dropdown_btn, .dropdown_btn:hover{
+.btn_img, .btn_img:hover{
     background-color: transparent !important;
     outline: none !important;
     box-shadow: none !important;

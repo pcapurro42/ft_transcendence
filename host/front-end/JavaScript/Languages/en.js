@@ -1,7 +1,7 @@
 
 let en = [
     ["LOG IN WITH 42", "LOG IN WITH 42"],
-    ["LOG OUT", "LOG OUT"],
+    ["LOG OUT", "Log out"],
 
 
     ["Enable/Disable menu music", "Enable or Disable menu music"],

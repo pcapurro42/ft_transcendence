@@ -88,7 +88,7 @@ nav.displaySettings = function()
     settings_back_btn.style.display = 'block';
 
     main_menu.style.display = 'none';
-    if (pushHistory == true)
+    if (pushHistory == true  &&  window.location.pathname != getTranslation('/settings'))
         history.pushState(null, null, getTranslation('/settings'));
     else{
         history.replaceState(null, null, getTranslation('/settings'));

@@ -566,34 +566,6 @@ class History
     }
 }
 
-// < controls > //
-
-// function addStatKeyboardMonitoring(alert){
-//     window.addEventListener('keydown', event => statKeyboardMonitoring(alert, event));
-// }
-// function removeStatKeyboardMonitoring(){
-//     window.removeEventListener('keydown', event => statKeyboardMonitoring(alert, event));
-// }
-
-// function statKeyboardMonitoring(alert, event)
-// {
-//     try
-//     {
-//         if (visual == false && alert == true)
-//         {
-//             if (event.key == 'ArrowLeft' || event.key == 'ArrowRight')
-//                 throw('Switch to visual');
-//         }
-//     }
-//     catch(error)
-//     {
-//         document.getElementById('alert_sound').play();
-//         displayStatusBarWarning(getTranslation(error));
-//     }
-// }
-
-// < stats > //
-
 function displayNextStatsPage()
 {
     if (visual == true)
@@ -709,8 +681,7 @@ nav.displayStats = function()
 
     main_menu.style.display = 'none';
 
-    removeStatKeyboardMonitoring();
-    if (pushHistory == true)
+    if (pushHistory == true &&  window.location.pathname != getTranslation('/statistics'))
         history.pushState(null, null, getTranslation('/statistics'));
     else{
         history.replaceState(null, null, getTranslation('/statistics'));
@@ -743,7 +714,7 @@ nav.displayLocalStats = function()
     local_stats.style.display = 'block';
 
     document.getElementById('local_stats_nv').style.display = 'block';
-    if (pushHistory == true)
+    if (pushHistory == true  &&  window.location.pathname != getTranslation('/local-stats'))
         history.pushState(null, null, getTranslation('/local-stats'));
     else{
         history.replaceState(null, null, getTranslation('/local-stats'));
@@ -774,8 +745,6 @@ nav.displayOnlineStats = function()
     stats_back_btn.style.display = 'none';
     online_stats.style.display = 'block';
 
-    // addStatKeyboardMonitoring(true);
-
     if (visual == true)
     {
         document.getElementById('online_stats_v').style.display = 'block';
@@ -796,7 +765,7 @@ nav.displayOnlineStats = function()
         document.getElementById('visual_info').style.display = 'none';
         document.getElementById('visual_info').style.visibility = 'hidden';
     }
-    if (pushHistory == true)
+    if (pushHistory == true &&  window.location.pathname != getTranslation('online-stats'))
         history.pushState(null, null, getTranslation('/online-stats'));
     else{
         history.replaceState(null, null, getTranslation('/online-stats'));
@@ -810,7 +779,6 @@ nav.removeOnlineStats = function()
     let online_stats = document.getElementById('online_stats');
 
     online_stats.style.display = 'none';
-    removeStatKeyboardMonitoring();
     nav.displayStats();
 }
 
@@ -905,8 +873,6 @@ nav.displayHistory = function()
     stats_back_btn.style.display = 'none';
     history_menu.style.display = 'block';
 
-    // addStatKeyboardMonitoring(false);
-
     let history_data = JSON.parse(localStorage.getItem('history_data'));
     if (history_data.exist != true)
         history_data = null;
@@ -916,7 +882,7 @@ nav.displayHistory = function()
     historic = new History(history_data);
     historic.initialize();
     historic.display();
-    if (pushHistory == true)
+    if (pushHistory == true  &&  window.location.pathname != getTranslation('/game-history'))
         history.pushState(null, null, getTranslation('/game-history'));
     else{
         history.replaceState(null, null, getTranslation('/game-history'));
@@ -940,8 +906,7 @@ nav.removeHistory = function()
     historic.style.display = 'none';
 
     historic = null;
-    removeStatKeyboardMonitoring();
-    if (pushHistory == true)
+    if (pushHistory == true &&  window.location.pathname != getTranslation('/statistics'))
         history.pushState(null, null, getTranslation('/statistics'));
     else{
         history.replaceState(null, null, getTranslation('/statistics'));

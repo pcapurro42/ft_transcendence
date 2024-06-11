@@ -19,7 +19,7 @@ async function handleLocation(){
         path = window.location.pathname;
     else
         path = originalUrl;
-        
+
     if ((previous_url_path == getTranslation('/tournament-game') || previous_url_path == getTranslation('/online-game')) && !sessionStorage.getItem('no_confirmation')){
         let bool = await userLeaveConfirmation();
         document.getElementById('leavingPopup').style.display = 'none';

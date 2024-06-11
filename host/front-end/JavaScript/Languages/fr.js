@@ -1,6 +1,6 @@
 let fr = [
     ["LOG IN WITH 42", "SE CONNECTER AVEC 42"],
-    ["LOG OUT", "SE DÉCONNECTER"],
+    ["LOG OUT", "Se déconnecter"],
 
 
     ["Enable/Disable menu music", "Activer ou désactiver la musique des menus."],

@@ -1,3 +1,23 @@
+function dropdownAddSvg(){
+	let logout = document.getElementById('drop_logout');
+	let custom = document.getElementById('drop_customize');
+	let settings = document.getElementById('drop_settings');
+	let stats = document.getElementById('drop_stats');
+
+	let logout_svg = '<img id="svg" src="./Materials/images/logout.svg" alt="Icon">';
+	let custom_svg = '<img id="svg" src="./Materials/images/customize.svg" alt="Icon">';
+	let settings_svg = '<img id="svg" src="./Materials/images/settings.svg" alt="Icon">';
+	let stats_svg = '<img id="svg" src="./Materials/images/stats.svg" alt="Icon">';
+	logout.innerHTML = logout_svg + '  ' + logout.innerHTML;
+	custom.innerHTML =  custom_svg + '  ' + custom.innerHTML;
+	settings.innerHTML = settings_svg + '  ' + settings.innerHTML;
+	stats.innerHTML = stats_svg + '  ' + stats.innerHTML;
+
+	if (high_contrast == 'true')
+		setImagesColor('white');
+	else
+		setImagesColor('black');
+}
 
 function addBeforeUnloadWarning() {
     window.addEventListener('beforeunload', handleBeforeUnload);

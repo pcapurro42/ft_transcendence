@@ -25,7 +25,7 @@ nav.theaterCredits = function(){
 		boolAudio_on = true;
 	}
 	video.play();
-	if (pushHistory == true)
+	if (pushHistory == true &&  window.location.pathname != getTranslation('/credits'))
 		history.pushState(null, null, getTranslation('/credits'));
 	else{
 		history.replaceState(null, null, getTranslation('/credits'));
@@ -57,7 +57,7 @@ nav.theaterClose = function(){
 		music_menu.muted = false;
 		music_menu.play();
 	}
-	if (pushHistory == true)
+	if (pushHistory == true  && window.location.pathname != getTranslation('/home'))
 		history.pushState(null, null, getTranslation('/home'));
 	else{
 		history.replaceState(null, null, getTranslation('/home'));
