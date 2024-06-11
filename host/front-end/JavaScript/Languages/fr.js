@@ -3,13 +3,15 @@ let fr = [
     ["LOG OUT", "SE DÉCONNECTER"],
 
 
-    ["Enable/Disable menu music", "Activer/désactiver la musique"],
-    ["Enable/Disable menu sounds", "Activer/désactiver les sons"],
+    ["Enable/Disable menu music", "Activer ou désactiver la musique des menus."],
+    ["Enable/Disable menu sounds", "Activer ou désactiver les sons des menus."],
+    ["Enable/Disable game music", "Activer ou désactiver la musique du jeu."],
+    ["Enable/Disable game sounds", "Activer ou désactiver les sons du jeu."],
 
     ["Enabled", "Activé"],
     ["Disabled", "Désactivé"],
 
-    ["Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'", "Bouton : Menu Principal. Logo titre central: 'Tactical Tennis Action, Metal Gear: Pong'"],
+    ["Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'", "Logo titre central: 'Tactical Tennis Action, Metal Gear: Pong'... Cliquez pour retourner au menu principal."],
 
     ["Play", "Jouer"],
     ["Customize", "Personnaliser"],
@@ -234,6 +236,9 @@ let fr = [
     ["ARIA Map Selector", "Sélectionnez la carte utilisée pendant une partie."],
     ["ARIA Language Selector", "Sélectionnez la langue du site web."],
     ["ARIA Tournament Nick Form", "Formulaire pour surnom de joueur du tournoi."],
+    ["ARIA Tournament Form Label", "Joueur"],
+    ["ARIA Duplicate Nickname", "Le surnom est au mauvais format. Merci d'entrer un surnom de 4 à 15 caractères, contenant lettres majuscules ou minuscules, chiffres, tiret et tiret du bas."],
+
     ["ARIA Textsize Selector", "Sélectionnez la taille du texte sur le site web."],
 
     ["Top Logo Alt", "Logo du site web. Tactical Tennis Action Metal Gear Pong. Retour au menu principal."],

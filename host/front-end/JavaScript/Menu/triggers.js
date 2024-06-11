@@ -1,9 +1,9 @@
 // < TOOLBAR > //
 
-document.getElementById('music_toggle').onclick = enableDisableMusic;
-document.getElementById('sound_toggle').onclick = enableDisableSounds;
-document.getElementById('game_music_toggle').onclick = enableDisableMusic;
-document.getElementById('game_sound_toggle').onclick = enableDisableSounds;
+document.getElementById('music_toggle_btn').onclick = enableDisableMusic;
+document.getElementById('sound_toggle_btn').onclick = enableDisableSounds;
+document.getElementById('game_music_toggle_btn').onclick = enableDisableMusic;
+document.getElementById('game_sound_toggle_btn').onclick = enableDisableSounds;
 document.getElementById('game_theme_btn_selector').onchange = gameMusicSelector;
 
 
@@ -15,6 +15,7 @@ document.getElementById("logout_btn").onclick = logout;
 document.getElementById('title_logo').onclick = nav.displayMenu;
 document.getElementById('disconnection_back_btn').onclick = nav.displayMenu;
 
+document.getElementById('intra_login').onclick = displayDropdownMenu;
 document.getElementById('play_btn').onclick = nav.displayPlay;
 document.getElementById('play_back_btn').onclick = nav.removePlay;
 
@@ -102,19 +103,6 @@ document.getElementById('top_logo').onclick = function(){
 };
 
 {/* < ACCESSIBILITY > // */}
-document.addEventListener('keydown', function(event){
-	if (event.key== "Enter"){
-		event.preventDefault();
-		document.activeElement.click();
-	}
-})
-
-document.getElementById('text_size_btn_selector').addEventListener('keydown', function(event) {
-    if (event.key === "Enter") {
-        this.click();  // Toggle dropdown
-    }
-});
-
 
 
 // < PEER ANSWERS/OFFERS> //

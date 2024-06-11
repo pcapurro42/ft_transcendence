@@ -1,4 +1,4 @@
-#game_page_classic, #game_page_tournament, #create_classic_menu, #join_classic_menu, #logged, #play_menu, #classic_menu, #tournament_nickname_menu, #customize_menu, #settings_menu, #statusBarSuccess, #statusBarWarning, #statusBarAlert, #classic_buttons, #one_vs_one_online_page, #one_vs_one_local_page, #one_vs_two_local_page, #game_page_tournament, #game_toolbar, #tournament_setup, #tournament_announcer, #form_alias, #game_backgrounds, #one_vs_one_guest_page, #one_vs_one_host_page, #local_stats, #online_stats, #history, #stats_menu_buttons
+body
 {
     display: none;
 }
@@ -13,6 +13,20 @@
     outline-offset: 2px !important;
 }
 
+#login_dropdown{
+    position: absolute;
+    inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 50px);
+}
+
+.btn_img{
+    border : 0px;
+    max-width: 0%;
+}
+.btn_img, .btn_img:hover, .dropdown_btn, .dropdown_btn:hover{
+    background-color: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
 @keyframes gamekeys {
 
     30%{transform: translateY(0px) scale(1, 1);
@@ -47,7 +61,7 @@
     top: 0%;
     left: 0%;
 }
-.btn:hover:not(.border, .btn-outline-success, .btn-outline-secondary, .btn-outline-danger, .color_btn, #intra_login){
+.btn:hover:not(.border, .btn-outline-success, .btn-outline-secondary, .btn-outline-danger, .color_btn, #intra_login, .dropdown_btn){
     transition: 1s;
     transform: scale(1.2);
 }
@@ -107,12 +121,6 @@
     max-width: 40%;
     height: auto;
     cursor: pointer
-}
-
-#music_toggle,#game_music_toggle, #sound_toggle, #game_sound_toggle
-{
-    max-width: 4%;
-    cursor: pointer;
 }
 
 #game_sound_toggle, #sound_toggle{

@@ -81,6 +81,9 @@ nav.displayMenu = function()
     let main_menu_buttons = document.getElementById('main_menu_buttons');
     main_menu_buttons.style.display = "block";
 
+    // let main_menu_img = document.getElementsByClassName('.btn_img');
+    // main_menu_img.forEach(element => {element.style.display = "block"});
+
     stop_flag = true; // stop tournament
     active = false; // turn off the game
 
@@ -118,12 +121,15 @@ function setBackgroundColor(color)
     let background = document.body;
     let modal_disco = document.getElementById('modal_color_disco');
     let modal_leaving = document.getElementById('modal_color_leaving');
+    let login_dropdown = document.getElementById('login_dropdown');
     if (color == "white"){
+        login_dropdown.style.setProperty("background-color", "white");
         background.style.setProperty("background-color", "white");
         modal_disco.style.setProperty("background-color", "white");
         modal_leaving.style.setProperty("background-color", "white");
     }
     else{
+        login_dropdown.style.setProperty("background-color", "black");
         background.style.setProperty("background-color", "black");
         modal_disco.style.setProperty("background-color", "black");
         modal_leaving.style.setProperty("background-color", "black");
@@ -206,9 +212,9 @@ function setTextSize(size)
 
 function setHighContrast(value)
 {
-    btn = document.querySelectorAll('.btn, .btn_image, .slider, .selector, #title_logo, #top_logo');
-    btn_image = document.querySelectorAll('.btn_image');
-    color_btn = document.querySelectorAll('.color_btn')
+    btn = document.querySelectorAll('.btn, .btn_img, .btn_icon, .slider, .selector, #title_logo, #top_logo');
+    btn_icon = document.querySelectorAll('.btn_icon');
+    color_btn = document.querySelectorAll('.color_btn');
     if (high_contrast == "true")
     {
         color_btn.forEach(element =>{
@@ -223,7 +229,7 @@ function setHighContrast(value)
             element.classList.remove('focus-black');
         });
 
-        btn_image.forEach(element => {
+        btn_icon.forEach(element => {
             element.classList.add('focus-black');
             element.classList.remove('focus-white');
         });
@@ -313,3 +319,19 @@ function refreshDisplay()
     ARIAButtonState();
     ARIASoundsSlider();
 }
+
+async function displayDropdownMenu(){
+    let dropdown_toggler = document.getElementById('intra_login');
+    let login_dropdown = document.getElementById('login_dropdown');
+    login_dropdown.classList.remove('d-none');
+
+    await sleep(100)
+    function outsideDropdownClick(event){
+        if (!login_dropdown.contains(event.target) && !dropdown_toggler.contains(event.target)){
+            login_dropdown.classList.add('d-none');
+            document.removeEventListener('click', outsideDropdownClick)
+        }
+    }
+    document.addEventListener('click', outsideDropdownClick)
+}
+

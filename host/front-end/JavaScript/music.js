@@ -5,10 +5,14 @@ function enableDisableMusic()
 	let toggler = this;
 	let other_toggler;
 
-	if (toggler == document.getElementById('music_toggle'))
+	if (toggler == document.getElementById('music_toggle_btn')){
+		toggler = document.getElementById('music_toggle')
 		other_toggler = document.getElementById('game_music_toggle');
-	else
+	}
+	else{
+		toggler = document.getElementById('game_music_toggle')
 		other_toggler = document.getElementById('music_toggle');
+	}
 
 	music.loop = true;
 	for (let i = 0; i < game_music.length; i++)

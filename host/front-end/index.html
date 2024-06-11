@@ -44,9 +44,9 @@
 
 
                     <div class="col d-flex align-items-center ">
-                        <img id="game_music_toggle" data-alt="Music Icon" src="./Materials/images/music-off.png" class="img-fluid image col d-inline-block float-end mt-4 music_togglers btn_image" data-isnormal="4%" data-islarge="5%" data-title="Enable/Disable menu music" tabindex="0" role="button">
+                        <button id="game_music_toggle_btn" class="btn_img" data-alt="Music Icon" data-isnormal="4%" data-islarge="5%" data-title="Enable/Disable game music" aria-label=""><img id="game_music_toggle" src="./Materials/images/music-off.png" class="img-fluid image col d-inline-block float-end music_togglers btn_icon"></button>
 
-                        <img id="game_sound_toggle" src="./Materials/images/sound-on.png" class="img-fluid image col d-inline-block float-end mt-4 sound_togglers btn_image" data-isnormal="5%" data-islarge="6%" data-alt="Sound Icon" data-title="Enable/Disable menu sounds" tabindex="0" role="button">
+                        <button id="game_sound_toggle_btn" class="btn_img" data-isnormal="5%" data-islarge="6%" data-title="Enable/Disable game sounds" data-alt="Sound Icon" data-title="Enable/Disable menu sounds"><img id="game_sound_toggle" src="./Materials/images/sound-on.png" class="img-fluid image col d-inline-block float-end sound_togglers btn_icon btn_img"></button>
 
                     </div>
 
@@ -186,18 +186,17 @@
             <!-- Main menu toolbar -->
 
             <div id="main_menu_toolbar" class="container">
-
-                <img id="music_toggle" data-alt="Music Icon" src="./Materials/images/music-off.png" class="img-fluid image music_togglers btn_image" data-isnormal="4%" data-islarge="5%" data-title="Enable/Disable menu music" tabindex="1" role="button">
-                <img id="sound_toggle" data-alt="Sound Icon" src="./Materials/images/sound-on.png" class="img-fluid image sound_togglers btn_image" data-isnormal="5%" data-islarge="6%" data-title="Enable/Disable menu sounds" tabindex="2" role="button">
+                <button id="music_toggle_btn" class="btn_img p-0" data-alt="Music Icon" data-title="Enable/Disable menu music" aria-label="" data-isnormal="4%" data-islarge="5%"><img id ="music_toggle" src="./Materials/images/music-off.png" class="img-fluid image music_togglers btn_icon"></button>
+                <button id="sound_toggle_btn" class="btn_img p-0" data-alt="Sound Icon" data-isnormal="5%" data-islarge="6%" data-title="Enable/Disable menu sounds" aria-label=""><img id="sound_toggle" src="./Materials/images/sound-on.png" class="img-fluid image sound_togglers btn_icon"></button>
 
                 <div id="login" class="col d-inline-block float-end">
                     <button id="login_btn" class="btn color_btn btn-outline-dark text mt-3 btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="LOG IN WITH 42" data-title="ARIA 42" title="" aria-label="" role="button"></button>
                 </div>
 
                 <div id="logged" class="dropdown col d-inline-block float-end">
-                    <a id="intra_login" class="dropdown-toggle btn text" data-bs-toggle="dropdown" role="button" data-tsnormal="25px" data-tslarge="35px"></a>
-                    <ul class="dropdown dropdown-menu">
-                        <a id="logout_btn" class="dropdown dropdown-item btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="LOG OUT" data-title="LOG OUT" role="button"></a>
+                    <p id="intra_login" class="dropdown-toggle btn text" role="button" data-tsnormal="25px" data-tslarge="35px" role="button" aria-haspopup="true" aria-expanded="false"></p>
+                    <ul id="login_dropdown" class="p-0 m-0 border border-2 d-none">
+                        <button id="logout_btn" class="btn dropdown_btn btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="LOG OUT" data-title="LOG OUT" role="button"></button>
                     </ul>
                 </div>
 
@@ -206,7 +205,7 @@
             <!-- Title -->
 
             <div id="title" class="text-center my-5">
-                <img id="title_logo" src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto" data-alt="Top Logo Alt" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" tabindex="0" data-link="home" role="button">
+                <button id="title_logo" class="btn_img" data-alt="Top Logo Alt" aria-label="" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" data-link="home"><img src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto"></button>
             </div>
 
             <!-- Main menu center -->
@@ -389,13 +388,13 @@
                     <form id="form_alias" class="container text-center">
                     <div id="parent_form" class="justify-content-center">
                         <div id="form_block" class="form-control-lg p-2 remover">
+                            <label for="alias_input" id="t_form_label" data-oname="ARIA Tournament Form Label" class="text"></label>
                             <input id="alias_input" class="form-control-sm" type="text" placeholder="" data-tsnormal="16px" data-tslarge="21px" data-oname="Tournament nickname" data-title="ARIA Tournament Nick Form" title="" aria-label="">
                             <div id="invalid-alias" class="invalid-feedback" data-tsnormal="15px" data-tslarge="25px" data-oname="Invalid alias"></div>
-                            <label for="alias_input" id="duplicate_label" data-oname="ARIA Tournament Nick Form"class="d-none"></label>
                         </div>
                     </div>
 
-                        <div id="duplicate_nick" class="invalid-feedback" data-tsnormal="15px" data-tslarge="25px" data-oname="Duplicate Nickname"></div>
+                        <div id="duplicate_nick" class="invalid-feedback" data-tsnormal="15px" data-tslarge="25px" data-oname="Duplicate Nickname" aria-label="ARIA Duplicate Nickname"></div>
 
                         <div class="d-flex justify-content-center mt-3">
 
@@ -713,9 +712,9 @@
 
         <!-- UTILS -->
 
-        <div id="statusBarSuccess" class="alert alert-success fixed-top p-2"></div>
-        <div id="statusBarAlert" class="alert alert-danger fixed-top p-2"></div>
-        <div id="statusBarWarning" class="alert alert-warning fixed-top p-2"></div>
+        <div id="statusBarSuccess" class="alert alert-success fixed-top p-2 status_bar"></div>
+        <div id="statusBarAlert" class="alert alert-danger fixed-top p-2 status_bar"></div>
+        <div id="statusBarWarning" class="alert alert-warning fixed-top p-2 status_bar"></div>
 
         <div class="modal" id="disconnectionPopup" data-bs-backdrop='static'>
 
@@ -782,7 +781,6 @@
         <label for="credit_close" data-title="Main Menu"></label>
 
         <!-- Scripts -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="./JavaScript/Languages/en.js"></script>
         <script src="./JavaScript/Languages/fr.js"></script>
         <script src="./JavaScript/Languages/language.js"></script>

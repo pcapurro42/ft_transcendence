@@ -315,6 +315,10 @@ const nav = {
         document.getElementById('main_page').style.display = 'block';
         document.getElementById('main_menu_buttons').style.display = 'none';
         document.getElementById('main_menu_page').style.display = 'none';
+        let status_bars = document.querySelectorAll('.status_bar');
+        status_bars.forEach( (elem) =>{
+            elem.style.display="none";
+        })
         nav.theaterClose();
         freeInputAndForms();
         tournamentFinalReset();

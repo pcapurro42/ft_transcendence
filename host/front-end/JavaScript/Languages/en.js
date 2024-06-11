@@ -4,13 +4,16 @@ let en = [
     ["LOG OUT", "LOG OUT"],
 
 
-    ["Enable/Disable menu music", "Enable/Disable musics"],
-    ["Enable/Disable menu sounds", "Enable/Disable sounds"],
+    ["Enable/Disable menu music", "Enable or Disable menu music"],
+    ["Enable/Disable menu sounds", "Enable or Disable menu sounds"],
+
+    ["Enable/Disable game music", "Enable or Disable game music"],
+    ["Enable/Disable game sounds", "Enable or Disable game sounds"],
 
     ["Enabled", "Enabled"],
     ["Disabled", "Disabled"],
 
-    ["Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'", "Button: main menu. Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'"],
+    ["Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'", "Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'... Click to get back to main menu."],
 
     ["Play", "Play"],
     ["Customize", "Customize"],
@@ -196,7 +199,7 @@ let en = [
     ['/tournament-game', '/tournament-game'],
     ['Tournament Game', 'Tournament Game'],
     ['Online Game', 'Online - Game'],
-    ["Tournament - Nicknames", "Tournament - Nicnames"],
+    ["Tournament - Nicknames", "Tournament - Nicknames"],
     ['/customize', '/customize'],
     ['/statistics', '/statistics'],
     ['/game-history', '/game-history'],
@@ -229,6 +232,8 @@ let en = [
     ["ARIA Map Selector", "Select which map will be used in-game"],
     ["ARIA Language Selector", "Select a language for the website"],
     ["ARIA Tournament Nick Form", "Form for tournament player's nickname"],
+    ["ARIA Tournament Form Label", "Player"],
+    ["ARIA Duplicate Nickname", "Nickname is wrongly formatted. Please input a nickname using 4 to 15 characters. Accepted characters are uppercase and lowercase letters, numbers, hyphen and underscore."],
     ["ARIA Textsize Selector", "Select the text size for the website."],
 
 

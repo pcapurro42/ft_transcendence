@@ -15,8 +15,7 @@ function shuffleArray(nicknames){
 
 function formDuplicator(value){
 	let elem = document.getElementById('form_block');
-	let label = document.getElementById('duplicate_label');
-
+	elem.querySelector('#t_form_label').innerHTML = getTranslation("ARIA Tournament Form Label") + ' ' + 1 + ':';
 	let parent = elem.parentNode;
 	let to_remove = document.querySelectorAll('#parent_form .remover');
 
@@ -28,15 +27,14 @@ function formDuplicator(value){
 
 	for (i = 0; i < value - 1; i++){
 		let clone_form = elem.cloneNode(true);
-		let clone_label = label.cloneNode(true);
-		clone_label.id = 'duplicate_label' + i;
 		clone_form.id = 'form_block' + i;
-		clone_label.setAttribute('for', "alias_input" + i);
 		let childrens = clone_form.querySelectorAll('[id]');
 		for (let j = 0; j < childrens.length; j++)
 		    childrens[j].id = childrens[j].id + i;
+		let label_child = clone_form.querySelector('#t_form_label' + i)
+		label_child.innerHTML = getTranslation("ARIA Tournament Form Label") + ' ' + (i + 2) + ':';
+		label_child.setAttribute('for', 'alias_input' + i);
 		document.getElementById('parent_form').append(clone_form);
-		document.getElementById(clone_form.id).append(clone_label);
     }
 	return i;
 }

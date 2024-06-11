@@ -4,10 +4,15 @@ function enableDisableSounds()
 	let toggler = this;
 	let other_toggler;
 
-	if (toggler == document.getElementById('sound_toggle'))
+	console.log(toggler);
+	if (toggler == document.getElementById('sound_toggle_btn')){
+		toggler = document.getElementById('sound_toggle');
 		other_toggler = document.getElementById('game_sound_toggle');
-	else
+	}
+	else{
+		toggler = document.getElementById('game_sound_toggle');
 		other_toggler = document.getElementById('sound_toggle');
+	}
 
 	let allMuted = Array.from(sounds).every(sounds => sounds.muted);
 	if (allMuted)

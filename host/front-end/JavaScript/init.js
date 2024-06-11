@@ -121,6 +121,8 @@ ARIAButtonState();
 handleRedirection();
 handleLocation();
 
+window.addEventListener('DOMContentLoaded', ()=>{document.body.style.display = "block"});
+
 //<Backend> //
 
 // localStorage.clear();
