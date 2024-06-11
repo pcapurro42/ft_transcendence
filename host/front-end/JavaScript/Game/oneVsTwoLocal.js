@@ -6,22 +6,10 @@ class LocalGame1v2
 {
     constructor()
     {
+        // global infos initialization
+
         this.player_nb = 3;
-
-        this.left_player = null;
-        this.right_player_1 = null;
-        this.right_player_2 = null;
-
-        this.ball = null;
-
-        this.bonus_one = null;
-        this.bonus_two = null;
-        this.bonus_color = "green";
-
         this.scores = [0, 0];
-
-        this.scores_c = null;
-        this.scores_ctx = null;
 
         this.game_width = 1100;
         this.game_height = 720;
@@ -33,22 +21,20 @@ class LocalGame1v2
         this.ball_speed = 10;
         this.ball_height = 20;
         this.ball_width = 20;
-        this.ball_color = null;
-
-        this.ball_direction = getRandomBallDirection();
-
-        this.text_size = 85;
-        this.text_font = "Arial";
 
         this.separator_height = 20;
         this.separator_width = 2;
         this.separator_space = 17;
 
-        this.alert = 0;
-    }
+        this.text_size = 85;
+        this.text_font = "Arial";
 
-    initialize()
-    {
+        this.bonus_color = "green";
+
+        this.ball_direction = getRandomBallDirection();
+
+        this.alert = 0;
+
         // canvas creation
 
         this.canvas = document.getElementById('one_vs_two_local_game');
@@ -372,7 +358,6 @@ function initializeLocal1v2()
     players_nb = 3;
     game = new LocalGame1v2();
 
-    game.initialize();
     game.refreshBackground();
     active = true;
 }

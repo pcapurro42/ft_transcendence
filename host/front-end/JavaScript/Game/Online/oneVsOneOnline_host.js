@@ -7,21 +7,10 @@ class OnlineGame1v1_host
 {
     constructor()
     {
+        // global infos initialization
+
         this.player_nb = 1;
-
-        this.left_player = null;
-        this.right_player = null;
-
-        this.ball = null;
-
-        this.bonus_one = null;
-        this.bonus_two = null;
-        this.bonus_color = "green";
-
         this.scores = [0, 0];
-
-        this.canvas = null;
-        this.display = null;
 
         this.game_width = 1100;
         this.game_height = 720;
@@ -33,26 +22,21 @@ class OnlineGame1v1_host
         this.ball_speed = 10;
         this.ball_height = 20;
         this.ball_width = 20;
-        this.ball_color = null;
-
-        this.ball_direction = getRandomBallDirection();
-
-        this.text_size = 85;
-        this.text_font = "Arial";
 
         this.separator_height = 20;
         this.separator_width = 2;
         this.separator_space = 17;
 
+        this.text_size = 85;
+        this.text_font = "Arial";
+
+        this.bonus_color = "green";
+
+        this.ball_direction = getRandomBallDirection();
+
         this.dist = 0;
-
-        this.sounds = null;
-
         this.alert = 0;
-    }
 
-    initialize()
-    {
         // canvas creation
 
         if (role == "host")

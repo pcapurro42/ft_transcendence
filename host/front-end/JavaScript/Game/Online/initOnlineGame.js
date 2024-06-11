@@ -7,7 +7,6 @@ function initializeOnline1v1()
         game = new OnlineGame1v1_host();
     else
         game = new OnlineGame1v1_guest();
-    game.initialize();
     game.refreshBackground();
     active = true;
 
