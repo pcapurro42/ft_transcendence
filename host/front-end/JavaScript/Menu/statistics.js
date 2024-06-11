@@ -560,6 +560,8 @@ class History
 
     length()
     {
+        if (this.history_data == null)
+            return (0);
         return (this.history_data.length);
     }
 }
