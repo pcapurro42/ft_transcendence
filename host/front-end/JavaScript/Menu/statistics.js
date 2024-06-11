@@ -568,29 +568,29 @@ class History
 
 // < controls > //
 
-function addStatKeyboardMonitoring(alert){
-    window.addEventListener('keydown', event => statKeyboardMonitoring(alert, event));
-}
-function removeStatKeyboardMonitoring(){
-    window.removeEventListener('keydown', event => statKeyboardMonitoring(alert, event));
-}
+// function addStatKeyboardMonitoring(alert){
+//     window.addEventListener('keydown', event => statKeyboardMonitoring(alert, event));
+// }
+// function removeStatKeyboardMonitoring(){
+//     window.removeEventListener('keydown', event => statKeyboardMonitoring(alert, event));
+// }
 
-function statKeyboardMonitoring(alert, event)
-{
-    try
-    {
-        if (visual == false && alert == true)
-        {
-            if (event.key == 'ArrowLeft' || event.key == 'ArrowRight')
-                throw('Switch to visual');
-        }
-    }
-    catch(error)
-    {
-        document.getElementById('alert_sound').play();
-        displayStatusBarWarning(getTranslation(error));
-    }
-}
+// function statKeyboardMonitoring(alert, event)
+// {
+//     try
+//     {
+//         if (visual == false && alert == true)
+//         {
+//             if (event.key == 'ArrowLeft' || event.key == 'ArrowRight')
+//                 throw('Switch to visual');
+//         }
+//     }
+//     catch(error)
+//     {
+//         document.getElementById('alert_sound').play();
+//         displayStatusBarWarning(getTranslation(error));
+//     }
+// }
 
 // < stats > //
 
@@ -774,7 +774,7 @@ nav.displayOnlineStats = function()
     stats_back_btn.style.display = 'none';
     online_stats.style.display = 'block';
 
-    addStatKeyboardMonitoring(true);
+    // addStatKeyboardMonitoring(true);
 
     if (visual == true)
     {
@@ -905,7 +905,7 @@ nav.displayHistory = function()
     stats_back_btn.style.display = 'none';
     history_menu.style.display = 'block';
 
-    addStatKeyboardMonitoring(false);
+    // addStatKeyboardMonitoring(false);
 
     let history_data = JSON.parse(localStorage.getItem('history_data'));
     if (history_data.exist != true)
