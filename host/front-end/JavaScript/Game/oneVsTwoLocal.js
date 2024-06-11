@@ -65,7 +65,7 @@ class LocalGame1v2
         else
             this.menu_color = "black", this.background_color = "white", this.bar_color = "black", this.ball_color = "black";
 
-        if (game_map != null && game_map != "none")
+        if (game_map != null && game_map != "default")
         {
             if (game_map == "red")
                 this.background_color = "brown";
