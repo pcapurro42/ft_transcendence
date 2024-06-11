@@ -9,9 +9,6 @@ class VisualStats
         this.width = 900;
         this.height = 520;
 
-        this.title_text_format = "27px Arial";
-        this.basic_text_format = "18px Arial";
-
         this.histogram_last_line_y = 451;
 
         this.histogram_data_width = 100;
@@ -45,6 +42,11 @@ class VisualStats
 
         this.canvas.width = this.width;
         this.canvas.height = this.height;
+
+        if (text_size == "normal")
+            this.title_text_format = "27px Arial", this.basic_text_format = "18px Arial";
+        else
+            this.title_text_format = "32px Arial", this.basic_text_format = "23px Arial";
 
         if (high_contrast == "true")
             this.global_color = "white", this.text_color = "white", this.background_color = "black";
@@ -270,13 +272,9 @@ class History
 {
     constructor(history_data)
     {
-        this.history_data = history_data;
+        // global infos initialization
 
-        this.score_text_format = "47px Arial";
-        this.title_text_format = "32px Arial";
-        this.medium_text_format = "23px Arial";
-        this.small_text_format = "18px Arial";
-        this.ridiculous_text_format = "12px Arial";
+        this.history_data = history_data;
 
         this.data_width = 900;
         this.data_height = 200;
@@ -291,10 +289,29 @@ class History
         this.left_player_color = "purple";
         this.right_player_color = "yellow";
 
+        if (text_size == "normal")
+        {
+            this.score_text_format = "47px Arial";
+            this.title_text_format = "32px Arial";
+            this.medium_text_format = "23px Arial";
+            this.small_text_format = "18px Arial";
+            this.ridiculous_text_format = "12px Arial";
+        }
+        else
+        {
+            this.score_text_format = "57px Arial";
+            this.title_text_format = "42px Arial";
+            this.medium_text_format = "33px Arial";
+            this.small_text_format = "28px Arial";
+            this.ridiculous_text_format = "22px Arial";
+        }
+
         if (high_contrast == "true")
             this.global_color = "white", this.background_color = "black";
         else
             this.global_color = "black", this.background_color = "white";
+
+        // canvas creation and config
 
         this.initializeData();
         this.initializeGraph();
