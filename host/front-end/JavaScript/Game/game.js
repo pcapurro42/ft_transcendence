@@ -63,8 +63,8 @@ function displayCountDown(nb)
     else if (nb == -1)
     {
         timer.classList.add("d-none");
-        menu_music.pause();
         game_music.play();
+        menu_music.pause();
         active = true;
         addKeyboardMonitoring();
         if (players_nb == 1){

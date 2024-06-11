@@ -27,6 +27,26 @@ function getTranslation(text)
     }
 }
 
+function getSpecificTranslation(targetLanguage, text)
+{
+    if (targetLanguage == "en")
+    {
+        for (let i = 0; i != en.length; i++)
+        {
+            if (en[i][0] == text)
+                return (en[i][1]);
+        }
+    }
+    if (targetLanguage == "fr")
+    {
+        for (let i = 0; i != fr.length; i++)
+        {
+            if (fr[i][0] == text)
+                return (fr[i][1]);
+        }
+    }
+}
+
 function refreshLanguage()
 {
     let lang = localStorage.getItem("language");

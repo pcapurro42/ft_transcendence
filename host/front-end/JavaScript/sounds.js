@@ -4,7 +4,6 @@ function enableDisableSounds()
 	let toggler = this;
 	let other_toggler;
 
-	console.log(toggler);
 	if (toggler == document.getElementById('sound_toggle_btn')){
 		toggler = document.getElementById('sound_toggle');
 		other_toggler = document.getElementById('game_sound_toggle');

@@ -212,7 +212,7 @@ let fr = [
     ['/settings', '/parametres'],
     ['/credits', '/credits'],
     ['Local Stats', 'Statistiques - local'],
-    ['Online Stats', 'Statistics - en ligne'],
+    ['Online Stats', 'Statistiques - en ligne'],
 
     ['Refresh Alert Tournament', 'Attention : Après un rafraîchissement, il n’est pas possible de revenir sur le tournoi qui était en cours.'],
     ['Refresh Alert Online', 'Attention : La connexion à été perdu lors du rafraichissement de la page.'],
