@@ -50,10 +50,11 @@ function t_displayCountDown(nb)
         timer.innerHTML = getTranslation("Go!");
     else if (nb == -1)
     {
-        addKeyboardMonitoring();
+        menu_music.pause();
         game_music.play();
         timer.style.display = "none";
         active = true;
+        addKeyboardMonitoring();
         startLocal1v1();
         return ;
     }
