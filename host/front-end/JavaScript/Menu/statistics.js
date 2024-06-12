@@ -254,11 +254,17 @@ class VisualStats
     displayObject()
     {
         if (stats_tab == 0)
-            this.displayCamembert();
+            this.displayCamembert(), document.getElementById('prev_stats').classList.add('disabled');
+        else
+            document.getElementById('prev_stats').classList.remove('disabled');
+
         if (stats_tab == 1)
             this.displayBarChartOne();
+        
         if (stats_tab == 2)
-            this.displayBarChartTwo();
+            this.displayBarChartTwo(), document.getElementById('next_stats').classList.add('disabled');
+        else
+            document.getElementById('next_stats').classList.remove('disabled');
     }
 
     clean()
@@ -540,6 +546,16 @@ class History
         this.displayInfos();
         this.displayGraph();
         this.displayHistogram();
+
+        if (history_tab == 0)
+            document.getElementById('prev_history').classList.add('disabled');
+        else
+            document.getElementById('prev_history').classList.remove('disabled');
+
+        if (history_tab == this.length() - 1)
+            document.getElementById('next_history').classList.add('disabled');
+        else
+            document.getElementById('next_history').classList.remove('disabled');
     }
 
     length()
