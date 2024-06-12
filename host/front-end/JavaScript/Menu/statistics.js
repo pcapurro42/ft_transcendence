@@ -391,7 +391,7 @@ class History
             let center_text = this.data_display.measureText(text).width;
             this.data_display.fillText(text, this.data_width / 2 - (center_text / 2), this.data_height / 2); // 42
 
-            entire_text = text;
+            entire_text = text; // 42
         }
         else
         {
@@ -451,7 +451,7 @@ class History
             let end_size = this.data_display.measureText(end).width;
             this.data_display.fillText(end, this.data_width - 20 - end_size, 50);
 
-            entire_text = player1 + " vs " + player2 + ". " + score + ". " + this.history_data.data[history_tab][3] + ". " + duration + ". " + end + ".";
+            entire_text = player1 + " vs " + player2 + ". " + score + ". " + this.history_data.data[history_tab][3] + ". " + duration + ". " + end + "."; // 42
         }
     }
 
@@ -521,13 +521,22 @@ class History
 
     displayHistogram()
     {
+        let value_1;
+        let value_2;
+
         if (this.history_data == null)
+        {
             this.drawCircleSurface(360, this.background_color);
+            value_1 = 0, value_2 = 0; // 42 (valeur en %)
+        }
         else
         {
-            let total = parseInt(this.history_data.data[history_tab][2][0]) + parseInt(this.history_data.data[history_tab][2][1])
-            let value_p1 = (parseInt(this.history_data.data[history_tab][2][0]) * 100 / total) * 360 / 100;
-            let value_p2 = (parseInt(this.history_data.data[history_tab][2][1]) * 100 / total) * 360 / 100;
+            let total = parseInt(this.history_data.data[history_tab][2][0]) + parseInt(this.history_data.data[history_tab][2][1]);
+            value_1 = (parseInt(this.history_data.data[history_tab][2][0]) * 100 / total); // 42 (valeur en %)
+            value_2 = (parseInt(this.history_data.data[history_tab][2][1]) * 100 / total); // 42 (valeur en %)
+
+            let value_p1 = value_1 * 360 / 100;
+            let value_p2 = value_2 * 360 / 100;
 
             if (value_p1.toFixed(1) > value_p2.toFixed(1))
                 this.drawCircleSurface(360, this.left_player_color), this.drawCircleSurface(value_p2.toFixed(1), this.right_player_color);

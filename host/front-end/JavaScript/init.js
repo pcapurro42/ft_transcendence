@@ -1,3 +1,5 @@
+// localStorage.clear();
+
 //   ⚠️⚠️⚠️ Laisser ici ⚠️⚠️⚠️
 let originalUrl = window.location.pathname;
 let csrfToken = document.cookie.replace("csrftoken=", "");
@@ -124,27 +126,3 @@ handleLocation();
 window.addEventListener('DOMContentLoaded', ()=>{document.body.style.display = "block"});
 
 //<Backend> //
-
-localStorage.removeItem('history_data');
-
-refreshStats();
-
-localStorage.setItem('onl_victory', '64');
-localStorage.setItem('onl_defeat', '25');
-localStorage.setItem('onl_played', '89');
-localStorage.setItem('onl_ball_return', '210');
-localStorage.setItem('onl_ball_received', '500');
-localStorage.setItem('onl_bonus_taken', '21');
-localStorage.setItem('onl_bonus_received', '42');
-
-refreshStats();
-
-refreshHistory();
-
-addHistoryEntry('pcapurro', 'bgales', ['10', '5'], '01/06', '1100', [["17", "2"], ["64", "2"], ["145", "1"], ["200", "1"], ["250", "2"], ["300", "1"], ["350", "1"], ["360", "1"], ["370", "1"], ["400", "1"], ["500", "1"], ["700", "1"], ["800", "2"], ["1050", "2"], ["1100", "1"]]);
-
-addHistoryEntry('pcapurro', 'bgales', ['9', '10'], '04/06', '1065', [["42", "2"], ["64", "2"], ["276", "1"], ["300", "1"], ["350", "2"], ["400", "1"], ["450", "1"], ["460", "1"], ["470", "1"], ["500", "1"], ["542", "1"], ["700", "1"], ["800", "2"], ["900", "2"], ["1005", "2"], ["1010", "2"], ["1050", "2"], ["1065", "2"]]);
-
-addHistoryEntry('pcapurro', 'bgales', ['10', '2'], '06/06', '778', [["0", "2"], ["145", "1"], ["200", "1"], ["250", "2"], ["300", "1"], ["350", "1"], ["360", "1"], ["370", "1"], ["400", "1"], ["500", "1"], ["650", "1"], ["778", "1"]]);
-
-refreshHistory();
