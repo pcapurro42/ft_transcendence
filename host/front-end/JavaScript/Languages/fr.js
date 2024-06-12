@@ -103,6 +103,12 @@ let fr = [
 
     ["We invite you to read more about it in privacy policy page.", "Nous vous invitons à en lire davantage sur la page dédiée à la politique de confidentialité."],
 
+    ["Authorize data share", "Autoriser le partage de données"],
+    ["Local data", "Données locales"],
+    ["Anonymize data", "Anonymiser les données"],
+    ["Online data", "Données en ligne"],
+    ["Delete", "Supprimer"],
+
     ["This website complies with the General Data Protection Regulation (GDPR) from the european Union. We invite you to read the following to learn more about how the website has been developed to respect this regulation.", "Ce site Internet se conforme au règlement général sur la protection des données (RGPD) de l'Union européenne. Nous vous invitons à lire ce qui suit pour en savoir plus sur comment le site a été développé afin de respecter ce règlement."],
     
     ["Note: if you don't use any online features from the website (log in with 42 and online games), no data is stored out of your computer or shared with anyone.", "Note : si vous n'utilisez aucune des fonctionnalités en ligne du site (se connecter avec 42 et les parties en ligne), aucune donnée n'est stockée en dehors de votre ordinateur ou n'est partagée avec quelqu'un."],

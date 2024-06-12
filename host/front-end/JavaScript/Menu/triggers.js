@@ -101,6 +101,9 @@ document.getElementById('image_desc_btn_yn').onclick = changeDescriptiveImages;
 document.getElementById('prev_settings').onclick = displayFirstSettingsPage;
 document.getElementById('next_settings').onclick = displaySecondSettingsPage;
 
+document.getElementById('data_anonymize_btn').onclick = changeAnonymizeAuth;
+document.getElementById('data_share_btn').onclick = changeShareAuth;
+
 // < GAME > //
 
 document.getElementById('top_logo').onclick = function(){

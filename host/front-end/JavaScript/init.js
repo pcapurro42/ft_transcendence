@@ -1,5 +1,17 @@
 // localStorage.clear();
 
+// < SETTINGS > //
+
+let language;
+let sounds_volume;
+let music_volume;
+let text_size;
+let descriptive_images;
+let high_contrast;
+
+initializeLanguage();
+initializeSettings();
+
 //   ⚠️⚠️⚠️ Laisser ici ⚠️⚠️⚠️
 let originalUrl = window.location.pathname;
 let csrfToken = document.cookie.replace("csrftoken=", "");
@@ -28,17 +40,9 @@ let game_map;
 
 initializeCustomize();
 
-// < SETTINGS > //
+// < DATA > //
 
-let language;
-let sounds_volume;
-let music_volume;
-let text_size;
-let descriptive_images;
-let high_contrast;
-
-initializeLanguage();
-initializeSettings();
+initializeDataAuths();
 
 // < MUSICS AND SOUNDS > //
 
