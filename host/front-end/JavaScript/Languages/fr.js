@@ -58,7 +58,6 @@ let fr = [
     ["Mode Switch", "Interrupteur du mode de jeu."],
     ['Selected','Sélectionné'],
 
-
     ["1 vs 1 (online)", "1 vs 1 (en ligne)"],
     ["1 vs 1 (local)", "1 vs 1 (local)"],
     ["1 vs 2 (local)", "1 vs 2 (local)"],
@@ -98,6 +97,9 @@ let fr = [
     ["Text size", "Taille du texte"],
     ["Image description", "Description de l'image"],
     ["High contrast", "Haut contraste"],
+
+    ["General", "Général"],
+    ["Privacy", "Confidentialité"],
 
     ["Game theme", "Musique du jeu"],
     ["Game map", "Carte du jeu"],

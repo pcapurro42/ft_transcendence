@@ -98,6 +98,9 @@ document.getElementById('music_volume_slider').onchange = changeMusicVolume;
 document.getElementById('high_contrast_btn_yn').onclick = changeHighContrast;
 document.getElementById('image_desc_btn_yn').onclick = changeDescriptiveImages;
 
+document.getElementById('prev_settings').onclick = displayFirstSettingsPage;
+document.getElementById('next_settings').onclick = displaySecondSettingsPage;
+
 // < GAME > //
 
 document.getElementById('top_logo').onclick = function(){

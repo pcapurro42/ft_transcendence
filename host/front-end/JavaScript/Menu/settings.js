@@ -76,6 +76,25 @@ function changeLanguage()
 
 // < DIPLAY/REMOVE > //
 
+function displaySecondSettingsPage()
+{
+    document.getElementById('settings_left_panel').style.display = "none";
+    document.getElementById('settings_right_panel').style.display = "none";
+    document.getElementById('privacy_panel').style.display = "block";
+
+    document.getElementById('next_settings').classList.add('disabled');
+    document.getElementById('prev_settings').classList.remove('disabled');
+}
+
+function displayFirstSettingsPage()
+{
+    document.getElementById('settings_left_panel').style.display = "block";
+    document.getElementById('settings_right_panel').style.display = "block";
+    document.getElementById('privacy_panel').style.display = "none";
+
+    document.getElementById('next_settings').classList.remove('disabled');
+    document.getElementById('prev_settings').classList.add('disabled');
+}
 
 nav.displaySettings = function()
 {
@@ -94,6 +113,9 @@ nav.displaySettings = function()
         history.replaceState(null, null, getTranslation('/settings'));
         pushHistory = true;
     }
+
+    displayFirstSettingsPage();
+
     document.title = getTranslation('Settings');
 }
 

@@ -99,6 +99,9 @@ let en = [
     ["Image description", "Image description"],
     ["High contrast", "High contrast"],
 
+    ["General", "General"],
+    ["Privacy", "Privacy"],
+
     ["Game theme", "Game theme"],
     ["Game map", "Game map"],
     ["Red", "Red"],
