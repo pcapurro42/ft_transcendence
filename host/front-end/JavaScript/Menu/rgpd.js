@@ -44,6 +44,11 @@ function setAuthsState()
     refreshLanguage();
 }
 
+function readLocalData()
+{
+    ;
+}
+
 function deleteLocalData()
 {
     localStorage.clear();

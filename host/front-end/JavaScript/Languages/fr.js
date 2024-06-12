@@ -111,6 +111,7 @@ let fr = [
     ["Not authorized", "Pas autorisé"],
     ["Public", "Public"],
     ["Anonymized", "Anonymisé"],
+    ["Read", "Lire"],
     ["Delete", "Supprimer"],
 
     ["This website complies with the General Data Protection Regulation (GDPR) from the european Union. We invite you to read the following to learn more about how the website has been developed to respect this regulation.", "Ce site Internet se conforme au règlement général sur la protection des données (RGPD) de l'Union européenne. Nous vous invitons à lire ce qui suit pour en savoir plus sur comment le site a été développé afin de respecter ce règlement."],

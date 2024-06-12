@@ -112,6 +112,7 @@ let en = [
     ["Not authorized", "Not authorized"],
     ["Public", "Public"],
     ["Anonymized", "Anonymized"],
+    ["Read", "Read"],
     ["Delete", "Delete"],
     
     ["This website complies with the General Data Protection Regulation (GDPR) from the european Union. We invite you to read the following to learn more about how the website has been developed to respect this regulation.", "This website complies with the General Data Protection Regulation (GDPR) from the european Union. We invite you to read the following to learn more about how the website has been built to respect this regulation."],
