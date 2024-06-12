@@ -100,12 +100,20 @@ let en = [
     ["High contrast", "High contrast"],
 
     ["– Privacy policy –", "– Privacy policy –"],
-    ["This website complies with the General Data Protection Regulation (GDPR) from the european Union (2016). Read the following to learn more about how the website has been developed to respect this regulation.", "This website complies with the General Data Protection Regulation (GDPR) from the european Union (2016). Read the following to learn more about how the website has been built to respect this regulation."],
+    ["This website complies with the General Data Protection Regulation (GDPR) from the european Union.", "This website complies with the General Data Protection Regulation (GDPR) from the european Union."],
+
+    ["We invite you to read more about it in privacy policy page.", "We invite you to read more about it in privacy policy page."],
+    
+    ["This website complies with the General Data Protection Regulation (GDPR) from the european Union. We invite you to read the following to learn more about how the website has been developed to respect this regulation.", "This website complies with the General Data Protection Regulation (GDPR) from the european Union. We invite you to read the following to learn more about how the website has been built to respect this regulation."],
+    
     ["Note: if you don't use any online features from the website (log in with 42 and online games), no data is stored out of your computer or shared with anyone.", "Note: if you don't use any online features from the website (log in with 42 and online games), no data is stored out of your computer or shared with anyone."],
+    
     ["What data is shared and why?", "What data is shared and why?"],
     ["Only three different types of information are shared: IP addresses, 42 logins and game informations. The first two are stored in our website database in order to connect players together. Finally, these two are also shared between two persons playing online, as well as game informations to permit game synchronization.", "Only three different types of information are shared: IP addresses, 42 logins and game informations. The first two are stored in our website database in order to connect players together. Finally, these two are also shared between two persons playing online, as well as game informations to permit game synchronization."],
+    
     ["For how long is the data stored?", "For how long is the data stored?"],
     ["For a very short time. All the data are erased from the database when the website is being rebooted, which happens regularly (at least multiple times every day).", "For a very short time. All the data are erased when the website is being rebooted, which happens regularly (at least multiple times every day)."],
+    
     ["How can I interact with my data?", "How can I interact with my data?"],
     ["In compliance with the GDPR, three options are availaible to you: you can choose to anonymize your data, delete your online data and delete your local data. As soon as you ask for it, these directives will take effect. Everything can be done in the settings menu.", "In compliance with the GDPR, three options are availaible to you: you can choose to anonymize your data, delete your online data and delete your local data. As soon as you ask for it, these directives will take effect. Everything can be done in the settings menu."],
 
