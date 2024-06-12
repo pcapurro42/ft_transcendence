@@ -21,10 +21,11 @@ body
 .dropdown_btn:hover{
     opacity: 0.5;
 }
+
 .btn_img{
     border : 0px;
-    max-width: 0%;
 }
+
 .btn_img, .btn_img:hover{
     background-color: transparent !important;
     outline: none !important;

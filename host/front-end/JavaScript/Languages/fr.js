@@ -25,16 +25,16 @@ let fr = [
 
     ["Visual", "Visuel"],
 
-    ["Game(s) played", "Partie(s) jouée(s)"],
-    ["Game(s) won", "Partie(s) remportée(s)"],
-    ["Game(s) lost", "Partie(s) perdue(s)"],
-    ["Ball exit(s)", "Sortie(s) de balle"],
-    ["Ball bounce(s)", "Rebond(s) de balle"],
+    ["Games played", "Parties jouées"],
+    ["Games won", "Parties remportées"],
+    ["Games lost", "Parties perdues"],
+    ["Ball exits", "Sorties de balle"],
+    ["Ball bounces", "Rebonds de balle"],
     ["Distance covered", "Distance parcourue"],
-    ["Ball return(s)", "Renvoi(s) de balle"],
-    ["Bonus taken", "Bonus récupéré(s)"],
+    ["Ball returns", "Renvois de balle"],
+    ["Bonus taken", "Bonus récupérés"],
 
-    ["[No available data to display]", "[Pas de donnée(s) disponible(s) à afficher]"],
+    ["[No available data to display]", "[Pas de données disponibles à afficher]"],
 
     ["victory", "victoire"],
     ["defeat", "défaite"],
@@ -45,13 +45,13 @@ let fr = [
     ["Purple: you", "Violet: vous"],
     ["Yellow: opponent", "Jaune: adversaire"],
 
-    ["Purple: Game(s) won", "Violet : Partie(s) remportée(s)"],
-    ["Yellow: Game(s) lost", "Jaune : Partie(s) perdue(s)"],
+    ["Purple: Games won", "Violet : Parties remportées"],
+    ["Yellow: Games lost", "Jaune : Parties perdues"],
 
-    ["Taken", "Récupéré(e)(s)"],
-    ["Returned", "Renvoyée(s)"],
-    ["Received", "Reçu(e)(s)"],
-    ["Missed", "Manqué(e)(s)"],
+    ["Taken", "Récupérées"],
+    ["Returned", "Renvoyées"],
+    ["Received", "Reçues"],
+    ["Missed", "Manquées"],
 
     ["Normal Mode", "Mode Normal"],
     ["Bonus Mode", "Mode Bonus"],
@@ -217,7 +217,7 @@ let fr = [
     ['Refresh Alert Tournament', 'Attention : Après un rafraîchissement, il n’est pas possible de revenir sur le tournoi qui était en cours.'],
     ['Refresh Alert Online', 'Attention : La connexion à été perdu lors du rafraichissement de la page.'],
     ['Refresh Warning', 'Avertissement: Rafraichir cette page entraînera la perte de toutes les données en cours d\'exécution'],
-    ['Leaving Popup', 'Êtes vous sûr(e) de vouloir partir ?'],
+    ['Leaving Popup', 'Où allez-vous, Boss ?'],
     ['Leaving msg', 'Quitter cette page entraînera la perte de toutes les données en cours d\'exécution.'],
     ['Confirm', 'Confirmer'],
     ['Resume', 'Reprendre'],
@@ -238,8 +238,9 @@ let fr = [
     ["ARIA Tournament Nick Form", "Formulaire pour surnom de joueur du tournoi."],
     ["ARIA Tournament Form Label", "Joueur"],
     ["ARIA Duplicate Nickname", "Le surnom est au mauvais format. Merci d'entrer un surnom de 4 à 15 caractères, contenant lettres majuscules ou minuscules, chiffres, tiret et tiret du bas."],
-
     ["ARIA Textsize Selector", "Sélectionnez la taille du texte sur le site web."],
+    ["ARIA Credits Close", "Fermer les crédits. Retour au menu principal."],
+    ["ARIA Credits Video", "Vidéo des crédits du jeu, on peut entendre la voix de Cynthia Harrel chanter la chanson Snake Eater, OST éponyme de Metal Gear Solid 3. Merci à Pcapurro et Bgales pour cette formidable experience."],
 
     ["Top Logo Alt", "Logo du site web. Tactical Tennis Action Metal Gear Pong. Retour au menu principal."],
 

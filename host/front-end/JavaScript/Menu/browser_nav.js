@@ -121,6 +121,7 @@ async function handleLocation(){
             return;
         case getSpecificTranslation('fr', '/credits'):
         case '/credits':
+            pushHistory = false;
             nav.displayMenu();
             return;
     }

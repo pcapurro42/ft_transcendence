@@ -38,15 +38,16 @@
 
                 <div class="container">
 
-                    <div>
-                        <img id="top_logo" src="./Materials/images/mgp-title-r.png" data-alt="Top Logo Alt" class="img-fluid mx-auto d-block btn-complex" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" tabindex="0" data-link="home" role="button">
+                    <div class="text-center">
+                    <button id="top_logo" class="btn_img btn-complex" data-alt="Top Logo Alt" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" aria-label="">
+                        <img src="./Materials/images/mgp-title-r.png" class="img-fluid" aria-labelledby="top_logo"></button>
                     </div>
 
 
                     <div class="col d-flex align-items-center ">
-                        <button id="game_music_toggle_btn" class="btn_img" data-alt="Music Icon" data-isnormal="4%" data-islarge="5%" data-title="Enable/Disable game music" aria-label=""><img id="game_music_toggle" src="./Materials/images/music-off.png" class="img-fluid image col d-inline-block float-end music_togglers btn_icon"></button>
+                        <button id="game_music_toggle_btn" class="btn_img" data-alt="Music Icon" data-isnormal="4%" data-islarge="5%" data-title="Enable/Disable game music" aria-label=""><img id="game_music_toggle" src="./Materials/images/music-off.png" class="img-fluid image col d-inline-block float-end music_togglers btn_icon" aria-labelledby="game_music_toggle_btn"></button>
 
-                        <button id="game_sound_toggle_btn" class="btn_img" data-isnormal="5%" data-islarge="6%" data-title="Enable/Disable game sounds" data-alt="Sound Icon" data-title="Enable/Disable menu sounds"><img id="game_sound_toggle" src="./Materials/images/sound-on.png" class="img-fluid image col d-inline-block float-end sound_togglers btn_icon btn_img"></button>
+                        <button id="game_sound_toggle_btn" class="btn_img" data-isnormal="5%" data-islarge="6%" data-title="Enable/Disable game sounds" data-alt="Sound Icon" data-title="Enable/Disable menu sounds" aria-label=""><img id="game_sound_toggle" src="./Materials/images/sound-on.png" class="img-fluid image col d-inline-block float-end sound_togglers btn_icon btn_img" aria-labelledby="game_sound_toggle_btn"></button>
 
                     </div>
 
@@ -65,11 +66,11 @@
                 <canvas id="one_vs_one_host_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-label="" data-title="ARIA 1 vs 1 (online)" role="application"></canvas>
                 <label id="h_1v1_label" class="d-none" aria-label="" data-title="ARIA 1 vs 1 (local)"></label>
                 <div>
-                    <h1 id="h_win_text" class="text text-center" data-tsnormal="30px" data-tslarge="50px"></h1>
+                    <p id="h_win_text" class="text text-center display-6" data-tsnormal="30px" data-tslarge="50px"></p>
                 </div>
 
                 <button id="start_1v1_online" class="d-flex btn btn-simple btn-outline-danger text border mx-auto border-2 d-none" data-tsnormal="35px" data-tslarge="55px" data-oname="Launch a game"></button>
-                <h1 id="1v1_host_timer" class="text text-center mx-auto d-none" data-tsnormal="45px" data-tslarge="55px"></h1>
+                <p id="1v1_host_timer" class="text text-center mx-auto d-none display-6" data-tsnormal="45px" data-tslarge="55px"></p>
 
                 <div id="o_host_foot" class="d-flex flex-column align-items-center">
                         <div class="game_keys w-100 d-flex flex-row">
@@ -90,10 +91,10 @@
                 <canvas id="one_vs_one_guest_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-label="" role="application" data-title="ARIA 1 vs 1 (online)"></canvas>
                 <label id="g_1v1_label" class="d-none" aria-label="" data-title="ARIA 1 vs 1 (online)"></label>
                 <div>
-                    <h1 id="g_win_text" class="text text-center" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h1>
+                    <p id="g_win_text" class="text text-center display-6" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></p>
                 </div>
-                <h1 id="waiting_host" class="d-flex justify-content-center text" data-tsnormal="30px" data-tslarge="50px" data-oname="Waiting for the host to launch the game..."></h1>
-                <h1 id="1v1_guest_timer" class="d-flex justify-content-center text d-none" data-tsnormal="45px" data-tslarge="55px"></h1>
+                <p id="waiting_host" class="d-flex justify-content-center text display-6" data-tsnormal="30px" data-tslarge="50px" data-oname="Waiting for the host to launch the game..."></p>
+                <p id="1v1_guest_timer" class="d-flex justify-content-center text d-none display-6" data-tsnormal="45px" data-tslarge="55px"></p>
                 <div id="o_guest_foot" class="d-flex flex-column align-items-center">
                         <div class="game_keys w-100">
                             <img class="float-end keysup img-fluid mb-0" data-isnormal="6%" data-islarge="10%" data-alt="Keyboard O Tuto" src="./Materials/images/O.png"  tabindex="-1">
@@ -112,9 +113,9 @@
                 <canvas id="one_vs_one_local_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-label="" role="application" data-title="ARIA 1 vs 1 (local)"></canvas>
                 <label id="l_1v1_label" class="d-none" aria-label="" data-title="ARIA 1 vs 1 (local)"></label>
                 <div class="mb-1">
-                    <h1 id="left_player_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></h1>
-                    <h1 id="right_player_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Right player won the game."></h1>
-                    <h1 id="1v1_local_timer" class="text" data-tsnormal="45px" data-tslarge="55px"></h1>
+                    <p id="left_player_won_text" class="text display-6" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></p>
+                    <p id="right_player_won_text" class="text display-6" data-tsnormal="30px" data-tslarge="50px" data-oname="Right player won the game."></p>
+                    <p id="1v1_local_timer" class="text display-6" data-tsnormal="45px" data-tslarge="55px"></p>
                 </div>
                     <div id="l_1v1_foot" class="d-flex flex-column align-items-center">
                         <div class="game_keys w-100">
@@ -135,9 +136,9 @@
                 <canvas id="one_vs_two_local_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-label="" data-title="ARIA 1 vs 2 (local)" role="application"></canvas>
                 <label id="1v2_label" class="d-none" aria-label="" data-title="ARIA 1 vs 2 (local)"></label>
                 <div>
-                    <h1 id="left_side_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Left players won the game."></h1>
-                    <h1 id="right_side_won_text" class="text" data-tsnormal="30px" data-tslarge="50px" data-oname="Right players won the game."></h1>
-                    <h1 id="2v1_local_timer" class="text" data-tsnormal="45px" data-tslarge="55px"></h1>
+                    <p id="left_side_won_text" class="text display-6" data-tsnormal="30px" data-tslarge="50px" data-oname="Left players won the game."></p>
+                    <p id="right_side_won_text" class="text" data-tsnormal="30px display-6" data-tslarge="50px" data-oname="Right players won the game."></p>
+                    <p id="2v1_local_timer" class="text display-6" data-tsnormal="45px" data-tslarge="55px"></p>
                 </div>
                 <div id="l_1v2_foot" class="d-flex flex-column align-items-center">
                         <button id="start_2v1_local" class="btn btn-lg btn-simple btn-outline-danger mt-0" data-tsnormal="30px" data-tslarge="40px" data-oname="Launch a game"></button>
@@ -161,7 +162,7 @@
                 <canvas id="tournament_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-label="" data-title="ARIA Tournament Match" role="application"></canvas>
                 <label id="t_label" class="d-none" data-title="ARIA Tournament Match" aria-label=""></label>
                 <div>
-                    <h1 id="tournament_timer" class="text" data-tsnormal="45px" data-tslarge="55px"></h1>
+                    <p id="tournament_timer" class="text display-6" data-tsnormal="45px" data-tslarge="55px"></p>
                 </div>
                 <div id="t_foot" class="d-flex flex-column align-items-center">
                         <div class="game_keys w-100">
@@ -186,15 +187,15 @@
             <!-- Main menu toolbar -->
 
             <div id="main_menu_toolbar" class="container">
-                <button id="music_toggle_btn" class="btn_img p-0" data-alt="Music Icon" data-title="Enable/Disable menu music" aria-label="" data-isnormal="4%" data-islarge="5%"><img id ="music_toggle" src="./Materials/images/music-off.png" class="img-fluid image music_togglers btn_icon"></button>
-                <button id="sound_toggle_btn" class="btn_img p-0" data-alt="Sound Icon" data-isnormal="5%" data-islarge="6%" data-title="Enable/Disable menu sounds" aria-label=""><img id="sound_toggle" src="./Materials/images/sound-on.png" class="img-fluid image sound_togglers btn_icon"></button>
+                <button id="music_toggle_btn" class="btn_img p-0" data-alt="Music Icon" data-title="Enable/Disable menu music" aria-label="" data-isnormal="4%" data-islarge="5%"><img id ="music_toggle" src="./Materials/images/music-off.png" class="img-fluid image music_togglers btn_icon" aria-labelledby="music_toggle_btn"></button>
+                <button id="sound_toggle_btn" class="btn_img p-0" data-alt="Sound Icon" data-isnormal="5%" data-islarge="6%" data-title="Enable/Disable menu sounds" aria-label=""><img id="sound_toggle" src="./Materials/images/sound-on.png" class="img-fluid image sound_togglers btn_icon" aria-labelledby="sound_toggle_btn"></button>
 
                 <div id="login" class="col d-inline-block float-end">
-                    <button id="login_btn" class="btn color_btn btn-outline-dark text mt-3 btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="LOG IN WITH 42" data-title="ARIA 42" title="" aria-label="" role="button"></button>
+                    <button id="login_btn" class="btn color_btn btn-outline-dark text mt-3 btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="LOG IN WITH 42" data-title="ARIA 42" title="" aria-label=""></button>
                 </div>
 
                 <div id="logged" class="dropdown col d-inline-block float-end">
-                    <p id="intra_login" class="dropdown-toggle btn text" role="button" data-tsnormal="25px" data-tslarge="35px" role="button" aria-haspopup="true" aria-expanded="false"></p>
+                    <button id="intra_login" class="dropdown-toggle btn btn-simple btn-outline-dark color_btn text" role="button" data-tsnormal="25px" data-tslarge="35px" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0"></button>
                     <ul id="login_dropdown" class="p-0 mt-2 border border-2 d-none">
                         <button id="drop_customize" class="btn dropdown_btn btn-simple text text-nowrap" data-tsnormal="20px" data-tslarge="30px" data-oname="Customize"></button>
                         <button id="drop_stats" class="btn dropdown_btn text-nowrap btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="Statistics"></button>
@@ -209,7 +210,7 @@
             <!-- Title -->
 
             <div id="title" class="text-center my-5">
-                <button id="title_logo" class="btn_img" data-alt="Top Logo Alt" aria-label="" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" data-link="home"><img src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto"></button>
+                <button id="title_logo" class="btn_img btn-complex" data-alt="Top Logo Alt" aria-label="" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" data-link="home"><img src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto" aria-labelledby="title_logo"></button>
             </div>
 
             <!-- Main menu center -->
@@ -370,7 +371,7 @@
         <div id="tournament_setup" class="row justify-content-center">
             <p id="t_type_text" class="text text-center mx-auto mb-4" data-oname="Tournament Type" data-tsnormal="30px" data-tslarge="40px"></p>
             <div class="d-flex text-center p-2 container mb-3 justify-content-center">
-                    <select id = "tournament_players_selector" class="d-inline-block form-select form-select-lg selector text-center w-auto" data-tsnormal="20px" data-tslarge="30px" title="" aria-label="" data-title="ARIA Tournament Type">
+                    <select id = "tournament_players_selector" class="d-inline-block form-select form-select-lg selector text-center w-auto" data-tsnormal="20px" data-tslarge="30px" title="" aria-labelledby="t_type_text" aria-label="" data-title="ARIA Tournament Type">
                         <option selected value='16' class="btn-simple"  data-oname="Sixteen"></option>
                         <option value='8' class="btn-simple" data-oname="Eight"></option>
 
@@ -455,18 +456,16 @@
 
                         <div class="mb-4">
                             <p id="game_theme" class="text mb-2 user-select-none" data-tsnormal="35px" data-tslarge="45px" data-oname="Game theme" data-title="Game theme" title=""></p>
-                            <select id="game_theme_btn_selector" class="d-inline-block form-select form-select-lg selector text-center w-auto" data-tsnormal="20px" data-tslarge="30px" data-title="ARIA Theme Selector" title="" aria-label="">
+                            <select id="game_theme_btn_selector" class="d-inline-block form-select form-select-lg selector text-center w-auto" data-tsnormal="20px" data-tslarge="30px" data-title="ARIA Theme Selector" title="" aria-label="" aria-labelledby="game_theme">
                             <option class="btn-simple" value="1" data-title="MGS 1 - Duel" title="">MGS 1 - Duel Theme</option>
                             <option class="btn-simple" value ="2" title="MGS - Sneaking Theme">MGS - Sneaking Theme</option>
                             <option class="btn-simple" value="3" title="MGS3 - Alert Theme">MGS3 - Alert Theme</option>
                             </select>
                         </div>
 
-                        <label for="game_theme_btn_selector" class="d-none" aria-label="" data-oname="ARIA Theme Selector"data-title="ARIA Theme Selector"></label>
-
                         <div>
                             <p id="game_map" class="user-select-none text mb-2" data-tsnormal="35px" data-tslarge="45px" data-oname="Game map" data-title="Game map" title=""></p>
-                            <select id="game_map_btn_selector" class="d-flex form-select form-select-lg mx-auto selector" data-tsnormal="20px" data-tslarge="30px" data-title="ARIA Map Selector" aria-label="" title="">
+                            <select id="game_map_btn_selector" class="d-flex form-select form-select-lg mx-auto selector" data-tsnormal="20px" data-tslarge="30px" data-title="ARIA Map Selector" aria-label="" title="" aria-labelledby="game_map">
                             <option class="btn-simple" value="default" data-oname="Default" data-title="None" title=""></option>
                             <option class="btn-simple" value="purple" title="purple" data-oname="Purple"></option>
                             <option class="btn-simple" value="orange" title="orange" data-oname="Orange"></option>
@@ -476,9 +475,7 @@
                             <img id="img_tooltip" src="" data-alt="Map Tooltip"></span>
 
                         </div>
-
-                        <label for="game_map_btn_selector" class="d-none" aria-label="" data-title="ARIA Map Selector" data-oname="ARIA Map Selector"></label>
-
+                        
                     </div>
 
                         <div class="d-flex justify-content-center">
@@ -521,7 +518,7 @@
                             <div class="mt-5 row align-items-center">
 
                                 <div class="col">
-                                    <h1 class="text my-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Game(s) played"></h1>
+                                    <h1 class="text my-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Games played"></h1>
                                     <h1 id="lcl_game_played_nb" class="text mb-5" data-tsnormal="30px" data-tslarge="40px"></h1>
 
 
@@ -530,9 +527,9 @@
                                 </div>
 
                                 <div class="col">
-                                    <h1 class="text my-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Ball exit(s)"></h1>
+                                    <h1 class="text my-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Ball exits"></h1>
                                     <h1 id="lcl_ball_exit_nb" class="text mb-5" data-tsnormal="30px" data-tslarge="40px"></h1>
-                                    <h1 class="text mb-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Ball bounce(s)"></h1>
+                                    <h1 class="text mb-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Ball bounces"></h1>
                                     <h1 id="lcl_ball_bounce_nb" class="text mb-5" data-tsnormal="30px" data-tslarge="40px"></h1>
                                 </div>
 
@@ -558,13 +555,13 @@
                             <div class="row align-items-center">
 
                                 <div class="col">
-                                    <h1 class="text my-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Game(s) played"></h1>
+                                    <h1 class="text my-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Games played"></h1>
                                     <h1 id="onl_game_played_nb" class="text mb-5" data-tsnormal="30px" data-tslarge="40px"></h1>
 
-                                    <h1 class="text mb-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Game(s) won"></h1>
+                                    <h1 class="text mb-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Games won"></h1>
                                     <h1 id="onl_game_won_nb" class="text mb-5" data-tsnormal="30px" data-tslarge="40px"></h1>
 
-                                    <h1 class="text mb-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Game(s) lost"></h1>
+                                    <h1 class="text mb-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Games lost"></h1>
                                     <h1 id="onl_game_lost_nb" class="text mb-5" data-tsnormal="30px" data-tslarge="40px"></h1>
                                 </div>
 
@@ -572,7 +569,7 @@
                                     <h1 class="text my-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Distance covered"></h1>
                                     <h1 id="onl_dist" class="text mb-5" data-tsnormal="30px" data-tslarge="40px"></h1>
 
-                                    <h1 class="text mb-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Ball return(s)"></h1>
+                                    <h1 class="text mb-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Ball returns"></h1>
                                     <h1 id="onl_ball_return" class="text mb-5" data-tsnormal="30px" data-tslarge="40px"></h1>
 
                                     <h1 class="text mb-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Bonus taken"></h1>
@@ -777,12 +774,9 @@
 
         <!-- Video -->
 
-        <video id="vid_credits">
-            <source src="./Materials/video/credits.mp4" type="video/mp4">
-        </video>
+        <video src="./Materials/video/credits.mp4" type="video/mp4" id="vid_credits"  tabindex="-1" data-title="ARIA Credits Video" aria-label=""></video>
 
-        <button id="credit_close" data-tsnormal="30px" data-tslarge="50px" data-title="Main Menu" class="btn btn-simple text-white flex float-end" data-link="home">&#x2717;</button>
-        <label for="credit_close" data-title="Main Menu"></label>
+        <button id="credit_close" data-tsnormal="30px" data-tslarge="50px" data-title="ARIA Credits Close" class="btn btn-simple text-white flex float-end" data-link="home" aria-label="">&#x2717;</button>
 
         <!-- Scripts -->
         <script src="./JavaScript/Languages/en.js"></script>

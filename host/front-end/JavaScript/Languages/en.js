@@ -27,13 +27,13 @@ let en = [
 
     ["Visual", "Visual"],
 
-    ["Game(s) played", "Game(s) played"],
-    ["Game(s) won", "Game(s) won"],
-    ["Game(s) lost", "Game(s) lost"],
-    ["Ball exit(s)", "Ball exit(s)"],
-    ["Ball bounce(s)", "Ball bounce(s)"],
+    ["Games played", "Games played"],
+    ["Games won", "Games won"],
+    ["Games lost", "Games lost"],
+    ["Ball exits", "Ball exits"],
+    ["Ball bounces", "Ball bounces"],
     ["Distance covered", "Distance covered"],
-    ["Ball return(s)", "Ball return(s)"],
+    ["Ball returns", "Ball returns"],
     ["Bonus taken", "Bonus taken"],
 
     ["[No available data to display]", "[No available data to display]"],
@@ -45,8 +45,8 @@ let en = [
     ["Purple: you", "Purple: you"],
     ["Yellow: opponent", "Yellow: opponent"],
 
-    ["Purple: Game(s) won", "Purple: Game(s) won"],
-    ["Yellow: Game(s) lost", "Yellow: Game(s) lost"],
+    ["Purple: Games won", "Purple: Games won"],
+    ["Yellow: Games lost", "Yellow: Games lost"],
 
     ["Taken", "Taken"],
     ["Returned", "Returned"],
@@ -235,6 +235,8 @@ let en = [
     ["ARIA Tournament Form Label", "Player"],
     ["ARIA Duplicate Nickname", "Nickname is wrongly formatted. Please input a nickname using 4 to 15 characters. Accepted characters are uppercase and lowercase letters, numbers, hyphen and underscore."],
     ["ARIA Textsize Selector", "Select the text size for the website."],
+    ["ARIA Credits Close", "Close the credits, get back to main menu."],
+    ["ARIA Credits Video", "Credits Video, where we can hear Cynthia Harrell voice singing Snake Eater, the eponymous OST of Metal Gear Solid 3. Thanks again to pcapurro and Bgales for their delightful work."],
 
 
     ["Top Logo Alt", "Website logo : Tactical Tennis Action Metal Gear Pong. Get back to main menu."],

@@ -24,13 +24,13 @@ class VisualStats
 
         this.onl_victory = parseInt(localStorage.getItem('onl_victory'));
         this.onl_defeat = parseInt(localStorage.getItem('onl_defeat'));
-        
+
         this.onl_played = parseInt(localStorage.getItem('onl_played'));
-        
+
         this.onl_ball_return = parseInt(localStorage.getItem('onl_ball_return'));
         this.onl_ball_received = parseInt(localStorage.getItem('onl_ball_received'));
         this.onl_ball_missed = this.onl_ball_received - this.onl_ball_return;
-        
+
         this.onl_bonus_taken = parseInt(localStorage.getItem('onl_bonus_taken'));
         this.onl_bonus_received = parseInt(localStorage.getItem('onl_bonus_received'));
         this.onl_bonus_missed = this.onl_bonus_received - this.onl_bonus_taken;
@@ -82,17 +82,17 @@ class VisualStats
         this.display.font = this.title_text_format;
         this.display.fillStyle = this.text_color;
 
-        let title = getTranslation("Game(s) played");
+        let title = getTranslation("Games played");
         let title_size = this.display.measureText("– " + title + " –").width;
         this.display.fillText("– " + title + " –", this.width / 2 - (title_size / 2), 35);
 
         this.display.font = this.basic_text_format;
 
-        let legend_one = getTranslation("Purple: Game(s) won")
+        let legend_one = getTranslation("Purple: Games won")
         let legend_one_size = this.display.measureText(legend_one).width;
         this.display.fillText(legend_one, this.width / 2 - (legend_one_size / 2), 485);
 
-        let legend_two = getTranslation("Yellow: Game(s) lost")
+        let legend_two = getTranslation("Yellow: Games lost")
         let legend_two_size = this.display.measureText(legend_two).width;
         this.display.fillText(legend_two, this.width / 2 - (legend_two_size / 2), 510);
 
@@ -122,7 +122,7 @@ class VisualStats
         this.display.font = this.title_text_format;
         this.display.fillStyle = this.text_color;
 
-        let title = getTranslation("Ball return(s)");
+        let title = getTranslation("Ball returns");
         let title_size = this.display.measureText("– " + title + " –").width;
         this.display.fillText("– " + title + " –", this.width / 2 - (title_size / 2), 35);
 
