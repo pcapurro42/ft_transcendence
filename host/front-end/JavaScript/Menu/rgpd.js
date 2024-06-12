@@ -40,6 +40,8 @@ function setAuthsState()
         document.getElementById('data_share_btn').setAttribute('data-oname', getTranslation('Authorized'));
     else
         document.getElementById('data_share_btn').setAttribute('data-oname', getTranslation('Not authorized'));
+    
+    refreshLanguage();
 }
 
 function deleteLocalData()
