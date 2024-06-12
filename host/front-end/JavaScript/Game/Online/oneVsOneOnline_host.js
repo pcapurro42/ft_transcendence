@@ -36,7 +36,11 @@ class OnlineGame1v1_host
         this.separator_width = 2;
         this.separator_space = 17;
 
-        this.text_size = 85;
+        if (text_size == "normal")
+            this.text_size = 85;
+        else
+            this.text_size = 140;
+
         this.text_font = "Arial";
 
         this.bonus_color = "green";
