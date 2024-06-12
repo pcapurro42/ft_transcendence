@@ -11,22 +11,22 @@ function initializeDataAuths()
 
 function changeAnonymizeAuth()
 {
+    setAuthsState();
+
     if (localStorage.getItem('data_anonymize') == 'false')
         localStorage.setItem('data_anonymize', 'true');
     else
         localStorage.setItem('data_anonymize', 'false');
-
-    setAuthsState();
 }
 
 function changeShareAuth()
 {
+    setAuthsState();
+
     if (localStorage.getItem('data_share') == 'false')
         localStorage.setItem('data_share', 'true');
     else
         localStorage.setItem('data_share', 'false');
-
-    setAuthsState();
 }
 
 function setAuthsState()
@@ -51,5 +51,6 @@ function deleteLocalData()
 
 function deleteOnlineData()
 {
-    ;
+    // supprimer l'IP et le login correspondants de la db
+    // ...
 }
