@@ -444,10 +444,21 @@ class History
             this.data_display.font = "bold italic " + this.title_text_format;
 
             let end;
-            if (this.history_data.data[history_tab][2][0] == '10')
-                end = getTranslation("victory");
+            if (this.history_data.data[history_tab][6] == 'host')
+            {
+                if (this.history_data.data[history_tab][2][0] == '10')
+                    end = getTranslation("victory");
+                else
+                    end = getTranslation("defeat");
+            }
             else
-                end = getTranslation("defeat");
+            {
+                if (this.history_data.data[history_tab][2][1] == '10')
+                    end = getTranslation("victory");
+                else
+                    end = getTranslation("defeat");
+            }
+
             let end_size = this.data_display.measureText(end).width;
             this.data_display.fillText(end, this.data_width - 20 - end_size, 50);
 
@@ -800,7 +811,7 @@ nav.removeOnlineStats = function()
 
 function getTimeMs()
 {
-    return (Date.now());
+    return (Date.now() * 1000);
 }
 
 function getActualDate()
@@ -846,11 +857,11 @@ function initializeHistory()
     localStorage.setItem('history_data', JSON.stringify(new_history_data));
 }
 
-function addHistoryEntry(player1, player2, final_score, date, duration, scores)
+function addHistoryEntry(player1, player2, final_score, date, duration, scores, role)
 {
     let new_data = [];
 
-    new_data = [player1, player2, final_score, date, duration, scores];
+    new_data = [player1, player2, final_score, date, duration, scores, role];
 
     let history_data = JSON.parse(localStorage.getItem('history_data'));
     if (history_data.data == null)

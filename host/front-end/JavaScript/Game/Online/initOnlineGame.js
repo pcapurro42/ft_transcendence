@@ -73,11 +73,22 @@ function startOnline1v1()
         frame = 1000 / 120;
     else
         frame = 1000 / 119;
+
+    game.start_time = getTimeMs();
+
     setTimeout(() => {
         if (game.isOver() == true || active == false)
         {
             removeKeyboardMonitoring();
             game.refreshBackground();
+
+            if (game.isOver() == true)
+            {
+                game.end_time = getTimeMs();
+
+                addHistoryEntry(game.player, game.other_player, ([game.scores[0], game.scores[1]]), game.date, (game.end_time - game.start_time) / 1000, game.scores, role);
+            }
+
             game.resetGame();
             active = false;
 

@@ -7,6 +7,15 @@ class OnlineGame1v1_guest
 {
     constructor()
     {
+        // stats initialization
+
+        // this.player = localStorage.getItem('login');
+        // this.other_player = sessionStorage.getItem('opponent_login');
+        // this.date = getActualDate();
+        // this.start_time;
+        // this.end_time;
+        // this.scores;
+        
         // global infos initialization
 
         this.player_nb = 1;

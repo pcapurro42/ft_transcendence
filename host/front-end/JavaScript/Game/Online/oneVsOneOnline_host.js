@@ -9,11 +9,9 @@ class OnlineGame1v1_host
     {
         // stats initialization
 
-        this.player = login42;
+        this.player = localStorage.getItem('login');
         this.other_player = sessionStorage.getItem('opponent_login');
-        this.final_score = [0, 0];
         this.date = getActualDate();
-        this.duration;
         this.start_time;
         this.end_time;
         this.scores;
@@ -302,7 +300,6 @@ class OnlineGame1v1_host
         this.right_player.reset();
 
         this.dist = 0;
-
         this.alert = 0;
 
         if (gameMode != "normal")
