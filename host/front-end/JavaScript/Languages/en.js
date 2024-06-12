@@ -104,10 +104,14 @@ let en = [
 
     ["We invite you to read more about it in privacy policy page.", "We invite you to read more about it in privacy policy page."],
 
-    ["Authorize data share", "Authorize data share"],
+    ["Data share", "Data share"],
     ["Local data", "Local data"],
-    ["Anonymize data", "Anonymize data"],
+    ["Data visibility", "Data visibility"],
     ["Online data", "Online data"],
+    ["Authorized", "Authorized"],
+    ["Not authorized", "Not authorized"],
+    ["Public", "Public"],
+    ["Anonymized", "Anonymized"],
     ["Delete", "Delete"],
     
     ["This website complies with the General Data Protection Regulation (GDPR) from the european Union. We invite you to read the following to learn more about how the website has been developed to respect this regulation.", "This website complies with the General Data Protection Regulation (GDPR) from the european Union. We invite you to read the following to learn more about how the website has been built to respect this regulation."],
