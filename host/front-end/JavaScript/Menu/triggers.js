@@ -104,6 +104,9 @@ document.getElementById('next_settings').onclick = displaySecondSettingsPage;
 document.getElementById('data_anonymize_btn').onclick = changeAnonymizeAuth;
 document.getElementById('data_share_btn').onclick = changeShareAuth;
 
+document.getElementById('delete_local_data_btn').onclick = deleteLocalData;
+document.getElementById('delete_online_data_btn').onclick = deleteOnlineData;
+
 // < GAME > //
 
 document.getElementById('top_logo').onclick = function(){

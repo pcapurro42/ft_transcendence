@@ -15,7 +15,7 @@ function changeAnonymizeAuth()
         localStorage.setItem('data_anonymize', 'true');
     else
         localStorage.setItem('data_anonymize', 'false');
-    
+
     setAuthsState();
 }
 
@@ -40,4 +40,16 @@ function setAuthsState()
         document.getElementById('data_share_btn').setAttribute('data-oname', getTranslation('Enabled'));
     else
         document.getElementById('data_share_btn').setAttribute('data-oname', getTranslation('Disabled'));
+}
+
+function deleteLocalData()
+{
+    localStorage.clear();
+    nav.displayMenu();
+	refreshSite();
+}
+
+function deleteOnlineData()
+{
+    ;
 }
