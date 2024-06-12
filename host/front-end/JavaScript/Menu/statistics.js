@@ -381,13 +381,17 @@ class History
 
     displayInfos()
     {
+        let entire_text;
+
         if (this.history_data == null)
         {
             this.data_display.font = this.title_text_format;
             this.data_display.fillStyle = this.global_color;
             let text = getTranslation("[No available data to display]");
             let center_text = this.data_display.measureText(text).width;
-            this.data_display.fillText(text, this.data_width / 2 - (center_text / 2), this.data_height / 2);
+            this.data_display.fillText(text, this.data_width / 2 - (center_text / 2), this.data_height / 2); // 42
+
+            entire_text = text;
         }
         else
         {
@@ -446,6 +450,8 @@ class History
                 end = getTranslation("defeat");
             let end_size = this.data_display.measureText(end).width;
             this.data_display.fillText(end, this.data_width - 20 - end_size, 50);
+
+            entire_text = player1 + " vs " + player2 + ". " + score + ". " + this.history_data.data[history_tab][3] + ". " + duration + ". " + end + ".";
         }
     }
 
