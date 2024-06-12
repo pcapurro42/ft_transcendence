@@ -98,8 +98,15 @@ let fr = [
     ["Image description", "Description de l'image"],
     ["High contrast", "Haut contraste"],
 
-    ["General", "Général"],
-    ["Privacy", "Confidentialité"],
+    ["– Privacy policy –", "– Politique de confidentialité –"],
+    ["This website complies with the General Data Protection Regulation (GDPR) from the european Union (2016). Read the following to learn more about how the website has been developed to respect this regulation.", "Ce site Internet se conforme au règlement général sur la protection des données (RGPD) de l'Union européenne (2016). Lisez ce qui suit pour en savoir plus sur comment le site a été développé afin de respecter ce règlement."],
+    ["Note: if you don't use any online features from the website (log in with 42 and online games), no data is stored out of your computer or shared with anyone.", "Note : si vous n'utilisez aucune des fonctionnalités en ligne du site (se connecter avec 42 et les parties en ligne), aucune donnée n'est stockée en dehors de votre ordinateur ou n'est partagée avec quelqu'un."],
+    ["What data is shared and why?", "Quelles données sont partagées et pourquoi ?"],
+    ["Only three different types of information are shared: IP addresses, 42 logins and game informations. The first two are stored in our website database in order to connect players together. Finally, these two are also shared between two persons playing online, as well as game informations to permit game synchronization.", "Seulement trois types d'informations sont partagées : les adresses IP, les identifiants 42 et les informations du jeu. Les deux premiers sont stockés dans la base de données de notre site afin de faise se connecter les joueurs ensemble. Enfin, ces derniers sont également partagés entre deux personnes jouant en ligne, ainsi que les informations du jeu pour permettre une synchronisation des parties."],
+    ["For how long is the data stored?", "Pour combien de temps les données sont-elles stockées ?"],
+    ["For a very short time. All the data are erased from the database when the website is being rebooted, which happens regularly (at least multiple times every day).", "Pour très peu de temps. Toutes les données sont effacées de la base de données lorsque le site est redémarré, ce qui arrive régulièrement (au moins plusieurs fois par jour)."],
+    ["How can I interact with my data?", "Comment puis-je interagir avec mes données ?"],
+    ["In compliance with the GDPR, three options are availaible to you: you can choose to anonymize your data, delete your online data and delete your local data. As soon as you ask for it, these directives will take effect. Everything can be done in the settings menu.", "En accord avec le RGPD, trois options s'offrent à vous : vous pouvez choisir d'anonymiser vos données, de supprimer vos données en ligne et de supprimer vos données locales. Dès que vous en faites la demande, ces directives prendront effet. Cela peut-être fait à partir du menu des paramètres."],
 
     ["Game theme", "Musique du jeu"],
     ["Game map", "Carte du jeu"],
