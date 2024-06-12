@@ -7,6 +7,17 @@ class OnlineGame1v1_host
 {
     constructor()
     {
+        // stats initialization
+
+        this.player = login42;
+        this.other_player = sessionStorage.getItem('opponent_login');
+        this.final_score = [0, 0];
+        this.date = getActualDate();
+        this.duration;
+        this.start_time;
+        this.end_time;
+        this.scores;
+
         // global infos initialization
 
         this.player_nb = 1;
