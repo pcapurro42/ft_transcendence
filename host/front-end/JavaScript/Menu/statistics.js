@@ -552,7 +552,7 @@ class History
         else
             document.getElementById('prev_history').classList.remove('disabled');
 
-        if (history_tab == this.length() - 1)
+        if (history_tab == this.length() - 1 || this.length() == 0)
             document.getElementById('next_history').classList.add('disabled');
         else
             document.getElementById('next_history').classList.remove('disabled');
