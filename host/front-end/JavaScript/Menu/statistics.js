@@ -798,6 +798,11 @@ nav.removeOnlineStats = function()
 
 // < history > //
 
+function getTimeMs()
+{
+    return (Date.now());
+}
+
 function getActualDate()
 {
     let date = new Date();
