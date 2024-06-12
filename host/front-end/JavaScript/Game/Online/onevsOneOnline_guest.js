@@ -45,6 +45,7 @@ class OnlineGame1v1_guest
         this.text_font = "Arial";
 
         this.bonus_color = "green";
+        this.ball_direction = getRandomBallDirection();
 
         this.dist = 0;
         this.alert = 0;
@@ -272,8 +273,8 @@ class OnlineGame1v1_guest
     {
         if (this.alert < 100)
             this.ball.printAlert(), this.alert++, this.sounds.alert.play();
-        // if (this.ball.isOffLimit() == true)
-        //     this.game,this.restartRound();
+        if (this.ball.isOffLimit() == true)
+            this.game,this.restartRound();
         this.ball.print();
     }
 
@@ -317,6 +318,7 @@ class OnlineGame1v1_guest
         else
             this.scores[1]++;
 
+        this.ball.replace();
         this.refreshDisplay();
     }
 
