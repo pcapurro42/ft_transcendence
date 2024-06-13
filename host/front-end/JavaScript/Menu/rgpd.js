@@ -32,14 +32,14 @@ function changeShareAuth()
 function setAuthsState()
 {
     if (localStorage.getItem('data_anonymize') == 'true')
-        document.getElementById('data_anonymize_btn').setAttribute('data-oname', getTranslation('Anonymized'));
+        document.getElementById('data_anonymize_btn').setAttribute('data-oname', 'Anonymized');
     else
-        document.getElementById('data_anonymize_btn').setAttribute('data-oname', getTranslation('Public'));
+        document.getElementById('data_anonymize_btn').setAttribute('data-oname', 'Public');
 
     if (localStorage.getItem('data_share') == 'true')
-        document.getElementById('data_share_btn').setAttribute('data-oname', getTranslation('Authorized'));
+        document.getElementById('data_share_btn').setAttribute('data-oname', 'Authorized');
     else
-        document.getElementById('data_share_btn').setAttribute('data-oname', getTranslation('Not authorized'));
+        document.getElementById('data_share_btn').setAttribute('data-oname', 'Not authorized');
     
     refreshLanguage();
 }
