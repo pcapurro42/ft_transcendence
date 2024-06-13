@@ -282,6 +282,11 @@ class History
 
         this.history_data = history_data;
 
+        console.log(this.history_data.data[history_tab])
+
+        if (this.history_data.data[history_tab][6] == 'guest')
+            this.invertData();
+
         this.data_width = 900;
         this.data_height = 200;
 
@@ -331,6 +336,35 @@ class History
 
         this.data_canvas.width = this.data_width;
         this.data_canvas.height = this.data_height;
+    }
+
+    invertData()
+    {
+        let save;
+
+        console.log("before :")
+
+        console.log(this.history_data.data[history_tab])
+    
+        save = this.history_data.data[history_tab][0]
+        this.history_data.data[history_tab][0] = this.history_data.data[history_tab][1];
+        this.history_data.data[history_tab][1] = save;
+
+        save = this.history_data.data[history_tab][2][0];
+        this.history_data.data[history_tab][2][0] = this.history_data.data[history_tab][2][1];
+        this.history_data.data[history_tab][2][1] = save;
+
+        for (let i = 0; i != this.history_data.data[history_tab][5].length; i++)
+        {
+            if (this.history_data.data[history_tab][5][i][1] == '1')
+                this.history_data.data[history_tab][5][i][1] == '2';
+            else
+                this.history_data.data[history_tab][5][i][1] == '2';
+        }
+
+        console.log("after :")
+
+        console.log(this.history_data.data[history_tab])
     }
 
     initializeGraph()
@@ -444,20 +478,11 @@ class History
             this.data_display.font = "bold italic " + this.title_text_format;
 
             let end;
-            if (this.history_data.data[history_tab][6] == 'host')
-            {
-                if (this.history_data.data[history_tab][2][0] == '10')
-                    end = getTranslation("victory");
-                else
-                    end = getTranslation("defeat");
-            }
+
+            if (this.history_data.data[history_tab][2][0] == '10')
+                end = getTranslation("victory");
             else
-            {
-                if (this.history_data.data[history_tab][2][1] == '10')
-                    end = getTranslation("victory");
-                else
-                    end = getTranslation("defeat");
-            }
+                end = getTranslation("defeat");
 
             let end_size = this.data_display.measureText(end).width;
             this.data_display.fillText(end, this.data_width - 20 - end_size, 50);
