@@ -53,7 +53,6 @@ function changeMusicVolume()
 }
 
 function letterSwitch(){
-    console.log('test')
     let text_size_btn_selector = document.getElementById('text_size_btn_selector');
 
     text_size_btn_selector.value == 'normal' ? text_size_btn_selector.value = 'large' : text_size_btn_selector.value = 'normal';

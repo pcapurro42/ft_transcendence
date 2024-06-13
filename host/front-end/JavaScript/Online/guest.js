@@ -1,7 +1,7 @@
 function readHostMsg(event)
 {
 	let msg = event.data;
-	console.log(msg);
+	// console.log(msg);
 	if (msg.startsWith('lpy:')){
 		game.left_player.y = +(msg.substring(4));
 		return;
