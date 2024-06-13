@@ -182,7 +182,7 @@ class History
 
             this.data_display.fillText(this.history_data.data[history_tab][3], 20, this.data_height - 20);
 
-            let duration = this.history_data.data[history_tab][4] + "s";
+            let duration = ~~(this.history_data.data[history_tab][4]) + "s";
             let duration_size = this.data_display.measureText(duration).width;
             this.data_display.fillText(duration, this.data_width - 20 - duration_size, this.data_height - 20);
 
@@ -233,7 +233,7 @@ class History
 
                 this.graph_display.fillStyle = color;
 
-                let x_pos = 63 + (parseInt(scores_data[i][0]) * total_distance) / game_length;
+                let x_pos = 63 + (parseInt(scores_data[i][0].toFixed(2)) * total_distance) / game_length;
                 let y_pos = bottom_y - (i * 13);
                 if (i == scores_nb - 1)
                     x_pos = x_pos - this.graph_point_size;

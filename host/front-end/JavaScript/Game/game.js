@@ -68,6 +68,7 @@ function displayCountDown(nb)
         active = true;
         addKeyboardMonitoring();
         if (players_nb == 1){
+            game.start_time = getActualTimeSeconds();
             startOnline1v1();
         }
         else if (players_nb == 2)

@@ -79,8 +79,6 @@ function startOnline1v1()
     else
         frame = 1000 / 119;
 
-    game.start_time = getActualTimeSeconds();
-
     setTimeout(() => {
         if (game.isOver() == true || active == false)
         {
