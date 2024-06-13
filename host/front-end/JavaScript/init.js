@@ -72,6 +72,9 @@ let gameMode; // bonus or normal;
 let pos; // left or right (online)
 let role; // host or guest (online)
 
+let ping = true;
+let stop_ping = false;
+
 initializeGameMode();
 
 // < STATS > //

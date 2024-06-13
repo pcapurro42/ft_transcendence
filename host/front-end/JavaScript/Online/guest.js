@@ -1,7 +1,6 @@
 function readHostMsg(event)
 {
 	let msg = event.data;
-	// console.log(msg);
 	if (msg.startsWith('lpy:')){
 		game.left_player.y = +(msg.substring(4));
 		return;
@@ -17,6 +16,9 @@ function readHostMsg(event)
 	}
 	else{
 	switch (msg){
+			case 'ping':
+				ping = true;
+				return;
 			case 'lobby ok' :
 				document.getElementById("join_classic_lobby").style.visibility = 'visible';
 				document.getElementById('answer_timeout').	style.visibility = 'hidden';
@@ -37,14 +39,8 @@ function readHostMsg(event)
 
 async function guestConnectionHandler(){
 	displayStatusBarSuccess(getTranslation("Peer Connection Success") + sessionStorage.getItem('opponent_login') +'!');
-	data_channel.onerror = function(error) {
-		handleDisconnection();
-    	console.error("Data Channel Error:", error);
-	};
 	data_channel.onmessage = event => readHostMsg(event);
-	data_channel.send('Hello from guest!');
-
-
+	pingHost();
 	let countdown = document.getElementById('answer_timeout');
 	countdown.innerHTML = getTranslation("Waiting Lobby Creation") + sessionStorage.getItem('opponent_login') + '...';
 
@@ -55,7 +51,24 @@ async function guestConnectionHandler(){
 		data_channel.send('lobby ok')
 		nav.displayOneVsOneGameOnline();
 	};
+	checkGuestPing()
+}
 
+async function pingHost(){
+	if (stop_ping)
+		return;
+	data_channel.send('ping');
+	await sleep(900);
+	pingHost();
+}
+async function checkGuestPing(){
+	if (ping == true){
+		ping = false
+		await sleep(1100);
+		checkGuestPing();
+		return;
+	}
+	handleDisconnection();
 }
 
 

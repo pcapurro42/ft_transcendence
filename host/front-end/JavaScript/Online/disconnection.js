@@ -15,6 +15,6 @@ function handleDisconnection(){
 
 	popup.style.display = 'block';
     document.getElementById('alert_sound').play();
-
+    stop_ping = true;
     resetConnection();
 }

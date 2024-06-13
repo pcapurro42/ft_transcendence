@@ -208,7 +208,6 @@ const nav = {
 
     displayOneVsOneGameOnline : function()
     {
-		addBeforeUnloadWarning();
         if (role == "host")
         {
             document.getElementById('one_vs_one_host_page').style.display = "block";

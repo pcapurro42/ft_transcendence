@@ -58,7 +58,7 @@ class Bar1v1
         {
             if (this.bonus_time < 150)
             {
-                this.displayBonusMessage(); 
+                this.displayBonusMessage();
                 this.bonus_time++;
             }
             else
@@ -76,8 +76,6 @@ class Bar1v1
                 this.print();
             }
         }
-        // if (players_nb == 1)
-            // data_channel.send("up");
     }
 
     moveDown()
@@ -90,8 +88,6 @@ class Bar1v1
                 this.print();
             }
         }
-        // if (players_nb == 1)
-        //     data_channel.send("down");
     }
 
     reset()
@@ -176,7 +172,7 @@ class Bar1v2
         {
             if (this.bonus_time < 150)
             {
-                this.displayBonusMessage(); 
+                this.displayBonusMessage();
                 this.bonus_time++;
             }
             else

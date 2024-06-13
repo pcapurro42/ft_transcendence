@@ -9,42 +9,58 @@ function cpyGameCode(){
 
 function readGuestMsg(event){
 	let msg = event.data;
-	if (msg === 'ready'){
+	if (msg.startsWith('rpy:'))
+		game.right_player.y = +(msg.substring(4));
+	else if (msg == 'ping')
+		ping = true;
+	else if (msg === 'ready'){
 		document.getElementById('start_1v1_online').classList.remove('d-none');
-	}
-	if (msg === 'up'){
-		game.right_player.moveUp();
-	}
-	if (msg ==='down'){
-		game.right_player.moveDown();
 	}
 	else if (msg === 'go')
 		displayOnline1v1();
-	else if (msg.startsWith('rpy:'))
-		game.right_player.y = +(msg.substring(4));
 }
 
 function hostConnectionHandler(){
 	displayStatusBarSuccess(getTranslation("Peer Connection Success") + sessionStorage.getItem('opponent_login') +'!');
 	document.getElementById('create_lobby_msg').innerHTML = getTranslation('Please Create Lobby') + sessionStorage.getItem('opponent_login') + '.'
-
-	data_channel.onerror = function(error) {
-		handleDisconnection();
-    	console.error("Data Channel Error:", error);
-	};
 	data_channel.onmessage = event => readGuestMsg(event);
-	data_channel.send('Hello from host!');
+	pingGuest();
 
 	let	create_btn = document.getElementById("create_classic_lobby");
 	create_btn.style.visibility = 'visible';
-	create_btn.onclick = () => {
+	create_btn.onclick = async () => {
 		pos = "left";
 		role = "host";
-		if (gameMode == "normal")
-			data_channel.send('normal');
-		else
-			data_channel.send("bonus");
-		data_channel.send('lobby ok');
+		await sleep(100);
+		try{
+			if (gameMode == "normal")
+				data_channel.send('normal');
+			else
+				data_channel.send("bonus");
+			data_channel.send('lobby ok');
+		}
+		catch (error){
+			handleDisconnection();
+		}
 		nav.displayOneVsOneGameOnline();
 	}
+	checkHostPing()
+}
+
+async function pingGuest(){
+	if (stop_ping)
+		return;
+	data_channel.send('ping');
+	await sleep(900);
+	pingGuest();
+}
+
+async function checkHostPing(){
+	if (ping == true){
+		ping = false
+		await sleep(1100);
+		checkHostPing();
+		return;
+	}
+	handleDisconnection();
 }
