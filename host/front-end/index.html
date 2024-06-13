@@ -17,7 +17,7 @@
 
         <link rel="stylesheet" href="./CSS/style.css">
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 
     </head>
@@ -73,7 +73,7 @@
                 <p id="1v1_host_timer" class="text text-center mx-auto d-none display-6" data-tsnormal="45px" data-tslarge="55px"></p>
 
                 <div id="o_host_foot" class="d-flex flex-column align-items-center">
-                        <div class="game_keys w-100 d-flex flex-row">
+                        <div class="game_keys w-100 d-flex flex-row security_margin">
                             <img class="keysup float-start mb-2" data-isnormal="10%" data-alt="Keyboard E Tuto" data-islarge="14%" src="./Materials/images/E.png" tabindex="-1">
                         </div>
                         <div class="game_keys w-100">
@@ -95,7 +95,7 @@
                 </div>
                 <p id="waiting_host" class="d-flex justify-content-center text display-6" data-tsnormal="30px" data-tslarge="50px" data-oname="Waiting for the host to launch the game..."></p>
                 <p id="1v1_guest_timer" class="d-flex justify-content-center text d-none display-6" data-tsnormal="45px" data-tslarge="55px"></p>
-                <div id="o_guest_foot" class="d-flex flex-column align-items-center">
+                <div id="o_guest_foot" class="d-flex flex-column align-items-center security_margin">
                         <div class="game_keys w-100">
                             <img class="float-end keysup img-fluid mb-0" data-isnormal="6%" data-islarge="10%" data-alt="Keyboard O Tuto" src="./Materials/images/O.png"  tabindex="-1">
                         </div>
@@ -117,7 +117,7 @@
                     <p id="right_player_won_text" class="text display-6" data-tsnormal="30px" data-tslarge="50px" data-oname="Right player won the game."></p>
                     <p id="1v1_local_timer" class="text display-6" data-tsnormal="45px" data-tslarge="55px"></p>
                 </div>
-                    <div id="l_1v1_foot" class="d-flex flex-column align-items-center">
+                    <div id="l_1v1_foot" class="d-flex flex-column align-items-center security_margin">
                         <div class="game_keys w-100">
                             <img class="keysup float-start mb-2" data-isnormal="6%" data-alt="Keyboard E Tuto" data-islarge="10%" src="./Materials/images/E.png"  tabindex="-1">
                             <img class="float-end keysup img-fluid mb-0" data-isnormal="6%" data-alt="Keyboard O Tuto" data-islarge="10%" src="./Materials/images/O.png"  tabindex="-1">
@@ -140,7 +140,7 @@
                     <p id="right_side_won_text" class="text" data-tsnormal="30px display-6" data-tslarge="50px" data-oname="Right players won the game."></p>
                     <p id="2v1_local_timer" class="text display-6" data-tsnormal="45px" data-tslarge="55px"></p>
                 </div>
-                <div id="l_1v2_foot" class="d-flex flex-column align-items-center">
+                <div id="l_1v2_foot" class="d-flex flex-column align-items-center security_margin">
                         <button id="start_2v1_local" class="btn btn-lg btn-simple btn-outline-danger mt-0" data-tsnormal="30px" data-tslarge="40px" data-oname="Launch a game"></button>
                     <div class="game_keys w-100">
                         <img class="keysup d-inline-block float-start mb-2" data-isnormal="6%" data-alt="Keyboard E Tuto" data-islarge="10%" src="./Materials/images/E.png" tabindex="-1">
@@ -164,7 +164,7 @@
                 <div>
                     <p id="tournament_timer" class="text display-6" data-tsnormal="45px" data-tslarge="55px"></p>
                 </div>
-                <div id="t_foot" class="d-flex flex-column align-items-center">
+                <div id="t_foot" class="d-flex flex-column align-items-center security_margin">
                         <div class="game_keys w-100">
                             <img class="keysup float-start mb-2" data-isnormal="6%" data-islarge="10%" data-alt="Keyboard E Tuto" src="./Materials/images/E.png" tabindex="-1">
                             <img class= "float-end keysup img-fluid mb-0" data-isnormal="6%" data-islarge="10%" data-alt="Keyboard O Tuto" src="./Materials/images/O.png" tabindex="-1">
@@ -379,7 +379,6 @@
                     </select>
                     <button id ="submit_player_nbr" class="btn text btn-lg btn-simple border btn-outline-success ms-4" data-tsnormal="20px" data-tslarge="30px" data-oname="Submit" data-link="tournament-nicknames"></button>
             </div>
-                    <label for="tournament_players_selector" class="d-none" data-oname="ARIA Tournament Type" aria-label="" data-title="ARIA Tournament Type"></label>
                 <div class="mx-auto form-switch custom-switch-lg text-center mb-0">
                     <input id="switch_tournament" class="form-check-input btn-simple me-1 mode_switch" type="checkbox" data-tsnormal="15px" data-tslarge="20px">
                     <label for="switch_tournament"id="t_switch_text" class="text ms-2" data-tsnormal="20px" data-tslarge="25px"></label>
@@ -391,17 +390,19 @@
                 <div id="tournament_nickname_menu">
 
                     <form id="form_alias" class="container text-center">
-                    <div id="parent_form" class="justify-content-center">
-                        <div id="form_block" class="form-control-lg p-2 remover">
-                            <label for="alias_input" id="t_form_label" data-oname="ARIA Tournament Form Label" class="text"></label>
-                            <input id="alias_input" class="form-control-sm" type="text" placeholder="" data-tsnormal="16px" data-tslarge="21px" data-oname="Tournament nickname" data-title="ARIA Tournament Nick Form" title="" aria-label="">
-                            <div id="invalid-alias" class="invalid-feedback" data-tsnormal="15px" data-tslarge="25px" data-oname="Invalid alias"></div>
+                    <div id="parent_form" class="d-flex justify-content-center flex-wrap mb-5">
+                        <div id="form_block" class="m-2 border-secondary border form-control-lg p-2 remover form_block">
+                            <p id="t_form_label" data-oname="ARIA Tournament Form Label" class="text"></p>
+                            <div class="d-flex justify-content-center align-items-center me-1">
+                                <input id="alias_input" class="form-control-sm mb-3 mx-1" type="text" placeholder="" data-tsnormal="16px" data-tslarge="21px" data-oname="Tournament nickname" data-title="ARIA Tournament Nick Form" title="" aria-labelledby="t_form_label">
+                                <p id="invalid-alias" class="invalid-feedback" data-tsnormal="15px" data-tslarge="25px" data-title="ARIA Invalid Alias">&#x274c;</p>
+                            </div>
                         </div>
                     </div>
+                        <p id="invalid-alias-msg" class="invalid-feedback" data-tsnormal="15px" data-tslarge="25px" data-title="ARIA Invalid Alias" data-oname="ARIA Invalid Alias">;</p>
+                        <p id="duplicate_nick" class="invalid-feedback" data-tsnormal="15px" data-tslarge="25px" data-oname="Duplicate Nickname"></p>
 
-                        <div id="duplicate_nick" class="invalid-feedback" data-tsnormal="15px" data-tslarge="25px" data-oname="Duplicate Nickname" aria-label="ARIA Duplicate Nickname"></div>
-
-                        <div class="d-flex justify-content-center mt-3">
+                        <div class="d-flex justify-content-center mt-5 security_margin">
 
                             <button id ="submit_alias" type="submit" class="mx-1  btn text btn-lg btn-simple border btn-outline-success" data-tsnormal="15px" data-tslarge="20px" data-oname="Submit" data-link="tournament-game"></button>
                             <button id="back_tournament_form_btn" class="mx-1  btn color_btn btn-outline-dark text btn-complex" data-tsnormal="15px" data-tslarge="20px" data-oname="Back" data-title="Back" title="" data-link="play-tournament"></button>
@@ -414,7 +415,7 @@
 
     <!-- Tournament Announcer -->
 
-        <div id="tournament_announcer" class="container">
+        <div id="tournament_announcer" class="container security_margin">
                 <div id="round_block" class="display-1 text text-center mb-5"></div>
                 <p id="nick_announce" class="display-3 text text-center"></p>
             <div id ='Roundof16' class="rounds_state">
@@ -475,7 +476,7 @@
                             <img id="img_tooltip" src="" data-alt="Map Tooltip"></span>
 
                         </div>
-                        
+
                     </div>
 
                         <div class="d-flex justify-content-center">
@@ -546,8 +547,8 @@
                     <div id="online_stats">
 
                         <div id="online_stats_v" class="container text-center">
-                            <canvas id="stats_canvas" class="col-10 w-100" width="900" height="520" aria-labelledby="stats_label"></canvas>
-                            <label id="stats_label" data-title="ARIA Stats"></label>
+                            <canvas id="stats_canvas" class="col-10 w-100" width="900" height="520" aria-labelledby="stats_label" data-title="ARIA Online Stat" aria-label="" role="application"></canvas>
+                            <label id="stats_label" data-title="ARIA Online Stats"></label>
                         </div>
 
                         <div id="online_stats_nv" class="container text-center">
@@ -591,7 +592,7 @@
                             <label class="form-check-label text" for="switch_visual_input" data-tsnormal="25px" data-tslarge="35px" data-oname="Visual"></label>
                         </div>
 
-                        <div class="d-flex justify-content-center mt-5">
+                        <div class="d-flex justify-content-center mt-5 security_margin">
                             <button id="online_stats_back_btn" class="btn color_btn btn-outline-dark text btn-complex" data-tsnormal="20px" data-tslarge="30px" data-oname="Back" data-title="Back" title="" data-link="statistics"></button>
                         </div>
 
@@ -601,7 +602,7 @@
 
                         <div>
                             <div class="container text-center">
-                                <canvas id="history_data" class="w-100 border border-5" width="900" height="200"></canvas>
+                                <canvas id="history_data" class="w-100 border border-5" width="900" height="200" data-title="ARIA History Data" aria-label="" role="application"></canvas>
                             </div>
                         </div>
 
@@ -609,10 +610,10 @@
                         <div class="mt-5">
                             <div class="d-flex container justify-content-center align-items-stretch text-center">
                                 <div>
-                                    <canvas id="history_time_data" class="w-100 h-auto flex-grow-1" width="550" height="350"></canvas>
+                                    <canvas id="history_time_data" class="m-1 w-100 h-auto flex-grow-1" width="550" height="350" data-title="ARIA History Time Data" aria-label="" role="application"></canvas>
                                 </div>
                                 <div>
-                                    <canvas id="history_diagram_data" class="flex-grow-1 w-100 h-auto" width="300" height="350"></canvas>
+                                    <canvas id="history_diagram_data" class="m-1 flex-grow-1 w-100 h-auto" width="300" height="350" data-title="ARIA History Diagram" aria-label="" role="application"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -624,7 +625,7 @@
                             </div>
                         </div>
 
-                        <div class="mt-5">
+                        <div class="mt-5 security_margin">
                             <div class="d-flex justify-content-center">
                                 <button id="history_back_btn" class="mt-3 btn color_btn btn-outline-dark text btn-complex" data-tsnormal="20px" data-tslarge="30px" data-oname="Back" data-title="Back" title="" data-link="statistics"></button>
                             </div>
@@ -644,14 +645,12 @@
 
                             <div class="mb-3">
                                 <p id="language" class="user-select-none text mb-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Language" data-title="Language" title=""></p>
-                                <select id="language_btn_selector" class="form-select form-select-lg mx-auto selector" data-tsnormal="20px" data-tslarge="30px" data-title="ARIA Language Selector" aria-label="" title="">
+                                <select id="language_btn_selector" class="form-select form-select-lg mx-auto selector" data-tsnormal="20px" data-tslarge="30px" data-title="ARIA Language Selector" aria-label="" title="" aria-labelledby="language">
                                     <option class="btn-simple" value="en">English</option>
                                     <option class="btn-simple" value="fr">Français</option>
                                     <!-- ... -->
                                 </select>
                             </div>
-
-                            <label for="language_btn_selector" class="d-none" aria-label="" data-title="ARIA Language Selector" data-oname="ARIA Language Selector"></label>
 
                             <div class="mb-4">
                                 <p id="sound_volume"
@@ -679,13 +678,11 @@
 
                             <div class="mb-3">
                                 <p id="text_size" class="user-select-none text mb-3" data-tsnormal="35px" data-tslarge="45px" data-oname="Text size" data-title="Text size" title=""></p>
-                                <select id="text_size_btn_selector" class="form-select form-select-lg mx-auto selector" data-tsnormal="20px" data-tslarge="30px" data-title="ARIA Textsize Selector" aria-label="" title="">
+                                <select id="text_size_btn_selector" class="form-select form-select-lg mx-auto selector" data-tsnormal="20px" data-tslarge="30px" data-title="ARIA Textsize Selector" aria-label="" title="" aria-labelledby="text_size">
                                     <option class="text btn-simple" value="normal" data-oname="Normal" data-title="Normal" title=""></option>
                                     <option class="text btn-simple" value="large" data-oname="Large" data-title="Large" title=""></option>
                                 </select>
                             </div>
-
-                            <label for="text_size_btn_selector" class="d-none" aria-label="" data-title="ARIA Textsize Selector" data-oname="ARIA Textsize Selector"></label>
 
                             <div class="mb-3">
                                 <p id="image_desc" class="user-select-none text mb-3 btn_state" data-tsnormal="35px" data-tslarge="45px" data-oname="Image description" data-title="Image description" title=""></p>
@@ -702,14 +699,11 @@
                         <div class="container" id="privacy_panel">
 
                             <div>
-                                <h4 class="mt-4 d-flex justify-content-center text-center text" data-oname="This website complies with the General Data Protection Regulation (GDPR) from the european Union."></h4>
-                                <h4 class="mt-2 d-flex justify-content-center text-center text" data-oname="We invite you to read more about it in privacy policy page."></h4>
-                                <h4 class="mt-3 d-flex justify-content-center text-center text" data-oname="Note: if you don't use any online features from the website (log in with 42 and online games), no data is stored out of your computer or shared with anyone."></h4>
+                                <h4 class="mt-4 d-flex justify-content-center text-center text" data-oname="Website RGPD"></h4>
+                                <h4 class="mt-2 d-flex justify-content-center text-center text" data-oname="Privacy Policy Page"></h4>
+                                <h4 class="mt-3 d-flex justify-content-center text-center text" data-oname="RGPD-Note"></h4>
                             </div>
-
-                            <div>
-                                <h1 class="d-flex justify-content-center text-center text">–</h1>
-                            </div>
+                            <hr class="mb-5"/>
 
                             <div class="row">
 
@@ -735,41 +729,17 @@
                                         <button id="delete_online_data_btn" class="border border-2 btn btn-lg btn-simple text" data-oname="Delete" data-title="Delete" title="" data-tsnormal="20px" data-tslarge="30px"></button>
                                     </div>
                                 </div>
-    
+
                             </div>
 
-                            <!-- <div>
-                                <h1 class="mt-2 d-flex justify-content-center text" data-oname="– Privacy policy –"></h1>
-                            </div>
-
-                            <div>
-                                <h4 class="mt-4 d-flex justify-content-center text-center text" data-oname="This website complies with the General Data Protection Regulation (GDPR) from the european Union. We invite you to read the following to learn more about how the website has been developed to respect this regulation."></h4>
-                                <h4 class="mt-3 d-flex justify-content-center text-center text" data-oname="Note: if you don't use any online features from the website (log in with 42 and online games), no data is stored out of your computer or shared with anyone."></h4>
-                            </div>
-
-                            <div>
-                                <h3 class="mt-4 d-flex justify-content-center text" data-oname="What data is shared and why?"></h3>
-                                <h4 class="mt-2 d-flex justify-content-center text-center text" data-oname="Only three different types of information are shared: IP addresses, 42 logins and game informations. The first two are stored in our website database in order to connect players together. Finally, these two are also shared between two persons playing online, as well as game informations to permit game synchronization."></h4>
-                            </div>
-
-                            <div>
-                                <h3 class="mt-4 d-flex justify-content-center text" data-oname="For how long is the data stored?"></h3>
-                                <h4 class="mt-2 d-flex justify-content-center text-center text" data-oname="For a very short time. All the data are erased from the database when the website is being rebooted, which happens regularly (at least multiple times every day)."></h4>
-                            </div>
-
-                            <div>
-                                <h3 class="mt-4 d-flex justify-content-center text" data-oname="How can I interact with my data?"></h3>
-                                <h4 class="mt-2 d-flex justify-content-center text-center text" data-oname="In compliance with the GDPR, three options are availaible to you: you can choose to anonymize your data, delete your online data and delete your local data. As soon as you ask for it, these directives will take effect. Everything can be done in the settings menu."></h4>
-                            </div> -->
-
-                        </div>
+                    </div>
 
                         <div id="slider_settings" class="mt-5 d-flex justify-content-center">
                             <button id="prev_settings" class="border border-2 btn text" data-tsnormal="20px" data-tslarge="30px">←</button>
                             <button id="next_settings" class="border border-2 btn text" data-tsnormal="20px" data-tslarge="30px">→</button>
                         </div>
 
-                        <div class="d-flex justify-content-center">
+                        <div class="d-flex justify-content-center security_margin">
                             <button id="settings_back_btn" class="mt-5 btn color_btn btn-outline-dark text btn-complex" data-tsnormal="20px" data-tslarge="30px" data-oname="Back" data-title="Back" title="" data-link="home"></button>
                         </div>
 
@@ -779,6 +749,32 @@
 
             </div>
 
+        </div>
+        <div id="rgpd_block">
+                <div>
+                    <h1 class="my-5 text text-center" data-oname="Privacy policy" data-tsnormal="50px" data-tslarge="65px"></h1>
+                </div>
+
+                <div>
+                    <p class="mt-5 text-center text" data-oname="RGPD-Intro" data-tsnormal="20px" data-tslarge="30px"></p>
+                    <p class="mt-3 d-flex justify-content-center text-center text" data-oname="RGPD-Note" data-tsnormal="18px" data-tslarge="28px"></p>
+                <hr class="mb-5"/>
+                </div>
+
+                <div>
+                    <h3 class="my-4 d-flex justify-content-center text" data-oname="RGPD-Data sharing title" data-tsnormal="35px" data-tslarge="50px"></h3>
+                    <p class="mt-4 d-flex justify-content-center text-center text" data-tsnormal="20px" data-tslarge="30px" data-oname="RGPD-Data sharing"></p>
+                </div>
+
+                <div>
+                    <h3 class="my-4 d-flex justify-content-center text" data-oname="RGPD-Data time title" data-tsnormal="35px" data-tslarge="50px"></h3>
+                    <p class="mt-4 d-flex justify-content-center text-center text" data-oname="RGPD-Data time" data-tsnormal="20px" data-tslarge="30px"></p>
+                </div>
+
+                <div class="security_margin">
+                    <h3 class="my-4 d-flex justify-content-center text" data-oname="RGPD-User action title" data-tsnormal="35px" data-tslarge="50px"></h3>
+                    <p class="mt-4 d-flex justify-content-center text-center text" data-oname="RGPD-User action" data-tsnormal="20px" data-tslarge="30px"></p>
+                </div>
         </div>
 
         <!-- UTILS -->
@@ -822,6 +818,7 @@
             </div>
         </div>
 
+
     <!-- Audio -->
 
         <audio id="mgs" src="./Materials/musics/mgs2-theme.mp3" autoplay muted></audio>
@@ -848,6 +845,17 @@
 
         <button id="credit_close" data-tsnormal="30px" data-tslarge="50px" data-title="ARIA Credits Close" class="btn btn-simple text-white flex float-end" data-link="home" aria-label="">&#x2717;</button>
 
+    <div id="footer_div" class="position-fixed fixed-bottom">
+        <footer class="d-flex justify-content-center align-items-center mt-2">
+            <button id="rgpd_btn" class="foot btn btn-simple float-end" data-tsnormal="12px" data-tslarge="25px"></button>
+            <a id="pcap_git" class="foot btn btn-simple float-end" data-tsnormal="12px" data-tslarge="25px" href="https://github.com/pcapurro42" target="_blank"></a>
+            <a id="bgales_git" class="foot btn btn-simple float-end" data-tsnormal="12px" data-tslarge="25px" href="https://github.com/bjmgales" target="_blank"></a>
+        </footer>
+        <div>
+            <hr id="hr" class="mx-auto"/>
+            <p id="mgp_corp"class="text-center" data-tsnormal="10px" data-tslarge="17px">© 2024, Metal Gear Pong Inc.</p>
+        </div>
+    </div>
         <!-- Scripts -->
         <script src="./JavaScript/Languages/en.js"></script>
         <script src="./JavaScript/Languages/fr.js"></script>
@@ -897,8 +905,6 @@
         <script src="./JavaScript/Menu/triggers.js"></script>
 
         <script src="./JavaScript/init.js"></script>
-
-
     </body>
 
 </html>
