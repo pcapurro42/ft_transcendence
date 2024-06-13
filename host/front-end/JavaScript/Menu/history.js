@@ -329,6 +329,11 @@ class History
 
 // < display > //
 
+function getActualTimeSeconds()
+{
+    return (0);
+}
+
 function getActualDate()
 {
     let date = new Date();
