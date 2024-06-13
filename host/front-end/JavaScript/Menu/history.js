@@ -182,7 +182,7 @@ class History
 
             this.data_display.fillText(this.history_data.data[history_tab][3], 20, this.data_height - 20);
 
-            let duration = ~~(this.history_data.data[history_tab][4]) + "s";
+            let duration = (this.history_data.data[history_tab][4]).toFixed(2) + "s";
             let duration_size = this.data_display.measureText(duration).width;
             this.data_display.fillText(duration, this.data_width - 20 - duration_size, this.data_height - 20);
 
