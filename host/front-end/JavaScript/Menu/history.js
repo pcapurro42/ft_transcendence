@@ -65,10 +65,6 @@ class History
     invertData()
     {
         let save;
-
-        console.log("before :")
-
-        console.log(this.history_data.data[history_tab])
     
         save = this.history_data.data[history_tab][0]
         this.history_data.data[history_tab][0] = this.history_data.data[history_tab][1];
@@ -77,18 +73,6 @@ class History
         save = this.history_data.data[history_tab][2][0];
         this.history_data.data[history_tab][2][0] = this.history_data.data[history_tab][2][1];
         this.history_data.data[history_tab][2][1] = save;
-
-        // for (let i = 0; i != this.history_data.data[history_tab][5].length; i++)
-        // {
-        //     if (this.history_data.data[history_tab][5][i][1] == '1')
-        //         this.history_data.data[history_tab][5][i][1] == '2';
-        //     else
-        //         this.history_data.data[history_tab][5][i][1] == '2';
-        // }
-
-        console.log("after :")
-
-        console.log(this.history_data.data[history_tab])
     }
 
     initializeGraph()
@@ -225,6 +209,8 @@ class History
             let game_length = this.history_data.data[history_tab][4];
             let scores_data = this.history_data.data[history_tab][5];
 
+            console.log(scores_data);
+
             let old_x, old_y;
             for (let i = 0; i != scores_nb; i++)
             {
@@ -342,11 +328,6 @@ class History
 }
 
 // < display > //
-
-function getTimeMs()
-{
-    return (Date.now() * 1000);
-}
 
 function getActualDate()
 {

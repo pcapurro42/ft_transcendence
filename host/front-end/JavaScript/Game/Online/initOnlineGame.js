@@ -79,7 +79,7 @@ function startOnline1v1()
     else
         frame = 1000 / 119;
 
-    game.start_time = getTimeMs();
+    game.start_time = Date.now();
 
     setTimeout(() => {
         if (game.isOver() == true || active == false)
@@ -89,9 +89,9 @@ function startOnline1v1()
 
             if (game.isOver() == true)
             {
-                game.end_time = getTimeMs();
+                game.end_time = Date.now();
 
-                addHistoryEntry(game.player, game.other_player, ([game.scores[0], game.scores[1]]), game.date, (game.end_time - game.start_time) / 1000, game.scores, role);
+                addHistoryEntry(game.player, game.other_player, ([game.scores[0], game.scores[1]]), game.date, (game.end_time - game.start_time) * 1000, game.scores_time, role);
             }
 
             game.resetGame();

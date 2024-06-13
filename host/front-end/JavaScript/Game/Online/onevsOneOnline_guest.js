@@ -14,7 +14,7 @@ class OnlineGame1v1_guest
         this.date = getActualDate();
         this.start_time;
         this.end_time;
-        this.scores;
+        this.scores_time = [];
 
         // global infos initialization
 
@@ -274,7 +274,7 @@ class OnlineGame1v1_guest
         if (this.alert < 100)
             this.ball.printAlert(), this.alert++, this.sounds.alert.play();
         if (this.ball.isOffLimit() == true)
-            this.game,this.restartRound();
+            this.restartRound();
         this.ball.print();
     }
 
