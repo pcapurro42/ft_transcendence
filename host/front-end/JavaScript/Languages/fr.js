@@ -37,7 +37,9 @@ let fr = [
     ["[No available data to display]", "[Pas de données disponibles à afficher]"],
 
     ["victory", "victoire"],
+    ["crushing victory", "victoire écrasante"],
     ["defeat", "défaite"],
+    ["total defeat", "défaite totale"],
 
     ["Game timelapse", "Timelapse de la partie"],
 

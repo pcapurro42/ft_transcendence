@@ -191,9 +191,19 @@ class History
             let end;
 
             if (this.history_data.data[history_tab][2][0] == '10')
-                end = getTranslation("victory");
+            {
+                if (parseInt(this.history_data.data[history_tab][2][1]) <= 3)
+                    end = getTranslation("crushing victory");
+                else
+                    end = getTranslation("victory");
+            }
             else
-                end = getTranslation("defeat");
+            {
+                if (parseInt(this.history_data.data[history_tab][2][0]) <= 3)
+                    end = getTranslation("total defeat");
+                else
+                    end = getTranslation("defeat");
+            }
 
             let end_size = this.data_display.measureText(end).width;
             this.data_display.fillText(end, this.data_width - 20 - end_size, 50);

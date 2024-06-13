@@ -37,8 +37,11 @@ let en = [
     ["Bonus taken", "Bonus taken"],
 
     ["[No available data to display]", "[No available data to display]"],
+    
     ["victory", "victory"],
+    ["crushing victory", "crushing victory"],
     ["defeat", "defeat"],
+    ["total defeat", "total defeat"],
 
     ["Game timelapse", "Game timelapse"],
     ["Game domination", "Game domination"],
