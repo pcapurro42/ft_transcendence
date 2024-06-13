@@ -8,9 +8,6 @@ class History
 
         this.history_data = history_data;
 
-        if (this.history_data.data[history_tab][6] == 'guest')
-            this.invertData();
-
         this.data_width = 900;
         this.data_height = 200;
 
@@ -60,6 +57,9 @@ class History
 
         this.data_canvas.width = this.data_width;
         this.data_canvas.height = this.data_height;
+
+        if (this.history_data != null && this.history_data.data[history_tab][6] == 'guest')
+            this.invertData();
     }
 
     invertData()
