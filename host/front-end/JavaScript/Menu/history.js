@@ -61,21 +61,19 @@ class History
         this.data_canvas.width = this.data_width;
         this.data_canvas.height = this.data_height;
 
-        if (this.history_data != null && this.role == 'guest')
-            this.invertData();
-    }
-
-    invertData()
-    {
-        let save;
-    
-        save = this.history_data.data[history_tab][0]
-        this.history_data.data[history_tab][0] = this.history_data.data[history_tab][1];
-        this.history_data.data[history_tab][1] = save;
-
-        save = this.history_data.data[history_tab][2][0];
-        this.history_data.data[history_tab][2][0] = this.history_data.data[history_tab][2][1];
-        this.history_data.data[history_tab][2][1] = save;
+        if (this.history_data != null)
+        {
+            if (this.role == 'guest')
+            {
+                this.left_score = this.history_data.data[history_tab][2][1];
+                this.right_score = this.history_data.data[history_tab][2][0];
+            }
+            else
+            {
+                this.left_score = this.history_data.data[history_tab][2][0];
+                this.right_score = this.history_data.data[history_tab][2][1];
+            }
+        }
     }
 
     initializeGraph()
@@ -142,8 +140,20 @@ class History
         {
             this.data_display.fillStyle = this.global_color;
 
-            this.data_display.font = "bold " + this.title_text_format;
-            let player1 = this.history_data.data[history_tab][0];
+            let player_1;
+            let player_2;
+
+            if (this.role == "guest")
+            {
+                player_1 = this.history_data.data[history_tab][0];
+                player_2 = this.history_data.data[history_tab][1];
+            }
+            else
+            {
+                player_1 = this.history_data.data[history_tab][1];
+                player_2 = this.history_data.data[history_tab][0];
+            }
+
             let player1_len = this.data_display.measureText(player1).width;
 
             this.data_display.font = "italic " + this.title_text_format;
@@ -151,8 +161,6 @@ class History
             let versus_len = this.data_display.measureText(versus).width;
 
             this.data_display.font = "bold " + this.title_text_format;
-            let player2 = this.history_data.data[history_tab][1];
-
             this.data_display.fillText(player1, 20, 50);
 
             this.data_display.font = "italic " + this.title_text_format;
@@ -162,7 +170,7 @@ class History
             this.data_display.fillText(player2, 20 + player1_len + versus_len, 50);
 
             this.data_display.font = this.score_text_format;
-            let score = "[ " + this.history_data.data[history_tab][2][0] + " – " + this.history_data.data[history_tab][2][1] + " ]";
+            let score = "[ " + this.left_score + " – " + this.right_score + " ]";
             let score_len = this.data_display.measureText(score).width;
             this.data_display.fillText(score, this.data_width / 2 - (score_len / 2), this.data_height / 2 + 35);
 
@@ -190,16 +198,16 @@ class History
 
             let end;
 
-            if (this.history_data.data[history_tab][2][0] == '10')
+            if (this.left_score == '10')
             {
-                if (parseInt(this.history_data.data[history_tab][2][1]) <= 3)
+                if (parseInt(this.right_score) <= 3)
                     end = getTranslation("crushing victory");
                 else
                     end = getTranslation("victory");
             }
             else
             {
-                if (parseInt(this.history_data.data[history_tab][2][0]) <= 3)
+                if (parseInt(this.left_score) <= 3)
                     end = getTranslation("total defeat");
                 else
                     end = getTranslation("defeat");
@@ -297,9 +305,9 @@ class History
         }
         else
         {
-            let total = parseInt(this.history_data.data[history_tab][2][0]) + parseInt(this.history_data.data[history_tab][2][1]);
-            value_1 = (parseInt(this.history_data.data[history_tab][2][0]) * 100 / total); // 42 (valeur en %)
-            value_2 = (parseInt(this.history_data.data[history_tab][2][1]) * 100 / total); // 42 (valeur en %)
+            let total = parseInt(this.left_score) + parseInt(this.right_score);
+            value_1 = (parseInt(this.left_score) * 100 / total); // 42 (valeur en %)
+            value_2 = (parseInt(this.right_score) * 100 / total); // 42 (valeur en %)
 
             let value_p1 = value_1 * 360 / 100;
             let value_p2 = value_2 * 360 / 100;
