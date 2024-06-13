@@ -328,7 +328,6 @@ class OnlineGame1v1_guest
             player_left_won.style.display = "block";
 
             localStorage.setItem('onl_defeat', (parseInt(localStorage.getItem('onl_defeat')) + 1).toString());
-            localStorage.setItem('onl_dist', (parseInt(localStorage.getItem('onl_dist')) + this.dist).toString());
 
             document.getElementById('online_loser').play();
 
@@ -341,7 +340,6 @@ class OnlineGame1v1_guest
             player_right_won.style.display = "block";
 
             localStorage.setItem('onl_victory', (parseInt(localStorage.getItem('onl_victory')) + 1).toString());
-            localStorage.setItem('onl_dist', (parseInt(localStorage.getItem('onl_dist')) + this.dist).toString());
 
             document.getElementById('online_winner').play();
 
