@@ -12,10 +12,12 @@ function readHostMsg(event)
 	}
 	else if (msg.startsWith('score_h:')){
 		game.scores[0] = +msg.substring(8);
+		game.scores_time.push([(getActualTimeSeconds() - this.start_time), "1"]);
 	}
-	else if (msg.startsWith('score_g:'))
+	else if (msg.startsWith('score_g:')){
 		game.scores[1] = +msg.substring(8);
-
+		game.scores_time.push([(getActualTimeSeconds() - this.start_time), "2"]);
+	}
 	else{
 		switch (msg){
 			case 'ping':
