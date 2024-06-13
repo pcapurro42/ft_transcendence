@@ -53,6 +53,7 @@ function setBackgroundColor(color)
     let modal_disco = document.getElementById('modal_color_disco');
     let modal_leaving = document.getElementById('modal_color_leaving');
     let login_dropdown = document.getElementById('login_dropdown');
+
     if (color == "white"){
         login_dropdown.style.setProperty("background-color", "white");
         background.style.setProperty("background-color", "white");
@@ -73,7 +74,6 @@ function setMaterialsColor(color)
     let dropdowns = document.getElementsByClassName("dropdown");
     let lines = document.getElementsByClassName("line");
     let materials = [...forms_select, ...dropdowns, ...lines];
-
 
     for (let i = 0; i != materials.length; i++)
     {

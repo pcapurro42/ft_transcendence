@@ -10,7 +10,7 @@ class OnlineGame1v1_guest
         // stats initialization
 
         this.player = localStorage.getItem('login');
-        this.other_player = sessionStorage.getItem('opponent_login');
+        this.other_player = localStorage.getItem('opponent_login');
         this.date = getActualDate();
         this.start_time;
         this.end_time;
@@ -324,7 +324,7 @@ class OnlineGame1v1_guest
         if (this.scores[0] > 9)
         {
             let player_left_won = document.getElementById('g_win_text');
-            player_left_won.innerHTML = sessionStorage.getItem('opponent_login') + getTranslation('Online Win');
+            player_left_won.innerHTML = localStorage.getItem('opponent_login') + getTranslation('Online Win');
             player_left_won.style.display = "block";
 
             localStorage.setItem('onl_defeat', (parseInt(localStorage.getItem('onl_defeat')) + 1).toString());

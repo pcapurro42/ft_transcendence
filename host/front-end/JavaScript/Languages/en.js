@@ -118,6 +118,15 @@ let en = [
     ["Read", "Read"],
     ["Delete", "Delete"],
 
+    ["Here is a list of the data currently stored on your computer:", "Here is a list of the data currently stored on your computer:"],
+
+    ["– UI informations", "– UI informations"],
+    ["– 42 informations", "– 42 informations"],
+    ["– Game parameters and informations", "– Game parameters and informations"],
+    ["– Local statistics", "– Local statistics"],
+    ["– Online statistics", "– Online statistics"],
+    ["– History data", "– History data"],
+
     ["RGPD-Intro", "<pre>This website complies with the General Data Protection Regulation (GDPR) from the european Union.\nWe invite you to read the following to learn more about how the website\nhas been built to respect this regulation.</pre>"],
 
     ["RGPD-Note", "<pre> Note: if you don't use any online features from the website (log in with 42 and online games),\n no data is stored out of your computer or shared with anyone.\n\n\n</pre>"],

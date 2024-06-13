@@ -21,8 +21,8 @@ function readGuestMsg(event){
 }
 
 function hostConnectionHandler(){
-	displayStatusBarSuccess(getTranslation("Peer Connection Success") + sessionStorage.getItem('opponent_login') +'!');
-	document.getElementById('create_lobby_msg').innerHTML = getTranslation('Please Create Lobby') + sessionStorage.getItem('opponent_login') + '.'
+	displayStatusBarSuccess(getTranslation("Peer Connection Success") + localStorage.getItem('opponent_login') +'!');
+	document.getElementById('create_lobby_msg').innerHTML = getTranslation('Please Create Lobby') + localStorage.getItem('opponent_login') + '.'
 	data_channel.onmessage = event => readGuestMsg(event);
 	pingGuest();
 

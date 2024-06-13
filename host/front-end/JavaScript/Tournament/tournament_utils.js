@@ -1,6 +1,6 @@
 
 function setTournamentSelector(){
-	sessionStorage.getItem('t_player_nbr') ? document.getElementById('tournament_players_selector').value = sessionStorage.getItem('t_player_nbr') : document.getElementById('tournament_players_selector').value = '16';
+	localStorage.getItem('t_player_nbr') ? document.getElementById('tournament_players_selector').value = localStorage.getItem('t_player_nbr') : document.getElementById('tournament_players_selector').value = '16';
 }
 function shuffleArray(nicknames){
 	let before_shuffle = nicknames.slice();

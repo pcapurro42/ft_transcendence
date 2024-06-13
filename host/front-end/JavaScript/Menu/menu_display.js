@@ -142,7 +142,7 @@ const nav = {
 
     displayTournamentForm : function(){
 		let val = document.getElementById('tournament_players_selector').value;
-        sessionStorage.setItem('t_player_nbr', val)
+        localStorage.setItem('t_player_nbr', val)
         let t_setup = document.getElementById('tournament_setup');
         t_setup.style.display = "none";
 
@@ -212,13 +212,13 @@ const nav = {
         {
             document.getElementById('one_vs_one_host_page').style.display = "block";
             document.getElementById('h_host_name').innerHTML = localStorage.getItem('login');
-            document.getElementById('h_guest_name').innerHTML = sessionStorage.getItem('opponent_login');
+            document.getElementById('h_guest_name').innerHTML = localStorage.getItem('opponent_login');
             document.getElementById('waiting_host').style.display = "none";
         }
         else
         {
             document.getElementById('one_vs_one_guest_page').style.display = "block";
-            document.getElementById('g_host_name').innerHTML = sessionStorage.getItem('opponent_login');
+            document.getElementById('g_host_name').innerHTML = localStorage.getItem('opponent_login');
             document.getElementById('g_guest_name').innerHTML = localStorage.getItem('login');
             document.getElementById('waiting_host').style.display = "block";
             data_channel.send("ready");

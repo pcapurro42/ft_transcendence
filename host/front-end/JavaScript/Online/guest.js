@@ -42,11 +42,11 @@ function readHostMsg(event)
 }
 
 async function guestConnectionHandler(){
-	displayStatusBarSuccess(getTranslation("Peer Connection Success") + sessionStorage.getItem('opponent_login') +'!');
+	displayStatusBarSuccess(getTranslation("Peer Connection Success") + localStorage.getItem('opponent_login') +'!');
 	data_channel.onmessage = event => readHostMsg(event);
 	pingHost();
 	let countdown = document.getElementById('answer_timeout');
-	countdown.innerHTML = getTranslation("Waiting Lobby Creation") + sessionStorage.getItem('opponent_login') + '...';
+	countdown.innerHTML = getTranslation("Waiting Lobby Creation") + localStorage.getItem('opponent_login') + '...';
 
 	let	join_btn = document.getElementById("join_classic_lobby");
 	join_btn.onclick = () => {

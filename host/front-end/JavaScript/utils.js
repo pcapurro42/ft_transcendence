@@ -68,7 +68,7 @@ function handleBeforeUnload(event){
 }
 
 function handleUnload(){
-	sessionStorage.setItem('no_confirmation', 'true');
+	localStorage.setItem('no_confirmation', 'true');
 }
 
 function backBtnColor_toBlack(){

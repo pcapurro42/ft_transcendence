@@ -12,7 +12,7 @@ async function userLeaveConfirmation(){
 }
 
 async function handleForbiddenPages(){
-    if ((previous_url_path == getTranslation('/tournament-game') || previous_url_path == getTranslation('/online-game') || previous_url_path == getSpecificTranslation('fr', '/tournament-game') || previous_url_path == getSpecificTranslation('fr', '/online-game')) && !sessionStorage.getItem('no_confirmation')){
+    if ((previous_url_path == getTranslation('/tournament-game') || previous_url_path == getTranslation('/online-game') || previous_url_path == getSpecificTranslation('fr', '/tournament-game') || previous_url_path == getSpecificTranslation('fr', '/online-game')) && !localStorage.getItem('no_confirmation')){
         let bool = await userLeaveConfirmation();
         document.getElementById('leavingPopup').style.display = 'none';
         if (bool == false){
@@ -25,7 +25,7 @@ async function handleForbiddenPages(){
             path = '/home';
         }
     }
-    sessionStorage.removeItem('no_confirmation');
+    localStorage.removeItem('no_confirmation');
 }
 async function handleLocation(){
 
@@ -87,7 +87,7 @@ async function handleLocation(){
             return;
         case getSpecificTranslation('fr', '/tournament-nicknames'):
         case '/tournament-nicknames':
-            nav.displayTournamentForm(sessionStorage.getItem('t_player_nbr'));
+            nav.displayTournamentForm(localStorage.getItem('t_player_nbr'));
             return;
         case getSpecificTranslation('fr', '/tournament-game'):
         case '/tournament-game':

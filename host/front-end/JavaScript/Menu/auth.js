@@ -17,11 +17,11 @@ async function logout()
 
 async function handleRedirection(){
     if (localStorage.getItem
-    ('status') == 'connected' || !sessionStorage.getItem('auth_code')){
+    ('status') == 'connected' || !localStorage.getItem('auth_code')){
         refreshLogin();
         return;
     }
-    let response = await getAccessToken(sessionStorage.getItem('auth_code'));
+    let response = await getAccessToken(localStorage.getItem('auth_code'));
     await storeUserLogin(response);
 }
 

@@ -92,7 +92,7 @@ async function fetchAnswer(){
 		return;
 	}
 	let response = await request.json();
-	sessionStorage.setItem('opponent_login', response['login']);
+	localStorage.setItem('opponent_login', response['login']);
 	initConnection(response['answer']);
 
 }

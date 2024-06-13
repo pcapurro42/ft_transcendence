@@ -40,7 +40,7 @@ async function fetchOffer(){
 	}
 	let response = await request.text();
 	response = JSON.parse(response);
-	sessionStorage.setItem('opponent_login', response['login']);
+	localStorage.setItem('opponent_login', response['login']);
 	answerGenerator(response['offer'])
 }
 
