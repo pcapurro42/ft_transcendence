@@ -15,7 +15,7 @@ class OnlineGame1v1_guest
         this.start_time;
         this.end_time;
         this.scores;
-        
+
         // global infos initialization
 
         this.player_nb = 1;
@@ -332,9 +332,6 @@ class OnlineGame1v1_guest
 
             document.getElementById('online_loser').play();
 
-            this.resetGame();
-            active = false;
-
             return (true);
         }
         if (this.scores[1] > 9)
@@ -347,9 +344,6 @@ class OnlineGame1v1_guest
             localStorage.setItem('onl_dist', (parseInt(localStorage.getItem('onl_dist')) + this.dist).toString());
 
             document.getElementById('online_winner').play();
-
-            this.resetGame();
-            active = false;
 
             return (true);
         }

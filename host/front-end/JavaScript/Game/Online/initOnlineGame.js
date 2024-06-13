@@ -91,6 +91,8 @@ function startOnline1v1()
             {
                 game.end_time = getTimeMs();
 
+                console.log("added history for ", role)
+
                 addHistoryEntry(game.player, game.other_player, ([game.scores[0], game.scores[1]]), game.date, (game.end_time - game.start_time) / 1000, game.scores, role);
             }
 
