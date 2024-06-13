@@ -19,6 +19,9 @@ function displayOnline1v1()
 	document.getElementById('online_winner').pause();
 	document.getElementById('online_loser').pause();
 
+    document.getElementById('o_host_foot').style.display = 'none';
+    document.getElementById('o_guest_foot').style.display = 'none';
+
     if (role == "host")
     {
         let timer = document.getElementById('1v1_host_timer');
@@ -64,6 +67,8 @@ function removeOnline1v1()
 
 	let waiting_host = document.getElementById('waiting_host')
 	waiting_host.style.visibility = 'visible';
+    document.getElementById('o_host_foot').style.display = 'block';
+    document.getElementById('o_guest_foot').style.display = 'block';
 }
 
 function startOnline1v1()
