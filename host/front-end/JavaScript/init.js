@@ -51,8 +51,6 @@ initializeSounds();
 
 // < 42 CONNECT > //
 
-let login42;
-
 let account_status;
 let user_info;
 let client_id;

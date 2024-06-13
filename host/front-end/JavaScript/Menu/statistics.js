@@ -850,7 +850,7 @@ function initializeHistory()
 {
     let new_history_data = {
         exist: false,
-        login: login42,
+        login: localStorage.getItem('login'),
         length: 0,
         data: null
     }
@@ -870,8 +870,6 @@ function addHistoryEntry(player1, player2, final_score, date, duration, scores, 
     history_data.length++;
     localStorage.setItem('history_data', JSON.stringify(history_data));
 
-    console.log(history_data)
-
     refreshHistory();
 }
 
@@ -882,7 +880,7 @@ function refreshHistory()
     else
     {
         let history_data = JSON.parse(localStorage.getItem('history_data'));
-        if (history_data.login != login42)
+        if (history_data.login != localStorage.getItem('login'))
             initializeHistory();
     }
     historic = JSON.parse(localStorage.getItem('history_data'));

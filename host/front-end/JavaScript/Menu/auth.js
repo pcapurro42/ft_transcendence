@@ -28,7 +28,6 @@ async function handleRedirection(){
 async function storeUserLogin(response){
     try{
             localStorage.setItem('login', response['login']);
-            login42 = response['login'];
             auth_code = '';
     }
     catch(error){
