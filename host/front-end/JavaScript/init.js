@@ -131,5 +131,3 @@ handleLocation();
 window.addEventListener('DOMContentLoaded', ()=>{document.body.style.display = "block"});
 
 //<Backend> //
-
-console.log(getActualTimeSeconds());

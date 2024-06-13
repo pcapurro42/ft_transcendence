@@ -212,8 +212,6 @@ class History
             let game_length = this.history_data.data[history_tab][4];
             let scores_data = this.history_data.data[history_tab][5];
 
-            console.log(scores_data);
-
             let old_x, old_y;
             for (let i = 0; i != scores_nb; i++)
             {
@@ -343,7 +341,7 @@ class History
 
 function getActualTimeSeconds()
 {
-    return (0);
+    return (performance.now() / 1000);
 }
 
 function getActualDate()
