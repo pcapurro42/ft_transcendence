@@ -118,12 +118,12 @@ let fr = [
 
     ["Here is a list of the data currently stored on your computer:", "Voici une liste des données actuellement stockées sur votre ordinateur:"],
 
-    ["– UI informations", "– UI informations"],
-    ["– 42 informations", "– 42 informations"],
-    ["– Game parameters and informations", "– Game parameters and informations"],
-    ["– Local statistics", "– Local statistics"],
-    ["– Online statistics", "– Online statistics"],
-    ["– History data", "– History data"],
+    ["– User interface informations", "– Informations sur l'interface utilisateur"],
+    ["– 42 informations", "– Informations 42"],
+    ["– Game parameters and informations", "– Paramètres et informations du jeu"],
+    ["– Local statistics", "– Statistiques locales"],
+    ["– Online statistics", "– Statistiques en ligne"],
+    ["– History data", "– Données d'historique"],
 
     ["RGPD-Intro", "<pre>Ce site Internet se conforme au règlement général sur la protection des données (RGPD) de l'Union européenne.\n Nous vous invitons à lire ce qui suit pour en savoir plus sur comment le site a été développé\n afin de respecter ce règlement.</pre>"],
 

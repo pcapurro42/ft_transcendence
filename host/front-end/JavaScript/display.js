@@ -82,6 +82,12 @@ function setMaterialsColor(color)
         else
             materials[i].style["background-color"] = "black", materials[i].style["color"] = "white";
     }
+
+    let settings_modal = document.getElementById("settings_modal");
+    if (color == "white")
+        settings_modal.style["background-color"] = "white", settings_modal.style["border"] = "black 2px solid";
+    else
+        settings_modal.style["background-color"] = "black", settings_modal.style["border"] = "white 2px solid";
 }
 
 function setImagesColor(color)

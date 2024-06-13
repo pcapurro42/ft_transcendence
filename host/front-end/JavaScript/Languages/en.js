@@ -120,7 +120,7 @@ let en = [
 
     ["Here is a list of the data currently stored on your computer:", "Here is a list of the data currently stored on your computer:"],
 
-    ["– UI informations", "– UI informations"],
+    ["– User interface informations", "– User interface informations"],
     ["– 42 informations", "– 42 informations"],
     ["– Game parameters and informations", "– Game parameters and informations"],
     ["– Local statistics", "– Local statistics"],
