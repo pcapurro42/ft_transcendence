@@ -8,6 +8,9 @@ class History
 
         this.history_data = history_data;
 
+        if (this.history_data != null)
+            this.role = this.history_data.data[history_tab][6];
+
         this.data_width = 900;
         this.data_height = 200;
 
@@ -58,7 +61,7 @@ class History
         this.data_canvas.width = this.data_width;
         this.data_canvas.height = this.data_height;
 
-        if (this.history_data != null && this.history_data.data[history_tab][6] == 'guest')
+        if (this.history_data != null && this.role == 'guest')
             this.invertData();
     }
 
@@ -215,12 +218,21 @@ class History
             for (let i = 0; i != scores_nb; i++)
             {
                 let color;
-                if (scores_data[i][1] == '1')
-                    color = this.left_player_color;
-                else if (scores_data[i][1] == '2')
-                    color = this.right_player_color;
+                if (this.role == "host")
+                {
+                    if (scores_data[i][1] == '1')
+                        color = this.left_player_color;
+                    else if (scores_data[i][1] == '2')
+                        color = this.right_player_color;
+                }
                 else
-                    color = this.global_color;
+                {
+                    if (scores_data[i][1] == '1')
+                        color = this.right_player_color;
+                    else if (scores_data[i][1] == '2')
+                        color = this.left_player_color;
+                }
+
                 this.graph_display.fillStyle = color;
 
                 let x_pos = 63 + (parseInt(scores_data[i][0]) * total_distance) / game_length;
