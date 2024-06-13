@@ -36,6 +36,7 @@ document.getElementById('vid_credits').onended = nav.theaterClose;
 document.getElementById('credit_close').onclick = nav.theaterClose;
 
 document.getElementById('rgpd_btn').onclick = nav.displayRGPD;
+document.getElementById('rgpd_back_btn').onclick = nav.displayMenu;
 // < PLAY > //
 
 document.getElementById('one_vs_one_online_btn').onclick = nav.displayOneVsOneChoice;
