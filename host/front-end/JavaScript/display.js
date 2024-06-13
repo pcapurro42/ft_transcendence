@@ -225,7 +225,7 @@ function setDescriptiveImages(value)
     if (value == "enable")
     {
         document.getElementById('image_desc_btn_yn').setAttribute('data-oname', 'Enabled');
-        document.getElementById('image_desc_btn_yn').style.backgroundColor = "#AD1400";
+        document.getElementById('image_desc_btn_yn').style.backgroundColor = "";
         document.getElementById('image_desc_btn_yn').classList.replace('text-black', 'text-white');
     }
     else
