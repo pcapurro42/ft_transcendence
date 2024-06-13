@@ -1,6 +1,7 @@
 function readHostMsg(event)
 {
 	let msg = event.data;
+	console.log(msg);
 	if (msg.startsWith('lpy:')){
 		game.left_player.y = +(msg.substring(4));
 		return;
@@ -9,6 +10,10 @@ function readHostMsg(event)
 		game.ball.y = +msg.substring(5, msg.indexOf('/'));
 		game.ball.x = +msg.substring(msg.indexOf('/') + 1, msg.indexOf('_'));
 		return;
+	}
+	else if (msg.startsWith('score:')){
+		game.scores[0] = +msg.substring(6, msg.indexOf('_'));
+		game.scores[1] = +msg.substring(msg.indexOf('_') + 1);
 	}
 	else{
 	switch (msg){

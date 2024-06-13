@@ -317,6 +317,7 @@ class OnlineGame1v1_host
         else
             this.scores[1]++;
 
+        data_channel.send(`score:${this.scores[0]}_${this.scores[1]}`);
         this.ball.replace();
         this.refreshDisplay();
     }

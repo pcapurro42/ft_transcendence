@@ -15,7 +15,6 @@ class OnlineGame1v1_guest
         // this.start_time;
         // this.end_time;
         // this.scores;
-        
         // global infos initialization
 
         this.player_nb = 1;
@@ -313,11 +312,6 @@ class OnlineGame1v1_guest
 
     restartRound()
     {
-        if (this.ball.x >= this.game_width / 2)
-            this.scores[0]++;
-        else
-            this.scores[1]++;
-
         this.ball.replace();
         this.refreshDisplay();
     }
