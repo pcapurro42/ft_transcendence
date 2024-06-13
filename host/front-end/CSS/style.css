@@ -14,7 +14,7 @@ body
 
 #login_dropdown{
     position: absolute;
-    inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 50px);
+    inset: 0px auto auto 0px; margin: 0px; transform: translate(-15px, 60px);
 }
 
 .dropdown_btn:hover, .foot:hover{
@@ -25,15 +25,15 @@ body
     border : 0px;
 }
 
+.sun{
+    filter: invert(53%) sepia(100%) saturate(1571%) hue-rotate(3deg) brightness(99%) contrast(96%);
+}
+
 .security_margin{
     margin-bottom: 200px;
 }
 
-
-.titi{
-    overflow-y: auto;
-}
-pre:not(.titi){
+pre{
     white-space: pre-wrap;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -57,6 +57,9 @@ pre:not(.titi){
     width: 235px;
 }
 
+.btn-outline-danger:hover{
+    background-color: #AD1400!important;
+}
 .btn_img, .btn_img:hover{
     background-color: transparent !important;
     outline: none !important;
@@ -76,6 +79,10 @@ pre:not(.titi){
     }
 }
 
+.color_btn:hover{
+    transition: 0.15;
+    color: white !important;
+}
 .keysup{
     filter: drop-shadow(0px 1px 0.5px #111111) drop-shadow(0px -1px 0.5px #111111);
     animation: gamekeys forwards 3s infinite;
@@ -96,7 +103,7 @@ pre:not(.titi){
     top: 0%;
     left: 0%;
 }
-.btn:hover:not(.border, .btn-outline-success, .btn-outline-secondary, .btn-outline-danger, .color_btn, #intra_login, .dropdown_btn, .foot){
+.btn:hover:not(.border, .btn-outline-success, .btn-outline-secondary, .btn-outline-danger, .dark_btn, #intra_login, .dropdown_btn, .foot){
     transition: 1s;
     transform: scale(1.2);
 }

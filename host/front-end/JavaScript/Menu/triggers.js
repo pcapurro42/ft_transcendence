@@ -92,12 +92,14 @@ document.getElementById('next_history').onclick = displayNextHistoryPage;
 document.getElementById('switch_visual_input').onchange = changeStatsDisplayMode;
 
 // < SETTINGS > //
-
 document.getElementById('language_btn_selector').onchange = changeLanguage;
 document.getElementById('text_size_btn_selector').onchange = changeTextSize;
+document.getElementById('letter_switch').onclick = letterSwitch;
 document.getElementById('sound_volume_slider').onchange = changeSoundsVolume;
 document.getElementById('music_volume_slider').onchange = changeMusicVolume;
 document.getElementById('high_contrast_btn_yn').onclick = changeHighContrast;
+document.getElementById('light_switch').onclick = changeHighContrast;
+
 document.getElementById('image_desc_btn_yn').onclick = changeDescriptiveImages;
 
 document.getElementById('prev_settings').onclick = displayFirstSettingsPage;

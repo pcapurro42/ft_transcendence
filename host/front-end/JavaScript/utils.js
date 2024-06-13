@@ -1,4 +1,4 @@
-function dropdownAddSvg(){
+async function dropdownAddSvg(){
 	let logout = document.getElementById('drop_logout');
 	let custom = document.getElementById('drop_customize');
 	let settings = document.getElementById('drop_settings');
@@ -6,6 +6,8 @@ function dropdownAddSvg(){
 	let github_p = document.getElementById('pcap_git');
 	let github_b = document.getElementById('bgales_git');
 	let rgpd = document.getElementById('rgpd_btn');
+	let light_switch = document.getElementById('light_switch');
+	let letter_switch = document.getElementById('letter_switch');
 
 	let logout_svg = '<img class="svg m-1" 	src="./Materials/images/logout.svg" alt="Icon">';
 	let custom_svg = '<img class="svg m-1" src="./Materials/images/customize.svg" alt="Icon">';
@@ -13,6 +15,9 @@ function dropdownAddSvg(){
 	let stats_svg = '<img class="svg m-1" src="./Materials/images/stats.svg" alt="Icon">';
 	let github_svg = '<img class="svg foot m-1" src="./Materials/images/github.svg" alt="Icon">'
 	let rgpd_svg = '<img class="svg foot m-1" src="./Materials/images/rgpd.svg" alt="Icon">'
+	let moon_svg = '<img class="svg moon foot" src="./Materials/images/dark.svg" alt="Icon">';
+	let sun_svg = '<img class="sun" src="./Materials/images/light.svg" alt="Icon">';
+
 
 	logout.innerHTML = logout_svg + '  ' + logout.innerHTML;
 	custom.innerHTML =  custom_svg + '  ' + custom.innerHTML;
@@ -21,10 +26,27 @@ function dropdownAddSvg(){
 	github_p.innerHTML = github_svg + "Pcapurro";
 	github_b.innerHTML = github_svg + "Bgales";
 	rgpd.innerHTML = rgpd_svg + getTranslation('Privacy policy');
-	if (high_contrast == 'true')
+
+	if (high_contrast == 'true'){
+		light_switch.innerHTML = moon_svg;
+		light_switch.style.backgroundColor = '#AD1400';
 		setImagesColor('white');
-	else
+	}
+	else{
+		light_switch.style.backgroundColor = '';
+		light_switch.innerHTML = sun_svg;
 		setImagesColor('black');
+	}
+	if (text_size == 'normal'){
+		letter_switch.innerHTML = 'a';
+		letter_switch.style.backgroundColor = "";
+	}
+	else{
+		letter_switch.innerHTML = 'A';
+		letter_switch.style.backgroundColor = "#AD1400";
+		letter_switch.style.color = "white";
+	}
+
 }
 
 function addBeforeUnloadWarning() {

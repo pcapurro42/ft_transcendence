@@ -156,13 +156,13 @@ function setHighContrast(value)
 {
     btn = document.querySelectorAll('.btn, .btn_img, .btn_icon, .slider, .selector, #title_logo, #top_logo');
     btn_icon = document.querySelectorAll('.btn_icon');
-    color_btn = document.querySelectorAll('.color_btn');
+    dark_btn = document.querySelectorAll('.dark_btn');
     footer = document.getElementById('footer_div');
     high_contrast_btn = document.getElementById('high_contrast_btn_yn');
 
     if (high_contrast == "true")
     {
-        color_btn.forEach(element =>{
+        dark_btn.forEach(element =>{
             element.classList.remove('btn-outline-dark')
             element.classList.add('btn-outline-light')
             element.removeEventListener('mouseout', backBtnColor_toBlack);
@@ -191,7 +191,7 @@ function setHighContrast(value)
     }
     else
     {
-        color_btn.forEach(element =>{
+        dark_btn.forEach(element =>{
             element.classList.remove('btn-outline-light')
             element.classList.add('btn-outline-dark')
             element.removeEventListener('mouseover', backBtnColor_toBlack);
@@ -226,13 +226,13 @@ function setDescriptiveImages(value)
     {
         document.getElementById('image_desc_btn_yn').setAttribute('data-oname', 'Enabled');
         document.getElementById('image_desc_btn_yn').style.backgroundColor = "#AD1400";
-        document.getElementById('image_desc_btn_yn').style.color = "white";
+        document.getElementById('image_desc_btn_yn').classList.replace('text-black', 'text-white');
     }
     else
     {
         document.getElementById('image_desc_btn_yn').setAttribute('data-oname', 'Disabled');
         document.getElementById('image_desc_btn_yn').style.backgroundColor = "";
-        document.getElementById('image_desc_btn_yn').style.color = "black";
+        document.getElementById('image_desc_btn_yn').classList.replace('text-white', 'text-black');
         for (let i = 0; i != descriptions.length; i++)
             descriptions[i].setAttribute('title', "");
     }
@@ -261,15 +261,15 @@ function refreshDisplay()
 
     if (localStorage.getItem('status') == "connected")
     {
-        document.getElementById('one_vs_one_online_btn').classList.remove('disabled');
-        document.getElementById('history_btn').classList.remove('disabled');
-        document.getElementById('online_stats_btn').classList.remove('disabled');
+        document.getElementById('one_vs_one_online_btn').removeAttribute('disabled');
+        document.getElementById('history_btn').removeAttribute('disabled');
+        document.getElementById('online_stats_btn').removeAttribute('disabled');
     }
     else
     {
-        document.getElementById('one_vs_one_online_btn').classList.add('disabled');
-        document.getElementById('history_btn').classList.add('disabled');
-        document.getElementById('online_stats_btn').classList.add('disabled');
+        document.getElementById('one_vs_one_online_btn').setAttribute('disabled', true);
+        document.getElementById('history_btn').setAttribute('disabled', true);
+        document.getElementById('online_stats_btn').setAttribute('disabled', true);
     }
     ARIAButtonState();
     ARIASoundsSlider();
