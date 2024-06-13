@@ -10,12 +10,14 @@ function readHostMsg(event)
 		game.ball.x = +msg.substring(msg.indexOf('/') + 1, msg.indexOf('_'));
 		return;
 	}
-	else if (msg.startsWith('score:')){
-		game.scores[0] = +msg.substring(6, msg.indexOf('_'));
-		game.scores[1] = +msg.substring(msg.indexOf('_') + 1);
+	else if (msg.startsWith('score_h:')){
+		game.scores[0] = +msg.substring(8);
 	}
+	else if (msg.startsWith('score_g:'))
+		game.scores[1] = +msg.substring(8);
+
 	else{
-	switch (msg){
+		switch (msg){
 			case 'ping':
 				ping = true;
 				return;

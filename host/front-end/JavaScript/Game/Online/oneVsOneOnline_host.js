@@ -312,13 +312,18 @@ class OnlineGame1v1_host
 
     restartRound()
     {
-        if (this.ball.x >= this.game_width / 2)
-            this.scores[0]++, this.scores_time.push([(Date.now() - this.start_time), "1"]);
-        else
-            this.scores[1]++, this.scores_time.push([(Date.now() - this.start_time), "2"]);
+        if (this.ball.x >= this.game_width / 2){
+            this.scores[0]++;
+            this.scores_time.push([(Date.now() - this.start_time), "1"]);
+            data_channel.send(`score_h:${this.scores[0]}`);
+        }
+        else{
+            this.scores[1]++;
+            this.scores_time.push([(Date.now() - this.start_time), "2"]);
+            data_channel.send(`score_g:${this.scores[1]}`);
+        }
 
-        data_channel.send(`score:${this.scores[0]}_${this.scores[1]}`);
-        
+
         this.ball.replace();
         this.refreshDisplay();
     }
