@@ -140,20 +140,21 @@ class History
         {
             this.data_display.fillStyle = this.global_color;
 
-            let player_1;
-            let player_2;
+            let player1;
+            let player2;
 
             if (this.role == "guest")
             {
-                player_1 = this.history_data.data[history_tab][0];
-                player_2 = this.history_data.data[history_tab][1];
+                player1 = this.history_data.data[history_tab][0];
+                player2 = this.history_data.data[history_tab][1];
             }
             else
             {
-                player_1 = this.history_data.data[history_tab][1];
-                player_2 = this.history_data.data[history_tab][0];
+                player1 = this.history_data.data[history_tab][1];
+                player2 = this.history_data.data[history_tab][0];
             }
 
+            this.data_display.font = "bold " + this.title_text_format;
             let player1_len = this.data_display.measureText(player1).width;
 
             this.data_display.font = "italic " + this.title_text_format;
@@ -190,7 +191,7 @@ class History
 
             this.data_display.fillText(this.history_data.data[history_tab][3], 20, this.data_height - 20);
 
-            let duration = (this.history_data.data[history_tab][4]).toFixed(2) + "s";
+            let duration = "≈ " (this.history_data.data[history_tab][4]).toFixed(2) + "s";
             let duration_size = this.data_display.measureText(duration).width;
             this.data_display.fillText(duration, this.data_width - 20 - duration_size, this.data_height - 20);
 
