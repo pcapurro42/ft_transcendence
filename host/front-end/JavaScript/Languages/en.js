@@ -84,7 +84,7 @@ let en = [
     ["Create Lobby", "Create Lobby"],
     ["Join Lobby", "Join Lobby"],
     ["Submit", "Submit"],
-    ["Invalid alias", "Nickname length 4-15.<br>(ABCabc123_-)"],
+    ["Invalid alias", "Nickname length 4-15.(ABCabc123_-)"],
     ["Checkbox error", "Authentificate with 42 first."],
 
     ["Classic", "Classic"],
@@ -99,10 +99,10 @@ let en = [
     ["Image description", "Image description"],
     ["High contrast", "High contrast"],
 
-    ["– Privacy policy –", "– Privacy policy –"],
-    ["This website complies with the General Data Protection Regulation (GDPR) from the european Union.", "This website complies with the General Data Protection Regulation (GDPR) from the european Union."],
+    ["Privacy policy", "Privacy policy"],
+    ["Website RGPD", "This website complies with the General Data Protection Regulation (GDPR) from the european Union."],
 
-    ["We invite you to read more about it in privacy policy page.", "We invite you to read more about it in privacy policy page."],
+    ["Privacy Policy Page", "We invite you to read more about it in privacy policy page."],
 
     ["Data share", "Data share"],
     ["Local data", "Local data"],
@@ -114,19 +114,19 @@ let en = [
     ["Anonymized", "Anonymized"],
     ["Read", "Read"],
     ["Delete", "Delete"],
-    
-    ["This website complies with the General Data Protection Regulation (GDPR) from the european Union. We invite you to read the following to learn more about how the website has been developed to respect this regulation.", "This website complies with the General Data Protection Regulation (GDPR) from the european Union. We invite you to read the following to learn more about how the website has been built to respect this regulation."],
-    
-    ["Note: if you don't use any online features from the website (log in with 42 and online games), no data is stored out of your computer or shared with anyone.", "Note: if you don't use any online features from the website (log in with 42 and online games), no data is stored out of your computer or shared with anyone."],
-    
-    ["What data is shared and why?", "What data is shared and why?"],
-    ["Only three different types of information are shared: IP addresses, 42 logins and game informations. The first two are stored in our website database in order to connect players together. Finally, these two are also shared between two persons playing online, as well as game informations to permit game synchronization.", "Only three different types of information are shared: IP addresses, 42 logins and game informations. The first two are stored in our website database in order to connect players together. Finally, these two are also shared between two persons playing online, as well as game informations to permit game synchronization."],
-    
-    ["For how long is the data stored?", "For how long is the data stored?"],
-    ["For a very short time. All the data are erased from the database when the website is being rebooted, which happens regularly (at least multiple times every day).", "For a very short time. All the data are erased when the website is being rebooted, which happens regularly (at least multiple times every day)."],
-    
-    ["How can I interact with my data?", "How can I interact with my data?"],
-    ["In compliance with the GDPR, three options are availaible to you: you can choose to anonymize your data, delete your online data and delete your local data. As soon as you ask for it, these directives will take effect. Everything can be done in the settings menu.", "In compliance with the GDPR, three options are availaible to you: you can choose to anonymize your data, delete your online data and delete your local data. As soon as you ask for it, these directives will take effect. Everything can be done in the settings menu."],
+
+    ["RGPD-Intro", "<pre>This website complies with the General Data Protection Regulation (GDPR) from the european Union.\nWe invite you to read the following to learn more about how the website\nhas been built to respect this regulation.</pre>"],
+
+    ["RGPD-Note", "<pre> Note: if you don't use any online features from the website (log in with 42 and online games),\n no data is stored out of your computer or shared with anyone.\n\n\n</pre>"],
+
+    ["RGPD-Data sharing title", "What data is shared and why?"],
+    ["RGPD-Data sharing", "<pre>Only three different types of information are shared:\n\n •IP addresses\n•42 logins\n•Game informations\n\nThe first two are stored in our website database in order to connect players together.\n Finally, these two are also shared between two persons playing online, as well as\n game informations to permit game synchronization.</pre>"],
+
+    ["RGPD-Data time title", "For how long is the data stored?"],
+    ["RGPD-Data time", "<pre>For a very short time.\n\n All the data is erased when the website is being rebooted, which happens regularly\n (at least multiple times every day).</pre>"],
+
+    ["RGPD-User action title", "How can I interact with my data?"],
+    ["RGPD-User action", "<pre>In compliance with the GDPR, three options are availaible to you:\n\n•Anonymize your data\n •Delete your online data •Delete your local data\n\n As soon as you ask for it, these directives will take effect.\n Everything can be done in the settings menu.</pre>"],
 
     ["Game theme", "Game theme"],
     ["Game map", "Game map"],
@@ -237,6 +237,7 @@ let en = [
     ['/online-stats', '/online-stats'],
     ['/settings', '/settings'],
     ['/credits', '/credits'],
+    ['/privacy', '/privacy'],
     ['Local Stats', 'Statistics - local'],
     ['Online Stats', 'Statistics - online'],
 
@@ -262,10 +263,14 @@ let en = [
     ["ARIA Language Selector", "Select a language for the website"],
     ["ARIA Tournament Nick Form", "Form for tournament player's nickname"],
     ["ARIA Tournament Form Label", "Player"],
-    ["ARIA Duplicate Nickname", "Nickname is wrongly formatted. Please input a nickname using 4 to 15 characters. Accepted characters are uppercase and lowercase letters, numbers, hyphen and underscore."],
     ["ARIA Textsize Selector", "Select the text size for the website."],
     ["ARIA Credits Close", "Close the credits, get back to main menu."],
     ["ARIA Credits Video", "Credits Video, where we can hear Cynthia Harrell voice singing Snake Eater, the eponymous OST of Metal Gear Solid 3. Thanks again to pcapurro and Bgales for their delightful work."],
+    ["ARIA Online Stats Diagram", "Online statistics graphics. Switch visual off in order to get stats."],
+    ["ARIA History Data", ""],
+    ["ARIA History Time Data", ""],
+    ["ARIA History Diagram", ""],
+    ["ARIA Invalid Alias", "<pre>Nickname is wrongly formatted.\nPlease input a nickname using 4 to 15 characters.\nAccepted characters are uppercase and lowercase letters,\n numbers, hyphen and underscore.</pre"],
 
 
     ["Top Logo Alt", "Website logo : Tactical Tennis Action Metal Gear Pong. Get back to main menu."],

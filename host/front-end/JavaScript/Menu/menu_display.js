@@ -177,6 +177,7 @@ const nav = {
 
         nav.displayTournamentSetup();
     },
+
 // < DISPLAY/REMOVE > //
 
     displayPlay : function()
@@ -289,18 +290,31 @@ const nav = {
         initializeLocal1v1();
     },
 
-        hideEveryDiv: function (){
-        document.getElementById('game_toolbar').style.display = 'none';
-        document.getElementById('one_vs_one_host_page').style.display = 'none';
-        document.getElementById('one_vs_one_guest_page').style.display = 'none';
+    displayRGPD: function(){
+        nav.hideEveryDiv();
+        document.getElementById('rgpd_block').style.display = 'block';
+
+         if (pushHistory == true && window.location.pathname != getTranslation('/privacy'))
+        history.pushState(null, null, getTranslation('/privacy'));
+        else{
+            history.replaceState(null, null, getTranslation('/privacy'));
+        }
+
+        document.title = getTranslation('- Privacy policy -');
+    },
+
+    hideEveryDiv: function (){
+        document.getElementById('game_toolbar').style.display ='none';
+        document.getElementById('one_vs_one_online_choice_menu').style.display = 'none';
         document.getElementById('one_vs_one_local_page').style.display = 'none';
         document.getElementById('one_vs_two_local_page').style.display = 'none';
-        document.getElementById('game_page_tournament').style.display = 'none';
+        document.getElementById('one_vs_one_guest_page').style.display = 'none';
+        document.getElementById('one_vs_one_host_page').style.display= 'none';
+        document.getElementById('game_page_tournament').style.display= 'none';
         document.getElementById('play_menu').style.display = 'none';
         document.getElementById('customize_menu').style.display = 'none';
         document.getElementById('stats_menu').style.display = 'none';
         document.getElementById('settings_menu').style.display = 'none';
-        document.getElementById('one_vs_one_online_choice_menu').style.display = 'none';
         document.getElementById('online_stats').style.display = 'none';
         document.getElementById('local_stats').style.display = 'none';
         document.getElementById('history').style.display = 'none';
@@ -312,9 +326,10 @@ const nav = {
         document.getElementById('tournament_nickname_menu').style.display = 'none';
         document.getElementById('tournament_announcer').style.display = 'none';
         document.getElementById('game_backgrounds').style.display = 'none';
-        document.getElementById('main_page').style.display = 'block';
         document.getElementById('main_menu_buttons').style.display = 'none';
         document.getElementById('main_menu_page').style.display = 'none';
+        document.getElementById('rgpd_block').style.display = "none";
+        document.getElementById('main_page').style.display = 'block';
         let status_bars = document.querySelectorAll('.status_bar');
         status_bars.forEach( (elem) =>{
             elem.style.display="none";

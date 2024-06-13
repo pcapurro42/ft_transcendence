@@ -2,7 +2,6 @@ body
 {
     display: none;
 }
-
 .focus-white:focus-visible{
     outline: 3px solid white !important;
     outline-offset: 2px !important;
@@ -18,12 +17,44 @@ body
     inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 50px);
 }
 
-.dropdown_btn:hover{
+.dropdown_btn:hover, .foot:hover{
     opacity: 0.5;
 }
 
 .btn_img{
     border : 0px;
+}
+
+.security_margin{
+    margin-bottom: 200px;
+}
+
+
+.titi{
+    overflow-y: auto;
+}
+pre:not(.titi){
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.form_block{
+    max-width: 370px;
+    max-height: 170px;
+}
+#footer_div{
+    background-color: #b40e0e;
+}
+
+.foot, #hr, #mgp_corp, #bgales_git, #pcap_git, #rgpd_btn, #mgp_corp{
+    color:white;
+
+}
+
+#hr
+{
+    width: 235px;
 }
 
 .btn_img, .btn_img:hover{
@@ -65,7 +96,7 @@ body
     top: 0%;
     left: 0%;
 }
-.btn:hover:not(.border, .btn-outline-success, .btn-outline-secondary, .btn-outline-danger, .color_btn, #intra_login, .dropdown_btn){
+.btn:hover:not(.border, .btn-outline-success, .btn-outline-secondary, .btn-outline-danger, .color_btn, #intra_login, .dropdown_btn, .foot){
     transition: 1s;
     transform: scale(1.2);
 }
@@ -75,6 +106,9 @@ body
     transform: scale(1.05);
 }
 
+.text-white, .text-black, .text {
+    transition: 0.30s;
+}
 #switch_visual_input
 {
     transform: scale(1.5);

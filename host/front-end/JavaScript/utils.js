@@ -3,15 +3,24 @@ function dropdownAddSvg(){
 	let custom = document.getElementById('drop_customize');
 	let settings = document.getElementById('drop_settings');
 	let stats = document.getElementById('drop_stats');
+	let github_p = document.getElementById('pcap_git');
+	let github_b = document.getElementById('bgales_git');
+	let rgpd = document.getElementById('rgpd_btn');
 
-	let logout_svg = '<img id="svg" class="m-1" src="./Materials/images/logout.svg" alt="Icon">';
-	let custom_svg = '<img id="svg" class="m-1" src="./Materials/images/customize.svg" alt="Icon">';
-	let settings_svg = '<img id="svg" class="m-1" src="./Materials/images/settings.svg" alt="Icon">';
-	let stats_svg = '<img id="svg" class="m-1" src="./Materials/images/stats.svg" alt="Icon">';
+	let logout_svg = '<img class="svg m-1" 	src="./Materials/images/logout.svg" alt="Icon">';
+	let custom_svg = '<img class="svg m-1" src="./Materials/images/customize.svg" alt="Icon">';
+	let settings_svg = '<img class="svg m-1" src="./Materials/images/settings.svg" alt="Icon">';
+	let stats_svg = '<img class="svg m-1" src="./Materials/images/stats.svg" alt="Icon">';
+	let github_svg = '<img class="svg foot m-1" src="./Materials/images/github.svg" alt="Icon">'
+	let rgpd_svg = '<img class="svg foot m-1" src="./Materials/images/rgpd.svg" alt="Icon">'
+
 	logout.innerHTML = logout_svg + '  ' + logout.innerHTML;
 	custom.innerHTML =  custom_svg + '  ' + custom.innerHTML;
 	settings.innerHTML = settings_svg + '  ' + settings.innerHTML;
 	stats.innerHTML = stats_svg + '  ' + stats.innerHTML;
+	github_p.innerHTML = github_svg + "Pcapurro";
+	github_b.innerHTML = github_svg + "Bgales";
+	rgpd.innerHTML = rgpd_svg + getTranslation('Privacy policy');
 	if (high_contrast == 'true')
 		setImagesColor('white');
 	else
@@ -82,9 +91,13 @@ function getIceConfig(){
 }
 
 function freeInputAndForms(){
-	let t_invalid_alias = document.getElementById('invalid-alias');
+	let t_invalid_alias = document.getElementById('invalid-alias-msg');
     t_invalid_alias.style.display = 'none';
 
+	let t_cross = document.querySelectorAll('.invalid-feedback');
+	t_cross.forEach(element => {
+		element.style.display = 'none';
+	});
     let t_duplicate = document.getElementById('duplicate_nick');
     t_duplicate.style.display = 'none';
 

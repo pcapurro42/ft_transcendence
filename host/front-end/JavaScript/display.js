@@ -1,76 +1,6 @@
 nav.displayMenu = function()
 {
-    let game_toolbar = document.getElementById('game_toolbar');
-    game_toolbar.style.display = "none";
-
-    let one_vs_one_online_choice_menu = document.getElementById('one_vs_one_online_choice_menu');
-    one_vs_one_online_choice_menu.style.display = "none";
-
-    let one_vs_one_local_page = document.getElementById('one_vs_one_local_page');
-    one_vs_one_local_page.style.display = "none";
-
-    let one_vs_two_local_page = document.getElementById('one_vs_two_local_page');
-    one_vs_two_local_page.style.display = "none";
-
-    let game_guest_page = document.getElementById('one_vs_one_guest_page');
-    game_guest_page.style.display = 'none';
-
-    let game_host_page = document.getElementById('one_vs_one_host_page');
-    game_host_page.style.display = 'none';
-
-    let game_page_tournament = document.getElementById('game_page_tournament');
-    game_page_tournament.style.display = "none";
-
-    let play_menu = document.getElementById('play_menu');
-    play_menu.style.display = "none";
-
-    let customize_menu = document.getElementById('customize_menu');
-    customize_menu.style.display = "none";
-
-    let stats_menu = document.getElementById('stats_menu');
-    stats_menu.style.display = "none";
-
-    let settings_menu = document.getElementById('settings_menu');
-    settings_menu.style.display = "none";
-
-    let play_classic_buttons = document.getElementById('one_vs_one_online_choice_menu');
-    play_classic_buttons.style.display = "none";
-
-    let online_stats = document.getElementById('online_stats');
-    online_stats.style.display = "none";
-
-    let local_stats = document.getElementById('local_stats');
-    local_stats.style.display = "none";
-
-    let historic = document.getElementById('history');
-    historic.style.display = "none";
-
-    let classic_buttons = document.getElementById('classic_buttons');
-    classic_buttons.style.display = "none";
-
-    let create_classic_menu = document.getElementById('create_classic_menu');
-    create_classic_menu.style.display = 'none';
-
-    let join_classic_menu = document.getElementById('join_classic_menu')
-    join_classic_menu.style.display = 'none';
-
-    let disconnectionPopup = document.getElementById('disconnectionPopup');
-    disconnectionPopup.style.display = 'none';
-
-    let leavingPopup = document.getElementById('leavingPopup');
-    leavingPopup.style.display = 'none';
-
-    let tournament_setup = document.getElementById('tournament_setup');
-    tournament_setup.style.display = 'none';
-
-    let tournament_alias = document.getElementById('tournament_nickname_menu')
-    tournament_alias.style.display = 'none';
-
-    let tournament_announcer = document.getElementById('tournament_announcer');
-    tournament_announcer.style.display = 'none';
-
-    let game_backgrounds = document.getElementById('game_backgrounds');
-    game_backgrounds.style.display = 'none';
+    nav.hideEveryDiv();
 
     let main_page = document.getElementById('main_page');
     main_page.style.display = 'block';
@@ -80,6 +10,8 @@ nav.displayMenu = function()
 
     let main_menu_buttons = document.getElementById('main_menu_buttons');
     main_menu_buttons.style.display = "block";
+
+    document.getElementById('rgpd_block').style.display = "none";
 
     // let main_menu_img = document.getElementsByClassName('.btn_img');
     // main_menu_img.forEach(element => {element.style.display = "block"});
@@ -155,7 +87,7 @@ function setMaterialsColor(color)
 function setImagesColor(color)
 {
     let images = document.getElementsByClassName("image");
-    let svg = document.querySelectorAll('#svg');
+    let svg = document.querySelectorAll('.svg');
     for (let i = 0; i != images.length; i++)
     {
         if (color == "white")
@@ -165,6 +97,10 @@ function setImagesColor(color)
     }
 
     svg.forEach(element => {
+        if (element.classList.contains('foot')){
+            element.style.filter="invert(100%)";
+            return;
+        }
         if (color == "white")
             element.style.filter="invert(100%)";
         else
@@ -221,11 +157,16 @@ function setHighContrast(value)
     btn = document.querySelectorAll('.btn, .btn_img, .btn_icon, .slider, .selector, #title_logo, #top_logo');
     btn_icon = document.querySelectorAll('.btn_icon');
     color_btn = document.querySelectorAll('.color_btn');
+    footer = document.getElementById('footer_div');
+    high_contrast_btn = document.getElementById('high_contrast_btn_yn');
+
     if (high_contrast == "true")
     {
         color_btn.forEach(element =>{
             element.classList.remove('btn-outline-dark')
             element.classList.add('btn-outline-light')
+            element.removeEventListener('mouseout', backBtnColor_toBlack);
+		    element.removeEventListener('mouseover', backBtnColor_toWhite);
             element.addEventListener('mouseover', backBtnColor_toBlack);
 		    element.addEventListener('mouseout', backBtnColor_toWhite);
         });
@@ -239,9 +180,10 @@ function setHighContrast(value)
             element.classList.add('focus-black');
             element.classList.remove('focus-white');
         });
-        document.getElementById('high_contrast_btn_yn').setAttribute('data-oname', 'Enabled');
-        document.getElementById('high_contrast_btn_yn').style.backgroundColor = "red";
-
+        high_contrast_btn.setAttribute('data-oname', 'Enabled');
+        high_contrast_btn.style.backgroundColor = "#AD1400";
+        high_contrast_btn.style.color = "white";
+        footer.backgroundColor="#1a1a1a";
         setBackgroundColor("black");
         setTextColor("white");
         setMaterialsColor("black");
@@ -254,6 +196,9 @@ function setHighContrast(value)
             element.classList.add('btn-outline-dark')
             element.removeEventListener('mouseover', backBtnColor_toBlack);
 		    element.removeEventListener('mouseout', backBtnColor_toWhite);
+
+            element.addEventListener('mouseout', backBtnColor_toBlack);
+		    element.addEventListener('mouseover', backBtnColor_toWhite);
         });
 
         btn.forEach(element => {
@@ -261,8 +206,10 @@ function setHighContrast(value)
             element.classList.remove('focus-white');
         });
 
-        document.getElementById('high_contrast_btn_yn').setAttribute('data-oname', 'Disabled');
-        document.getElementById('high_contrast_btn_yn').style.backgroundColor = "";
+        footer.backgroundColor="#AD1400";
+        high_contrast_btn.setAttribute('data-oname', 'Disabled');
+        high_contrast_btn.style.backgroundColor = "";
+        high_contrast_btn.style.color = "black";
 
         setBackgroundColor("white");
         setTextColor("black");
@@ -278,12 +225,14 @@ function setDescriptiveImages(value)
     if (value == "enable")
     {
         document.getElementById('image_desc_btn_yn').setAttribute('data-oname', 'Enabled');
-        document.getElementById('image_desc_btn_yn').style.backgroundColor = "red";
+        document.getElementById('image_desc_btn_yn').style.backgroundColor = "#AD1400";
+        document.getElementById('image_desc_btn_yn').style.color = "white";
     }
     else
     {
         document.getElementById('image_desc_btn_yn').setAttribute('data-oname', 'Disabled');
         document.getElementById('image_desc_btn_yn').style.backgroundColor = "";
+        document.getElementById('image_desc_btn_yn').style.color = "black";
         for (let i = 0; i != descriptions.length; i++)
             descriptions[i].setAttribute('title', "");
     }

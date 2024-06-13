@@ -32,8 +32,9 @@ function formDuplicator(value){
 		for (let j = 0; j < childrens.length; j++)
 		    childrens[j].id = childrens[j].id + i;
 		let label_child = clone_form.querySelector('#t_form_label' + i)
+		let form_child = clone_form.querySelector('#alias_input' + i)
 		label_child.innerHTML = getTranslation("ARIA Tournament Form Label") + ' ' + (i + 2) + ':';
-		label_child.setAttribute('for', 'alias_input' + i);
+		form_child.setAttribute('aria-labelledby', 't_form_label' + i);
 		document.getElementById('parent_form').append(clone_form);
     }
 	return i;

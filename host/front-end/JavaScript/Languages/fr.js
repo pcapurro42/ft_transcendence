@@ -83,7 +83,7 @@ let fr = [
     ["Create Lobby", "Créer un salon"],
     ["Join Lobby", "Rejoindre un salon"],
     ["Submit", "Soumettre"],
-    ["Invalid alias", "Longueur du surnom 4-15.<br>(ABCabc123_-)"],
+    ["Invalid alias", "Longueur du surnom 4-15.(ABCabc123_-)"],
     ["Checkbox error", "Authentifiez vous avec 42."],
 
     ["Classic", "Classique"],
@@ -98,10 +98,10 @@ let fr = [
     ["Image description", "Description de l'image"],
     ["High contrast", "Haut contraste"],
 
-    ["– Privacy policy –", "– Politique de confidentialité –"],
-    ["This website complies with the General Data Protection Regulation (GDPR) from the european Union.", "Ce site Internet se conforme au règlement général sur la protection des données (RGPD) de l'Union européenne."],
+    ["Privacy policy", "Politique de confidentialité"],
+    ["Website RGPD", "Ce site Internet se conforme au règlement général sur la protection des données (RGPD) de l'Union européenne."],
 
-    ["We invite you to read more about it in privacy policy page.", "Nous vous invitons à en lire davantage sur la page dédiée à la politique de confidentialité."],
+    ["Privacy Policy Page", "Nous vous invitons à en lire davantage sur la page dédiée à la politique de confidentialité."],
 
     ["Data share", "Partage de données"],
     ["Local data", "Données locales"],
@@ -114,18 +114,18 @@ let fr = [
     ["Read", "Lire"],
     ["Delete", "Supprimer"],
 
-    ["This website complies with the General Data Protection Regulation (GDPR) from the european Union. We invite you to read the following to learn more about how the website has been developed to respect this regulation.", "Ce site Internet se conforme au règlement général sur la protection des données (RGPD) de l'Union européenne. Nous vous invitons à lire ce qui suit pour en savoir plus sur comment le site a été développé afin de respecter ce règlement."],
-    
-    ["Note: if you don't use any online features from the website (log in with 42 and online games), no data is stored out of your computer or shared with anyone.", "Note : si vous n'utilisez aucune des fonctionnalités en ligne du site (se connecter avec 42 et les parties en ligne), aucune donnée n'est stockée en dehors de votre ordinateur ou n'est partagée avec quelqu'un."],
-    
-    ["What data is shared and why?", "Quelles données sont partagées et pourquoi ?"],
-    ["Only three different types of information are shared: IP addresses, 42 logins and game informations. The first two are stored in our website database in order to connect players together. Finally, these two are also shared between two persons playing online, as well as game informations to permit game synchronization.", "Seulement trois types d'informations sont partagées : les adresses IP, les identifiants 42 et les informations du jeu. Les deux premiers sont stockés dans la base de données de notre site afin de faise se connecter les joueurs ensemble. Enfin, ces derniers sont également partagés entre deux personnes jouant en ligne, ainsi que les informations du jeu pour permettre une synchronisation des parties."],
-    
-    ["For how long is the data stored?", "Pour combien de temps les données sont-elles stockées ?"],
-    ["For a very short time. All the data are erased from the database when the website is being rebooted, which happens regularly (at least multiple times every day).", "Pour très peu de temps. Toutes les données sont effacées de la base de données lorsque le site est redémarré, ce qui arrive régulièrement (au moins plusieurs fois par jour)."],
-    
-    ["How can I interact with my data?", "Comment puis-je interagir avec mes données ?"],
-    ["In compliance with the GDPR, three options are availaible to you: you can choose to anonymize your data, delete your online data and delete your local data. As soon as you ask for it, these directives will take effect. Everything can be done in the settings menu.", "En accord avec le RGPD, trois options s'offrent à vous : vous pouvez choisir d'anonymiser vos données, de supprimer vos données en ligne et de supprimer vos données locales. Dès que vous en faites la demande, ces directives prendront effet. Cela peut-être fait à partir du menu des paramètres."],
+    ["RGPD-Intro", "<pre>Ce site Internet se conforme au règlement général sur la protection des données (RGPD) de l'Union européenne.\n Nous vous invitons à lire ce qui suit pour en savoir plus sur comment le site a été développé\n afin de respecter ce règlement.</pre>"],
+
+    ["RGPD-Note", "<pre class='overflow'>Note : si vous n'utilisez aucune des fonctionnalités en ligne du site (se connecter avec 42 et les parties en ligne),\n aucune donnée ne sera stockée en dehors de votre ordinateur ou ne sera partagée avec quelqu'un. \n\n\n</pre>"],
+
+    ["RGPD-Data sharing title", "Quelles données sont partagées et pourquoi ?"],
+    ["RGPD-Data sharing", "<pre>Seulement trois types d'informations sont partagées :\n\n •Les adresses IP\n•Les identifiants 42\n•Les informations du jeu.\n\n Les adresses IP et identifiants 42 sont stockés dans la base de données de notre site afin que\n les joueurs puissent établir une connexion. Enfin, ces derniers\n sont également partagés entre deux personnes jouant en ligne,\n ainsi que les informations du jeu pour permettre\n une synchronisation des parties.</pre>"],
+
+    ["RGPD-Data time title", "Pour combien de temps les données sont-elles stockées ?"],
+    ["RGPD-Data time", "<pre>Pour très peu de temps.\n\n Toutes les données sont effacées de la base de données lorsque\n le site est redémarré, ce qui arrive régulièrement\n (au moins plusieurs fois par jour).</pre>"],
+
+    ["RGPD-User action title", "Comment puis-je intéragir avec mes données ?"],
+    ["RGPD-User action", "<pre>En accord avec le RGPD, trois options s'offrent à vous :\n\n•L'anonymisation de vos données\n•La suppression de vos données en ligne\n•La supression de vos données locales\n\n Dès que vous en faites la demande, ces directives prendront effet.\n Cela peut-être fait à partir du menu des paramètres.</pre>"],
 
     ["Game theme", "Musique du jeu"],
     ["Game map", "Carte du jeu"],
@@ -241,6 +241,7 @@ let fr = [
     ['/credits', '/credits'],
     ['Local Stats', 'Statistiques - local'],
     ['Online Stats', 'Statistiques - en ligne'],
+    ['/privacy', '/confidentialite'],
 
     ['Refresh Alert Tournament', 'Attention : Après un rafraîchissement, il n’est pas possible de revenir sur le tournoi qui était en cours.'],
     ['Refresh Alert Online', 'Attention : La connexion à été perdu lors du rafraichissement de la page.'],
@@ -265,10 +266,15 @@ let fr = [
     ["ARIA Language Selector", "Sélectionnez la langue du site web."],
     ["ARIA Tournament Nick Form", "Formulaire pour surnom de joueur du tournoi."],
     ["ARIA Tournament Form Label", "Joueur"],
-    ["ARIA Duplicate Nickname", "Le surnom est au mauvais format. Merci d'entrer un surnom de 4 à 15 caractères, contenant lettres majuscules ou minuscules, chiffres, tiret et tiret du bas."],
     ["ARIA Textsize Selector", "Sélectionnez la taille du texte sur le site web."],
     ["ARIA Credits Close", "Fermer les crédits. Retour au menu principal."],
-    ["ARIA Credits Video", "Vidéo des crédits du jeu, on peut entendre la voix de Cynthia Harrel chanter la chanson Snake Eater, OST éponyme de Metal Gear Solid 3. Merci à Pcapurro et Bgales pour cette formidable experience."],
+    ["ARIA Credits Video", "Vidéo des crédits du jeu, on peut entendre la voix de Cynthia Harrel chanter la chanson Snake Eater, OST éponyme de Metal Gear Solid 3. Merci à Pcapurro et Bgales pour cette formidable expérience."],
+    ["ARIA Invalid Alias", "<pre class='titi'>Mauvais format. 4 à 15 caractères,\n lettres majuscules ou minuscules,\n chiffres, tiret et tiret du bas.</pre>"],
+
+    ["ARIA Online Stats Diagram", "Statistique du mode en ligne. Enlevez le mode visuel pour pouvoir accéder aux stats."],
+    ["ARIA History Data", ""],
+    ["ARIA History Time Data", ""],
+    ["ARIA History Diagram", ""],
 
     ["Top Logo Alt", "Logo du site web. Tactical Tennis Action Metal Gear Pong. Retour au menu principal."],
 

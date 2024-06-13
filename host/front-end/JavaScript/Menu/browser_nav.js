@@ -124,6 +124,10 @@ async function handleLocation(){
             pushHistory = false;
             nav.displayMenu();
             return;
+        case getSpecificTranslation('fr', '/privacy'):
+        case '/privacy':
+            nav.displayRGPD();
+            return;
     }
     window.location.href = 'https://127.0.0.1:1025/404.html';
 }
