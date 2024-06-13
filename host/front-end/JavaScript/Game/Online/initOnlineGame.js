@@ -89,13 +89,14 @@ function startOnline1v1()
             {
                 game.end_time = getActualTimeSeconds();
 
+                localStorage.setItem('onl_played', (parseInt(localStorage.getItem('onl_played')) + 1).toString());
+                localStorage.setItem('onl_dist', (parseInt(localStorage.getItem('onl_dist')) + this.dist).toString());
+
                 addHistoryEntry(game.player, game.other_player, ([game.scores[0], game.scores[1]]), game.date, (game.end_time - game.start_time), game.scores_time, role);
             }
 
             game.resetGame();
             active = false;
-
-            localStorage.setItem('onl_played', (parseInt(localStorage.getItem('onl_played')) + 1).toString());
 
             removeOnline1v1();
         }
