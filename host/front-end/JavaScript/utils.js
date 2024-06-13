@@ -40,11 +40,13 @@ async function dropdownAddSvg(){
 	if (text_size == 'normal'){
 		letter_switch.innerHTML = 'a';
 		letter_switch.style.backgroundColor = "";
+		if (high_contrast == false)
+			letter_switch.classList.replace('text-white', 'text-black');
 	}
 	else{
 		letter_switch.innerHTML = 'A';
 		letter_switch.style.backgroundColor = "#AD1400";
-		letter_switch.style.color = "white";
+		letter_switch.classList.replace('text-black', 'text-white');
 	}
 
 }
