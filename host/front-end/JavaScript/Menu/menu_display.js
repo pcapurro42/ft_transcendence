@@ -5,17 +5,9 @@ const nav = {
     displayClassicChoice : function()
     {
         nav.hideEveryDiv();
-        let classic_buttons = document.getElementById('classic_buttons');
-        let play_menu = document.getElementById('play_menu');
+        document.getElementById('classic_buttons').style.display = "block";
 
-        classic_buttons.style.display = "block";
-        play_menu.style.display = 'none';
-        if (pushHistory == true  && window.location.pathname != getTranslation('/classic'))
-            history.pushState(null, null, getTranslation('/classic'));
-        else{
-            history.replaceState(null, null, getTranslation('/classic'));
-            pushHistory = true;
-        }
+        addToHistory('/classic');
         document.title = getTranslation('Classic');
     },
 
@@ -28,110 +20,59 @@ const nav = {
     displayOnlineMenu: function()
     {
         nav.hideEveryDiv();
-        nav.removeClassicChoice();
 
-        let classic_menu = document.getElementById('one_vs_one_online_choice_menu');
-        classic_menu.style.display = "block";
-        let create_sub_menu = document.getElementById('create_classic_menu');
-        create_sub_menu.style.display = 'none';
+        document.getElementById('online_menu').style.display = "block";
 
-        let join_sub_menu = document.getElementById('join_classic_menu');
-        join_sub_menu.style.display = 'none';
-
-        let play_menu = document.getElementById('play_menu');
-        play_menu.style.display = 'none';
         freeInputAndForms();
         resetConnection();
-        if (pushHistory == true &&  window.location.pathname != getTranslation('/online'))
-            history.pushState(null, null, getTranslation('/online'));
-        else{
-            history.replaceState(null, null, getTranslation('/online'));
-            pushHistory = true;
-        }
+
+        addToHistory('/online');
         document.title = getTranslation('Online');
     },
 
     removeOnlineMenu: function()
     {
-        one_vs_one_online_choice_menu = document.getElementById('one_vs_one_online_choice_menu');
-        one_vs_one_online_choice_menu.style.display = "none";
+        online_menu = document.getElementById('online_menu');
+        online_menu.style.display = "none";
 
         nav.displayClassicChoice();
     },
 
     displayCreateLobby : async function(){
         nav.hideEveryDiv();
-        let classic_menu = document.getElementById('one_vs_one_online_choice_menu');
-        classic_menu.style.display = "none";
 
-        let create_classic_menu = document.getElementById('create_classic_menu');
-        create_classic_menu.style.display = 'block';
+        document.getElementById('create_classic_menu').style.display = 'block';
+        document.getElementById('create_classic_lobby').style.visibility = 'hidden';
 
         freeInputAndForms();
-
-        let init_p2p_btn = document.getElementById('init_p2p');
-        init_p2p_btn.removeAttribute('disabled');
-
-        let create_btn = document.getElementById('create_classic_lobby');
-        create_btn.style.visibility = 'hidden';
-
         resetConnection();
         offerGenerator();
-        if (pushHistory == true &&  window.location.pathname != getTranslation('/create-lobby'))
-            history.pushState(null, null, getTranslation('/create-lobby'))
-        else{
-            history.replaceState(null, null, getTranslation('/create-lobby'));
-            pushHistory = true;
-        }
+        addToHistory('/create-lobby');
         document.title = getTranslation('Create Lobby');
     },
 
     displayJoinLobby : function(){
         nav.hideEveryDiv();
-        let classic_menu = document.getElementById('one_vs_one_online_choice_menu');
-        classic_menu.style.display = "none";
 
-        let create_classic_menu = document.getElementById('join_classic_menu');
-        create_classic_menu.style.display = 'block';
+        document.getElementById('join_classic_menu').style.display = 'block';
+        document.getElementById('answer_timeout').style.display = 'none';
+        document.getElementById('join_classic_lobby').style.visibility = 'hidden';
+        document.getElementById('g_win_text').style.display = 'none';
 
-        let countdown = document.getElementById('answer_timeout');
-        countdown.style.display = 'none';
         clearInterval(timeoutInterval);
-
-        let submit_btn = document.getElementById('submit_inv_code');
-        submit_btn.removeAttribute('disabled');
-
         freeInputAndForms();
-
-        let join_btn = document.getElementById('join_classic_lobby');
-        join_btn.style.visibility = 'hidden';
-
-        let win_msg = document.getElementById('g_win_text');
-        win_msg.style.display = 'none';
         resetConnection();
-        if (pushHistory == true &&  window.location.pathname != getTranslation('/join-lobby'))
-            history.pushState(null, null, getTranslation('/join-lobby'));
-        else{
-            history.replaceState(null, null, getTranslation('/join-lobby'));
-            pushHistory = true;
-        }
+        addToHistory('/join-lobby');
         document.title = getTranslation('Join Lobby');
     },
 
 
     displayTournamentSetup : function(){
         nav.hideEveryDiv();
-        let play_menu = document.getElementById('play_menu');
-        play_menu.style.display = "none";
         let tournament_setup = document.getElementById('tournament_setup');
 	    tournament_setup.style.display = 'block';
 
-        if (pushHistory == true &&  window.location.pathname != getTranslation('/tournament'))
-            history.pushState(null, null, getTranslation('/tournament'));
-        else{
-            history.replaceState(null, null, getTranslation('/tournament'));
-            pushHistory = true;
-        }
+        addToHistory('/tournament');
         document.title = getTranslation('Tournament');
 
     },
@@ -149,30 +90,20 @@ const nav = {
         nav.hideEveryDiv();
 		let val = document.getElementById('tournament_players_selector').value;
         localStorage.setItem('t_player_nbr', val)
-        let t_setup = document.getElementById('tournament_setup');
-        t_setup.style.display = "none";
 
-        let tournament_nickname_menu = document.getElementById('tournament_nickname_menu');
-	    tournament_nickname_menu.style.display = 'block';
-
-        let form_alias =  document.getElementById('form_alias');
-        form_alias.style.display = 'block';
+        document.getElementById('tournament_nickname_menu').style.display = 'block';
+        document.getElementById('form_alias').style.display = 'block';
 
         let i = formDuplicator(val);
         document.getElementById('submit_alias').onclick = function(event){
             parse_alias(i, event)
         };
-        if (pushHistory == true &&  window.location.pathname != getTranslation('tournament-nicknames'))
-            history.pushState(null, null, getTranslation('/tournament-nicknames'));
-        else{
-            history.replaceState(null, null, getTranslation('/tournament-nicknames'));
-            pushHistory = true;
-        }
+
+        addToHistory('/tournament-nicknames');
         document.title = getTranslation('Tournament - Nicknames');
     },
 
-    removeTournamentForm : function(event)
-    {
+    removeTournamentForm : function(event){
         event.preventDefault();
         freeInputAndForms();
         let tournament_nickname_menu = document.getElementById('tournament_nickname_menu');
@@ -186,21 +117,12 @@ const nav = {
 
 // < DISPLAY/REMOVE > //
 
-    displayPlay : function()
-    {
+    displayPlay : function(){
         nav.hideEveryDiv();
-        let main_menu = document.getElementById('main_menu_buttons');
-        let play_menu = document.getElementById('play_menu');
 
-        play_menu.style.display = 'block';
-        nav.removeClassicChoice();
-        main_menu.style.display = 'none';
-        if (pushHistory == true &&  window.location.pathname != getTranslation('/play'))
-            history.pushState(null, null, getTranslation('/play'));
-        else{
-            history.replaceState(null, null, getTranslation('/play'));
-            pushHistory = true;
-        }
+        document.getElementById('play_menu').style.display = 'block';
+
+        addToHistory('/play');
         document.title = getTranslation("Play");
     },
 
@@ -234,67 +156,42 @@ const nav = {
         document.getElementById('main_page').style.display = "none";
         document.getElementById('game_toolbar').style.display = "block";
 
-        if (pushHistory == true &&  window.location.pathname != getTranslation('/online-game'))
-            history.pushState(null, null, getTranslation('/online-game'));
-        else{
-            history.replaceState(null, null, getTranslation('/online-game'));
-            pushHistory = true;
-        }
 
 		previous_url_path = window.location.pathname;
-        document.title = getTranslation('Online Game');
-
         initializeOnline1v1();
+
+
+        addToHistory('/online-game');
+        document.title = getTranslation('Online Game');
     },
 
     displayTwoVsOneGameLocal : function()
     {
         nav.hideEveryDiv();
-        main_page = document.getElementById('main_page');
-        main_page.style.display = "none";
-        game_toolbar = document.getElementById('game_toolbar');
-        game_toolbar.style.display = "block";
 
-        one_vs_two_local_page = document.getElementById('one_vs_two_local_page');
-        one_vs_two_local_page.style.display = "block";
+        document.getElementById('game_toolbar').style.display = "block";
+        document.getElementById('one_vs_two_local_page').style.display = "block";
 
-        let left_side_won = document.getElementById('left_side_won_text');
-        left_side_won.style.display = "none";
-        let right_side_won = document.getElementById('right_side_won_text');
-        right_side_won.style.display = "none";
-
-        if (pushHistory == true &&  window.location.pathname != getTranslation('/1vs2'))
-            history.pushState(null, null, getTranslation('/1vs2'));
-        else{
-            history.replaceState(null, null, getTranslation('/1vs2'));
-            pushHistory = true;
-        }
-        document.title = getTranslation('1 vs 2 (local)');
+        document.getElementById('left_side_won_text').style.display = "none";
+        document.getElementById('right_side_won_text').style.display = "none";
 
         initializeLocal1v2();
+
+        addToHistory('/1vs2');
+        document.title = getTranslation('1 vs 2 (local)');
     },
 
     displayOneVsOneGameLocal : function()
     {
         nav.hideEveryDiv();
-        main_page = document.getElementById('main_page');
-        main_page.style.display = "none";
-        game_toolbar = document.getElementById('game_toolbar');
-        game_toolbar.style.display = "block";
 
-        one_vs_one_local_page = document.getElementById('one_vs_one_local_page');
-        one_vs_one_local_page.style.display = "block";
+        document.getElementById('game_toolbar').style.display = "block";
+        document.getElementById('one_vs_one_local_page').style.display = "block";
 
-        let player_left_won = document.getElementById('left_player_won_text');
-        player_left_won.style.display = "none";
-        let player_right_won = document.getElementById('right_player_won_text');
-        player_right_won.style.display = "none";
-        if (pushHistory == true &&  window.location.pathname != getTranslation('/1vs1'))
-            history.pushState(null, null, getTranslation('/1vs1'));
-        else{
-            history.replaceState(null, null, getTranslation('/1vs1'));
-            pushHistory = true;
-        }
+        document.getElementById('left_player_won_text').style.display = "none";
+        document.getElementById('right_player_won_text').style.display = "none";
+
+        addToHistory('/1vs1')
         document.title = getTranslation("1 vs 1 (local)");
         initializeLocal1v1();
     },
@@ -303,19 +200,14 @@ const nav = {
         nav.hideEveryDiv();
         document.getElementById('rgpd_block').style.display = 'block';
 
-         if (pushHistory == true && window.location.pathname != getTranslation('/privacy'))
-        history.pushState(null, null, getTranslation('/privacy'));
-        else{
-            history.replaceState(null, null, getTranslation('/privacy'));
-        }
-
+        addToHistory('/privacy');
         document.title = getTranslation('- Privacy policy -');
     },
 
     hideEveryDiv: function (){
         document.getElementById('rgpd_block').style.display = "none";
         document.getElementById('game_toolbar').style.display ='none';
-        document.getElementById('one_vs_one_online_choice_menu').style.display = 'none';
+        document.getElementById('online_menu').style.display = 'none';
         document.getElementById('one_vs_one_local_page').style.display = 'none';
         document.getElementById('one_vs_two_local_page').style.display = 'none';
         document.getElementById('one_vs_one_guest_page').style.display = 'none';

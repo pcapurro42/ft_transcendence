@@ -459,14 +459,10 @@ nav.displayHistory = function()
     else
         history_tab = history_data.length - 1;
 
+    addToHistory('/game-history');
+
     historic = new History(history_data);
     historic.display();
-    if (pushHistory == true  &&  window.location.pathname != getTranslation('/game-history'))
-        history.pushState(null, null, getTranslation('/game-history'));
-    else{
-        history.replaceState(null, null, getTranslation('/game-history'));
-        pushHistory = true;
-    }
     document.title = getTranslation('Game History');
 }
 
@@ -485,12 +481,7 @@ nav.removeHistory = function()
     historic.style.display = 'none';
 
     historic = null;
-    if (pushHistory == true &&  window.location.pathname != getTranslation('/statistics'))
-        history.pushState(null, null, getTranslation('/statistics'));
-    else{
-        history.replaceState(null, null, getTranslation('/statistics'));
-        pushHistory = true;
-    }
+    addToHistory('/statistics');
     document.title = getTranslation('Statistics');
 }
 

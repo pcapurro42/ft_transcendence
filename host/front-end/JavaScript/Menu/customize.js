@@ -22,22 +22,15 @@ function setGameMusic()
 
 nav.displayCustomize = function()
 {
-    nav.hideEveryDiv();
-    let main_menu = document.getElementById('main_menu_buttons');
-
     let customize_menu = document.getElementById('customize_menu');
     let customize_back_btn = document.getElementById('customize_back_btn');
+
+    nav.hideEveryDiv();
 
     customize_menu.style.display = 'block';
     customize_back_btn.style.display = 'block';
 
-    main_menu.style.display = 'none';
-    if (pushHistory == true &&  window.location.pathname != getTranslation('/customize'))
-        history.pushState(null, null, getTranslation('/customize'));
-    else{
-        history.replaceState(null, null, getTranslation('/customize'));
-        pushHistory = true;
-    }
+    addToHistory('/customize');
     document.title = getTranslation('Customize');
 }
 

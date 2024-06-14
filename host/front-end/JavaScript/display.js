@@ -12,8 +12,6 @@ nav.displayMenu = function()
     main_menu_buttons.style.display = "block";
 
 
-    // let main_menu_img = document.getElementsByClassName('.btn_img');
-    // main_menu_img.forEach(element => {element.style.display = "block"});
 
     stop_flag = true; // stop tournament
     active = false; // turn off the game
@@ -25,12 +23,7 @@ nav.displayMenu = function()
     refreshStats();
     refreshStatsDisplaySwitch();
     refreshLogin();
-    if (pushHistory == true && window.location.pathname != getTranslation('/home'))
-        history.pushState(null, null, getTranslation('/home'));
-    else{
-        history.replaceState(null, null, getTranslation('/home'));
-    }
-
+    addToHistory('/home');
     document.title = getTranslation('Home');
 }
 

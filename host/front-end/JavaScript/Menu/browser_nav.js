@@ -27,6 +27,15 @@ async function handleForbiddenPages(){
     }
     localStorage.removeItem('no_confirmation');
 }
+
+function addToHistory(pagePath){
+    if (pushHistory == true &&  window.location.pathname != getTranslation(pagePath))
+        history.pushState(null, null, getTranslation(pagePath));
+    else{
+        history.replaceState(null, null, getTranslation(pagePath));
+        pushHistory = true;
+    }
+}
 async function handleLocation(){
 
     let path;

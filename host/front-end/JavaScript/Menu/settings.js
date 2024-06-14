@@ -106,7 +106,6 @@ function displayFirstSettingsPage()
 nav.displaySettings = function()
 {
     nav.hideEveryDiv();
-    let main_menu = document.getElementById('main_menu_buttons');
 
     let settings_menu = document.getElementById('settings_menu');
     let settings_back_btn = document.getElementById('settings_back_btn');
@@ -114,16 +113,10 @@ nav.displaySettings = function()
     settings_menu.style.display = 'block';
     settings_back_btn.style.display = 'block';
 
-    main_menu.style.display = 'none';
-    if (pushHistory == true  &&  window.location.pathname != getTranslation('/settings'))
-        history.pushState(null, null, getTranslation('/settings'));
-    else{
-        history.replaceState(null, null, getTranslation('/settings'));
-        pushHistory = true;
-    }
 
     displayFirstSettingsPage();
 
+    addToHistory('/settings');
     document.title = getTranslation('Settings');
 }
 

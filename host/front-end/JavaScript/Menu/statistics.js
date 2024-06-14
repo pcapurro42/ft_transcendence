@@ -378,7 +378,6 @@ function refreshStatsDisplaySwitch()
 nav.displayStats = function()
 {
     nav.hideEveryDiv();
-    let main_menu = document.getElementById('main_menu_buttons');
 
     let stats_menu = document.getElementById('stats_menu');
     let stats_menu_btn = document.getElementById('stats_menu_buttons');
@@ -388,14 +387,8 @@ nav.displayStats = function()
     stats_menu_btn.style.display = 'block';
     stats_back_btn.style.display = 'block';
 
-    main_menu.style.display = 'none';
 
-    if (pushHistory == true &&  window.location.pathname != getTranslation('/statistics'))
-        history.pushState(null, null, getTranslation('/statistics'));
-    else{
-        history.replaceState(null, null, getTranslation('/statistics'));
-        pushHistory = true;
-    }
+    addToHistory('/statistics');
     document.title = getTranslation('Statistics');
 }
 
@@ -424,13 +417,8 @@ nav.displayLocalStats = function()
     local_stats.style.display = 'block';
 
     document.getElementById('local_stats_nv').style.display = 'block';
-    if (pushHistory == true  &&  window.location.pathname != getTranslation('/local-stats'))
-        history.pushState(null, null, getTranslation('/local-stats'));
-    else{
-        history.replaceState(null, null, getTranslation('/local-stats'));
-        pushHistory = true;
-    }
 
+    addToHistory('/local-stats')
     document.title = getTranslation('Local Stats');
 }
 
@@ -475,12 +463,8 @@ nav.displayOnlineStats = function()
         document.getElementById('visual_info').style.display = 'none';
         document.getElementById('visual_info').style.visibility = 'hidden';
     }
-    if (pushHistory == true &&  window.location.pathname != getTranslation('online-stats'))
-        history.pushState(null, null, getTranslation('/online-stats'));
-    else{
-        history.replaceState(null, null, getTranslation('/online-stats'));
-        pushHistory = true;
-    }
+    
+    addToHistory('/online-stats');
     document.title = getTranslation('Online Stats');
 }
 
