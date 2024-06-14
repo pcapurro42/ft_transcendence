@@ -4,6 +4,7 @@ const nav = {
 
     displayClassicChoice : function()
     {
+        nav.hideEveryDiv();
         let classic_buttons = document.getElementById('classic_buttons');
         let play_menu = document.getElementById('play_menu');
 
@@ -24,8 +25,9 @@ const nav = {
         classic_menu.style.display = "none";
     },
 
-    displayOneVsOneChoice: function()
+    displayOnlineMenu: function()
     {
+        nav.hideEveryDiv();
         nav.removeClassicChoice();
 
         let classic_menu = document.getElementById('one_vs_one_online_choice_menu');
@@ -49,7 +51,7 @@ const nav = {
         document.title = getTranslation('Online');
     },
 
-    removeOneVsOneChoice: function()
+    removeOnlineMenu: function()
     {
         one_vs_one_online_choice_menu = document.getElementById('one_vs_one_online_choice_menu');
         one_vs_one_online_choice_menu.style.display = "none";
@@ -57,7 +59,8 @@ const nav = {
         nav.displayClassicChoice();
     },
 
-    displayOneVsOneOnlineCreateGame : async function(){
+    displayCreateLobby : async function(){
+        nav.hideEveryDiv();
         let classic_menu = document.getElementById('one_vs_one_online_choice_menu');
         classic_menu.style.display = "none";
 
@@ -83,7 +86,8 @@ const nav = {
         document.title = getTranslation('Create Lobby');
     },
 
-    displayOneVsOneOnlineJoinGame : function(){
+    displayJoinLobby : function(){
+        nav.hideEveryDiv();
         let classic_menu = document.getElementById('one_vs_one_online_choice_menu');
         classic_menu.style.display = "none";
 
@@ -116,6 +120,7 @@ const nav = {
 
 
     displayTournamentSetup : function(){
+        nav.hideEveryDiv();
         let play_menu = document.getElementById('play_menu');
         play_menu.style.display = "none";
         let tournament_setup = document.getElementById('tournament_setup');
@@ -141,6 +146,7 @@ const nav = {
 
 
     displayTournamentForm : function(){
+        nav.hideEveryDiv();
 		let val = document.getElementById('tournament_players_selector').value;
         localStorage.setItem('t_player_nbr', val)
         let t_setup = document.getElementById('tournament_setup');
@@ -182,6 +188,7 @@ const nav = {
 
     displayPlay : function()
     {
+        nav.hideEveryDiv();
         let main_menu = document.getElementById('main_menu_buttons');
         let play_menu = document.getElementById('play_menu');
 
@@ -208,6 +215,7 @@ const nav = {
 
     displayOneVsOneGameOnline : function()
     {
+        nav.hideEveryDiv();
         if (role == "host")
         {
             document.getElementById('one_vs_one_host_page').style.display = "block";
@@ -241,6 +249,7 @@ const nav = {
 
     displayTwoVsOneGameLocal : function()
     {
+        nav.hideEveryDiv();
         main_page = document.getElementById('main_page');
         main_page.style.display = "none";
         game_toolbar = document.getElementById('game_toolbar');
@@ -267,6 +276,7 @@ const nav = {
 
     displayOneVsOneGameLocal : function()
     {
+        nav.hideEveryDiv();
         main_page = document.getElementById('main_page');
         main_page.style.display = "none";
         game_toolbar = document.getElementById('game_toolbar');
@@ -303,6 +313,7 @@ const nav = {
     },
 
     hideEveryDiv: function (){
+        document.getElementById('rgpd_block').style.display = "none";
         document.getElementById('game_toolbar').style.display ='none';
         document.getElementById('one_vs_one_online_choice_menu').style.display = 'none';
         document.getElementById('one_vs_one_local_page').style.display = 'none';

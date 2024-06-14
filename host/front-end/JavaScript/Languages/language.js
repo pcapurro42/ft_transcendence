@@ -120,6 +120,7 @@ function refreshLanguage()
     ARIAButtonState();
     ARIASoundsSlider();
     dropdownAddSvg();
+    lightSwitchWidth()
 }
 
 function initializeLanguage()

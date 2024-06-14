@@ -260,7 +260,7 @@ class VisualStats
 
         if (stats_tab == 1)
             this.displayBarChartOne();
-        
+
         if (stats_tab == 2)
             this.displayBarChartTwo(), document.getElementById('next_stats').classList.add('disabled');
         else
@@ -377,6 +377,7 @@ function refreshStatsDisplaySwitch()
 
 nav.displayStats = function()
 {
+    nav.hideEveryDiv();
     let main_menu = document.getElementById('main_menu_buttons');
 
     let stats_menu = document.getElementById('stats_menu');
@@ -411,6 +412,7 @@ nav.removeStats = function()
 
 nav.displayLocalStats = function()
 {
+    nav.hideEveryDiv();
     let stat_menu = document.getElementById('stats_menu');
     let stats_menu_btn = document.getElementById('stats_menu_buttons');
     let stats_back_btn = document.getElementById('stats_back_btn');
@@ -442,6 +444,7 @@ nav.removeLocalStats = function()
 
 nav.displayOnlineStats = function()
 {
+    nav.hideEveryDiv();
     let stat_menu = document.getElementById('stats_menu');
     let stats_menu_btn = document.getElementById('stats_menu_buttons');
     let stats_back_btn = document.getElementById('stats_back_btn');

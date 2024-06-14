@@ -438,6 +438,7 @@ function refreshHistory()
 
 nav.displayHistory = function()
 {
+    nav.hideEveryDiv();
     let stat_menu = document.getElementById('stats_menu');
     let stats_menu_btn = document.getElementById('stats_menu_buttons');
     let stats_back_btn = document.getElementById('stats_back_btn');

@@ -21,6 +21,9 @@ let en = [
     ["Settings", "Settings"],
     ["Credits", "Credits"],
 
+    ["Website Settings", "Website settings"],
+    ["Privacy Settings", "Privacy settings"],
+
     ["Local", "Local"],
     ["Online", "Online"],
     ["History", "History"],
@@ -37,7 +40,7 @@ let en = [
     ["Bonus taken", "Bonus taken"],
 
     ["[No available data to display]", "[No available data to display]"],
-    
+
     ["victory", "victory"],
     ["crushing victory", "crushing victory"],
     ["defeat", "defeat"],

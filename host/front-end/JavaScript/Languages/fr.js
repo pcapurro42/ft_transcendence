@@ -19,6 +19,9 @@ let fr = [
     ["Settings", "Options"],
     ["Credits", "Crédits"],
 
+    ["Website Settings", "Paramètres du site"],
+    ["Privacy Settings", "Paramètres de confidentialité"],
+
     ["Local", "Local"],
     ["Online", "En ligne"],
     ["History", "Historique"],

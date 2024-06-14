@@ -2,6 +2,10 @@ body
 {
     display: none;
 }
+
+a{
+    text-decoration: none !important;
+}
 .focus-white:focus-visible{
     outline: 3px solid white !important;
     outline-offset: 2px !important;
@@ -17,12 +21,20 @@ body
     inset: 0px auto auto 0px; margin: 0px; transform: translate(-15px, 60px);
 }
 
+.color_btn:hover, .color_btn:focus, .btn-outline-dark:hover, .btn-outline-dark:focus{
+    transition: 0.15;
+    color: white !important;
+}
 .dropdown_btn:hover, .foot:hover{
     opacity: 0.5;
 }
 
 .btn_img{
     border : 0px;
+}
+
+#hamburger{
+    width: 60px !important;
 }
 
 .sun{
@@ -43,9 +55,6 @@ pre{
     max-width: 370px;
     max-height: 170px;
 }
-#footer_div{
-    background-color: #b40e0e;
-}
 
 .foot, #hr, #mgp_corp, #bgales_git, #pcap_git, #rgpd_btn, #mgp_corp{
     color:white;
@@ -57,8 +66,9 @@ pre{
     width: 235px;
 }
 
-.btn-outline-danger:hover{
+.btn-outline-danger:hover, .btn-outline-danger:focus{
     background-color: #AD1400!important;
+    color: white !important;
 }
 .btn_img, .btn_img:hover{
     background-color: transparent !important;
@@ -79,9 +89,9 @@ pre{
     }
 }
 
-.color_btn:hover{
+.btn-outline-light:hover, .btn-outline-light:focus{
     transition: 0.15;
-    color: white !important;
+    color: black !important;
 }
 .keysup{
     filter: drop-shadow(0px 1px 0.5px #111111) drop-shadow(0px -1px 0.5px #111111);
@@ -103,7 +113,7 @@ pre{
     top: 0%;
     left: 0%;
 }
-.btn:hover:not(.border, .btn-outline-success, .btn-outline-secondary, .btn-outline-danger, .dark_btn, #intra_login, .dropdown_btn, .foot){
+.btn:hover:not(.border, .btn-outline-success, .btn-outline-secondary, .btn-outline-danger, .dark_btn, #intra_login, .dropdown_btn, .foot, .sb_nav){
     transition: 1s;
     transform: scale(1.2);
 }

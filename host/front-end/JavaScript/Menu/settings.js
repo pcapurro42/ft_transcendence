@@ -105,6 +105,7 @@ function displayFirstSettingsPage()
 
 nav.displaySettings = function()
 {
+    nav.hideEveryDiv();
     let main_menu = document.getElementById('main_menu_buttons');
 
     let settings_menu = document.getElementById('settings_menu');

@@ -65,15 +65,15 @@ async function handleLocation(){
             return;
         case getSpecificTranslation('fr', '/online'):
         case '/online':
-            nav.displayOneVsOneChoice();
+            nav.displayOnlineMenu();
             return;
         case getSpecificTranslation('fr', '/create-lobby'):
         case '/create-lobby':
-            nav.displayOneVsOneOnlineCreateGame()
+            nav.displayCreateLobby()
             return;
         case getSpecificTranslation('fr', '/join-lobby'):
         case '/join-lobby':
-            nav.displayOneVsOneOnlineJoinGame();
+            nav.displayJoinLobby();
             return;
         case getSpecificTranslation('fr', '/online-game'):
         case '/online-game':
@@ -87,7 +87,7 @@ async function handleLocation(){
             return;
         case getSpecificTranslation('fr', '/tournament-nicknames'):
         case '/tournament-nicknames':
-            nav.displayTournamentForm(localStorage.getItem('t_player_nbr'));
+            nav.displayTournamentForm();
             return;
         case getSpecificTranslation('fr', '/tournament-game'):
         case '/tournament-game':

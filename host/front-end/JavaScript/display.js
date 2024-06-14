@@ -11,7 +11,6 @@ nav.displayMenu = function()
     let main_menu_buttons = document.getElementById('main_menu_buttons');
     main_menu_buttons.style.display = "block";
 
-    document.getElementById('rgpd_block').style.display = "none";
 
     // let main_menu_img = document.getElementsByClassName('.btn_img');
     // main_menu_img.forEach(element => {element.style.display = "block"});
@@ -26,7 +25,6 @@ nav.displayMenu = function()
     refreshStats();
     refreshStatsDisplaySwitch();
     refreshLogin();
-    // console.log(pushHistory);
     if (pushHistory == true && window.location.pathname != getTranslation('/home'))
         history.pushState(null, null, getTranslation('/home'));
     else{
@@ -138,18 +136,27 @@ function setImageSize(size)
     for (let i = 0; i != images.length; i++)
     {
         let value = images[i].getAttribute(size);
-        images[i].style.maxWidth = value;
+        images[i].style.width = value;
     }
 }
 
 function setTextSize(size)
 {
     let texts = document.querySelectorAll('[data-tsnormal]');
+    let letter_switch = document.getElementById('letter_switch');
+    let light_switch = document.getElementById('light_switch');
 
-    if (size == "data-tsnormal")
+    if (size == "data-tsnormal"){
+        letter_switch.style = "width: 50px; height: 50px;";
+        light_switch.style = "width: 50px; height: 50px;";
         document.getElementById('text_size_btn_selector').selectedIndex = 0;
-    else
+    }
+    else{
+
+        letter_switch.style = "width: 80px; height: 60px;";
+        light_switch.style = "width: 80px; height: 60px;";
         document.getElementById('text_size_btn_selector').selectedIndex = 1;
+    }
 
     for (let i = 0; i != texts.length; i++)
     {
@@ -165,16 +172,12 @@ function setHighContrast(value)
     dark_btn = document.querySelectorAll('.dark_btn');
     footer = document.getElementById('footer_div');
     high_contrast_btn = document.getElementById('high_contrast_btn_yn');
-
+    let side_menu = document.getElementById('sideMenu')
     if (high_contrast == "true")
     {
         dark_btn.forEach(element =>{
             element.classList.remove('btn-outline-dark')
             element.classList.add('btn-outline-light')
-            element.removeEventListener('mouseout', backBtnColor_toBlack);
-		    element.removeEventListener('mouseover', backBtnColor_toWhite);
-            element.addEventListener('mouseover', backBtnColor_toBlack);
-		    element.addEventListener('mouseout', backBtnColor_toWhite);
         });
 
         btn.forEach(element => {
@@ -186,10 +189,11 @@ function setHighContrast(value)
             element.classList.add('focus-black');
             element.classList.remove('focus-white');
         });
+        side_menu.style.backgroundColor = "#99999938";
         high_contrast_btn.setAttribute('data-oname', 'Enabled');
         high_contrast_btn.style.backgroundColor = "#AD1400";
         high_contrast_btn.style.color = "white";
-        footer.backgroundColor="#1a1a1a";
+        footer.style.backgroundColor="#640000";
         setBackgroundColor("black");
         setTextColor("white");
         setMaterialsColor("black");
@@ -200,19 +204,14 @@ function setHighContrast(value)
         dark_btn.forEach(element =>{
             element.classList.remove('btn-outline-light')
             element.classList.add('btn-outline-dark')
-            element.removeEventListener('mouseover', backBtnColor_toBlack);
-		    element.removeEventListener('mouseout', backBtnColor_toWhite);
-
-            element.addEventListener('mouseout', backBtnColor_toBlack);
-		    element.addEventListener('mouseover', backBtnColor_toWhite);
         });
 
         btn.forEach(element => {
             element.classList.add('focus-black')
             element.classList.remove('focus-white');
         });
-
-        footer.backgroundColor="#AD1400";
+        side_menu.style.backgroundColor = "white";
+        footer.style.backgroundColor="#640000";
         high_contrast_btn.setAttribute('data-oname', 'Disabled');
         high_contrast_btn.style.backgroundColor = "";
         high_contrast_btn.style.color = "black";
@@ -231,14 +230,13 @@ function setDescriptiveImages(value)
     if (value == "enable")
     {
         document.getElementById('image_desc_btn_yn').setAttribute('data-oname', 'Enabled');
-        document.getElementById('image_desc_btn_yn').style.backgroundColor = "";
+        document.getElementById('image_desc_btn_yn').style.backgroundColor = "#AD1400";
         document.getElementById('image_desc_btn_yn').classList.replace('text-black', 'text-white');
     }
     else
     {
         document.getElementById('image_desc_btn_yn').setAttribute('data-oname', 'Disabled');
         document.getElementById('image_desc_btn_yn').style.backgroundColor = "";
-        document.getElementById('image_desc_btn_yn').classList.replace('text-white', 'text-black');
         for (let i = 0; i != descriptions.length; i++)
             descriptions[i].setAttribute('title', "");
     }

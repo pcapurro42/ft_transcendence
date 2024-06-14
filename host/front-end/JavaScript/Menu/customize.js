@@ -22,6 +22,7 @@ function setGameMusic()
 
 nav.displayCustomize = function()
 {
+    nav.hideEveryDiv();
     let main_menu = document.getElementById('main_menu_buttons');
 
     let customize_menu = document.getElementById('customize_menu');

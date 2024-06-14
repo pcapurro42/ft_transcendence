@@ -1,4 +1,9 @@
-async function dropdownAddSvg(){
+async function hideSidebar(){
+	let canvas = bootstrap.Offcanvas.getOrCreateInstance(document.getElementById('sideMenu'));
+	canvas.hide();
+}
+
+function dropdownAddSvg(){
 	let logout = document.getElementById('drop_logout');
 	let custom = document.getElementById('drop_customize');
 	let settings = document.getElementById('drop_settings');
@@ -15,9 +20,8 @@ async function dropdownAddSvg(){
 	let stats_svg = '<img class="svg m-1" src="./Materials/images/stats.svg" alt="Icon">';
 	let github_svg = '<img class="svg foot m-1" src="./Materials/images/github.svg" alt="Icon">'
 	let rgpd_svg = '<img class="svg foot m-1" src="./Materials/images/rgpd.svg" alt="Icon">'
-	let moon_svg = '<img class="svg moon foot" src="./Materials/images/dark.svg" alt="Icon">';
-	let sun_svg = '<img class="sun" src="./Materials/images/light.svg" alt="Icon">';
-
+	let moon_svg = '<img class="svg w-100 light_switch" src="./Materials/images/dark.svg" alt="Icon">';
+	let sun_svg = '<img class="sun w-100 light_switch" src="./Materials/images/light.svg" alt="Icon">';
 
 	logout.innerHTML = logout_svg + '  ' + logout.innerHTML;
 	custom.innerHTML =  custom_svg + '  ' + custom.innerHTML;
@@ -27,16 +31,6 @@ async function dropdownAddSvg(){
 	github_b.innerHTML = github_svg + "Bgales";
 	rgpd.innerHTML = rgpd_svg + getTranslation('Privacy policy');
 
-	if (high_contrast == 'true'){
-		light_switch.innerHTML = moon_svg;
-		light_switch.style.backgroundColor = '#AD1400';
-		setImagesColor('white');
-	}
-	else{
-		light_switch.style.backgroundColor = '';
-		light_switch.innerHTML = sun_svg;
-		setImagesColor('black');
-	}
 	if (text_size == 'normal'){
 		letter_switch.innerHTML = 'a';
 		letter_switch.style.backgroundColor = "";
@@ -48,7 +42,25 @@ async function dropdownAddSvg(){
 		letter_switch.style.backgroundColor = "#AD1400";
 		letter_switch.classList.replace('text-black', 'text-white');
 	}
+	if (high_contrast == 'true'){
+		light_switch.innerHTML = moon_svg;
+		light_switch.style.backgroundColor = '#AD1400';
+		setImagesColor('white');
+	}
+	else{
+		light_switch.style.backgroundColor = '';
+		light_switch.innerHTML = sun_svg;
+		setImagesColor('black');
+	}
+}
 
+function lightSwitchWidth(){
+	let light_svg = document.querySelectorAll('.light_switch');
+
+	if (text_size == 'normal')
+		light_svg.forEach((elem) => {elem.classList.replace('w-50', 'w-100');})
+	else
+    	light_svg.forEach((elem) => {elem.classList.replace('w-100', 'w-50');})
 }
 
 function addBeforeUnloadWarning() {
@@ -69,20 +81,6 @@ function handleBeforeUnload(event){
 
 function handleUnload(){
 	localStorage.setItem('no_confirmation', 'true');
-}
-
-function backBtnColor_toBlack(){
-	this.style.transition = '0.15s';
-	this.classList.replace("text-white", "text-black");
-}
-
-function backBtnColor_toWhite(){
-	this.style.transition = '0.15s';
-	this.classList.replace("text-black", "text-white");
-}
-
-function removeChangeBackColor(){
-
 }
 
 function stopKeysAnim(){
