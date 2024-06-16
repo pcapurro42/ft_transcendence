@@ -432,6 +432,7 @@ nav.removeLocalStats = function()
 
 nav.displayOnlineStats = function()
 {
+    let v_tmp = visual;
     nav.hideEveryDiv();
     let stat_menu = document.getElementById('stats_menu');
     let stats_menu_btn = document.getElementById('stats_menu_buttons');
@@ -444,8 +445,9 @@ nav.displayOnlineStats = function()
     stats_back_btn.style.display = 'none';
     online_stats.style.display = 'block';
 
-    if (visual == true)
+    if (v_tmp == true)
     {
+        console.log('toto');
         document.getElementById('online_stats_v').style.display = 'block';
         document.getElementById('online_stats_nv').style.display = 'none';
 
@@ -463,7 +465,7 @@ nav.displayOnlineStats = function()
         document.getElementById('visual_info').style.display = 'none';
         document.getElementById('visual_info').style.visibility = 'hidden';
     }
-    
+
     addToHistory('/online-stats');
     document.title = getTranslation('Online Stats');
 }

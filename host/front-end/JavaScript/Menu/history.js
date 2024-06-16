@@ -124,7 +124,7 @@ class History
 
     displayInfos()
     {
-        let entire_text;
+        let aria_tmp;
 
         if (this.history_data == null)
         {
@@ -217,7 +217,12 @@ class History
             let end_size = this.data_display.measureText(end).width;
             this.data_display.fillText(end, this.data_width - 20 - end_size, 50);
 
-            entire_text = player1 + " vs " + player2 + ". " + score + ". " + this.history_data.data[history_tab][3] + ". " + duration + ". " + end + "."; // 42
+            let win_txt;
+
+            this.left_score > this.right_score ? win_txt = getTranslation('You Won') : win_txt = getTranslation('You Lose');
+
+            aria_tmp = ' ' + player1 + ' versus ' + player2 + '.....' + win_txt + ' ' + score + '......' + getTranslation("Game Duration") + ' ' + duration.substring(2, duration.indexOf('.')) + ' ' + getTranslation('Seconds') + '.....' + end;
+            document.getElementById('history_data').setAttribute('aria-label', getTranslation('ARIA History Data') + ' ' + aria_tmp);
         }
     }
 
@@ -298,6 +303,7 @@ class History
     {
         let value_1;
         let value_2;
+        let aria_tmp = getTranslation('ARIA History Diagram');
 
         if (this.history_data == null)
         {
@@ -309,7 +315,7 @@ class History
             let total = parseInt(this.left_score) + parseInt(this.right_score);
             value_1 = (parseInt(this.left_score) * 100 / total); // 42 (valeur en %)
             value_2 = (parseInt(this.right_score) * 100 / total); // 42 (valeur en %)
-
+            aria_tmp += ' ' + getTranslation('Your Domination') + ' ' + Math.round(value_1) +'%...' + getTranslation('Opponent Domination') + ' ' + Math.round(value_2) + '%...';
             let value_p1 = value_1 * 360 / 100;
             let value_p2 = value_2 * 360 / 100;
 
@@ -318,6 +324,7 @@ class History
             else
                 this.drawCircleSurface(360, this.right_player_color), this.drawCircleSurface(value_p1.toFixed(1), this.left_player_color)
         }
+        document.getElementById('history_diagram_data').setAttribute('aria-label', aria_tmp);
     }
 
     clean()

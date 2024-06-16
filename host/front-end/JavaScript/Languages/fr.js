@@ -224,6 +224,7 @@ let fr = [
     ["Wrong Code Format", "Erreur: récéption de données non-approuvées. Processus de connexion désactivé."],
     ["Wrong Code Guest", "Erreur: le code d'invitation n'est pas au bon format."],
 
+    ["Online Win", " a gagné la partie !"],
 
     //******* Status Bar ******/
 
@@ -264,6 +265,7 @@ let fr = [
     ['Local Stats', 'Statistiques - local'],
     ['Online Stats', 'Statistiques - en ligne'],
     ['/privacy', '/confidentialite'],
+    ['/privacy-settings', '/parametre-de-confidentialite'],
 
     ['Refresh Alert Tournament', 'Attention : Après un rafraîchissement, il n’est pas possible de revenir sur le tournoi qui était en cours.'],
     ['Refresh Alert Online', 'Attention : La connexion à été perdu lors du rafraichissement de la page.'],
@@ -275,8 +277,15 @@ let fr = [
 
     //******* ARIA ******/
 
+    ["Light Switch Off", "Mode sombre"],
+    ["Light Switch On", "Mode clair"],
+    ["Small text", "Taille du texte : Normal"],
+    ["Large text", "Taille du texte : Large"],
+
     ["ARIA 42", "Se connecter avec 42. Ce bouton vous redirigera sur la page de connexion de 42."],
     ["ARIA stats", "Emplacement des graphiques de statistiques."],
+    ["Next stat page", "Page de statistique suivante."],
+    ["Prev stat page", "Page de statistique précèdente."],
     ["ARIA 1 vs 1 (online)", "Emplacement du jeu : 1 vs 1 (en ligne)"],
     ["ARIA 1 vs 1 (local)", "Emplacement du jeu: 1 vs 1 (local)"],
     ["ARIA 1 vs 2 (local)", "Emplacement du jeu: 1 vs 2 (local)"],
@@ -289,20 +298,27 @@ let fr = [
     ["ARIA Tournament Nick Form", "Formulaire pour surnom de joueur du tournoi."],
     ["ARIA Tournament Form Label", "Joueur"],
     ["ARIA Textsize Selector", "Sélectionnez la taille du texte sur le site web."],
+    ["ARIA Settings Slide Right", "Onglet confidentialité des options."],
+    ["ARIA Settings Slide Left", "Onglet principal des options."],
     ["ARIA Credits Close", "Fermer les crédits. Retour au menu principal."],
     ["ARIA Credits Video", "Vidéo des crédits du jeu, on peut entendre la voix de Cynthia Harrel chanter la chanson Snake Eater, OST éponyme de Metal Gear Solid 3. Merci à Pcapurro et Bgales pour cette formidable expérience."],
     ["ARIA Invalid Alias", "<pre class='titi'>Mauvais format. 4 à 15 caractères,\n lettres majuscules ou minuscules,\n chiffres, tiret et tiret du bas.</pre>"],
     ["ARIA Login Dropdown", "Menu du compte"],
     ["ARIA Online Stats Diagram", "Statistique du mode en ligne. Enlevez le mode visuel pour pouvoir accéder aux stats."],
-    ["ARIA History Data", ""],
-    ["ARIA History Time Data", ""],
-    ["ARIA History Diagram", ""],
+    ["ARIA History Data", "Historique de la partie en ligne..."],
+    ["ARIA History Time Data", "Historique du temps des buts marqués. Malheureusement, cette statistique n'est pas consultable par le lecteur d'écran."],
+    ["ARIA History Diagram", "Diagramme de domination de partie..."],
     ["ARIA Close Leaderboard", "Fermer le classement"],
     ["ARIA Sidebar Menu", "Menu de navigation"],
     ["ARIA Close sidebar", "Fermer le menu de navigation"],
     ["ARIA Github_p", "Visiter la page github de Patrick"],
     ["ARIA Github_b", "Visiter la page github de Benjamin"],
     ["Top Logo Alt", "Logo du site web. Tactical Tennis Action Metal Gear Pong. Retour au menu principal."],
+    ["Seconds", "Secondes"],
+    ["Game Duration", "La partie à duré approximativement "],
+
+    ["You Won", "Vous avez gagné"],
+    ["You Lose", "Vous avez perdu"],
 
     ["Keyboard Y Tuto", "Touche  Y du clavier. Informe l'utilisateur en haut à droite de la touche clavier à utiliser pour aller vers le haut."],
     ["Keyboard H Tuto", "Touche  H du clavier. Informe l'utilisateur en haut a droite de la touche clavier à utiliser pour aller vers le bas."],
@@ -320,4 +336,10 @@ let fr = [
 
     ["Copy Inv Code", "Copier le code d'invitation."],
     ["Submit Inv Code", "Soumettre le code d'invitation."],
+
+
+    // Stats canvas
+
+    ["Your Domination", "Vous avez dominé la partie à "],
+    ["Opponent Domination", "Votre adversaire à dominé la partie à"],
 ];

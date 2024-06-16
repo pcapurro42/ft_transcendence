@@ -32,24 +32,28 @@ function dropdownAddSvg(){
 	rgpd.innerHTML = rgpd_svg + getTranslation('Privacy policy');
 	letter_switch.innerHTML = 'A';
 	if (text_size == 'normal'){
+    	letter_switch.setAttribute('aria-label', getTranslation('Small text'));
 		letter_switch.style.backgroundColor = "";
 		letter_switch.setAttribute('aria-pressed', 'false');
 		if (high_contrast == false)
 			letter_switch.classList.replace('text-white', 'text-black');
 	}
 	else{
+		letter_switch.setAttribute('aria-label', getTranslation('Large text'))
 		letter_switch.setAttribute('aria-pressed', 'true');
 		letter_switch.style.backgroundColor = "#AD1400";
 		letter_switch.classList.replace('text-black', 'text-white');
 	}
 	if (high_contrast == 'true'){
 		light_switch.setAttribute('aria-pressed', 'true');
+		light_switch.setAttribute('aria-label', getTranslation('Light Switch Off'));
 		light_switch.innerHTML = moon_svg;
 		light_switch.style.backgroundColor = '#AD1400';
 		setImagesColor('white');
 	}
 	else{
-		light_switch.setAttribute('aria-pressed', 'true');
+		light_switch.setAttribute('aria-label', getTranslation('Light Switch On'));
+		light_switch.setAttribute('aria-pressed', 'false');
 		light_switch.style.backgroundColor = '';
 		light_switch.innerHTML = sun_svg;
 		setImagesColor('black');

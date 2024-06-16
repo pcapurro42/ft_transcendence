@@ -224,8 +224,7 @@ let en = [
     ['Waiting Lobby Creation', "Waiting lobby creation from "],
     ['Please Create Lobby', 'Please click the create lobby button to start a game with '],
 
-
-
+    ["Online Win", " won the game"],
 
     //******* Status Bar ******/
 
@@ -262,6 +261,8 @@ let en = [
     ['/settings', '/settings'],
     ['/credits', '/credits'],
     ['/privacy', '/privacy'],
+    ['/privacy-settings', '/privacy-settings'],
+
     ['Local Stats', 'Statistics - local'],
     ['Online Stats', 'Statistics - online'],
 
@@ -275,8 +276,15 @@ let en = [
 
 
     //******* ARIA ******/
+    ["Light Switch Off", "Dark mode"],
+    ["Light Switch On", "Light mode"],
+    ["Small text", "Text size: Normal"],
+    ["Large text", "Text size: Large"],
+
     ["ARIA 42", "Connect with 42. This button will redirect you to the 42 login page."],
     ["ARIA stats", "Game statistics frame."],
+    ["Next stat page", "Next statistics page."],
+    ["Prev stat page", "Previous statistics page."],
     ["ARIA 1 vs 1 (online)", "Game Frame : 1 vs 1 (online)"],
     ["ARIA 1 vs 1 (local)", "Game Frame: 1 vs 1 (local)"],
     ["ARIA 1 vs 2 (local)", "Game Frame: 1 vs 2 (local)"],
@@ -289,12 +297,14 @@ let en = [
     ["ARIA Tournament Form Label", "Player"],
     ["ARIA Login Dropdown", "Account Menu"],
     ["ARIA Textsize Selector", "Select the text size for the website."],
+    ["ARIA Settings Slide Right", "Privacy Settings tab."],
+    ["ARIA Settings Slide Left", "Global Settings tab"],
     ["ARIA Credits Close", "Close the credits, get back to main menu."],
     ["ARIA Credits Video", "Credits Video, where we can hear Cynthia Harrell voice singing Snake Eater, the eponymous OST of Metal Gear Solid 3. Thanks again to pcapurro and Bgales for their delightful work."],
     ["ARIA Online Stats Diagram", "Online statistics graphics. Switch visual off in order to get stats."],
-    ["ARIA History Data", ""],
-    ["ARIA History Time Data", ""],
-    ["ARIA History Diagram", ""],
+    ["ARIA History Data", "Online game history..."],
+    ["ARIA History Time Data", "Time history of scored goals. Sadly, this stat isnt available for screen readers."],
+    ["ARIA History Diagram", "Game domination diagram..."],
     ["ARIA Close Leaderboard", "Close leaderboard"],
     ["ARIA Close sidebar", "Close navigation menu"],
     ["ARIA Invalid Alias", "<pre>Nickname is wrongly formatted.\nPlease input a nickname using 4 to 15 characters.\nAccepted characters are uppercase and lowercase letters,\n numbers, hyphen and underscore.</pre"],
@@ -302,6 +312,9 @@ let en = [
     ["ARIA Github_p", "Visit Patrick github's page"],
     ["ARIA Github_b", "Visit Benjamin github's page"],
 
+
+    ["You Won", "You won"],
+    ["You Lose", "You lose"],
     ["Top Logo Alt", "Website logo : Tactical Tennis Action Metal Gear Pong. Get back to main menu."],
 
     ["Keyboard Y Tuto", "Y keyboard key, inform the top-right player that this input is used to go up in the game."],
@@ -320,4 +333,11 @@ let en = [
 
     ["Copy Inv Code", "Copy invitation code."],
     ["Submit Inv Code", "Submit invitation code."],
+
+    // Stats canvas
+
+    ["Your Domination", "You dominated the game up to"],
+    ["Opponent Domination", "Opponent dominated the game up to"],
+    ["Seconds", "Seconds"],
+    ["Game Duration", "Game approximately lasted "],
 ];

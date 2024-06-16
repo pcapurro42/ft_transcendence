@@ -146,6 +146,10 @@ async function handleLocation(){
         case '/privacy':
             nav.displayRGPD();
             return;
+        case getSpecificTranslation('fr', '/privacy-settings'):
+        case '/privacy-settings':
+            displaySecondSettingsPage();
+            return;
     }
     window.location.href = 'https://127.0.0.1:1025/404.html';
 }

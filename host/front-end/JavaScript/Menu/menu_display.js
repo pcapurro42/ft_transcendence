@@ -203,7 +203,7 @@ const nav = {
         document.getElementById('rgpd_block').style.display = 'block';
 
         addToHistory('/privacy');
-        document.title = getTranslation('- Privacy policy -');
+        document.title = getTranslation('Privacy policy');
     },
 
     hideEveryDiv: function (){
@@ -247,10 +247,7 @@ const nav = {
 
         freeInputAndForms();
         tournamentFinalReset();
-        resetConnection();
-
         refreshStats();
-        refreshStatsDisplaySwitch();
         refreshLogin();
         removeBeforeUnloadWarning();
     },

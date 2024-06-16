@@ -55,7 +55,12 @@ function changeMusicVolume()
 function letterSwitch(){
     let text_size_btn_selector = document.getElementById('text_size_btn_selector');
 
-    text_size_btn_selector.value == 'normal' ? text_size_btn_selector.value = 'large' : text_size_btn_selector.value = 'normal';
+    if (text_size_btn_selector.value == 'normal'){
+        text_size_btn_selector.value = 'large';
+    }
+    else{
+        text_size_btn_selector.value = 'normal';
+    }
     changeTextSize();
 }
 
@@ -85,12 +90,22 @@ function changeLanguage()
 
 function displaySecondSettingsPage()
 {
+    nav.hideEveryDiv();
+
+    let settings_menu = document.getElementById('settings_menu');
+    let settings_back_btn = document.getElementById('settings_back_btn');
+    settings_menu.style.display = 'block';
+    settings_back_btn.style.display = 'block';
+
     document.getElementById('settings_left_panel').style.display = "none";
     document.getElementById('settings_right_panel').style.display = "none";
     document.getElementById('privacy_panel').style.display = "block";
 
     document.getElementById('next_settings').classList.add('disabled');
     document.getElementById('prev_settings').classList.remove('disabled');
+
+    addToHistory('/privacy-settings');
+    document.title = getTranslation('Privacy Settings');
 }
 
 function displayFirstSettingsPage()
@@ -101,6 +116,8 @@ function displayFirstSettingsPage()
 
     document.getElementById('next_settings').classList.remove('disabled');
     document.getElementById('prev_settings').classList.add('disabled');
+    addToHistory('/settings');
+    document.title = getTranslation('Settings');
 }
 
 nav.displaySettings = function()
@@ -115,9 +132,6 @@ nav.displaySettings = function()
 
 
     displayFirstSettingsPage();
-
-    addToHistory('/settings');
-    document.title = getTranslation('Settings');
 }
 
 nav.removeSettings = function()
@@ -189,8 +203,8 @@ function ARIASoundsSlider(){
 	sound_slide = document.getElementById('sound_volume_slider');
 	music_slide = document.getElementById('music_volume_slider');
 
-	sound_slide.setAttribute('aria-label', getTranslation("Sound volume") + ' ' + sound_slide.value + "%");
-	music_slide.setAttribute('aria-label', getTranslation("Music volume") + ' ' + music_slide.value + "%");
+	sound_slide.setAttribute('aria-label', getTranslation("Sound volume"));
+	music_slide.setAttribute('aria-label', getTranslation("Music volume"));
 }
 
 function ARIAButtonState(){

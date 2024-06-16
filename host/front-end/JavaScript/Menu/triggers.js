@@ -22,17 +22,17 @@ document.getElementById('play_back_btn').onclick = nav.removePlay;
 document.getElementById('customize_btn').onclick = nav.displayCustomize;
 document.getElementById('sb_customize').onclick = () => {hideSidebar() ,nav.displayCustomize()};
 
-document.getElementById('drop_customize').onclick = () =>{nav.hideEveryDiv(),nav.displayCustomize();}
+document.getElementById('drop_customize').onclick = () => nav.displayCustomize();
 document.getElementById('customize_back_btn').onclick = nav.removeCustomize;
 
 document.getElementById('stats_btn').onclick = nav.displayStats;
-document.getElementById('drop_stats').onclick = () => { nav.hideEveryDiv(), nav.displayStats();}
+document.getElementById('drop_stats').onclick = () => nav.displayStats()
 document.getElementById('stats_back_btn').onclick = nav.removeStats;
 
 document.getElementById('settings_btn').onclick = nav.displaySettings;
-document.getElementById('drop_settings').onclick = () => {nav.hideEveryDiv(), nav.displaySettings();}
-document.getElementById('sb_settings').onclick = () => {hideSidebar(),nav.hideEveryDiv(), nav.displaySettings();}
-document.getElementById('sb_settings_privacy').onclick = () => {hideSidebar(),nav.hideEveryDiv(), nav.displaySettings(), displaySecondSettingsPage()};
+document.getElementById('drop_settings').onclick = () => nav.displaySettings()
+document.getElementById('sb_settings').onclick = () => {hideSidebar(), nav.displaySettings();}
+document.getElementById('sb_settings_privacy').onclick = () => {hideSidebar(), displaySecondSettingsPage()};
 document.getElementById('settings_back_btn').onclick = nav.removeSettings;
 
 document.getElementById('credits_btn').onclick = nav.theaterCredits;
