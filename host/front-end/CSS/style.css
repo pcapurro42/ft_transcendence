@@ -21,9 +21,13 @@ a{
     inset: 0px auto auto 0px; margin: 0px; transform: translate(-15px, 60px);
 }
 
-.color_btn:hover, .color_btn:focus, .btn-outline-dark:hover, .btn-outline-dark:focus{
+.color_btn:hover, .color_btn:focus-visible, .btn-outline-dark:hover, .btn-outline-dark:focus-visible{
     transition: 0.15;
     color: white !important;
+}
+
+#sb_en:hover, #sb_fr:hover{
+    background-color: transparent;
 }
 .dropdown_btn:hover, .foot:hover{
     opacity: 0.5;
@@ -61,12 +65,20 @@ pre{
 
 }
 
+#end_tournament_btn{
+    transform: translateY(-240px);
+}
+
+#leaderboard_body{
+    max-height: 550px;
+}
+
 #hr
 {
     width: 235px;
 }
 
-.btn-outline-danger:hover, .btn-outline-danger:focus{
+.btn-outline-danger:hover, .btn-outline-danger:focus-visible{
     background-color: #AD1400!important;
     color: white !important;
 }
@@ -89,7 +101,7 @@ pre{
     }
 }
 
-.btn-outline-light:hover, .btn-outline-light:focus{
+.btn-outline-light:hover, .btn-outline-light:focus-visible{
     transition: 0.15;
     color: black !important;
 }

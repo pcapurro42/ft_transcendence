@@ -6,6 +6,7 @@ async function startTournament(newNicksArray, i){
 		tournamentResetBlocks();
 		nicknames = newNicksArray;
 		winner_array = [];
+		loser_array = [];
 		max_game = i / 2;
 
 		if (nicknames == null)
@@ -45,6 +46,7 @@ async function tournamentGameStart(){
 	let start_game_btn = document.getElementById('t_start_game');
 
 	start_game_btn.style.display = 'block';
+	document.getElementById('t_leaderboard').classList.remove('d-none')
 	next_game_btn.style.display = 'none';
 
 	game_toolbar.style.opacity = '0';

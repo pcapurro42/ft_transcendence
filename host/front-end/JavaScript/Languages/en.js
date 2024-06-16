@@ -189,6 +189,10 @@ let en = [
     ["Tournament Win Msg","We got a winner...<br><br>Congratulations "],
     ["Restart Tournament", "Restart Tournament"],
 
+    ["Leaderboard", "Leaderboard"],
+    ["Qualified", "is qualified!"],
+    ["Eliminated", "is eliminated."],
+
     //******* Online ******/
 
     ['Peer offer send msg', "Send this code to a friend <br> to start a game."],
@@ -242,6 +246,7 @@ let en = [
     ['/tournament-nicknames', '/tournament-nicknames'],
     ['/tournament-game', '/tournament-game'],
     ['Tournament Game', 'Tournament Game'],
+    ['/tournament-leaderboard', '/tournoi-leaderboard'],
     ['Online Game', 'Online - Game'],
     ["Tournament - Nicknames", "Tournament - Nicknames"],
     ['/customize', '/customize'],
@@ -285,6 +290,7 @@ let en = [
     ["ARIA History Data", ""],
     ["ARIA History Time Data", ""],
     ["ARIA History Diagram", ""],
+    ["ARIA Close Leaderboard", "Close leaderboard"],
     ["ARIA Invalid Alias", "<pre>Nickname is wrongly formatted.\nPlease input a nickname using 4 to 15 characters.\nAccepted characters are uppercase and lowercase letters,\n numbers, hyphen and underscore.</pre"],
 
 

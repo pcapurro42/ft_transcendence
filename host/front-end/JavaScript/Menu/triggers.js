@@ -80,6 +80,7 @@ document.getElementById('submit_player_nbr').onclick = tournamentTypeHandler;
 document.getElementById('back_tournament_form_btn').onclick = nav.removeTournamentForm;
 
 document.getElementById('t_start_game').onclick = displayTournamentGame;
+document.getElementById('t_leaderboard').onclick = displayTournamentLeaderboard;
 
 // < CUSTOMIZE > //
 
@@ -109,11 +110,9 @@ document.getElementById('switch_visual_input').onchange = changeStatsDisplayMode
 
 document.getElementById('language_btn_selector').onchange = changeLanguage;
 document.getElementById('text_size_btn_selector').onchange = changeTextSize;
-document.getElementById('letter_switch').onclick = letterSwitch;
 document.getElementById('sound_volume_slider').onchange = changeSoundsVolume;
 document.getElementById('music_volume_slider').onchange = changeMusicVolume;
 document.getElementById('high_contrast_btn_yn').onclick = changeHighContrast;
-document.getElementById('light_switch').onclick = changeHighContrast;
 
 document.getElementById('image_desc_btn_yn').onclick = changeDescriptiveImages;
 
@@ -163,3 +162,10 @@ document.getElementById('submit_inv_code').onclick = fetchOffer;
 document.getElementById('game_map_btn_selector').onmouseover = showMapTooltip;
 
 document.getElementById('game_map_btn_selector').onmouseout = removeMapTooltip;
+
+// side_bar footer
+
+document.getElementById('light_switch').onclick = changeHighContrast;
+document.getElementById('letter_switch').onclick = letterSwitch;
+document.getElementById('sb_fr').onclick = () => {languageSwitch('fr')};
+document.getElementById('sb_en').onclick = () => {languageSwitch('en')};

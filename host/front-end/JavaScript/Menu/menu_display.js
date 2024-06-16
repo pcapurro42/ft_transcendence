@@ -138,6 +138,7 @@ const nav = {
     displayOneVsOneGameOnline : function()
     {
         nav.hideEveryDiv();
+        document.getElementById('main_page').style.display = 'none';
         if (role == "host")
         {
             document.getElementById('one_vs_one_host_page').style.display = "block";
@@ -169,6 +170,7 @@ const nav = {
     {
         nav.hideEveryDiv();
 
+        document.getElementById('main_page').style.display = 'none';
         document.getElementById('game_toolbar').style.display = "block";
         document.getElementById('one_vs_two_local_page').style.display = "block";
 
@@ -184,7 +186,7 @@ const nav = {
     displayOneVsOneGameLocal : function()
     {
         nav.hideEveryDiv();
-
+        document.getElementById('main_page').style.display = 'none';
         document.getElementById('game_toolbar').style.display = "block";
         document.getElementById('one_vs_one_local_page').style.display = "block";
 

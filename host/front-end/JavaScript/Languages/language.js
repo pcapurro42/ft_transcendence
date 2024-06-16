@@ -59,6 +59,7 @@ function refreshLanguage()
 
     if (lang == "en")
     {
+        document.getElementById('language_switch').innerHTML = 'en';
         document.getElementById('language_btn_selector').selectedIndex = 0;
 
         for (let i = 0; i != words.length; i++)
@@ -89,6 +90,7 @@ function refreshLanguage()
     }
     if (lang == "fr")
     {
+        document.getElementById('language_switch').innerHTML = 'fr';
         document.getElementById('language_btn_selector').selectedIndex = 1;
 
         for (let i = 0; i != words.length; i++){
@@ -120,7 +122,6 @@ function refreshLanguage()
     ARIAButtonState();
     ARIASoundsSlider();
     dropdownAddSvg();
-    lightSwitchWidth()
 }
 
 function initializeLanguage()

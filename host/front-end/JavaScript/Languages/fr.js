@@ -187,6 +187,9 @@ let fr = [
     ["Tournament Win Msg","Nous avons un gagnant...<br><br>Félicitations "],
     ["Restart Tournament", "Recommencer le tournoi"],
 
+    ["Leaderboard", "Classement"],
+    ["Qualified", "est qualifié !"],
+    ["Eliminated", "est éliminé."],
 
     //******* Online ******/
 
@@ -242,6 +245,7 @@ let fr = [
     ['/tournament', '/tournoi'],
     ['/tournament-nicknames', '/tournoi-surnoms'],
     ['/tournament-game', '/tournoi-partie'],
+    ['/tournament-leaderboard', '/tournoi-classement'],
     ['Tournament Game', 'Partie de Tournoi'],
     ['Online Game', 'En ligne - Partie'],
     ["Tournament - Nicknames", "Tournoi - surnoms"],
@@ -289,6 +293,7 @@ let fr = [
     ["ARIA History Data", ""],
     ["ARIA History Time Data", ""],
     ["ARIA History Diagram", ""],
+    ["ARIA Close Leaderboard", "Fermer le classement"],
 
     ["Top Logo Alt", "Logo du site web. Tactical Tennis Action Metal Gear Pong. Retour au menu principal."],
 

@@ -30,15 +30,13 @@ function dropdownAddSvg(){
 	github_p.innerHTML = github_svg + "Pcapurro";
 	github_b.innerHTML = github_svg + "Bgales";
 	rgpd.innerHTML = rgpd_svg + getTranslation('Privacy policy');
-
+	letter_switch.innerHTML = 'A';
 	if (text_size == 'normal'){
-		letter_switch.innerHTML = 'a';
 		letter_switch.style.backgroundColor = "";
 		if (high_contrast == false)
 			letter_switch.classList.replace('text-white', 'text-black');
 	}
 	else{
-		letter_switch.innerHTML = 'A';
 		letter_switch.style.backgroundColor = "#AD1400";
 		letter_switch.classList.replace('text-black', 'text-white');
 	}
@@ -54,13 +52,37 @@ function dropdownAddSvg(){
 	}
 }
 
-function lightSwitchWidth(){
-	let light_svg = document.querySelectorAll('.light_switch');
+async function languageSwitch(lang){
+	let dropdownMenu = document.getElementById('lang_switch_menu');
+	dropdownMenu.style.minWidth = '0px';
+	let fr = document.getElementById('sb_fr');
+	let en = document.getElementById('sb_en');
 
-	if (text_size == 'normal')
-		light_svg.forEach((elem) => {elem.classList.replace('w-50', 'w-100');})
-	else
-    	light_svg.forEach((elem) => {elem.classList.replace('w-100', 'w-50');})
+	if (lang == 'en'){
+		document.getElementById('language_btn_selector').value = 'en';
+		changeLanguage();
+		en.setAttribute('aria-current', true);
+		await sleep(10);
+		en.style.backgroundColor ='#AD1400'
+		en.style.color = "white";
+
+		fr.style.backgroundColor = '';
+		high_contrast == 'true'	? fr.style.color = 'white' : fr.style.color = 'black';
+		fr.removeAttribute('aria-current');
+	}
+	else if (lang == 'fr'){
+		document.getElementById('language_btn_selector').value = 'fr';
+		changeLanguage();
+		await sleep(10);
+		fr.setAttribute('aria-current', true);
+		fr.style.backgroundColor ='#AD1400';
+		fr.style.color = "white";
+
+		en.style.backgroundColor = '';
+		high_contrast == 'true'	? en.style.color = 'white' : en.style.color = 'black';
+
+		en.removeAttribute('aria-current');
+	}
 }
 
 function addBeforeUnloadWarning() {

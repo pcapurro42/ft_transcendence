@@ -93,8 +93,10 @@ let stop_flag = false;
 let nicknames;
 let originalNicknames;
 let winner_array;
+let loser_array;
 let game_nbr;
 let gameWinner;
+let gameLoser;
 let max_game;
 let final = false;
 let turn = false;
@@ -110,7 +112,7 @@ let data_channel;
 
 // < REFRESH > //
 
-refreshLanguage();
+languageSwitch(language);
 refreshDisplay();
 
 refreshSounds();

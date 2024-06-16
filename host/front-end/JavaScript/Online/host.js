@@ -2,7 +2,7 @@ document.getElementById("cpy_inv_code").onclick = cpyGameCode;
 
 function cpyGameCode(){
 	let content = document.getElementById("invitation_code");
-
+	let cpy_btn = document.getElementById("cpy_inv_code");
 	navigator.clipboard.writeText(content.value);
 	displayStatusBarSuccess(getTranslation("Copy Success"));
 }

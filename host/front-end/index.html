@@ -168,7 +168,10 @@
                         <div class="game_keys w-100">
                             <img class="keysup float-start mb-2" data-isnormal="6%" data-islarge="10%" data-alt="Keyboard E Tuto" src="./Materials/images/E.png" tabindex="-1">
                             <img class= "float-end keysup img-fluid mb-0" data-isnormal="6%" data-islarge="10%" data-alt="Keyboard O Tuto" src="./Materials/images/O.png" tabindex="-1">
-                            <button id="t_start_game" class="btn btn-lg btn-simple btn-outline-danger mx-auto color_btn" data-tsnormal="30px" data-tslarge="40px" data-oname="Launch a game" data-title="Launch a Game"></button>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <button id="t_start_game" class="m-3 btn btn-lg btn-simple btn-outline-danger color_btn" data-tsnormal="30px" data-tslarge="40px" data-oname="Launch a game" data-title="Launch a Game"></button>
+                                <button id="t_leaderboard" class="btn btn-lg btn-simple btn-outline-dark dark_btn d-none" data-tsnormal="30px" data-tslarge="40px" data-oname="Leaderboard" data-title="Leaderboard"></button>
+                            </div>
                             <button id="t_next_game" class="btn btn-lg btn-simple btn-outline-danger mx-auto color_btn" data-tsnormal="30px" data-tslarge="40px" data-oname="Next Game"></button>
                         </div>
                         <div class="game_keys w-100">
@@ -416,32 +419,35 @@
 
     <!-- Tournament Announcer -->
 
-        <div id="tournament_announcer" class="container security_margin">
-                <div id="round_block" class="display-1 text text-center mb-5"></div>
-                <p id="nick_announce" class="display-3 text text-center"></p>
-            <div id ='Roundof16' class="rounds_state">
-                <div id ='Final8' class="rounds_state">
-                    <div id ='Final4' class="rounds_state">
-                        <div id ='Final' class="rounds_state">
-                            <h4 class="text text-center mt-4 game_nbr" data-oname="1st Game"></h4>
-                            <p id ="1stGameNicks"class="text text-center mb-5 nicks"></p>
+
+        <div id="leaderboard_wrap">
+            <div id="tournament_announcer" class="mx-auto security_margin">
+                <div id="round_block" class="display-1 text text-center mb-5" data-tsnormal="60px" data-tslarge="100px"></div>
+                    <p id="nick_announce" class="display-3 text text-center"></p>
+                <div id ='Roundof16' class="rounds_state">
+                    <div id ='Final8' class="rounds_state">
+                        <div id ='Final4' class="rounds_state">
+                            <div id ='Final' class="rounds_state">
+                                <h4 id="1stgame" class="text text-center mt-4 game_nbr" data-oname="1st Game" data-tsnormal="25px" data-tslarge="35px"></h4>
+                                <p id ="1stGameNicks"class="text text-center mb-5 nicks" data-tsnormal="35px" data-tslarge="50px"></p>
+                            </div>
+                            <h4 id="2ndgame" class="text text-center mt-4 game_nbr" data-oname="2nd Game" data-tsnormal="25px" data-tslarge="35px"></h4>
+                            <p id ="2ndGameNicks"class="text text-center mb-5 nicks" data-tsnormal="35px" data-tslarge="50px"></p>
                         </div>
-                        <h4 class="text text-center mt-4 game_nbr" data-oname="2nd Game"></h4>
-                        <p id ="2ndGameNicks"class="text text-center mb-5 nicks"></p>
+                        <h4 id="3rdgame" class="text text-center mt-4 game_nbr" data-oname="3rd Game" data-tsnormal="25px" data-tslarge="35px"></h4>
+                        <p id ="3rdGameNicks"class="text text-center mb-5 nicks" data-tsnormal="35px" data-tslarge="50px"></p>
+                        <h4 id="4thgame" class="text text-center mt-4 game_nbr" data-oname="4th Game" data-tsnormal="25px" data-tslarge="35px"></h4>
+                        <p id ="4thGameNicks"class="text text-center mb-5 nicks" data-tsnormal="35px" data-tslarge="50px"></p>
                     </div>
-                    <h4 class="text text-center mt-4 game_nbr" data-oname="3rd Game"></h4>
-                    <p id ="3rdGameNicks"class="text text-center mb-5 nicks"></p>
-                    <h4 class="text text-center mt-4 game_nbr" data-oname="4th Game"></h4>
-                    <p id ="4thGameNicks"class="text text-center mb-5 nicks"></p>
+                    <h4 id="5thgame" class="text text-center mt-4 game_nbr" data-oname="5th Game" data-tsnormal="25px" data-tslarge="35px"></h4>
+                    <p id ="5thGameNicks"class="text text-center mb-5 nicks" data-tsnormal="35px" data-tslarge="50px"></p>
+                    <h4 id="6thgame" class="text text-center mt-4 game_nbr" data-oname="6th Game" data-tsnormal="25px" data-tslarge="35px"></h4>
+                    <p id ="6thGameNicks"class="text text-center mb- nicks" data-tsnormal="35px" data-tslarge="50px"></p>
+                    <h4 id="7thgame" class="text text-center mt-4 game_nbr" data-oname="7th Game" data-tsnormal="25px" data-tslarge="35px"></h4>
+                    <p id ="7thGameNicks"class="text text-center mb-5 nicks" data-tsnormal="35px" data-tslarge="50px"></p>
+                    <h4 id="8thgame" class="text text-center mt-4 game_nbr" data-oname="8th Game" data-tsnormal="25px" data-tslarge="35px"></h4>
+                    <p id ="8thGameNicks"class="text text-center mb-5 nicks" data-tsnormal="35px" data-tslarge="50px"></p>
                 </div>
-                <h4 class="text text-center mt-4 game_nbr" data-oname="5th Game"></h4>
-                <p id ="5thGameNicks"class="text text-center mb-5 nicks"></p>
-                <h4 class="text text-center mt-4 game_nbr" data-oname="6th Game"></h4>
-                <p id ="6thGameNicks"class="text text-center mb- nicks"></p>
-                <h4 class="text text-center mt-4 game_nbr" data-oname="7th Game"></h4>
-                <p id ="7thGameNicks"class="text text-center mb-5 nicks"></p>
-                <h4 class="text text-center mt-4 game_nbr" data-oname="8th Game"></h4>
-                <p id ="8thGameNicks"class="text text-center mb-5 nicks"></p>
             </div>
             <div id="end_tournament_btn"class="d-flex justify-content-center col-12 d-none">
                 <button id ="restart_tournament" class="btn text btn-lg btn-simple border btn-outline-secondary color_btn" data-tsnormal="15px" data-tslarge="20px" data-oname="Restart Tournament" data-link="tournament-game"></button>
@@ -832,7 +838,23 @@
             </div>
         </div>
 
-         <div class="modal" id="leavingPopup" data-bs-backdrop='static'>
+         <div class="modal" id="leaderboard_modal" data-bs-backdrop='static'>
+
+            <div class="modal-dialog modal-dialog-centered text">
+                <div id="modal_color_leaving" class="modal-content border border-2">
+                    <div class="modal-header text text-center">
+                        <h4 class="modal-title text text-danger mx-auto" data-oname="Leaderboard" data-tsnormal="30px" data-tslarge="50px"></h4>
+                    </div>
+                    <div id="leaderboard_body"class="overflow-scroll modal-body" data-tsnormal="15px" data-tslarge="30px">
+                    </div>
+                    <div class="modal-footer">
+                        <button id="close_leaderboard" class="btn btn-outline-secondary btn-complex color_btn text" data-oname="Resume"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="leavingPopup" data-bs-backdrop='static'>
 
             <div class="modal-dialog modal-dialog-centered text">
                 <div id="modal_color_leaving" class="modal-content border border-2">
@@ -844,7 +866,7 @@
                     </div>
                     <div class="modal-footer">
                         <button id="leave_page_btn" class="btn btn-danger btn-complex text" data-oname="Main Menu"></button>
-                        <button id="resume_btn" class="btn btn-secondary btn-complex text" data-oname="Resume"></button>
+                        <button id="resume_btn" class="btn btn-outline-secondary btn-complex text" data-oname="Resume"></button>
                     </div>
                 </div>
             </div>
@@ -923,9 +945,17 @@
 
                 </div>
             </div>
-            <div class="offcanvas-footer mx-auto">
-                <button id="light_switch" class="m-1 dropdown_btn border border-2 btn btn-simple focus-black"></button>
-                <button id="letter_switch" class="m-1 dropdown_btn btn btn-simple border border-2 text" data-tsnormal="20px" data-tslarge="30px"></button>
+            <hr class="text m-0 mb-1"/>
+            <div class="offcanvas-footer mx-auto d-flex">
+                <button id="light_switch" class="sb_switch btn btn-simple m-1 border border-2 btn btn-simple focus-black"></button>
+                <button id="letter_switch" class="sb_switch m-1 btn btn-simple border border-2 text" data-tsnormal="20px" data-tslarge="30px"></button>
+                <div class="dropup" id="test00">
+                    <button id="language_switch" class="m-1 dropdown-toggle sb_switch mx-1 btn btn-simple border border-2 text p-0" data-bs-toggle="dropdown" data-tsnormal="20px" data-tslarge="30px"></button>
+                    <div id="lang_switch_menu" class="dropdown-menu" aria-labelledby="test00">
+                        <button id="sb_en" class="dropdown-item btn-simple" data-tsnormal="20px" data-tslarge="30px">en</button>
+                        <button id="sb_fr" class="dropdown-item btn-simple" data-tsnormal="20px" data-tslarge="30px">fr</button>
+                    </div>
+                </div>
             </div>
         </div>
     <!-- Audio -->

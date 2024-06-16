@@ -136,18 +136,14 @@ function setImageSize(size)
 function setTextSize(size)
 {
     let texts = document.querySelectorAll('[data-tsnormal]');
-    let letter_switch = document.getElementById('letter_switch');
-    let light_switch = document.getElementById('light_switch');
+    let sb_switch = document.querySelectorAll('.sb_switch');
 
     if (size == "data-tsnormal"){
-        letter_switch.style = "width: 50px; height: 50px;";
-        light_switch.style = "width: 50px; height: 50px;";
+        sb_switch.forEach(element => {element.style = "width: 50px; height: 50px;";});
         document.getElementById('text_size_btn_selector').selectedIndex = 0;
     }
     else{
-
-        letter_switch.style = "width: 80px; height: 60px;";
-        light_switch.style = "width: 80px; height: 60px;";
+        sb_switch.forEach(element => {element.style = "width: 70px; height: 70px;";});
         document.getElementById('text_size_btn_selector').selectedIndex = 1;
     }
 
@@ -160,12 +156,14 @@ function setTextSize(size)
 
 function setHighContrast(value)
 {
-    btn = document.querySelectorAll('.btn, .btn_img, .btn_icon, .slider, .selector, #title_logo, #top_logo');
-    btn_icon = document.querySelectorAll('.btn_icon');
-    dark_btn = document.querySelectorAll('.dark_btn');
-    footer = document.getElementById('footer_div');
-    high_contrast_btn = document.getElementById('high_contrast_btn_yn');
+    let btn = document.querySelectorAll('.btn, .btn_img, .btn_icon, .slider, .selector, #title_logo, #top_logo');
+    let btn_icon = document.querySelectorAll('.btn_icon');
+    let dark_btn = document.querySelectorAll('.dark_btn');
+    let footer = document.getElementById('footer_div');
+    let high_contrast_btn = document.getElementById('high_contrast_btn_yn');
     let side_menu = document.getElementById('sideMenu')
+    let sb_dropBg = document.getElementById('lang_switch_menu');
+
     if (high_contrast == "true")
     {
         dark_btn.forEach(element =>{
@@ -182,6 +180,7 @@ function setHighContrast(value)
             element.classList.add('focus-black');
             element.classList.remove('focus-white');
         });
+        sb_dropBg.style.background = 'black';
         side_menu.style.backgroundColor = "#99999938";
         high_contrast_btn.setAttribute('data-oname', 'Enabled');
         high_contrast_btn.style.backgroundColor = "#AD1400";
@@ -203,6 +202,7 @@ function setHighContrast(value)
             element.classList.add('focus-black')
             element.classList.remove('focus-white');
         });
+        sb_dropBg.style.background = 'white';
         side_menu.style.backgroundColor = "white";
         footer.style.backgroundColor="#640000";
         high_contrast_btn.setAttribute('data-oname', 'Disabled');
@@ -214,6 +214,7 @@ function setHighContrast(value)
         setMaterialsColor("white");
         setImagesColor("black");
     }
+    languageSwitch(language);
 }
 
 function setDescriptiveImages(value)

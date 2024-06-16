@@ -12,6 +12,7 @@ async function nextGameHandler(){
 		document.getElementById('game_toolbar').style.display = 'none';
 		document.getElementById('game_page_tournament').style.display = 'none';
 		winner_array.push(nicknames[nicknames.indexOf(gameWinner)]);
+		loser_array.push(nicknames[nicknames.indexOf(gameLoser)]);
 		await sleep(1000);
 		game_nbr += 1;
 		displayNextGame(game_nbr, nicknames);
@@ -20,6 +21,8 @@ async function nextGameHandler(){
 		document.getElementById('game_toolbar').style.display = 'none';
 		document.getElementById('game_page_tournament').style.display = 'none';
 		winner_array.push(nicknames[nicknames.indexOf(gameWinner)])
+		loser_array.push(nicknames[nicknames.indexOf(gameLoser)]);
+
 		await sleep(1000);
 		document.getElementById('main_menu_page').style.display = 'block';
 		startTournament(winner_array, winner_array.length);

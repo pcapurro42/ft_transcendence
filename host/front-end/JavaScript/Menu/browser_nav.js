@@ -1,6 +1,6 @@
 /***********BACKWARD/FORWARD NAVIGATION************/
               /** Without history push**/
-async function userLeaveConfirmation(){
+async function isUserLeaving(){
     return new Promise(resolve => {
         document.getElementById('leavingPopup').style.display = 'block';
         document.getElementById('leave_page_btn').onclick = () => {
@@ -11,21 +11,28 @@ async function userLeaveConfirmation(){
     })
 }
 
-async function handleForbiddenPages(){
-    if ((previous_url_path == getTranslation('/tournament-game') || previous_url_path == getTranslation('/online-game') || previous_url_path == getSpecificTranslation('fr', '/tournament-game') || previous_url_path == getSpecificTranslation('fr', '/online-game')) && !localStorage.getItem('no_confirmation')){
-        let bool = await userLeaveConfirmation();
-        document.getElementById('leavingPopup').style.display = 'none';
-        if (bool == false){
-            history.pushState(null, null, '');
-            history.replaceState(null, null, previous_url_path);
-            return;
+async function handleSensitivePages(path){
+    if ((previous_url_path == getTranslation('/tournament-game') ||
+        previous_url_path == getSpecificTranslation('fr', '/tournament-game') ||
+        previous_url_path == getTranslation('/online-game') ||
+        previous_url_path == getSpecificTranslation('fr', '/online-game'))
+        && !localStorage.getItem('no_confirmation'))
+        {
+            let bool = await isUserLeaving();
+            document.getElementById('leavingPopup').style.display = 'none';
+            if (bool == false){
+                history.pushState(null, null, '');
+                history.replaceState(null, null, previous_url_path);
+                localStorage.removeItem('no_confirmation');
+                return bool;
+            }
+            else{
+                previous_url_path = '';
+                path = '/home';
+            }
         }
-        else{
-            previous_url_path = '';
-            path = '/home';
-        }
-    }
     localStorage.removeItem('no_confirmation');
+    return true;
 }
 
 function addToHistory(pagePath){
@@ -44,7 +51,9 @@ async function handleLocation(){
         path = window.location.pathname;
     else
         path = originalUrl;
-    handleForbiddenPages()
+    if (!(await handleSensitivePages(path)))
+        return;
+
 
     nav.hideEveryDiv();
     pushHistory = false;
@@ -100,9 +109,9 @@ async function handleLocation(){
             return;
         case getSpecificTranslation('fr', '/tournament-game'):
         case '/tournament-game':
-            previous_url_path = "";
-            nav.displayMenu();
-            displayStatusBarWarning(getTranslation('Refresh Alert Tournament'))
+                previous_url_path = "";
+                nav.displayMenu();
+                displayStatusBarWarning(getTranslation('Refresh Alert Tournament'))
             return;
         case getSpecificTranslation('fr', '/customize'):
         case '/customize':
