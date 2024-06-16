@@ -109,6 +109,7 @@ let timeoutInterval;
 let RTC_o;
 let RTC_a;
 let data_channel;
+let isDisplayModal;
 
 // < REFRESH > //
 

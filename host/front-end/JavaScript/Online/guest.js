@@ -42,6 +42,8 @@ function readHostMsg(event)
 }
 
 async function guestConnectionHandler(){
+	stop_ping = false;
+	isDisplayModal = true;
 	displayStatusBarSuccess(getTranslation("Peer Connection Success") + localStorage.getItem('opponent_login') +'!');
 	data_channel.onmessage = event => readHostMsg(event);
 	pingHost();

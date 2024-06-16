@@ -21,7 +21,6 @@ function displayOnline1v1()
 
     document.getElementById('o_host_foot').style.display = 'none';
     document.getElementById('o_guest_foot').style.display = 'none';
-
     if (role == "host")
     {
         let timer = document.getElementById('1v1_host_timer');

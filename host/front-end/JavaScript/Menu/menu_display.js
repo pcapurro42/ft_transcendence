@@ -158,12 +158,13 @@ const nav = {
         document.getElementById('game_toolbar').style.display = "block";
 
 
-		previous_url_path = window.location.pathname;
+        handleUnload('no_confirmation', true);
         initializeOnline1v1();
 
 
         addToHistory('/online-game');
         document.title = getTranslation('Online Game');
+		previous_url_path = window.location.pathname;
     },
 
     displayTwoVsOneGameLocal : function()

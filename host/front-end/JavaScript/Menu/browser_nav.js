@@ -14,9 +14,10 @@ async function isUserLeaving(){
 async function handleSensitivePages(path){
     if ((previous_url_path == getTranslation('/tournament-game') ||
         previous_url_path == getSpecificTranslation('fr', '/tournament-game') ||
-        previous_url_path == getTranslation('/online-game') ||
-        previous_url_path == getSpecificTranslation('fr', '/online-game'))
-        && !localStorage.getItem('no_confirmation'))
+        ((previous_url_path == getTranslation('/online-game') ||
+            previous_url_path == getSpecificTranslation('fr', '/online-game'))
+            && data_channel != null))
+        && localStorage.getItem('no_confirmation') != true)
         {
             let bool = await isUserLeaving();
             document.getElementById('leavingPopup').style.display = 'none';
@@ -27,6 +28,7 @@ async function handleSensitivePages(path){
                 return bool;
             }
             else{
+                isDisplayModal = false;
                 previous_url_path = '';
                 path = '/home';
             }
@@ -53,7 +55,6 @@ async function handleLocation(){
         path = originalUrl;
     if (!(await handleSensitivePages(path)))
         return;
-
 
     nav.hideEveryDiv();
     pushHistory = false;
@@ -95,9 +96,9 @@ async function handleLocation(){
             return;
         case getSpecificTranslation('fr', '/online-game'):
         case '/online-game':
-            displayStatusBarWarning(getTranslation('Refresh Alert Online'))
             previous_url_path = "";
             nav.displayMenu();
+            displayStatusBarWarning(getTranslation('Refresh Alert Online'))
             return;
         case getSpecificTranslation('fr', '/tournament'):
         case '/tournament':

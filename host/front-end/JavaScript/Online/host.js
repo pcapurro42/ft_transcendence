@@ -21,6 +21,8 @@ function readGuestMsg(event){
 }
 
 function hostConnectionHandler(){
+	stop_ping = false;
+	isDisplayModal = true;
 	displayStatusBarSuccess(getTranslation("Peer Connection Success") + localStorage.getItem('opponent_login') +'!');
 	document.getElementById('create_lobby_msg').innerHTML = getTranslation('Please Create Lobby') + localStorage.getItem('opponent_login') + '.'
 	data_channel.onmessage = event => readGuestMsg(event);
@@ -28,6 +30,7 @@ function hostConnectionHandler(){
 
 	let	create_btn = document.getElementById("create_classic_lobby");
 	create_btn.style.visibility = 'visible';
+
 	create_btn.onclick = async () => {
 		pos = "left";
 		role = "host";
