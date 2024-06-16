@@ -40,14 +40,14 @@
 
                     <div class="text-center">
                     <button id="top_logo" class="btn_img btn-complex" data-alt="Top Logo Alt" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" aria-label="">
-                        <img src="./Materials/images/mgp-title-r.png" class="img-fluid" aria-labelledby="top_logo"></button>
+                        <img src="./Materials/images/mgp-title-r.png" class="img-fluid" alt=""></button>
                     </div>
 
 
                     <div class="col d-flex align-items-center ">
-                        <button id="game_music_toggle_btn" class="btn_img" data-alt="Music Icon" data-isnormal="4%" data-islarge="5%" data-title="Enable/Disable game music" aria-label=""><img id="game_music_toggle" src="./Materials/images/music-off.png" class="img-fluid image col d-inline-block float-end music_togglers btn_icon" aria-labelledby="game_music_toggle_btn"></button>
+                        <button id="game_music_toggle_btn" class="btn_img" data-alt="Music Icon" data-isnormal="4%" data-islarge="5%" data-title="Enable/Disable game music" aria-label=""><img id="game_music_toggle" src="./Materials/images/music-off.png" class="img-fluid image col d-inline-block float-end music_togglers btn_icon" alt=""></button>
 
-                        <button id="game_sound_toggle_btn" class="btn_img" data-isnormal="5%" data-islarge="6%" data-title="Enable/Disable game sounds" data-alt="Sound Icon" data-title="Enable/Disable menu sounds" aria-label=""><img id="game_sound_toggle" src="./Materials/images/sound-on.png" class="img-fluid image col d-inline-block float-end sound_togglers btn_icon btn_img" aria-labelledby="game_sound_toggle_btn"></button>
+                        <button id="game_sound_toggle_btn" class="btn_img" data-isnormal="5%" data-islarge="6%" data-title="Enable/Disable game sounds" data-alt="Sound Icon" data-title="Enable/Disable menu sounds" aria-label="" role="button"><img id="game_sound_toggle" src="./Materials/images/sound-on.png" class="img-fluid image col d-inline-block float-end sound_togglers btn_icon btn_img" alt="" ></button>
 
                     </div>
 
@@ -190,8 +190,8 @@
             <!-- Main menu toolbar -->
 
             <div id="main_menu_toolbar" class="container">
-                <a id="hamburger" class="btn btn-simple" data-bs-toggle="offcanvas" href="#sideMenu" role="button" aria-controls="sideMenu">
-                    <img class="svg w-100" src="./Materials/images/hamburger.svg">
+                <a id="hamburger" class="btn btn-simple" data-bs-toggle="offcanvas" href="#sideMenu" role="button" aria-controls="sideMenu" data-title="ARIA Sidebar Menu" aria-label="">
+                    <img class="svg w-100" src="./Materials/images/hamburger.svg" alt="">
                 </a>
 
                 <div id="login" class="col d-inline-block float-end">
@@ -199,12 +199,12 @@
                 </div>
 
                 <div id="logged" class="dropdown col d-inline-block float-end">
-                    <button id="intra_login" class="dropdown-toggle border border-secondary border-2 btn btn-simple btn-outline-danger color_btn text" role="button" data-tsnormal="25px" data-tslarge="35px" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0"></button>
+                    <button id="intra_login" class="dropdown-toggle border border-secondary border-2 btn btn-simple btn-outline-danger color_btn text" role="button" data-tsnormal="25px" data-tslarge="35px" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0" data-title="ARIA Login Dropdown" aria-label=""></button>
                     <ul id="login_dropdown" class="p-0 mt-2 border border-2 d-none">
-                        <button id="drop_customize" class="btn dropdown_btn btn-simple text text-nowrap" data-tsnormal="20px" data-tslarge="30px" data-oname="Customize"></button>
-                        <button id="drop_stats" class="btn dropdown_btn text-nowrap btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="Statistics"></button>
-                        <button id="drop_settings"class="text-nowrap btn dropdown_btn btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="Settings"></button>
-                        <button id="drop_logout" class="mb-1 text-nowrap btn dropdown_btn btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="LOG OUT" data-title="LOG OUT">
+                        <button id="drop_customize" class="btn dropdown_btn btn-simple text text-nowrap" data-tsnormal="20px" data-tslarge="30px" data-oname="Customize" role="button" data-title="Customize" aria-label=""></button>
+                        <button id="drop_stats" class="btn dropdown_btn text-nowrap btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="Statistics" role="button" data-title="Statistics" aria-label=""></button>
+                        <button id="drop_settings"class="text-nowrap btn dropdown_btn btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="Settings" role="button" data-title="Settings" aria-label=""></button>
+                        <button id="drop_logout" class="mb-1 text-nowrap btn dropdown_btn btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="LOG OUT" data-title="LOG OUT" role="button" data-title="LOG OUT" aria-label="">
                         </button>
                     </ul>
                 </div>
@@ -214,7 +214,7 @@
             <!-- Title -->
 
             <div id="title" class="text-center my-5">
-                <button id="title_logo" class="btn_img btn-complex" data-alt="Top Logo Alt" aria-label="" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" data-link="home"><img src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto" aria-labelledby="title_logo"></button>
+                <button id="title_logo" class="btn_img btn-complex" data-alt="Top Logo Alt" aria-label="" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" data-link="home"><img src="./Materials/images/mgp-title-r.png" class="img-fluid mx-auto" alt=""></button>
             </div>
 
             <!-- Main menu center -->
@@ -875,10 +875,10 @@
         <div class="offcanvas offcanvas-start" tabindex="-1" id="sideMenu" aria-labelledby="offcanvas_label" data-bs-backdrop="true">
             <div class="offcanvas-header">
                 <div class="mx-auto">
-                    <button id="music_toggle_btn" class="btn_img btn-simple p-0" data-alt="Music Icon" data-title="Enable/Disable menu music" aria-label="" data-isnormal="35px" data-islarge="50px"><img id ="music_toggle" src="./Materials/images/music-off.png" class="img-fluid image music_togglers btn_icon" aria-labelledby="music_toggle_btn"></button>
-                    <button id="sound_toggle_btn" class="btn-simple btn_img p-0" data-alt="Sound Icon" data-isnormal="40px" data-islarge="60px" data-title="Enable/Disable menu sounds" aria-label=""><img id="sound_toggle" src="./Materials/images/sound-on.png" class="img-fluid image sound_togglers btn_icon" aria-labelledby="sound_toggle_btn"></button>
+                    <button id="music_toggle_btn" class="btn_img btn-simple p-0" data-alt="Music Icon" data-title="Enable/Disable menu music" aria-label="" data-isnormal="35px" data-islarge="50px" role="button"><img id ="music_toggle" src="./Materials/images/music-off.png" class="img-fluid image music_togglers btn_icon" alt=""></button>
+                    <button id="sound_toggle_btn" class="btn-simple btn_img p-0" data-alt="Sound Icon" data-isnormal="40px" data-islarge="60px" data-title="Enable/Disable menu sounds" aria-label=""><img id="sound_toggle" src="./Materials/images/sound-on.png" class="img-fluid image sound_togglers btn_icon" alt=""></button>
                 </div>
-                <button type="button" class="btn btn-simple text float-end" data-bs-dismiss="offcanvas" aria-label="Close">&#x2717;</button>
+                <button type="button" class="btn btn-simple text float-end" data-bs-dismiss="offcanvas" data-title="ARIA Close sidebar" aria-label="">&#x2717;</button>
             </div>
 
             <div class="offcanvas-body">
@@ -947,13 +947,13 @@
             </div>
             <hr class="text m-0 mb-1"/>
             <div class="offcanvas-footer mx-auto d-flex">
-                <button id="light_switch" class="sb_switch btn btn-simple m-1 border border-2 btn btn-simple focus-black"></button>
-                <button id="letter_switch" class="sb_switch m-1 btn btn-simple border border-2 text" data-tsnormal="20px" data-tslarge="30px"></button>
+                <button id="light_switch" class="sb_switch btn btn-simple m-1 border border-2 btn btn-simple focus-black" data-title="ARIA High Contrast" aria-label=""></button>
+                <button id="letter_switch" class="sb_switch m-1 btn btn-simple border border-2 text" data-tsnormal="20px" data-tslarge="30px" data-title="ARIA Textsize Selector" aria-label=""></button>
                 <div class="dropup" id="test00">
-                    <button id="language_switch" class="m-1 dropdown-toggle sb_switch mx-1 btn btn-simple border border-2 text p-0" data-bs-toggle="dropdown" data-tsnormal="20px" data-tslarge="30px"></button>
-                    <div id="lang_switch_menu" class="dropdown-menu" aria-labelledby="test00">
-                        <button id="sb_en" class="dropdown-item btn-simple" data-tsnormal="20px" data-tslarge="30px">en</button>
-                        <button id="sb_fr" class="dropdown-item btn-simple" data-tsnormal="20px" data-tslarge="30px">fr</button>
+                    <button id="language_switch" class="m-1 dropdown-toggle sb_switch mx-1 btn btn-simple border border-2 text p-0" data-bs-toggle="dropdown" data-tsnormal="20px" data-tslarge="30px" data-title="ARIA Language Selector" aria-label=""></button>
+                    <div id="lang_switch_menu" class="dropdown-menu" >
+                        <button id="sb_en" class="dropdown-item btn-simple" data-tsnormal="20px" data-tslarge="30px" data-title="English" aria-label="">en</button>
+                        <button id="sb_fr" class="dropdown-item btn-simple" data-tsnormal="20px" data-tslarge="30px" data-title="French" aria-label="">fr</button>
                     </div>
                 </div>
             </div>
@@ -988,8 +988,8 @@
     <div id="footer_div" class="position-fixed fixed-bottom">
         <footer class="d-flex justify-content-center align-items-center mt-3">
             <button id="rgpd_btn" class="foot btn btn-simple float-end" data-tsnormal="12px" data-tslarge="20px"></button>
-            <a id="pcap_git" class="me-0 foot btn btn-simple float-end" data-tsnormal="12px" data-tslarge="20px" href="https://github.com/pcapurro42" target="_blank"></a>
-            <a id="bgales_git" class="me-5 foot btn btn-simple float-end" data-tsnormal="12px" data-tslarge="20px" href="https://github.com/bjmgales" target="_blank"></a>
+            <a id="pcap_git" class="me-0 foot btn btn-simple float-end" data-tsnormal="12px" data-tslarge="20px" href="https://github.com/pcapurro42" target="_blank" data-title="ARIA Github_p" aria-label=""></a>
+            <a id="bgales_git" class="me-5 foot btn btn-simple float-end" data-tsnormal="12px" data-tslarge="20px" href="https://github.com/bjmgales" target="_blank" data-title="ARIA Github_b" aria-label=""></a>
         </footer>
         <div>
             <hr id="hr" class="mx-auto mt-1 mb-3"/>

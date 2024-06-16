@@ -14,14 +14,14 @@ function dropdownAddSvg(){
 	let light_switch = document.getElementById('light_switch');
 	let letter_switch = document.getElementById('letter_switch');
 
-	let logout_svg = '<img class="svg m-1" 	src="./Materials/images/logout.svg" alt="Icon">';
-	let custom_svg = '<img class="svg m-1" src="./Materials/images/customize.svg" alt="Icon">';
-	let settings_svg = '<img class="svg m-1" src="./Materials/images/settings.svg" alt="Icon">';
-	let stats_svg = '<img class="svg m-1" src="./Materials/images/stats.svg" alt="Icon">';
-	let github_svg = '<img class="svg foot m-1" src="./Materials/images/github.svg" alt="Icon">'
-	let rgpd_svg = '<img class="svg foot m-1" src="./Materials/images/rgpd.svg" alt="Icon">'
-	let moon_svg = '<img class="svg w-100 light_switch" src="./Materials/images/dark.svg" alt="Icon">';
-	let sun_svg = '<img class="sun w-100 light_switch" src="./Materials/images/light.svg" alt="Icon">';
+	let logout_svg = '<img class="svg m-1" 	src="./Materials/images/logout.svg" alt="">';
+	let custom_svg = '<img class="svg m-1" src="./Materials/images/customize.svg" alt="">';
+	let settings_svg = '<img class="svg m-1" src="./Materials/images/settings.svg" alt="">';
+	let stats_svg = '<img class="svg m-1" src="./Materials/images/stats.svg" alt="">';
+	let github_svg = '<img class="svg foot m-1" src="./Materials/images/github.svg" alt="">'
+	let rgpd_svg = '<img class="svg foot m-1" src="./Materials/images/rgpd.svg" alt="">'
+	let moon_svg = '<img class="svg w-100 light_switch" src="./Materials/images/dark.svg" alt="">';
+	let sun_svg = '<img class="sun w-100 light_switch" src="./Materials/images/light.svg" alt="">';
 
 	logout.innerHTML = logout_svg + '  ' + logout.innerHTML;
 	custom.innerHTML =  custom_svg + '  ' + custom.innerHTML;
@@ -33,19 +33,23 @@ function dropdownAddSvg(){
 	letter_switch.innerHTML = 'A';
 	if (text_size == 'normal'){
 		letter_switch.style.backgroundColor = "";
+		letter_switch.setAttribute('aria-pressed', 'false');
 		if (high_contrast == false)
 			letter_switch.classList.replace('text-white', 'text-black');
 	}
 	else{
+		letter_switch.setAttribute('aria-pressed', 'true');
 		letter_switch.style.backgroundColor = "#AD1400";
 		letter_switch.classList.replace('text-black', 'text-white');
 	}
 	if (high_contrast == 'true'){
+		light_switch.setAttribute('aria-pressed', 'true');
 		light_switch.innerHTML = moon_svg;
 		light_switch.style.backgroundColor = '#AD1400';
 		setImagesColor('white');
 	}
 	else{
+		light_switch.setAttribute('aria-pressed', 'true');
 		light_switch.style.backgroundColor = '';
 		light_switch.innerHTML = sun_svg;
 		setImagesColor('black');

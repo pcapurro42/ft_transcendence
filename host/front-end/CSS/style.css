@@ -26,7 +26,7 @@ a{
     color: white !important;
 }
 
-#sb_en:hover, #sb_fr:hover{
+#sb_en:hover, #sb_fr:hover, #sb_en:focus, #sb_fr:focus{
     background-color: transparent;
 }
 .dropdown_btn:hover, .foot:hover{

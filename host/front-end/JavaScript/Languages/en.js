@@ -1,5 +1,8 @@
 
 let en = [
+    ["English", "english"],
+    ["French", "french"],
+
     ["LOG IN WITH 42", "LOG IN WITH 42"],
     ["LOG OUT", "Log out"],
 
@@ -104,6 +107,7 @@ let en = [
     ["Text size", "Text size"],
     ["Image description", "Image description"],
     ["High contrast", "High contrast"],
+    ["ARIA High Contrast", "High Contrast"],
 
     ["Privacy policy", "Privacy policy"],
     ["Website RGPD", "This website complies with the General Data Protection Regulation (GDPR) from the european Union."],
@@ -283,6 +287,7 @@ let en = [
     ["ARIA Language Selector", "Select a language for the website"],
     ["ARIA Tournament Nick Form", "Form for tournament player's nickname"],
     ["ARIA Tournament Form Label", "Player"],
+    ["ARIA Login Dropdown", "Account Menu"],
     ["ARIA Textsize Selector", "Select the text size for the website."],
     ["ARIA Credits Close", "Close the credits, get back to main menu."],
     ["ARIA Credits Video", "Credits Video, where we can hear Cynthia Harrell voice singing Snake Eater, the eponymous OST of Metal Gear Solid 3. Thanks again to pcapurro and Bgales for their delightful work."],
@@ -291,8 +296,11 @@ let en = [
     ["ARIA History Time Data", ""],
     ["ARIA History Diagram", ""],
     ["ARIA Close Leaderboard", "Close leaderboard"],
+    ["ARIA Close sidebar", "Close navigation menu"],
     ["ARIA Invalid Alias", "<pre>Nickname is wrongly formatted.\nPlease input a nickname using 4 to 15 characters.\nAccepted characters are uppercase and lowercase letters,\n numbers, hyphen and underscore.</pre"],
-
+    ["ARIA Sidebar Menu", "Navigation menu"],
+    ["ARIA Github_p", "Visit Patrick github's page"],
+    ["ARIA Github_b", "Visit Benjamin github's page"],
 
     ["Top Logo Alt", "Website logo : Tactical Tennis Action Metal Gear Pong. Get back to main menu."],
 

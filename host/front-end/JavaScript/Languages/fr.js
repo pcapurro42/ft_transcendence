@@ -1,4 +1,7 @@
 let fr = [
+    ["English", "Anglais"],
+    ["French", "Français"],
+
     ["LOG IN WITH 42", "SE CONNECTER AVEC 42"],
     ["LOG OUT", "Se déconnecter"],
 
@@ -102,6 +105,7 @@ let fr = [
     ["Text size", "Taille du texte"],
     ["Image description", "Description de l'image"],
     ["High contrast", "Haut contraste"],
+    ["ARIA High Contrast", "Haut contraste"],
 
     ["Privacy policy", "Politique de confidentialité"],
     ["Website RGPD", "Ce site Internet se conforme au règlement général sur la protection des données (RGPD) de l'Union européenne."],
@@ -288,13 +292,16 @@ let fr = [
     ["ARIA Credits Close", "Fermer les crédits. Retour au menu principal."],
     ["ARIA Credits Video", "Vidéo des crédits du jeu, on peut entendre la voix de Cynthia Harrel chanter la chanson Snake Eater, OST éponyme de Metal Gear Solid 3. Merci à Pcapurro et Bgales pour cette formidable expérience."],
     ["ARIA Invalid Alias", "<pre class='titi'>Mauvais format. 4 à 15 caractères,\n lettres majuscules ou minuscules,\n chiffres, tiret et tiret du bas.</pre>"],
-
+    ["ARIA Login Dropdown", "Menu du compte"],
     ["ARIA Online Stats Diagram", "Statistique du mode en ligne. Enlevez le mode visuel pour pouvoir accéder aux stats."],
     ["ARIA History Data", ""],
     ["ARIA History Time Data", ""],
     ["ARIA History Diagram", ""],
     ["ARIA Close Leaderboard", "Fermer le classement"],
-
+    ["ARIA Sidebar Menu", "Menu de navigation"],
+    ["ARIA Close sidebar", "Fermer le menu de navigation"],
+    ["ARIA Github_p", "Visiter la page github de Patrick"],
+    ["ARIA Github_b", "Visiter la page github de Benjamin"],
     ["Top Logo Alt", "Logo du site web. Tactical Tennis Action Metal Gear Pong. Retour au menu principal."],
 
     ["Keyboard Y Tuto", "Touche  Y du clavier. Informe l'utilisateur en haut à droite de la touche clavier à utiliser pour aller vers le haut."],
