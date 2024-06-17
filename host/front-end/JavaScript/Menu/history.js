@@ -60,20 +60,6 @@ class History
 
         this.data_canvas.width = this.data_width;
         this.data_canvas.height = this.data_height;
-
-        if (this.history_data != null)
-        {
-            if (this.role == 'guest')
-            {
-                this.left_score = this.history_data.data[history_tab][2][1];
-                this.right_score = this.history_data.data[history_tab][2][0];
-            }
-            else
-            {
-                this.left_score = this.history_data.data[history_tab][2][0];
-                this.right_score = this.history_data.data[history_tab][2][1];
-            }
-        }
     }
 
     initializeGraph()
@@ -336,6 +322,14 @@ class History
 
     display()
     {
+        if (this.history_data != null)
+        {
+            if (this.role == 'guest')
+                this.left_score = this.history_data.data[history_tab][2][1], this.right_score = this.history_data.data[history_tab][2][0];
+            else
+                this.left_score = this.history_data.data[history_tab][2][0], this.right_score = this.history_data.data[history_tab][2][1];
+        }
+
         this.clean();
 
         this.displayInfos();
