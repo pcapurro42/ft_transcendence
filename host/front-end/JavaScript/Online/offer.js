@@ -75,25 +75,31 @@ async function fetchAnswer(){
 	const endpoint = 'https://127.0.0.1:8080/backend/signal/getAnswer/'; //ICI
     const login = localStorage.getItem('login');
 	let code = document.getElementById('invitation_code').value;
+	try{
 
-	document.getElementById('init_p2p').setAttribute('disabled', true);
-	const request = await fetch(endpoint, {
-        method: 'POST',
-		credentials: 'include',
-		headers: {
-            'Content-Type': 'application/json',
-			'X-CSRFToken': csrfToken
-        },
-		body : code,
-	})
-	if (request.status == 404){
-		displayStatusBarAlert(getTranslation('Peer 404'));
-		document.getElementById('init_p2p').removeAttribute('disabled');
-		return;
+		document.getElementById('init_p2p').setAttribute('disabled', true);
+		const request = await fetch(endpoint, {
+        	method: 'POST',
+			credentials: 'include',
+			headers: {
+            	'Content-Type': 'application/json',
+				'X-CSRFToken': csrfToken
+        	},
+			body : code,
+		})
+		if (request.status == 404){
+			displayStatusBarAlert(getTranslation('Peer 404'));
+			document.getElementById('init_p2p').removeAttribute('disabled');
+			return;
+		}
+		let response = await request.json();
+		localStorage.setItem('opponent_login', response['login']);
+		initConnection(response['answer']);
 	}
-	let response = await request.json();
-	localStorage.setItem('opponent_login', response['login']);
-	initConnection(response['answer']);
+	catch(error){
+		console.error(error);
+		displayStatusBarAlert(getTranslation('Peer 404'));
+	}
 
 }
 

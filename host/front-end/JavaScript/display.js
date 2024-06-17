@@ -11,7 +11,9 @@ nav.displayMenu = function()
     let main_menu_buttons = document.getElementById('main_menu_buttons');
     main_menu_buttons.style.display = "block";
 
+    let main_menu_toolbar = document.getElementById('main_menu_toolbar').style.display = "block";
 
+    let top_logo = document.getElementById('top_logo').style.display = "block";
 
     stop_flag = true; // stop tournament
     active = false; // turn off the game
@@ -43,6 +45,7 @@ function setBackgroundColor(color)
     let background = document.body;
     let modal_disco = document.getElementById('modal_color_disco');
     let modal_leaving = document.getElementById('modal_color_leaving');
+    let modal_leaderboard = document.getElementById('modal_color_leaderboard');
     let login_dropdown = document.getElementById('login_dropdown');
 
     if (color == "white"){
@@ -50,12 +53,14 @@ function setBackgroundColor(color)
         background.style.setProperty("background-color", "white");
         modal_disco.style.setProperty("background-color", "white");
         modal_leaving.style.setProperty("background-color", "white");
+        modal_leaderboard.style.setProperty("background-color", "white");
     }
     else{
         login_dropdown.style.setProperty("background-color", "black");
         background.style.setProperty("background-color", "black");
         modal_disco.style.setProperty("background-color", "black");
         modal_leaving.style.setProperty("background-color", "black");
+        modal_leaderboard.style.setProperty("background-color", "black");
     }
 }
 
@@ -166,6 +171,7 @@ function setHighContrast(value)
 
     if (high_contrast == "true")
     {
+        document.body.classList.add('dark-mode');
         dark_btn.forEach(element =>{
             element.classList.remove('btn-outline-dark')
             element.classList.add('btn-outline-light')
@@ -193,6 +199,7 @@ function setHighContrast(value)
     }
     else
     {
+        document.body.classList.remove('dark-mode');
         dark_btn.forEach(element =>{
             element.classList.remove('btn-outline-light')
             element.classList.add('btn-outline-dark')
@@ -251,21 +258,23 @@ function refreshDisplay()
     else
         setDescriptiveImages("disable");
 
-    let test = document.querySelectorAll('.btn .border');
+    // let test = document.querySelectorAll('.btn .border');
 
-    for (let i = 0; i < test.length; i++){
-        test[i].onmouseover.style.transform = '';
-    }
+    // for (let i = 0; i < test.length; i++){
+    //     test[i].onmouseover.style.transform = '';
+    // }
 
     if (localStorage.getItem('status') == "connected")
     {
         document.getElementById('one_vs_one_online_btn').removeAttribute('disabled');
+        document.getElementById('sb_o_1v1').removeAttribute('disabled');
         document.getElementById('history_btn').removeAttribute('disabled');
         document.getElementById('online_stats_btn').removeAttribute('disabled');
     }
     else
     {
         document.getElementById('one_vs_one_online_btn').setAttribute('disabled', true);
+        document.getElementById('sb_o_1v1').setAttribute('disabled', true);
         document.getElementById('history_btn').setAttribute('disabled', true);
         document.getElementById('online_stats_btn').setAttribute('disabled', true);
     }

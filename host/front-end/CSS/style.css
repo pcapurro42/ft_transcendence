@@ -1,6 +1,36 @@
+@font-face {
+  font-family: 'My_font';
+  src: url(../Materials/fonts/myfont.ttf);
+}
+
+@font-face {
+  font-family: 'mgs2';
+  src: url(../Materials/fonts/MGS2.ttf);
+}
+
+@font-face {
+  font-family: 'mgs';
+  src: url(../Materials/fonts/MGS.TTF);
+}
 body
 {
     display: none;
+    font-family: "My_font" !important;
+
+}
+
+p, pre, h1, h2, h3{
+    font-family: "My_font" !important;
+}
+.mgs_font{
+    font-family: "mgs" !important;
+}
+#nick_reminder, .nicks, #nick_announce, .game_nbr{
+    font-family: mgs2 !important;
+}
+
+.text-red{
+    color: #AD1400 !important;
 }
 
 a{
@@ -21,7 +51,7 @@ a{
     inset: 0px auto auto 0px; margin: 0px; transform: translate(-15px, 60px);
 }
 
-.color_btn:hover, .color_btn:focus-visible, .btn-outline-dark:hover, .btn-outline-dark:focus-visible{
+.color_btn:hover, .color_btn:focus-visible, .btn-outline-dark:hover, .btn-outline-dark:focus-visible, .btn-outline-secondary:hover, .btn-outline-secondary:focus-visible, .btn-outline-success:focus-visible, .btn-outline-success:hover{
     transition: 0.15;
     color: white !important;
 }
@@ -33,7 +63,7 @@ a{
     opacity: 0.5;
 }
 
-.btn_img{
+.btn_img, .btn:disabled{
     border : 0px;
 }
 
@@ -47,6 +77,9 @@ a{
 
 .security_margin{
     margin-bottom: 200px;
+}
+#tournament_announcer{
+    margin-top:250px;
 }
 
 pre{
@@ -87,17 +120,25 @@ pre{
     outline: none !important;
     box-shadow: none !important;
 }
+
+:root {
+    --dark-mode-filter: none;
+}
+
+.dark-mode{
+    --dark-mode-filter : invert(1);
+}
+
 @keyframes gamekeys {
 
     30%{transform: translateY(0px) scale(1, 1);
-        filter: drop-shadow(0px 1px 0.5px #111111) drop-shadow(0px -1px 0.5px #111111);
+        filter: var(--dark-mode-filter) drop-shadow(0px 1px 0.5px #111111) drop-shadow(0px -1px 0.5px #111111);
     }
     40%{transform: translateY(4px) scale(1, 0.95);
-        filter: drop-shadow(0px 4px 1.5px #111111) drop-shadow(0px -1px 0.5px #111111);
+        filter: var(--dark-mode-filter) drop-shadow(0px 1px 0.5px #111111) drop-shadow(0px -1px 0.5px #111111);
     }
-
     47%{transform: translateY(0px) scale(1, 1);
-        filter: drop-shadow(0px 1px 0.5px #111111) drop-shadow(0px -1px 0.5px #111111);
+        filter: var(--dark-mode-filter) drop-shadow(0px 1px 0.5px #111111) drop-shadow(0px -1px 0.5px #111111);
     }
 }
 
@@ -106,12 +147,12 @@ pre{
     color: black !important;
 }
 .keysup{
-    filter: drop-shadow(0px 1px 0.5px #111111) drop-shadow(0px -1px 0.5px #111111);
+    filter: var(--dark-mode-filter) drop-shadow(0px 1px 0.5px #111111) drop-shadow(0px -1px 0.5px #111111);
     animation: gamekeys forwards 3s infinite;
 }
 
 .keysdown{
-    filter: drop-shadow(0px 1px 0.5px #111111) drop-shadow(0px -1px 0.5px #111111);
+    filter: var(--dark-mode-filter) drop-shadow(0px 1px 0.5px #111111) drop-shadow(0px -1px 0.5px #111111);
     animation: gamekeys forwards 3s infinite;
     animation-delay: 1s;
 }
@@ -137,6 +178,8 @@ pre{
 
 .text-white, .text-black, .text {
     transition: 0.30s;
+    font-family: "Major Mono Display", monospace;
+
 }
 #switch_visual_input
 {

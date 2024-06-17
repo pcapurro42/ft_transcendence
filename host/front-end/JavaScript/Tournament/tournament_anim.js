@@ -151,8 +151,9 @@ async function displayFinalWinner(){
 	document.getElementById('Roundof16').style.display = 'none';
 
 	let win_msg = document.getElementById('round_block');
-
-	win_msg.innerHTML = getTranslation('Tournament Win Msg') + winner + '.';
+	let win_submsg = document.getElementById('nick_announce');
+	win_msg.innerHTML = getTranslation('Tournament Win Msg');
+	win_submsg.innerHTML = getTranslation('Congratulation') + ' ' + winner + '.';
 
 	let end_btn = document.getElementById('end_tournament_btn');
 
@@ -163,6 +164,7 @@ async function displayFinalWinner(){
 	await sleep(10);
 
 	win_msg.style.opacity = '1';
+	win_submsg.style.opacity = '1';
 	end_btn.style.opacity = '1';
 
 	await sleep (1000)

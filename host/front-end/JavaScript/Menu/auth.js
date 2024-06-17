@@ -31,7 +31,7 @@ async function storeUserLogin(response){
             auth_code = '';
     }
     catch(error){
-        console.log('error:', error);
+        console.error(error);
 
         displayStatusBarAlert(getTranslation("42 Auth Failure"));
         return;
@@ -59,7 +59,7 @@ async function getAccessToken(auth_code){
     }
     catch(error)
     {
-        console.log('error:', error);
+        console.error(error);
         displayStatusBarAlert(getTranslation("42 Auth Failure"));
     }
 

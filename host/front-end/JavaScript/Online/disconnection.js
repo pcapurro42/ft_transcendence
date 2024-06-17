@@ -17,6 +17,7 @@ function handleDisconnection(){
     let popup = document.getElementById('disconnectionPopup');
 
     if (isDisplayModal){
+        document.querySelectorAll('button:not(.not-disabled), a').forEach(element => {element.setAttribute('disabled', true)});
 	    popup.style.display = 'block';
         document.getElementById('alert_sound').play();
         stop_ping = true;

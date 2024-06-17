@@ -2,6 +2,7 @@
               /** Without history push**/
 async function isUserLeaving(){
     return new Promise(resolve => {
+        document.querySelectorAll('button:not(.not-disabled), a').forEach(element => {element.setAttribute('disabled', true)});
         document.getElementById('leavingPopup').style.display = 'block';
         document.getElementById('leave_page_btn').onclick = () => {
             resolve(true);
@@ -12,14 +13,12 @@ async function isUserLeaving(){
 }
 
 async function handleSensitivePages(path){
-    if ((previous_url_path == getTranslation('/tournament-game') ||
-        previous_url_path == getSpecificTranslation('fr', '/tournament-game') ||
-        ((previous_url_path == getTranslation('/online-game') ||
-            previous_url_path == getSpecificTranslation('fr', '/online-game'))
-            && data_channel != null))
-        && localStorage.getItem('no_confirmation') != true)
+    if (previous_url_path == '/tournament-game' ||
+        (previous_url_path == '/online-game' &&  data_channel != null)
+            && localStorage.getItem('no_confirmation') != true)
         {
             let bool = await isUserLeaving();
+            document.querySelectorAll('button:not(.not-disabled), a').forEach(element => {element.removeAttribute('disabled')});
             document.getElementById('leavingPopup').style.display = 'none';
             if (bool == false){
                 history.pushState(null, null, '');
@@ -55,7 +54,6 @@ async function handleLocation(){
         path = originalUrl;
     if (!(await handleSensitivePages(path)))
         return;
-
     nav.hideEveryDiv();
     pushHistory = false;
     originalUrl = null;

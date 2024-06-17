@@ -16,32 +16,39 @@ async function gatherIceCandidates_a(){
 async function fetchOffer(){
 	const endpoint = 'https://127.0.0.1:8080/backend/signal/getOffer/'; //ICI
 	let code = document.getElementById('paste_inv_code').value;
+	try{
 
-	if (parseInvitationCode(code) == false){
-		displayStatusBarWarning(getTranslation('Wrong Code Guest'));
-		return;
+		if (parseInvitationCode(code) == false){
+			displayStatusBarWarning(getTranslation('Wrong Code Guest'));
+			return;
+		}
+
+		document.getElementById('submit_inv_code').setAttribute('disabled', true);
+
+		const request = await fetch(endpoint, {
+    	    method: 'POST',
+			credentials: 'include',
+			headers: {
+    	        'Content-Type': 'application/json',
+				'X-CSRFToken': csrfToken
+    	    },
+			body : code,
+		})
+		if (request.status == 404){
+			displayStatusBarAlert(getTranslation('Peer 404'));
+			document.getElementById('submit_inv_code').removeAttribute('disabled');
+			return;
+		}
+		let response = await request.text();
+		response = JSON.parse(response);
+		localStorage.setItem('opponent_login', response['login']);
+		answerGenerator(response['offer'])
 	}
-
-	document.getElementById('submit_inv_code').setAttribute('disabled', true);
-
-	const request = await fetch(endpoint, {
-        method: 'POST',
-		credentials: 'include',
-		headers: {
-            'Content-Type': 'application/json',
-			'X-CSRFToken': csrfToken
-        },
-		body : code,
-	})
-	if (request.status == 404){
-		displayStatusBarAlert(getTranslation('Peer 404'));
+	catch(error){
 		document.getElementById('submit_inv_code').removeAttribute('disabled');
-		return;
+		console.log(error);
+		displayStatusBarAlert(getTranslation('Peer fetch offer'));
 	}
-	let response = await request.text();
-	response = JSON.parse(response);
-	localStorage.setItem('opponent_login', response['login']);
-	answerGenerator(response['offer'])
 }
 
 async function answerGenerator(offer){
@@ -98,29 +105,35 @@ async function sendAnswer(answer){
 	const endpoint = 'https://127.0.0.1:8080/backend/signal/'; //ICI
     const login = localStorage.getItem('login'); //
 	const code = document.getElementById('paste_inv_code').value;
-	const request = await fetch(endpoint, {
-        method: 'POST',
-		credentials: 'include',
-		headers: {
-            'Content-Type': 'application/json',
-			'X-CSRFToken': csrfToken
-        },
-		 body: JSON.stringify({
-				'code' : code,
-				'answer' : answer,
-				'login' : localStorage.getItem('login'),
-		}),
-	})
+	try{
+		const request = await fetch(endpoint, {
+    	    method: 'POST',
+			credentials: 'include',
+			headers: {
+    	        'Content-Type': 'application/json',
+				'X-CSRFToken': csrfToken
+    	    },
+			 body: JSON.stringify({
+					'code' : code,
+					'answer' : answer,
+					'login' : localStorage.getItem('login'),
+			}),
+		})
 
-	let response = await request.text();
+		let response = await request.text();
 
-    if (!response){
-		displayStatusBarAlert(getTranslation('Connection Init Failed'));
-		resetConnection();
-		nav.displayMenu();
-        return;
-    }
-	document.getElementById('invitation_code').value = response;
+    	if (!response){
+			displayStatusBarAlert(getTranslation('Connection Init Failed'));
+			resetConnection();
+			nav.displayMenu();
+    	    return;
+    	}
+		document.getElementById('invitation_code').value = response;
+	}
+	catch (error){
+		console.log(error);
+		displayStatusBarAlert(getTranslation("Peer send answer"));
+	}
 }
 
 function answerTimeout(){

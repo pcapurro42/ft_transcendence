@@ -13,7 +13,10 @@ document.getElementById("drop_logout").onclick = logout;
 // < MAIN MENU > //
 
 document.getElementById('title_logo').onclick = nav.displayMenu;
-document.getElementById('disconnection_back_btn').onclick = () => {location.reload(), nav.displayMenu();}
+document.getElementById('disconnection_back_btn').onclick = () => {
+	document.querySelectorAll('button:not(.not-disabled), a').forEach(element => {element.removeAttribute('disabled')});
+	location.reload(), nav.displayMenu();
+}
 
 document.getElementById('intra_login').onclick = displayDropdownMenu;
 document.getElementById('play_btn').onclick = nav.displayPlay;

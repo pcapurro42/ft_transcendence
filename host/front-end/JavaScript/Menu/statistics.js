@@ -447,7 +447,6 @@ nav.displayOnlineStats = function()
 
     if (v_tmp == true)
     {
-        console.log('toto');
         document.getElementById('online_stats_v').style.display = 'block';
         document.getElementById('online_stats_nv').style.display = 'none';
 

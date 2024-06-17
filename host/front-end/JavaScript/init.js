@@ -31,7 +31,7 @@ if (auth_code)
 
 // < CUSTOMIZE > //
 
-let previous_url_path = window.location.pathname;
+let previous_url_path;
 let pushHistory;
 window.addEventListener('popstate', handleLocation);
 

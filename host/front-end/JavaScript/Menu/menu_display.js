@@ -164,7 +164,7 @@ const nav = {
 
         addToHistory('/online-game');
         document.title = getTranslation('Online Game');
-		previous_url_path = window.location.pathname;
+		previous_url_path = '/online-game'
     },
 
     displayTwoVsOneGameLocal : function()

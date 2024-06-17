@@ -13,13 +13,14 @@ async function startTournament(newNicksArray, i){
 			return;
 
 		document.getElementById('main_menu_page').style.opacity = '1';
-		document.getElementById('main_menu_toolbar').style.opacity = '0';
+		document.getElementById('main_menu_toolbar').style.display = 'none';
+		document.getElementById('title_logo').style.display = 'none';
 		document.getElementById('submit_alias').setAttribute('disabled', true);
 		document.getElementById('tournament_nickname_menu').style.display = 'none';
 		document.getElementById('tournament_announcer').style.display = 'block';
 
 		await displayTournamentStage(nicknames);
-
+		
 		if (stop_flag == true){
 			tournamentResetBlocks();
 			document.getElementById('submit_alias').removeAttribute('disabled');

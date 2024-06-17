@@ -5,6 +5,7 @@
     <head>
 
         <!-- General -->
+        <link rel="stylesheet" href="./CSS/style.css">
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +15,6 @@
         <!-- Stylesheets -->
 
         <link id="tab_icon" type="image/png" rel="icon" href="./Materials/images/fox-logo.png">
-
-        <link rel="stylesheet" href="./CSS/style.css">
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -39,7 +38,7 @@
                 <div class="container">
 
                     <div class="text-center">
-                    <button id="top_logo" class="btn_img btn-complex" data-alt="Top Logo Alt" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" aria-label="">
+                    <button id="top_logo" class="mx-auto btn_img btn-complex" data-alt="Top Logo Alt" data-title="Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'" aria-label="">
                         <img src="./Materials/images/mgp-title-r.png" class="img-fluid" alt=""></button>
                     </div>
 
@@ -69,7 +68,7 @@
                     <p id="h_win_text" class="text text-center display-6" data-tsnormal="30px" data-tslarge="50px"></p>
                 </div>
 
-                <button id="start_1v1_online" class="d-flex btn btn-simple btn-outline-danger color_btn text border mx-auto border-2 d-none" data-tsnormal="35px" data-tslarge="55px" data-oname="Launch a game"></button>
+                <button id="start_1v1_online" class="d-flex btn btn-simple btn-outline-danger color_btn text border mx-auto border-2 d-none mgs_font" data-tsnormal="35px" data-tslarge="55px"  data-title="Launch a Game" data-oname="Launch a game"></button>
                 <p id="1v1_host_timer" class="text text-center mx-auto d-none display-6" data-tsnormal="45px" data-tslarge="55px"></p>
 
                 <div id="o_host_foot" class="d-flex flex-column align-items-center security_margin">
@@ -121,7 +120,7 @@
                         <div class="game_keys w-100">
                             <img class="keysup float-start mb-2" data-isnormal="6%" data-alt="Keyboard E Tuto" data-islarge="10%" src="./Materials/images/E.png"  tabindex="-1">
                             <img class="float-end keysup img-fluid mb-0" data-isnormal="6%" data-alt="Keyboard O Tuto" data-islarge="10%" src="./Materials/images/O.png"  tabindex="-1">
-                            <button id="start_1v1_local" class="btn btn-lg btn-simple btn-outline-danger mx-auto color_btn" data-tsnormal="30px" data-tslarge="40px" data-oname="Launch a game" data-title="Launch a Game"></button>
+                            <button id="start_1v1_local" class="btn btn-lg btn-simple btn-outline-danger mx-auto color_btn mgs_font" data-tsnormal="30px" data-tslarge="40px" data-oname="Launch a game" data-title="Launch a Game"></button>
                         </div>
                         <div class="game_keys w-100">
                             <img class="keysdown float-start" src="./Materials/images/D.png" data-isnormal="6%" data-alt="Keyboard D Tuto" data-islarge="10%" tabindex="-1">
@@ -141,7 +140,7 @@
                     <p id="2v1_local_timer" class="text display-6" data-tsnormal="45px" data-tslarge="55px"></p>
                 </div>
                 <div id="l_1v2_foot" class="d-flex flex-column align-items-center security_margin">
-                        <button id="start_2v1_local" class="btn btn-lg btn-simple btn-outline-danger mt-0 color_btn" data-tsnormal="30px" data-tslarge="40px" data-oname="Launch a game"></button>
+                        <button id="start_2v1_local" class="btn btn-lg btn-simple btn-outline-danger mt-0 color_btn mgs_font" data-tsnormal="30px" data-tslarge="40px" data-oname="Launch a game"  data-title="Launch a Game"></button>
                     <div class="game_keys w-100">
                         <img class="keysup d-inline-block float-start mb-2" data-isnormal="6%" data-alt="Keyboard E Tuto" data-islarge="10%" src="./Materials/images/E.png" tabindex="-1">
                         <img class="d-inline-block float-end keysup img-fluid mb-0" data-isnormal="6%" data-islarge="10%" data-alt="Keyboard O Tuto 2v1" src="./Materials/images/O.png" tabindex="-1">
@@ -158,7 +157,7 @@
             <!-- Tournament -->
 
             <div id="game_page_tournament">
-                <div class="display-4 text text-center" id="nick_reminder"></div>
+                <div class="text text-center" id="nick_reminder" data-tsnormal="50px" data-tslarge="70x"></div>
                 <canvas id="tournament_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-label="" data-title="ARIA Tournament Match" role="application"></canvas>
                 <label id="t_label" class="d-none" data-title="ARIA Tournament Match" aria-label=""></label>
                 <div>
@@ -169,10 +168,10 @@
                             <img class="keysup float-start mb-2" data-isnormal="6%" data-islarge="10%" data-alt="Keyboard E Tuto" src="./Materials/images/E.png" tabindex="-1">
                             <img class= "float-end keysup img-fluid mb-0" data-isnormal="6%" data-islarge="10%" data-alt="Keyboard O Tuto" src="./Materials/images/O.png" tabindex="-1">
                             <div class="d-flex align-items-center justify-content-center">
-                                <button id="t_start_game" class="m-3 btn btn-lg btn-simple btn-outline-danger color_btn" data-tsnormal="30px" data-tslarge="40px" data-oname="Launch a game" data-title="Launch a Game"></button>
-                                <button id="t_leaderboard" class="btn btn-lg btn-simple btn-outline-dark dark_btn d-none" data-tsnormal="30px" data-tslarge="40px" data-oname="Leaderboard" data-title="Leaderboard"></button>
+                                <button id="t_start_game" class="m-3 btn btn-lg btn-simple btn-outline-danger color_btn mgs_font" data-tsnormal="30px" data-tslarge="40px" data-oname="Launch a game" data-title="Launch a Game"></button>
+                                <button id="t_leaderboard" class="btn btn-lg btn-simple btn-outline-dark dark_btn d-none mgs_font" data-tsnormal="30px" data-tslarge="40px" data-oname="Leaderboard" data-title="Leaderboard"></button>
                             </div>
-                            <button id="t_next_game" class="btn btn-lg btn-simple btn-outline-danger mx-auto color_btn" data-tsnormal="30px" data-tslarge="40px" data-oname="Next Game"></button>
+                            <button id="t_next_game" class="btn btn-lg btn-simple btn-outline-danger mx-auto color_btn mgs_font" data-tsnormal="30px" data-tslarge="40px" data-oname="Next Game"></button>
                         </div>
                         <div class="game_keys w-100">
                             <img class="keysdown float-start" data-alt="Keyboard D Tuto" src="./Materials/images/D.png" data-isnormal="6%" data-islarge="10%" tabindex="-1">
@@ -270,7 +269,7 @@
                     <div class="p-2 text-center">
 
                     <div>
-                        <button id="one_vs_one_online_btn" class="btn text btn-simple" data-tsnormal="35px" data-tslarge="45px" data-oname="1 vs 1 (online)" data-title="1 vs 1 (online)" title="" data-link="online"></button>
+                        <button id="one_vs_one_online_btn" class="btn text btn-simple not-disabled" data-tsnormal="35px" data-tslarge="45px" data-oname="1 vs 1 (online)" data-title="1 vs 1 (online)" title="" data-link="online"></button>
                     </div>
 
                     <div>
@@ -320,17 +319,17 @@
                         <p id="create_lobby_msg" class="text" data-tsnormal="16px" data-tslarge="21px"></p>
                         <div id="game_id_div" class="d-flex flex-row justify-content-center">
                             <div class="border border-2">
-                                <input type="text" name="invitation_code" id="invitation_code" class="d-inline ms-2 mt-4" data-tsnormal="16px" data-tslarge="21px" readonly></input>
-                                <button id="cpy_inv_code" class="btn btn-simple text btn-outline-secondary btn-sm me-2 ms-0 color_btn" data-tsnormal="15px" data-tslarge="20px" data-title="Copy Inv Code" data-oname="Copy"
+                                <input type="text" name="invitation_code" id="invitation_code" class="d-inline ms-2 mt-4" data-tsnormal="16px" data-tslarge="23px" aria-labelledby="inv_code_label" aria-readonly="true" readonly></input>
+                                <button id="cpy_inv_code" class="btn btn-simple text btn-outline-secondary btn-sm me-2 ms-0 color_btn" data-tsnormal="20px" data-tslarge="30px" data-title="Copy Inv Code" data-oname="Copy"
                                 aria-label=""></button>
                                 <div>
-                                    <label for="invitation_code" class="text" data-oname="Peer offer send msg" data-tsnormal="15px" data-tslarge="20px"></label>
+                                    <p id="inv_code_label"for="invitation_code" class="text" data-oname="Peer offer send msg" data-tsnormal="20px" data-tslarge="30px"></p>
                                 </div>
                             </div>
                         <div class="d-flex flex-row justify-content-center">
                             <div class="border border-2">
-                                <button id="init_p2p" class = "btn text btn-outline-success btn-simple mt-3 color_btn" data-oname="Connect" data-tsnormal="20px" data-tslarge="25px"></button>
-                                <p class="text mx-2" data-tsnormal="15px" data-tslarge="20px" data-oname="Init Connection Msg"></p>
+                                <button id="init_p2p" class = "btn text btn-outline-success btn-simple mt-3 color_btn" data-oname="Connect" data-tsnormal="20px" data-tslarge="30px"></button>
+                                <p class="text mx-2" data-tsnormal="20px" data-tslarge="30px" data-oname="Init Connection Msg"></p>
                             </div>
                         </div>
                         </div>
@@ -422,36 +421,36 @@
 
         <div id="leaderboard_wrap">
             <div id="tournament_announcer" class="mx-auto security_margin">
-                <div id="round_block" class="display-1 text text-center mb-5" data-tsnormal="60px" data-tslarge="100px"></div>
+                <div id="round_block" class="display-1 text-center my-5 mgs_font text-red" data-tsnormal="60px" data-tslarge="100px"></div>
                     <p id="nick_announce" class="display-3 text text-center"></p>
                 <div id ='Roundof16' class="rounds_state">
                     <div id ='Final8' class="rounds_state">
                         <div id ='Final4' class="rounds_state">
                             <div id ='Final' class="rounds_state">
-                                <h4 id="1stgame" class="text text-center mt-4 game_nbr" data-oname="1st Game" data-tsnormal="25px" data-tslarge="35px"></h4>
-                                <p id ="1stGameNicks"class="text text-center mb-5 nicks" data-tsnormal="35px" data-tslarge="50px"></p>
+                                <h4 id="1stgame" class="text text-center mt-4 game_nbr" data-oname="1st Game" data-tsnormal="35px" data-tslarge="50px"></h4>
+                                <p id ="1stGameNicks"class="text text-center my-5 nicks" data-tsnormal="25px" data-tslarge="35px"></p>
                             </div>
-                            <h4 id="2ndgame" class="text text-center mt-4 game_nbr" data-oname="2nd Game" data-tsnormal="25px" data-tslarge="35px"></h4>
-                            <p id ="2ndGameNicks"class="text text-center mb-5 nicks" data-tsnormal="35px" data-tslarge="50px"></p>
+                            <h4 id="2ndgame" class="text text-center mt-4 game_nbr" data-oname="2nd Game" data-tsnormal="35px" data-tslarge="50px"></h4>
+                            <p id ="2ndGameNicks"class="text text-center my-5 nicks" data-tsnormal="25px" data-tslarge="35px"></p>
                         </div>
-                        <h4 id="3rdgame" class="text text-center mt-4 game_nbr" data-oname="3rd Game" data-tsnormal="25px" data-tslarge="35px"></h4>
-                        <p id ="3rdGameNicks"class="text text-center mb-5 nicks" data-tsnormal="35px" data-tslarge="50px"></p>
-                        <h4 id="4thgame" class="text text-center mt-4 game_nbr" data-oname="4th Game" data-tsnormal="25px" data-tslarge="35px"></h4>
-                        <p id ="4thGameNicks"class="text text-center mb-5 nicks" data-tsnormal="35px" data-tslarge="50px"></p>
+                        <h4 id="3rdgame" class="text text-center mt-4 game_nbr" data-oname="3rd Game" data-tsnormal="35px" data-tslarge="50px"></h4>
+                        <p id ="3rdGameNicks"class="text text-center my-5 nicks" data-tsnormal="25px" data-tslarge="35px"></p>
+                        <h4 id="4thgame" class="text text-center mt-4 game_nbr" data-oname="4th Game" data-tsnormal="35px" data-tslarge="50px"></h4>
+                        <p id ="4thGameNicks"class="text text-center my-5 nicks" data-tsnormal="25px" data-tslarge="35px"></p>
                     </div>
-                    <h4 id="5thgame" class="text text-center mt-4 game_nbr" data-oname="5th Game" data-tsnormal="25px" data-tslarge="35px"></h4>
-                    <p id ="5thGameNicks"class="text text-center mb-5 nicks" data-tsnormal="35px" data-tslarge="50px"></p>
-                    <h4 id="6thgame" class="text text-center mt-4 game_nbr" data-oname="6th Game" data-tsnormal="25px" data-tslarge="35px"></h4>
-                    <p id ="6thGameNicks"class="text text-center mb- nicks" data-tsnormal="35px" data-tslarge="50px"></p>
-                    <h4 id="7thgame" class="text text-center mt-4 game_nbr" data-oname="7th Game" data-tsnormal="25px" data-tslarge="35px"></h4>
-                    <p id ="7thGameNicks"class="text text-center mb-5 nicks" data-tsnormal="35px" data-tslarge="50px"></p>
-                    <h4 id="8thgame" class="text text-center mt-4 game_nbr" data-oname="8th Game" data-tsnormal="25px" data-tslarge="35px"></h4>
-                    <p id ="8thGameNicks"class="text text-center mb-5 nicks" data-tsnormal="35px" data-tslarge="50px"></p>
+                    <h4 id="5thgame" class="text text-center mt-4 game_nbr" data-oname="5th Game" data-tsnormal="35px" data-tslarge="50px"></h4>
+                    <p id ="5thGameNicks"class="text text-center my-5 nicks" data-tsnormal="25px" data-tslarge="35px"></p>
+                    <h4 id="6thgame" class="text text-center mt-4 game_nbr" data-oname="6th Game" data-tsnormal="35px" data-tslarge="50px"></h4>
+                    <p id ="6thGameNicks"class="text text-center my-5 nicks" data-tsnormal="25px" data-tslarge="35px"></p>
+                    <h4 id="7thgame" class="text text-center mt-4 game_nbr" data-oname="7th Game" data-tsnormal="35px" data-tslarge="50px"></h4>
+                    <p id ="7thGameNicks"class="text text-center my-5 nicks" data-tsnormal="25px" data-tslarge="35px"></p>
+                    <h4 id="8thgame" class="text text-center mt-4 game_nbr" data-oname="8th Game" data-tsnormal="35px" data-tslarge="50px"></h4>
+                    <p id ="8thGameNicks"class="text text-center my-5 nicks" data-tsnormal="25px" data-tslarge="35px"></p>
                 </div>
             </div>
             <div id="end_tournament_btn"class="d-flex justify-content-center col-12 d-none">
-                <button id ="restart_tournament" class="btn text btn-lg btn-simple border btn-outline-secondary color_btn" data-tsnormal="15px" data-tslarge="20px" data-oname="Restart Tournament" data-link="tournament-game"></button>
-                <button id ="end_tournament" class="btn text btn-lg btn-simple border btn-outline-danger ms-1 color_btn" data-tsnormal="15px" data-tslarge="20px" data-oname="Main Menu" data-link="home"></button>
+                <button id ="restart_tournament" class="mt-5 btn text btn-lg btn-simple border btn-outline-secondary color_btn" data-tsnormal="15px" data-tslarge="20px" data-oname="Restart Tournament" data-link="tournament-game"></button>
+                <button id ="end_tournament" class="mt-5  btn text btn-lg btn-simple border btn-outline-danger ms-1 color_btn" data-tsnormal="15px" data-tslarge="20px" data-oname="Main Menu" data-link="home"></button>
             </div>
         </div>
 
@@ -820,18 +819,18 @@
         <div id="statusBarAlert" class="alert alert-danger fixed-top p-2 status_bar"></div>
         <div id="statusBarWarning" class="alert alert-warning fixed-top p-2 status_bar"></div>
 
-        <div class="modal" id="disconnectionPopup" data-bs-backdrop='static'>
+        <div class="modal" id="disconnectionPopup" data-bs-backdrop='static' aria-modal="true">
 
             <div class="modal-dialog modal-dialog-centered text">
                 <div id="modal_color_disco" class="modal-content border border-2">
                     <div class="modal-header">
                         <h4 class="modal-title text text-danger" data-oname="Disconnected" data-tsnormal="30px" data-tslarge="50px"></h4>
-                    </div>
+                </div>
                     <div class="modal-body" data-tsnormal="15px" data-tslarge="30px">
                         <p class="text" data-oname="Disconnection Msg"></p>
                     </div>
                     <div class="modal-footer">
-                        <button id="disconnection_back_btn" class="btn btn-danger btn-complex text" data-oname="Main Menu"></button>
+                        <button id="disconnection_back_btn" class="not-disabled btn btn-outline-danger btn-complex text" data-oname="Main Menu"></button>
                     </div>
                 </div>
             </div>
@@ -840,20 +839,17 @@
          <div class="modal" id="leaderboard_modal" data-bs-backdrop='static'>
 
             <div class="modal-dialog modal-dialog-centered text">
-                <div id="modal_color_leaving" class="modal-content border border-2">
-                    <div class="modal-header text text-center">
-                        <h4 class="modal-title text text-danger mx-auto" data-oname="Leaderboard" data-tsnormal="30px" data-tslarge="50px"></h4>
-                    </div>
+                <div id="modal_color_leaderboard" class="modal-content border border-2" aria-modal="true">
                     <div id="leaderboard_body"class="overflow-scroll modal-body" data-tsnormal="15px" data-tslarge="30px">
                     </div>
                     <div class="modal-footer">
-                        <button id="close_leaderboard" class="btn btn-outline-secondary btn-complex color_btn text" data-oname="Resume"></button>
+                        <button id="close_leaderboard" class="not-disabled mx-auto btn btn-outline-secondary btn-complex color_btn text" data-oname="Resume"></button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="modal" id="leavingPopup" data-bs-backdrop='static'>
+        <div class="modal" id="leavingPopup" data-bs-backdrop='static' aria-modal="true">
 
             <div class="modal-dialog modal-dialog-centered text">
                 <div id="modal_color_leaving" class="modal-content border border-2">
@@ -864,8 +860,8 @@
                         <p class="text" data-oname="Leaving msg"></p>
                     </div>
                     <div class="modal-footer">
-                        <button id="leave_page_btn" class="btn btn-danger btn-complex text" data-oname="Main Menu"></button>
-                        <button id="resume_btn" class="btn btn-outline-secondary btn-complex text" data-oname="Resume"></button>
+                        <button id="leave_page_btn" class="not-disabled btn btn-outline-danger btn-complex text" data-oname="Main Menu"></button>
+                        <button id="resume_btn" class="not-disabled btn btn-outline-secondary btn-complex text" data-oname="Resume"></button>
                     </div>
                 </div>
             </div>
@@ -890,7 +886,7 @@
                                     <div class="collapse ms-3" id="classic-collapse">
                                         <ul class="btn-toggle-nav list-unstyled pb-1" aria-labelledby="dropdownMenuButton">
                                             <li>
-                                                <button class="btn btn-toggle sb_nav collapsed dropdown-toggle text btn-simple" data-bs-toggle="collapse" data-bs-target="#online-collapse" aria-expanded="false"data-oname="1 vs 1 (online)" data-tsnormal="20px" data-tslarge="30px"></button>
+                                                <button id="sb_o_1v1"class="btn btn-toggle sb_nav collapsed dropdown-toggle text btn-simple not-disabled" data-bs-toggle="collapse" data-bs-target="#online-collapse" aria-expanded="false"data-oname="1 vs 1 (online)" data-tsnormal="20px" data-tslarge="30px"></button>
                                                 <div class="collapse ms-3" id="online-collapse">
                                                     <ul class="btn-toggle-nav list-unstyled pb-1" aria-labelledby="dropdownMenuButton">
                                                         <li><button id="sb_create_lobby" class="btn sb_nav text btn-simple" data-oname="Create Lobby" data-tsnormal="20px" data-tslarge="30px"></button></li>
@@ -907,9 +903,9 @@
                                     <button class="btn btn-toggle sb_nav collapsed dropdown-toggle text btn-simple" data-bs-toggle="collapse" data-bs-target="#tournament-collapse" aria-expanded="false" data-oname="Tournament" data-tsnormal="20px" data-tslarge="30px"></button>
                                     <div class="collapse ms-3" id="tournament-collapse">
                                         <ul class="btn-toggle-nav list-unstyled pb-1" aria-labelledby="dropdownMenuButton">
-                                            <li><button id="sb_ro16" class="btn sb_nav text btn-simple" data-oname="Round of 16" data-tsnormal="20px" data-tslarge="30px"></button></li>
-                                             <li><button id="sb_final8"class="btn sb_nav text btn-simple" data-oname="Final 8" data-tsnormal="20px" data-tslarge="30px"></button></li>
-                                             <li><button id="sb_final4" class="btn sb_nav text btn-simple" data-oname="Final 4" data-tsnormal="20px" data-tslarge="30px"></button></li>
+                                            <li><button id="sb_ro16" class="btn sb_nav text btn-simple" data-oname="Sixteen" data-tsnormal="20px" data-tslarge="30px"></button></li>
+                                             <li><button id="sb_final8"class="btn sb_nav text btn-simple" data-oname="Eight" data-tsnormal="20px" data-tslarge="30px"></button></li>
+                                             <li><button id="sb_final4" class="btn sb_nav text btn-simple" data-oname="Four" data-tsnormal="20px" data-tslarge="30px"></button></li>
                                         </ul>
                                     </div>
                                 </li>
