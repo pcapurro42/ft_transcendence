@@ -72,9 +72,9 @@ class History
 
         this.graph = new Image();
         if (this.global_color == "white")
-            this.graph.src = 'Materials/images/graph_white.png';
+            this.graph.src = 'Materials/images/stats/graph_white.png';
         else
-            this.graph.src = 'Materials/images/graph_black.png';
+            this.graph.src = 'Materials/images/stats/graph_black.png';
 
         this.graph.onload = () => {this.graph_display.drawImage(this.graph, 0, 20, 570, 338)};
 
@@ -387,7 +387,7 @@ function displayNextHistoryPage()
         if (history_tab < historic.length() - 1)
             history_tab++, historic.display();
 
-        if (history_tab == this.length() - 1 || this.length() == 0)
+        if (history_tab == historic.length() - 1 || historic.length() == 0)
             document.getElementById('next_history').classList.add('disabled');
         else
             document.getElementById('next_history').classList.remove('disabled');

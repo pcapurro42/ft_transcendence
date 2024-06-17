@@ -14,14 +14,14 @@ function dropdownAddSvg(){
 	let light_switch = document.getElementById('light_switch');
 	let letter_switch = document.getElementById('letter_switch');
 
-	let logout_svg = '<img class="svg m-1" 	src="./Materials/images/logout.svg" alt="">';
-	let custom_svg = '<img class="svg m-1" src="./Materials/images/customize.svg" alt="">';
-	let settings_svg = '<img class="svg m-1" src="./Materials/images/settings.svg" alt="">';
-	let stats_svg = '<img class="svg m-1" src="./Materials/images/stats.svg" alt="">';
-	let github_svg = '<img class="svg foot m-1" src="./Materials/images/github.svg" alt="">'
-	let rgpd_svg = '<img class="svg foot m-1" src="./Materials/images/rgpd.svg" alt="">'
-	let moon_svg = '<img class="svg w-100 light_switch" src="./Materials/images/dark.svg" alt="">';
-	let sun_svg = '<img class="sun w-100 light_switch" src="./Materials/images/light.svg" alt="">';
+	let logout_svg = '<img class="svg m-1" 	src="./Materials/images/menu/logout.svg" alt="">';
+	let custom_svg = '<img class="svg m-1" src="./Materials/images/menu/customize.svg" alt="">';
+	let settings_svg = '<img class="svg m-1" src="./Materials/images/menu/settings.svg" alt="">';
+	let stats_svg = '<img class="svg m-1" src="./Materials/images/menu/stats.svg" alt="">';
+	let github_svg = '<img class="svg foot m-1" src="./Materials/images/menu/github.svg" alt="">'
+	let rgpd_svg = '<img class="svg foot m-1" src="./Materials/images/menu/rgpd.svg" alt="">'
+	let moon_svg = '<img class="svg w-100 light_switch" src="./Materials/images/menu/dark.svg" alt="">';
+	let sun_svg = '<img class="sun w-100 light_switch" src="./Materials/images/menu/light.svg" alt="">';
 
 	logout.innerHTML = logout_svg + '  ' + logout.innerHTML;
 	custom.innerHTML =  custom_svg + '  ' + custom.innerHTML;

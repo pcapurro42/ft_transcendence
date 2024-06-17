@@ -54,18 +54,18 @@ function showMapTooltip(){
 		switch (this.value){
             case 'default':
                 if (high_contrast == 'true')
-                    img.src = "./Materials/images/tooltip_black_map.png";
+                    img.src = "./Materials/images/menu/black-map.png";
                 else
-                    img.src = "./Materials/images/tooltip_white_map.png";
+                    img.src = "./Materials/images/menu/white-map.png";
                 return;
 			case 'purple':
-				img.src = "./Materials/images/tooltip_purple_map.png";
+				img.src = "./Materials/images/menu/purple-map.png";
 				break;
 			case 'orange':
-				img.src = "./Materials/images/tooltip_orange_map.png";
+				img.src = "./Materials/images/menu/orange-map.png";
 				break;
 			case 'red':
-				img.src = "./Materials/images/tooltip_red_map.png";
+				img.src = "./Materials/images/menu/red-map.png";
 				break;
 		}
 	}

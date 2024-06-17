@@ -27,8 +27,8 @@ function enableDisableSounds()
 		for (let i = 0; i < sounds.length; i++)
 	    	sounds[i].muted = true;
 		localStorage.setItem('sound', 'off');
-		toggler.src = './Materials/images/sound-off.png';
-		other_toggler.src = './Materials/images/sound-off.png';
+		toggler.src = './Materials/images/menu/sound-off.png';
+		other_toggler.src = './Materials/images/menu/sound-off.png';
 	}
 }
 
@@ -76,8 +76,8 @@ function refreshSounds()
 		for (let i = 0; i < sounds.length; i++)
 			sounds[i].muted = true;
 		let allMuted = Array.from(sounds).every(sounds => sounds.muted);
-		sound_togglers[0].src = './Materials/images/sound-off.png';
-		sound_togglers[1].src = './Materials/images/sound-off.png';
+		sound_togglers[0].src = './Materials/images/menu/sound-off.png';
+		sound_togglers[1].src = './Materials/images/menu/sound-off.png';
 	}
 	else{
 		sound_togglers[0].src = './Materials/images/sound-on.png';

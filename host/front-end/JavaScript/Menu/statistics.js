@@ -55,9 +55,9 @@ class VisualStats
 
         this.histogram = new Image();
         if (this.global_color == "white")
-            this.histogram.src = 'Materials/images/histogram_white.png';
+            this.histogram.src = 'Materials/images/stats/histogram_white.png';
         else
-            this.histogram.src = 'Materials/images/histogram_black.png';
+            this.histogram.src = 'Materials/images/stats/histogram_black.png';
     }
 
     drawCircleSurface(surface, color)
