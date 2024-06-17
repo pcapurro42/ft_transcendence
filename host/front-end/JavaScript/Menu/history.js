@@ -437,7 +437,6 @@ function refreshHistory()
         if (history_data.login != localStorage.getItem('login'))
             initializeHistory();
     }
-    historic = JSON.parse(localStorage.getItem('history_data'));
 }
 
 
@@ -476,14 +475,14 @@ nav.removeHistory = function()
 {
     let stats_menu = document.getElementById('stats_menu_buttons');
     let stats_back_btn = document.getElementById('stats_back_btn');
-    let historic = document.getElementById('history');
+    let history_page = document.getElementById('history');
 
     document.getElementById('history_info').style.display = 'none';
     document.getElementById('history_info').style.visibility = 'hidden';
 
     stats_menu.style.display = 'block';
     stats_back_btn.style.display = 'block';
-    historic.style.display = 'none';
+    history_page.style.display = 'none';
 
     historic = null;
     addToHistory('/statistics');
