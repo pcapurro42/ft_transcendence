@@ -132,9 +132,7 @@ class History
             this.data_display.fillStyle = this.global_color;
             let text = getTranslation("[No available data to display]");
             let center_text = this.data_display.measureText(text).width;
-            this.data_display.fillText(text, this.data_width / 2 - (center_text / 2), this.data_height / 2); // 42
-
-            entire_text = text; // 42
+            this.data_display.fillText(text, this.data_width / 2 - (center_text / 2), this.data_height / 2);
         }
         else
         {
@@ -308,13 +306,13 @@ class History
         if (this.history_data == null)
         {
             this.drawCircleSurface(360, this.background_color);
-            value_1 = 0, value_2 = 0; // 42 (valeur en %)
+            value_1 = 0, value_2 = 0;
         }
         else
         {
             let total = parseInt(this.left_score) + parseInt(this.right_score);
-            value_1 = (parseInt(this.left_score) * 100 / total); // 42 (valeur en %)
-            value_2 = (parseInt(this.right_score) * 100 / total); // 42 (valeur en %)
+            value_1 = (parseInt(this.left_score) * 100 / total);
+            value_2 = (parseInt(this.right_score) * 100 / total);
             aria_tmp += ' ' + getTranslation('Your Domination') + ' ' + Math.round(value_1) +'%...' + getTranslation('Opponent Domination') + ' ' + Math.round(value_2) + '%...';
             let value_p1 = value_1 * 360 / 100;
             let value_p2 = value_2 * 360 / 100;
