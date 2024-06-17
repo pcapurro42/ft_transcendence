@@ -10,7 +10,7 @@ import os
 CLIENT_SECRET = os.environ.get('CLIENT_SECRET')
 CLIENT_ID = os.environ.get('CLIENT_ID')
 def home(request):
-		return HttpResponse("test")
+		return HttpResponse("")
 
 def signal(request):
 	requestJson = json.loads(request.body)
