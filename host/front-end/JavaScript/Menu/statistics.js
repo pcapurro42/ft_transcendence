@@ -387,7 +387,6 @@ nav.displayStats = function()
     stats_menu_btn.style.display = 'block';
     stats_back_btn.style.display = 'block';
 
-
     addToHistory('/statistics');
     document.title = getTranslation('Statistics');
 }
@@ -416,6 +415,8 @@ nav.displayLocalStats = function()
     stats_back_btn.style.display = 'none';
     local_stats.style.display = 'block';
 
+    refreshStats();
+
     document.getElementById('local_stats_nv').style.display = 'block';
 
     addToHistory('/local-stats')
@@ -439,11 +440,12 @@ nav.displayOnlineStats = function()
     let stats_back_btn = document.getElementById('stats_back_btn');
     let online_stats = document.getElementById('online_stats');
 
-
     stat_menu.style.display = 'block';
     stats_menu_btn.style.display = 'none';
     stats_back_btn.style.display = 'none';
     online_stats.style.display = 'block';
+
+    refreshStats();
 
     if (v_tmp == true)
     {

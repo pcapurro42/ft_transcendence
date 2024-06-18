@@ -197,6 +197,8 @@ class OnlineGame1v1_guest
             this.bonus_one = new PowerUp(...Object.values(bonus_one_data));
             this.bonus_two = new PowerUp(...Object.values(bonus_two_data));
         }
+        else
+            this.bonus_one = null, this.bonus_two = null;
 
         // sounds initialization
 

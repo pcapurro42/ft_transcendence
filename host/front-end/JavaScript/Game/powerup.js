@@ -21,6 +21,9 @@ class PowerUp
         this.alive = true;
 
         this.bonus_taken = 0;
+
+        this.onl_taken = 0;
+        this.onl_received = 0;
     }
 
     print()
@@ -261,11 +264,25 @@ class PowerUp
     animate()
     {
         if (this.isAtLimits() == true)
+        {
+            if (players_nb == 1 && this.isLeftOrRight() == true)
+            {
+                if (role == 'host' && this.x < this.game.game_width / 2 || role == 'guest' && this.x > this.game.game_width / 2)
+                    this.onl_received++;
+            }
+
             this.direction = this.getOpposite(), this.getAwayFromLimits();
+        }
         else if (this.isAtPlayer() == true)
         {
             this.applyPlayerBonus();
             this.alive = false;
+
+            if (players_nb == 1)
+            {
+                if (role == 'host' && this.x < this.game.game_width / 2 || role == 'guest' && this.x > this.game.game_width / 2)
+                    this.onl_received++, this.onl_taken++;
+            }
 
             if (players_nb == 2 || players_nb == 3)
                 this.bonus_taken++;

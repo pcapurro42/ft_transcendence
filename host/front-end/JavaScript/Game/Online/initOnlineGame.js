@@ -108,6 +108,14 @@ function startOnline1v1()
 
                 localStorage.setItem('onl_ball_received', (parseInt(localStorage.getItem('onl_ball_received')) + game.ball.onl_received).toString());
                 localStorage.setItem('onl_ball_return', (parseInt(localStorage.getItem('onl_ball_return')) + game.ball.onl_return).toString());
+
+                if (game.bonus_one != null && game.bonus_two != null)
+                {
+                    localStorage.setItem('onl_bonus_received', (parseInt(localStorage.getItem('onl_bonus_received')) + game.bonus_one.onl_received).toString());
+                    localStorage.setItem('onl_bonus_received', (parseInt(localStorage.getItem('onl_bonus_received')) + game.bonus_one.onl_received).toString());
+                    localStorage.setItem('onl_bonus_taken', (parseInt(localStorage.getItem('onl_bonus_taken')) + game.bonus_one.onl_taken).toString());
+                    localStorage.setItem('onl_bonus_taken', (parseInt(localStorage.getItem('onl_bonus_taken')) + game.bonus_one.onl_taken).toString());
+                }
             }
 
             game.resetGame();
