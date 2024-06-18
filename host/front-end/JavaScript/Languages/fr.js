@@ -96,7 +96,7 @@ let fr = [
     ["Classic", "Classique"],
     ["Tournament", "Tournoi"],
 
-    ["MGS 1 - Duel", "MGS 1 - Duel"],
+    ["MGS 1 - Duel", "MGS 1 – Duel"],
 
     ["Language", "Langue"],
     ["Sound volume", "Volume du son"],
@@ -135,13 +135,13 @@ let fr = [
     ["RGPD-Note", "<pre class='overflow'>Note : si vous n'utilisez aucune des fonctionnalités en ligne du site (se connecter avec 42 et les parties en ligne),\n aucune donnée ne sera stockée en dehors de votre ordinateur ou ne sera partagée avec quelqu'un. \n\n\n</pre>"],
 
     ["RGPD-Data sharing title", "Quelles données sont partagées et pourquoi ?"],
-    ["RGPD-Data sharing", "<pre>Seulement trois types d'informations sont partagées :\n\n •Les adresses IP\n•Les identifiants 42\n•Les informations du jeu.\n\n Les adresses IP et identifiants 42 sont stockés dans la base de données de notre site afin que\n les joueurs puissent établir une connexion. Enfin, ces derniers\n sont également partagés entre deux personnes jouant en ligne,\n ainsi que les informations du jeu pour permettre\n une synchronisation des parties.</pre>"],
+    ["RGPD-Data sharing", "<pre>Seulement trois types d'informations sont partagées :\n\n – Les adresses IP\n– Les identifiants 42\n– Les informations du jeu.\n\n Les adresses IP et identifiants 42 sont stockés dans la base de données de notre site afin que\n les joueurs puissent établir une connexion. Enfin, ces derniers\n sont également partagés entre deux personnes jouant en ligne,\n ainsi que les informations du jeu pour permettre\n une synchronisation des parties.</pre>"],
 
     ["RGPD-Data time title", "Pour combien de temps les données sont-elles stockées ?"],
     ["RGPD-Data time", "<pre>Pour très peu de temps.\n\n Toutes les données sont effacées de la base de données lorsque\n le site est redémarré, ce qui arrive régulièrement\n (au moins plusieurs fois par jour).</pre>"],
 
     ["RGPD-User action title", "Comment puis-je intéragir avec mes données ?"],
-    ["RGPD-User action", "<pre>En accord avec le RGPD, trois options s'offrent à vous :\n\n•L'anonymisation de vos données\n•La suppression de vos données en ligne\n•La supression de vos données locales\n\n Dès que vous en faites la demande, ces directives prendront effet.\n Cela peut-être fait à partir du menu des paramètres.</pre>"],
+    ["RGPD-User action", "<pre>En accord avec le RGPD, trois options s'offrent à vous :\n\n– L'anonymisation de vos données\n– La suppression de vos données en ligne\n– La supression de vos données locales\n\n Dès que vous en faites la demande, ces directives prendront effet.\n Cela peut-être fait à partir du menu des paramètres.</pre>"],
 
     ["Game theme", "Musique du jeu"],
     ["Game map", "Carte du jeu"],
@@ -165,7 +165,7 @@ let fr = [
     ["Create a tournament", "Créer un tournoi"],
     ["Join a tournament", "Rejoindre un tournoi"],
     ["Tournament nickname", "Surnom"],
-    ["Select Tournament Type", "- Type de tournoi -"],
+    ["Select Tournament Type", "– Type de tournoi –"],
     ["Tournament Type", "Type de tournoi"],
     ["Sixteen", "Huitième de finale (16 joueurs)."],
     ["Eight", "Quart de finale (8 joueurs)."],

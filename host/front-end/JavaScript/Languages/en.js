@@ -97,7 +97,7 @@ let en = [
     ["Classic", "Classic"],
     ["Tournament", "Tournament"],
 
-    ["MGS 1 - Duel", "MGS 1 - Duel"],
+    ["MGS 1 - Duel", "MGS 1 – Duel"],
 
     ["Language", "Language"],
     ["Sound volume", "Sound volume"],
@@ -136,13 +136,13 @@ let en = [
     ["RGPD-Note", "<pre> Note: if you don't use any online features from the website (log in with 42 and online games),\n no data is stored out of your computer or shared with anyone.\n\n\n</pre>"],
 
     ["RGPD-Data sharing title", "What data is shared and why?"],
-    ["RGPD-Data sharing", "<pre>Only three different types of information are shared:\n\n •IP addresses\n•42 logins\n•Game informations\n\nThe first two are stored in our website database in order to connect players together.\n Finally, these two are also shared between two persons playing online, as well as\n game informations to permit game synchronization.</pre>"],
+    ["RGPD-Data sharing", "<pre>Only three different types of information are shared:\n\n – IP addresses\n– 42 logins\n– Game informations\n\nThe first two are stored in our website database in order to connect players together.\n Finally, these two are also shared between two persons playing online, as well as\n game informations to permit game synchronization.</pre>"],
 
     ["RGPD-Data time title", "For how long is the data stored?"],
     ["RGPD-Data time", "<pre>For a very short time.\n\n All the data is erased when the website is being rebooted, which happens regularly\n (at least multiple times every day).</pre>"],
 
     ["RGPD-User action title", "How can I interact with my data?"],
-    ["RGPD-User action", "<pre>In compliance with the GDPR, three options are availaible to you:\n\n•Anonymize your data\n •Delete your online data •Delete your local data\n\n As soon as you ask for it, these directives will take effect.\n Everything can be done in the settings menu.</pre>"],
+    ["RGPD-User action", "<pre>In compliance with the GDPR, three options are availaible to you:\n\n– Anonymize your data\n – Delete your online data – Delete your local data\n\n As soon as you ask for it, these directives will take effect.\n Everything can be done in the settings menu.</pre>"],
 
     ["Game theme", "Game theme"],
     ["Game map", "Game map"],
@@ -150,7 +150,7 @@ let en = [
     ["Orange", "Orange"],
     ["Purple", "Purple"],
 
-    ["Default", "- Default -"],
+    ["Default", "– Default –"],
 
     ["Enabled", "Enabled"],
     ["Disabled", "Disabled"],
@@ -166,7 +166,7 @@ let en = [
     ["Create a tournament", "Create a tournament"],
     ["Join a tournament", "Join a tournament"],
     ["Tournament nickname", "Nickname"],
-    ["Select Tournament Type", "- Tournament type -"],
+    ["Select Tournament Type", "– Tournament type –"],
     ["Tournament Type", "Tournament type"],
     ["Sixteen", "Round of 16 (16 players)."],
     ["Eight", "Final eight (8 players)."],
@@ -255,8 +255,8 @@ let en = [
     ['/privacy', '/privacy'],
     ['/privacy-settings', '/privacy-settings'],
 
-    ['Local Stats', 'Statistics - local'],
-    ['Online Stats', 'Statistics - online'],
+    ['Local Stats', 'Statistics – local'],
+    ['Online Stats', 'Statistics – online'],
 
     ['Refresh Alert Tournament', 'Attention : After reshrefing, returning to the tournament is not possible.'],
     ['Refresh Alert Online', 'Attention : Refreshing the page stopped the connection.'],

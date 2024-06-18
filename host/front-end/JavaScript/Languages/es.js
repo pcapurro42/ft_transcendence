@@ -135,13 +135,13 @@ let es = [
     ["RGPD-Note", "<pre> Nota: si no utiliza ninguna función en línea del sitio web (inicio de sesión con 42 y juegos en línea),\n ningún dato se almacena fuera de su ordenador ni se comparte con nadie.\n\n\n</pre>"],
 
     ["RGPD-Data sharing title", "¿Qué datos se comparten y por qué?"],
-    ["RGPD-Data sharing", "<pre>Sólo se comparten tres tipos diferentes de información:\n -Direcciones IP\n-42 inicios de sesión\n-Informaciones del juego\nLos dos primeros se almacenan en la base de datos de nuestro sitio web para conectar a los jugadores entre sí.\n Por último, estos dos también se comparten entre dos personas que juegan en línea, así como\ninformaciones del juego para permitir la sincronización del juego.</pre>"],
+    ["RGPD-Data sharing", "<pre>Sólo se comparten tres tipos diferentes de información:\n – Direcciones IP\n– 42 inicios de sesión\n– Informaciones del juego\nLos dos primeros se almacenan en la base de datos de nuestro sitio web para conectar a los jugadores entre sí.\n Por último, estos dos también se comparten entre dos personas que juegan en línea, así como\ninformaciones del juego para permitir la sincronización del juego.</pre>"],
 
     ["RGPD-Data time title", "¿Durante cuánto tiempo se almacenan los datos?"],
     ["RGPD-Data time", "<pre>Todos los datos se borran cuando se reinicia el sitio web, lo que ocurre regularmente (al menos varias veces al día).</pre>"],
 
     ["RGPD-User action title", "¿Cómo puedo interactuar con mis datos?"],
-    ["RGPD-User action", "<pre>De conformidad con el GDPR, tiene a su disposición tres opciones:\n-Anonimizar sus datos\n -Eliminar sus datos en línea -Eliminar sus datos locales\nEn cuanto lo solicite, estas directivas entrarán en vigor.\n Todo se puede hacer en el menú de configuración.</pre>"],
+    ["RGPD-User action", "<pre>De conformidad con el GDPR, tiene a su disposición tres opciones:\n– Anonimizar sus datos\n– Eliminar sus datos en línea\n– Eliminar sus datos locales\n\nEn cuanto lo solicite, estas directivas entrarán en vigor.\n Todo se puede hacer en el menú de configuración.</pre>"],
 
     ["Game theme", "Tema del juego"],
     ["Game map", "Mapa del juego"],
@@ -165,7 +165,7 @@ let es = [
     ["Create a tournament", "Crear un torneo"],
     ["Join a tournament", "Unirse a un torneo"],
     ["Tournament nickname", "Pseudónimo"],
-    ["Select Tournament Type", "- Tipo de torneo -"],
+    ["Select Tournament Type", "– Tipo de torneo –"],
     ["Tournament Type", "Tipo de torneo"],
     ["Sixteen", "Octavos de final (16 jugadores)."],
     ["Eight", "Cuartos de final (8 jugadores)."],
