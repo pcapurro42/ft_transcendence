@@ -460,6 +460,9 @@ nav.displayHistory = function()
     else
         history_tab = history_data.length - 1;
 
+    if (history_data == null)
+        document.getElementById('prev_history').classList.remove('disabled'), document.getElementById('next_history').classList.remove('disabled');
+
     addToHistory('/game-history');
 
     historic = new History(history_data);
