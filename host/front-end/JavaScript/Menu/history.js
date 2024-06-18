@@ -330,6 +330,8 @@ class History
                 this.left_score = this.history_data.data[history_tab][2][0], this.right_score = this.history_data.data[history_tab][2][1];
         }
 
+        refreshNavButtons();
+
         this.clean();
 
         this.displayInfos();
@@ -366,19 +368,25 @@ function getActualDate()
     return (day + "/" + month);
 }
 
+function refreshNavButtons()
+{
+    if (history_tab == 0)
+        document.getElementById('prev_history').classList.add('disabled');
+    else
+        document.getElementById('prev_history').classList.remove('disabled');
+
+    if (history_tab == historic.length() - 1 || historic.length() == 0)
+        document.getElementById('next_history').classList.add('disabled');
+    else
+        document.getElementById('next_history').classList.remove('disabled');
+}
+
 function displayPrevHistoryPage()
 {
     if (historic != null)
     {
         if (history_tab > 0)
-        {
             history_tab--, historic.display();
-
-            if (history_tab == 0)
-                document.getElementById('prev_history').classList.add('disabled');
-            else
-                document.getElementById('prev_history').classList.remove('disabled');
-        }
     }
 }
 
@@ -387,14 +395,7 @@ function displayNextHistoryPage()
     if (historic != null)
     {
         if (history_tab < historic.length() - 1)
-        {
             history_tab++, historic.display();
-
-            if (history_tab == historic.length() - 1 || historic.length() == 0)
-                document.getElementById('next_history').classList.add('disabled');
-            else
-                document.getElementById('next_history').classList.remove('disabled');
-        }
     }
 }
 
