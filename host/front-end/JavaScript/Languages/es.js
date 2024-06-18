@@ -34,7 +34,7 @@ let es = [
     ["Games played", "Partidos jugados"],
     ["Games won", "Partidos ganados"],
     ["Games lost", "Partidos perdidos"],
-    ["Ball exits", "Salidas de pelotas"],
+    ["Ball exits", "Salidas de balón"],
     ["Ball bounces", "Rebotas de balón"],
     ["Distance covered", "Distancia recorrida"],
     ["Ball returns", "Devoluciones de balón"],
@@ -68,7 +68,6 @@ let es = [
     ["1 vs 1 (online)", "1 vs 1 (online)"],
     ["1 vs 1 (local)", "1 vs 1 (local)"],
     ["1 vs 2 (local)", "1 vs 2 (local)"],
-    ["Tournament Match", "1 vs 1... Tournament Match (local)"], //
     ["Go!", "¡Ya!"],
 
     ["speed", "velocidad"],
@@ -221,7 +220,7 @@ let es = [
     ["42 Auth Success", "¡Se ha conectado correctamente ! Bienvenido "],
     ["42 Auth Failure", "Conexión fallida."],
     ["Copy Success", "Copiado correctamente en el portapapeles."],
-    ["Switch to Visual", "¡Cambia primero a visual !"],// ¡
+    ["Switch to Visual", "¡Cambia primero a visual !"],
 
     ['/home', '/inicio'],
     ['Home', 'Metal Gear Pong'],
