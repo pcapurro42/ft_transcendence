@@ -437,7 +437,6 @@ function refreshHistory()
     }
 }
 
-
 nav.displayHistory = function()
 {
     nav.hideEveryDiv();
@@ -467,7 +466,6 @@ nav.displayHistory = function()
     historic.display();
     document.title = getTranslation('Game History');
 }
-
 
 nav.removeHistory = function()
 {

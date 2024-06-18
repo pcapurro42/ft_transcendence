@@ -323,7 +323,6 @@ class OnlineGame1v1_host
             data_channel.send(`score_g:${this.scores[1]}`);
         }
 
-
         this.ball.replace();
         this.refreshDisplay();
     }
