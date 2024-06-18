@@ -118,7 +118,7 @@ let es = [
     ["Authorized", "Autorizado"],
     ["Not authorized", "No autorizado"],
     ["Public", "Público"],
-    ["Anonymized", "anonimizado"],
+    ["Anonymized", "Anonimizado"],
     ["Read", "Leer"],
     ["Delete", "Borrar"],
 
