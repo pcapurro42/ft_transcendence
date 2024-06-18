@@ -23,6 +23,7 @@ class Ball
 
         this.lcl_exit = 0;
         this.lcl_bounce = 0;
+        this.onl_received = 0;
         this.onl_return = 0;
     }
 
@@ -340,6 +341,12 @@ class Ball
 
             if (players_nb == 2 || players_nb == 3)
                 this.lcl_exit++;
+
+            if (players_nb == 1)
+            {
+                if (role == 'host' && this.x < this.game.game_width / 2 || role == 'guest' && this.x > this.game.game_width / 2)
+                    this.onl_received++;
+            }
         }
         else if (this.isUpOrDown() == true || this.isAtPlayer() == true)
         {
@@ -347,6 +354,12 @@ class Ball
 
             if (players_nb == 2 || players_nb == 3)
                 this.lcl_bounce++;
+
+                if (players_nb == 1)
+                {
+                    if (role == 'host' && this.x < this.game.game_width / 2 || role == 'guest' && this.x > this.game.game_width / 2)
+                        this.onl_received++, this.onl_return++;
+                }
                 
             if (players_nb == 1 && this.isFrontPlayer() == true)
             {
