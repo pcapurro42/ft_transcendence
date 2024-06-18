@@ -2,17 +2,7 @@ function enableDisableMusic()
 {
 	let music = document.getElementById('mgs');
     let game_music = document.querySelectorAll('.game_music');
-	let toggler = this;
-	let other_toggler;
-
-	if (toggler == document.getElementById('music_toggle_btn')){
-		toggler = document.getElementById('music_toggle')
-		other_toggler = document.getElementById('game_music_toggle');
-	}
-	else{
-		toggler = document.getElementById('game_music_toggle')
-		other_toggler = document.getElementById('music_toggle');
-	}
+	let toggler = document.getElementById('music_toggle');
 
 	music.loop = true;
 	for (let i = 0; i < game_music.length; i++)
@@ -28,7 +18,6 @@ function enableDisableMusic()
 			music.play();
 		localStorage.setItem('music', 'on');
 		toggler.src = './Materials/images/menu/music-on.png';
-		other_toggler.src = './Materials/images/menu/music-on.png'
 	}
 	else
 	{
@@ -37,7 +26,6 @@ function enableDisableMusic()
 		music.muted = true;
 		localStorage.setItem('music', 'off');
 		toggler.src = './Materials/images/menu/music-off.png';
-		other_toggler.src = './Materials/images/menu/music-off.png'
 	}
 }
 
@@ -61,14 +49,13 @@ function refreshMusics()
 	let menu_theme = document.getElementById('mgs');
 	let game_theme = document.querySelectorAll('.game_music');
 	let credits_theme = document.getElementById('vid_credits');
-	let music_togglers = document.querySelectorAll('.music_togglers');
+	let music_toggler = document.getElementById('music_toggle_btn');
 
 	if (localStorage.getItem('music') == null)
 		localStorage.setItem('music', 'off');
 
 	if (localStorage.getItem('music') == 'on'){
-		music_togglers[0].src = './Materials/images/menu/music-on.png';
-		music_togglers[1].src = './Materials/images/menu/music-on.png';
+		music_toggler.src = './Materials/images/menu/music-on.png';
 		menu_theme.muted = false;
 		game_theme.forEach(element => {element.muted = false;});
 		window.addEventListener('click', () =>{
@@ -77,8 +64,7 @@ function refreshMusics()
 	}
 	else{
 		menu_theme.muted = true;
-		music_togglers[0].src = './Materials/images/menu/music-off.png'
-		music_togglers[1].src = './Materials/images/menu/music-off.png'
+		music_toggler.src = './Materials/images/menu/music-off.png'
 
 	}
 

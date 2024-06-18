@@ -1,6 +1,7 @@
 let en = [
     ["English", "english"],
     ["French", "french"],
+    ["Spanish", "Spanish"],
 
     ["LOG IN WITH 42", "LOG IN WITH 42"],
     ["LOG OUT", "Log out"],
@@ -156,6 +157,7 @@ let en = [
     ["Disabled", "Disabled"],
 
     ['Main Menu', "Main Menu"],
+    ['Continue', "Continue"],
     ["Back", "Back"],
     ["Yes", "Yes"],
     ["No", "No"],
@@ -330,4 +332,5 @@ let en = [
     ["Opponent Domination", "Opponent dominated the game up to"],
     ["Seconds", "Seconds"],
     ["Game Duration", "Game approximately lasted "],
+    ["Enable Sounds Error", "Snake, you have to interact with the website to hear the sounds!"],
 ];

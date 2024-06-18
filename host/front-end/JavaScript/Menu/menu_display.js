@@ -207,7 +207,7 @@ const nav = {
         document.title = getTranslation('Privacy policy');
     },
 
-    hideEveryDiv: function (){
+    hideEveryDiv: async function (){
         document.getElementById('rgpd_block').style.display = "none";
         document.getElementById('game_toolbar').style.display ='none';
         document.getElementById('online_menu').style.display = 'none';

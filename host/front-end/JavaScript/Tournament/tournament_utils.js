@@ -105,6 +105,7 @@ function tournamentFinalReset(){
 	stop_flag = true;
 	final = false;
 	tournamentFullReset();
+	freeInputAndForms();
 	removeBeforeUnloadWarning();
 	document.getElementById('submit_alias').removeAttribute('disabled');
 	document.getElementById('tournament_announcer').style.display = 'none';

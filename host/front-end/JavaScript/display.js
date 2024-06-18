@@ -144,10 +144,12 @@ function setTextSize(size)
 
     if (size == "data-tsnormal"){
         sb_switch.forEach(element => {element.style = "width: 50px; height: 50px;";});
+        document.getElementById('offcanvas_foot').style = "height: 106px;"
         document.getElementById('text_size_btn_selector').selectedIndex = 0;
     }
     else{
         sb_switch.forEach(element => {element.style = "width: 70px; height: 70px;";});
+        document.getElementById('offcanvas_foot').style = "height: 122px; min-height: 117px"
         document.getElementById('text_size_btn_selector').selectedIndex = 1;
     }
 
@@ -160,13 +162,14 @@ function setTextSize(size)
 
 function setHighContrast(value)
 {
-    let btn = document.querySelectorAll('.btn, .btn_img, .btn_icon, .slider, .selector, #title_logo, #top_logo');
+    let btn = document.querySelectorAll('.btn, .btn_img, .btn_icon, .slider, .selector, #title_logo, #top_logo, #o-t_top_logo');
     let btn_icon = document.querySelectorAll('.btn_icon');
     let dark_btn = document.querySelectorAll('.dark_btn');
     let footer = document.getElementById('footer_div');
     let high_contrast_btn = document.getElementById('high_contrast_btn_yn');
     let side_menu = document.getElementById('sideMenu')
     let sb_dropBg = document.getElementById('lang_switch_menu');
+    let sb_header = document.getElementById('offcanvas_head')
 
     if (high_contrast == "true")
     {
@@ -191,6 +194,7 @@ function setHighContrast(value)
         high_contrast_btn.style.backgroundColor = "#AD1400";
         high_contrast_btn.style.color = "white";
         footer.style.backgroundColor="#640000";
+        sb_header.style.backgroundColor="#222222";
         setBackgroundColor("black");
         setTextColor("white");
         setMaterialsColor("black");
@@ -214,7 +218,7 @@ function setHighContrast(value)
         high_contrast_btn.setAttribute('data-oname', 'Disabled');
         high_contrast_btn.style.backgroundColor = "";
         high_contrast_btn.style.color = "black";
-
+        sb_header.style.backgroundColor="white"
         setBackgroundColor("white");
         setTextColor("black");
         setMaterialsColor("white");

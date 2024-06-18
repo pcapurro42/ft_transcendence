@@ -20,7 +20,7 @@ async function startTournament(newNicksArray, i){
 		document.getElementById('tournament_announcer').style.display = 'block';
 
 		await displayTournamentStage(nicknames);
-		
+
 		if (stop_flag == true){
 			tournamentResetBlocks();
 			document.getElementById('submit_alias').removeAttribute('disabled');

@@ -1,7 +1,7 @@
 let es = [
     ["English", "inglés"],
     ["French", "francés"],
-
+    ["Spanish", "Español"],
     ["LOG IN WITH 42", "CONECTAR CON 42"],
     ["LOG OUT", "Desconectarse"],
 
@@ -155,6 +155,7 @@ let es = [
     ["Disabled", "Desactivado"],
 
     ['Main Menu', "Menú principal"],
+    ['Continue', "Seguir"],
     ["Back", "Atrás"],
     ["Yes", "Sí"],
     ["No", "No"],
@@ -325,4 +326,5 @@ let es = [
     ["Opponent Domination", "El oponente dominó el partido hasta"],
     ["Seconds", "Segundos"],
     ["Game Duration", "El partido el partido de tenis duró aproximadamente "],
+    ["Enable Sounds Error", "Snake, ¡tienes que interactuar con el sitio web para escuchar los sonidos!"],
 ];

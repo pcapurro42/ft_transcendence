@@ -1,6 +1,7 @@
 let fr = [
     ["English", "Anglais"],
     ["French", "Français"],
+    ["Spanish", "Espagnol"],
 
     ["LOG IN WITH 42", "SE CONNECTER AVEC 42"],
     ["LOG OUT", "Se déconnecter"],
@@ -202,6 +203,7 @@ let fr = [
     ['Disconnected', "⚠︎ Connexion pair à pair perdue..."],
     ['Disconnection Msg', "Désolé ! Il semble y avoir un problème de connexion. Vérifiez le réseau des deux pairs, puis réessayez."],
     ['Main Menu', "Menu Principal"],
+    ['Continue', "Continuer"],
     ['Waiting Lobby Creation', "En attente de la création d'un salon par "],
     ['Please Create Lobby', 'Cliquez sur le bouton de création de salon pour démarrer une partie avec '],
 
@@ -332,4 +334,5 @@ let fr = [
 
     ["Your Domination", "Vous avez dominé la partie à "],
     ["Opponent Domination", "Votre adversaire à dominé la partie à"],
+    ["Enable Sounds Error", "Snake, tu dois intéragir avec le site-web pour entendre les sons!"],
 ];

@@ -1,17 +1,7 @@
 function enableDisableSounds()
 {
     let sounds = document.querySelectorAll('.sounds');
-	let toggler = this;
-	let other_toggler;
-
-	if (toggler == document.getElementById('sound_toggle_btn')){
-		toggler = document.getElementById('sound_toggle');
-		other_toggler = document.getElementById('game_sound_toggle');
-	}
-	else{
-		toggler = document.getElementById('game_sound_toggle');
-		other_toggler = document.getElementById('sound_toggle');
-	}
+	let toggler = document.getElementById('sound_toggle');
 
 	let allMuted = Array.from(sounds).every(sounds => sounds.muted);
 	if (allMuted)
@@ -20,7 +10,6 @@ function enableDisableSounds()
 	    	sounds[i].muted = false;
 		localStorage.setItem('sound', 'on');
 		toggler.src = './Materials/images/menu/sound-on.png';
-		other_toggler.src = './Materials/images/menu/sound-on.png'
 	}
 	else
 	{
@@ -28,46 +17,37 @@ function enableDisableSounds()
 	    	sounds[i].muted = true;
 		localStorage.setItem('sound', 'off');
 		toggler.src = './Materials/images/menu/sound-off.png';
-		other_toggler.src = './Materials/images/menu/sound-off.png';
 	}
 }
 
 function alertSound(event)
 {
 	let loginSound = document.getElementById('alert_sound');
-
-	loginSound.play();
-
+	loginSound.play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
 }
 
 function hoverSound(event)
 {
     let hoverSound = document.getElementById('hover_sound');
-
-    hoverSound.play();
-
+    hoverSound.play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
 }
 
 function clickSound(event)
 {
     let clickSound = document.getElementById('click_sound');
-
-    clickSound.play();
-
+    clickSound.play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
 }
 
 function closeSound(event)
 {
 	let closeSound = document.getElementById('close_sound');
-
-    closeSound.play();
-
+    closeSound.play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
 }
 
 function refreshSounds()
 {
 	let sounds = document.querySelectorAll('.sounds');
-	let sound_togglers = document.querySelectorAll('.sound_togglers')
+	let sound_toggler = document.getElementById('sound_toggle');
 
 	if (localStorage.getItem('sound') == null)
 		localStorage.setItem('sound', 'off');
@@ -76,12 +56,10 @@ function refreshSounds()
 		for (let i = 0; i < sounds.length; i++)
 			sounds[i].muted = true;
 		let allMuted = Array.from(sounds).every(sounds => sounds.muted);
-		sound_togglers[0].src = './Materials/images/menu/sound-off.png';
-		sound_togglers[1].src = './Materials/images/menu/sound-off.png';
+		sound_toggler.src = './Materials/images/menu/sound-off.png';
 	}
 	else{
-		sound_togglers[0].src = './Materials/images/menu/sound-on.png';
-		sound_togglers[1].src = './Materials/images/menu/sound-on.png';
+		sound_toggler.src = './Materials/images/menu/sound-on.png';
 	}
 
 	for (let i = 0; i < sounds.length; i++)
@@ -103,25 +81,19 @@ function updateSoundsSlider()
 function initializeSounds()
 {
 	const simple_buttons = document.getElementsByClassName('btn-simple');
-
 	for (let i = 0; i < simple_buttons.length; i++)
 	{
     	simple_buttons[i].addEventListener('mouseover', hoverSound);
     	simple_buttons[i].addEventListener('click', clickSound);
 	}
-
 	let complex_buttons = document.getElementsByClassName('btn-complex');
-
 	for (let i = 0; i != complex_buttons.length; i++)
 		complex_buttons[i].addEventListener('click', closeSound);
-
 	let alert_buttons = document.getElementsByClassName('btn-alert');
-
 	for (let i = 0; i != alert_buttons.length; i++)
 	{
 		alert_buttons[i].addEventListener('mouseover', hoverSound);
 		alert_buttons[i].addEventListener('click', alertSound);
 	}
-
 	updateSoundsSlider();
 }

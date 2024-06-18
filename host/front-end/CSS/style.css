@@ -19,6 +19,10 @@ body
 
 }
 
+.container{
+    max-width: 1090px !important;
+}
+
 p, pre, h1, h2, h3{
     font-family: "My_font" !important;
 }
@@ -58,7 +62,7 @@ a{
     color: white !important;
 }
 
-#sb_en:hover, #sb_fr:hover, #sb_en:focus, #sb_fr:focus{
+#sb_en:hover, #sb_fr:hover, #sb_es:hover, #sb_es:focus, #sb_en:focus, #sb_fr:focus{
     background-color: transparent;
 }
 .dropdown_btn:hover, .foot:hover{
@@ -69,7 +73,7 @@ a{
     border : 0px;
 }
 
-#hamburger, #ham_svg{
+.hamburger{
     width: 70px !important;
 }
 
@@ -99,8 +103,8 @@ pre{
     max-height: 170px;
 }
 
-.foot, #hr, #mgp_corp, #bgales_git, #pcap_git, #rgpd_btn, #mgp_corp{
-    color:white;
+.foot, #hr, #mgp_corp, #bgales_git, #pcap_git, #rgpd_btn, #mgp_corp, .sb_switch{
+    color:white !important;
 
 }
 
@@ -117,6 +121,9 @@ pre{
     width: 235px;
 }
 
+.offcanvas-footer{
+    background-color: #4a2222;
+}
 .btn-outline-danger:hover, .btn-outline-danger:focus-visible{
     background-color: #AD1400!important;
     color: white !important;
@@ -153,11 +160,13 @@ pre{
     color: black !important;
 }
 .keysup{
+    max-width: 70px;
     filter: var(--dark-mode-filter) drop-shadow(0px 1px 0.5px #111111) drop-shadow(0px -1px 0.5px #111111);
     animation: gamekeys forwards 3s infinite;
 }
 
 .keysdown{
+    max-width: 70px;
     filter: var(--dark-mode-filter) drop-shadow(0px 1px 0.5px #111111) drop-shadow(0px -1px 0.5px #111111);
     animation: gamekeys forwards 3s infinite;
     animation-delay: 1s;
@@ -232,12 +241,6 @@ pre{
     right: 60%;
 }
 
-#top_logo
-{
-    max-width: 40%;
-    height: auto;
-    cursor: pointer
-}
 
 #game_sound_toggle, #sound_toggle{
     transform: scale(0.88);
@@ -264,6 +267,11 @@ pre{
     height: auto;
     cursor: pointer
 }
+#top_logo, #top_logo_img, #o-t_top_logo{
+    max-width: 500px;
+    min-width: 340px;
+    height: auto;
+}
 
 #game_theme_btn_selector, #game_map_btn_selector, #language_btn_selector, #text_size_btn_selector
 {
@@ -289,3 +297,4 @@ pre{
 {
     font-weight: bold;
 }
+

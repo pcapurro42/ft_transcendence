@@ -19,6 +19,7 @@ function handleDisconnection(){
     if (isDisplayModal){
         document.querySelectorAll('button:not(.not-disabled), a').forEach(element => {element.setAttribute('disabled', true)});
 	    popup.style.display = 'block';
+        hideSidebar();
         document.getElementById('alert_sound').play();
         stop_ping = true;
         resetConnection();

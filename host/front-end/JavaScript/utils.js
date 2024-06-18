@@ -65,31 +65,47 @@ async function languageSwitch(lang){
 	dropdownMenu.style.minWidth = '0px';
 	let fr = document.getElementById('sb_fr');
 	let en = document.getElementById('sb_en');
+	let es = document.getElementById('sb_es');
 
 	if (lang == 'en'){
 		document.getElementById('language_btn_selector').value = 'en';
 		changeLanguage();
 		en.setAttribute('aria-current', true);
-		await sleep(10);
 		en.style.backgroundColor ='#AD1400'
 		en.style.color = "white";
 
 		fr.style.backgroundColor = '';
 		high_contrast == 'true'	? fr.style.color = 'white' : fr.style.color = 'black';
+		high_contrast == 'true'	? es.style.color = 'white' : fr.style.color = 'black';
 		fr.removeAttribute('aria-current');
+		es.removeAttribute('aria-current');
 	}
 	else if (lang == 'fr'){
 		document.getElementById('language_btn_selector').value = 'fr';
 		changeLanguage();
-		await sleep(10);
 		fr.setAttribute('aria-current', true);
 		fr.style.backgroundColor ='#AD1400';
 		fr.style.color = "white";
 
 		en.style.backgroundColor = '';
+		es.style.backgroundColor = '';
 		high_contrast == 'true'	? en.style.color = 'white' : en.style.color = 'black';
+		high_contrast == 'true'	? es.style.color = 'white' : es.style.color = 'black';
 
 		en.removeAttribute('aria-current');
+		es.removeAttribute('aria-current');
+	}
+	else if (lang == 'es'){
+		document.getElementById('language_btn_selector').value = 'es';
+		changeLanguage();
+		es.setAttribute('aria-current', true);
+		es.style.backgroundColor ='#AD1400';
+		es.style.color = "white";
+
+		en.style.backgroundColor = '';
+		fr.style.backgroundColor = '';
+		high_contrast == 'true'	? en.style.color = 'white' : en.style.color = 'black';
+		high_contrast == 'true'	? fr.style.color = 'white' : fr.style.color = 'black';
 	}
 }
 

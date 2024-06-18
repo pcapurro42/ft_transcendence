@@ -12,7 +12,7 @@ async function isUserLeaving(){
     })
 }
 
-async function handleSensitivePages(path){
+async function handleSensitivePages(){
     if (previous_url_path == '/tournament-game' ||
         (previous_url_path == '/online-game' &&  data_channel != null)
             && localStorage.getItem('no_confirmation') != true)
@@ -28,10 +28,11 @@ async function handleSensitivePages(path){
             }
             else{
                 isDisplayModal = false;
+                tournamentFinalReset();
+                resetConnection();
                 document.getElementById('title_logo').style.display = "block";
                 document.getElementById('main_menu_toolbar').style.display = "block";
                 previous_url_path = '';
-                path = '/home';
             }
         }
     localStorage.removeItem('no_confirmation');
@@ -48,13 +49,12 @@ function addToHistory(pagePath){
 }
 async function handleLocation(){
 
-    let path;
     pushHistory = false;
     if (!originalUrl)
         path = window.location.pathname;
     else
         path = originalUrl;
-    if (!(await handleSensitivePages(path)))
+    if (!(await handleSensitivePages()))
         return;
     nav.hideEveryDiv();
     pushHistory = false;
@@ -63,91 +63,113 @@ async function handleLocation(){
         case '':
         case '/':
         case getSpecificTranslation('fr', '/home'):
+        case getSpecificTranslation('es', '/home'):
         case '/home':
             nav.displayMenu();
             return;
         case getSpecificTranslation('fr', '/play'):
+        case getSpecificTranslation('es', '/play'):
         case '/play':
             nav.displayPlay();
             return;
         case getSpecificTranslation('fr', '/classic'):
+        case getSpecificTranslation('es', '/classic'):
         case '/classic':
             nav.displayClassicChoice()
             return;
         case getSpecificTranslation('fr', '/1vs1'):
+        case getSpecificTranslation('es', '/1vs1'):
         case '/1vs1':
             nav.displayOneVsOneGameLocal();
             return;
         case getSpecificTranslation('fr', '/1vs2'):
+        case getSpecificTranslation('es', '/1vs2'):
         case '/1vs2':
             nav.displayTwoVsOneGameLocal();
             return;
         case getSpecificTranslation('fr', '/online'):
+        case getSpecificTranslation('es', '/online'):
         case '/online':
             nav.displayOnlineMenu();
             return;
         case getSpecificTranslation('fr', '/create-lobby'):
+        case getSpecificTranslation('es', '/create-lobby'):
         case '/create-lobby':
             nav.displayCreateLobby()
             return;
         case getSpecificTranslation('fr', '/join-lobby'):
+        case getSpecificTranslation('es', '/join-lobby'):
         case '/join-lobby':
             nav.displayJoinLobby();
             return;
         case getSpecificTranslation('fr', '/online-game'):
+        case getSpecificTranslation('es', '/online-game'):
         case '/online-game':
             previous_url_path = "";
             nav.displayMenu();
+            refreshSite();
             displayStatusBarWarning(getTranslation('Refresh Alert Online'))
             return;
         case getSpecificTranslation('fr', '/tournament'):
+        case getSpecificTranslation('es', '/tournament'):
         case '/tournament':
             nav.displayTournamentSetup();
             return;
         case getSpecificTranslation('fr', '/tournament-nicknames'):
+        case getSpecificTranslation('es', '/tournament-nicknames'):
         case '/tournament-nicknames':
             nav.displayTournamentForm();
             return;
         case getSpecificTranslation('fr', '/tournament-game'):
+        case getSpecificTranslation('es', '/tournament-game'):
         case '/tournament-game':
                 previous_url_path = "";
                 nav.displayMenu();
                 displayStatusBarWarning(getTranslation('Refresh Alert Tournament'))
             return;
         case getSpecificTranslation('fr', '/customize'):
+        case getSpecificTranslation('es', '/customize'):
         case '/customize':
             nav.displayCustomize();
             return;
         case getSpecificTranslation('fr', '/statistics'):
+        case getSpecificTranslation('es', '/statistics'):
         case '/statistics':
             nav.displayStats();
             return;
         case getSpecificTranslation('fr', '/game-history'):
+        case getSpecificTranslation('es', '/game-history'):
         case '/game-history':
             nav.displayHistory();
             return;
         case getSpecificTranslation('fr', '/local-stats'):
+        case getSpecificTranslation('es', '/local-stats'):
         case '/local-stats':
             nav.displayLocalStats();
             return;
         case getSpecificTranslation('fr', '/online-stats'):
+        case getSpecificTranslation('es', '/online-stats'):
         case '/online-stats':
             nav.displayOnlineStats();
             return;
         case getSpecificTranslation('fr', '/settings'):
+        case getSpecificTranslation('es', '/settings'):
         case '/settings':
             nav.displaySettings();
             return;
         case getSpecificTranslation('fr', '/credits'):
+        case getSpecificTranslation('es', '/credits'):
         case '/credits':
             pushHistory = false;
             nav.displayMenu();
             return;
         case getSpecificTranslation('fr', '/privacy'):
+        case getSpecificTranslation('es', '/privacy'):
         case '/privacy':
             nav.displayRGPD();
             return;
         case getSpecificTranslation('fr', '/privacy-settings'):
+        case getSpecificTranslation('es', '/privacy-settings'):
         case '/privacy-settings':
             displaySecondSettingsPage();
             return;
