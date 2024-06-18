@@ -81,6 +81,8 @@ function refreshLogin()
         document.getElementById('intra_login').style.display = "none";
         localStorage.removeItem('login');
     }
+    refreshStats();
+    refreshHistory();
     refreshDisplay();
 }
 
