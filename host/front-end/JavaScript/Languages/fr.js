@@ -13,7 +13,7 @@ let fr = [
     ["Enabled", "Activé"],
     ["Disabled", "Désactivé"],
 
-    ["Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'", "Logo titre central: 'Tactical Tennis Action, Metal Gear: Pong'... Cliquez pour retourner au menu principal."],
+    ["Center logo title: 'Tactical Tennis Action, Metal Gear: Pong'", "Logo titre central : 'Tactical Tennis Action, Metal Gear: Pong'... Cliquez pour retourner au menu principal."],
 
     ["Play", "Jouer"],
     ["Customize", "Personnaliser"],
@@ -49,8 +49,8 @@ let fr = [
     ["Game timelapse", "Timelapse de la partie"],
 
     ["Game domination", "Domination de la partie"],
-    ["Purple: you", "Violet: vous"],
-    ["Yellow: opponent", "Jaune: adversaire"],
+    ["Purple: you", "Violet : vous"],
+    ["Yellow: opponent", "Jaune : adversaire"],
 
     ["Purple: Games won", "Violet : Parties remportées"],
     ["Yellow: Games lost", "Jaune : Parties perdues"],
@@ -121,7 +121,7 @@ let fr = [
     ["Read", "Lire"],
     ["Delete", "Supprimer"],
 
-    ["Here is a list of the data currently stored on your computer:", "Voici une liste des données actuellement stockées sur votre ordinateur:"],
+    ["Here is a list of the data currently stored on your computer:", "Voici une liste des données actuellement stockées sur votre ordinateur :"],
 
     ["– User interface informations", "– Informations sur l'interface utilisateur"],
     ["– 42 informations", "– Informations 42"],
@@ -170,7 +170,7 @@ let fr = [
     ["Sixteen", "Huitième de finale (16 joueurs)."],
     ["Eight", "Quart de finale (8 joueurs)."],
     ["Four", "Demi-finale (4 joueurs)."],
-    ["Duplicate Nickname", "<pre class='text m-3'>Attention: des surnoms sont dupliqués.\n Merci de choisir des surnoms uniques.</pre>"],
+    ["Duplicate Nickname", "<pre class='text m-3'>Attention : des surnoms sont dupliqués.\n Merci de choisir des surnoms uniques.</pre>"],
     ["Round of 16","Huitieme de finale"],
     ["Final 8","Quart de finale"],
     ["Final 4","Demi-finale"],
@@ -208,18 +208,17 @@ let fr = [
     ["Peer Connection Success", "Succès de la connexion à distance avec "],
     ["Peer Connection Warning", "Connexion à distance en cours..."],
     ["Peer Connection Alert", "Connexion à distance échouée."],
-    ["Peer 404", "Erreur: échec de la connexion. Soyez sûr que tous les pairs sont bien présents, ainsi que de la validité du code d'invitation."],
+    ["Peer 404", "Erreur : échec de la connexion. Soyez sûr que tous les pairs sont bien présents, ainsi que de la validité du code d'invitation."],
     ["Peer Connection Timeout", "Délai de connexion dépassé... Merci de bien vouloir recommencer."],
-    ["Peer send answer", "Erreur: impossible de transmettre vos informations au serveur."],
-    ["Peer fetch offer", "Erreur: impossible de récupérer les informations de l'autre pair."],
+    ["Peer send answer", "Erreur : impossible de transmettre vos informations au serveur."],
+    ["Peer fetch offer", "Erreur : impossible de récupérer les informations de l'autre pair."],
     ["Connection Init Failed", "Échec de la génération du code d'invitation... Merci de bien vouloir recommencer."],
 
     ["Answer Timeout", ` secondes restantes avant l'expiration du code.`],
     ["Code Expired", `Le code à expiré. Merci de bien vouloir recommencer.`],
 
-
-    ["Wrong Code Format", "Erreur: récéption de données non-approuvées. Processus de connexion désactivé."],
-    ["Wrong Code Guest", "Erreur: le code d'invitation n'est pas au bon format."],
+    ["Wrong Code Format", "Erreur : récéption de données non-approuvées. Processus de connexion désactivé."],
+    ["Wrong Code Guest", "Erreur : le code d'invitation n'est pas au bon format."],
 
     ["Online Win", " a gagné la partie !"],
 
@@ -261,7 +260,7 @@ let fr = [
 
     ['Refresh Alert Tournament', 'Attention : Après un rafraîchissement, il n’est pas possible de revenir sur le tournoi qui était en cours.'],
     ['Refresh Alert Online', 'Attention : La connexion à été perdu lors du rafraichissement de la page.'],
-    ['Refresh Warning', 'Avertissement: Rafraichir cette page entraînera la perte de toutes les données en cours d\'exécution'],
+    ['Refresh Warning', 'Avertissement : Rafraichir cette page entraînera la perte de toutes les données en cours d\'exécution'],
     ['Leaving Popup', 'Où allez-vous, Boss ?'],
     ['Leaving msg', 'Quitter cette page entraînera la perte de toutes les données en cours d\'exécution.'],
     ['Confirm', 'Confirmer'],
@@ -277,8 +276,8 @@ let fr = [
     ["Next stat page", "Page de statistique suivante."],
     ["Prev stat page", "Page de statistique précèdente."],
     ["ARIA 1 vs 1 (online)", "Emplacement du jeu : 1 vs 1 (en ligne)"],
-    ["ARIA 1 vs 1 (local)", "Emplacement du jeu: 1 vs 1 (local)"],
-    ["ARIA 1 vs 2 (local)", "Emplacement du jeu: 1 vs 2 (local)"],
+    ["ARIA 1 vs 1 (local)", "Emplacement du jeu : 1 vs 1 (local)"],
+    ["ARIA 1 vs 2 (local)", "Emplacement du jeu : 1 vs 2 (local)"],
     ["ARIA Tournament Match", "Emplacement du jeu : 1 vs 1... Match de tournoi (local)"],
 
     ["ARIA Tournament Type", "Sélectionnez le type de tournoi."],
@@ -307,7 +306,7 @@ let fr = [
     ["ARIA leaving modal", "Confirmation de sortie de page."],
     ["ARIA localstorage modal", "Données stockées"],
 
-    ["Top Logo Alt", "Logo du site web: Tactical Tennis Action Metal Gear Pong. Retour au menu principal."],
+    ["Top Logo Alt", "Logo du site web : Tactical Tennis Action Metal Gear Pong. Retour au menu principal."],
     ["Seconds", "Secondes"],
     ["Game Duration", "La partie à duré approximativement "],
 

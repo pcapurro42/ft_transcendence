@@ -204,9 +204,9 @@ let en = [
     ["Peer Connection Warning", "Trying to connect with remote peer."],
     ["Peer Connection Alert", "Connection with remote peer failed."],
     ["Peer Connection Timeout", "Connection timeout... Please restart process."],
-    ["Peer 404", "Erreur: connexion failure. Be sure that all peers are ready, and that the invitation code is valid."],
+    ["Peer 404", "Error: connection failure. Be sure that all peers are ready, and that the invitation code is valid."],
     ["Peer fetch answer", "Error: Could not send your informations to server."],
-    ["Peer fetch offer", "Erreur: Could not retrieve other peer informations."],
+    ["Peer fetch offer", "Error: Could not retrieve other peer informations."],
 
     ["Connection Init Failed", "Invitation code generation failed... Please restart process."],
     ["Answer Timeout", ` seconds left before code expires.`],
