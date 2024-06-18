@@ -310,23 +310,23 @@ class LocalGame1v1
     {
         if (active == false)
             return (true);
-        if (this.scores[0] > 0 || this.scores[1] > 0)
+        if (this.scores[0] > 9 || this.scores[1] > 9)
         {
             if (type == 'tournament')
             {
-                if (this.scores[0] > 0)
+                if (this.scores[0] > 9)
                     t_LeftWin();
-                if (this.scores[1] > 0)
+                if (this.scores[1] > 9)
                     t_RightWin();
             }
             else
             {
-                if (this.scores[0] > 0)
+                if (this.scores[0] > 9)
                 {
                     let player_left_won = document.getElementById('left_player_won_text');
                     player_left_won.style.display = "block";
                 }
-                if (this.scores[1] > 0)
+                if (this.scores[1] > 9)
                 {
                     let player_right_won = document.getElementById('right_player_won_text');
                     player_right_won.style.display = "block";
