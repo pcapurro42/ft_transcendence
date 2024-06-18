@@ -16,15 +16,7 @@ function changeAnonymizeAuth()
     else
         localStorage.setItem('data_anonymize', 'false');
 
-    setAuthsState();
-}
-
-function changeShareAuth()
-{
-    if (localStorage.getItem('data_share') == 'false')
-        localStorage.setItem('data_share', 'true');
-    else
-        localStorage.setItem('data_share', 'false');
+    anonymizeOnlineData();
 
     setAuthsState();
 }
@@ -35,11 +27,6 @@ function setAuthsState()
         document.getElementById('data_anonymize_btn').setAttribute('data-oname', 'Anonymized');
     else
         document.getElementById('data_anonymize_btn').setAttribute('data-oname', 'Public');
-
-    if (localStorage.getItem('data_share') == 'true')
-        document.getElementById('data_share_btn').setAttribute('data-oname', 'Authorized');
-    else
-        document.getElementById('data_share_btn').setAttribute('data-oname', 'Not authorized');
     
     refreshLanguage();
 }
@@ -92,7 +79,7 @@ function readLocalData()
     }
 
     let history_data = JSON.parse(localStorage.getItem('history_data'));
-    if (history_data.exist != false || localStorage.getItem("opponent_login") != null)
+    if (history_data != null && (history_data.exist != false || localStorage.getItem("opponent_login") != null))
         document.getElementById('storage_info_7').style.display = "block";
 }
 
@@ -101,6 +88,12 @@ function deleteLocalData()
     localStorage.clear();
     nav.displayMenu();
 	refreshSite();
+}
+
+function anonymizeOnlineData()
+{
+    // anonymiser le login sur le site comme dans la db
+    // ...
 }
 
 function deleteOnlineData()

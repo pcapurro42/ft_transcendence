@@ -62,7 +62,7 @@ let fr = [
 
     ["Normal Mode", "Mode Normal"],
     ["Bonus Mode", "Mode Bonus"],
-    ["Mode Switch", "Interrupteur du mode de jeu."],
+    ["Mode Switch", "Interrupteur du mode de jeu"],
     ['Selected','Sélectionné'],
 
     ["1 vs 1 (online)", "1 vs 1 (en ligne)"],
@@ -111,7 +111,6 @@ let fr = [
 
     ["Privacy Policy Page", "Nous vous invitons à en lire davantage sur la page dédiée à la politique de confidentialité."],
 
-    ["Data share", "Partage de données"],
     ["Local data", "Données locales"],
     ["Data visibility", "Visibilité des données"],
     ["Online data", "Données en ligne"],
@@ -185,8 +184,8 @@ let fr = [
     ["7th Game", "Septieme Match"],
     ["8th Game", "Huitieme Match"],
     ["Next Game", "Match suivant"],
-    ["Tournament Win Msg","Mission reussie"],
-    ["Congratulation","Felicitation"],
+    ["Tournament Win Msg","Mission réussie"],
+    ["Congratulations","Felicitations"],
     ["Restart Tournament", "Recommencer le tournoi"],
 
     ["Leaderboard", "Classement"],

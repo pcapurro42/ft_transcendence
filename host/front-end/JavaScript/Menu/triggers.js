@@ -123,7 +123,6 @@ document.getElementById('prev_settings').onclick = displayFirstSettingsPage;
 document.getElementById('next_settings').onclick = displaySecondSettingsPage;
 
 document.getElementById('data_anonymize_btn').onclick = changeAnonymizeAuth;
-document.getElementById('data_share_btn').onclick = changeShareAuth;
 
 document.getElementById('read_local_data_btn').onclick = readLocalData;
 document.getElementById('delete_local_data_btn').onclick = deleteLocalData;

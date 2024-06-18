@@ -112,7 +112,6 @@ let en = [
 
     ["Privacy Policy Page", "We invite you to read more about it in privacy policy page."],
 
-    ["Data share", "Data share"],
     ["Local data", "Local data"],
     ["Data visibility", "Data visibility"],
     ["Online data", "Online data"],
@@ -187,7 +186,7 @@ let en = [
     ["8th Game", "Eigth Game"],
     ["Next Game", "Next Game"],
     ["Tournament Win Msg","Mission Succeed"],
-    ["Congratulation","Congratulation"],
+    ["Congratulations", "Congratulations"],
     ["Restart Tournament", "Restart Tournament"],
 
     ["Leaderboard", "Leaderboard"],

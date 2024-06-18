@@ -153,7 +153,7 @@ async function displayFinalWinner(){
 	let win_msg = document.getElementById('round_block');
 	let win_submsg = document.getElementById('nick_announce');
 	win_msg.innerHTML = getTranslation('Tournament Win Msg');
-	win_submsg.innerHTML = getTranslation('Congratulation') + ' ' + winner + '.';
+	win_submsg.innerHTML = getTranslation('Congratulations') + ' ' + winner + '.';
 
 	let end_btn = document.getElementById('end_tournament_btn');
 
