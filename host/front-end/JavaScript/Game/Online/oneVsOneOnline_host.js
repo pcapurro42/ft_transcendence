@@ -336,7 +336,6 @@ class OnlineGame1v1_host
             let player_left_won = document.getElementById('h_win_text');
             player_left_won.innerHTML = localStorage.getItem('login') + getTranslation('Online Win');
             player_left_won.style.display = "block";
-            localStorage.setItem('onl_victory', (parseInt(localStorage.getItem('onl_victory')) + 1).toString());
 
             document.getElementById('online_winner').play();
 
@@ -347,8 +346,6 @@ class OnlineGame1v1_host
             let player_right_won = document.getElementById('h_win_text');
             player_right_won.innerHTML = localStorage.getItem('opponent_login') + getTranslation('Online Win');
             player_right_won.style.display = "block";
-
-            localStorage.setItem('onl_victory', (parseInt(localStorage.getItem('onl_defeat')) + 1).toString());
             
             document.getElementById('online_loser').play();
 

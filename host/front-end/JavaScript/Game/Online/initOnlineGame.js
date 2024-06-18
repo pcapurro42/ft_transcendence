@@ -89,6 +89,24 @@ function startOnline1v1()
                 game.end_time = getActualTimeSeconds();
 
                 addHistoryEntry(game.player, game.other_player, ([game.scores[0], game.scores[1]]), game.date, (game.end_time - game.start_time), game.scores_time, role);
+
+                if (role == 'host')
+                {
+                    if (game.scores[0] > 9)
+                        localStorage.setItem('onl_victory', (parseInt(localStorage.getItem('onl_victory')) + 1).toString());
+                    else
+                        localStorage.setItem('onl_defeat', (parseInt(localStorage.getItem('onl_defeat')) + 1).toString());
+                }
+                else
+                {
+                    if (game.scores[1] > 9)
+                        localStorage.setItem('onl_victory', (parseInt(localStorage.getItem('onl_victory')) + 1).toString());
+                    else
+                        localStorage.setItem('onl_defeat', (parseInt(localStorage.getItem('onl_defeat')) + 1).toString());
+                }
+
+                localStorage.setItem('onl_dist', (parseInt(localStorage.getItem('onl_dist')) + game.dist).toString());
+                localStorage.setItem('onl_played', (parseInt(localStorage.getItem('onl_played')) + 1).toString());
             }
 
             game.resetGame();
