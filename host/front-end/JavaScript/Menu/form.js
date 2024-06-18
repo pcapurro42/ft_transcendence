@@ -16,19 +16,19 @@ function parse_alias(nbr, event){
     	}
 		else{
 			err[i].style.display = 'block';
-			document.getElementById('duplicate_nick').style.display = 'none';
+			document.getElementById('duplicate_nick').classList.add('d-none');
 			bool = false;
 		}
 		alias_array.push(inputs[i].value);
 	}
 
 	if(bool == true){
-		msg_err.style.display = 'none';
+		msg_err.classList.add('d-none');
 		if (isDuplicateNicknames(inputs) == true){
-			document.getElementById('duplicate_nick').style.display = 'block';
+			document.getElementById('duplicate_nick').classList.remove('d-none');
 		}
 		else{
-			document.getElementById('duplicate_nick').style.display = 'none';
+			document.getElementById('duplicate_nick').classList.add('d-none')
 			originalNicknames = shuffleArray(alias_array);
 			addToHistory('/tournament-game');
 			previous_url_path = '/tournament-game';
@@ -38,7 +38,7 @@ function parse_alias(nbr, event){
 		}
 	}
 	else
-		msg_err.style.display='block';
+		msg_err.classList.remove('d-none');
 	return null;
 }
 

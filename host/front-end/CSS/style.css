@@ -32,7 +32,9 @@ p, pre, h1, h2, h3{
 .text-red{
     color: #AD1400 !important;
 }
-
+.bg-invalid{
+    background-color:  #AD1400 !important;
+}
 a{
     text-decoration: none !important;
 }
@@ -67,9 +69,10 @@ a{
     border : 0px;
 }
 
-#hamburger{
-    width: 60px !important;
+#hamburger, #ham_svg{
+    width: 70px !important;
 }
+
 
 .sun{
     filter: invert(53%) sepia(100%) saturate(1571%) hue-rotate(3deg) brightness(99%) contrast(96%);
@@ -77,6 +80,9 @@ a{
 
 .security_margin{
     margin-bottom: 200px;
+}
+.header_margin{
+    margin-bottom: 100px;
 }
 #tournament_announcer{
     margin-top:250px;
@@ -250,9 +256,11 @@ pre{
 #switch_tournament, #switch_classic{
     cursor: pointer;
 }
-#title_logo
+
+#title_logo, #title_logo_img
 {
-    max-width: 70%;
+    max-width: 720px;
+    min-width: 375px;
     height: auto;
     cursor: pointer
 }

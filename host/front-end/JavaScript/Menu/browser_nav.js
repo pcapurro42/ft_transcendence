@@ -28,6 +28,8 @@ async function handleSensitivePages(path){
             }
             else{
                 isDisplayModal = false;
+                document.getElementById('title_logo').style.display = "block";
+                document.getElementById('main_menu_toolbar').style.display = "block";
                 previous_url_path = '';
                 path = '/home';
             }

@@ -144,7 +144,7 @@ function getIceConfig(){
 
 function freeInputAndForms(){
 	let t_invalid_alias = document.getElementById('invalid-alias-msg');
-    t_invalid_alias.style.display = 'none';
+    t_invalid_alias.classList.add('d-none');
 
 	let t_cross = document.querySelectorAll('.invalid-feedback');
 	t_cross.forEach(element => {

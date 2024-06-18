@@ -1,4 +1,4 @@
-nav.displayMenu = function()
+nav.displayMenu = async function()
 {
     nav.hideEveryDiv();
 
@@ -13,10 +13,9 @@ nav.displayMenu = function()
 
     let main_menu_toolbar = document.getElementById('main_menu_toolbar').style.display = "block";
 
-    let top_logo = document.getElementById('top_logo').style.display = "block";
-
     stop_flag = true; // stop tournament
     active = false; // turn off the game
+
 
     freeInputAndForms();
     tournamentFinalReset();
