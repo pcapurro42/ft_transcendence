@@ -38,7 +38,7 @@ let es = [
     ["Ball bounces", "Rebotas de balón"],
     ["Distance covered", "Distancia recorrida"],
     ["Ball returns", "Devoluciones de balón"],
-    ["Bonus taken", "Bonus recuperada"],
+    ["Bonus taken", "Bonus recuperados"],
 
     ["[No available data to display]", "[No datos disponibles para visualización]"],
 
@@ -55,10 +55,10 @@ let es = [
     ["Purple: Games won", "Violeta: Partidos ganados"],
     ["Yellow: Games lost", "Amarillo: Partidos perdidos"],
 
-    ["Taken", "Recuperadas"],
-    ["Returned", "Devueltas"],
-    ["Received", "Recibidas"],
-    ["Missed", "Perdidas"],
+    ["Taken", "Recuperados"],
+    ["Returned", "Devueltos"],
+    ["Received", "Recibidos"],
+    ["Missed", "Perdidos"],
 
     ["Normal Mode", "Modo normal"],
     ["Bonus Mode", "Modo bonus"],
