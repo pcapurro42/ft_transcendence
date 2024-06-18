@@ -428,13 +428,16 @@ function addHistoryEntry(player1, player2, final_score, date, duration, scores, 
 
 function refreshHistory()
 {
-    if (localStorage.getItem('history_data') == null)
-        initializeHistory();
-    else
+    if (localStorage.getItem('status') == 'connected')
     {
-        let history_data = JSON.parse(localStorage.getItem('history_data'));
-        if (history_data.login != localStorage.getItem('login'))
+        if (localStorage.getItem('history_data') == null)
             initializeHistory();
+        else
+        {
+            let history_data = JSON.parse(localStorage.getItem('history_data'));
+            if (history_data.login != localStorage.getItem('login'))
+                initializeHistory();
+        }
     }
 }
 
