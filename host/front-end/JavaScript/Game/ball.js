@@ -20,6 +20,10 @@ class Ball
         this.bonus_speed = bonus_speed;
 
         this.bounce = true;
+
+        this.lcl_exit = 0;
+        this.lcl_bounce = 0;
+        this.onl_return = 0;
     }
 
     print()
@@ -335,14 +339,20 @@ class Ball
             this.game.restartRound();
 
             if (players_nb == 2 || players_nb == 3)
-                localStorage.setItem('lcl_ball_exit_nb', (parseInt(localStorage.getItem('lcl_ball_exit_nb')) + 1).toString());
+                this.lcl_exit++;
         }
         else if (this.isUpOrDown() == true || this.isAtPlayer() == true)
         {
             this.direction = this.getOpposite(), this.getAwayFromLimits();
 
             if (players_nb == 2 || players_nb == 3)
-                localStorage.setItem('lcl_ball_bounce_nb', (parseInt(localStorage.getItem('lcl_ball_bounce_nb')) + 1).toString());
+                this.lcl_bounce++;
+                
+            if (players_nb == 1 && this.isFrontPlayer() == true)
+            {
+                if ((role == 'host' && this.x < this.game.game_width / 2) || (role == 'guest' && this.x > this.game.game_width / 2))
+                    this.onl_return++;
+            }
         }
 
         this.move();

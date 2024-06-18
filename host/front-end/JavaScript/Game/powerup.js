@@ -19,6 +19,8 @@ class PowerUp
         this.direction = direction;
 
         this.alive = true;
+
+        this.bonus_taken = 0;
     }
 
     print()
@@ -266,7 +268,7 @@ class PowerUp
             this.alive = false;
 
             if (players_nb == 2 || players_nb == 3)
-                localStorage.setItem('lcl_bonus_taken_nb', (parseInt(localStorage.getItem('lcl_bonus_taken_nb')) + 1).toString());
+                this.bonus_taken++;
         }
         else if (this.isAtBall() == true)
             this.applyBallBonus(), this.alive = false;

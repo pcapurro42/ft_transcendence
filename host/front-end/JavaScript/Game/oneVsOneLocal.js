@@ -334,6 +334,12 @@ class LocalGame1v1
             }
 
             localStorage.setItem('lcl_game_played_nb', (parseInt(localStorage.getItem('lcl_game_played_nb')) + 1).toString());
+           
+            localStorage.setItem('lcl_ball_exit_nb', (parseInt(localStorage.getItem('lcl_ball_exit_nb')) + game.ball.lcl_exit).toString());
+            localStorage.setItem('lcl_ball_bounce_nb', (parseInt(localStorage.getItem('lcl_ball_bounce_nb')) + game.ball.lcl_bounce).toString());
+            
+            localStorage.setItem('lcl_bonus_taken_nb', (parseInt(localStorage.getItem('lcl_bonus_taken_nb')) + game.bonus_one).toString());
+            localStorage.setItem('lcl_bonus_taken_nb', (parseInt(localStorage.getItem('lcl_bonus_taken_nb')) + game.bonus_two).toString());
 
             return (true);
         }
