@@ -1,4 +1,4 @@
-let en = [
+let es = [
     ["English", "english"],
     ["French", "french"],
 

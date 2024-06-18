@@ -25,6 +25,14 @@ function getTranslation(text)
                 return (fr[i][1]);
         }
     }
+    if (language == "es")
+    {
+        for (let i = 0; i != es.length; i++)
+        {
+            if (es[i][0] == text)
+                return (es[i][1]);
+        }
+    }
 }
 
 function getSpecificTranslation(targetLanguage, text)
@@ -43,6 +51,14 @@ function getSpecificTranslation(targetLanguage, text)
         {
             if (fr[i][0] == text)
                 return (fr[i][1]);
+        }
+    }
+    if (targetLanguage == "es")
+    {
+        for (let i = 0; i != es.length; i++)
+        {
+            if (es[i][0] == text)
+                return (es[i][1]);
         }
     }
 }
@@ -119,6 +135,38 @@ function refreshLanguage()
             }
         }
     }
+    if (lang == "es")
+    {
+        document.getElementById('language_switch').innerHTML = 'es';
+        document.getElementById('language_btn_selector').selectedIndex = 2;
+
+        for (let i = 0; i != words.length; i++){
+            words[i].innerHTML = getElement(es, words[i].getAttribute("data-oname"));
+        }
+        for (let i = 0; i != placeholders.length; i++)
+            placeholders[i].setAttribute('placeholder', getElement(es, placeholders[i].getAttribute("data-oname")));
+       for (let i = 0; i != alt_text.length; i++)
+            alt_text[i].setAttribute('alt', getElement(es, alt_text[i].getAttribute('data-alt')));
+
+        for (let i = 0; i != aria_label.length; i++)
+            aria_label[i].setAttribute('aria-label', getElement(es, aria_label[i].getAttribute('data-title')));
+
+        if (descriptive_images == "true")
+        {
+            for (let i = 0; i != titles.length; i++)
+            {
+                if (getElement(es, titles[i].getAttribute("alt")) == undefined){
+                    if (getElement(es, titles[i].getAttribute("data-oname")) == undefined)
+                        titles[i].setAttribute('title', getElement(es, titles[i].getAttribute("data-title")));
+                    else
+                        titles[i].setAttribute('title', getElement(es, titles[i].getAttribute("data-oname")));
+                }
+                else
+                    titles[i].setAttribute('title', getElement(es, titles[i].getAttribute('alt')));
+            }
+        }
+    }
+
     ARIAButtonState();
     ARIASoundsSlider();
     dropdownAddSvg();

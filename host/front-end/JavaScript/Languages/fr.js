@@ -5,7 +5,6 @@ let fr = [
     ["LOG IN WITH 42", "SE CONNECTER AVEC 42"],
     ["LOG OUT", "Se déconnecter"],
 
-
     ["Enable/Disable menu music", "Activer ou désactiver la musique des menus."],
     ["Enable/Disable menu sounds", "Activer ou désactiver les sons des menus."],
     ["Enable/Disable game music", "Activer ou désactiver la musique du jeu."],
@@ -164,8 +163,6 @@ let fr = [
     ["Normal", "Normal"],
     ["Large", "Grand"],
 
-    //******* Tournament ******/
-
     ["Create a tournament", "Créer un tournoi"],
     ["Join a tournament", "Rejoindre un tournoi"],
     ["Tournament nickname", "Surnom"],
@@ -195,8 +192,6 @@ let fr = [
     ["Leaderboard", "Classement"],
     ["Qualified", " se qualifie."],
     ["Eliminated", " est battu."],
-
-    //******* Online ******/
 
     ['Peer offer send msg', "<pre>Envoyez ce code a un ami pour\n commencer une partie.</pre>"],
     ['Peer answer send msg', "<pre>Envoyez ce code a votre ami \n en vue d'autoriser la connexion.</pre>"],
@@ -229,16 +224,11 @@ let fr = [
 
     ["Online Win", " a gagné la partie !"],
 
-    //******* Status Bar ******/
-
     ["42 Auth Success", "Connexion réussie ! Bienvenue "],
     ["42 Auth Failure", "La connexion a echoué."],
     ["Copy Success", "Copié dans le presse-papier avec succès."],
 
     ["Switch to Visual", "Passez en mode visuel !"],
-
-
-    //******* Navigation ******/
 
     ['/home', '/accueil'],
     ['Home', 'Metal Gear Pong'],
@@ -277,8 +267,6 @@ let fr = [
     ['Leaving msg', 'Quitter cette page entraînera la perte de toutes les données en cours d\'exécution.'],
     ['Confirm', 'Confirmer'],
     ['Resume', 'Reprendre'],
-
-    //******* ARIA ******/
 
     ["Light Switch Off", "Mode sombre"],
     ["Light Switch On", "Mode clair"],
@@ -343,9 +331,6 @@ let fr = [
 
     ["Copy Inv Code", "Copier le code d'invitation."],
     ["Submit Inv Code", "Soumettre le code d'invitation."],
-
-
-    // Stats canvas
 
     ["Your Domination", "Vous avez dominé la partie à "],
     ["Opponent Domination", "Votre adversaire à dominé la partie à"],
