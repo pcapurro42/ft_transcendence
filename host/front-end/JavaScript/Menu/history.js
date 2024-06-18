@@ -371,12 +371,14 @@ function displayPrevHistoryPage()
     if (historic != null)
     {
         if (history_tab > 0)
+        {
             history_tab--, historic.display();
-        
-        if (history_tab == 0)
-            document.getElementById('prev_history').classList.add('disabled');
-        else
-            document.getElementById('prev_history').classList.remove('disabled');
+
+            if (history_tab == 0)
+                document.getElementById('prev_history').classList.add('disabled');
+            else
+                document.getElementById('prev_history').classList.remove('disabled');
+        }
     }
 }
 
@@ -385,12 +387,14 @@ function displayNextHistoryPage()
     if (historic != null)
     {
         if (history_tab < historic.length() - 1)
+        {
             history_tab++, historic.display();
 
-        if (history_tab == historic.length() - 1 || historic.length() == 0)
-            document.getElementById('next_history').classList.add('disabled');
-        else
-            document.getElementById('next_history').classList.remove('disabled');
+            if (history_tab == historic.length() - 1 || historic.length() == 0)
+                document.getElementById('next_history').classList.add('disabled');
+            else
+                document.getElementById('next_history').classList.remove('disabled');
+        }
     }
 }
 
