@@ -307,7 +307,7 @@ let fr = [
     ["ARIA leaving modal", "Confirmation de sortie de page."],
     ["ARIA localstorage modal", "Données stockées"],
 
-    ["Top Logo Alt", "Logo du site web. Tactical Tennis Action Metal Gear Pong. Retour au menu principal."],
+    ["Top Logo Alt", "Logo du site web: Tactical Tennis Action Metal Gear Pong. Retour au menu principal."],
     ["Seconds", "Secondes"],
     ["Game Duration", "La partie à duré approximativement "],
 

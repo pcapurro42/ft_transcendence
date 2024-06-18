@@ -293,7 +293,7 @@ let en = [
     ["ARIA Credits Video", "Credits Video, where we can hear Cynthia Harrell voice singing Snake Eater, the eponymous OST of Metal Gear Solid 3. Thanks again to pcapurro and Bgales for their delightful work."],
     ["ARIA Online Stats Diagram", "Online statistics graphics. Switch visual off in order to get stats."],
     ["ARIA History Data", "Online game history..."],
-    ["ARIA History Time Data", "Time history of scored goals. Sadly, this stat isnt available for screen readers."],
+    ["ARIA History Time Data", "Time history of scored goals. Sadly, this stat isn't available for screen readers."],
     ["ARIA History Diagram", "Game domination diagram..."],
     ["ARIA Close Leaderboard", "Close leaderboard"],
     ["ARIA Close sidebar", "Close navigation menu"],
@@ -307,7 +307,7 @@ let en = [
 
     ["You Won", "You won"],
     ["You Lose", "You lose"],
-    ["Top Logo Alt", "Website logo : Tactical Tennis Action Metal Gear Pong. Get back to main menu."],
+    ["Top Logo Alt", "Website logo: Tactical Tennis Action Metal Gear Pong. Get back to main menu."],
 
     ["Keyboard Y Tuto", "Y keyboard key, inform the top-right player that this input is used to go up in the game."],
     ["Keyboard H Tuto", "H keyboard key, inform the top-right player that this input is used to go down in the game."],
