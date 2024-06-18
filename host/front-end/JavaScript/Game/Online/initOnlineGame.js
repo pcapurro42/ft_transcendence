@@ -105,6 +105,9 @@ function startOnline1v1()
 
                 localStorage.setItem('onl_dist', (parseInt(localStorage.getItem('onl_dist')) + game.dist).toString());
                 localStorage.setItem('onl_played', (parseInt(localStorage.getItem('onl_played')) + 1).toString());
+
+                localStorage.setItem('onl_ball_received', (parseInt(localStorage.getItem('onl_ball_received')) + game.ball.onl_received).toString());
+                localStorage.setItem('onl_ball_return', (parseInt(localStorage.getItem('onl_ball_return')) + game.ball.onl_return).toString());
             }
 
             game.resetGame();

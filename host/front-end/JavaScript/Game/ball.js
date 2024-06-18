@@ -337,8 +337,6 @@ class Ball
     {
         if (this.isOffLimit() == true)
         {
-            this.game.restartRound();
-
             if (players_nb == 2 || players_nb == 3)
                 this.lcl_exit++;
 
@@ -347,25 +345,21 @@ class Ball
                 if (role == 'host' && this.x < this.game.game_width / 2 || role == 'guest' && this.x > this.game.game_width / 2)
                     this.onl_received++;
             }
+
+            this.game.restartRound();
         }
         else if (this.isUpOrDown() == true || this.isAtPlayer() == true)
         {
-            this.direction = this.getOpposite(), this.getAwayFromLimits();
-
             if (players_nb == 2 || players_nb == 3)
                 this.lcl_bounce++;
 
-                if (players_nb == 1)
-                {
-                    if (role == 'host' && this.x < this.game.game_width / 2 || role == 'guest' && this.x > this.game.game_width / 2)
-                        this.onl_received++, this.onl_return++;
-                }
-                
             if (players_nb == 1 && this.isFrontPlayer() == true)
             {
-                if ((role == 'host' && this.x < this.game.game_width / 2) || (role == 'guest' && this.x > this.game.game_width / 2))
-                    this.onl_return++;
+                if (role == 'host' && this.x < this.game.game_width / 2 || role == 'guest' && this.x > this.game.game_width / 2)
+                    this.onl_received++, this.onl_return++;
             }
+
+            this.direction = this.getOpposite(), this.getAwayFromLimits();
         }
 
         this.move();
