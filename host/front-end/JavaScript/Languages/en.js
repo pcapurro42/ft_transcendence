@@ -335,4 +335,6 @@ let en = [
     ["Enable Sounds Error", "Snake, you have to interact with the website to hear the sounds!"],
     ["Unauthorized Data Channel", "Error: the connection was closed for safety reasons.Unexpected message were caught inside the data_channel."],
     ["Forbidden Page", "Snake, you have to login to access this section of the website !"],
+
+    ["Konami Code detected!", "Konami Code detected!"]
 ];
