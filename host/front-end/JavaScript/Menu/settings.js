@@ -179,6 +179,13 @@ function initializeSettings()
     refreshDisplay();
 }
 
+function changeGameMode(){
+        if (this.checked)
+            localStorage.setItem('game_mode', 'bonus');
+        else
+            localStorage.setItem('game_mode', 'normal');
+        initializeGameMode();
+}
 function initializeGameMode(){
     let c_switch = document.getElementById('switch_classic');
     let t_switch = document.getElementById('switch_tournament');

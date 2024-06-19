@@ -78,7 +78,8 @@ document.getElementById('t_leaderboard').onclick = displayTournamentLeaderboard;
 // < CUSTOMIZE > //
 
 document.getElementById('game_map_btn_selector').onchange = changeGameMap;
-
+document.getElementById('switch_classic').onchange = changeGameMode;
+document.getElementById('switch_tournament').onchange = changeGameMode;
 // < STATS > //
 
 document.getElementById('local_stats_btn').onclick = nav.displayLocalStats;
