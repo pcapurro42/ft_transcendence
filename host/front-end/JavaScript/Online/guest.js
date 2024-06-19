@@ -30,8 +30,10 @@ function readHostMsg(event)
 		game.bonus_two.y = +msg.substring(msg.indexOf('_') + 1);
 		return;
 	}
-	else if (msg.startsWith('b_type:')){
-		bonus_type = +msg.substring(7);
+	else if (msg.startsWith('b-type:')){
+		bonus_type = +msg.substring(7, msg.indexOf('_'));
+		let bonus_name = +msg.substring(msg.indexOf('_') + 1);
+		bonus_name == 1 ? game.bonus_one.applyPlayerBonus() : game.bonus_two.applyPlayerBonus();
 		return;
 	}
 	else if (msg == 'b1_dead'){

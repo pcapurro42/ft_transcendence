@@ -136,7 +136,7 @@ class PowerUp
         {
             bonus_type = generateNumber(2);
             if (role == 'host')
-                data_channel.send(`b_type:${bonus_type}`);
+                data_channel.send(`b-type:${bonus_type}_${this.name}`);
         }
 
         if (players_nb == 2)
@@ -171,7 +171,7 @@ class PowerUp
                     this.game.right_player.bonus_message = "+ speed";
                 }
             }
-
+            this.alive = false;
         }
 
         if (players_nb == 3)
@@ -224,6 +224,8 @@ class PowerUp
     applyBallBonus()
     {
         this.game.ball.speed = this.game.ball.speed + 2;
+        if (role == 'host')
+            data_channel.send(`b${this.name}_dead`);
     }
 
     reset(value)
@@ -298,12 +300,11 @@ class PowerUp
         {
             this.applyPlayerBonus();
             this.applyStats();
-            this.alive = false;
         }
         else if (this.isAtBall() == true)
             this.applyBallBonus(), this.alive = false;
 
-        if (role == null || role == 'host')
-            this.move();
+        this.move();
     }
 }
+

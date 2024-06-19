@@ -46,8 +46,7 @@ function removeOnline1v1()
 
     document.getElementById('mgs').play();
     document.getElementById('1v1_host_timer').style.display = "none";
-    document.getElementById('1v1_host_timer') = document.getElementById('1v1_guest_timer');
-    document.getElementById('1v1_host_timer').style.display = "none";
+    document.getElementById('1v1_guest_timer').style.display = "none";
 
     document.getElementById('start_1v1_online').innerHTML = getTranslation("Launch a game");
     document.getElementById('start_1v1_online').style.visibility = "visible";
@@ -98,7 +97,7 @@ function startOnline1v1()
                 localStorage.setItem('onl_ball_return', (parseInt(localStorage.getItem('onl_ball_return')) + game.ball.onl_return).toString());
 
                 if (game.bonus_one != null && game.bonus_two != null)
-                {                    
+                {
                     localStorage.setItem('onl_bonus_received', (parseInt(localStorage.getItem('onl_bonus_received')) + 2).toString());
                     localStorage.setItem('onl_bonus_taken', (parseInt(localStorage.getItem('onl_bonus_taken')) + game.bonus_one.onl_taken).toString());
                     localStorage.setItem('onl_bonus_taken', (parseInt(localStorage.getItem('onl_bonus_taken')) + game.bonus_two.onl_taken).toString());
