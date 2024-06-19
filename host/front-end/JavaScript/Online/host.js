@@ -9,15 +9,24 @@ function cpyGameCode(){
 
 function readGuestMsg(event){
 	let msg = event.data;
-	if (msg.startsWith('rpy:'))
+	if (msg.startsWith('rpy:')){
 		game.right_player.y = +(msg.substring(4));
-	else if (msg == 'ping')
+		return;
+	}
+	else if (msg == 'ping'){
 		ping = true;
+		return;
+	}
 	else if (msg === 'ready'){
 		document.getElementById('start_1v1_online').classList.remove('d-none');
+		return;
 	}
-	else if (msg === 'go')
+	else if (msg === 'go'){
 		displayOnline1v1();
+		return;
+	}
+	console.error(getTranslation('Unauthorized Data Channel'));
+	handleDisconnection();
 }
 
 function hostConnectionHandler(){

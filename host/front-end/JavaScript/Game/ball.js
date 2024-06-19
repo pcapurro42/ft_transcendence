@@ -51,20 +51,20 @@ class Ball
 
     isFrontPlayer()
     {
-        if (players_nb == 1)
-        {
-             if (Math.ceil(this.x) == this.game.left_player.x + this.game.left_player.width)
-            {
-                if (Math.ceil(this.y) + this.height >= this.game.left_player.y && Math.ceil(this.y) <= this.game.left_player.y + this.game.left_player.height)
-                    return (true);
-            }
+        // if (players_nb == 1)
+        // {
+        //      if (Math.ceil(this.x) == this.game.left_player.x + this.game.left_player.width)
+        //     {
+        //         if (Math.ceil(this.y) + this.height >= this.game.left_player.y && Math.ceil(this.y) <= this.game.left_player.y + this.game.left_player.height)
+        //             return (true);
+        //     }
 
-            if (Math.ceil(this.x) + this.width == this.game.right_player.x)
-            {
-                if (Math.ceil(this.y) + this.height >= this.game.right_player.y && Math.ceil(this.y) <= this.game.right_player.y + this.game.right_player.height)
-                    return (true);
-            }
-        }
+        //     if (Math.ceil(this.x) + this.width == this.game.right_player.x)
+        //     {
+        //         if (Math.ceil(this.y) + this.height >= this.game.right_player.y && Math.ceil(this.y) <= this.game.right_player.y + this.game.right_player.height)
+        //             return (true);
+        //     }
+        // }
 
         if (players_nb == 2)
         {
@@ -107,24 +107,24 @@ class Ball
 
     isAboveOrUnderPlayer()
     {
-        if (players_nb == 1)
-        {
-            if (Math.ceil(this.x) + this.width >= this.game.left_player.x && Math.ceil(this.x) <= this.game.left_player.x + this.game.left_player.width)
-            {
-                if (Math.ceil(this.y) + this.height == this.game.left_player.y)
-                    return (true);
-                if (Math.ceil(this.y) == this.game.left_player.y + this.game.left_player.height)
-                    return (true);
-            }
+        // if (players_nb == 1)
+        // {
+        //     if (Math.ceil(this.x) + this.width >= this.game.left_player.x && Math.ceil(this.x) <= this.game.left_player.x + this.game.left_player.width)
+        //     {
+        //         if (Math.ceil(this.y) + this.height == this.game.left_player.y)
+        //             return (true);
+        //         if (Math.ceil(this.y) == this.game.left_player.y + this.game.left_player.height)
+        //             return (true);
+        //     }
 
-            if (Math.ceil(this.x) + this.width >= this.game.right_player.x && Math.ceil(this.x) <= this.game.right_player.x + this.game.right_player.width)
-            {
-                if (Math.ceil(this.y) + this.height == this.game.right_player.y)
-                    return (true);
-                if (Math.ceil(this.y) == this.game.right_player.y + this.game.right_player.height)
-                    return (true);
-            };
-        }
+        //     if (Math.ceil(this.x) + this.width >= this.game.right_player.x && Math.ceil(this.x) <= this.game.right_player.x + this.game.right_player.width)
+        //     {
+        //         if (Math.ceil(this.y) + this.height == this.game.right_player.y)
+        //             return (true);
+        //         if (Math.ceil(this.y) == this.game.right_player.y + this.game.right_player.height)
+        //             return (true);
+        //     };
+        // }
 
         if (players_nb == 2)
         {
@@ -134,7 +134,7 @@ class Ball
                     return (true);
                 if (Math.ceil(this.y) == this.game.left_player.y + this.game.left_player.height)
                     return (true);
-            }
+            };
 
             if (Math.ceil(this.x) + this.width >= this.game.right_player.x && Math.ceil(this.x) <= this.game.right_player.x + this.game.right_player.width)
             {
@@ -142,7 +142,7 @@ class Ball
                     return (true);
                 if (Math.ceil(this.y) == this.game.right_player.y + this.game.right_player.height)
                     return (true);
-            }
+            };
         }
 
         if (players_nb == 3)
@@ -289,13 +289,13 @@ class Ball
 
         if (this.isAboveOrUnderPlayer() == true)
         {
-            if (players_nb == 1)
-            {
-                 if (Math.ceil(this.y) + this.height == this.game.left_player.y || Math.ceil(this.y) + this.height == this.game.right_player.y)
-                    this.y = this.y - this.speed;
-                else
-                    this.y = this.y + this.speed;
-            }
+            // if (players_nb == 1)
+            // {
+            //      if (Math.ceil(this.y) + this.height == this.game.left_player.y || Math.ceil(this.y) + this.height == this.game.right_player.y)
+            //         this.y = this.y - this.speed;
+            //     else
+            //         this.y = this.y + this.speed;
+            // }
 
             if (players_nb == 2)
             {
@@ -340,7 +340,7 @@ class Ball
             if (players_nb == 2 || players_nb == 3)
                 this.lcl_exit++;
 
-            if (players_nb == 1)
+            if (players_nb == 2)
             {
                 if (role == 'host' && this.x < this.game.game_width / 2 || role == 'guest' && this.x > this.game.game_width / 2)
                     this.onl_received++;
@@ -353,7 +353,7 @@ class Ball
             if (players_nb == 2 || players_nb == 3)
                 this.lcl_bounce++;
 
-            if (players_nb == 1 && this.isFrontPlayer() == true)
+            if (players_nb == 2 && this.isFrontPlayer() == true)
             {
                 if (role == 'host' && this.x < this.game.game_width / 2 || role == 'guest' && this.x > this.game.game_width / 2)
                     this.onl_received++, this.onl_return++;

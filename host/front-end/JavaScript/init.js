@@ -19,9 +19,14 @@ let csrfToken = document.cookie.replace("csrftoken=", "");
 document.addEventListener('DOMContentLoaded', function() {fetchCsrfToken();});
 
 async function fetchCsrfToken() {
-    const response = await fetch('https://hostname:8080/backend/csrf/', { //ICI
+    try{
+        const response = await fetch('https://hostname:8080/backend/csrf/', { //ICI
         credentials: 'include'
-	});
+	    });
+    }
+    catch(error){
+        console.error(error);
+    }
 }
 
 localStorage.removeItem('auth_code');
@@ -68,6 +73,7 @@ let players_nb; // number of local players
 
 let game; // object of the game
 let active; // should display the game or no
+let bonus_type;
 
 let gameMode; // bonus or normal;
 

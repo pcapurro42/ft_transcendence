@@ -335,4 +335,5 @@ let fr = [
     ["Your Domination", "Vous avez dominé la partie à "],
     ["Opponent Domination", "Votre adversaire à dominé la partie à"],
     ["Enable Sounds Error", "Snake, tu dois intéragir avec le site-web pour entendre les sons!"],
+    ["Unauthorized Data Channel", "Erreur: la connexion a été fermée pour des raisons de sécurité. Un message inattendu a été détecté dans le data_channel."],
 ];

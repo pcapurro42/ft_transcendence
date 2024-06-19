@@ -2,7 +2,7 @@
 
 function initializeOnline1v1()
 {
-    players_nb = 1;
+    players_nb = 2;
     if (role == 'host')
         game = new OnlineGame1v1_host();
     else
@@ -62,7 +62,7 @@ function removeOnline1v1()
     let start_btn = document.getElementById('start_1v1_online');
     start_btn.innerHTML = getTranslation("Launch a game");
     start_btn.style.visibility = "visible";
-
+    console.log('ouououououou');
 	let waiting_host = document.getElementById('waiting_host')
 	waiting_host.style.visibility = 'visible';
     document.getElementById('o_host_foot').style.display = 'block';
@@ -71,11 +71,11 @@ function removeOnline1v1()
 
 function startOnline1v1()
 {
-    let frame;  //=120fps
+    let frame;
     if (role == 'host')
         frame = 1000 / 120;
     else
-        frame = 1000 / 119;
+        frame = 1000 / 120;
 
     setTimeout(() => {
         if (game.isOver() == true || active == false)
@@ -117,10 +117,9 @@ function startOnline1v1()
                 }
             }
 
+            removeOnline1v1();
             game.resetGame();
             active = false;
-
-            removeOnline1v1();
         }
         else
         {

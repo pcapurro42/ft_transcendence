@@ -7,16 +7,32 @@ function readHostMsg(event)
 	}
 	else if (msg.startsWith('bpos:')){
 		game.ball.y = +msg.substring(5, msg.indexOf('/'));
-		game.ball.x = +msg.substring(msg.indexOf('/') + 1, msg.indexOf('_'));
+		game.ball.x = +msg.substring(msg.indexOf('/') + 1);
 		return;
 	}
 	else if (msg.startsWith('score_h:')){
 		game.scores[0] = +msg.substring(8);
 		game.scores_time.push([(getActualTimeSeconds() - game.start_time), "1"]);
+		return;
 	}
 	else if (msg.startsWith('score_g:')){
 		game.scores[1] = +msg.substring(8);
 		game.scores_time.push([(getActualTimeSeconds() - game.start_time), "2"]);
+		return;
+	}
+	else if (msg.startsWith('b1:')){
+		game.bonus_one.x = +msg.substring(3, msg.indexOf('_'));
+		game.bonus_one.y = +msg.substring(msg.indexOf('_') + 1);
+		return;
+	}
+	else if (msg.startsWith('b2:')){
+		game.bonus_two.x = +msg.substring(3, msg.indexOf('_'));
+		game.bonus_two.y = +msg.substring(msg.indexOf('_') + 1);
+		return;
+	}
+	else if (msg.startsWith('b_type:')){
+		bonus_type = +msg.substring(7);
+		return;
 	}
 	else{
 		switch (msg){
@@ -38,7 +54,8 @@ function readHostMsg(event)
 				return;
 		}
 	}
-
+	console.error(getTranslation('Unauthorized Data Channel'));
+	handleDisconnection();
 }
 
 async function guestConnectionHandler(){
@@ -54,7 +71,6 @@ async function guestConnectionHandler(){
 	join_btn.onclick = () => {
 		pos = "right";
 		role = "guest";
-		data_channel.send('lobby ok')
 		nav.displayOneVsOneGameOnline();
 	};
 	checkGuestPing()

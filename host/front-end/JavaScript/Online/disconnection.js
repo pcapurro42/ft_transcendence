@@ -11,6 +11,7 @@ function resetConnection(){
     data_channel = null;
     document.getElementById('init_p2p').removeAttribute('disabled');
     document.getElementById('submit_inv_code').removeAttribute('disabled');
+    role="";
 }
 
 function handleDisconnection(){

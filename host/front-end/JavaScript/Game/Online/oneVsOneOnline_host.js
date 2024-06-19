@@ -217,7 +217,7 @@ class OnlineGame1v1_host
         this.refreshScores();
         this.refreshPlayers();
         this.refreshBall();
-        data_channel.send(`bpos:${this.ball.y}/${this.ball.x}_${this.ball_direction}`);
+        data_channel.send(`bpos:${this.ball.y}/${this.ball.x}`);
         if (gameMode != "normal")
             this.refreshBonus();
     }
@@ -287,6 +287,7 @@ class OnlineGame1v1_host
             this.bonus_one.print();
             this.bonus_one.animate();
             this.bonus_one.print();
+            data_channel.send(`b1:${this.bonus_one.x}_${this.bonus_one.y}`);
         }
 
         if (this.bonus_two.alive == true && (this.scores[0] >= 4 || this.scores[1] >= 4))
@@ -294,6 +295,8 @@ class OnlineGame1v1_host
             this.bonus_two.print();
             this.bonus_two.animate();
             this.bonus_two.print();
+            data_channel.send(`b2:${this.bonus_two.x}_${this.bonus_two.y}`);
+
         }
     }
 
@@ -354,7 +357,7 @@ class OnlineGame1v1_host
             let player_right_won = document.getElementById('h_win_text');
             player_right_won.innerHTML = localStorage.getItem('opponent_login') + getTranslation('Online Win');
             player_right_won.style.display = "block";
-            
+
             document.getElementById('online_loser').play();
 
             return (true);

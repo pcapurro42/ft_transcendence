@@ -37,7 +37,7 @@ class PowerUp
     isAtPlayer() //
     {
         let player;
-        
+
         if (this.x <= this.game.game_width / 2)
             player = this.game.left_player;
         else
@@ -131,13 +131,15 @@ class PowerUp
 
     applyPlayerBonus()
     {
-        let value = generateNumber(2);
-        
+        if (role != 'guest')
+            bonus_type = generateNumber(2);
+        if (role == 'host')
+            data_channel.send(`b_type:${bonus_type}`);
         if (players_nb == 2)
         {
             if (this.x <= this.game.game_width / 2)
             {
-                if (value == 1 && this.game.right_player.height == this.game.bar_height)
+                if (bonus_type  == 1 && this.game.right_player.height == this.game.bar_height)
                 {
                     this.game.right_player.height = this.game.right_player.height - (this.game.left_player.height / 2);
                     this.game.right_player.bonus = true;
@@ -152,7 +154,7 @@ class PowerUp
             }
             else
             {
-                if (value == 1 && this.game.left_player.height == this.game.bar_height)
+                if (bonus_type  == 1 && this.game.left_player.height == this.game.bar_height)
                 {
                     this.game.left_player.height = this.game.left_player.height - (this.game.left_player.height / 2);
                     this.game.left_player.bonus = true;
@@ -171,7 +173,7 @@ class PowerUp
         {
             if (this.x <= this.game.game_width / 2)
             {
-                if (value == 1 && this.game.right_player_1.height == this.game.bar_height && this.game.right_player_2.height == this.game.bar_height)
+                if (bonus_type  == 1 && this.game.right_player_1.height == this.game.bar_height && this.game.right_player_2.height == this.game.bar_height)
                 {
                     this.game.right_player_1.height = this.game.right_player_1.height - (this.game.right_player_1.height / 2), this.game.right_player_2.height = this.game.right_player_2.height - (this.game.right_player_2.height / 2);
                     this.game.right_player_1.bonus = true;
@@ -188,7 +190,7 @@ class PowerUp
             }
             else
             {
-                if (value == 1 && this.game.left_player.height == this.game.bar_height)
+                if (bonus_type  == 1 && this.game.left_player.height == this.game.bar_height)
                 {
                     this.game.left_player.height = this.game.left_player.height - (this.game.left_player.height / 2);
                     this.game.left_player.bonus = true;
@@ -265,7 +267,7 @@ class PowerUp
     {
         if (this.isAtLimits() == true)
         {
-            if (players_nb == 1 && this.isLeftOrRight() == true)
+            if (this.isLeftOrRight() == true)
             {
                 if (role == 'host' && this.x < this.game.game_width / 2 || role == 'guest' && this.x > this.game.game_width / 2)
                     this.onl_received++;
@@ -278,13 +280,10 @@ class PowerUp
             this.applyPlayerBonus();
             this.alive = false;
 
-            if (players_nb == 1)
-            {
                 if (role == 'host' && this.x < this.game.game_width / 2 || role == 'guest' && this.x > this.game.game_width / 2)
                     this.onl_received++, this.onl_taken++;
-            }
 
-            if (players_nb == 2 || players_nb == 3)
+            if ((players_nb == 2 || players_nb == 3) && (role != 'guest' || role != 'host'))
                 this.bonus_taken++;
         }
         else if (this.isAtBall() == true)

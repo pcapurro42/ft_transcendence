@@ -118,7 +118,11 @@ document.getElementById('delete_online_data_btn').onclick = deleteOnlineData;
 
 // < GAME > //
 
-document.getElementById('top_logo').onclick = function(){
+document.getElementById('top_logo').onclick = async function(){
+	hideSidebar();
+	if (!(await handleSensitivePages()))
+        return;
+	nav.hideEveryDiv();
 	nav.displayMenu();
 	refreshSite();
 };

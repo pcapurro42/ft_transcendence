@@ -32,9 +32,9 @@ function displayCountDown(nb)
     let menu_music = document.getElementById('mgs');
     let game_music = gameMusicSelector();
 
-    if (players_nb == 1 && role == 'guest')
+    if (role == 'guest')
         timer = document.getElementById('1v1_guest_timer');
-    else if (players_nb == 1 && role == 'host')
+    else if (role == 'host')
         timer = document.getElementById('1v1_host_timer');
     else if (players_nb == 2)
         timer = document.getElementById('1v1_local_timer');
@@ -67,7 +67,7 @@ function displayCountDown(nb)
         game_music.play();
         menu_music.pause();
         addKeyboardMonitoring();
-        if (players_nb == 1){
+        if (players_nb == 2 && (role == 'guest' || role == 'host')){
             game.start_time = getActualTimeSeconds();
             startOnline1v1();
         }
@@ -107,82 +107,75 @@ function removeKeyboardMonitoring(){
 
 function keyboardMonitoring_keyDown(event){
     let key = event.key.toLowerCase();
-    if (players_nb != 0 && players_nb != null)
-    {
-        if (players_nb == 1)
-        {
-            if (role == "host")
-            {
-                if (key == 'e')
-                    gameKeys.KeyE = true;
-                else if (key == 'd')
-                    gameKeys.KeyD = true;
-            }
-            else
-            {
+    // if (players_nb != 0 && players_nb != null)
+    // {
+    //     if (players_nb == 2 && (role == 'host' || role == 'guest'))
+    //     {
+    //         if (role == "host")
+    //         {
+    //             if (key == 'e')
+    //                 gameKeys.KeyE = true;
+    //             else if (key == 'd')
+    //                 gameKeys.KeyD = true;
+    //         }
+    //         else
+    //         {
 
-                if (key == 'o')
-                    gameKeys.KeyO = true
-                else if (key == 'l')
-                    gameKeys.KeyL = true
-            }
-        }
-        if (players_nb == 2)
-        {
+    //             if (key == 'o')
+    //                 gameKeys.KeyO = true
+    //             else if (key == 'l')
+    //                 gameKeys.KeyL = true
+    //         }
+    //     }
+    //     else if (players_nb == 2)
+    //     {
 
-            if (key == 'o'){
-                gameKeys.KeyO = true;
-            }
-            else if (key == 'l')
-                gameKeys.KeyL = true;
+    //         if (key == 'o'){
+    //             gameKeys.KeyO = true;
+    //         }
+    //         else if (key == 'l')
+    //             gameKeys.KeyL = true;
 
-            if (key == 'e')
-                gameKeys.KeyE = true;
-            else if (key == 'd')
-                gameKeys.KeyD = true;
-        }
-        else if (players_nb == 3)
-        {
+    //         if (key == 'e')
+    //             gameKeys.KeyE = true;
+    //         else if (key == 'd')
+    //             gameKeys.KeyD = true;
+    //     }
+    //     else if (players_nb == 3)
+    //     {
 
-            if (key == 'e')
-                gameKeys.KeyE = true;
-            else if (key == 'd')
-                gameKeys.KeyD = true;
+    //         if (key == 'e')
+    //             gameKeys.KeyE = true;
+    //         else if (key == 'd')
+    //             gameKeys.KeyD = true;
 
-            if (key == 'y')
-                gameKeys.KeyY = true;
-            else if (key == 'h')
-                gameKeys.KeyH = true;
+    //         if (key == 'y')
+    //             gameKeys.KeyY = true;
+    //         else if (key == 'h')
+    //             gameKeys.KeyH = true;
 
-            if (key == 'o')
-                gameKeys.KeyO = true;
-            else if (key == 'l')
-                gameKeys.KeyL = true;
-        }
-    }
+    //         if (key == 'o')
+    //             gameKeys.KeyO = true;
+    //         else if (key == 'l')
+    //             gameKeys.KeyL = true;
+    //     }
+    // }
+    if (key == 'e')
+        gameKeys.KeyE = true;
+    else if (key == 'd')
+        gameKeys.KeyD = true;
+    if (key == 'y')
+        gameKeys.KeyY = true;
+    else if (key == 'h')
+        gameKeys.KeyH = true;
+    if (key == 'o')
+        gameKeys.KeyO = true;
+    else if (key == 'l')
+        gameKeys.KeyL = true;
 }
 
 function keyboardMonitoring_keyUp(event){
     let key = event.key.toLowerCase()
-    if (players_nb == 1)
-    {
-        if (role == "host")
-        {
-            if (key == 'e')
-                gameKeys.KeyE = false;
-            else if (key == 'd')
-                gameKeys.KeyD = false;
-        }
-        else
-        {
-            if (key == 'o')
-                gameKeys.KeyO = false
-            else if (key == 'l')
-                gameKeys.KeyL = false
-        }
-    }
-    else
-    {
         if (key == 'o')
             gameKeys.KeyO = false;
         else if (key == 'l')
@@ -193,12 +186,8 @@ function keyboardMonitoring_keyUp(event){
         else if (key == 'd')
             gameKeys.KeyD = false;
 
-        if (players_nb == 3)
-        {
-            if (key == 'y')
-                gameKeys.KeyY = false;
-            else if (key == 'h')
-                gameKeys.KeyH = false;
-        }
-    }
+        if (key == 'y')
+            gameKeys.KeyY = false;
+        else if (key == 'h')
+            gameKeys.KeyH = false;
 }

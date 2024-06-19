@@ -38,7 +38,7 @@ const nav = {
         nav.displayClassicChoice();
     },
 
-    displayCreateLobby : async function(){
+    displayCreateLobby : function(){
         nav.hideEveryDiv();
 
         document.getElementById('create_classic_menu').style.display = 'block';
