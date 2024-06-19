@@ -277,8 +277,7 @@ class OnlineGame1v1_guest
     {
         if (this.alert < 100)
             this.ball.printAlert(), this.alert++, this.sounds.alert.play();
-        if (this.ball.isOffLimit() == true)
-            this.restartRound();
+        this.ball.animate();
         this.ball.print();
     }
 

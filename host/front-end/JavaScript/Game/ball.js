@@ -297,13 +297,9 @@ class Ball
         {
             if (role == null)
                 this.lcl_exit++;
-            else
-            {
-                if (role == 'host' && this.x < this.game.game_width / 2 || role == 'guest' && this.x > this.game.game_width / 2)
-                    this.onl_received++;
-            }
 
-            this.game.restartRound();
+            if (role == null || role == 'host')
+                this.game.restartRound();
         }
         else if (this.isUpOrDown() == true || this.isAtPlayer() == true)
         {
@@ -314,12 +310,14 @@ class Ball
                 if (this.isFrontPlayer() == true)
                 {
                     if (role == 'host' && this.x < this.game.game_width / 2 || role == 'guest' && this.x > this.game.game_width / 2)
-                        this.onl_received++, this.onl_return++;
+                        this.onl_return++;
                 }
             }
-            this.direction = this.getOpposite(), this.getAwayFromLimits();
+            if (role == null || role == 'host')
+                this.direction = this.getOpposite(), this.getAwayFromLimits();
         }
 
-        this.move();
+        if (role == null || role == 'host')
+            this.move();
     }
 }
