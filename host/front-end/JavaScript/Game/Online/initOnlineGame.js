@@ -80,7 +80,6 @@ function startOnline1v1()
     setTimeout(() => {
         if (game.isOver() == true || active == false)
         {
-            removeKeyboardMonitoring();
             game.refreshBackground();
 
             if (game.isOver() == true)

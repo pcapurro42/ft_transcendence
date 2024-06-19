@@ -404,7 +404,6 @@ function startLocal1v1()
     setTimeout(()=> {
         if (game.isOver() == true || active == false)
         {
-            removeKeyboardMonitoring();
             game.refreshBackground();
             game.resetGame();
             active = false;

@@ -252,6 +252,7 @@ const nav = {
         tournamentFinalReset();
         refreshStats();
         refreshLogin();
+        removeKeyboardMonitoring();
         removeBeforeUnloadWarning();
     },
 

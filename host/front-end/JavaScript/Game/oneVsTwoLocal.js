@@ -415,7 +415,6 @@ function startLocal1v2()
 {
     if (game.isOver() == true || active == false)
     {
-        removeKeyboardMonitoring();
         game.refreshBackground();
         game.resetGame();
         active = false;
