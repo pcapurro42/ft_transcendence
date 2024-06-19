@@ -26,8 +26,6 @@ nav.displayMenu = async function()
 nav.removeMenu = function()
 {
     document.getElementById('main_page').style.display = "none";
-
-    window.removeEventListener('keydown', detectKonamiCode);
 }
 
 function refreshSite()
@@ -285,5 +283,20 @@ function detectKonamiCode(event)
         keys_register = [];
     keys_register.push(key);
 
-    // haut, haut, bas, bas, gauche, droite, gauche, droite, b, a
+    if (keys_register.length >= 10)
+    {
+        for (let i = 0; i != keys_register.length; i++)
+        {
+            if (keys_register[i] == 'ArrowUp' && keys_register.length - i >= 9)
+            {
+                if (keys_register[i + 1] == 'ArrowUp' && keys_register[i + 2] == 'ArrowDown' && keys_register[i + 3] == 'ArrowDown' && keys_register[i + 4] == 'ArrowLeft' && keys_register[i + 5] == 'ArrowRight' && keys_register[i + 6] == 'ArrowLeft' && keys_register[i + 7] == 'ArrowRight' && keys_register[i + 8] == 'b' && keys_register[i + 9] == 'a')
+                {
+                    console.log("Konami Code detected!");
+                    // ...
+                }
+            }
+        }
+    }
+
+    // haut - haut - bas - bas - gauche - droite - gauche - droite - b - a
 }
