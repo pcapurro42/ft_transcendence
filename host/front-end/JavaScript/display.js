@@ -294,6 +294,7 @@ function detectKonamiCode(event)
                     console.log(getTranslation("Konami Code detected!"));
                     keys_register = [];
                     // ...
+                    return ;
                 }
             }
         }
