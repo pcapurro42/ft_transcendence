@@ -352,9 +352,10 @@ class LocalGame1v2
             localStorage.setItem('lcl_ball_exit_nb', (parseInt(localStorage.getItem('lcl_ball_exit_nb')) + game.ball.lcl_exit).toString());
             localStorage.setItem('lcl_ball_bounce_nb', (parseInt(localStorage.getItem('lcl_ball_bounce_nb')) + game.ball.lcl_bounce).toString());
 
-            localStorage.setItem('lcl_bonus_taken_nb', (parseInt(localStorage.getItem('lcl_bonus_taken_nb')) + game.bonus_one.bonus_taken).toString());
-            localStorage.setItem('lcl_bonus_taken_nb', (parseInt(localStorage.getItem('lcl_bonus_taken_nb')) + game.bonus_two.bonus_taken).toString());
-
+            if (gameMode == 'bonus'){
+                localStorage.setItem('lcl_bonus_taken_nb', (parseInt(localStorage.getItem('lcl_bonus_taken_nb')) + game.bonus_one.bonus_taken).toString());
+                localStorage.setItem('lcl_bonus_taken_nb', (parseInt(localStorage.getItem('lcl_bonus_taken_nb')) + game.bonus_two.bonus_taken).toString());
+            }
             return (true);
         }
         return (false);
