@@ -34,6 +34,14 @@ function readHostMsg(event)
 		bonus_type = +msg.substring(7);
 		return;
 	}
+	else if (msg == 'b1_dead'){
+		game.bonus_one.alive = false;
+		return;
+	}
+	else if (msg == 'b2_dead'){
+		game.bonus_two.alive = false;
+		return;
+	}
 	else{
 		switch (msg){
 			case 'ping':

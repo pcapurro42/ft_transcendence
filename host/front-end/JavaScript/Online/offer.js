@@ -31,10 +31,7 @@ async function offerGenerator(){
 		}
 		let offer = JSON.stringify(jsonOffer)
 		sendOffer(offer)
-		data_channel.onopen = () => 	hostConnectionHandler();
-		// RTC_o.onconnectionstatechange = function(event){
-			// if (RTC_o.connectionState =='connected')
-		// }
+		data_channel.onopen = () => hostConnectionHandler();
 	}
 	catch(error){
 		console.error(`Error: ${error}`);

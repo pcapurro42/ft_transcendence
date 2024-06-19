@@ -2,7 +2,7 @@
 
 class PowerUp
 {
-    constructor(game, width, height, x, y, speed, color, direction)
+    constructor(game, width, height, x, y, speed, color, direction, name)
     {
         this.game = game;
 
@@ -24,12 +24,13 @@ class PowerUp
 
         this.onl_taken = 0;
         this.onl_received = 0;
+        this.name = name;
     }
 
     print()
     {
-        this.game.display.fillStyle = this.color;
-        this.game.display.fillRect(this.x, this.y, this.width, this.height);
+            this.game.display.fillStyle = this.color;
+            this.game.display.fillRect(this.x, this.y, this.width, this.height);
     }
 
     // < Verifyers > //
@@ -131,11 +132,10 @@ class PowerUp
 
     applyPlayerBonus()
     {
-        if (players_nb == 1)
-        {
-            if (role == 'guest')
-                bonus_type = generateNumber(2), data_channel.send(`b_type:${bonus_type}`);
-        }
+        if (role != 'guest')
+            bonus_type = generateNumber(2);
+        if (role == 'host')
+            data_channel.send(`b_type:${bonus_type}`);
         if (players_nb == 2)
         {
             if (this.x <= this.game.game_width / 2)
@@ -167,6 +167,13 @@ class PowerUp
                     this.game.right_player.bonus = true;
                     this.game.right_player.bonus_message = "+ speed";
                 }
+            }
+
+            if (role=="host"){
+                if (this.name == 1)
+                    data_channel.send('b1_dead');
+                else
+                    data_channel.send('b2_dead');
             }
         }
 
@@ -220,6 +227,12 @@ class PowerUp
     applyBallBonus()
     {
         this.game.ball.speed = this.game.ball.speed + 2;
+        if (role=="host"){
+            if (this.name == 1)
+                data_channel.send('b1_dead');
+            else
+                data_channel.send('b2_dead');
+        }
     }
 
     reset(value)
@@ -288,6 +301,7 @@ class PowerUp
         {
             this.applyPlayerBonus();
             this.alive = false;
+            console.log(this);
 
                 if (role == 'host' && this.x < this.game.game_width / 2 || role == 'guest' && this.x > this.game.game_width / 2)
                     this.onl_received++, this.onl_taken++;

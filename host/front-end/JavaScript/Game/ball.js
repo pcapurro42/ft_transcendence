@@ -51,21 +51,6 @@ class Ball
 
     isFrontPlayer()
     {
-        // if (players_nb == 1)
-        // {
-        //      if (Math.ceil(this.x) == this.game.left_player.x + this.game.left_player.width)
-        //     {
-        //         if (Math.ceil(this.y) + this.height >= this.game.left_player.y && Math.ceil(this.y) <= this.game.left_player.y + this.game.left_player.height)
-        //             return (true);
-        //     }
-
-        //     if (Math.ceil(this.x) + this.width == this.game.right_player.x)
-        //     {
-        //         if (Math.ceil(this.y) + this.height >= this.game.right_player.y && Math.ceil(this.y) <= this.game.right_player.y + this.game.right_player.height)
-        //             return (true);
-        //     }
-        // }
-
         if (players_nb == 2)
         {
             if (Math.ceil(this.x) == this.game.left_player.x + this.game.left_player.width)
@@ -107,25 +92,6 @@ class Ball
 
     isAboveOrUnderPlayer()
     {
-        // if (players_nb == 1)
-        // {
-        //     if (Math.ceil(this.x) + this.width >= this.game.left_player.x && Math.ceil(this.x) <= this.game.left_player.x + this.game.left_player.width)
-        //     {
-        //         if (Math.ceil(this.y) + this.height == this.game.left_player.y)
-        //             return (true);
-        //         if (Math.ceil(this.y) == this.game.left_player.y + this.game.left_player.height)
-        //             return (true);
-        //     }
-
-        //     if (Math.ceil(this.x) + this.width >= this.game.right_player.x && Math.ceil(this.x) <= this.game.right_player.x + this.game.right_player.width)
-        //     {
-        //         if (Math.ceil(this.y) + this.height == this.game.right_player.y)
-        //             return (true);
-        //         if (Math.ceil(this.y) == this.game.right_player.y + this.game.right_player.height)
-        //             return (true);
-        //     };
-        // }
-
         if (players_nb == 2)
         {
             if (Math.ceil(this.x) + this.width >= this.game.left_player.x && Math.ceil(this.x) <= this.game.left_player.x + this.game.left_player.width)
@@ -289,14 +255,6 @@ class Ball
 
         if (this.isAboveOrUnderPlayer() == true)
         {
-            // if (players_nb == 1)
-            // {
-            //      if (Math.ceil(this.y) + this.height == this.game.left_player.y || Math.ceil(this.y) + this.height == this.game.right_player.y)
-            //         this.y = this.y - this.speed;
-            //     else
-            //         this.y = this.y + this.speed;
-            // }
-
             if (players_nb == 2)
             {
                 if (Math.ceil(this.y) + this.height == this.game.left_player.y || Math.ceil(this.y) + this.height == this.game.right_player.y)
@@ -337,7 +295,7 @@ class Ball
     {
         if (this.isOffLimit() == true)
         {
-            if (players_nb == 2 || players_nb == 3)
+            if (players_nb == 2 || players_nb == 3 && (role != 'host' || role != 'guest'))
                 this.lcl_exit++;
 
             if (players_nb == 2)
@@ -350,7 +308,7 @@ class Ball
         }
         else if (this.isUpOrDown() == true || this.isAtPlayer() == true)
         {
-            if (players_nb == 2 || players_nb == 3)
+            if (players_nb == 2 || players_nb == 3 && (role != 'host' || role != 'guest'))
                 this.lcl_bounce++;
 
             if (players_nb == 2 && this.isFrontPlayer() == true)

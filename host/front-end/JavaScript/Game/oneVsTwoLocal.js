@@ -182,6 +182,7 @@ class LocalGame1v2
                 color: this.bonus_color,
 
                 direction : this.ball_direction,
+                name:1,
             }
 
             let bonus_two_data = {
@@ -196,6 +197,7 @@ class LocalGame1v2
                 color: this.bonus_color,
 
                 direction : this.ball_direction + 90,
+                name:2,
             }
 
             this.bonus_one = new PowerUp(...Object.values(bonus_one_data));

@@ -107,59 +107,6 @@ function removeKeyboardMonitoring(){
 
 function keyboardMonitoring_keyDown(event){
     let key = event.key.toLowerCase();
-    // if (players_nb != 0 && players_nb != null)
-    // {
-    //     if (players_nb == 2 && (role == 'host' || role == 'guest'))
-    //     {
-    //         if (role == "host")
-    //         {
-    //             if (key == 'e')
-    //                 gameKeys.KeyE = true;
-    //             else if (key == 'd')
-    //                 gameKeys.KeyD = true;
-    //         }
-    //         else
-    //         {
-
-    //             if (key == 'o')
-    //                 gameKeys.KeyO = true
-    //             else if (key == 'l')
-    //                 gameKeys.KeyL = true
-    //         }
-    //     }
-    //     else if (players_nb == 2)
-    //     {
-
-    //         if (key == 'o'){
-    //             gameKeys.KeyO = true;
-    //         }
-    //         else if (key == 'l')
-    //             gameKeys.KeyL = true;
-
-    //         if (key == 'e')
-    //             gameKeys.KeyE = true;
-    //         else if (key == 'd')
-    //             gameKeys.KeyD = true;
-    //     }
-    //     else if (players_nb == 3)
-    //     {
-
-    //         if (key == 'e')
-    //             gameKeys.KeyE = true;
-    //         else if (key == 'd')
-    //             gameKeys.KeyD = true;
-
-    //         if (key == 'y')
-    //             gameKeys.KeyY = true;
-    //         else if (key == 'h')
-    //             gameKeys.KeyH = true;
-
-    //         if (key == 'o')
-    //             gameKeys.KeyO = true;
-    //         else if (key == 'l')
-    //             gameKeys.KeyL = true;
-    //     }
-    // }
     if (key == 'e')
         gameKeys.KeyE = true;
     else if (key == 'd')

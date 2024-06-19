@@ -177,6 +177,7 @@ class OnlineGame1v1_guest
                 color: this.bonus_color,
 
                 direction : this.ball_direction,
+                name: 1,
             }
 
             let bonus_two_data = {
@@ -192,6 +193,7 @@ class OnlineGame1v1_guest
                 color: this.bonus_color,
 
                 direction : this.ball_direction + 90,
+                name: 2,
             }
 
             this.bonus_one = new PowerUp(...Object.values(bonus_one_data));
@@ -285,14 +287,10 @@ class OnlineGame1v1_guest
         if (this.bonus_one.alive == true && (this.scores[0] >= 2 || this.scores[1] >= 2))
         {
             this.bonus_one.print();
-            this.bonus_one.animate();
-            this.bonus_one.print();
         }
 
         if (this.bonus_two.alive == true && (this.scores[0] >= 4 || this.scores[1] >= 4))
         {
-            this.bonus_two.print();
-            this.bonus_two.animate();
             this.bonus_two.print();
         }
     }
