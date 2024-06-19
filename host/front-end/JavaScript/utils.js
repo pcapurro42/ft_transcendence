@@ -1,3 +1,12 @@
+function resetMusicAndSounds(){
+	let sounds_and_musics = document.querySelectorAll('.sounds, .game_music');
+
+	sounds_and_musics.forEach(element => {
+		element.pause();
+		element.currentTime = 0;
+	});
+}
+
 async function hideSidebar(){
 	let canvas = bootstrap.Offcanvas.getOrCreateInstance(document.getElementById('sideMenu'));
 	canvas.hide();

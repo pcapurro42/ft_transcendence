@@ -103,6 +103,7 @@ function removeTournamentLeaderboard(curr_match){
 
 function t_displayCountDown(nb)
 {
+    active = true;
     let timer = document.getElementById('tournament_timer');
     let menu_music = document.getElementById('mgs');
     let game_music = gameMusicSelector();
@@ -127,7 +128,6 @@ function t_displayCountDown(nb)
         menu_music.pause();
         game_music.play();
         timer.style.display = "none";
-        active = true;
         addKeyboardMonitoring();
         startLocal1v1();
         return ;

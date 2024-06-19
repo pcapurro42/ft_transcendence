@@ -27,6 +27,7 @@ function getRandomBallDirection()
 
 function displayCountDown(nb)
 {
+    active = true;
     let timer;
     let menu_music = document.getElementById('mgs');
     let game_music = gameMusicSelector();
@@ -65,7 +66,6 @@ function displayCountDown(nb)
         timer.classList.add("d-none");
         game_music.play();
         menu_music.pause();
-        active = true;
         addKeyboardMonitoring();
         if (players_nb == 1){
             game.start_time = getActualTimeSeconds();

@@ -246,6 +246,8 @@ const nav = {
 	    let cross_exit = document.getElementById('credit_close');
         cross_exit.style.display = "none";
 
+        active = false;
+        resetMusicAndSounds();
         freeInputAndForms();
         tournamentFinalReset();
         refreshStats();
