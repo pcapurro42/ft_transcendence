@@ -19,11 +19,15 @@ nav.displayMenu = async function()
     refreshLogin();
     addToHistory('/home');
     document.title = getTranslation('Home');
+
+    window.addEventListener('keydown', detectKonamiCode);
 }
 
 nav.removeMenu = function()
 {
     document.getElementById('main_page').style.display = "none";
+
+    window.removeEventListener('keydown', detectKonamiCode);
 }
 
 function refreshSite()
@@ -271,4 +275,15 @@ function outsideDropdownClick(event)
         login_dropdown.classList.add('d-none');
         removeOutsideDropdown();
     }
+}
+
+function detectKonamiCode(event)
+{
+    let key = event.key;
+    
+    if (keys_register == null)
+        keys_register = [];
+    keys_register.push(key);
+
+    // haut, haut, bas, bas, gauche, droite, gauche, droite, b, a
 }

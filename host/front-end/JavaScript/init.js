@@ -1,6 +1,7 @@
 // < general > //
 
 let originalUrl = window.location.pathname;
+let keys_register = null;
 
 // < settings > //
 
