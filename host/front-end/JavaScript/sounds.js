@@ -51,7 +51,6 @@ function refreshSounds()
 	if (localStorage.getItem('sound') == 'off'){
 		for (let i = 0; i < sounds.length; i++)
 			sounds[i].muted = true;
-		let allMuted = Array.from(sounds).every(sounds => sounds.muted);
 		sound_toggler.src = './Materials/images/menu/sound-off.png';
 	}
 	else{

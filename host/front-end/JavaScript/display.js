@@ -256,7 +256,6 @@ function refreshDisplay()
 
 function displayDropdownMenu()
 {
-    // let dropdown_toggler = document.getElementById('intra_login');
     document.getElementById('login_dropdown').classList.remove('d-none');
     addOutsideDropdown();
 }

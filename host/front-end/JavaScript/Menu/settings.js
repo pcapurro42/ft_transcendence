@@ -32,20 +32,16 @@ function changeDescriptiveImages()
 
 function changeSoundsVolume()
 {
-    let new_volume = document.getElementById('sound_volume_slider').value;
-
-    localStorage.setItem('sounds_volume', new_volume);
-    sounds_volume = new_volume;
+    localStorage.setItem('sounds_volume', document.getElementById('sound_volume_slider').value);
+    sounds_volume = document.getElementById('sound_volume_slider').value;
 
     refreshSounds();
 }
 
 function changeMusicVolume()
 {
-    let new_volume = document.getElementById('music_volume_slider').value;
-
-    localStorage.setItem('music_volume', new_volume);
-    music_volume = new_volume;
+    localStorage.setItem('music_volume', document.getElementById('music_volume_slider').value);
+    music_volume = document.getElementById('music_volume_slider').value;
 
     refreshMusics();
 }
@@ -64,20 +60,16 @@ function letterSwitch(){
 
 function changeTextSize()
 {
-    let new_size = (document.getElementById('text_size_btn_selector').value).toLowerCase();
-
-    localStorage.setItem("text_size", new_size);
-    text_size = new_size;
+    localStorage.setItem("text_size", (document.getElementById('text_size_btn_selector').value).toLowerCase());
+    text_size = (document.getElementById('text_size_btn_selector').value).toLowerCase();
 
     refreshDisplay();
 }
 
 function changeLanguage()
 {
-    let new_language = document.getElementById('language_btn_selector').value;
-
-    localStorage.setItem("language", new_language);
-    language = new_language;
+    localStorage.setItem("language", document.getElementById('language_btn_selector').value);
+    language = document.getElementById('language_btn_selector').value;
 
     refreshLanguage();
 }

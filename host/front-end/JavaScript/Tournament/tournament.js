@@ -79,12 +79,11 @@ function displayTournamentLeaderboard(){
     document.getElementById('m_Roundof16').classList.add('w-75');
     document.getElementById('m_Roundof16').classList.add('mx-auto');
     document.getElementById('m_tournament_announcer').classList.remove('security_margin');
-    document.getElementById('close_leaderboard').onclick = () => {removeTournamentLeaderboard(curr_match)};
+    document.getElementById('close_leaderboard').onclick = () => {removeTournamentLeaderboard()};
     document.querySelectorAll('button:not(.not-disabled), a').forEach(element => {element.setAttribute('disabled', true)});
 }
 
-function removeTournamentLeaderboard(curr_match){
-    let round_clone = document.getElementById('round_block');
+function removeTournamentLeaderboard(){
     let del = document.getElementById('leaderboard_body').querySelectorAll('[id]');
 
     for (let i = 1; i < del.length; i++)
