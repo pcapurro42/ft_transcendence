@@ -1,4 +1,4 @@
-// < Ball class > //
+// < ball class > //
 
 class Ball
 {
@@ -40,9 +40,9 @@ class Ball
         this.game.display.fillText("!", this.x + this.width + 25, this.y);
     }
 
-    // < Verifyers > //
+    // < verifyers > //
 
-    isAtPlayer() //
+    isAtPlayer()
     {
         if (this.isAboveOrUnderPlayer() == true || this.isFrontPlayer() == true)
             return (true);
@@ -157,9 +157,9 @@ class Ball
         return (false);
     }
 
-    // < Extras > //
+    // < extras > //
 
-    addExtraDirection() //
+    addExtraDirection()
     {
         if (this.x < this.game.game_width / 2)
         {
@@ -183,7 +183,7 @@ class Ball
             this.bonus_speed++;
     }
 
-    // < Calculate > //
+    // < calculate > //
 
     getOpposite()
     {
@@ -215,7 +215,7 @@ class Ball
         return ([x_dir, y_dir]);
     }
 
-    // < Animate > //
+    // < animate > //
 
     move()
     {
@@ -224,9 +224,6 @@ class Ball
 
         x_dir = Math.round(x_dir * 10) / 10;
         y_dir = Math.round(y_dir * 10) / 10;
-
-        // console.log(x_dir);
-        // console.log(y_dir);
 
         for (let i = 0; this.isAtPlayer() == false && i != (this.speed + this.bonus_speed); i++)
         {

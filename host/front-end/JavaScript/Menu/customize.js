@@ -1,4 +1,4 @@
-// < CHANGERS > //
+// < changers > //
 
 function changeGameMap()
 {
@@ -16,7 +16,7 @@ function setGameMusic()
         document.getElementById('game_theme_btn_selector').selectedIndex = 2;
 }
 
-// < DISPLAY/REMOVE > //
+// < display/remove > //
 
 nav.displayCustomize = function()
 {
@@ -65,7 +65,7 @@ function removeMapTooltip(){
 	document.getElementById('map_tooltip').classList.add('d-none');
 }
 
-// < INIT > //
+// < init > //
 
 function initializeCustomize()
 {

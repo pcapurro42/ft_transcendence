@@ -7,9 +7,8 @@ nav.displayMenu = async function()
     document.getElementById('main_menu_buttons').style.display = "block";
     document.getElementById('main_menu_toolbar').style.display = "block";
 
-    stop_flag = true; // stop tournament
-    active = false; // turn off the game
-
+    stop_flag = true;
+    active = false;
 
     freeInputAndForms();
     tournamentFinalReset();

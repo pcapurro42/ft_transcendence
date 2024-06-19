@@ -1,6 +1,8 @@
-// localStorage.clear();
+// < general > //
 
-// < SETTINGS > //
+let originalUrl = window.location.pathname;
+
+// < settings > //
 
 let language;
 let sounds_volume;
@@ -12,29 +14,7 @@ let high_contrast;
 initializeLanguage();
 initializeSettings();
 
-//   ⚠️⚠️⚠️ Laisser ici ⚠️⚠️⚠️
-let originalUrl = window.location.pathname;
-let csrfToken = document.cookie.replace("csrftoken=", "");
-
-document.addEventListener('DOMContentLoaded', function() {fetchCsrfToken();});
-
-async function fetchCsrfToken() {
-    try{
-        const response = await fetch('https://hostname:8080/backend/csrf/', { //ICI
-        credentials: 'include'
-	    });
-    }
-    catch(error){
-        console.error(error);
-    }
-}
-
-localStorage.removeItem('auth_code');
-let auth_code = new URLSearchParams(window.location.search).get('code');
-if (auth_code)
-    localStorage.setItem('auth_code', auth_code);
-
-// < CUSTOMIZE > //
+// < history > //
 
 let previous_url_path;
 let path;
@@ -42,21 +22,12 @@ let path;
 let pushHistory;
 window.addEventListener('popstate', handleLocation);
 
-let game_music;
-let game_map;
+// < 42 > //
 
-initializeCustomize();
+const csrfToken = document.cookie.replace("csrftoken=", "");
+let auth_code = new URLSearchParams(window.location.search).get('code');
 
-// < DATA > //
-
-initializeDataAuths();
-
-// < MUSICS AND SOUNDS > //
-
-initializeMusics();
-initializeSounds();
-
-// < 42 CONNECT > //
+initializeAuthToken();
 
 let account_status;
 let user_info;
@@ -66,26 +37,42 @@ let redirect_uri;
 initializeAuth();
 refreshLogin();
 
-// < GAME > //
+// < customize > //
 
-let type; // tournament or no
-let players_nb; // number of local players
+let game_music;
+let game_map;
 
-let game; // object of the game
-let active; // should display the game or no
+initializeCustomize();
+
+// < rgpd > //
+
+initializeDataAuths();
+
+// < music/sounds > //
+
+initializeMusics();
+initializeSounds();
+
+// < game > //
+
+let type;
+let players_nb;
+
+let game;
+let active;
 let bonus_type;
 
-let gameMode; // bonus or normal;
+let gameMode;
 
-let pos; // left or right (online)
-let role; // host or guest (online)
+let pos;
+let role;
 
 let ping = true;
 let stop_ping = false;
 
 initializeGameMode();
 
-// < STATS > //
+// < stats > //
 
 let visual = false;
 
@@ -95,7 +82,7 @@ let history_tab = 0;
 let stats = null;
 let stats_tab = 0;
 
-//Tournament//
+// < tournament > //
 
 let stop_flag = false;
 let nicknames;
@@ -108,10 +95,10 @@ let gameLoser;
 let max_game;
 let final = false;
 let turn = false;
+
 setTournamentSelector();
 
-
-//<P2P>//
+// < p2p > //
 
 let timeoutInterval;
 let RTC_o;
@@ -119,9 +106,12 @@ let RTC_a;
 let data_channel;
 let isDisplayModal;
 
-// < REFRESH > //
+// < language > //
 
 languageSwitch(language);
+
+// < refresh > //
+
 refreshDisplay();
 
 refreshSounds();
@@ -134,11 +124,9 @@ refreshLogin();
 
 ARIAButtonState();
 
-//<Backend> //
+// < backend > //
 
 handleRedirection();
 handleLocation();
 
 window.addEventListener('DOMContentLoaded', ()=>{document.body.style.display = "block"});
-
-//<Backend> //

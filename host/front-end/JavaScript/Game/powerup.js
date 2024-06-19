@@ -1,4 +1,4 @@
-// < PowerUp class > //
+// < powerup class > //
 
 class PowerUp
 {
@@ -33,9 +33,9 @@ class PowerUp
             this.game.display.fillRect(this.x, this.y, this.width, this.height);
     }
 
-    // < Verifyers > //
+    // < verifyers > //
 
-    isAtPlayer() //
+    isAtPlayer()
     {
         let player;
 
@@ -104,7 +104,7 @@ class PowerUp
         return (false);
     }
 
-    // < Calculators > //
+    // < calculators > //
 
     getOpposite()
     {
@@ -128,7 +128,7 @@ class PowerUp
         return ([x_dir, y_dir]);
     }
 
-    // < Animate > //
+    // < animate > //
 
     applyPlayerBonus()
     {

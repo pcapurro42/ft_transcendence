@@ -1,6 +1,4 @@
-// <<<<<<< 1V1 >>>>>>> //
-
-// < Game class > //
+// < game class > //
 
 class LocalGame1v1
 {
@@ -346,7 +344,7 @@ class LocalGame1v1
     }
 }
 
-// < Initialisation > //
+// < initialisation > //
 
 function initializeLocal1v1()
 {
@@ -357,7 +355,7 @@ function initializeLocal1v1()
     game.refreshBackground();
 }
 
-// < Menu display management > //
+// < menu display management > //
 
 function displayLocal1v1()
 {
@@ -385,7 +383,7 @@ function removeLocal1v1()
 
 function startLocal1v1()
 {
-    const frame = 1000/120; // = 120fps
+    const frame = 1000/120;
     setTimeout(()=> {
         if (game.isOver() == true || active == false)
         {

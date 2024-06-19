@@ -1,4 +1,4 @@
-// < CHANGERS > //
+// < changers > //
 
 function changeHighContrast()
 {
@@ -74,7 +74,7 @@ function changeLanguage()
     refreshLanguage();
 }
 
-// < DIPLAY/REMOVE > //
+// < display/remove > //
 
 function displaySecondSettingsPage()
 {
@@ -124,7 +124,7 @@ nav.removeSettings = function()
     nav.displayMenu();
 }
 
-// < INIT > //
+// < init > //
 
 function initializeSettings()
 {

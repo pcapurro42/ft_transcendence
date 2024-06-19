@@ -14,7 +14,7 @@ async function gatherIceCandidates_a(){
 }
 
 async function fetchOffer(){
-	const endpoint = 'https://127.0.0.1:8080/backend/signal/getOffer/'; //ICI
+	const endpoint = 'https://127.0.0.1:8080/backend/signal/getOffer/';
 	let code = document.getElementById('paste_inv_code').value;
 	try{
 
@@ -102,8 +102,8 @@ async function answerGenerator(offer){
 }
 
 async function sendAnswer(answer){
-	const endpoint = 'https://127.0.0.1:8080/backend/signal/'; //ICI
-    const login = localStorage.getItem('login'); //
+	const endpoint = 'https://127.0.0.1:8080/backend/signal/';
+    const login = localStorage.getItem('login');
 	const code = document.getElementById('paste_inv_code').value;
 	try{
 		const request = await fetch(endpoint, {

@@ -1,4 +1,4 @@
-// < Initialisation > //
+// < initialisation > //
 
 function initializeOnline1v1()
 {
@@ -11,7 +11,7 @@ function initializeOnline1v1()
 
 }
 
-// < Menu display management > //
+// < menu display management > //
 
 function displayOnline1v1()
 {

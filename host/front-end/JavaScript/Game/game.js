@@ -1,6 +1,4 @@
-// <<<<<<< GAME >>>>>>> //
-
-// < OBJECTS UTILS > //
+// < object utils > //
 
 function generateNumber(limit)
 {
@@ -23,7 +21,7 @@ function getRandomBallDirection()
         return (-135);
 }
 
-// < TIMER > //
+// < timer > //
 
 function displayCountDown(nb)
 {
@@ -80,7 +78,7 @@ function displayCountDown(nb)
     setTimeout(displayCountDown, 1000, --nb);
 }
 
-// < KEYS > //
+// < keys > //
 
 let gameKeys = {
     KeyE: false,
@@ -93,7 +91,7 @@ let gameKeys = {
     KeyL: false,
 };
 
-// < TRIGGER > //
+// < trigger > //
 
 function addKeyboardMonitoring(){
     window.addEventListener('keydown', keyboardMonitoring_keyDown);

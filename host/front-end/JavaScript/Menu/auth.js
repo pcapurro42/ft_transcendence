@@ -2,7 +2,7 @@
 
 async function login()
 {
-    setTimeout(() => {window.location.href = `https://api.intra.42.fr/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`;}, 800); //
+    setTimeout(() => {window.location.href = `https://api.intra.42.fr/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`;}, 800);
 }
 
 async function logout()
@@ -21,6 +21,17 @@ function isConnected(){
     return false;
 }
 /********************************************** API UTILS ************************************************/
+
+async function fetchCsrfToken() {
+    try{
+        const response = await fetch('https://hostname:8080/backend/csrf/', {
+        credentials: 'include'
+	    });
+    }
+    catch(error){
+        console.error(error);
+    }
+}
 
 async function handleRedirection(){
     if (localStorage.getItem
@@ -50,14 +61,14 @@ async function storeUserLogin(response){
 }
 
 async function getAccessToken(auth_code){
-    const endpoint = 'https://127.0.0.1:8080/backend/token/'; //ICI
+    const endpoint = 'https://127.0.0.1:8080/backend/token/';
 
 
     try{
         const request = await fetch(endpoint, {
             method: 'POST',
-            headers: {'X-CSRFToken': csrfToken,}, //token du cookie csrf
-            credentials: 'include', //cookie csrf
+            headers: {'X-CSRFToken': csrfToken,},
+            credentials: 'include',
             body: auth_code,
         });
 
@@ -72,7 +83,7 @@ async function getAccessToken(auth_code){
 
 }
 
-// < DISPLAY > //
+// < display > //
 
 function refreshLogin()
 {
@@ -93,12 +104,12 @@ function refreshLogin()
     refreshDisplay();
 }
 
-// < INIT > //
+// < init > //
 
 function initializeAuth()
 {
     client_id = 'u-s4t2ud-328d5957a0e78853f7b035bed31812c4bd82ea90773c43b8686b35f1ae4d1353';
-    redirect_uri = 'https://127.0.0.1:1025'; //ICI
+    redirect_uri = 'https://127.0.0.1:1025';
     user_info = JSON.parse(localStorage.getItem('user_info'));
 
     if (localStorage.getItem("status") == null && !user_info)
@@ -106,5 +117,12 @@ function initializeAuth()
         localStorage.setItem("status", "not connected");
         account_status = "not connected";
     }
+}
 
+function initializeAuthToken()
+{
+    document.addEventListener('DOMContentLoaded', function() {fetchCsrfToken();});
+    localStorage.removeItem('auth_code');
+    if (auth_code)
+        localStorage.setItem('auth_code', auth_code);
 }

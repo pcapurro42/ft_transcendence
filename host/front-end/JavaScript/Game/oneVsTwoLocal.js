@@ -1,6 +1,4 @@
-// <<<<<<< 2V2 LOCAL >>>>>>> //
-
-// < Game class > //
+// < game class > //
 
 class LocalGame1v2
 {
@@ -360,7 +358,7 @@ class LocalGame1v2
     }
 }
 
-// < Initialisation > //
+// < initialisation > //
 
 function initializeLocal1v2()
 {
@@ -371,7 +369,7 @@ function initializeLocal1v2()
     game.refreshBackground();
 }
 
-// < Menu display management > //
+// < menu display management > //
 
 function displayLocal1v2()
 {

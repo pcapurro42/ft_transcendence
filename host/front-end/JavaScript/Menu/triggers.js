@@ -1,4 +1,4 @@
-// < TOOLBAR > //
+// < toolbar > //
 
 document.getElementById('music_toggle_btn').onclick = enableDisableMusic;
 document.getElementById('sound_toggle_btn').onclick = enableDisableSounds;
@@ -8,7 +8,7 @@ document.getElementById('game_theme_btn_selector').onchange = gameMusicSelector;
 document.getElementById("login_btn").onclick = login;
 document.getElementById("drop_logout").onclick = logout;
 
-// < MAIN MENU > //
+// < main menu > //
 
 document.getElementById('title_logo').onclick = nav.displayMenu;
 document.getElementById('disconnection_back_btn').onclick = () => {
@@ -40,7 +40,8 @@ document.getElementById('credit_close').onclick = nav.theaterClose;
 
 document.getElementById('rgpd_btn').onclick = nav.displayRGPD;
 document.getElementById('rgpd_back_btn').onclick = nav.displayMenu;
-// < PLAY > //
+
+// < play > //
 
 document.getElementById('one_vs_one_online_btn').onclick = nav.displayOnlineMenu;
 
@@ -54,7 +55,7 @@ document.getElementById('start_2v1_local').onclick = displayLocal1v2;
 document.getElementById('two_vs_one_local_btn').onclick = nav.displayTwoVsOneGameLocal;
 document.getElementById('start_1v1_online').onclick = displayOnline1v1;
 
-// < CLASSIC > //
+// < classic > //
 
 document.getElementById('create_lobby_btn').onclick = nav.displayCreateLobby;
 document.getElementById('create_classic_back_btn').onclick = nav.displayOnlineMenu;
@@ -64,7 +65,7 @@ document.getElementById('join_classic_back_btn').onclick = nav.displayOnlineMenu
 
 document.getElementById('one_vs_one_online_choice_back_btn').onclick = nav.removeOnlineMenu;
 
-// < TOURNAMENT > //
+// < tournament > //
 
 document.getElementById('play_tournament_btn').onclick = nav.displayTournamentSetup;
 document.getElementById('back_tournament_btn').onclick = nav.removeTournamentSetup;
@@ -75,12 +76,13 @@ document.getElementById('back_tournament_form_btn').onclick = nav.removeTourname
 document.getElementById('t_start_game').onclick = displayTournamentGame;
 document.getElementById('t_leaderboard').onclick = displayTournamentLeaderboard;
 
-// < CUSTOMIZE > //
+// < customize > //
 
 document.getElementById('game_map_btn_selector').onchange = changeGameMap;
 document.getElementById('switch_classic').onchange = changeGameMode;
 document.getElementById('switch_tournament').onchange = changeGameMode;
-// < STATS > //
+
+// < stats > //
 
 document.getElementById('local_stats_btn').onclick = nav.displayLocalStats;
 document.getElementById('local_stats_back_btn').onclick = nav.removeLocalStats;
@@ -97,7 +99,7 @@ document.getElementById('next_history').onclick = displayNextHistoryPage;
 
 document.getElementById('switch_visual_input').onchange = changeStatsDisplayMode;
 
-// < SETTINGS > //
+// < settings > //
 
 document.getElementById('language_btn_selector').onchange = changeLanguage;
 document.getElementById('text_size_btn_selector').onchange = changeTextSize;
@@ -116,7 +118,7 @@ document.getElementById('read_local_data_btn').onclick = readLocalData;
 document.getElementById('delete_local_data_btn').onclick = deleteLocalData;
 document.getElementById('delete_online_data_btn').onclick = deleteOnlineData;
 
-// < GAME > //
+// < game > //
 
 document.getElementById('top_logo').onclick = async function(){
 	hideSidebar();
@@ -135,13 +137,9 @@ document.getElementById('home_btn').onclick = async function(){
 	nav.displayMenu();
 };
 
-
-
-// < PEER ANSWERS/OFFERS> //
+// < peer answers/offers > //
 
 document.getElementById('init_p2p').onclick = fetchAnswer;
 document.getElementById('submit_inv_code').onclick = fetchOffer;
-
 document.getElementById('game_map_btn_selector').onmouseover = showMapTooltip;
-
 document.getElementById('game_map_btn_selector').onmouseout = removeMapTooltip;

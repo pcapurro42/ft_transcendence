@@ -110,7 +110,7 @@ const nav = {
         nav.displayTournamentSetup();
     },
 
-// < DISPLAY/REMOVE > //
+// < display/remove > //
 
     displayPlay : function(){
         nav.hideEveryDiv();

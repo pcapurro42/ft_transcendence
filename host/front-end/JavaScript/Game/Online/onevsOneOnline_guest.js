@@ -1,7 +1,5 @@
 
-// <<<<<<< 1V1 >>>>>>> //
-
-// < Game class > //
+// < game class > //
 
 class OnlineGame1v1_guest
 {

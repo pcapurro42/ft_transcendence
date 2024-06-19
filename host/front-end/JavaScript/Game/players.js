@@ -1,4 +1,4 @@
-// < Player class > //
+// < player class > //
 
 class Bar1v1
 {
