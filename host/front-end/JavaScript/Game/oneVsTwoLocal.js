@@ -313,6 +313,8 @@ class LocalGame1v2
         this.right_player_1.reset();
         this.right_player_2.reset();
 
+        this.ball.reset();
+
         this.alert = 0;
 
         if (gameMode != "normal")

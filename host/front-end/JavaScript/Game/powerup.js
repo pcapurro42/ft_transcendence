@@ -131,10 +131,11 @@ class PowerUp
 
     applyPlayerBonus()
     {
-        if (role != 'guest')
-            bonus_type = generateNumber(2);
-        if (role == 'host')
-            data_channel.send(`b_type:${bonus_type}`);
+        if (players_nb == 1)
+        {
+            if (role == 'guest')
+                bonus_type = generateNumber(2), data_channel.send(`b_type:${bonus_type}`);
+        }
         if (players_nb == 2)
         {
             if (this.x <= this.game.game_width / 2)

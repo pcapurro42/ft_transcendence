@@ -217,7 +217,9 @@ class OnlineGame1v1_host
         this.refreshScores();
         this.refreshPlayers();
         this.refreshBall();
+
         data_channel.send(`bpos:${this.ball.y}/${this.ball.x}`);
+
         if (gameMode != "normal")
             this.refreshBonus();
     }
@@ -285,17 +287,22 @@ class OnlineGame1v1_host
         if (this.bonus_one.alive == true && (this.scores[0] >= 2 || this.scores[1] >= 2))
         {
             this.bonus_one.print();
+
             this.bonus_one.animate();
-            this.bonus_one.print();
             data_channel.send(`b1:${this.bonus_one.x}_${this.bonus_one.y}`);
+
+            this.bonus_one.print();
+            
         }
 
         if (this.bonus_two.alive == true && (this.scores[0] >= 4 || this.scores[1] >= 4))
         {
             this.bonus_two.print();
+
             this.bonus_two.animate();
-            this.bonus_two.print();
             data_channel.send(`b2:${this.bonus_two.x}_${this.bonus_two.y}`);
+
+            this.bonus_two.print();
 
         }
     }
