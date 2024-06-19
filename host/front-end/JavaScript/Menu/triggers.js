@@ -123,6 +123,7 @@ document.getElementById('top_logo').onclick = function(){
 };
 
 document.getElementById('home_btn').onclick = async function(){
+	hideSidebar();
 	if (!(await handleSensitivePages()))
         return;
 	nav.hideEveryDiv();

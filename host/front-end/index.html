@@ -871,13 +871,15 @@
         </div>
 
         <div class="offcanvas offcanvas-start" tabindex="-1" id="sideMenu" data-title="ARIA Sidebar Menu" aria-label data-bs-backdrop="true">
-            <div id="offcanvas_head" class="offcanvas-header">
-                <button id="home_btn" class="btn-simple btn_img p-0" data-title="Main Menu" data-title="Main Menu" aria-label="" role="button" data-isnormal="55px" data-islarge="65px" ><img src="./Materials/images/menu/home.png" class="image img-fluid btn_icon btn_img" alt="" ></button>
-                <div class="mx-auto">
+            <div id="offcanvas_head" class="d-flex justify-content-between offcanvas-header">
+                <div>
+                    <button id="home_btn" class="me-2 btn-simple btn_img p-0" data-title="Main Menu" data-title="Main Menu" aria-label="" role="button" data-isnormal="55px" data-islarge="65px" ><img src="./Materials/images/menu/home.png" class="image img-fluid btn_icon btn_img" alt="" ></button>
                     <button id="music_toggle_btn" class="btn_img btn-simple p-0" data-alt="Music Icon" data-title="Enable/Disable menu music" aria-label="" data-isnormal="35px" data-islarge="47px" role="button"><img id ="music_toggle" src="./Materials/images/menu/music-off.png" class="img-fluid image music_togglers btn_icon" alt=""></button>
                     <button id="sound_toggle_btn" class="btn-simple btn_img p-0" data-alt="Sound Icon" data-isnormal="45px" data-islarge="60px" data-title="Enable/Disable menu sounds" aria-label=""><img id="sound_toggle" src="./Materials/images/menu/sound-on.png" class="img-fluid image sound_togglers btn_icon" alt=""></button>
                 </div>
-                <button type="button" class="btn btn-simple text float-end" data-bs-dismiss="offcanvas" data-title="ARIA Close sidebar" aria-label="">&#x2717;</button>
+                <div>
+                    <button type="button" class="btn btn-simple text float-end" data-bs-dismiss="offcanvas" data-title="ARIA Close sidebar" aria-label="" data-tsnormal="20px" data-tslarge="30px">&#x2717;</button>
+                </div>
             </div>
 
             <div class="offcanvas-body">
