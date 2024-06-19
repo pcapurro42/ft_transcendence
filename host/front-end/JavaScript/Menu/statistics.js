@@ -433,6 +433,8 @@ nav.removeLocalStats = function()
 
 nav.displayOnlineStats = function()
 {
+    if (!isConnected())
+        return;
     let v_tmp = visual;
     nav.hideEveryDiv();
     let stat_menu = document.getElementById('stats_menu');

@@ -19,6 +19,8 @@ const nav = {
 
     displayOnlineMenu: function()
     {
+        if (!isConnected())
+            return;
         nav.hideEveryDiv();
 
         document.getElementById('online_menu').style.display = "block";

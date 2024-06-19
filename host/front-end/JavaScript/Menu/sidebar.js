@@ -50,14 +50,14 @@ document.getElementById('sb_1v2').onclick = async () => {
 
 document.getElementById('sb_create_lobby').onclick = async () =>{
 	hideSidebar();
-	if (!(await handleSensitivePages()))
+	if (!(await handleSensitivePages())  || !isConnected())
 		return;
 	nav.displayCreateLobby();
 };
 
 document.getElementById('sb_join_lobby').onclick = async () =>{
 	hideSidebar();
-	if (!(await handleSensitivePages()))
+	if (!(await handleSensitivePages())  || !isConnected())
 		return;
 	nav.displayJoinLobby();
 };
@@ -71,14 +71,14 @@ document.getElementById('sb_local_stat').onclick = async () =>{
 
 document.getElementById('sb_online_stat').onclick = async () => {
 	hideSidebar();
-	if (!(await handleSensitivePages()))
+	if (!(await handleSensitivePages()) || !isConnected())
 		return;
 	nav.displayOnlineStats();
 };
 
 document.getElementById('sb_game_history').onclick = async () => {
 	hideSidebar();
-	if (!(await handleSensitivePages()))
+	if (!(await handleSensitivePages()) || !isConnected())
 		return;
 	nav.displayHistory();
 };

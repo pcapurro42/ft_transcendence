@@ -261,26 +261,6 @@ function refreshDisplay()
     else
         setDescriptiveImages("disable");
 
-    // let test = document.querySelectorAll('.btn .border');
-
-    // for (let i = 0; i < test.length; i++){
-    //     test[i].onmouseover.style.transform = '';
-    // }
-
-    if (localStorage.getItem('status') == "connected")
-    {
-        document.getElementById('one_vs_one_online_btn').removeAttribute('disabled');
-        document.getElementById('sb_o_1v1').removeAttribute('disabled');
-        document.getElementById('history_btn').removeAttribute('disabled');
-        document.getElementById('online_stats_btn').removeAttribute('disabled');
-    }
-    else
-    {
-        document.getElementById('one_vs_one_online_btn').setAttribute('disabled', true);
-        document.getElementById('sb_o_1v1').setAttribute('disabled', true);
-        document.getElementById('history_btn').setAttribute('disabled', true);
-        document.getElementById('online_stats_btn').setAttribute('disabled', true);
-    }
     ARIAButtonState();
     ARIASoundsSlider();
 }

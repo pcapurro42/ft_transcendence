@@ -443,6 +443,8 @@ function refreshHistory()
 
 nav.displayHistory = function()
 {
+    if (!isConnected())
+        return;
     nav.hideEveryDiv();
     let stat_menu = document.getElementById('stats_menu');
     let stats_menu_btn = document.getElementById('stats_menu_buttons');

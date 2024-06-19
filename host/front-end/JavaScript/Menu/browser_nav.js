@@ -90,24 +90,38 @@ async function handleLocation(){
         case getSpecificTranslation('fr', '/online'):
         case getSpecificTranslation('es', '/online'):
         case '/online':
-            nav.displayOnlineMenu();
+            if (isConnected())
+                    nav.displayOnlineMenu();
+            else{
+                nav.displayMenu();
+                displayStatusBarAlert(getTranslation('Forbidden Page'));
+            }
             return;
         case getSpecificTranslation('fr', '/create-lobby'):
         case getSpecificTranslation('es', '/create-lobby'):
         case '/create-lobby':
-            nav.displayCreateLobby()
+            if (isConnected())
+                nav.displayCreateLobby();
+            else{
+                nav.displayMenu();
+                displayStatusBarAlert(getTranslation('Forbidden Page'));
+            }
             return;
         case getSpecificTranslation('fr', '/join-lobby'):
         case getSpecificTranslation('es', '/join-lobby'):
         case '/join-lobby':
-            nav.displayJoinLobby();
+            if (isConnected())
+                nav.displayJoinLobby();
+            else{
+                nav.displayMenu();
+                displayStatusBarAlert(getTranslation('Forbidden Page'));
+            }
             return;
         case getSpecificTranslation('fr', '/online-game'):
         case getSpecificTranslation('es', '/online-game'):
         case '/online-game':
             previous_url_path = "";
             nav.displayMenu();
-            refreshSite();
             displayStatusBarWarning(getTranslation('Refresh Alert Online'))
             return;
         case getSpecificTranslation('fr', '/tournament'):
@@ -140,7 +154,12 @@ async function handleLocation(){
         case getSpecificTranslation('fr', '/game-history'):
         case getSpecificTranslation('es', '/game-history'):
         case '/game-history':
-            nav.displayHistory();
+            if (isConnected())
+                nav.displayHistory();
+            else{
+                nav.displayMenu();
+                displayStatusBarAlert(getTranslation('Forbidden Page'));
+            }
             return;
         case getSpecificTranslation('fr', '/local-stats'):
         case getSpecificTranslation('es', '/local-stats'):
@@ -150,7 +169,12 @@ async function handleLocation(){
         case getSpecificTranslation('fr', '/online-stats'):
         case getSpecificTranslation('es', '/online-stats'):
         case '/online-stats':
-            nav.displayOnlineStats();
+            if (isConnected())
+                nav.displayOnlineStats();
+            else{
+                nav.displayMenu();
+                displayStatusBarAlert(getTranslation('Forbidden Page'));
+            }
             return;
         case getSpecificTranslation('fr', '/settings'):
         case getSpecificTranslation('es', '/settings'):

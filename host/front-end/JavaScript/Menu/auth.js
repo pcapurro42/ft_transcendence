@@ -13,6 +13,13 @@ async function logout()
     localStorage.removeItem("login");
 }
 
+function isConnected(){
+    if (localStorage.getItem('status') == 'connected')
+        return true;
+    document.getElementById('door_locked').play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
+    displayStatusBarAlert(getTranslation('Forbidden Page'));
+    return false;
+}
 /********************************************** API UTILS ************************************************/
 
 async function handleRedirection(){
