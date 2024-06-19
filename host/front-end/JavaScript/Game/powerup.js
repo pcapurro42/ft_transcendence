@@ -132,8 +132,9 @@ class PowerUp
 
     applyPlayerBonus()
     {
-        if (role != 'guest'){
-            bonus_type = generateNumber(2)
+        if (role == null || role == 'host')
+        {
+            bonus_type = generateNumber(2);
             if (role == 'host')
                 data_channel.send(`b_type:${bonus_type}`);
         }
@@ -275,15 +276,10 @@ class PowerUp
         }
     }
 
-    animate()
+    applyStats()
     {
-        if (this.isAtLimits() == true)
-            this.direction = this.getOpposite(), this.getAwayFromLimits();
-        else if (this.isAtPlayer() == true)
+        if (this.isAtPlayer() == true)
         {
-            this.applyPlayerBonus();
-            this.alive = false;
-
             if (role == null)
                 this.bonus_taken++;
             else
@@ -292,10 +288,22 @@ class PowerUp
                     this.onl_taken++;
             }
         }
+    }
+
+    animate()
+    {
+        if (this.isAtLimits() == true)
+            this.direction = this.getOpposite(), this.getAwayFromLimits();
+        else if (this.isAtPlayer() == true)
+        {
+            this.applyPlayerBonus();
+            this.applyStats();
+            this.alive = false;
+        }
         else if (this.isAtBall() == true)
             this.applyBallBonus(), this.alive = false;
 
-        if (role != 'guest')
+        if (role == null || role == 'host')
             this.move();
     }
 }

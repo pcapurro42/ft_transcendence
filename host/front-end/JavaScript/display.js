@@ -2,16 +2,10 @@ nav.displayMenu = async function()
 {
     nav.hideEveryDiv();
 
-    let main_page = document.getElementById('main_page');
-    main_page.style.display = 'block';
-
-    let main_menu_page = document.getElementById('main_menu_page');
-    main_menu_page.style.display = "block";
-
-    let main_menu_buttons = document.getElementById('main_menu_buttons');
-    main_menu_buttons.style.display = "block";
-
-    let main_menu_toolbar = document.getElementById('main_menu_toolbar').style.display = "block";
+    document.getElementById('main_page').style.display = 'block';
+    document.getElementById('main_menu_page').style.display = "block";
+    document.getElementById('main_menu_buttons').style.display = "block";
+    document.getElementById('main_menu_toolbar').style.display = "block";
 
     stop_flag = true; // stop tournament
     active = false; // turn off the game
@@ -30,8 +24,7 @@ nav.displayMenu = async function()
 
 nav.removeMenu = function()
 {
-    let main_menu_page = document.getElementById('main_page');
-    main_menu_page.style.display = "none";
+    document.getElementById('main_page').style.display = "none";
 }
 
 function refreshSite()
@@ -41,25 +34,22 @@ function refreshSite()
 
 function setBackgroundColor(color)
 {
-    let background = document.body;
-    let modal_disco = document.getElementById('modal_color_disco');
-    let modal_leaving = document.getElementById('modal_color_leaving');
-    let modal_leaderboard = document.getElementById('modal_color_leaderboard');
-    let login_dropdown = document.getElementById('login_dropdown');
-
     if (color == "white"){
-        login_dropdown.style.setProperty("background-color", "white");
-        background.style.setProperty("background-color", "white");
-        modal_disco.style.setProperty("background-color", "white");
-        modal_leaving.style.setProperty("background-color", "white");
-        modal_leaderboard.style.setProperty("background-color", "white");
+        document.body.style.setProperty("background-color", "white");
+        
+        document.getElementById('login_dropdown').style.setProperty("background-color", "white");
+        document.getElementById('modal_color_disco').style.setProperty("background-color", "white");
+        document.getElementById('modal_color_leaving').style.setProperty("background-color", "white");
+        document.getElementById('modal_color_leaderboard').style.setProperty("background-color", "white");
     }
-    else{
-        login_dropdown.style.setProperty("background-color", "black");
-        background.style.setProperty("background-color", "black");
-        modal_disco.style.setProperty("background-color", "black");
-        modal_leaving.style.setProperty("background-color", "black");
-        modal_leaderboard.style.setProperty("background-color", "black");
+    else
+    {
+        document.body.style.setProperty("background-color", "black");
+        
+        document.getElementById('login_dropdown').style.setProperty("background-color", "black");
+        document.getElementById('modal_color_disco').style.setProperty("background-color", "black");
+        document.getElementById('modal_color_leaving').style.setProperty("background-color", "black");
+        document.getElementById('modal_color_leaderboard').style.setProperty("background-color", "black");
     }
 }
 
