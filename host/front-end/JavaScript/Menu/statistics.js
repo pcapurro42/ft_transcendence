@@ -155,11 +155,9 @@ class VisualStats
 
             // returned
 
-            let returned_value;
-            if (~~((this.onl_ball_return * 100) / this.onl_ball_received) == 100)
-                returned_value = 100;
-            else
-                returned_value = ((this.onl_ball_return * 100) / this.onl_ball_received).toFixed(1);
+            let returned_value = ((this.onl_ball_return * 100) / this.onl_ball_received).toFixed(1);
+            if (returned_value % 1 == 0)
+                returned_value = ~~returned_value;
 
             let returned_height = ((returned_value) * this.histogram_data_max_height) / 100;
             let y_pos_returned = this.histogram_last_line_y - returned_height;
@@ -173,11 +171,9 @@ class VisualStats
 
             // missed
 
-            let missed_value;
-            if (~~((this.onl_ball_missed * 100) / this.onl_ball_received) == 100)
-                missed_value = 100;
-            else
-                missed_value = ((this.onl_ball_missed * 100) / this.onl_ball_received).toFixed(1);
+            let missed_value = ((this.onl_ball_missed * 100) / this.onl_ball_received).toFixed(1);
+            if (missed_value % 1 == 0)
+                missed_value = ~~missed_value;
 
             let missed_height = ((missed_value) * this.histogram_data_max_height) / 100;
             let y_pos_missed = this.histogram_last_line_y - missed_height;
@@ -235,11 +231,9 @@ class VisualStats
 
             // returned
 
-            let taken_value;
-            if (~~((this.onl_bonus_taken * 100) / this.onl_bonus_received) == 100)
-                taken_value = 100;
-            else
-                taken_value = ((this.onl_bonus_taken * 100) / this.onl_bonus_received).toFixed(1);
+            let taken_value = ((this.onl_bonus_taken * 100) / this.onl_bonus_received).toFixed(1);
+            if (taken_value % 1 == 0)
+                taken_value = ~~taken_value;
 
             let taken_height = ((taken_value) * this.histogram_data_max_height) / 100;
             let y_pos_taken = this.histogram_last_line_y - taken_height;
@@ -253,12 +247,10 @@ class VisualStats
 
             // missed
 
-            let missed_value;
-            if (~~((this.onl_bonus_missed * 100) / this.onl_bonus_received) == 100)
-                missed_value = 100;
-            else
-                missed_value = ((this.onl_bonus_missed * 100) / this.onl_bonus_received).toFixed(1);
-            
+            let missed_value = ((this.onl_bonus_missed * 100) / this.onl_bonus_received).toFixed(1);
+            if (missed_value % 1 == 0)
+                missed_value = ~~missed_value;
+
             let missed_height = ((missed_value) * this.histogram_data_max_height) / 100;
             let y_pos_missed = this.histogram_last_line_y - missed_height;
 
