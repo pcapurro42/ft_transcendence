@@ -277,17 +277,8 @@ class PowerUp
 
     animate()
     {
-
         if (this.isAtLimits() == true)
-        {
-            if (this.isLeftOrRight() == true)
-            {
-                if (role == 'host' && this.x < this.game.game_width / 2 || role == 'guest' && this.x > this.game.game_width / 2)
-                    this.onl_received++;
-            }
-
             this.direction = this.getOpposite(), this.getAwayFromLimits();
-        }
         else if (this.isAtPlayer() == true)
         {
             this.applyPlayerBonus();
@@ -298,7 +289,7 @@ class PowerUp
             else
             {
                 if (role == 'host' && this.x < this.game.game_width / 2 || role == 'guest' && this.x > this.game.game_width / 2)
-                    this.onl_received++, this.onl_taken++;
+                    this.onl_taken++;
             }
         }
         else if (this.isAtBall() == true)
