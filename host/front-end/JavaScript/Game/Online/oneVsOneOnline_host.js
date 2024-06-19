@@ -352,10 +352,8 @@ class OnlineGame1v1_host
             if (this.end_time == 0)
                 this.end_time = getActualTimeSeconds();
 
-            let player_left_won = document.getElementById('h_win_text');
-            player_left_won.innerHTML = localStorage.getItem('login') + getTranslation('Online Win');
-            player_left_won.style.display = "block";
-
+            document.getElementById('h_win_text').innerHTML = localStorage.getItem('login') + getTranslation('Online Win');
+            document.getElementById('h_win_text').style.display = "block";
             document.getElementById('online_winner').play();
 
             return (true);
@@ -365,10 +363,8 @@ class OnlineGame1v1_host
             if (this.end_time == 0)
                 this.end_time = getActualTimeSeconds();
 
-            let player_right_won = document.getElementById('h_win_text');
-            player_right_won.innerHTML = localStorage.getItem('opponent_login') + getTranslation('Online Win');
-            player_right_won.style.display = "block";
-
+            document.getElementById('h_win_text').innerHTML = localStorage.getItem('opponent_login') + getTranslation('Online Win');
+            document.getElementById('h_win_text').style.display = "block";
             document.getElementById('online_loser').play();
 
             return (true);

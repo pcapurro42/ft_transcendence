@@ -32,8 +32,7 @@ function changeDescriptiveImages()
 
 function changeSoundsVolume()
 {
-    let sound_slider = document.getElementById('sound_volume_slider');
-    let new_volume = sound_slider.value;
+    let new_volume = document.getElementById('sound_volume_slider').value;
 
     localStorage.setItem('sounds_volume', new_volume);
     sounds_volume = new_volume;
@@ -43,8 +42,7 @@ function changeSoundsVolume()
 
 function changeMusicVolume()
 {
-    let music_slider = document.getElementById('music_volume_slider');
-    let new_volume = music_slider.value;
+    let new_volume = document.getElementById('music_volume_slider').value;
 
     localStorage.setItem('music_volume', new_volume);
     music_volume = new_volume;
@@ -66,8 +64,7 @@ function letterSwitch(){
 
 function changeTextSize()
 {
-    let text_size_btn_selector = document.getElementById('text_size_btn_selector');
-    let new_size = (text_size_btn_selector.value).toLowerCase();
+    let new_size = (document.getElementById('text_size_btn_selector').value).toLowerCase();
 
     localStorage.setItem("text_size", new_size);
     text_size = new_size;
@@ -77,8 +74,7 @@ function changeTextSize()
 
 function changeLanguage()
 {
-    let language_btn_selector = document.getElementById('language_btn_selector');
-    let new_language = language_btn_selector.value;
+    let new_language = document.getElementById('language_btn_selector').value;
 
     localStorage.setItem("language", new_language);
     language = new_language;
@@ -92,10 +88,8 @@ function displaySecondSettingsPage()
 {
     nav.hideEveryDiv();
 
-    let settings_menu = document.getElementById('settings_menu');
-    let settings_back_btn = document.getElementById('settings_back_btn');
-    settings_menu.style.display = 'block';
-    settings_back_btn.style.display = 'block';
+    document.getElementById('settings_menu').style.display = 'block';
+    document.getElementById('settings_back_btn').style.display = 'block';
 
     document.getElementById('settings_left_panel').style.display = "none";
     document.getElementById('settings_right_panel').style.display = "none";
@@ -124,25 +118,16 @@ nav.displaySettings = function()
 {
     nav.hideEveryDiv();
 
-    let settings_menu = document.getElementById('settings_menu');
-    let settings_back_btn = document.getElementById('settings_back_btn');
-
-    settings_menu.style.display = 'block';
-    settings_back_btn.style.display = 'block';
-
+    document.getElementById('settings_menu').style.display = 'block';
+    document.getElementById('settings_back_btn').style.display = 'block';
 
     displayFirstSettingsPage();
 }
 
 nav.removeSettings = function()
 {
-    let main_menu = document.getElementById('main_menu_buttons');
-
-    let settings_menu = document.getElementById('settings_menu');
-    let settings_back_btn = document.getElementById('settings_back_btn');
-
-    settings_menu.style.display = 'none';
-    settings_back_btn.style.display = 'none';
+    document.getElementById('settings_menu').style.display = 'none';
+    document.getElementById('settings_back_btn').style.display = 'none';
 
     nav.displayMenu();
 }
@@ -207,11 +192,8 @@ function initializeGameMode(){
 }
 
 function ARIASoundsSlider(){
-	sound_slide = document.getElementById('sound_volume_slider');
-	music_slide = document.getElementById('music_volume_slider');
-
-	sound_slide.setAttribute('aria-label', getTranslation("Sound volume"));
-	music_slide.setAttribute('aria-label', getTranslation("Music volume"));
+	document.getElementById('sound_volume_slider').setAttribute('aria-label', getTranslation("Sound volume"));
+	document.getElementById('music_volume_slider').setAttribute('aria-label', getTranslation("Music volume"));
 }
 
 function ARIAButtonState(){

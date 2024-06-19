@@ -167,28 +167,20 @@ function getIceConfig(){
 	return iceConf;
 }
 
-function freeInputAndForms(){
-	let t_invalid_alias = document.getElementById('invalid-alias-msg');
-    t_invalid_alias.classList.add('d-none');
+function freeInputAndForms()
+{
+    document.getElementById('invalid-alias-msg').classList.add('d-none');
 
 	let t_cross = document.querySelectorAll('.invalid-feedback');
 	t_cross.forEach(element => {
 		element.style.display = 'none';
 	});
-    let t_duplicate = document.getElementById('duplicate_nick');
-    t_duplicate.style.display = 'none';
 
-    let input = document.getElementById('alias_input');
-    input.value = '';
-
-	let paste_inv_code = document.getElementById('paste_inv_code');
-	paste_inv_code.value = '';
-
-	let inv_code = document.getElementById('invitation_code');
-	inv_code.value = '';
-
-	let create_lobby_msg = document.getElementById('create_lobby_msg');
-	create_lobby_msg.innerHTML = '';
+    document.getElementById('duplicate_nick').style.display = 'none';
+    document.getElementById('alias_input').value = '';
+	document.getElementById('paste_inv_code').value = '';
+	document.getElementById('invitation_code').value = '';
+	document.getElementById('create_lobby_msg').innerHTML = '';
 }
 
 function sleep(ms){

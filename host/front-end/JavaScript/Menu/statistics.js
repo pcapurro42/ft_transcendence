@@ -356,9 +356,7 @@ function refreshStats()
 
 function changeStatsDisplayMode()
 {
-    let switch_box = document.getElementById('switch_visual_input');
-
-    if (switch_box.checked == true)
+    if (document.getElementById('switch_visual_input').checked == true)
         localStorage.setItem('visual_mode', 'true'), visual = true;
     else
         localStorage.setItem('visual_mode', 'false'), visual = false;
@@ -379,13 +377,9 @@ nav.displayStats = function()
 {
     nav.hideEveryDiv();
 
-    let stats_menu = document.getElementById('stats_menu');
-    let stats_menu_btn = document.getElementById('stats_menu_buttons');
-    let stats_back_btn = document.getElementById('stats_back_btn');
-
-    stats_menu.style.display = 'block';
-    stats_menu_btn.style.display = 'block';
-    stats_back_btn.style.display = 'block';
+    document.getElementById('stats_menu').style.display = 'block';
+    document.getElementById('stats_menu_buttons').style.display = 'block';
+    document.getElementById('stats_back_btn').style.display = 'block';
 
     addToHistory('/statistics');
     document.title = getTranslation('Statistics');
@@ -393,11 +387,8 @@ nav.displayStats = function()
 
 nav.removeStats = function()
 {
-    let stats_menu = document.getElementById('stats_menu');
-    let stats_back_btn = document.getElementById('stats_back_btn');
-
-    stats_menu.style.display = 'none';
-    stats_back_btn.style.display = 'none';
+    document.getElementById('stats_menu').style.display = 'none';
+    document.getElementById('stats_back_btn').style.display = 'none';
 
     nav.displayMenu();
 }
@@ -405,15 +396,11 @@ nav.removeStats = function()
 nav.displayLocalStats = function()
 {
     nav.hideEveryDiv();
-    let stat_menu = document.getElementById('stats_menu');
-    let stats_menu_btn = document.getElementById('stats_menu_buttons');
-    let stats_back_btn = document.getElementById('stats_back_btn');
-    let local_stats = document.getElementById('local_stats');
 
-    stat_menu.style.display = 'block';
-    stats_menu_btn.style.display = 'none';
-    stats_back_btn.style.display = 'none';
-    local_stats.style.display = 'block';
+    document.getElementById('stats_menu').style.display = 'block';
+    document.getElementById('stats_menu_buttons').style.display = 'none';
+    document.getElementById('stats_back_btn').style.display = 'none';
+    document.getElementById('local_stats').style.display = 'block';
 
     refreshStats();
 
@@ -425,9 +412,7 @@ nav.displayLocalStats = function()
 
 nav.removeLocalStats = function()
 {
-    let local_stats = document.getElementById('local_stats');
-
-    local_stats.style.display = 'none';
+    document.getElementById('local_stats').style.display = 'none';
     nav.displayStats();
 }
 
@@ -435,21 +420,17 @@ nav.displayOnlineStats = function()
 {
     if (!isConnected())
         return;
-    let v_tmp = visual;
-    nav.hideEveryDiv();
-    let stat_menu = document.getElementById('stats_menu');
-    let stats_menu_btn = document.getElementById('stats_menu_buttons');
-    let stats_back_btn = document.getElementById('stats_back_btn');
-    let online_stats = document.getElementById('online_stats');
 
-    stat_menu.style.display = 'block';
-    stats_menu_btn.style.display = 'none';
-    stats_back_btn.style.display = 'none';
-    online_stats.style.display = 'block';
+    nav.hideEveryDiv();
+
+    document.getElementById('stats_menu').style.display = 'block';
+    document.getElementById('stats_menu_buttons').style.display = 'none';
+    document.getElementById('stats_back_btn').style.display = 'none';
+    document.getElementById('online_stats').style.display = 'block';
 
     refreshStats();
 
-    if (v_tmp == true)
+    if (visual == true)
     {
         document.getElementById('online_stats_v').style.display = 'block';
         document.getElementById('online_stats_nv').style.display = 'none';
@@ -475,8 +456,6 @@ nav.displayOnlineStats = function()
 
 nav.removeOnlineStats = function()
 {
-    let online_stats = document.getElementById('online_stats');
-
-    online_stats.style.display = 'none';
+    document.getElementById('online_stats').style.display = 'none';
     nav.displayStats();
 }

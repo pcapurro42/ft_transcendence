@@ -341,15 +341,9 @@ class LocalGame1v2
         if (this.scores[0] > 9 || this.scores[1] > 9)
         {
             if (this.scores[0] > 9)
-            {
-                let left_side_won = document.getElementById('left_side_won_text');
-                left_side_won.style.display = "block";
-            }
+                document.getElementById('left_side_won_text').style.display = "block";
             if (this.scores[1] > 9)
-            {
-                let right_side_won = document.getElementById('right_side_won_text');
-                right_side_won.style.display = "block";
-            }
+                document.getElementById('right_side_won_text').style.display = "block";
 
             localStorage.setItem('lcl_game_played_nb', (parseInt(localStorage.getItem('lcl_game_played_nb')) + 1).toString());
 
@@ -381,15 +375,10 @@ function initializeLocal1v2()
 
 function displayLocal1v2()
 {
-    let start_btn = document.getElementById('start_2v1_local');
-    start_btn.style.visibility = "hidden";
-    let player_side_won = document.getElementById('left_side_won_text');
-    player_side_won.style.display = "none";
-    let right_side_won = document.getElementById('right_side_won_text');
-    right_side_won.style.display = "none";
-
-    let timer = document.getElementById('2v1_local_timer');
-    timer.style.display = "block";
+    document.getElementById('start_2v1_local').style.visibility = "hidden";
+    document.getElementById('left_side_won_text').style.display = "none";
+    document.getElementById('right_side_won_text').style.display = "none";
+    document.getElementById('2v1_local_timer').style.display = "block";
 
     stopKeysAnim();
     displayCountDown(3);
@@ -397,17 +386,12 @@ function displayLocal1v2()
 
 function removeLocal1v2()
 {
-    let menu_music = document.getElementById('mgs');
-    let game_music = gameMusicSelector();
+    gameMusicSelector().pause();
 
-    game_music.pause();
-    menu_music.play();
-    let timer = document.getElementById('2v1_local_timer');
-    timer.style.display = "none";
-
-    let start_btn = document.getElementById('start_2v1_local');
-    start_btn.innerHTML = getTranslation("Launch a game");
-    start_btn.style.visibility = "visible";
+    document.getElementById('mgs').play();
+    document.getElementById('2v1_local_timer').style.display = "none";
+    document.getElementById('start_2v1_local').innerHTML = getTranslation("Launch a game");
+    document.getElementById('start_2v1_local').style.visibility = "visible";
 
     resumeKeysAnim();
 }

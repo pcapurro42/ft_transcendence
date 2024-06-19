@@ -5,7 +5,6 @@ function parse_alias(nbr, event){
 	const regex = /^[A-Za-z0-9\-_]+$/;
  	let inputs = document.querySelectorAll('#parent_form input');
 	let err = document.querySelectorAll('#parent_form .invalid-feedback');
-	let msg_err = document.getElementById('invalid-alias-msg')
 	let bool = true;
 	let alias_array = [];
 
@@ -23,7 +22,7 @@ function parse_alias(nbr, event){
 	}
 
 	if(bool == true){
-		msg_err.classList.add('d-none');
+		document.getElementById('invalid-alias-msg').classList.add('d-none');
 		if (isDuplicateNicknames(inputs) == true){
 			document.getElementById('duplicate_nick').classList.remove('d-none');
 		}
@@ -38,7 +37,7 @@ function parse_alias(nbr, event){
 		}
 	}
 	else
-		msg_err.classList.remove('d-none');
+		document.getElementById('invalid-alias-msg').classList.remove('d-none');
 	return null;
 }
 

@@ -68,11 +68,10 @@ function setMaterialsColor(color)
             materials[i].style["background-color"] = "black", materials[i].style["color"] = "white";
     }
 
-    let settings_modal = document.getElementById("settings_modal");
     if (color == "white")
-        settings_modal.style["background-color"] = "white", settings_modal.style["border"] = "black 2px solid";
+        document.getElementById("settings_modal").style["background-color"] = "white", settings_modal.style["border"] = "black 2px solid";
     else
-        settings_modal.style["background-color"] = "black", settings_modal.style["border"] = "white 2px solid";
+        document.getElementById("settings_modal").style["background-color"] = "black", settings_modal.style["border"] = "white 2px solid";
 }
 
 function setImagesColor(color)
@@ -255,10 +254,10 @@ function refreshDisplay()
     ARIASoundsSlider();
 }
 
-function displayDropdownMenu(){
-    let dropdown_toggler = document.getElementById('intra_login');
-    let login_dropdown = document.getElementById('login_dropdown');
-    login_dropdown.classList.remove('d-none');
+function displayDropdownMenu()
+{
+    // let dropdown_toggler = document.getElementById('intra_login');
+    document.getElementById('login_dropdown').classList.remove('d-none');
     addOutsideDropdown();
 }
 function addOutsideDropdown(){
@@ -267,10 +266,10 @@ function addOutsideDropdown(){
 function removeOutsideDropdown(){
     document.removeEventListener('click', outsideDropdownClick)
 }
-function outsideDropdownClick(event){
-    let dropdown_toggler = document.getElementById('intra_login');
-
-    if (!dropdown_toggler.contains(event.target)){
+function outsideDropdownClick(event)
+{
+    if (!document.getElementById('intra_login').contains(event.target))
+    {
         login_dropdown.classList.add('d-none');
         removeOutsideDropdown();
     }

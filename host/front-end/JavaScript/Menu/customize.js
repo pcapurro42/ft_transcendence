@@ -2,9 +2,7 @@
 
 function changeGameMap()
 {
-    let new_game_map = document.getElementById('game_map_btn_selector');
-
-    game_map = new_game_map.value;
+    game_map = document.getElementById('game_map_btn_selector').value;
     localStorage.setItem('game_map', game_map);
 }
 
@@ -22,13 +20,10 @@ function setGameMusic()
 
 nav.displayCustomize = function()
 {
-    let customize_menu = document.getElementById('customize_menu');
-    let customize_back_btn = document.getElementById('customize_back_btn');
-
     nav.hideEveryDiv();
 
-    customize_menu.style.display = 'block';
-    customize_back_btn.style.display = 'block';
+    document.getElementById('customize_menu').style.display = 'block';
+    document.getElementById('customize_back_btn').style.display = 'block';
 
     addToHistory('/customize');
     document.title = getTranslation('Customize');
@@ -36,13 +31,8 @@ nav.displayCustomize = function()
 
 nav.removeCustomize = function()
 {
-    let main_menu = document.getElementById('main_menu_buttons');
-
-    let customize_menu = document.getElementById('customize_menu');
-    let customize_back_btn = document.getElementById('customize_back_btn');
-
-    customize_menu.style.display = 'none';
-    customize_back_btn.style.display = 'none';
+    document.getElementById('customize_menu').style.display = 'none';
+    document.getElementById('customize_back_btn').style.display = 'none';
 
     nav.displayMenu();
 }
@@ -80,7 +70,7 @@ function removeMapTooltip(){
 function initializeCustomize()
 {
     let game_music_selector = document.getElementById('game_theme_btn_selector');
-    let game_map_selector = document.getElementById('game_map_btn_selector');
+
     switch(localStorage.getItem('game_music')){
         case null:
             game_music_selector.value = 1;
@@ -96,6 +86,7 @@ function initializeCustomize()
             break;
     }
 
+    let game_map_selector = document.getElementById('game_map_btn_selector');
 
     switch (localStorage.getItem('game_map')){
           case null:
@@ -115,7 +106,6 @@ function initializeCustomize()
             game_map = game_map_selector.value;
             break;
     }
-
 
     setGameMusic();
 }

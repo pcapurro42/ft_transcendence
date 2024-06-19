@@ -13,8 +13,7 @@ const nav = {
 
     removeClassicChoice : function()
     {
-        let classic_menu = document.getElementById('classic_buttons');
-        classic_menu.style.display = "none";
+        document.getElementById('classic_buttons').style.display = "none";
     },
 
     displayOnlineMenu: function()
@@ -34,9 +33,7 @@ const nav = {
 
     removeOnlineMenu: function()
     {
-        online_menu = document.getElementById('online_menu');
-        online_menu.style.display = "none";
-
+        document.getElementById('online_menu').style.display = "none";
         nav.displayClassicChoice();
     },
 
@@ -71,8 +68,7 @@ const nav = {
 
     displayTournamentSetup : function(){
         nav.hideEveryDiv();
-        let tournament_setup = document.getElementById('tournament_setup');
-	    tournament_setup.style.display = 'block';
+	    document.getElementById('tournament_setup').style.display = 'block';
 
         addToHistory('/tournament');
         document.title = getTranslation('Tournament');
@@ -81,8 +77,7 @@ const nav = {
 
     removeTournamentSetup : function()
     {
-        let tournament_setup = document.getElementById('tournament_setup');
-	    tournament_setup.style.display = 'none';
+	    document.getElementById('tournament_setup').style.display = 'none';
         freeInputAndForms();
         nav.displayPlay();
     },
@@ -108,11 +103,9 @@ const nav = {
     removeTournamentForm : function(event){
         event.preventDefault();
         freeInputAndForms();
-        let tournament_nickname_menu = document.getElementById('tournament_nickname_menu');
-	    tournament_nickname_menu.style.display = 'none';
-
-        let form_alias =  document.getElementById('form_alias');
-        form_alias.style.display = 'none';
+	    
+        document.getElementById('tournament_nickname_menu').style.display = 'none';
+        document.getElementById('form_alias').style.display = 'none';
 
         nav.displayTournamentSetup();
     },
@@ -130,10 +123,7 @@ const nav = {
 
     removePlay : function()
     {
-        let main_menu = document.getElementById('main_menu_buttons');
-        let play_menu = document.getElementById('play_menu');
-
-        play_menu.style.display = 'none';
+        document.getElementById('play_menu').style.display = 'none';
         nav.displayMenu()
     },
 
@@ -159,10 +149,8 @@ const nav = {
         document.getElementById('main_page').style.display = "none";
         document.getElementById('game_toolbar').style.display = "block";
 
-
         handleUnload('no_confirmation', true);
         initializeOnline1v1();
-
 
         addToHistory('/online-game');
         document.title = getTranslation('Online Game');
@@ -237,16 +225,18 @@ const nav = {
         document.getElementById('main_menu_page').style.display = 'none';
         document.getElementById('rgpd_block').style.display = "none";
         document.getElementById('main_page').style.display = 'block';
+
         let status_bars = document.querySelectorAll('.status_bar');
         status_bars.forEach( (elem) =>{
             elem.style.display="none";
         })
+
         let video = document.getElementById('vid_credits');
         video.style.display = "none";
         video.pause();
         video.currentTime = 0;
-	    let cross_exit = document.getElementById('credit_close');
-        cross_exit.style.display = "none";
+
+        document.getElementById('credit_close').style.display = "none";
 
         active = false;
         resetMusicAndSounds();

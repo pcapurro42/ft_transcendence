@@ -143,9 +143,7 @@ function answerTimeout(){
 	countdown.innerHTML = `${answerTimeout}` + getTranslation("Answer Timeout")
 	countdown.style.display = 'block';
 
-	let submit_inv_code = document.getElementById('submit_inv_code');
-	submit_inv_code.setAttribute('disabled', true);
-
+	document.getElementById('submit_inv_code').setAttribute('disabled', true);
 
 	timeoutInterval = setInterval(function() {
 		answerTimeout--;
@@ -154,7 +152,7 @@ function answerTimeout(){
 			countdown.innerHTML = getTranslation("Code Expired")
 			displayStatusBarAlert(getTranslation("Peer Connection Timeout"));
 			freeInputAndForms();
-			submit_inv_code.removeAttribute('disabled');
+			document.getElementById('submit_inv_code').removeAttribute('disabled');
 			RTC_a = null;
 			clearInterval(timeoutInterval);
 		}

@@ -14,8 +14,7 @@ function shuffleArray(nicknames){
 }
 
 function formDuplicator(value){
-	let elem = document.getElementById('form_block');
-	elem.querySelector('#t_form_label').innerHTML = getTranslation("ARIA Tournament Form Label") + ' ' + 1 + ':';
+	document.getElementById('form_block').querySelector('#t_form_label').innerHTML = getTranslation("ARIA Tournament Form Label") + ' ' + 1 + ':';
 	let parent = elem.parentNode;
 	let to_remove = document.querySelectorAll('#parent_form .remover');
 
@@ -26,7 +25,7 @@ function formDuplicator(value){
 	let i;
 
 	for (i = 0; i < value - 1; i++){
-		let clone_form = elem.cloneNode(true);
+		let clone_form = document.getElementById('form_block').cloneNode(true);
 		clone_form.id = 'form_block' + i;
 		let childrens = clone_form.querySelectorAll('[id]');
 		for (let j = 0; j < childrens.length; j++)

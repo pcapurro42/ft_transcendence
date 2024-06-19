@@ -1,18 +1,12 @@
 async function displayNextGame(game_nbr, nicknames){
 
-	let round = document.getElementById('round_block');
-	let player = document.getElementById('nick_announce');
-
-	let roundArray = document.getElementById('Roundof16').querySelectorAll('.game_nbr');
-	let playerArray = document.getElementById('Roundof16').querySelectorAll('.nicks')
-
 	tournamentResetBlocks();
 	fillNicknames(nicknames);
 
-	round.innerHTML = roundArray[game_nbr - 1].innerHTML;
-	player.innerHTML = playerArray[game_nbr - 1].innerHTML
+	document.getElementById('round_block').innerHTML = document.getElementById('Roundof16').querySelectorAll('.game_nbr')[game_nbr - 1].innerHTML;
+	document.getElementById('nick_announce').innerHTML = document.getElementById('Roundof16').querySelectorAll('.nicks')[game_nbr - 1].innerHTML
 
-	await tournamentGameAnimation(player, round);
+	await tournamentGameAnimation(document.getElementById('nick_announce'), document.getElementById('round_block'));
 
 	tournamentResetBlocks();
 	fillNicknames(nicknames);
@@ -127,10 +121,8 @@ async function displayFinalWinner(){
 	let game_page = document.getElementById('game_page_tournament');
 	let top_logo = document.getElementById('game_toolbar');
 
-
 	game_page.style.transition = 'opacity 1s';
 	top_logo.style.transition = 'opacity 1s';
-
 
 	await sleep(10);
 
@@ -150,10 +142,8 @@ async function displayFinalWinner(){
 	document.getElementById('main_menu_page').style.display = 'block';
 	document.getElementById('Roundof16').style.display = 'none';
 
-	let win_msg = document.getElementById('round_block');
-	let win_submsg = document.getElementById('nick_announce');
-	win_msg.innerHTML = getTranslation('Tournament Win Msg');
-	win_submsg.innerHTML = getTranslation('Congratulations') + ' ' + winner + '.';
+	document.getElementById('round_block').innerHTML = getTranslation('Tournament Win Msg');
+	document.getElementById('nick_announce').innerHTML = getTranslation('Congratulations') + ' ' + winner + '.';
 
 	let end_btn = document.getElementById('end_tournament_btn');
 
@@ -163,8 +153,8 @@ async function displayFinalWinner(){
 
 	await sleep(10);
 
-	win_msg.style.opacity = '1';
-	win_submsg.style.opacity = '1';
+	document.getElementById('round_block').style.opacity = '1';
+	document.getElementById('nick_announce').style.opacity = '1';
 	end_btn.style.opacity = '1';
 
 	await sleep (1000)

@@ -22,26 +22,22 @@ function enableDisableSounds()
 
 function alertSound(event)
 {
-	let loginSound = document.getElementById('alert_sound');
-	loginSound.play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
+	document.getElementById('alert_sound').play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
 }
 
 function hoverSound(event)
 {
-    let hoverSound = document.getElementById('hover_sound');
-    hoverSound.play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
+    document.getElementById('hover_sound').play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
 }
 
 function clickSound(event)
 {
-    let clickSound = document.getElementById('click_sound');
-    clickSound.play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
+    document.getElementById('click_sound').play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
 }
 
 function closeSound(event)
 {
-	let closeSound = document.getElementById('close_sound');
-    closeSound.play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
+    document.getElementById('close_sound').play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
 }
 
 function refreshSounds()
@@ -73,8 +69,7 @@ function refreshSounds()
 
 function updateSoundsSlider()
 {
-	let sound_volume_slider = document.getElementById('sound_volume_slider');
-	sound_volume_slider.value = sounds_volume;
+	document.getElementById('sound_volume_slider').value = sounds_volume;
 	ARIASoundsSlider();
 }
 

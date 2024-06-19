@@ -14,26 +14,19 @@ function displayTournamentGame()
 
 function removeTournamentGame()
 {
-    let menu_music = document.getElementById('mgs');
-    let game_music = gameMusicSelector();
+    document.getElementById('mgs').play();
+    
+    gameMusicSelector().pause();
 
-    menu_music.play();
-    game_music.pause();
-
-    let timer = document.getElementById('tournament_timer');
-    timer.style.display = "none";
-
-    let next_game_btn = document.getElementById('t_next_game');
-    next_game_btn.style.display = "block";
+    document.getElementById('tournament_timer').style.display = "none";
+    document.getElementById('t_next_game').style.display = "block";
 }
 
 function displayTournamentLeaderboard(){
-    let modal_body = document.getElementById('leaderboard_body');
-    let original = document.getElementById('leaderboard_wrap')
-    let round_clone = original.cloneNode(true);
+    let round_clone = document.getElementById('leaderboard_wrap').cloneNode(true);
     round_clone.id = 'm_leaderboard_body';
     round_clone.style.transition = '';
-    modal_body.appendChild(round_clone);
+    document.getElementById('leaderboard_body').appendChild(round_clone);
     round_clone.querySelectorAll('[id]').forEach(element => {
             element.id = "m_" + element.id;
             element.style.transition = '';
@@ -105,11 +98,9 @@ function t_displayCountDown(nb)
 {
     active = true;
     let timer = document.getElementById('tournament_timer');
-    let menu_music = document.getElementById('mgs');
-    let game_music = gameMusicSelector();
 
     if (nb == 3){
-        menu_music.pause();
+        document.getElementById('mgs').pause();
         document.getElementById('3_sound').play();
         timer.innerHTML = "3";
     }
@@ -125,8 +116,8 @@ function t_displayCountDown(nb)
         timer.innerHTML = getTranslation("Go!");
     else if (nb == -1)
     {
-        menu_music.pause();
-        game_music.play();
+        document.getElementById('mgs').pause();
+        gameMusicSelector().play();
         timer.style.display = "none";
         addKeyboardMonitoring();
         startLocal1v1();

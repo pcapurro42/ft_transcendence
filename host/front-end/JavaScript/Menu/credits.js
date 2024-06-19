@@ -3,7 +3,6 @@ let boolAudio_on;
 nav.theaterCredits = function(){
 	let website = document.getElementById('main_page');
 	let music_menu = document.getElementById('mgs');
-	let cross_exit = document.getElementById('credit_close');
 	let video = document.getElementById('vid_credits');
 
 	website.style.transition = 'opacity 0.5s';
@@ -13,7 +12,7 @@ nav.theaterCredits = function(){
     setTimeout(() => {
         website.style.display = 'none';
         video.style.display = 'block';
-        cross_exit.style.display = 'block';
+        document.getElementById('credit_close').style.display = 'block';
         video.play();
     }, 500);
 
@@ -30,14 +29,13 @@ nav.theaterCredits = function(){
 nav.theaterClose = function(){
 	let website = document.getElementById('main_page');
 	let music_menu = document.getElementById('mgs');
-	let cross_exit = document.getElementById('credit_close');
 	let video = document.getElementById('vid_credits');
 
 	video.pause();
 	video.currentTime = 0;
 	video.style.display = 'none';
 	website.style.display = 'block';
-	cross_exit.style.display = 'none'
+	document.getElementById('credit_close').style.display = 'none'
 
 	website.style.display = 'block';
     website.style.transition = 'opacity 0.5s';

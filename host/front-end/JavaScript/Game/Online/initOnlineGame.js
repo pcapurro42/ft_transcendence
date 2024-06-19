@@ -17,31 +17,24 @@ function displayOnline1v1()
 {
 	document.getElementById('online_winner').pause();
 	document.getElementById('online_loser').pause();
-
     document.getElementById('o_host_foot').style.display = 'none';
     document.getElementById('o_guest_foot').style.display = 'none';
+
     if (role == "host")
     {
-        let timer = document.getElementById('1v1_host_timer');
-        timer.classList.remove('d-none');
-        timer.style.display = "block";
-		let won_msg = document.getElementById('h_win_text');
-        won_msg.style.display = 'none';
+        document.getElementById('1v1_host_timer').classList.remove('d-none');
+        document.getElementById('1v1_host_timer').style.display = "block";
+        document.getElementById('h_win_text').style.display = 'none';
+        document.getElementById('start_1v1_online').style.visibility = "hidden";
 
-        let start_btn = document.getElementById('start_1v1_online');
-        start_btn.style.visibility = "hidden";
         data_channel.send("go");
     }
     else
     {
-        let timer = document.getElementById('1v1_guest_timer');
-        timer.classList.remove('d-none');
-        timer.style.display = "block";
-		let won_msg = document.getElementById('g_win_text');
-        won_msg.style.display = 'none';
-
-        let waiting_msg = document.getElementById('waiting_host');
-        waiting_msg.style.visibility = "hidden";
+        document.getElementById('1v1_guest_timer').classList.remove('d-none');
+        document.getElementById('1v1_guest_timer').style.display = "block";
+        document.getElementById('g_win_text').style.display = 'none';
+        document.getElementById('waiting_host').style.visibility = "hidden";
     }
 
     displayCountDown(3);
@@ -49,22 +42,17 @@ function displayOnline1v1()
 
 function removeOnline1v1()
 {
-    let menu_music = document.getElementById('mgs');
-    let game_music = gameMusicSelector();
+    gameMusicSelector().pause();
 
-    game_music.pause();
-    menu_music.play();
-    let timer = document.getElementById('1v1_host_timer');
-    timer.style.display = "none";
-    timer = document.getElementById('1v1_guest_timer');
-    timer.style.display = "none";
+    document.getElementById('mgs').play();
+    document.getElementById('1v1_host_timer').style.display = "none";
+    document.getElementById('1v1_host_timer') = document.getElementById('1v1_guest_timer');
+    document.getElementById('1v1_host_timer').style.display = "none";
 
-    let start_btn = document.getElementById('start_1v1_online');
-    start_btn.innerHTML = getTranslation("Launch a game");
-    start_btn.style.visibility = "visible";
-    console.log('ouououououou');
-	let waiting_host = document.getElementById('waiting_host')
-	waiting_host.style.visibility = 'visible';
+    document.getElementById('start_1v1_online').innerHTML = getTranslation("Launch a game");
+    document.getElementById('start_1v1_online').style.visibility = "visible";
+
+	document.getElementById('waiting_host').style.visibility = 'visible';
     document.getElementById('o_host_foot').style.display = 'block';
     document.getElementById('o_guest_foot').style.display = 'block';
 }

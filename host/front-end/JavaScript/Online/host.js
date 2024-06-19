@@ -1,9 +1,7 @@
 document.getElementById("cpy_inv_code").onclick = cpyGameCode;
 
 function cpyGameCode(){
-	let content = document.getElementById("invitation_code");
-	let cpy_btn = document.getElementById("cpy_inv_code");
-	navigator.clipboard.writeText(content.value);
+	navigator.clipboard.writeText(document.getElementById("invitation_code").value);
 	displayStatusBarSuccess(getTranslation("Copy Success"));
 }
 
@@ -37,10 +35,9 @@ function hostConnectionHandler(){
 	data_channel.onmessage = event => readGuestMsg(event);
 	pingGuest();
 
-	let	create_btn = document.getElementById("create_classic_lobby");
-	create_btn.style.visibility = 'visible';
+	document.getElementById("create_classic_lobby").style.visibility = 'visible';
 
-	create_btn.onclick = async () => {
+	document.getElementById("create_classic_lobby").onclick = async () => {
 		pos = "left";
 		role = "host";
 		await sleep(100);

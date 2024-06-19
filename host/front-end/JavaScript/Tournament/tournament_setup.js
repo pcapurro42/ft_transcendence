@@ -1,5 +1,4 @@
 function tournamentTypeHandler(){
-	let submit_btn = document.getElementById('submit_player_nbr');
 	tournamentFullReset();
 	nav.displayTournamentForm();
 }
@@ -34,10 +33,8 @@ document.getElementById('restart_tournament').onclick = restart_tournament;
 document.getElementById('end_tournament').onclick = end_tournament;
 
 function restart_tournament(){
-	let end_btn = document.getElementById('end_tournament_btn');
-
 	document.getElementById('Roundof16').style.display = '';
-	end_btn.classList.add('d-none');
+	document.getElementById('end_tournament_btn').classList.add('d-none');
 	tournamentFinalReset();
 	originalNicknames = shuffleArray(originalNicknames);
 	startTournament(originalNicknames, originalNicknames.length);
@@ -45,11 +42,10 @@ function restart_tournament(){
 
 async function end_tournament(){
 	let end_btn = document.getElementById('end_tournament_btn');
-	let win_msg = document.getElementById('round_block');
 	document.getElementById('restart_tournament').setAttribute('disabled', true);
 	document.getElementById('end_tournament').setAttribute('disabled', true);
 
-	win_msg.style.opacity = '0';
+	document.getElementById('round_block').style.opacity = '0';
 	end_btn.style.opacity = '0'
 
 	await sleep(1000);
