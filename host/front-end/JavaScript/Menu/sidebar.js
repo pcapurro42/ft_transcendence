@@ -34,12 +34,6 @@ document.getElementById('sb_settings_privacy').onclick = async () =>  {
 		return;
 	displaySecondSettingsPage()
 };
-document.getElementById('sb_credits').onclick = async () => {
-	hideSidebar();
-	if (!(await handleSensitivePages()))
-		return;
-	nav.theaterCredits();
-};
 document.getElementById('sb_1v1').onclick = async () => {
 	hideSidebar();
 	if (!(await handleSensitivePages()))
