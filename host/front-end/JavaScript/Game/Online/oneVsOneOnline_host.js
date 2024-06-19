@@ -319,7 +319,7 @@ class OnlineGame1v1_host
         this.alert = 0;
 
         if (gameMode != "normal")
-            this.bonus_one.reset(), this.bonus_two.reset();
+            this.bonus_one.reset('one'), this.bonus_two.reset('two');
     }
 
     restartRound()

@@ -222,12 +222,20 @@ class PowerUp
         this.game.ball.speed = this.game.ball.speed + 2;
     }
 
-    reset()
+    reset(value)
     {
-        this.x = this.game.game_width / 2 - (this.game.ball_width / 2);
-        this.y = this.game.game_height / 2 - (this.game.ball_width / 2);
-
-        this.direction = getRandomBallDirection();
+        if (value == 'one')
+        {
+            this.x = (this.game.game_width / 4);
+            this.y = (this.game.game_height / 2);
+            this.direction = this.game.ball.direction;
+        }
+        if (value == 'two')
+        {
+            this.x = (this.game.game_width / 2 + (this.game.game_width / 4));
+            this.y = (this.game.game_height / 2);
+            this.direction = this.game.ball.direction + 90;
+        }
         this.alive = true;
     }
 

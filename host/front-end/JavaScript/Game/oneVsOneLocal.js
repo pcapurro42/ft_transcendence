@@ -294,7 +294,7 @@ class LocalGame1v1
         this.ball.reset();
 
         if (gameMode != "normal")
-            this.bonus_one.reset(), this.bonus_two.reset();
+            this.bonus_one.reset('one'), this.bonus_two.reset('two');
     }
 
     restartRound()
