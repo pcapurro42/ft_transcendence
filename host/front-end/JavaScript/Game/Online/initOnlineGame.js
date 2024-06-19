@@ -82,7 +82,7 @@ function startOnline1v1()
         {
             game.refreshBackground();
 
-            if (game.isOver() == true)
+            if (game.scores[0] > 9 || game.scores[1] > 9)
             {
                 addHistoryEntry(game.player, game.other_player, ([game.scores[0], game.scores[1]]), game.date, (game.end_time - game.start_time), game.scores_time, role);
 
