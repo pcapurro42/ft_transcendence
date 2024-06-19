@@ -132,14 +132,17 @@ class PowerUp
 
     applyPlayerBonus()
     {
-        if (role == 'host')
-            bonus_type = generateNumber(2), data_channel.send(`b_type:${bonus_type}`);
+        if (role != 'guest'){
+            bonus_type = generateNumber(2)
+            if (role == 'host')
+                data_channel.send(`b_type:${bonus_type}`);
+        }
 
         if (players_nb == 2)
         {
             if (this.x <= this.game.game_width / 2)
             {
-                if (bonus_type  == 1 && this.game.right_player.height == this.game.bar_height)
+                if (bonus_type == 1 && this.game.right_player.height == this.game.bar_height)
                 {
                     this.game.right_player.height = this.game.right_player.height - (this.game.left_player.height / 2);
                     this.game.right_player.bonus = true;
@@ -154,7 +157,7 @@ class PowerUp
             }
             else
             {
-                if (bonus_type  == 1 && this.game.left_player.height == this.game.bar_height)
+                if (bonus_type == 1 && this.game.left_player.height == this.game.bar_height)
                 {
                     this.game.left_player.height = this.game.left_player.height - (this.game.left_player.height / 2);
                     this.game.left_player.bonus = true;
@@ -168,12 +171,6 @@ class PowerUp
                 }
             }
 
-            if (role == "host"){
-                if (this.name == 1)
-                    data_channel.send('b1_dead');
-                else
-                    data_channel.send('b2_dead');
-            }
         }
 
         if (players_nb == 3)
@@ -226,12 +223,6 @@ class PowerUp
     applyBallBonus()
     {
         this.game.ball.speed = this.game.ball.speed + 2;
-        if (role=="host"){
-            if (this.name == 1)
-                data_channel.send('b1_dead');
-            else
-                data_channel.send('b2_dead');
-        }
     }
 
     reset(value)
@@ -286,6 +277,7 @@ class PowerUp
 
     animate()
     {
+
         if (this.isAtLimits() == true)
         {
             if (this.isLeftOrRight() == true)
@@ -312,6 +304,7 @@ class PowerUp
         else if (this.isAtBall() == true)
             this.applyBallBonus(), this.alive = false;
 
-        this.move();
+        if (role != 'guest')
+            this.move();
     }
 }
