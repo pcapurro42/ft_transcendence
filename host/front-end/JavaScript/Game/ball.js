@@ -320,6 +320,8 @@ class Ball
             this.direction = this.getOpposite(), this.getAwayFromLimits();
         }
 
+        console.log("ball speed: ", this.speed);
+
         this.move();
     }
 }

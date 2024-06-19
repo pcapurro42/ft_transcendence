@@ -304,8 +304,9 @@ class OnlineGame1v1_guest
         this.right_player.reset();
 
         this.dist = 0;
-
         this.alert = 0;
+
+        this.ball.reset();
 
         if (gameMode != "normal")
             this.bonus_one.reset('one'), this.bonus_two.reset('two');
