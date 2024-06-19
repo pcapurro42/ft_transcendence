@@ -464,6 +464,8 @@ nav.displayHistory = function()
     else
         history_tab = history_data.length - 1;
 
+    console.log(history_data)
+
     if (history_data == null)
         document.getElementById('prev_history').classList.add('disabled'), document.getElementById('next_history').classList.add('disabled');
 

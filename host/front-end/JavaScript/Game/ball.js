@@ -295,10 +295,9 @@ class Ball
     {
         if (this.isOffLimit() == true)
         {
-            if (players_nb == 2 || players_nb == 3 && (role != 'host' || role != 'guest'))
+            if (role == null)
                 this.lcl_exit++;
-
-            if (players_nb == 2)
+            else
             {
                 if (role == 'host' && this.x < this.game.game_width / 2 || role == 'guest' && this.x > this.game.game_width / 2)
                     this.onl_received++;
@@ -308,19 +307,18 @@ class Ball
         }
         else if (this.isUpOrDown() == true || this.isAtPlayer() == true)
         {
-            if (players_nb == 2 || players_nb == 3 && (role != 'host' || role != 'guest'))
+            if (role == null)
                 this.lcl_bounce++;
-
-            if (players_nb == 2 && this.isFrontPlayer() == true)
+            else
             {
-                if (role == 'host' && this.x < this.game.game_width / 2 || role == 'guest' && this.x > this.game.game_width / 2)
-                    this.onl_received++, this.onl_return++;
+                if (this.isFrontPlayer() == true)
+                {
+                    if (role == 'host' && this.x < this.game.game_width / 2 || role == 'guest' && this.x > this.game.game_width / 2)
+                        this.onl_received++, this.onl_return++;
+                }
             }
-
             this.direction = this.getOpposite(), this.getAwayFromLimits();
         }
-
-        console.log("ball speed: ", this.speed);
 
         this.move();
     }

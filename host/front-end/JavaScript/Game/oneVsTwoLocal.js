@@ -371,6 +371,7 @@ class LocalGame1v2
 function initializeLocal1v2()
 {
     players_nb = 3;
+    role = null;
     game = new LocalGame1v2();
 
     game.refreshBackground();

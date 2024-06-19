@@ -300,13 +300,14 @@ class PowerUp
         {
             this.applyPlayerBonus();
             this.alive = false;
-            console.log(this);
 
+            if (role == null)
+                this.bonus_taken++;
+            else
+            {
                 if (role == 'host' && this.x < this.game.game_width / 2 || role == 'guest' && this.x > this.game.game_width / 2)
                     this.onl_received++, this.onl_taken++;
-
-            if ((players_nb == 2 || players_nb == 3) && (role != 'guest' || role != 'host'))
-                this.bonus_taken++;
+            }
         }
         else if (this.isAtBall() == true)
             this.applyBallBonus(), this.alive = false;
