@@ -15,7 +15,6 @@ function shuffleArray(nicknames){
 
 function formDuplicator(value){
 	document.getElementById('form_block').querySelector('#t_form_label').innerHTML = getTranslation("ARIA Tournament Form Label") + ' ' + 1 + ':';
-	let parent = elem.parentNode;
 	let to_remove = document.querySelectorAll('#parent_form .remover');
 
 	for (let c = 1; c < to_remove.length; c++){
