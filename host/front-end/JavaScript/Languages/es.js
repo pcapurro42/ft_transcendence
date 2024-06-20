@@ -334,6 +334,6 @@ let es = [
     ["Forbidden Page", "Snake, ¡tienes que iniciar sesión para acceder a esta sección del sitio web!"],
 
     ["Konami Code detected!", "Konami Code detectado!"],
-    ["« Engravings, gives you no tactical advantage whatsoever...»", "« Engravings, gives you no tactical advantage whatsoever... »"],
+    ["« Engravings, gives you no tactical advantage whatsoever... »", "« Engravings, gives you no tactical advantage whatsoever... »"],
     ["— Jack, in 'Snake Eater' (1974)", "— Jack, en 'Snake Eater' (1974)"]
 ];
