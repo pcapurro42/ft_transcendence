@@ -317,9 +317,9 @@ class LocalGame1v1
             if (type == 'tournament')
             {
                 if (this.scores[0] > 9)
-                    t_LeftWin();
+                    tournamentLeftWin();
                 if (this.scores[1] > 9)
-                    t_RightWin();
+                    tournamentRightWin();
             }
             else
             {

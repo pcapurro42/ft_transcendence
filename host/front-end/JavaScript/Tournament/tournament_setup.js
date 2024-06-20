@@ -29,10 +29,10 @@ async function nextGameHandler(){
 	}
 }
 
-document.getElementById('restart_tournament').onclick = restart_tournament;
-document.getElementById('end_tournament').onclick = end_tournament;
+document.getElementById('restart_tournament').onclick = restartTournament;
+document.getElementById('end_tournament').onclick = endTournament;
 
-function restart_tournament(){
+function restartTournament(){
 	document.getElementById('Roundof16').style.display = '';
 	document.getElementById('end_tournament_btn').classList.add('d-none');
 	tournamentFinalReset();
@@ -40,7 +40,7 @@ function restart_tournament(){
 	startTournament(originalNicknames, originalNicknames.length);
 }
 
-async function end_tournament(){
+async function endTournament(){
 	let end_btn = document.getElementById('end_tournament_btn');
 	document.getElementById('restart_tournament').setAttribute('disabled', true);
 	document.getElementById('end_tournament').setAttribute('disabled', true);

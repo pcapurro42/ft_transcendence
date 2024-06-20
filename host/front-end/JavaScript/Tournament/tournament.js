@@ -9,7 +9,7 @@ function displayTournamentGame()
     document.getElementById('t_leaderboard').classList.add('d-none');
 	type = 'tournament';
     initializeLocal1v1();
-   	t_displayCountDown(3);
+    tournamentDisplayCountDown(3);
 }
 
 function removeTournamentGame()
@@ -93,7 +93,7 @@ function removeTournamentLeaderboard(){
     document.getElementById('leaderboard_modal').style.display="none";
 }
 
-function t_displayCountDown(nb)
+function tournamentDisplayCountDown(nb)
 {
     active = true;
     let timer = document.getElementById('tournament_timer');
@@ -122,10 +122,10 @@ function t_displayCountDown(nb)
         startLocal1v1();
         return ;
     }
-    setTimeout(t_displayCountDown, 1000, --nb);
+    setTimeout(tournamentDisplayCountDown, 1000, --nb);
 }
 
-function t_LeftWin(){
+function tournamentLeftWin(){
     let player_left = document.getElementById('nick_reminder');
     player_left.innerHTML = player_left.innerHTML.trim(' ');
     gameLoser = player_left.innerHTML.substring(player_left.innerHTML.indexOf(' ', player_left.innerHTML.indexOf(' ') + 1) + 1)
@@ -135,7 +135,7 @@ function t_LeftWin(){
 
 }
 
-function t_RightWin(){
+function tournamentRightWin(){
     let player_right = document.getElementById('nick_reminder');
     player_right.innerHTML = player_right.innerHTML.trim(' ');
     gameLoser = player_right.innerHTML.substring(0, player_right.innerHTML.indexOf(' '))

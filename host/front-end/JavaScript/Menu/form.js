@@ -1,5 +1,5 @@
 
-function parse_alias(nbr, event){
+function parseAlias(nbr, event){
 	event.preventDefault(); // Empêche retour main_menu quand on submit
 
 	const regex = /^[A-Za-z0-9\-_]+$/;
@@ -56,7 +56,7 @@ function isDuplicateNicknames(nicknames){
 	return false;
 }
 
-function parse_offersAnswers(strJson){
+function parseOffersAnswers(strJson){
 
 	if (!strJson.iceCandidates || !strJson.type || !strJson.sdp)
 		return false;

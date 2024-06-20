@@ -93,7 +93,7 @@ const nav = {
 
         let i = formDuplicator(val);
         document.getElementById('submit_alias').onclick = function(event){
-            parse_alias(i, event)
+            parseAlias(i, event)
         };
 
         addToHistory('/tournament-nicknames');

@@ -1,4 +1,4 @@
-async function gatherIceCandidates_a(){
+async function gatherIceCandidatesA(){
 
 	return new Promise(resolve => {
 
@@ -56,7 +56,7 @@ async function answerGenerator(offer){
 	try{
 		offer = JSON.parse(offer);
 
-		if(offer.type != 'offer' || parse_offersAnswers(offer) == false){
+		if(offer.type != 'offer' || parseOffersAnswers(offer) == false){
 			displayStatusBarAlert(getTranslation("Wrong Code Format"));
 			return;
 		}
@@ -84,7 +84,7 @@ async function answerGenerator(offer){
 		let answer = await RTC_a.createAnswer();
 		await RTC_a.setLocalDescription(answer);
 
-		let candidates = await gatherIceCandidates_a();
+		let candidates = await gatherIceCandidatesA();
 
 		let jsonAnswer = {
 			sdp: answer.sdp,

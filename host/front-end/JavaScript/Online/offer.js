@@ -1,4 +1,4 @@
-async function gatherIceCandidates_o(){
+async function gatherIceCandidatesO(){
 
 	return new Promise(resolve => {
 
@@ -22,7 +22,7 @@ async function offerGenerator(){
 		let  sdp_offer = await RTC_o.createOffer();
 		await RTC_o.setLocalDescription(sdp_offer);
 
-		let candidates = await gatherIceCandidates_o();
+		let candidates = await gatherIceCandidatesO();
 
 		let jsonOffer = {
 			sdp: sdp_offer.sdp,
@@ -105,7 +105,7 @@ async function initConnection(answer){
 	try{
 
 		answer = JSON.parse(answer);
-		if (parse_offersAnswers(answer) == false || answer.type == 'offer'){
+		if (parseOffersAnswers(answer) == false || answer.type == 'offer'){
 			displayStatusBarAlert(getTranslation('Wrong Code Format'));
 			resetConnection();
 			nav.displayMenu();
