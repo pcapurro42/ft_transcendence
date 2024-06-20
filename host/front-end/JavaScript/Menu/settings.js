@@ -173,6 +173,7 @@ function initializeGameMode(){
         c_switch.checked = true;
         t_switch.nextElementSibling.innerHTML = getTranslation('Bonus Mode');
         c_switch.nextElementSibling.innerHTML = getTranslation('Bonus Mode');
+        document.getElementById('surpass_metal_gear_quote').style.display = "block";
     }
     else{
         gameMode = 'normal';
@@ -180,6 +181,7 @@ function initializeGameMode(){
         c_switch.checked = false;
         t_switch.nextElementSibling.innerHTML = getTranslation('Normal Mode');
         c_switch.nextElementSibling.innerHTML = getTranslation('Normal Mode');
+        document.getElementById('surpass_metal_gear_quote').style.display = "none";
     }
 }
 
