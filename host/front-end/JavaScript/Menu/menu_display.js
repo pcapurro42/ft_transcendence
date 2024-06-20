@@ -103,7 +103,6 @@ const nav = {
     removeTournamentForm : function(event){
         event.preventDefault();
         freeInputAndForms();
-	    
         document.getElementById('tournament_nickname_menu').style.display = 'none';
         document.getElementById('form_alias').style.display = 'none';
 
@@ -239,6 +238,7 @@ const nav = {
         document.getElementById('credit_close').style.display = "none";
 
         active = false;
+        window.removeEventListener('keydown', detectKonamiCode);
         resetMusicAndSounds();
         freeInputAndForms();
         tournamentFinalReset();
