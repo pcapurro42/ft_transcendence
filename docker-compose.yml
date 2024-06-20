@@ -4,24 +4,24 @@ services:
     build:
       context: host/
       dockerfile: Dockerfile.host
-    env_file:
-      - .env
     depends_on:
       - signaling
     ports:
       - 1025:1025
+    env_file:
+      - .env
 
   proxy:
     container_name: proxy
     build:
       context: proxy/
       dockerfile: Dockerfile.proxy
-    env_file:
-      - .env
     ports:
       - 8080:8080
     depends_on:
       - signaling
+    env_file:
+      - .env
 
   signaling:
     container_name: signaling
@@ -30,6 +30,23 @@ services:
       dockerfile: Dockerfile.signaling
     ports:
       - 8000:8000
+    depends_on:
+      - database
     env_file:
       - .env
 
+  database:
+    container_name: database
+    build:
+      context: database/
+      dockerfile: Dockerfile.db
+    ports:
+      - 5432:5432
+    volumes:
+      - ./database/data:/database
+    environment:
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_DB=${DB_NAME}
+    env_file:
+      - .env

@@ -45,7 +45,6 @@ async function handleRedirection(){
 
 async function storeUserCredentials(response){
     try{
-            console.log(response)
             localStorage.setItem('login', response['login']);
             localStorage.setItem('token', response['token'])
             auth_code = '';

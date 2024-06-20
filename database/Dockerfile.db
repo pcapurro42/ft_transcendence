@@ -1,0 +1,10 @@
+FROM postgres:latest
+
+USER root
+
+COPY pg_hba.conf /etc/postgresql/main/pg_hba.conf
+COPY postgresql.conf /etc/postgresql/main/postgresql.conf
+
+USER postgres
+EXPOSE 5432
+
