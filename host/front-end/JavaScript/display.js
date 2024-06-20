@@ -6,6 +6,9 @@ nav.displayMenu = async function()
     document.getElementById('main_menu_page').style.display = "block";
     document.getElementById('main_menu_buttons').style.display = "block";
     document.getElementById('main_menu_toolbar').style.display = "block";
+    
+    document.getElementById('background_menu_1').style.display = "block";
+    document.getElementById('background_menu_2').style.display = "block";
 
     stop_flag = true;
     active = false;

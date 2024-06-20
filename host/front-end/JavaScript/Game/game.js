@@ -43,17 +43,17 @@ function displayCountDown(nb)
 
     if (nb == 3){
         menu_music.pause();
-        document.getElementById('3_sound').play();
+        document.getElementById('lalilulelo-3').play();
         timer.innerHTML = "3";
         game.refreshBackground();
     }
     else if (nb == 2){
-        document.getElementById('2_sound').play();
+        document.getElementById('lalilulelo-2').play();
         timer.innerHTML = "2";
         game.refreshScores();
     }
     else if (nb == 1){
-        document.getElementById('1_sound').play();
+        document.getElementById('lalilulelo-1').play();
         timer.innerHTML = "1";
         game.refreshPlayers();
     }

@@ -100,15 +100,15 @@ function tournamentDisplayCountDown(nb)
 
     if (nb == 3){
         document.getElementById('mgs').pause();
-        document.getElementById('3_sound').play();
+        document.getElementById('lalilulelo-3').play();
         timer.innerHTML = "3";
     }
     else if (nb == 2){
-        document.getElementById('2_sound').play();
+        document.getElementById('lalilulelo-2').play();
         timer.innerHTML = "2";
     }
     else if (nb == 1){
-        document.getElementById('1_sound').play();
+        document.getElementById('lalilulelo-1').play();
         timer.innerHTML = "1";
     }
     else if (nb == 0)

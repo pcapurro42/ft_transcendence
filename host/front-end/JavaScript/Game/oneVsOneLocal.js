@@ -191,7 +191,7 @@ class LocalGame1v1
         let the_sounds = {
             alert: document.getElementById('alert_sound'),
             limit: document.getElementById('knock_sound'),
-            powerup: document.getElementById('goal_sound')
+            powerup: document.getElementById('bonus_sound')
         }
 
         this.sounds = the_sounds;
