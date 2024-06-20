@@ -19,8 +19,6 @@ nav.displayMenu = async function()
     refreshLogin();
     addToHistory('/home');
     document.title = getTranslation('Home');
-
-    window.addEventListener('keydown', detectKonamiCode);
 }
 
 nav.removeMenu = function()
@@ -293,12 +291,10 @@ function detectKonamiCode(event)
                 {
                     console.log(getTranslation("Konami Code detected!"));
                     keys_register = [];
-                    // ...
+                    localStorage.setItem('konami_code', true);
                     return ;
                 }
             }
         }
     }
-
-    // haut - haut - bas - bas - gauche - droite - gauche - droite - b - a
 }

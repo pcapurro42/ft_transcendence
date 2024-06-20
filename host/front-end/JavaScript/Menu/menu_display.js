@@ -238,7 +238,6 @@ const nav = {
         document.getElementById('credit_close').style.display = "none";
 
         active = false;
-        window.removeEventListener('keydown', detectKonamiCode);
         resetMusicAndSounds();
         freeInputAndForms();
         tournamentFinalReset();

@@ -40,6 +40,12 @@ async function handleSensitivePages(){
 }
 
 function addToHistory(pagePath){
+
+    if (pagePath == '/home')
+        window.addEventListener('keydown', detectKonamiCode);
+    else
+        window.removeEventListener('keydown', detectKonamiCode);
+
     if (pushHistory == true &&  window.location.pathname != getTranslation(pagePath))
         history.pushState(null, null, getTranslation(pagePath));
     else{

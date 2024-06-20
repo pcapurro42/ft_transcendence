@@ -33,7 +33,7 @@ function setAuthsState()
 
 function readLocalData()
 {
-    let ui = ["language", "high_contrast", "descriptive_images", "text_size", "visual_mode", "music", "sound", "music_volume", "sounds_volume", "status"];
+    let ui = ["language", "high_contrast", "descriptive_images", "text_size", "visual_mode", "music", "sound", "music_volume", "sounds_volume", "status", "konami_code"];
     let game = ["game_music", "game_mod", "game_map", "t_player_nbr", "no_confirmation"];
     let _42 = ["login", "auth_code"];
     let local_stats = ["lcl_ball_exit_nb", "lcl_ball_bounce_nb", "lcl_game_played_nb", "lcl_bonus_taken_nb"];
