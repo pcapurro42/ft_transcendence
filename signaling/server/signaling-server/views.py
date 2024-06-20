@@ -42,7 +42,8 @@ def sendToken(response):
 
 def token(request):
 		try:
-
+			if parse_input.parse_input(request.body.decode()) is False:
+				raise Exception("Error: Authorization code has forbidden characters.\n")
 			data = {
 				'client_id': CLIENT_ID,
 				'code': request.body,
