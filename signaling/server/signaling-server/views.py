@@ -3,7 +3,7 @@ from django.middleware.csrf import get_token
 from http.client import HTTPSConnection
 from urllib.parse import urlencode
 from . import invitation_code
-from . import parse_input
+from . import utils
 import json
 import os
 
@@ -16,7 +16,7 @@ def signal(request):
 	requestJson = json.loads(request.body)
 
 	if requestJson.get('login') != None:
-		if parse_input.parse_input(requestJson['login']) == False :
+		if utils.parse_input(requestJson['login']) == False :
 			return HttpResponseServerError('Error: data has unexpected content.')
 
 	if requestJson.get('answer') != None:
@@ -34,7 +34,10 @@ def sendToken(response):
 		headers = {'Authorization' : f'Bearer {accessToken}'}
 		conn.request('GET', '/v2/me', headers=headers)
 		response = conn.getresponse().read().decode()
-		return HttpResponse(response)
+		response_data = json.loads(response)
+		response_data['token'] = utils.generateToken()
+		response_data = json.dumps(response_data)
+		return HttpResponse(response_data)
 
 
 	except Exception as error:
@@ -42,7 +45,7 @@ def sendToken(response):
 
 def token(request):
 		try:
-			if parse_input.parse_input(request.body.decode()) is False:
+			if utils.parse_input(request.body.decode()) is False:
 				raise Exception("Error: Authorization code has forbidden characters.\n")
 			data = {
 				'client_id': CLIENT_ID,

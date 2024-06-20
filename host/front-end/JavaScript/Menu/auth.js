@@ -40,12 +40,14 @@ async function handleRedirection(){
         return;
     }
     let response = await getAccessToken(localStorage.getItem('auth_code'));
-    await storeUserLogin(response);
+    await storeUserCredentials(response);
 }
 
-async function storeUserLogin(response){
+async function storeUserCredentials(response){
     try{
+            console.log(response)
             localStorage.setItem('login', response['login']);
+            localStorage.setItem('token', response['token'])
             auth_code = '';
     }
     catch(error){
