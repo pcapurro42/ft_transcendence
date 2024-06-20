@@ -82,6 +82,29 @@
                     </div>
                 </div>
 
+                <div id="one_vs_one_guest_page" class="container mx-auto">
+                    <div id ="g_online_nicks" class="d-flex">
+                        <p id ='g_host_name' class="text" data-tsnormal="30px" data-tslarge="50px"></p>
+                        <p class="text mx-auto" data-tsnormal="30px" data-tslarge="50px">vs</p>
+                        <p id ='g_guest_name' class="text" data-tsnormal="30px" data-tslarge="50px"></p>
+                    </div>
+                    <canvas id="one_vs_one_guest_game" width="1100" height="720" class="col-10 border border-3 w-100" tabindex="-1" aria-label="" role="application" data-title="ARIA 1 vs 1 (online)"></canvas>
+                    <label id="g_1v1_label" class="d-none" aria-label="" data-title="ARIA 1 vs 1 (online)"></label>
+                    <div>
+                        <p id="g_win_text" class="text text-center display-6" data-tsnormal="30px" data-tslarge="50px" data-oname="Left player won the game."></p>
+                    </div>
+                    <p id="waiting_host" class="d-flex justify-content-center text display-6" data-tsnormal="30px" data-tslarge="50px" data-oname="Waiting for the host to launch the game..."></p>
+                    <p id="1v1_guest_timer" class="d-flex justify-content-center text d-none display-6" data-tsnormal="45px" data-tslarge="55px"></p>
+                    <div id="o_guest_foot" class="d-flex flex-column align-items-center security_margin">
+                        <div class="game_keys w-100">
+                            <img class="float-end keysup mb-0" data-alt="Keyboard O Tuto" src="./Materials/images/keys/O.png" tabindex="-1">
+                        </div>
+                        <div class="game_keys w-100">
+                            <img class="keysdown float-end" src="./Materials/images/keys/L.png" data-alt="Keyboard L Tuto" tabindex="-1">
+                        </div>
+                    </div>
+                </div>
+
                 <!-- 1 vs 1 (local) -->
 
                 <div id="one_vs_one_local_page" class="container mx-auto">
