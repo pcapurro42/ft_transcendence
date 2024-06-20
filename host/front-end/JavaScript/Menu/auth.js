@@ -2,7 +2,14 @@
 
 async function login()
 {
-    setTimeout(() => {window.location.href = `https://api.intra.42.fr/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`;}, 800);
+    if (localStorage.getItem('sound') == 'on')
+    {
+        document.getElementById('codec_sound').play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
+        setTimeout(() => {window.location.href = `https://api.intra.42.fr/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`;}, 2000);
+    }
+    else
+        setTimeout(() => {window.location.href = `https://api.intra.42.fr/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`;}, 800);
+    
 }
 
 async function logout()
