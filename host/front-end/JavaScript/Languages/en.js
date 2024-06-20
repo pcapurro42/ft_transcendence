@@ -69,7 +69,6 @@ let en = [
     ["1 vs 1 (online)", "1 vs 1 (online)"],
     ["1 vs 1 (local)", "1 vs 1 (local)"],
     ["1 vs 2 (local)", "1 vs 2 (local)"],
-    ["Tournament Match", "1 vs 1... Tournament Match (local)"],
     ["Go!", "Go!"],
 
     ["speed", "speed"],

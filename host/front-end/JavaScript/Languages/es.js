@@ -2,6 +2,7 @@ let es = [
     ["English", "inglés"],
     ["French", "francés"],
     ["Spanish", "Español"],
+    
     ["LOG IN WITH 42", "CONECTAR CON 42"],
     ["LOG OUT", "Desconectarse"],
 
@@ -172,6 +173,10 @@ let es = [
     ["Eight", "Cuartos de final (8 jugadores)."],
     ["Four", "Semifinal (4 jugadores)."],
     ["Duplicate Nickname", "<pre class='text m-3'>Atención: varios pseudónimos están duplicados. \n Por favor, elige pseudónimos únicos.</pre>"],
+    ["Round of 16","Octavos de final"],
+    ["Final 8","Cuartos de final"],
+    ["Final 4","Semifinal"],
+    ["Final","Final"],
     ["1st Game", "Primero partido"],
     ["2nd Game", "Segundo partido"],
     ["3rd Game", "Tercero partido"],
