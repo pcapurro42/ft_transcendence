@@ -336,5 +336,7 @@ let en = [
     ["Unauthorized Data Channel", "Error: the connection was closed for safety reasons.Unexpected message were caught inside the data_channel."],
     ["Forbidden Page", "Snake, you have to login to access this section of the website !"],
 
-    ["Konami Code detected!", "Konami Code detected!"]
+    ["Konami Code detected!", "Konami Code detected!"],
+    ["« Engravings, gives you no tactical advantage whatsoever...»", "« Engravings, gives you no tactical advantage whatsoever...»"],
+    ["— Jack, in 'Snake Eater' (1974)", "— Jack, in 'Snake Eater' (1974)"]
 ];
