@@ -2,7 +2,7 @@ let es = [
     ["English", "inglés"],
     ["French", "francés"],
     ["Spanish", "Español"],
-    
+
     ["LOG IN WITH 42", "CONECTAR CON 42"],
     ["LOG OUT", "Desconectarse"],
 
@@ -220,8 +220,6 @@ let es = [
     ['Disconnection Msg', "¡Perdón!. Parece que hay un problema de conexión. Comprueba las redes de ambos peers e inténtalo de nuevo."],
     ['Waiting Lobby Creation', "Esperando la creación del lobby de "],
     ['Please Create Lobby', 'Clic en el botón de crear lobby para iniciar una partida con '],
-
-    ["Online Win", " ganó el partido"],
 
     ["42 Auth Success", "¡Se ha conectado correctamente ! Bienvenido "],
     ["42 Auth Failure", "Conexión fallida."],

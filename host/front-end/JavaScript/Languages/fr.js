@@ -8,6 +8,7 @@ let fr = [
 
     ["Enable/Disable menu music", "Activer ou désactiver la musique des menus."],
     ["Enable/Disable menu sounds", "Activer ou désactiver les sons des menus."],
+
     ["Enable/Disable game music", "Activer ou désactiver la musique du jeu."],
     ["Enable/Disable game sounds", "Activer ou désactiver les sons du jeu."],
 
@@ -48,7 +49,6 @@ let fr = [
     ["total defeat", "défaite totale"],
 
     ["Game timelapse", "Timelapse de la partie"],
-
     ["Game domination", "Domination de la partie"],
     ["Purple: you", "Violet : vous"],
     ["Yellow: opponent", "Jaune : adversaire"],
@@ -69,7 +69,6 @@ let fr = [
     ["1 vs 1 (online)", "1 vs 1 (en ligne)"],
     ["1 vs 1 (local)", "1 vs 1 (local)"],
     ["1 vs 2 (local)", "1 vs 2 (local)"],
-
     ["Go!", "Partez !"],
 
     ["speed", "vitesse"],
@@ -84,6 +83,7 @@ let fr = [
 
     ["Left player won the game.", "Le joueur de gauche a gagné la partie."],
     ["Right player won the game.", "Le joueur de droite a gagné la partie."],
+    ["Online Win", " a gagné la partie."],
 
     ["Left players won the game.", "Les joueurs de gauche ont gagné la partie."],
     ["Right players won the game.", "Les joueurs de droite ont gagné la partie."],
@@ -146,7 +146,6 @@ let fr = [
 
     ["Game theme", "Musique du jeu"],
     ["Game map", "Carte du jeu"],
-
     ["Red", "Rouge"],
     ["Orange", "Orange"],
     ["Purple", "Violet"],
@@ -156,6 +155,8 @@ let fr = [
     ["Enabled", "Activé"],
     ["Disabled", "Désactivé"],
 
+    ['Main Menu', "Menu Principal"],
+    ['Continue', "Continuer"],
     ["Back", "Retour"],
     ["Yes", "Oui"],
     ["No", "Non"],
@@ -194,40 +195,35 @@ let fr = [
     ["Eliminated", " est battu."],
 
     ['Peer offer send msg', "<pre>Envoyez ce code a un ami pour\n commencer une partie.</pre>"],
-    ['Peer answer send msg', "<pre>Envoyez ce code a votre ami \n en vue d'autoriser la connexion.</pre>"],
 
     ['Init Connection Msg', '<pre>Après que votre ami ait saisi le code,\n cliquez sur le bouton ci-dessus.</pre>'],
     ['Connect', 'Se connecter'],
-    ['Paste Code Msg', '<pre>Collez le code d\'invitation fourni par votre\nami pour démarrer une partie en ligne.</pre>'],
 
-    ['Disconnected', "⚠︎ Connexion pair à pair perdue..."],
-    ['Disconnection Msg', "Désolé ! Il semble y avoir un problème de connexion. Vérifiez le réseau des deux pairs, puis réessayez."],
-    ['Main Menu', "Menu Principal"],
-    ['Continue', "Continuer"],
-    ['Waiting Lobby Creation', "En attente de la création d'un salon par "],
-    ['Please Create Lobby', 'Cliquez sur le bouton de création de salon pour démarrer une partie avec '],
+    ['Paste Code Msg', '<pre>Collez le code d\'invitation fourni par votre\nami pour démarrer une partie en ligne.</pre>'],
 
     ["Peer Connection Success", "Succès de la connexion à distance avec "],
     ["Peer Connection Warning", "Connexion à distance en cours..."],
     ["Peer Connection Alert", "Connexion à distance échouée."],
-    ["Peer 404", "Erreur : échec de la connexion. Soyez sûr que tous les pairs sont bien présents, ainsi que de la validité du code d'invitation."],
     ["Peer Connection Timeout", "Délai de connexion dépassé... Merci de bien vouloir recommencer."],
-    ["Peer send answer", "Erreur : impossible de transmettre vos informations au serveur."],
+    ["Peer 404", "Erreur : échec de la connexion. Soyez sûr que tous les pairs sont bien présents, ainsi que de la validité du code d'invitation."],
+    ["Peer fetch answer", "Erreur: impossible d'envoyer vos informations vers le serveur."],
     ["Peer fetch offer", "Erreur : impossible de récupérer les informations de l'autre pair."],
-    ["Connection Init Failed", "Échec de la génération du code d'invitation... Merci de bien vouloir recommencer."],
 
+    ["Connection Init Failed", "Échec de la génération du code d'invitation... Merci de bien vouloir recommencer."],
     ["Answer Timeout", ` secondes restantes avant l'expiration du code.`],
     ["Code Expired", `Le code à expiré. Merci de bien vouloir recommencer.`],
 
     ["Wrong Code Format", "Erreur : récéption de données non-approuvées. Processus de connexion désactivé."],
     ["Wrong Code Guest", "Erreur : le code d'invitation n'est pas au bon format."],
 
-    ["Online Win", " a gagné la partie !"],
+    ['Disconnected', "⚠︎ Connexion pair à pair perdue..."],
+    ['Disconnection Msg', "Désolé ! Il semble y avoir un problème de connexion. Vérifiez le réseau des deux pairs, puis réessayez."],
+    ['Waiting Lobby Creation', "En attente de la création d'un salon par "],
+    ['Please Create Lobby', 'Cliquez sur le bouton de création de salon pour démarrer une partie avec '],
 
     ["42 Auth Success", "Connexion réussie ! Bienvenue "],
     ["42 Auth Failure", "La connexion a echoué."],
     ["Copy Success", "Copié dans le presse-papier avec succès."],
-
     ["Switch to Visual", "Passez en mode visuel !"],
 
     ['/home', '/accueil'],
@@ -255,10 +251,11 @@ let fr = [
     ['/online-stats', '/stats-en-ligne'],
     ['/settings', '/parametres'],
     ['/credits', '/credits'],
-    ['Local Stats', 'Statistiques - local'],
-    ['Online Stats', 'Statistiques - en ligne'],
     ['/privacy', '/confidentialite'],
     ['/privacy-settings', '/parametre-de-confidentialite'],
+
+    ['Local Stats', 'Statistics – local'],
+    ['Online Stats', 'Statistics – online'],
 
     ['Refresh Alert Tournament', 'Attention : Après un rafraîchissement, il n’est pas possible de revenir sur le tournoi qui était en cours.'],
     ['Refresh Alert Online', 'Attention : La connexion à été perdu lors du rafraichissement de la page.'],
@@ -281,7 +278,6 @@ let fr = [
     ["ARIA 1 vs 1 (local)", "Emplacement du jeu : 1 vs 1 (local)"],
     ["ARIA 1 vs 2 (local)", "Emplacement du jeu : 1 vs 2 (local)"],
     ["ARIA Tournament Match", "Emplacement du jeu : 1 vs 1... Match de tournoi (local)"],
-
     ["ARIA Tournament Type", "Sélectionnez le type de tournoi."],
     ["ARIA Theme Selector", "Sélectionnez quel thème musical sera joué pendant une partie."],
     ["ARIA Map Selector", "Sélectionnez la carte utilisée pendant une partie."],
@@ -308,12 +304,9 @@ let fr = [
     ["ARIA leaving modal", "Confirmation de sortie de page."],
     ["ARIA localstorage modal", "Données stockées"],
 
-    ["Top Logo Alt", "Logo du site web : Tactical Tennis Action Metal Gear Pong. Retour au menu principal."],
-    ["Seconds", "Secondes"],
-    ["Game Duration", "La partie à duré approximativement "],
-
     ["You Won", "Vous avez gagné"],
     ["You Lose", "Vous avez perdu"],
+    ["Top Logo Alt", "Logo du site web : Tactical Tennis Action Metal Gear Pong. Retour au menu principal."],
 
     ["Keyboard Y Tuto", "Touche  Y du clavier. Informe l'utilisateur en haut à droite de la touche clavier à utiliser pour aller vers le haut."],
     ["Keyboard H Tuto", "Touche  H du clavier. Informe l'utilisateur en haut a droite de la touche clavier à utiliser pour aller vers le bas."],
@@ -334,6 +327,8 @@ let fr = [
 
     ["Your Domination", "Vous avez dominé la partie à "],
     ["Opponent Domination", "Votre adversaire à dominé la partie à"],
+    ["Seconds", "Secondes"],
+    ["Game Duration", "La partie à duré approximativement "],
     ["Enable Sounds Error", "Snake, tu dois intéragir avec le site-web pour entendre les sons!"],
     ["Unauthorized Data Channel", "Erreur: la connexion a été fermée pour des raisons de sécurité. Un message inattendu a été détecté dans le data_channel."],
     ["Forbidden Page", "Snake, tu dois te connecter pour accéder à cette section du site !"],

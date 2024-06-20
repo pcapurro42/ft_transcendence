@@ -221,8 +221,6 @@ let en = [
     ['Waiting Lobby Creation', "Waiting lobby creation from "],
     ['Please Create Lobby', 'Please click the create lobby button to start a game with '],
 
-    ["Online Win", " won the game"],
-
     ["42 Auth Success", "Succesfully logged in! Welcome "],
     ["42 Auth Failure", "Connection failed."],
     ["Copy Success", "Succesfully copied to clipboard."],
