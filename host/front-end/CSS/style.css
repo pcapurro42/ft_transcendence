@@ -19,6 +19,14 @@ body
 
 }
 
+#background_menu{
+    position: absolute;
+    max-width: 559px;
+    min-width: 100px;
+    left: 77%;
+    bottom: 103px;
+    z-index: -1;
+}
 .container{
     max-width: 1090px !important;
 }
