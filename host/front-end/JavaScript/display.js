@@ -297,7 +297,7 @@ function detectKonamiCode(event)
                     
                     return ;
                 }
-            }y
+            }
         }
     }
 }
