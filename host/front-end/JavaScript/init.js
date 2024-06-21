@@ -35,6 +35,19 @@ let user_info;
 let client_id;
 let redirect_uri;
 
+//database stored data
+
+let gamesPlayedNb = 0;
+let wonGamesNb = 0;
+let loseGameNb = 0;
+let ballDistance = 0;
+let ballReturned = 0;
+let ballReceived = 0;
+let bonusTaken = 0;
+let bonusTotal = 0;
+let gameHistory;
+
+
 initializeAuth();
 refreshLogin();
 
@@ -130,4 +143,6 @@ ARIAButtonState();
 handleRedirection();
 handleLocation();
 
+if (localStorage.getItem('status') == 'connected')
+    retrieveUserInfo();
 window.addEventListener('DOMContentLoaded', ()=>{document.body.style.display = "block"});

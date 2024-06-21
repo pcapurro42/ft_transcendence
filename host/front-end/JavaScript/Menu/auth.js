@@ -9,7 +9,7 @@ async function login()
     }
     else
         setTimeout(() => {window.location.href = `https://api.intra.42.fr/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`;}, 800);
-    
+
 }
 
 async function logout()
@@ -28,7 +28,6 @@ function isConnected(){
     return false;
 }
 /********************************************** API UTILS ************************************************/
-
 async function fetchCsrfToken() {
     try{
         const response = await fetch('https://hostname:8080/backend/csrf/', {
@@ -51,9 +50,13 @@ async function handleRedirection(){
 }
 
 async function storeUserCredentials(response){
+    let userInfo
     try{
-            localStorage.setItem('login', response['login']);
-            localStorage.setItem('token', response['token'])
+            userInfo = JSON.parse(response);
+            userInfo = userInfo[0].fields;
+            localStorage.setItem('login', userInfo['login']);
+            localStorage.setItem('token', userInfo['token']);
+            retrieveOnlineStats(userInfo);
             auth_code = '';
     }
     catch(error){
@@ -63,7 +66,7 @@ async function storeUserCredentials(response){
         return;
     }
     localStorage.setItem("status", "connected");
-    displayStatusBarSuccess(getTranslation('42 Auth Success') + response['login'])
+    displayStatusBarSuccess(getTranslation('42 Auth Success') + userInfo['login'])
     refreshLogin();
     document.getElementById('login').style.display = 'none';
 }
@@ -80,7 +83,7 @@ async function getAccessToken(auth_code){
             body: auth_code,
         });
 
-        const response = await request.json();
+        const response = await request.text();
         return (response)
     }
     catch(error)
@@ -107,6 +110,7 @@ function refreshLogin()
         document.getElementById('intra_login').style.display = "none";
         localStorage.removeItem('login');
     }
+
     refreshStats();
     refreshHistory();
     refreshDisplay();

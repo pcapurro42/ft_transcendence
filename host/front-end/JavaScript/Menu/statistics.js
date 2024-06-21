@@ -22,17 +22,17 @@ class VisualStats
         this.histogram_left_x = this.histogram_center_x - 175;
         this.histogram_right_x = this.histogram_center_x + 175;
 
-        this.onl_victory = parseInt(localStorage.getItem('onl_victory'));
-        this.onl_defeat = parseInt(localStorage.getItem('onl_defeat'));
+        this.onl_victory = wonGamesNb;
+        this.onl_defeat = loseGameNb;
 
-        this.onl_played = parseInt(localStorage.getItem('onl_played'));
+        this.onl_played = gamesPlayedNb;
 
-        this.onl_ball_return = parseInt(localStorage.getItem('onl_ball_return'));
-        this.onl_ball_received = parseInt(localStorage.getItem('onl_ball_received'));
+        this.onl_ball_return = ballReturned;
+        this.onl_ball_received = ballReceived;
         this.onl_ball_missed = this.onl_ball_received - this.onl_ball_return;
 
-        this.onl_bonus_taken = parseInt(localStorage.getItem('onl_bonus_taken'));
-        this.onl_bonus_received = parseInt(localStorage.getItem('onl_bonus_received'));
+        this.onl_bonus_taken = bonusTaken;
+        this.onl_bonus_received = bonusTotal;
         this.onl_bonus_missed = this.onl_bonus_received - this.onl_bonus_taken;
 
         // canvas creation and config
@@ -324,29 +324,29 @@ function refreshStats()
 
     // online
 
-    if (localStorage.getItem('onl_played') == null)
-        localStorage.setItem('onl_played', '0');
+    // if (localStorage.getItem('onl_played') == null)
+    //     localStorage.setItem('onl_played', '0');
 
-    if (localStorage.getItem('onl_victory') == null)
-        localStorage.setItem('onl_victory', '0');
+    // if (localStorage.getItem('onl_victory') == null)
+    //     localStorage.setItem('onl_victory', '0');
 
-    if (localStorage.getItem('onl_defeat') == null)
-        localStorage.setItem('onl_defeat', '0');
+    // if (localStorage.getItem('onl_defeat') == null)
+    //     localStorage.setItem('onl_defeat', '0');
 
-    if (localStorage.getItem('onl_dist') == null)
-        localStorage.setItem('onl_dist', '0');
+    // if (localStorage.getItem('onl_dist') == null)
+    //     localStorage.setItem('onl_dist', '0');
 
-    if (localStorage.getItem('onl_ball_return') == null)
-        localStorage.setItem('onl_ball_return', '0');
+    // if (localStorage.getItem('onl_ball_return') == null)
+    //     localStorage.setItem('onl_ball_return', '0');
 
-    if (localStorage.getItem('onl_ball_received') == null)
-        localStorage.setItem('onl_ball_received', '0');
+    // if (localStorage.getItem('onl_ball_received') == null)
+    //     localStorage.setItem('onl_ball_received', '0');
 
-    if (localStorage.getItem('onl_bonus_taken') == null)
-        localStorage.setItem('onl_bonus_taken', '0');
+    // if (localStorage.getItem('onl_bonus_taken') == null)
+    //     localStorage.setItem('onl_bonus_taken', '0');
 
-    if (localStorage.getItem('onl_bonus_received') == null)
-        localStorage.setItem('onl_bonus_received', '0');
+    // if (localStorage.getItem('onl_bonus_received') == null)
+    //     localStorage.setItem('onl_bonus_received', '0');
 
     // load html data from variables
 
@@ -355,15 +355,15 @@ function refreshStats()
     document.getElementById('lcl_ball_exit_nb').innerHTML = "[ " + localStorage.getItem('lcl_ball_exit_nb') + " ]";
     document.getElementById('lcl_ball_bounce_nb').innerHTML = "[ " + localStorage.getItem('lcl_ball_bounce_nb') + " ]";
 
-    let win_rate = ~~(parseInt(localStorage.getItem('onl_victory')) * 100 / parseInt(localStorage.getItem('onl_played')));
-    let lose_rate = ~~(parseInt(localStorage.getItem('onl_defeat')) * 100 / parseInt(localStorage.getItem('onl_played')));
+    let win_rate = ~~(wonGamesNb * 100 / gamesPlayedNb);
+    let lose_rate = ~~(loseGameNb * 100 / gamesPlayedNb);
 
-    document.getElementById('onl_game_played_nb').innerHTML = "[ " + localStorage.getItem('onl_played') + " ]";
-    document.getElementById('onl_game_won_nb').innerHTML = "[ " + localStorage.getItem('onl_victory') + " ] [ " + win_rate + "% ]";
-    document.getElementById('onl_game_lost_nb').innerHTML = "[ " + localStorage.getItem('onl_defeat') + " ] [ " + lose_rate + "% ]";
-    document.getElementById('onl_dist').innerHTML = "[ " + localStorage.getItem('onl_dist') + " px ]";
-    document.getElementById('onl_ball_return').innerHTML = "[ " + localStorage.getItem('onl_ball_return') + "/" + localStorage.getItem('onl_ball_received') + " ]";
-    document.getElementById('onl_bonus_taken_nb').innerHTML = "[ " + localStorage.getItem('onl_bonus_taken') + "/" + localStorage.getItem('onl_bonus_received') + " ]";
+    document.getElementById('onl_game_played_nb').innerHTML = "[ " + gamesPlayedNb + " ]";
+    document.getElementById('onl_game_won_nb').innerHTML = "[ " + wonGamesNb + " ] [ " + win_rate + "% ]";
+    document.getElementById('onl_game_lost_nb').innerHTML = "[ " + loseGameNb + " ] [ " + lose_rate + "% ]";
+    document.getElementById('onl_dist').innerHTML = "[ " + ballDistance + " px ]";
+    document.getElementById('onl_ball_return').innerHTML = "[ " + ballReturned + "/" + ballReceived + " ]";
+    document.getElementById('onl_bonus_taken_nb').innerHTML = "[ " + bonusTaken + "/" + bonusTotal + " ]";
 }
 
 function changeStatsDisplayMode()

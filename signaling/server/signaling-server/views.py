@@ -1,4 +1,4 @@
-from django.http import JsonResponse, HttpResponseBadRequest, HttpResponse, HttpResponseServerError
+from django.http import JsonResponse, HttpResponse, HttpResponseServerError
 from django.middleware.csrf import get_token
 from http.client import HTTPSConnection
 from urllib.parse import urlencode
@@ -36,11 +36,9 @@ def sendToken(response):
 		response = conn.getresponse().read().decode()
 		response_data = json.loads(response)
 		response_data['token'] = utils.generateToken()
-		user_info.storeUserCredentials(response_data)
-		response_data = json.dumps(response_data)
-		return HttpResponse(response_data)
-
-
+		response_data = user_info.getOrCreateUser(response_data)
+		return HttpResponse(response_data, content_type = 'application/json')
+	
 	except Exception as error:
 			return HttpResponseServerError(error)
 
@@ -71,15 +69,5 @@ def token(request):
 def csrf(request):
 	csrf_token = get_token(request)
 	return JsonResponse({'csrfToken': csrf_token})
-
-def deleteUser(request):
-	request = request.body.decode()
-	requestJson = json.loads(request)
-	if user_info.verifyUser(requestJson) is True:
-		user = UserInfo.objects.get(login=requestJson['login'])
-		user.delete()
-		return HttpResponse(status=200)
-	else:
-		return HttpResponseServerError(status=404)
 
 

@@ -407,7 +407,7 @@ function initializeHistory()
         length: 0,
         data: null
     }
-    localStorage.setItem('history_data', JSON.stringify(new_history_data));
+    gameHistory = JSON.stringify(new_history_data);
 }
 
 function addHistoryEntry(player1, player2, final_score, date, duration, scores, role)
@@ -416,16 +416,16 @@ function addHistoryEntry(player1, player2, final_score, date, duration, scores, 
 
     new_data = [player1, player2, final_score, date, duration, scores, role];
 
-    let history_data = JSON.parse(localStorage.getItem('history_data'));
+    let history_data = JSON.parse(gameHistory);
     if (history_data.data == null)
         history_data.data = [], history_data.exist = true;
     history_data.data.push(new_data);
-    
+
     history_data.length++;
     if (history_data.length == 11)
         history_data.data = history_data.data.shift(), history_data.length--;
 
-    localStorage.setItem('history_data', JSON.stringify(history_data));
+    gameHistory = JSON.stringify(history_data);
 
     refreshHistory();
 }
@@ -434,11 +434,11 @@ function refreshHistory()
 {
     if (localStorage.getItem('status') == 'connected')
     {
-        if (localStorage.getItem('history_data') == null)
+        if (gameHistory == null)
             initializeHistory();
         else
         {
-            let history_data = JSON.parse(localStorage.getItem('history_data'));
+            let history_data = JSON.parse(gameHistory);
             if (history_data.login != localStorage.getItem('login'))
                 initializeHistory();
         }
@@ -459,7 +459,7 @@ nav.displayHistory = function()
     document.getElementById('stats_back_btn').style.display = 'none';
     document.getElementById('history').style.display = 'block';
 
-    let history_data = JSON.parse(localStorage.getItem('history_data'));
+    let history_data = JSON.parse(gameHistory);
     if (history_data.exist != true)
         history_data = null;
     else

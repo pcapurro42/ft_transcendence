@@ -5,8 +5,12 @@ let fr = [
 
     ["LOG IN WITH 42", "SE CONNECTER AVEC 42"],
     ["LOG OUT", "Se déconnecter"],
-     ["Logged User Data Delete", "Les données de l'utilisateur ont été supprimées avec succès."],
+    ["42 Security Disconnection", "Pour des raisons de sécurité, vous venez d'être déconnecté. Vous-êtes vous connecté depuis un autre appareil ?"],
+    ["Logged User Data Delete", "Les données de l'utilisateur ont été supprimées avec succès."],
     ["Logged User Verification Failure", "Erreur: L'identification de l'utilisateur a échoué."],
+    ["Statistic Storage Error", "Erreur: Echec du stockage des statistiques de la partie."],
+
+
 
     ["Enable/Disable menu music", "Activer ou désactiver la musique des menus."],
     ["Enable/Disable menu sounds", "Activer ou désactiver les sons des menus."],
