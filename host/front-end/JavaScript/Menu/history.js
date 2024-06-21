@@ -423,8 +423,7 @@ function addHistoryEntry(player1, player2, final_score, date, duration, scores, 
     
     history_data.length++;
     if (history_data.length == 11)
-        history_data.data = history_data.data.shift();
-    history_data.length--;
+        history_data.data = history_data.data.shift(), history_data.length--;
 
     localStorage.setItem('history_data', JSON.stringify(history_data));
 
