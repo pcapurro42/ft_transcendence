@@ -84,8 +84,9 @@ async function languageSwitch(lang){
 		en.style.color = "white";
 
 		fr.style.backgroundColor = '';
+		es.style.backgroundColor = '';
 		high_contrast == 'true'	? fr.style.color = 'white' : fr.style.color = 'black';
-		high_contrast == 'true'	? es.style.color = 'white' : fr.style.color = 'black';
+		high_contrast == 'true'	? es.style.color = 'white' : es.style.color = 'black';
 		fr.removeAttribute('aria-current');
 		es.removeAttribute('aria-current');
 	}
