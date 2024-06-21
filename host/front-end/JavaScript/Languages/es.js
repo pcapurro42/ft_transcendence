@@ -5,6 +5,8 @@ let es = [
 
     ["LOG IN WITH 42", "CONECTAR CON 42"],
     ["LOG OUT", "Desconectarse"],
+    ["Logged User Data Delete", "Los datos del usuario se eliminaron correctamente."],
+    ["Logged User Verification Failure", "Error: no se pudo verificar la identidad del usuario."],
 
     ["Enable/Disable menu music", "Activar o desactivar la música del menú"],
     ["Enable/Disable menu sounds", "Activar o desactivar los sonidos del menú"],

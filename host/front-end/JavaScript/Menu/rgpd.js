@@ -27,7 +27,7 @@ function setAuthsState()
         document.getElementById('data_anonymize_btn').setAttribute('data-oname', 'Anonymized');
     else
         document.getElementById('data_anonymize_btn').setAttribute('data-oname', 'Public');
-    
+
     refreshLanguage();
 }
 
@@ -96,8 +96,23 @@ function anonymizeOnlineData()
     // ...
 }
 
-function deleteOnlineData()
+async function deleteOnlineData()
 {
-    // supprimer l'IP et le login correspondants de la db
-    // ...
+    const endpoint = "https://127.0.0.1:8080/backend/delete-user/"
+    let login = localStorage.getItem('login');
+    let token = localStorage.getItem('token');
+    let body = JSON.stringify({ login: login, token: token });
+    const request = await fetch(endpoint, {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+            'Content-type' : 'application/json',
+            'X-CSRFToken' : csrfToken,
+        },
+        body : body
+    })
+    if (request.status == 200)
+        displayStatusBarSuccess(getTranslation('Logged User Data Delete'));
+    else
+        displayStatusBarAlert(getTranslation('Logged User Verification Failure'));
 }

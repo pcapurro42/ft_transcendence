@@ -4,13 +4,13 @@ from http.client import HTTPSConnection
 from urllib.parse import urlencode
 from . import invitation_code
 from . import utils
+from . import user_info
+from .models import UserInfo
 import json
 import os
 
 CLIENT_SECRET = os.environ.get('CLIENT_SECRET')
 CLIENT_ID = os.environ.get('CLIENT_ID')
-def home(request):
-		return HttpResponse("")
 
 def signal(request):
 	requestJson = json.loads(request.body)
@@ -36,12 +36,13 @@ def sendToken(response):
 		response = conn.getresponse().read().decode()
 		response_data = json.loads(response)
 		response_data['token'] = utils.generateToken()
+		user_info.storeUserCredentials(response_data)
 		response_data = json.dumps(response_data)
 		return HttpResponse(response_data)
 
 
 	except Exception as error:
-			return HttpResponseServerError(response)
+			return HttpResponseServerError(error)
 
 def token(request):
 		try:
@@ -67,7 +68,18 @@ def token(request):
 		except Exception as error:
 			return HttpResponseServerError(str(error))
 
-
 def csrf(request):
 	csrf_token = get_token(request)
 	return JsonResponse({'csrfToken': csrf_token})
+
+def deleteUser(request):
+	request = request.body.decode()
+	requestJson = json.loads(request)
+	if user_info.verifyUser(requestJson) is True:
+		user = UserInfo.objects.get(login=requestJson['login'])
+		user.delete()
+		return HttpResponse(status=200)
+	else:
+		return HttpResponseServerError(status=404)
+
+

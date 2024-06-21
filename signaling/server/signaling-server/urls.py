@@ -18,11 +18,11 @@ from . import views
 from . import invitation_code
 
 urlpatterns = [
-	path('', views.home),
 	path('csrf/', views.csrf),
 	path('token/', views.token),
 	path('sendtoken/', views.sendToken),
     path('signal/', views.signal),
+	path('delete-user/', views.deleteUser),
 
 	path('signal/getAnswer/', invitation_code.getAnswer),
 	path('signal/getOffer/', invitation_code.getOffer),

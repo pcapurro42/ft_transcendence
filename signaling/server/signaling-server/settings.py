@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*'] #ICI
 # Application definition
 
 INSTALLED_APPS = [
+	'signaling.apps.SignalingConfig',
 	'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',

@@ -5,7 +5,9 @@ let en = [
 
     ["LOG IN WITH 42", "LOG IN WITH 42"],
     ["LOG OUT", "Log out"],
-
+    ["Logged User Data Delete", "User's data successfully deleted."],
+    ["Logged User Verification Failure", "Error: User's identity couldn't be verified."],
+    
     ["Enable/Disable menu music", "Enable or Disable menu music"],
     ["Enable/Disable menu sounds", "Enable or Disable menu sounds"],
 
