@@ -122,7 +122,7 @@ pre{
     max-height: 170px;
 }
 
-.foot, #hr, #mgp_corp, #bgales_git, #pcap_git, #rgpd_btn, #mgp_corp, .sb_switch{
+.foot, #hr, #mgp_corp, #bgales_git, #pcap_git, #rgpd_btn, #mgp_corp, .sb_switch, #credit_close{
     color:white !important;
 
 }
@@ -199,6 +199,7 @@ pre{
     height: 100%;
     top: 0%;
     left: 0%;
+    background-color: black;
 }
 .btn:hover:not(.border, .btn-outline-success, .btn-outline-secondary, .btn-outline-danger, .dark_btn, #intra_login, .dropdown_btn, .foot, .sb_nav){
     transition: 1s;
@@ -317,3 +318,4 @@ pre{
 {
     font-weight: bold;
 }
+

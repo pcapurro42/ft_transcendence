@@ -1,20 +1,23 @@
 let boolAudio_on;
 
-nav.theaterCredits = function(){
+nav.theaterCredits = async function(){
 	let website = document.getElementById('main_page');
 	let music_menu = document.getElementById('mgs');
 	let video = document.getElementById('vid_credits');
 
+	video.style.opacity = '0';
+    video.style.display = 'block';
+	await sleep(10)
 	website.style.transition = 'opacity 0.5s';
+	video.style.transition = 'opacity 0.5s'
     website.style.opacity = '0';
 
-
-    setTimeout(() => {
-        website.style.display = 'none';
-        video.style.display = 'block';
-        document.getElementById('credit_close').style.display = 'block';
-        video.play();
-    }, 500);
+	await sleep(500);
+    website.style.display = 'none';
+    document.getElementById('credit_close').style.display = 'block';
+	video.style.opacity = '1'
+	await sleep(500)
+    video.play();
 
 	if (music_menu.muted == true)
 		boolAudio_on = false;
@@ -26,7 +29,7 @@ nav.theaterCredits = function(){
 	video.play();
 }
 
-nav.theaterClose = function(){
+nav.theaterClose = async function(){
 	let website = document.getElementById('main_page');
 	let music_menu = document.getElementById('mgs');
 	let video = document.getElementById('vid_credits');
@@ -40,10 +43,8 @@ nav.theaterClose = function(){
 	website.style.display = 'block';
     website.style.transition = 'opacity 0.5s';
     website.style.opacity = '0';
-
-    setTimeout(() => {
-        website.style.opacity = '1';
-    }, 10);
+	await sleep(10)
+    website.style.opacity = '1';
 	if (boolAudio_on == true){
 		music_menu.muted = false;
 		music_menu.play();
