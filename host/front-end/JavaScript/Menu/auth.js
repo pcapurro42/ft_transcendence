@@ -2,6 +2,8 @@
 
 async function login()
 {
+    document.getElementById('loading').classList.remove('d-none');
+    document.getElementById('login_btn').style.display = 'none';
     if (localStorage.getItem('sound') == 'on')
     {
         document.getElementById('codec_sound').play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
@@ -45,6 +47,8 @@ async function handleRedirection(){
         refreshLogin();
         return;
     }
+    document.getElementById('loading').classList.remove('d-none');
+    document.getElementById('login_btn').style.display = 'none';
     let response = await getAccessToken(localStorage.getItem('auth_code'));
     await storeUserCredentials(response);
 }
@@ -68,7 +72,8 @@ async function storeUserCredentials(response){
     localStorage.setItem("status", "connected");
     displayStatusBarSuccess(getTranslation('42 Auth Success') + userInfo['login'])
     refreshLogin();
-    document.getElementById('login').style.display = 'none';
+    document.getElementById('loading').classList.add('d-none');
+    document.getElementById('login_btn').style.display = 'none';
 }
 
 async function getAccessToken(auth_code){
@@ -106,7 +111,7 @@ function refreshLogin()
     }
     else
     {
-        document.getElementById('login_btn').style.display = "block";
+        // document.getElementById('login_btn').style.display = "block";
         document.getElementById('intra_login').style.display = "none";
         localStorage.removeItem('login');
     }

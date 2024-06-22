@@ -299,6 +299,10 @@ class OnlineGame1v1_guest
         this.scores[0] = 0;
         this.scores[1] = 0;
 
+        this.start_time = 0;
+        this.end_time = 0;
+        this.scores_time = [];
+        
         this.left_player.reset();
         this.right_player.reset();
 

@@ -48,6 +48,7 @@ async function retrieveUserInfo(){
 		localStorage.setItem('status', 'not connected')
         displayStatusBarAlert(getTranslation('42 Security Disconnection'));
 		refreshLogin();
+		document.getElementById('login_btn').style.display = 'block';
 		return;
 	}
 	let userInfo = await response.text();

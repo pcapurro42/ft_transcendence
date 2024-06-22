@@ -308,7 +308,6 @@ class LocalGame1v2
     {
         this.scores[0] = 0;
         this.scores[1] = 0;
-
         this.left_player.reset();
         this.right_player_1.reset();
         this.right_player_2.reset();

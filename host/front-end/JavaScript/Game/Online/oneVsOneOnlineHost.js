@@ -315,6 +315,10 @@ class OnlineGame1v1_host
         this.left_player.reset();
         this.right_player.reset();
 
+        this.start_time = 0;
+        this.end_time = 0;
+        this.scores_time = [];
+
         this.dist = 0;
         this.alert = 0;
 

@@ -5,6 +5,7 @@ let es = [
 
     ["LOG IN WITH 42", "CONECTAR CON 42"],
     ["LOG OUT", "Desconectarse"],
+    ["Loading", "Cargando"],
     ["42 Security Disconnection", "Te desconectaron por razones de seguridad. ¿Estás conectado en otro dispositivo?"],
     ["Logged User Data Delete", "Los datos del usuario se eliminaron correctamente."],
     ["Logged User Verification Failure", "Error: no se pudo verificar la identidad del usuario."],
