@@ -428,6 +428,7 @@ function addHistoryEntry(player1, player2, final_score, date, duration, scores, 
     gameHistory = JSON.stringify(history_data);
 
     refreshHistory();
+    return JSON.stringify(history_data);
 }
 
 function refreshHistory()

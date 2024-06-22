@@ -111,8 +111,14 @@ async function deleteOnlineData()
         },
         body : body
     })
-    if (request.status == 200)
+    if (request.status == 200){
         displayStatusBarSuccess(getTranslation('Logged User Data Delete'));
-    else
+        localStorage.setItem('status', 'not connected');
+        refreshLogin();
+    }
+    else{
         displayStatusBarAlert(getTranslation('Logged User Verification Failure'));
+        localStorage.setItem('status', 'not connected');
+        refreshLogin();
+    }
 }

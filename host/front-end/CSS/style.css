@@ -230,7 +230,8 @@ pre{
 }
 
 #map_tooltip{
-    left: 58%;
+    position: absolute;
+    transform: translate(105px, -102px);
     box-sizing: border-box;
     border: 2px solid;
 }
@@ -316,4 +317,3 @@ pre{
 {
     font-weight: bold;
 }
-

@@ -38,7 +38,11 @@ document.getElementById('credits_btn').onclick = nav.theaterCredits;
 document.getElementById('vid_credits').onended = nav.theaterClose;
 document.getElementById('credit_close').onclick = nav.theaterClose;
 
-document.getElementById('rgpd_btn').onclick = nav.displayRGPD;
+document.getElementById('rgpd_btn').onclick = async() => {
+	if (!(await handleSensitivePages()))
+        return;
+	nav.displayRGPD();
+};
 document.getElementById('rgpd_back_btn').onclick = nav.displayMenu;
 
 // < play > //

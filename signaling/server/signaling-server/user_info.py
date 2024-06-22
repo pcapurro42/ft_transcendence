@@ -29,15 +29,15 @@ def storeUserStatistics(request):
 	request = json.loads(request.body.decode())
 	if verifyUser(request) is True:
 		user_info = UserInfo.objects.get(login = request['login'])
-		user_info.ballDistance = request['ballDistance']
-		user_info.ballReceived = request['ballReceived']
-		user_info.ballReturned = request['ballReturned']
-		user_info.bonusTaken = request['bonusTaken']
-		user_info.bonusTotal = request['bonusTotal']
-		user_info.gamesPlayedNb = request['gamesPlayedNb']
+		user_info.ballDistance += request['ballDistance']
+		user_info.ballReceived += request['ballReceived']
+		user_info.ballReturned += request['ballReturned']
+		user_info.bonusTaken += request['bonusTaken']
+		user_info.bonusTotal += request['bonusTotal']
+		user_info.gamesPlayedNb += request['gamesPlayedNb']
 		user_info.gameHistory = request['gameHistory']
-		user_info.loseGameNb = request['loseGameNb']
-		user_info.wonGamesNb = request['wonGamesNb']
+		user_info.loseGameNb += request['loseGameNb']
+		user_info.wonGamesNb += request['wonGamesNb']
 		user_info.save()
 		return HttpResponse(status = 200)
 	else:

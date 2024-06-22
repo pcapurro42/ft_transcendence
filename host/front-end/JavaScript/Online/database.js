@@ -1,9 +1,9 @@
-async function storeOnlineStats(){
+async function storeOnlineStats(gameStat){
 	const endpoint = 'https://127.0.0.1:8080/backend/store-stats/'; //ICI
 	let login = localStorage.getItem('login');
     let token = localStorage.getItem('token');
 
-	let body = JSON.stringify({login:login, token:token, ballDistance:ballDistance, ballReturned:ballReturned, ballReceived:ballReceived, bonusTaken:bonusTaken, bonusTotal:bonusTotal, gamesPlayedNb:gamesPlayedNb, gameHistory:gameHistory, loseGameNb:loseGameNb, wonGamesNb:wonGamesNb});
+	let body = JSON.stringify({login:login, token:token, ballDistance:gameStat['ballDistance'], ballReturned:gameStat['ballReturned'], ballReceived:gameStat['ballReceived'], bonusTaken:gameStat['bonusTaken'], bonusTotal:gameStat['bonusTotal'], gamesPlayedNb:gameStat['gamesPlayedNb'], gameHistory:gameStat['gameHistory'], loseGameNb:gameStat['loseGameNb'], wonGamesNb:gameStat['wonGamesNb']});
 
 	const request = await fetch(endpoint, {
 		method: 'POST',

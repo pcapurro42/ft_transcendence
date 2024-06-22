@@ -340,7 +340,7 @@ let fr = [
     ["Forbidden Page", "Snake, tu dois te connecter pour accéder à cette section du site !"],
 
     ["Konami Code detected!", "Konami Code détecté!"],
-    ["« Engravings, gives you no tactical advantage whatsoever... »", "« Engravings, gives you no tactical advantage whatsoever... »"],
-    ["— Jack, in 'Snake Eater' (1974)", "— Jack, in 'Snake Eater' (1974)"],
+    ["« Engravings, gives you no tactical advantage whatsoever... »", "&ldquo; Engravings, gives you no tactical advantage whatsoever... 	&bdquo;"],
+    ["— Jack, in 'Snake Eater' (1974)", "— Jack, 'Snake Eater' (1974)"],
     ["'PowerUp', « a weapon to surpass Metal Gear... »", "'PowerUp', « a weapon to surpass Metal Gear... »"]
 ];

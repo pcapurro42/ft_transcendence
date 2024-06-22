@@ -54,7 +54,6 @@ async function removeOnline1v1()
 	document.getElementById('waiting_host').style.visibility = 'visible';
     document.getElementById('o_host_foot').style.display = 'block';
     document.getElementById('o_guest_foot').style.display = 'block';
-    await storeOnlineStats();
 
 }
 
@@ -66,57 +65,74 @@ function startOnline1v1()
     else
         frame = 1000 / 120;
 
-    setTimeout(() => {
+    setTimeout(async () => {
         if (game.isOver() == true || active == false)
         {
             game.refreshBackground();
+            let gameStat = {};
 
             if (game.scores[0] > 9 || game.scores[1] > 9)
             {
-                addHistoryEntry(game.player, game.other_player, ([game.scores[0], game.scores[1]]), game.date, (game.end_time - game.start_time), game.scores_time, role);
-
+                gameStat['gameHistory'] = addHistoryEntry(game.player, game.other_player, ([game.scores[0], game.scores[1]]), game.date, (game.end_time - game.start_time), game.scores_time, role);
+                console.log("start time =", game.start_time)
+                console.log("end time =", game.end_time)
                 if (role == 'host')
                 {
-                    if (game.scores[0] > 9)
+                    if (game.scores[0] > 9){
+                        gameStat['wonGamesNb'] = 1;
+                        gameStat['loseGameNb'] = 0;
                         wonGamesNb += 1;
-                        // localStorage.setItem('onl_victory', (parseInt(localStorage.getItem('onl_victory')) + 1).toString());
-                    else
+                    }
+                    else{
+                        gameStat['loseGameNb'] = 1;
+                        gameStat['wonGamesNb'] = 0;
                         loseGameNb += 1;
-                        // localStorage.setItem('onl_defeat', (parseInt(localStorage.getItem('onl_defeat')) + 1).toString());
+                    }
                     game.ball.onl_received = game.scores[1] + game.ball.onl_return;
                 }
                 else
                 {
-                    if (game.scores[1] > 9)
+                    if (game.scores[1] > 9){
+                        gameStat['wonGamesNb'] = 1;
+                        gameStat['loseGameNb'] = 0;
                         wonGamesNb += 1;
-                        // localStorage.setItem('onl_victory', (parseInt(localStorage.getItem('onl_victory')) + 1).toString());
-                    else
+                    }
+                    else{
+                        gameStat['loseGameNb'] = 1;
+                        gameStat['wonGamesNb'] = 0;
                         loseGameNb += 1;
-                        // localStorage.setItem('onl_defeat', (parseInt(localStorage.getItem('onl_defeat')) + 1).toString());
+                    }
                     game.ball.onl_received = game.scores[0] + game.ball.onl_return;
                 }
+                gameStat['ballDistance'] = game.dist;
                 ballDistance += game.dist;
-                // localStorage.setItem('onl_dist', (parseInt(localStorage.getItem('onl_dist')) + game.dist).toString());
+
+                gameStat['gamesPlayedNb'] = 1;
                 gamesPlayedNb += 1;
-                // localStorage.setItem('onl_played', (parseInt(localStorage.getItem('onl_played')) + 1).toString());
+
+                gameStat['ballReceived'] = game.ball.onl_received;
                 ballReceived += game.ball.onl_received;
-                // localStorage.setItem('onl_ball_received', (parseInt(localStorage.getItem('onl_ball_received')) + game.ball.onl_received).toString());
+
+                gameStat['ballReturned'] = game.ball.onl_return;
                 ballReturned += game.ball.onl_return;
-                // localStorage.setItem('onl_ball_return', (parseInt(localStorage.getItem('onl_ball_return')) + game.ball.onl_return).toString());
 
                 if (game.bonus_one != null && game.bonus_two != null)
                 {
+                    gameStat['bonusTotal'] = 2;
                     bonusTotal += 2;
-                    // localStorage.setItem('onl_bonus_received', (parseInt(localStorage.getItem('onl_bonus_received')) + 2).toString());
-                    bonusTaken += game.bonus_one.onl_taken + game.bonus_two.onl_taken;
-                    // localStorage.setItem('onl_bonus_taken', (parseInt(localStorage.getItem('onl_bonus_taken')) + game.bonus_one.onl_taken).toString());
 
-                    // localStorage.setItem('onl_bonus_taken', (parseInt(localStorage.getItem('onl_bonus_taken')) + game.bonus_two.onl_taken).toString());
+                    gameStat['bonusTaken'] = game.bonus_one.onl_taken + game.bonus_two.onl_taken;
+                    bonusTaken += gameStat['bonusTaken']
+                }
+                else{
+                    gameStat['bonusTotal'] = 0;
+                    gameStat['bonusTaken'] = 0;
                 }
             }
             removeOnline1v1();
             game.resetGame();
             active = false;
+            await storeOnlineStats(gameStat);
         }
         else
         {
