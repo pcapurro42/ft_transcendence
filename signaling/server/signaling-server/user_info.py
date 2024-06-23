@@ -20,7 +20,8 @@ def getOrCreateUser(response):
 		if user_info.isAnonymized is True:
 			user_info.login = "Anonymous"
 		else:
-			user_info.login = response['login']
+			if 'login' in response:
+				user_info.login = response['login']
 		user_info.token = response['token']
 		user_info.save()
 	except ObjectDoesNotExist:

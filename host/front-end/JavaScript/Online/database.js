@@ -28,13 +28,24 @@ function retrieveOnlineStats(response){
 	gameHistory = response['gameHistory'];
 	loseGameNb = +response['loseGameNb'];
 	wonGamesNb = +response['wonGamesNb'];
+
+	if (response['login'] == "Anonymous"){
+		localStorage.setItem('data_anonymize', 'true');
+		localStorage.setItem('login', getTranslation('Anonymous'));
+	}
+	else{
+		localStorage.setItem('data_anonymize', 'false');
+		localStorage.setItem('login', response['login']);
+	}
+	setAuthsState();
 }
 
 async function retrieveUserInfo(){
 	const endpoint = "https://127.0.0.1:8080/backend/retrieve-user/"
     let hash_login = localStorage.getItem('hash_login');
+	let login = localStorage.getItem('login');
     let token = localStorage.getItem('token');
-    let body = JSON.stringify({ hash_login: hash_login, token: token});
+    let body = JSON.stringify({ hash_login: hash_login, login:login, token: token});
     const response = await fetch(endpoint, {
         method: 'POST',
         credentials: 'include',
@@ -55,4 +66,5 @@ async function retrieveUserInfo(){
     userInfo = JSON.parse(userInfo);
     userInfo = userInfo[0].fields;
 	retrieveOnlineStats(userInfo)
+	refreshLogin();
 }

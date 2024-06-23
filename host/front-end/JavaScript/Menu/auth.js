@@ -29,7 +29,9 @@ function isConnected(){
     displayStatusBarAlert(getTranslation('Forbidden Page'));
     return false;
 }
+
 /********************************************** API UTILS ************************************************/
+
 async function fetchCsrfToken() {
     try{
         const response = await fetch('https://hostname:8080/backend/csrf/', {
@@ -58,7 +60,10 @@ async function storeUserCredentials(response){
     try{
             userInfo = JSON.parse(response);
             userInfo = userInfo[0].fields;
-            localStorage.setItem('login', userInfo['login']);
+            if (userInfo['login'] == "Anonymous")
+                localStorage.setItem('login', getTranslation('Anonymous'));
+            else
+                localStorage.setItem('login', userInfo['login']);
             localStorage.setItem('hash_login', userInfo['hash_login']);
             localStorage.setItem('token', userInfo['token']);
             retrieveOnlineStats(userInfo);
@@ -73,7 +78,7 @@ async function storeUserCredentials(response){
         return;
     }
     localStorage.setItem("status", "connected");
-    displayStatusBarSuccess(getTranslation('42 Auth Success') + userInfo['login'])
+    displayStatusBarSuccess(getTranslation('42 Auth Success') + localStorage.getItem('login'))
     refreshLogin();
     document.getElementById('loading').classList.add('d-none');
     document.getElementById('login_btn').style.display = 'none';

@@ -111,7 +111,7 @@ async function anonymizeOnlineData()
         body : body
     })
     if (request.status == 200){
-        displayStatusBarSuccess('User Anonymization Success')
+        displayStatusBarSuccess(getTranslation('User Anonymization Success'))
         localStorage.setItem('login', getTranslation('Anonymous'))
         refreshLogin();
     }

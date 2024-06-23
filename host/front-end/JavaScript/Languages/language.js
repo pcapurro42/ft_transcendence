@@ -170,6 +170,8 @@ function refreshLanguage()
     ARIAButtonState();
     ARIASoundsSlider();
     dropdownAddSvg();
+    if (localStorage.getItem('data_anonymize') == 'true')
+        document.getElementById('intra_login').innerHTML = getTranslation('Anonymous');
 }
 
 function initializeLanguage()
