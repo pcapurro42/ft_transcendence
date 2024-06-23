@@ -73,9 +73,8 @@ function startOnline1v1()
 
             if (game.scores[0] > 9 || game.scores[1] > 9)
             {
-                gameStat['gameHistory'] = addHistoryEntry(game.player, game.other_player, ([game.scores[0], game.scores[1]]), game.date, (game.end_time - game.start_time), game.scores_time, role);
-                console.log("start time =", game.start_time)
-                console.log("end time =", game.end_time)
+                    gameStat['gameHistory'] = addHistoryEntry(game.guest, game.host, ([game.scores[0], game.scores[1]]), game.date, (game.end_time - game.start_time), game.scores_time, role);
+
                 if (role == 'host')
                 {
                     if (game.scores[0] > 9){

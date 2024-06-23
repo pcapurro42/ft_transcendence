@@ -7,8 +7,8 @@ class OnlineGame1v1_guest
     {
         // stats initialization
 
-        this.player = localStorage.getItem('login');
-        this.other_player = localStorage.getItem('opponent_login');
+        this.host = localStorage.getItem('opponent_login');
+        this.guest = localStorage.getItem('login');
         this.date = getActualDate();
         this.start_time = 0;
         this.end_time = 0;
@@ -302,7 +302,7 @@ class OnlineGame1v1_guest
         this.start_time = 0;
         this.end_time = 0;
         this.scores_time = [];
-        
+
         this.left_player.reset();
         this.right_player.reset();
 

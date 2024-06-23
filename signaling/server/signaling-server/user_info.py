@@ -68,6 +68,7 @@ def unanonymizeUser(request):
 		user = UserInfo.objects.get(hash_login=requestJson['hash_login'])
 
 		user.isAnonymized = False
+		user.gameHistory = None
 		user.save()
 		return HttpResponse(status=200)
 	else:
@@ -79,6 +80,7 @@ def anonymizeUser(request):
 		user = UserInfo.objects.get(hash_login=requestJson['hash_login'])
 		user.login = "Anonymous"
 		user.isAnonymized = True
+		user.gameHistory = None
 		user.save()
 		return HttpResponse(status=200)
 	else:
