@@ -1,8 +1,12 @@
 from django.db import models
 
 class UserInfo(models.Model):
-	login = models.CharField(max_length=50)
+	hash_login = models.CharField(max_length=255)
+	login = models.CharField(max_length=255)
 	token = models.CharField(max_length=40)
+
+	isAnonymized = models.BooleanField(default=False)
+
 	gamesPlayedNb = models.IntegerField(default=0)
 	wonGamesNb = models.IntegerField(default=0)
 	loseGameNb = models.IntegerField(default=0)

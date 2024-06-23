@@ -59,6 +59,7 @@ async function storeUserCredentials(response){
             userInfo = JSON.parse(response);
             userInfo = userInfo[0].fields;
             localStorage.setItem('login', userInfo['login']);
+            localStorage.setItem('hash_login', userInfo['hash_login']);
             localStorage.setItem('token', userInfo['token']);
             retrieveOnlineStats(userInfo);
             auth_code = '';
@@ -67,6 +68,8 @@ async function storeUserCredentials(response){
         console.error(error);
 
         displayStatusBarAlert(getTranslation("42 Auth Failure"));
+        document.getElementById('loading').classList.add('d-none');
+        document.getElementById('login_btn').style.display = 'block';
         return;
     }
     localStorage.setItem("status", "connected");
@@ -95,6 +98,8 @@ async function getAccessToken(auth_code){
     {
         console.error(error);
         displayStatusBarAlert(getTranslation("42 Auth Failure"));
+        document.getElementById('loading').classList.add('d-none');
+        document.getElementById('login_btn').style.display = 'block';
     }
 
 }
@@ -111,7 +116,6 @@ function refreshLogin()
     }
     else
     {
-        // document.getElementById('login_btn').style.display = "block";
         document.getElementById('intra_login').style.display = "none";
         localStorage.removeItem('login');
     }

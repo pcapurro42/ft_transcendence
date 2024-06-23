@@ -6,10 +6,13 @@ let fr = [
     ["LOG IN WITH 42", "SE CONNECTER AVEC 42"],
     ["LOG OUT", "Se déconnecter"],
     ["Loading", "Chargement"],
-    ["42 Security Disconnection", "Pour des raisons de sécurité, vous venez d'être déconnecté. Vous-êtes vous connecté depuis un autre appareil ?"],
+    ["42 Security Disconnection", "Erreur: L'identification de l'utilisateur a échoué. Vous-êtes vous connecté depuis un autre appareil ?"],
     ["Logged User Data Delete", "Les données de l'utilisateur ont été supprimées avec succès."],
-    ["Logged User Verification Failure", "Erreur: L'identification de l'utilisateur a échoué."],
     ["Statistic Storage Error", "Erreur: Echec du stockage des statistiques de la partie."],
+
+    ["Anonymous", "Anonyme"],
+    ["User Anonymization Success", "Les données de l'utilisateur ont été anonymisées avec succès."],
+    ["Unanonymize Data Msg", "Merci de bien vouloir vous reconnecter pour rétablir les données publiques."],
 
 
 
@@ -338,7 +341,7 @@ let fr = [
     ["Game Duration", "La partie à duré approximativement "],
     ["Enable Sounds Error", "Snake, tu dois intéragir avec le site-web pour entendre les sons!"],
     ["Unauthorized Data Channel", "Erreur: la connexion a été fermée pour des raisons de sécurité. Un message inattendu a été détecté dans le data_channel."],
-    ["Forbidden Page", "Snake, tu dois te connecter pour accéder à cette section du site !"],
+    ["Forbidden Page", "Snake, tu dois te connecter pour utiliser cette section du site !"],
 
     ["Konami Code detected!", "Konami Code détecté!"],
     ["« Engravings, gives you no tactical advantage whatsoever... »", "&ldquo; Engravings, gives you no tactical advantage whatsoever... 	&bdquo;"],

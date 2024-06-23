@@ -23,6 +23,8 @@ urlpatterns = [
 	path('sendtoken/', views.sendToken),
     path('signal/', views.signal),
 
+    path('public-user/', user_info.unanonymizeUser),
+    path('anonymize-user/', user_info.anonymizeUser),
 	path('retrieve-user/', user_info.retrieveUser),
 	path('delete-user/', user_info.deleteUser),
 	path('store-stats/', user_info.storeUserStatistics),

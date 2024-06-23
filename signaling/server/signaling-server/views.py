@@ -36,9 +36,10 @@ def sendToken(response):
 		response = conn.getresponse().read().decode()
 		response_data = json.loads(response)
 		response_data['token'] = utils.generateToken()
+		response_data['hash_login'] = utils.hashStr(response_data['login'])
 		response_data = user_info.getOrCreateUser(response_data)
 		return HttpResponse(response_data, content_type = 'application/json')
-	
+
 	except Exception as error:
 			return HttpResponseServerError(error)
 
@@ -59,7 +60,6 @@ def token(request):
 			form_data = urlencode(data)
 
 			conn.request('POST', '/oauth/token', body=form_data, headers=headers)
-
 			response = conn.getresponse().read().decode()
 			return sendToken(response)
 

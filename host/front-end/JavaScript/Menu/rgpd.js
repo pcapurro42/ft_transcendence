@@ -11,12 +11,17 @@ function initializeDataAuths()
 
 function changeAnonymizeAuth()
 {
-    if (localStorage.getItem('data_anonymize') == 'false')
+    if (!isConnected())
+        return;
+    if (localStorage.getItem('data_anonymize') == 'false'){
         localStorage.setItem('data_anonymize', 'true');
-    else
+        anonymizeOnlineData();
+    }
+    else{
         localStorage.setItem('data_anonymize', 'false');
+        removeDataAnonymize();
+    }
 
-    anonymizeOnlineData();
 
     setAuthsState();
 }
@@ -90,18 +95,71 @@ function deleteLocalData()
 	refreshSite();
 }
 
-function anonymizeOnlineData()
+async function anonymizeOnlineData()
 {
-    // anonymiser le login sur le site comme dans la db
-    // ...
+    const endpoint = "https://127.0.0.1:8080/backend/anonymize-user/"
+    let hash_login = localStorage.getItem('hash_login');
+    let token = localStorage.getItem('token');
+    let body = JSON.stringify({ hash_login: hash_login, token: token });
+    const request = await fetch(endpoint, {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+            'Content-type' : 'application/json',
+            'X-CSRFToken' : csrfToken,
+        },
+        body : body
+    })
+    if (request.status == 200){
+        displayStatusBarSuccess('User Anonymization Success')
+        localStorage.setItem('login', getTranslation('Anonymous'))
+        refreshLogin();
+    }
+    else{
+        displayStatusBarAlert(getTranslation('42 Security Disconnection'));
+        localStorage.setItem('status', 'not connected');
+        refreshLogin();
+        document.getElementById('login_btn').style.display = 'block';
+    }
+}
+async function removeDataAnonymize(){
+
+    const endpoint = "https://127.0.0.1:8080/backend/public-user/"
+    let hash_login = localStorage.getItem('hash_login');
+    let token = localStorage.getItem('token');
+    let body = JSON.stringify({ hash_login: hash_login, token: token, isAnonymized : false });
+
+    const request = await fetch(endpoint, {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+            'Content-type' : 'application/json',
+            'X-CSRFToken' : csrfToken,
+        },
+        body : body
+    })
+    if (request.status == 200){
+        displayStatusBarWarning(getTranslation('Unanonymize Data Msg'));
+        localStorage.setItem('status', 'not connected');
+        document.getElementById('login_btn').style.display = 'block';
+        refreshLogin();
+    }
+    else{
+        displayStatusBarAlert(getTranslation('42 Security Disconnection'));
+        localStorage.setItem('status', 'not connected');
+        refreshLogin();
+        document.getElementById('login_btn').style.display = 'block';
+    }
 }
 
 async function deleteOnlineData()
 {
+    if (!isConnected())
+        return;
     const endpoint = "https://127.0.0.1:8080/backend/delete-user/"
-    let login = localStorage.getItem('login');
+    let hash_login = localStorage.getItem('hash_login');
     let token = localStorage.getItem('token');
-    let body = JSON.stringify({ login: login, token: token });
+    let body = JSON.stringify({ hash_login: hash_login, token: token });
     const request = await fetch(endpoint, {
         method: 'POST',
         credentials: 'include',
@@ -115,10 +173,12 @@ async function deleteOnlineData()
         displayStatusBarSuccess(getTranslation('Logged User Data Delete'));
         localStorage.setItem('status', 'not connected');
         refreshLogin();
+        document.getElementById('login_btn').style.display = 'block';
     }
     else{
-        displayStatusBarAlert(getTranslation('Logged User Verification Failure'));
+        displayStatusBarAlert(getTranslation('42 Security Disconnection'));
         localStorage.setItem('status', 'not connected');
         refreshLogin();
+        document.getElementById('login_btn').style.display = 'block';
     }
 }

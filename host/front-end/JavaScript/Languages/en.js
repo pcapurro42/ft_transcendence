@@ -6,11 +6,13 @@ let en = [
     ["LOG IN WITH 42", "LOG IN WITH 42"],
     ["LOG OUT", "Log out"],
     ["Loading", "Loading"],
-    ["42 Security Disconnection", "You were disconnected for security reasons. Are you connected on another device ?"],
+    ["42 Security Disconnection", "Error: User's identity couldn't be verified. Are you connected on another device ?"],
     ["Logged User Data Delete", "User's data successfully deleted."],
-    ["Logged User Verification Failure", "Error: User's identity couldn't be verified."],
     ["Statistic Storage Error", "Error: Could not store game data"],
 
+    ["Anonymous", "Anonymous"],
+    ["User Anonymization Success", "User data were anonymized successfully."],
+    ["Unanonymize Data Msg", "Please sign in again to re-enable public data."],
 
     ["Enable/Disable menu music", "Enable or Disable menu music"],
     ["Enable/Disable menu sounds", "Enable or Disable menu sounds"],
@@ -337,7 +339,7 @@ let en = [
     ["Game Duration", "Game approximately lasted "],
     ["Enable Sounds Error", "Snake, you have to interact with the website to hear the sounds!"],
     ["Unauthorized Data Channel", "Error: the connection was closed for safety reasons.Unexpected message were caught inside the data_channel."],
-    ["Forbidden Page", "Snake, you have to login to access this section of the website !"],
+    ["Forbidden Page", "Snake, you have to login to use this section of the website !"],
 
     ["Konami Code detected!", "Konami Code detected!"],
     ["« Engravings, gives you no tactical advantage whatsoever... »", "&ldquo;Engravings, gives you no tactical advantage whatsoever... &bdquo;"],
