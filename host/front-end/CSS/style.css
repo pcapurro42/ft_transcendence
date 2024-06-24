@@ -35,6 +35,21 @@ body
     max-width: 700px;
 }
 
+#background_left{
+    z-index: -1;
+    position: fixed;
+    left: 76%;
+    max-width: 850px;
+}
+
+#background_right{
+    z-index: -1;
+    position: fixed;
+    top: 0%;
+    right: 70%;
+    max-width: 850px;
+}
+
 .container{
     max-width: 1090px !important;
 }
@@ -244,19 +259,6 @@ pre{
     display: none;
     top: 1%;
     left: 90%;
-}
-
-#background_right{
-    z-index: -1;
-    position: fixed;
-    left: 66%;
-}
-
-#background_left{
-    z-index: -1;
-    position: fixed;
-    top: 0%;
-    right: 60%;
 }
 
 
