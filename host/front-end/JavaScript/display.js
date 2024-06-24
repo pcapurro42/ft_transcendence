@@ -258,6 +258,7 @@ function setDescriptiveImages(value)
 function refreshDisplay()
 {
     hideBackgrounds();
+    setBackground('/settings');
 
     setHighContrast();
 
