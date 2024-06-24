@@ -219,7 +219,6 @@ const nav = {
         document.getElementById('tournament_setup').style.display = 'none';
         document.getElementById('tournament_nickname_menu').style.display = 'none';
         document.getElementById('tournament_announcer').style.display = 'none';
-        document.getElementById('game_backgrounds').style.display = 'none';
         document.getElementById('main_menu_buttons').style.display = 'none';
         document.getElementById('main_menu_page').style.display = 'none';
         document.getElementById('rgpd_block').style.display = "none";

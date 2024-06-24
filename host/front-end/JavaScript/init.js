@@ -47,7 +47,6 @@ let bonusTaken = 0;
 let bonusTotal = 0;
 let gameHistory;
 
-
 initializeAuth();
 refreshLogin();
 

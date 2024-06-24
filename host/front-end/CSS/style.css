@@ -19,23 +19,16 @@ body
 
 }
 
-#background_menu_1{
+#background_menu_1
+{
     position: absolute;
-    max-width: 559px;
-    min-width: 100px;
-    left: 77%;
-    bottom: 103px;
-    z-index: -1;
+    top: 0px;
+    left: 0px;
 }
 
 #background_menu_2
 {
     position: absolute;
-    max-width: 719px;
-    min-width: 900px;
-    left: 0%;
-    bottom: 103px;
-    z-index: -1;
 }
 
 .container{

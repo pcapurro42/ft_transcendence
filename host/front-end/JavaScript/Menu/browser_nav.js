@@ -52,7 +52,9 @@ function addToHistory(pagePath){
         history.replaceState(null, null, getTranslation(pagePath));
         pushHistory = true;
     }
+    setBackground(pagePath);
 }
+
 async function handleLocation(){
 
     pushHistory = false;

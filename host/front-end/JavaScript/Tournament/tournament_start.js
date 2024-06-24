@@ -38,7 +38,6 @@ async function tournamentGameStart(){
 	document.getElementById('main_page').style.display = 'none';
 	let game_toolbar = document.getElementById('game_toolbar');
 	let game_page_tournament = document.getElementById('game_page_tournament');
-	let game_backgrounds = document.getElementById('game_backgrounds');
 
 	let player_block = document.getElementById('nick_reminder');
 	player_block.innerHTML = document.getElementById('nick_announce').innerHTML;
@@ -54,17 +53,13 @@ async function tournamentGameStart(){
 	game_toolbar.style.display = 'block';
 	game_toolbar.style.transition = 'opacity 1s';
 
-	game_backgrounds.style.opacity = '0';
 	game_page_tournament.style.opacity = '0';
 	game_page_tournament.style.display = 'block';
-    game_backgrounds.style.display = 'block';
 	game_page_tournament.style.transition = 'opacity 1s';
-	game_backgrounds.style.transition = 'opacity 1s';
 
 	await sleep (10);
 
 	game_page_tournament.style.opacity = '1';
-	game_backgrounds.style.opacity = '1';
 	game_toolbar.style.opacity = '1';
 	resumeKeysAnim();
 
