@@ -35,8 +35,8 @@ function setBackground(pagePath)
 {
     if (pagePath == '/home')
     {
-        // document.getElementById('background_menu_1').style.display = 'block';
-        // document.getElementById('background_menu_2').style.display = 'block';
+        document.getElementById('background_menu_1').style.display = 'block';
+        document.getElementById('background_menu_2').style.display = 'block';
     }
 }
 

@@ -24,11 +24,15 @@ body
     position: absolute;
     top: 0px;
     left: 0px;
+    max-width: 550px;
 }
 
 #background_menu_2
 {
     position: absolute;
+    bottom: 0px;
+    right: -30px;
+    max-width: 800px;
 }
 
 .container{
