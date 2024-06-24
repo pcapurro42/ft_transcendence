@@ -22,10 +22,6 @@ def getOrCreateUser(response):
 		else:
 			if 'login' in response:
 				user_info.login = response['login']
-
-		if user_info.gameHistory is not None:
-			user_info.gameHistory = utils.updateGameHistory(user_info.gameHistory, user_info.login)
-
 		user_info.token = response['token']
 		user_info.save()
 	except ObjectDoesNotExist:
@@ -62,6 +58,9 @@ def retrieveUser(request):
 	if verifyUser(requestJson) is True:
 		user = UserInfo.objects.get(hash_login=requestJson['hash_login'])
 		response = getOrCreateUser(requestJson)
+		if user.gameHistory is not None:
+			user.gameHistory = utils.updateGameHistory(user.gameHistory, user.login)
+			user.save()
 		return HttpResponse(response, content_type = 'application/json', status=200)
 	else:
 		return HttpResponse(status=500)
@@ -82,8 +81,8 @@ def anonymizeUser(request):
 		user = UserInfo.objects.get(hash_login=requestJson['hash_login'])
 		user.login = "Anon"
 		user.isAnonymized = True
-		# if user.gameHistory is not None:
-			# user.gameHistory = utils.updateGameHistory(user.gameHistory, user.login)
+		if user.gameHistory is not None:
+			user.gameHistory = utils.updateGameHistory(user.gameHistory, user.login)
 		user.save()
 		return HttpResponse(status=200)
 	else:

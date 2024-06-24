@@ -19,6 +19,7 @@ def hashStr(login):
 
 def updateGameHistory(gameHistory, newName):
 	gameJson = json.loads(gameHistory)
+	gameJson['login'] = newName
 	for elem in gameJson["data"]:
-		elem[0] = newName
+			elem[0] = newName
 	return json.dumps(gameJson)

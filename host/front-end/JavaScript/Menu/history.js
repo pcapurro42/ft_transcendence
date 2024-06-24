@@ -399,7 +399,8 @@ function initializeHistory()
         length: 0,
         data: null
     }
-    gameHistory = JSON.stringify(new_history_data);
+    if (gameHistory == null)
+        gameHistory = JSON.stringify(new_history_data);
 }
 
 function addHistoryEntry(player1, player2, final_score, date, duration, scores, role)

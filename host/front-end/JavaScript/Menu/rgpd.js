@@ -114,6 +114,7 @@ async function anonymizeOnlineData()
         displayStatusBarSuccess(getTranslation('User Anonymization Success'))
         localStorage.setItem('login', getTranslation('Anonymous'))
         refreshLogin();
+        retrieveUserInfo();
     }
     else{
         displayStatusBarAlert(getTranslation('42 Security Disconnection'));
