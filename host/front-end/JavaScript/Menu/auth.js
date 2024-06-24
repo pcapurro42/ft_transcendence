@@ -60,7 +60,7 @@ async function storeUserCredentials(response){
     try{
             userInfo = JSON.parse(response);
             userInfo = userInfo[0].fields;
-            if (userInfo['login'] == "Anonymous")
+            if (userInfo['login'] == "Anon")
                 localStorage.setItem('login', getTranslation('Anonymous'));
             else
                 localStorage.setItem('login', userInfo['login']);

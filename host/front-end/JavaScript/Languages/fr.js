@@ -10,7 +10,7 @@ let fr = [
     ["Logged User Data Delete", "Les données de l'utilisateur ont été supprimées avec succès."],
     ["Statistic Storage Error", "Erreur: Echec du stockage des statistiques de la partie."],
 
-    ["Anonymous", "Anonyme"],
+    ["Anonymous", "Anon"],
     ["User Anonymization Success", "Les données de l'utilisateur ont été anonymisées avec succès."],
     ["Unanonymize Data Msg", "Merci de bien vouloir vous reconnecter pour rétablir les données publiques."],
 

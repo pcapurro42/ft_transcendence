@@ -10,7 +10,7 @@ let es = [
     ["Logged User Data Delete", "Los datos del usuario se eliminaron correctamente."],
     ["Statistic Storage Error", "Error: no se pudieron almacenar los datos del juego"],
 
-    ["Anonymous", "Anónimo"],
+    ["Anonymous", "Anon"],
     ["User Anonymization Success", "Los datos del usuario se anonimizaron con éxito."],
     ["Unanonymize Data Msg", "Vuelva a iniciar sesión para volver a habilitar los datos públicos."],
 

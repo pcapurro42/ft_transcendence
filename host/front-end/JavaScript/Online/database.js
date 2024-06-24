@@ -29,13 +29,15 @@ function retrieveOnlineStats(response){
 	loseGameNb = +response['loseGameNb'];
 	wonGamesNb = +response['wonGamesNb'];
 
-	if (response['login'] == "Anonymous"){
+	if (response['login'] == "Anon"){
 		localStorage.setItem('data_anonymize', 'true');
 		localStorage.setItem('login', getTranslation('Anonymous'));
+		console.log('titi')
 	}
 	else{
 		localStorage.setItem('data_anonymize', 'false');
 		localStorage.setItem('login', response['login']);
+		console.log('toto')
 	}
 	setAuthsState();
 }

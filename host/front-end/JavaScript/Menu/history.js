@@ -127,16 +127,8 @@ class History
             let player1;
             let player2;
 
-            if (this.role == "guest")
-            {
-                player1 = this.history_data.data[history_tab][0];
-                player2 = this.history_data.data[history_tab][1];
-            }
-            else
-            {
-                player1 = this.history_data.data[history_tab][1];
-                player2 = this.history_data.data[history_tab][0];
-            }
+            player1 = this.history_data.data[history_tab][0];
+            player2 = this.history_data.data[history_tab][1];
 
             this.data_display.font = "bold " + this.title_text_format;
             let player1_len = this.data_display.measureText(player1).width;

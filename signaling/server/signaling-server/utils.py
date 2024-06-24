@@ -16,3 +16,9 @@ def generateToken():
 
 def hashStr(login):
 	return hashlib.sha256(login.encode()).hexdigest()
+
+def updateGameHistory(gameHistory, newName):
+	gameJson = json.loads(gameHistory)
+	for elem in gameJson["data"]:
+		elem[0] = newName
+	return json.dumps(gameJson)
