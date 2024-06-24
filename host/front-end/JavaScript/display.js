@@ -36,12 +36,14 @@ function setBackground(pagePath)
     hideBackgrounds();
 
     if (pagePath == '/home' || pagePath == '/settings' || pagePath == '/privacy-settings' || pagePath == '/statistics'
-    || pagePath == '/customize' || pagePath == '/play' || pagePath == '/classic' || pagePath == '/tournament')
+        || pagePath == '/customize' || pagePath == '/play' || pagePath == '/classic' || pagePath == '/tournament'
+        || pagePath == '/game-history' || pagePath == '/online-stats' || pagePath == '/local-stats' || pagePath == '/online'
+        || pagePath == '/create-lobby' || pagePath == '/join-lobby')
     {
         document.getElementById('background_menu_1').style.display = 'block';
         document.getElementById('background_menu_2').style.display = 'block';
     }
-    if (pagePath == '/1vs1')
+    if (pagePath == '/1vs1' || pagePath == '/1vs2')
     {
         document.getElementById('background_left').style.display = 'block';
         document.getElementById('background_right').style.display = 'block';
@@ -264,7 +266,6 @@ function setDescriptiveImages(value)
 
 function refreshDisplay()
 {
-    hideBackgrounds();
     setBackground('/settings');
 
     setHighContrast();
