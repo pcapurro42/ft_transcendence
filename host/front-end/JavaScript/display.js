@@ -33,7 +33,8 @@ function refreshSite()
 
 function setBackground(pagePath)
 {
-    if (pagePath == '/home')
+    if (pagePath == '/home' || pagePath == '/settings' || pagePath == '/privacy-settings' || pagePath == '/statistics'
+    || pagePath == '/customize' || pagePath == '/play' || pagePath == '/classic' || pagePath == '/tournament')
     {
         document.getElementById('background_menu_1').style.display = 'block';
         document.getElementById('background_menu_2').style.display = 'block';
