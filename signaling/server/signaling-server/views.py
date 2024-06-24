@@ -36,7 +36,7 @@ def sendToken(response):
 		response = conn.getresponse().read().decode()
 		response_data = json.loads(response)
 		response_data['token'] = utils.generateToken()
-		response_data['hash_login'] = utils.hashStr(response_data['login'])
+		response_data['hashLogin'] = utils.hashStr(response_data['login'])
 		response_data = user_info.getOrCreateUser(response_data)
 		return HttpResponse(response_data, content_type = 'application/json')
 

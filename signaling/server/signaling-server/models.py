@@ -1,7 +1,7 @@
 from django.db import models
 
 class UserInfo(models.Model):
-	hash_login = models.CharField(max_length=255)
+	hashLogin = models.CharField(max_length=255)
 	login = models.CharField(max_length=255)
 	token = models.CharField(max_length=40)
 

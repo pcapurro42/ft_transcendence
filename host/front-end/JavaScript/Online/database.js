@@ -1,9 +1,9 @@
 async function storeOnlineStats(gameStat){
 	const endpoint = 'https://127.0.0.1:8080/backend/store-stats/'; //ICI
-	let hash_login = localStorage.getItem('hash_login');
+	let hashLogin = localStorage.getItem('hashLogin');
     let token = localStorage.getItem('token');
 
-	let body = JSON.stringify({hash_login:hash_login, token:token, ballDistance:gameStat['ballDistance'], ballReturned:gameStat['ballReturned'], ballReceived:gameStat['ballReceived'], bonusTaken:gameStat['bonusTaken'], bonusTotal:gameStat['bonusTotal'], gamesPlayedNb:gameStat['gamesPlayedNb'], gameHistory:gameStat['gameHistory'], loseGameNb:gameStat['loseGameNb'], wonGamesNb:gameStat['wonGamesNb']});
+	let body = JSON.stringify({hashLogin:hashLogin, token:token, ballDistance:gameStat['ballDistance'], ballReturned:gameStat['ballReturned'], ballReceived:gameStat['ballReceived'], bonusTaken:gameStat['bonusTaken'], bonusTotal:gameStat['bonusTotal'], gamesPlayedNb:gameStat['gamesPlayedNb'], gameHistory:gameStat['gameHistory'], loseGameNb:gameStat['loseGameNb'], wonGamesNb:gameStat['wonGamesNb']});
 
 	const request = await fetch(endpoint, {
 		method: 'POST',
@@ -44,10 +44,10 @@ function retrieveOnlineStats(response){
 
 async function retrieveUserInfo(){
 	const endpoint = "https://127.0.0.1:8080/backend/retrieve-user/"
-    let hash_login = localStorage.getItem('hash_login');
+    let hashLogin = localStorage.getItem('hashLogin');
 	let login = localStorage.getItem('login');
     let token = localStorage.getItem('token');
-    let body = JSON.stringify({ hash_login: hash_login, login:login, token: token});
+    let body = JSON.stringify({ hashLogin: hashLogin, login:login, token: token});
     const response = await fetch(endpoint, {
         method: 'POST',
         credentials: 'include',

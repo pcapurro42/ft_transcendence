@@ -10,13 +10,13 @@ from django.http import HttpResponse
 #
 def verifyUser(userJson):
 
-	if UserInfo.objects.filter(hash_login = userJson['hash_login'], token = userJson['token']):
+	if UserInfo.objects.filter(hashLogin = userJson['hashLogin'], token = userJson['token']):
 		return True
 	return False
 
 def getOrCreateUser(response):
 	try:
-		user_info = UserInfo.objects.get(hash_login = response['hash_login'])
+		user_info = UserInfo.objects.get(hashLogin = response['hashLogin'])
 		if user_info.isAnonymized is True:
 			user_info.login = "Anon"
 		else:
@@ -26,7 +26,7 @@ def getOrCreateUser(response):
 		user_info.save()
 	except ObjectDoesNotExist:
 		user_info = UserInfo(
-			hash_login = response['hash_login'],
+			hashLogin = response['hashLogin'],
 			login = response['login'],
 			token = response['token'],
 		)
@@ -37,7 +37,7 @@ def getOrCreateUser(response):
 def storeUserStatistics(request):
 	request = json.loads(request.body.decode())
 	if verifyUser(request) is True:
-		user_info = UserInfo.objects.get(hash_login = request['hash_login'])
+		user_info = UserInfo.objects.get(hashLogin = request['hashLogin'])
 		user_info.ballDistance += request['ballDistance']
 		user_info.ballReceived += request['ballReceived']
 		user_info.ballReturned += request['ballReturned']
@@ -56,7 +56,7 @@ def retrieveUser(request):
 	request = request.body.decode()
 	requestJson = json.loads(request)
 	if verifyUser(requestJson) is True:
-		user = UserInfo.objects.get(hash_login=requestJson['hash_login'])
+		user = UserInfo.objects.get(hashLogin=requestJson['hashLogin'])
 		response = getOrCreateUser(requestJson)
 		if user.gameHistory is not None:
 			user.gameHistory = utils.updateGameHistory(user.gameHistory, user.login)
@@ -68,7 +68,7 @@ def retrieveUser(request):
 def unanonymizeUser(request):
 	requestJson = json.loads(request.body.decode())
 	if verifyUser(requestJson) is True:
-		user = UserInfo.objects.get(hash_login=requestJson['hash_login'])
+		user = UserInfo.objects.get(hashLogin=requestJson['hashLogin'])
 		user.isAnonymized = False
 		user.save()
 		return HttpResponse(status=200)
@@ -78,7 +78,7 @@ def unanonymizeUser(request):
 def anonymizeUser(request):
 	requestJson = json.loads(request.body.decode())
 	if verifyUser(requestJson) is True:
-		user = UserInfo.objects.get(hash_login=requestJson['hash_login'])
+		user = UserInfo.objects.get(hashLogin=requestJson['hashLogin'])
 		user.login = "Anon"
 		user.isAnonymized = True
 		if user.gameHistory is not None:
@@ -92,7 +92,7 @@ def deleteUser(request):
 	request = request.body.decode()
 	requestJson = json.loads(request)
 	if verifyUser(requestJson) is True:
-		user = UserInfo.objects.get(hash_login=requestJson['hash_login'])
+		user = UserInfo.objects.get(hashLogin=requestJson['hashLogin'])
 		user.delete()
 		return HttpResponse(status=200)
 	else:

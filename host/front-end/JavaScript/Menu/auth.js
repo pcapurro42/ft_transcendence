@@ -64,7 +64,7 @@ async function storeUserCredentials(response){
                 localStorage.setItem('login', getTranslation('Anonymous'));
             else
                 localStorage.setItem('login', userInfo['login']);
-            localStorage.setItem('hash_login', userInfo['hash_login']);
+            localStorage.setItem('hashLogin', userInfo['hashLogin']);
             localStorage.setItem('token', userInfo['token']);
             retrieveOnlineStats(userInfo);
             auth_code = '';

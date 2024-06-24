@@ -98,9 +98,9 @@ function deleteLocalData()
 async function anonymizeOnlineData()
 {
     const endpoint = "https://127.0.0.1:8080/backend/anonymize-user/"
-    let hash_login = localStorage.getItem('hash_login');
+    let hashLogin = localStorage.getItem('hashLogin');
     let token = localStorage.getItem('token');
-    let body = JSON.stringify({ hash_login: hash_login, token: token });
+    let body = JSON.stringify({ hashLogin: hashLogin, token: token });
     const request = await fetch(endpoint, {
         method: 'POST',
         credentials: 'include',
@@ -126,9 +126,9 @@ async function anonymizeOnlineData()
 async function removeDataAnonymize(){
 
     const endpoint = "https://127.0.0.1:8080/backend/public-user/"
-    let hash_login = localStorage.getItem('hash_login');
+    let hashLogin = localStorage.getItem('hashLogin');
     let token = localStorage.getItem('token');
-    let body = JSON.stringify({ hash_login: hash_login, token: token, isAnonymized : false });
+    let body = JSON.stringify({ hashLogin: hashLogin, token: token, isAnonymized : false });
 
     const request = await fetch(endpoint, {
         method: 'POST',
@@ -158,9 +158,9 @@ async function deleteOnlineData()
     if (!isConnected())
         return;
     const endpoint = "https://127.0.0.1:8080/backend/delete-user/"
-    let hash_login = localStorage.getItem('hash_login');
+    let hashLogin = localStorage.getItem('hashLogin');
     let token = localStorage.getItem('token');
-    let body = JSON.stringify({ hash_login: hash_login, token: token });
+    let body = JSON.stringify({ hashLogin: hashLogin, token: token });
     const request = await fetch(endpoint, {
         method: 'POST',
         credentials: 'include',
