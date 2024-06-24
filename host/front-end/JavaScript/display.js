@@ -33,6 +33,8 @@ function refreshSite()
 
 function setBackground(pagePath)
 {
+    hideBackgrounds();
+
     if (pagePath == '/home' || pagePath == '/settings' || pagePath == '/privacy-settings' || pagePath == '/statistics'
     || pagePath == '/customize' || pagePath == '/play' || pagePath == '/classic' || pagePath == '/tournament')
     {
