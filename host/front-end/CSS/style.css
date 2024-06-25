@@ -24,7 +24,7 @@ body
     position: absolute;
     top: 0px;
     left: 0px;
-    max-width: 600px;
+    max-width: 400px;
 }
 
 #background_menu_2
@@ -32,14 +32,14 @@ body
     position: absolute;
     bottom: 65px;
     right: -35px;
-    max-width: 700px;
+    max-width: 500px;
 }
 
 #background_left{
     z-index: -1;
     position: fixed;
     left: 76%;
-    max-width: 850px;
+    max-width: 650px;
 }
 
 #background_right{
@@ -47,7 +47,7 @@ body
     position: fixed;
     top: 0%;
     right: 70%;
-    max-width: 850px;
+    max-width: 650px;
 }
 
 .container{
