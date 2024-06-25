@@ -69,7 +69,8 @@ function refreshMusics()
 	}
 
 	menu_theme.volume = music_volume / 100;
-	game_theme.volume = music_volume / 100;
+	for (let i = 0; i != game_theme.length; i++)
+		game_theme[i].volume = music_volume / 100;
 	credits_theme.volume = music_volume / 100;
 
 	let music_slider_label = document.getElementById('music_volume_slider_label');
