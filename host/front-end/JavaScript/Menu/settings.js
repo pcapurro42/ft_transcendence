@@ -90,6 +90,7 @@ function displaySecondSettingsPage()
     document.getElementById('next_settings').classList.add('disabled');
     document.getElementById('prev_settings').classList.remove('disabled');
 
+    setBackground('/privacy-settings');
     addToHistory('/privacy-settings');
     document.title = getTranslation('Privacy Settings');
 }
@@ -102,6 +103,8 @@ function displayFirstSettingsPage()
 
     document.getElementById('next_settings').classList.remove('disabled');
     document.getElementById('prev_settings').classList.add('disabled');
+
+    setBackground('/settings');
     addToHistory('/settings');
     document.title = getTranslation('Settings');
 }

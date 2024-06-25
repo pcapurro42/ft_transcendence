@@ -367,6 +367,7 @@ nav.displayStats = function()
     document.getElementById('stats_menu_buttons').style.display = 'block';
     document.getElementById('stats_back_btn').style.display = 'block';
 
+    setBackground('/statistics');
     addToHistory('/statistics');
     document.title = getTranslation('Statistics');
 }
@@ -392,6 +393,7 @@ nav.displayLocalStats = function()
 
     document.getElementById('local_stats_nv').style.display = 'block';
 
+    setBackground('/local-stats');
     addToHistory('/local-stats')
     document.title = getTranslation('Local Stats');
 }
@@ -436,6 +438,7 @@ nav.displayOnlineStats = function()
         document.getElementById('visual_info').style.visibility = 'hidden';
     }
 
+    setBackground('/online-stats');
     addToHistory('/online-stats');
     document.title = getTranslation('Online Stats');
 }

@@ -17,6 +17,8 @@ nav.displayMenu = async function()
     refreshStats();
     refreshStatsDisplaySwitch();
     refreshLogin();
+
+    setBackground('/home');
     addToHistory('/home');
     document.title = getTranslation('Home');
 }

@@ -7,6 +7,7 @@ const nav = {
         nav.hideEveryDiv();
         document.getElementById('classic_buttons').style.display = "block";
 
+        setBackground('/classic');
         addToHistory('/classic');
         document.title = getTranslation('Classic');
     },
@@ -27,6 +28,7 @@ const nav = {
         freeInputAndForms();
         resetConnection();
 
+        setBackground('/online');
         addToHistory('/online');
         document.title = getTranslation('Online');
     },
@@ -46,6 +48,8 @@ const nav = {
         freeInputAndForms();
         resetConnection();
         offerGenerator();
+
+        setBackground('/create-lobby');
         addToHistory('/create-lobby');
         document.title = getTranslation('Create Lobby');
     },
@@ -61,6 +65,8 @@ const nav = {
         clearInterval(timeoutInterval);
         freeInputAndForms();
         resetConnection();
+
+        setBackground('/join-lobby');
         addToHistory('/join-lobby');
         document.title = getTranslation('Join Lobby');
     },
@@ -70,6 +76,7 @@ const nav = {
         nav.hideEveryDiv();
 	    document.getElementById('tournament_setup').style.display = 'block';
 
+        setBackground('/tournament');
         addToHistory('/tournament');
         document.title = getTranslation('Tournament');
 
@@ -96,6 +103,7 @@ const nav = {
             parseAlias(i, event)
         };
 
+        setBackground('/tournament-nicknames');
         addToHistory('/tournament-nicknames');
         document.title = getTranslation('Tournament - Nicknames');
     },
@@ -116,6 +124,7 @@ const nav = {
 
         document.getElementById('play_menu').style.display = 'block';
 
+        setBackground('/play');
         addToHistory('/play');
         document.title = getTranslation("Play");
     },
@@ -151,6 +160,7 @@ const nav = {
         handleUnload('no_confirmation', true);
         initializeOnline1v1();
 
+        setBackground('/online-game');
         addToHistory('/online-game');
         document.title = getTranslation('Online Game');
 		previous_url_path = '/online-game'
@@ -169,6 +179,7 @@ const nav = {
 
         initializeLocal1v2();
 
+        setBackground('/1vs2');
         addToHistory('/1vs2');
         document.title = getTranslation('1 vs 2 (local)');
     },
@@ -183,6 +194,7 @@ const nav = {
         document.getElementById('left_player_won_text').style.display = "none";
         document.getElementById('right_player_won_text').style.display = "none";
 
+        setBackground('/1vs1');
         addToHistory('/1vs1')
         document.title = getTranslation("1 vs 1 (local)");
         initializeLocal1v1();
@@ -192,6 +204,7 @@ const nav = {
         nav.hideEveryDiv();
         document.getElementById('rgpd_block').style.display = 'block';
 
+        setBackground('/privacy');
         addToHistory('/privacy');
         document.title = getTranslation('Privacy policy');
     },

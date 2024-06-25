@@ -462,6 +462,7 @@ nav.displayHistory = function()
     if (history_data == null)
         document.getElementById('prev_history').classList.add('disabled'), document.getElementById('next_history').classList.add('disabled');
 
+    setBackground('/game-history');
     addToHistory('/game-history');
 
     historic = new History(history_data);
@@ -479,6 +480,7 @@ nav.removeHistory = function()
     document.getElementById('history').style.display = 'none';
 
     historic = null;
+    setBackground('/statistics');
     addToHistory('/statistics');
     document.title = getTranslation('Statistics');
 }

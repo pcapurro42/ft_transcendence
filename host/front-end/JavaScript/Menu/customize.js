@@ -25,6 +25,7 @@ nav.displayCustomize = function()
     document.getElementById('customize_menu').style.display = 'block';
     document.getElementById('customize_back_btn').style.display = 'block';
 
+    setBackground('/customize');
     addToHistory('/customize');
     document.title = getTranslation('Customize');
 }
