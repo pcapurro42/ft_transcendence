@@ -1,5 +1,5 @@
 async function storeOnlineStats(gameStat){
-	const endpoint = 'https://127.0.0.1:8080/backend/store-stats/'; //ICI
+	const endpoint = 'https://hostname:8080/backend/store-stats/'; //ICI
 	let hashLogin = localStorage.getItem('hashLogin');
     let token = localStorage.getItem('token');
 
@@ -43,7 +43,7 @@ function retrieveOnlineStats(response){
 }
 
 async function retrieveUserInfo(){
-	const endpoint = "https://127.0.0.1:8080/backend/retrieve-user/"
+	const endpoint = "https://hostname:8080/backend/retrieve-user/"
     let hashLogin = localStorage.getItem('hashLogin');
 	let login = localStorage.getItem('login');
     let token = localStorage.getItem('token');

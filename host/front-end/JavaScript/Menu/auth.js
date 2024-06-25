@@ -16,7 +16,7 @@ async function login()
 
 async function logout()
 {
-    setTimeout(() => {window.location.href = `https://127.0.0.1:1025/`;}, 800); //ICI
+    setTimeout(() => {window.location.href = `https://hostname:1025/`;}, 800); //ICI
 
     localStorage.setItem("status", "not connected");
     localStorage.removeItem("login");
@@ -85,7 +85,7 @@ async function storeUserCredentials(response){
 }
 
 async function getAccessToken(auth_code){
-    const endpoint = 'https://127.0.0.1:8080/backend/token/';
+    const endpoint = 'https://hostname:8080/backend/token/';
 
 
     try{
@@ -135,7 +135,7 @@ function refreshLogin()
 function initializeAuth()
 {
     client_id = 'u-s4t2ud-328d5957a0e78853f7b035bed31812c4bd82ea90773c43b8686b35f1ae4d1353';
-    redirect_uri = 'https://127.0.0.1:1025';
+    redirect_uri = 'https://hostname:1025';
     user_info = JSON.parse(localStorage.getItem('user_info'));
 
     if (localStorage.getItem("status") == null && !user_info)

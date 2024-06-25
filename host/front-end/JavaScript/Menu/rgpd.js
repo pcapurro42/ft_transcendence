@@ -97,7 +97,7 @@ function deleteLocalData()
 
 async function anonymizeOnlineData()
 {
-    const endpoint = "https://127.0.0.1:8080/backend/anonymize-user/"
+    const endpoint = "https://hostname:8080/backend/anonymize-user/"
     let hashLogin = localStorage.getItem('hashLogin');
     let token = localStorage.getItem('token');
     let body = JSON.stringify({ hashLogin: hashLogin, token: token });
@@ -125,7 +125,7 @@ async function anonymizeOnlineData()
 }
 async function removeDataAnonymize(){
 
-    const endpoint = "https://127.0.0.1:8080/backend/public-user/"
+    const endpoint = "https://hostname:8080/backend/public-user/"
     let hashLogin = localStorage.getItem('hashLogin');
     let token = localStorage.getItem('token');
     let body = JSON.stringify({ hashLogin: hashLogin, token: token, isAnonymized : false });
@@ -157,7 +157,7 @@ async function deleteOnlineData()
 {
     if (!isConnected())
         return;
-    const endpoint = "https://127.0.0.1:8080/backend/delete-user/"
+    const endpoint = "https://hostname:8080/backend/delete-user/"
     let hashLogin = localStorage.getItem('hashLogin');
     let token = localStorage.getItem('token');
     let body = JSON.stringify({ hashLogin: hashLogin, token: token });

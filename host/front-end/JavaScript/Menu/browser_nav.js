@@ -207,5 +207,5 @@ async function handleLocation(){
             displaySecondSettingsPage();
             return;
     }
-    window.location.href = 'https://127.0.0.1:1025/404.html';
+    window.location.href = 'https://hostname:1025/404.html';
 }
