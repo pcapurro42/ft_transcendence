@@ -159,7 +159,7 @@ let es = [
     ["Orange", "Naranja"],
     ["Purple", "Violeta"],
 
-    ["Default", "- Defecto -"],
+    ["Default", "- Predeterminado -"],
 
     ["Enabled", "Activado"],
     ["Disabled", "Desactivado"],
