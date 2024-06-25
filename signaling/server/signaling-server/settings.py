@@ -129,12 +129,9 @@ CSRF_TRUSTED_ORIGINS = ['https://hostname:1025/', 'https://hostname:8080/' ,"hos
 
 
 CORS_ALLOW_METHODS = [
-    "DELETE",
     "GET",
     "OPTIONS",
-    "PATCH",
     "POST",
-    "PUT",
 ]
 
 
