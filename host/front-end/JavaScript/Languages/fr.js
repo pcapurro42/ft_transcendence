@@ -146,7 +146,7 @@ let fr = [
     ["RGPD-Note", "<pre class='overflow'>Note : si vous n'utilisez aucune des fonctionnalités en ligne du site (se connecter avec 42 et les parties en ligne),\n aucune donnée ne sera stockée en dehors de votre ordinateur ou ne sera partagée avec quelqu'un. \n\n\n</pre>"],
 
     ["RGPD-Data sharing title", "Quelles données sont partagées et pourquoi ?"],
-    ["RGPD-Data sharing", "<pre>Seulement trois types d'informations sont partagées :\n\n – Les adresses IP\n– Les identifiants 42\n– Les informations du jeu.\n\n Les adresses IP et identifiants 42 sont stockés dans la base de données de notre site afin que\n les joueurs puissent établir une connexion. Enfin, ces derniers\n sont également partagés entre deux personnes jouant en ligne,\n ainsi que les informations du jeu pour permettre\n une synchronisation des parties.</pre>"],
+    ["RGPD-Data sharing", "<pre>Seulement quatre types d'informations sont partagés:\n\n– adresses IP\n– Logins 42\n– Historique des parties et statistiques\n– Informations de la partie\n\nLes trois premiers sont stockées dans notre base de données.\nEnfin, les deux premiers sont également partagés entre deux personnes jouant en ligne, tout comme les informations de la partie afin de permettre la synchronisation.</pre>"],
 
     ["RGPD-Data time title", "Pour combien de temps les données sont-elles stockées ?"],
     ["RGPD-Data time", "<pre>Pour très peu de temps.\n\n Toutes les données sont effacées de la base de données lorsque\n le site est redémarré, ce qui arrive régulièrement\n (au moins plusieurs fois par jour).</pre>"],

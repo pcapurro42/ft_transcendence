@@ -144,7 +144,7 @@ let en = [
     ["RGPD-Note", "<pre> Note: if you don't use any online features from the website (log in with 42 and online games),\n no data is stored out of your computer or shared with anyone.\n\n\n</pre>"],
 
     ["RGPD-Data sharing title", "What data is shared and why?"],
-    ["RGPD-Data sharing", "<pre>Only three different types of information are shared:\n\n – IP addresses\n– 42 logins\n– Game informations\n\nThe first two are stored in our website database in order to connect players together.\n Finally, these two are also shared between two persons playing online, as well as\n game informations to permit game synchronization.</pre>"],
+    ["RGPD-Data sharing", "<pre>Only four different types of information are shared:\n\n– IP addresses\n– 42 logins\n– Game history and statistics\n– Game informations\n\nThe first three are stored in our website database.\nFinally, the first two are also shared between two persons playing online, as well as\n game informations to permit game synchronization.</pre>"],
 
     ["RGPD-Data time title", "For how long is the data stored?"],
     ["RGPD-Data time", "<pre>For a very short time.\n\n All the data is erased when the website is being rebooted, which happens regularly\n (at least multiple times every day).</pre>"],

@@ -322,32 +322,6 @@ function refreshStats()
     if (localStorage.getItem('lcl_ball_bounce_nb') == null)
         localStorage.setItem('lcl_ball_bounce_nb', 0);
 
-    // online
-
-    // if (localStorage.getItem('onl_played') == null)
-    //     localStorage.setItem('onl_played', '0');
-
-    // if (localStorage.getItem('onl_victory') == null)
-    //     localStorage.setItem('onl_victory', '0');
-
-    // if (localStorage.getItem('onl_defeat') == null)
-    //     localStorage.setItem('onl_defeat', '0');
-
-    // if (localStorage.getItem('onl_dist') == null)
-    //     localStorage.setItem('onl_dist', '0');
-
-    // if (localStorage.getItem('onl_ball_return') == null)
-    //     localStorage.setItem('onl_ball_return', '0');
-
-    // if (localStorage.getItem('onl_ball_received') == null)
-    //     localStorage.setItem('onl_ball_received', '0');
-
-    // if (localStorage.getItem('onl_bonus_taken') == null)
-    //     localStorage.setItem('onl_bonus_taken', '0');
-
-    // if (localStorage.getItem('onl_bonus_received') == null)
-    //     localStorage.setItem('onl_bonus_received', '0');
-
     // load html data from variables
 
     document.getElementById('lcl_game_played_nb').innerHTML = "[ " + localStorage.getItem('lcl_game_played_nb') + " ]";
