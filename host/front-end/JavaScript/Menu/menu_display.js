@@ -157,6 +157,8 @@ const nav = {
         document.getElementById('main_page').style.display = "none";
         document.getElementById('game_toolbar').style.display = "block";
 
+        document.getElementById('footer_div').style.display = "none";
+
         handleUnload('no_confirmation', true);
         initializeOnline1v1();
 
@@ -177,6 +179,8 @@ const nav = {
         document.getElementById('left_side_won_text').style.display = "none";
         document.getElementById('right_side_won_text').style.display = "none";
 
+        document.getElementById('footer_div').style.display = "none";
+
         initializeLocal1v2();
 
         setBackground('/1vs2');
@@ -193,6 +197,8 @@ const nav = {
 
         document.getElementById('left_player_won_text').style.display = "none";
         document.getElementById('right_player_won_text').style.display = "none";
+
+        document.getElementById('footer_div').style.display = "none";
 
         setBackground('/1vs1');
         addToHistory('/1vs1')
