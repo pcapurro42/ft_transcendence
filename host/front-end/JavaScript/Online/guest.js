@@ -1,6 +1,8 @@
 function readHostMsg(event)
 {
 	let msg = event.data;
+	let time = (getActualTimeSeconds() - game.start_time);
+
 	if (msg.startsWith('lpy:')){
 		game.left_player.y = +(msg.substring(4));
 		return;
@@ -12,12 +14,14 @@ function readHostMsg(event)
 	}
 	else if (msg.startsWith('score_h:')){
 		game.scores[0] = +msg.substring(8);
-		game.scores_time.push([(getActualTimeSeconds() - game.start_time), "1"]);
+		game.scores_time.push([time, "1"]);
+		game.end_time = time;
 		return;
 	}
 	else if (msg.startsWith('score_g:')){
 		game.scores[1] = +msg.substring(8);
-		game.scores_time.push([(getActualTimeSeconds() - game.start_time), "2"]);
+		game.scores_time.push([time, "2"]);
+		game.end_time = time;
 		return;
 	}
 	else if (msg.startsWith('b1:')){
