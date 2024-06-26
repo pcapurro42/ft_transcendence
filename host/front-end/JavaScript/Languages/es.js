@@ -92,7 +92,7 @@ let es = [
 
     ["Left player won the game.", "El jugador de la izquierda ganó la partida."],
     ["Right player won the game.", "El jugador de la derecho ganó la partida."],
-    ["Online Win", " ganó el partido."],
+    ["Online Win", " ganó el partido:"],
 
     ["Left players won the game.", "Los jugadores de izquierda ganaron el partido."],
     ["Right players won the game.", "Los jugadores de derecho ganaron el partido."],
