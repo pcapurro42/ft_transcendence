@@ -341,7 +341,7 @@ class OnlineGame1v1_guest
             if (this.end_time == 0)
                 this.end_time = getActualTimeSeconds();
 
-            document.getElementById('g_win_text').innerHTML = localStorage.getItem('login') + getTranslation('Online Win') + getTranslation('Online Win') + " you're pretty good!";
+            document.getElementById('g_win_text').innerHTML = "you" + getTranslation('Online Win') + getTranslation('Online Win') + " you're pretty good!";
             document.getElementById('g_win_text').style.display = "block";
             document.getElementById('online_winner').play();
 
