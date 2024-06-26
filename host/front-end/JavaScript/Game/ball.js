@@ -177,9 +177,9 @@ class Ball
         }
     }
 
-    addExtraSpeed() //
+    addExtraSpeed()
     {
-        if (this.bonus_speed < 4)
+        if (this.bonus_speed < 6)
             this.bonus_speed++;
     }
 
