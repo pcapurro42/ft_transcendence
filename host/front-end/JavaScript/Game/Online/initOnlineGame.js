@@ -25,6 +25,7 @@ function displayOnline1v1()
         document.getElementById('1v1_host_timer').classList.remove('d-none');
         document.getElementById('1v1_host_timer').style.display = "block";
         document.getElementById('h_win_text').style.display = 'none';
+        document.getElementById('h_win_quote').style.display = 'none';
         document.getElementById('start_1v1_online').style.visibility = "hidden";
 
         data_channel.send("go");
@@ -34,6 +35,7 @@ function displayOnline1v1()
         document.getElementById('1v1_guest_timer').classList.remove('d-none');
         document.getElementById('1v1_guest_timer').style.display = "block";
         document.getElementById('g_win_text').style.display = 'none';
+        document.getElementById('g_win_quote').style.display = 'none';
         document.getElementById('waiting_host').style.visibility = "hidden";
     }
 
