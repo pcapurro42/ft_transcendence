@@ -139,8 +139,8 @@ ARIAButtonState();
 
 // < backend > //
 
-// handleRedirection();
-// handleLocation();
+handleRedirection();
+handleLocation();
 
 if (localStorage.getItem('status') == 'connected')
     retrieveUserInfo();
