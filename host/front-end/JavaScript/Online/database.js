@@ -28,16 +28,13 @@ function retrieveOnlineStats(response){
 	gameHistory = response['gameHistory'];
 	loseGameNb = +response['loseGameNb'];
 	wonGamesNb = +response['wonGamesNb'];
-	console.log(gameHistory);
 	if (response['login'] == "Anon"){
 		localStorage.setItem('data_anonymize', 'true');
 		localStorage.setItem('login', getTranslation('Anonymous'));
-		console.log('titi')
 	}
 	else{
 		localStorage.setItem('data_anonymize', 'false');
 		localStorage.setItem('login', response['login']);
-		console.log('toto')
 	}
 	setAuthsState();
 }
@@ -66,7 +63,6 @@ async function retrieveUserInfo(){
 	}
 	let userInfo = await response.text();
     userInfo = JSON.parse(userInfo);
-	console.log(userInfo);
     userInfo = userInfo[0].fields;
 	retrieveOnlineStats(userInfo)
 	refreshLogin();
