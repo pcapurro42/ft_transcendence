@@ -32,7 +32,7 @@ body
     position: absolute;
     transform: scaleX(-1);
     bottom: 65px;
-    right: -35px;
+    right: -15px;
     max-width: 500px;
 }
 
