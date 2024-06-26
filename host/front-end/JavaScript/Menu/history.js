@@ -173,25 +173,35 @@ class History
 
             this.data_display.font = "bold italic " + this.title_text_format;
 
-            let end;
+            let end = "";
+            let end2 = "";
 
             if (this.left_score == '10')
             {
                 if (parseInt(this.right_score) <= 3)
-                    end = getTranslation("crushing victory");
+                    end = getTranslation("crushing victory"), end2 = "you're pretty good!";
                 else
                     end = getTranslation("victory");
             }
             else
             {
                 if (parseInt(this.left_score) <= 3)
-                    end = getTranslation("total defeat");
+                    end = getTranslation("total defeat"), end2 = "why are you still here? just to suffer?";
                 else
                     end = getTranslation("defeat");
             }
 
             let end_size = this.data_display.measureText(end).width;
             this.data_display.fillText(end, this.data_width - 20 - end_size, 50);
+
+            if ((this.left_score == '10' && parseInt(this.right_score) <= 3) || (this.left_score != '10' && parseInt(this.left_score) <= 3))
+            {
+                this.data_display.fillStyle = this.global_color;
+                this.data_display.font = this.ridiculous_text_format;
+
+                let end2_size = this.data_display.measureText(end2).width;
+                this.data_display.fillText(end2, this.data_width - 20 - end2_size, 70);
+            }
 
             let win_txt;
 
