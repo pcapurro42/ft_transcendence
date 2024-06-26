@@ -345,5 +345,8 @@ let es = [
     ["Konami Code detected!", "Konami Code detectado!"],
     ["« Engravings, gives you no tactical advantage whatsoever... »", "« Engravings, gives you no tactical advantage whatsoever... »"],
     ["— Jack, in 'Snake Eater' (1974)", "— Jack, 'Snake Eater' (1974)"],
-    ["'PowerUp', « a weapon to surpass Metal Gear... »", "'PowerUp', « a weapon to surpass Metal Gear... »"]
+    ["'PowerUp', « a weapon to surpass Metal Gear... »", "'PowerUp', « a weapon to surpass Metal Gear... »"],
+
+    ["Achievement unlocked!", "  – ¡Logro desbloqueado!"],
+    ["You typed the Konami Code.", "Has tecleado el Konami Code."]
 ];

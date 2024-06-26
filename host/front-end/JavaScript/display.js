@@ -297,9 +297,20 @@ function outsideDropdownClick(event)
     }
 }
 
-function initializeToasts()
+function displayAchievement(achievement)
 {
-
+    if (achievement == "konami")
+    {
+        let konami_toast = document.getElementById('konami_toast');
+        if (high_contrast == "true")
+            konami_toast.style.backgroundColor = "black";
+        
+        new bootstrap.Toast(konami_toast).show();
+    }
+    else if (achievement == "...")
+    {
+        // ...
+    }
 }
 
 function detectKonamiCode(event)
@@ -319,10 +330,8 @@ function detectKonamiCode(event)
                 if (keys_register[i + 1] == 'ArrowUp' && keys_register[i + 2] == 'ArrowDown' && keys_register[i + 3] == 'ArrowDown' && keys_register[i + 4] == 'ArrowLeft' && keys_register[i + 5] == 'ArrowRight' && keys_register[i + 6] == 'ArrowLeft' && keys_register[i + 7] == 'ArrowRight' && keys_register[i + 8] == 'b' && keys_register[i + 9] == 'a')
                 {
                     console.log(getTranslation("Konami Code detected!"));
+                    displayAchievement("konami");
                     document.getElementById('mystery_sound').play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
-
-                    let konami_toast = document.getElementById('konami_toast');
-                    new bootstrap.Toast(konami_toast).show();
                     
                     localStorage.setItem('konami_code', "true");
                     keys_register = [];
