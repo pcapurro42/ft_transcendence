@@ -1,9 +1,11 @@
 from datetime import datetime, timedelta
-from django.http import JsonResponse, HttpResponseBadRequest, HttpResponse, HttpResponseNotFound
+from django.http import JsonResponse, HttpResponseServerError, HttpResponse, HttpResponseNotFound
 import secrets
 import string
 import json
-
+import threading
+import time
+from . import user_info
 
 invitation_codes = {}
 
@@ -16,14 +18,25 @@ def remove_expired_code():
 		if time >= invitation_codes[key]['expires_at']:
 			del invitation_codes[key]
 
+def removeCodePlanner():
+	while True:
+		remove_expired_code()
+		time.sleep(60)
+
+cleanup_thread = threading.Thread(target=removeCodePlanner, daemon=True)
+cleanup_thread.start()
+
 
 def generate_code(request):
 	alphabet = string.ascii_letters + (string.digits * 3)
 
-	str = ''.join(secrets.choice(alphabet) for i in range(10))
+	while True:
+		str = ''.join(secrets.choice(alphabet) for i in range(10))
+		requestJson = json.loads(request.body)
+		code = requestJson['login'] + '_' + str
 
-	requestJson = json.loads(request.body)
-	code = requestJson['login'] + '_' + str
+		if code not in invitation_codes:
+			break
 
 	invitation_codes[code] = {
         'host_login': requestJson['login'],
@@ -31,9 +44,8 @@ def generate_code(request):
 		'offer': requestJson['offer'],
 		'answer': None,
         'created_at': datetime.now(),
-        'expires_at': datetime.now() + timedelta(minutes=10)
+        'expires_at': datetime.now() + timedelta(minutes=5)
     }
-	remove_expired_code()
 	return code
 
 def postAnswer(request):
@@ -47,25 +59,33 @@ def postAnswer(request):
 
 
 def getAnswer(request):
-	code = request.body.decode('utf-8')
+	reqJson = json.loads(request.body.decode('utf-8'))
 
-	if invitation_codes[code] != None and invitation_codes[code]['answer'] != None:
+	if user_info.verifyUser(reqJson) is False:
+		return HttpResponseServerError('Error: Could not verify user identity.')
+
+	if invitation_codes[reqJson['code']] != None and invitation_codes[reqJson['code']]['answer'] != None:
 		responseJson = {
-			'login': invitation_codes[code]['guest_login'],
-			'answer': invitation_codes[code]['answer']
+			'login': invitation_codes[reqJson['code']]['guest_login'],
+			'answer': invitation_codes[reqJson['code']]['answer']
 		}
 		return JsonResponse(responseJson)
 	else:
-		return HttpResponseNotFound('Error: no answer received from guest.')
+		return HttpResponseServerError('Error: no answer received from guest.')
 
 def getOffer(request):
-	code = request.body.decode('utf-8')
+	reqJson =  json.loads(request.body.decode('utf-8'))
 
-	if invitation_codes[code] != None and invitation_codes[code]['offer'] != None:
+	if user_info.verifyUser(reqJson) is False:
+		return HttpResponseServerError('Error: Could not verify user identity.')
+
+	if invitation_codes[reqJson['code']] != None and invitation_codes[reqJson['code']]['offer'] != None:
 		responseJson = {
-			'login': invitation_codes[code]['host_login'],
-			'offer': invitation_codes[code]['offer'],
+			'login': invitation_codes[reqJson['code']]['host_login'],
+			'offer': invitation_codes[reqJson['code']]['offer'],
 		}
 		return JsonResponse(responseJson)
 	else:
 		return HttpResponseNotFound('Error: offer not found.')
+
+

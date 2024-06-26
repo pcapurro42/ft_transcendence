@@ -16,6 +16,7 @@ async function gatherIceCandidatesA(){
 async function fetchOffer(){
 	const endpoint = 'https://hostname:8080/backend/signal/getOffer/';
 	let code = document.getElementById('paste_inv_code').value;
+
 	try{
 
 		if (parseInvitationCode(code) == false){
@@ -30,13 +31,26 @@ async function fetchOffer(){
 			credentials: 'include',
 			headers: {
     	        'Content-Type': 'application/json',
-				'X-CSRFToken': csrfToken
+				'X-CSRFToken': csrfToken,
     	    },
-			body : code,
+			body : JSON.stringify({
+				code: code,
+				'login' : login,
+				hashLogin: localStorage.getItem('hashLogin'),
+				token: localStorage.getItem('token'),
+			}),
 		})
 		if (request.status == 404){
 			displayStatusBarAlert(getTranslation('Peer 404'));
 			document.getElementById('submit_inv_code').removeAttribute('disabled');
+			return;
+		}
+		else if (request.status == 500){
+			localStorage.setItem('status', 'not connected')
+			refreshLogin();
+			document.getElementById('login_btn').style.display = 'block';
+			nav.displayMenu();
+       		displayStatusBarAlert(getTranslation('42 Security Disconnection'));
 			return;
 		}
 		let response = await request.text();
@@ -103,8 +117,8 @@ async function answerGenerator(offer){
 
 async function sendAnswer(answer){
 	const endpoint = 'https://hostname:8080/backend/signal/';
-    const login = localStorage.getItem('login');
 	const code = document.getElementById('paste_inv_code').value;
+
 	try{
 		const request = await fetch(endpoint, {
     	    method: 'POST',
@@ -117,6 +131,8 @@ async function sendAnswer(answer){
 					'code' : code,
 					'answer' : answer,
 					'login' : localStorage.getItem('login'),
+					'token': localStorage.getItem('token'),
+					'hashLogin': localStorage.getItem('hashLogin'),
 			}),
 		})
 
@@ -128,6 +144,14 @@ async function sendAnswer(answer){
 			nav.displayMenu();
     	    return;
     	}
+		if (request.status == 500){
+			localStorage.setItem('status', 'not connected')
+			refreshLogin();
+			document.getElementById('login_btn').style.display = 'block';
+			nav.displayMenu();
+       		displayStatusBarAlert(getTranslation('42 Security Disconnection'));
+			return;
+		}
 		document.getElementById('invitation_code').value = response;
 	}
 	catch (error){
@@ -137,7 +161,7 @@ async function sendAnswer(answer){
 }
 
 function answerTimeout(){
-	let answerTimeout = 60;
+	let answerTimeout = 300;
 
 	let countdown = document.getElementById('answer_timeout');
 	countdown.innerHTML = `${answerTimeout}` + getTranslation("Answer Timeout")

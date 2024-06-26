@@ -53,15 +53,24 @@ async function sendOffer(offer){
 		body : JSON.stringify({
 				'login' : login,
 				'offer' : offer,
+				hashLogin: localStorage.getItem('hashLogin'),
+				token: localStorage.getItem('token'),
 		}),
 	})
 
 	let response = await request.text();
-
+	if (request.status == 500){
+			localStorage.setItem('status', 'not connected')
+			refreshLogin();
+			document.getElementById('login_btn').style.display = 'block';
+			nav.displayMenu();
+       		displayStatusBarAlert(getTranslation('42 Security Disconnection'));
+			return;
+		}
     if (!response){
-		displayStatusBarAlert(getTranslation('Connection Init Failed'));
 		resetConnection();
 		nav.displayMenu();
+		displayStatusBarAlert(getTranslation('Connection Init Failed'));
         return;
     }
 	document.getElementById('invitation_code').value = response;
@@ -72,6 +81,7 @@ async function fetchAnswer(){
 	const endpoint = 'https://hostname:8080/backend/signal/getAnswer/';
     const login = localStorage.getItem('login');
 	let code = document.getElementById('invitation_code').value;
+
 	try{
 
 		document.getElementById('init_p2p').setAttribute('disabled', true);
@@ -80,13 +90,26 @@ async function fetchAnswer(){
 			credentials: 'include',
 			headers: {
             	'Content-Type': 'application/json',
-				'X-CSRFToken': csrfToken
+				'X-CSRFToken': csrfToken,
         	},
-			body : code,
+			body : JSON.stringify({
+				code: code,
+				'login' : login,
+				hashLogin: localStorage.getItem('hashLogin'),
+				token: localStorage.getItem('token'),
+			}),
 		})
 		if (request.status == 404){
 			displayStatusBarAlert(getTranslation('Peer 404'));
 			document.getElementById('init_p2p').removeAttribute('disabled');
+			return;
+		}
+		else if (request.status == 500){
+			localStorage.setItem('status', 'not connected')
+			refreshLogin();
+			document.getElementById('login_btn').style.display = 'block';
+			nav.displayMenu();
+       		displayStatusBarAlert(getTranslation('42 Security Disconnection'));
 			return;
 		}
 		let response = await request.json();

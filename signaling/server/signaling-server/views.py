@@ -15,13 +15,13 @@ CLIENT_ID = os.environ.get('CLIENT_ID')
 def signal(request):
 	requestJson = json.loads(request.body)
 
-	if requestJson.get('login') != None:
-		if utils.parse_input(requestJson['login']) == False :
-			return HttpResponseServerError('Error: data has unexpected content.')
+	if utils.sanitizeRequest(requestJson) is False:
+		return HttpResponseServerError("Error: Forbidden characters in request.\n")
+	if user_info.verifyUser(requestJson) is False:
+		return HttpResponseServerError("Error: Could not verify user identity.\n")
 
 	if requestJson.get('answer') != None:
 		return invitation_code.postAnswer(request)
-
 	else:
 		return HttpResponse(content= invitation_code.generate_code(request))
 
