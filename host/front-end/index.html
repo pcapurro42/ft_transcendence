@@ -803,197 +803,196 @@
 
                     </div>
                 </div>
-
-                <!-- utils -->
-
-                <div>
-                    <div id="statusBarSuccess" class="alert alert-success fixed-top p-2 status_bar"></div>
-                    <div id="statusBarAlert" class="alert alert-danger fixed-top p-2 status_bar"></div>
-                    <div id="statusBarWarning" class="alert alert-warning fixed-top p-2 status_bar"></div>
-
-                    <div class="modal" id="disconnectionPopup" data-bs-backdrop='static' aria-modal="true" role="dialog" data-title="ARIA disco modal" aria-label>
-
-                        <div class="modal-dialog modal-dialog-centered text">
-                            <div id="modal_color_disco" class="modal-content border border-2">
-                                <div class="modal-header">
-                                    <h4 class="modal-title text text-danger" data-oname="Disconnected" data-tsnormal="30px" data-tslarge="50px"></h4>
-                                </div>
-                                <div class="modal-body" data-tsnormal="15px" data-tslarge="30px">
-                                    <p class="text" data-oname="Disconnection Msg"></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button id="disconnection_back_btn" class="not-disabled btn btn-outline-danger btn-complex text" data-oname="Main Menu"></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="modal" id="leaderboard_modal" data-bs-backdrop='static'>
-                        <div class="modal-dialog modal-dialog-centered text">
-                            <div id="modal_color_leaderboard" class="modal-content border border-2" aria-modal="true" role="dialog" data-title="Leaderboard" aria-label>
-                                <div id="leaderboard_body"class="overflow-scroll modal-body" data-tsnormal="15px" data-tslarge="30px" tabindex="0">
-                                    <a></a>
-                                </div>
-                                <div class="modal-footer">
-                                    <button id="close_leaderboard" class="not-disabled mx-auto btn btn-outline-secondary btn-complex color_btn text" data-oname="Resume"></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="modal" id="leavingPopup" data-bs-backdrop='static' aria-modal="true" role="dialog" data-title="ARIA leaving modal" aria-label>
-                        <div class="modal-dialog modal-dialog-centered text">
-                            <div id="modal_color_leaving" class="modal-content border border-2">
-                                <div class="modal-header">
-                                    <h4 class="modal-title text text-danger" data-oname="Leaving Popup" data-tsnormal="30px" data-tslarge="50px"></h4>
-                                </div>
-                                <div class="modal-body" data-tsnormal="15px" data-tslarge="30px">
-                                    <p class="text" data-oname="Leaving msg"></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button id="leave_page_btn" class="not-disabled btn btn-outline-danger btn-complex text" data-oname="Continue"></button>
-                                    <button id="resume_btn" class="not-disabled btn btn-outline-secondary btn-complex text" data-oname="Resume"></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="offcanvas offcanvas-start" tabindex="-1" id="sideMenu" data-title="ARIA Sidebar Menu" aria-label data-bs-backdrop="true">
-                        <div id="offcanvas_head" class="d-flex justify-content-between offcanvas-header">
-                            <div>
-                                <button id="home_btn" class="me-2 btn-simple btn_img p-0" data-title="Main Menu" data-title="Main Menu" aria-label="" role="button" data-isnormal="55px" data-islarge="65px" ><img src="./Materials/images/menu/home.png" class="image img-fluid btn_icon btn_img" alt="" ></button>
-                                <button id="music_toggle_btn" class="btn_img btn-simple p-0" data-alt="Music Icon" data-title="Enable/Disable menu music" aria-label="" data-isnormal="35px" data-islarge="47px" role="button"><img id ="music_toggle" src="./Materials/images/menu/music-off.png" class="img-fluid image music_togglers btn_icon" alt=""></button>
-                                <button id="sound_toggle_btn" class="btn-simple btn_img p-0" data-alt="Sound Icon" data-isnormal="45px" data-islarge="60px" data-title="Enable/Disable menu sounds" aria-label=""><img id="sound_toggle" src="./Materials/images/menu/sound-on.png" class="img-fluid image sound_togglers btn_icon" alt=""></button>
-                            </div>
-                            <div>
-                                <button type="button" class="btn btn-simple text float-end" data-bs-dismiss="offcanvas" data-title="ARIA Close sidebar" aria-label="" data-tsnormal="20px" data-tslarge="30px">&#10005;</button>
-                            </div>
-                        </div>
-
-                        <div class="offcanvas-body">
-                            <div>
-                                <button class="btn btn-toggle sb_nav collapsed dropdown-toggle text btn-simple" data-bs-toggle="collapse" data-bs-target="#play-collapse" aria-expanded="false" data-oname="Play" data-tsnormal="30px" data-tslarge="50px"></button>
-                                <div class="collapse ms-3" id="play-collapse">
-                                    <ul class="btn-toggle-nav list-unstyled pb-1" aria-labelledby="dropdownMenuButton">
-                                        <li>
-                                            <button class="btn btn-toggle sb_nav collapsed dropdown-toggle text btn-simple" data-bs-toggle="collapse" data-bs-target="#classic-collapse" aria-expanded="false" data-oname="Classic" data-tsnormal="20px" data-tslarge="30px"></button>
-                                            <div class="collapse ms-3" id="classic-collapse">
-                                                <ul class="btn-toggle-nav list-unstyled pb-1" aria-labelledby="dropdownMenuButton">
-                                                    <li>
-                                                        <button id="sb_o_1v1"class="btn btn-toggle sb_nav collapsed dropdown-toggle text btn-simple not-disabled" data-bs-toggle="collapse" data-bs-target="#online-collapse" aria-expanded="false"data-oname="1 vs 1 (online)" data-tsnormal="20px" data-tslarge="30px"></button>
-                                                        <div class="collapse ms-3" id="online-collapse">
-                                                            <ul class="btn-toggle-nav list-unstyled pb-1" aria-labelledby="dropdownMenuButton">
-                                                                <li><button id="sb_create_lobby" class="btn sb_nav text btn-simple" data-oname="Create Lobby" data-tsnormal="20px" data-tslarge="30px"></button></li>
-                                                                <li><button id="sb_join_lobby" class="btn sb_nav text btn-simple" data-oname="Join Lobby" data-tsnormal="20px" data-tslarge="30px"></button></li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <li><button id="sb_1v1" class="btn sb_nav text btn-simple" data-oname="1 vs 1 (local)" data-tsnormal="20px" data-tslarge="30px"></button></li>
-                                                    <li><button id="sb_1v2" class="btn sb_nav text btn-simple" data-oname="1 vs 2 (local)" data-tsnormal="20px" data-tslarge="30px"></button></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <button class="btn btn-toggle sb_nav collapsed dropdown-toggle text btn-simple" data-bs-toggle="collapse" data-bs-target="#tournament-collapse" aria-expanded="false" data-oname="Tournament" data-tsnormal="20px" data-tslarge="30px"></button>
-                                            <div class="collapse ms-3" id="tournament-collapse">
-                                                <ul class="btn-toggle-nav list-unstyled pb-1" aria-labelledby="dropdownMenuButton">
-                                                    <li><button id="sb_ro16" class="btn sb_nav text btn-simple" data-oname="Sixteen" data-tsnormal="20px" data-tslarge="30px"></button></li>
-                                                    <li><button id="sb_final8"class="btn sb_nav text btn-simple" data-oname="Eight" data-tsnormal="20px" data-tslarge="30px"></button></li>
-                                                    <li><button id="sb_final4" class="btn sb_nav text btn-simple" data-oname="Four" data-tsnormal="20px" data-tslarge="30px"></button></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div>
-                                <button id="sb_customize" class="btn sb_nav text btn-simple" data-oname="Customize" data-tsnormal="30px" data-tslarge="50px"></button>
-                            </div>
-                            <div>
-                                <button class="btn btn-toggle sb_nav collapsed dropdown-toggle text btn-simple" data-bs-toggle="collapse" data-bs-target="#statistics-collapse" aria-expanded="false" data-oname="Statistics" data-tsnormal="30px" data-tslarge="50px"></button>
-                                <div class="collapse ms-3" id="statistics-collapse">
-                                    <ul class="btn-toggle-nav list-unstyled pb-1" aria-labelledby="dropdownMenuButton">
-                                        <li><button id="sb_local_stat" class="btn sb_nav text btn-simple" data-oname="Local" data-tsnormal="20px" data-tslarge="30px"></button></li>
-                                        <li><button id="sb_online_stat" class="btn sb_nav text btn-simple" data-oname="Online" data-tsnormal="20px" data-tslarge="30px"></button></li>
-                                        <li><button id="sb_game_history" class="btn sb_nav text btn-simple" data-oname="History" data-tsnormal="20px" data-tslarge="30px"></button></li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <button class="btn btn-toggle sb_nav collapsed dropdown-toggle text btn-simple" data-bs-toggle="collapse" data-bs-target="#option-collapse" aria-expanded="false" data-oname="Settings" data-tsnormal="30px" data-tslarge="50px"></button>
-                                    <div class="collapse ms-3" id="option-collapse">
-                                        <ul class="btn-toggle-nav list-unstyled pb-1" aria-labelledby="dropdownMenuButton">
-                                        <li><button id="sb_settings" class="btn sb_nav text btn-simple" data-oname="Website Settings" data-tsnormal="20px" data-tslarge="30px"></button></li>
-                                        <li><button id="sb_settings_privacy" class="btn sb_nav text btn-simple" data-oname="Privacy Settings" data-tsnormal="20px" data-tslarge="30px"></button></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div id="offcanvas_foot" class="w-100 justify-content-center align-items-center offcanvas-footer mx-auto d-flex">
-                            <button id="light_switch" class="sb_switch btn btn-simple m-1 border border-2 btn btn-simple focus-black" data-title="ARIA High Contrast" aria-label=""></button>
-                            <button id="letter_switch" class="sb_switch m-1 btn btn-simple border border-2" data-tsnormal="20px" data-tslarge="30px"></button>
-                            <div class="dropup" id="test00">
-                                <button id="language_switch" class="m-1 dropdown-toggle sb_switch mx-1 btn btn-simple border border-2 p-0" data-bs-toggle="dropdown" data-tsnormal="20px" data-tslarge="30px" data-title="ARIA Language Selector" aria-label=""></button>
-                                <div id="lang_switch_menu" class="dropdown-menu" >
-                                    <button id="sb_en" class="dropdown-item btn-simple" data-tsnormal="20px" data-tslarge="30px" data-title="English" aria-label="">en</button>
-                                    <button id="sb_fr" class="dropdown-item btn-simple" data-tsnormal="20px" data-tslarge="30px" data-title="French" aria-label="">fr</button>
-                                    <button id="sb_es" class="dropdown-item btn-simple" data-tsnormal="20px" data-tslarge="30px" data-title="Spanish" aria-label="">es</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="footer_div" class="position-fixed fixed-bottom">
-                    <footer class="d-flex justify-content-center align-items-center mt-3">
-                        <button id="rgpd_btn" class="foot btn btn-simple float-end" data-tsnormal="12px" data-tslarge="20px"></button>
-                        <a id="pcap_git" class="me-0 foot btn btn-simple float-end" data-tsnormal="12px" data-tslarge="20px" href="https://github.com/pcapurro42" target="_blank" data-title="ARIA Github_p" aria-label=""></a>
-                        <a id="bgales_git" class="me-5 foot btn btn-simple float-end" data-tsnormal="12px" data-tslarge="20px" href="https://github.com/bjmgales" target="_blank" data-title="ARIA Github_b" aria-label=""></a>
-                    </footer>
-                    <div>
-                        <hr id="hr" class="mx-auto mt-1 mb-3"/>
-                        <p id="mgp_corp"class="text-center" data-tsnormal="10px" data-tslarge="17px">© 2024, Metal Gear Pong Inc.</p>
-                    </div>
-                </div>
-
-                <!-- Audio and video -->
-
-                <div>
-                    <!-- Audio -->
-
-                    <audio id="mgs" src="./Materials/musics/mgs2-theme.mp3" autoplay muted></audio>
-                    <audio id="duel-theme" class="game_music" src="./Materials/musics/duel-theme.mp3" muted></audio>
-                    <audio id="mgs3-alert-theme" class="game_music" src="./Materials/musics/mgs3-alert-theme.mp3" muted></audio>
-                    <audio id="sneaky-theme" class="game_music" src="./Materials/musics/Sneaky-theme.mp3" muted></audio>
-
-                    <audio id="mystery_sound" class="sounds" src="./Materials/sounds/mysterious-sound.mp3"></audio>
-                    <audio id="codec_sound" class="sounds" src="./Materials/sounds/codec-sound.mp3"></audio>
-                    <audio id="hover_sound" class="sounds" src="./Materials/sounds/click-hover.mp3"></audio>
-                    <audio id="door_locked" class="sounds" src="./Materials/sounds/door-locked.mp3"></audio>
-                    <audio id="click_sound" class="sounds" src="./Materials/sounds/click-sound.mp3"></audio>
-                    <audio id="close_sound" class="sounds" src="./Materials/sounds/close-sound.mp3"></audio>
-                    <audio id="alert_sound" class="sounds" src="./Materials/sounds/mgs1-alert.mp3"></audio>
-                    <audio id="lalilulelo-1" class="sounds" src="./Materials/sounds/lalilulelo-1.mp3"></audio>
-                    <audio id="lalilulelo-2" class="sounds" src="./Materials/sounds/lalilulelo-2.mp3"></audio>
-                    <audio id="lalilulelo-3" class="sounds" src="./Materials/sounds/lalilulelo-3.mp3"></audio>
-                    <audio id="bonus_sound" class="sounds" src="./Materials/sounds/bonus-sound.mp3"></audio>
-                    <audio id="online_loser" class="sounds" src="./Materials/sounds/online-loser.mp3"></audio>
-                    <audio id="online_winner" class="sounds" src="./Materials/sounds/online-winner.mp3"></audio>
-                    <audio id="knock_sound" class="sounds" src="./Materials/sounds/knocking-sound.mp3"></audio>
-
-                    <!-- Video -->
-
-                    <video src="./Materials/video/credits.mp4" type="video/mp4" id="vid_credits"  tabindex="-1" data-title="ARIA Credits Video" aria-label=""></video>
-
-                    <button id="credit_close" data-tsnormal="30px" data-tslarge="50px" data-title="ARIA Credits Close" class="btn btn-simple flex float-end" data-link="home" aria-label="">&#10005;</button>
-
-                </div>
-
             </div>
 
         </main>
+
+        <!-- utils -->
+
+        <div>
+            <div id="statusBarSuccess" class="alert alert-success fixed-top p-2 status_bar"></div>
+            <div id="statusBarAlert" class="alert alert-danger fixed-top p-2 status_bar"></div>
+            <div id="statusBarWarning" class="alert alert-warning fixed-top p-2 status_bar"></div>
+
+            <div class="modal" id="disconnectionPopup" data-bs-backdrop='static' aria-modal="true" role="dialog" data-title="ARIA disco modal" aria-label>
+
+                <div class="modal-dialog modal-dialog-centered text">
+                    <div id="modal_color_disco" class="modal-content border border-2">
+                        <div class="modal-header">
+                            <h4 class="modal-title text text-danger" data-oname="Disconnected" data-tsnormal="30px" data-tslarge="50px"></h4>
+                        </div>
+                        <div class="modal-body" data-tsnormal="15px" data-tslarge="30px">
+                            <p class="text" data-oname="Disconnection Msg"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="disconnection_back_btn" class="not-disabled btn btn-outline-danger btn-complex text" data-oname="Main Menu"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="leaderboard_modal" data-bs-backdrop='static'>
+                <div class="modal-dialog modal-dialog-centered text">
+                    <div id="modal_color_leaderboard" class="modal-content border border-2" aria-modal="true" role="dialog" data-title="Leaderboard" aria-label>
+                        <div id="leaderboard_body"class="overflow-scroll modal-body" data-tsnormal="15px" data-tslarge="30px" tabindex="0">
+                            <a></a>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="close_leaderboard" class="not-disabled mx-auto btn btn-outline-secondary btn-complex color_btn text" data-oname="Resume"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="leavingPopup" data-bs-backdrop='static' aria-modal="true" role="dialog" data-title="ARIA leaving modal" aria-label>
+                <div class="modal-dialog modal-dialog-centered text">
+                    <div id="modal_color_leaving" class="modal-content border border-2">
+                        <div class="modal-header">
+                            <h4 class="modal-title text text-danger" data-oname="Leaving Popup" data-tsnormal="30px" data-tslarge="50px"></h4>
+                        </div>
+                        <div class="modal-body" data-tsnormal="15px" data-tslarge="30px">
+                            <p class="text" data-oname="Leaving msg"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="leave_page_btn" class="not-disabled btn btn-outline-danger btn-complex text" data-oname="Continue"></button>
+                            <button id="resume_btn" class="not-disabled btn btn-outline-secondary btn-complex text" data-oname="Resume"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="sideMenu" data-title="ARIA Sidebar Menu" aria-label data-bs-backdrop="true">
+                <div id="offcanvas_head" class="d-flex justify-content-between offcanvas-header">
+                    <div>
+                        <button id="home_btn" class="me-2 btn-simple btn_img p-0" data-title="Main Menu" data-title="Main Menu" aria-label="" role="button" data-isnormal="55px" data-islarge="65px" ><img src="./Materials/images/menu/home.png" class="image img-fluid btn_icon btn_img" alt="" ></button>
+                        <button id="music_toggle_btn" class="btn_img btn-simple p-0" data-alt="Music Icon" data-title="Enable/Disable menu music" aria-label="" data-isnormal="35px" data-islarge="47px" role="button"><img id ="music_toggle" src="./Materials/images/menu/music-off.png" class="img-fluid image music_togglers btn_icon" alt=""></button>
+                        <button id="sound_toggle_btn" class="btn-simple btn_img p-0" data-alt="Sound Icon" data-isnormal="45px" data-islarge="60px" data-title="Enable/Disable menu sounds" aria-label=""><img id="sound_toggle" src="./Materials/images/menu/sound-on.png" class="img-fluid image sound_togglers btn_icon" alt=""></button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-simple text float-end" data-bs-dismiss="offcanvas" data-title="ARIA Close sidebar" aria-label="" data-tsnormal="20px" data-tslarge="30px">&#10005;</button>
+                    </div>
+                </div>
+
+                <div class="offcanvas-body">
+                    <div>
+                        <button class="btn btn-toggle sb_nav collapsed dropdown-toggle text btn-simple" data-bs-toggle="collapse" data-bs-target="#play-collapse" aria-expanded="false" data-oname="Play" data-tsnormal="30px" data-tslarge="50px"></button>
+                        <div class="collapse ms-3" id="play-collapse">
+                            <ul class="btn-toggle-nav list-unstyled pb-1" aria-labelledby="dropdownMenuButton">
+                                <li>
+                                    <button class="btn btn-toggle sb_nav collapsed dropdown-toggle text btn-simple" data-bs-toggle="collapse" data-bs-target="#classic-collapse" aria-expanded="false" data-oname="Classic" data-tsnormal="20px" data-tslarge="30px"></button>
+                                    <div class="collapse ms-3" id="classic-collapse">
+                                        <ul class="btn-toggle-nav list-unstyled pb-1" aria-labelledby="dropdownMenuButton">
+                                            <li>
+                                                <button id="sb_o_1v1"class="btn btn-toggle sb_nav collapsed dropdown-toggle text btn-simple not-disabled" data-bs-toggle="collapse" data-bs-target="#online-collapse" aria-expanded="false"data-oname="1 vs 1 (online)" data-tsnormal="20px" data-tslarge="30px"></button>
+                                                <div class="collapse ms-3" id="online-collapse">
+                                                    <ul class="btn-toggle-nav list-unstyled pb-1" aria-labelledby="dropdownMenuButton">
+                                                        <li><button id="sb_create_lobby" class="btn sb_nav text btn-simple" data-oname="Create Lobby" data-tsnormal="20px" data-tslarge="30px"></button></li>
+                                                        <li><button id="sb_join_lobby" class="btn sb_nav text btn-simple" data-oname="Join Lobby" data-tsnormal="20px" data-tslarge="30px"></button></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li><button id="sb_1v1" class="btn sb_nav text btn-simple" data-oname="1 vs 1 (local)" data-tsnormal="20px" data-tslarge="30px"></button></li>
+                                            <li><button id="sb_1v2" class="btn sb_nav text btn-simple" data-oname="1 vs 2 (local)" data-tsnormal="20px" data-tslarge="30px"></button></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <button class="btn btn-toggle sb_nav collapsed dropdown-toggle text btn-simple" data-bs-toggle="collapse" data-bs-target="#tournament-collapse" aria-expanded="false" data-oname="Tournament" data-tsnormal="20px" data-tslarge="30px"></button>
+                                    <div class="collapse ms-3" id="tournament-collapse">
+                                        <ul class="btn-toggle-nav list-unstyled pb-1" aria-labelledby="dropdownMenuButton">
+                                            <li><button id="sb_ro16" class="btn sb_nav text btn-simple" data-oname="Sixteen" data-tsnormal="20px" data-tslarge="30px"></button></li>
+                                            <li><button id="sb_final8"class="btn sb_nav text btn-simple" data-oname="Eight" data-tsnormal="20px" data-tslarge="30px"></button></li>
+                                            <li><button id="sb_final4" class="btn sb_nav text btn-simple" data-oname="Four" data-tsnormal="20px" data-tslarge="30px"></button></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <button id="sb_customize" class="btn sb_nav text btn-simple" data-oname="Customize" data-tsnormal="30px" data-tslarge="50px"></button>
+                    </div>
+                    <div>
+                        <button class="btn btn-toggle sb_nav collapsed dropdown-toggle text btn-simple" data-bs-toggle="collapse" data-bs-target="#statistics-collapse" aria-expanded="false" data-oname="Statistics" data-tsnormal="30px" data-tslarge="50px"></button>
+                        <div class="collapse ms-3" id="statistics-collapse">
+                            <ul class="btn-toggle-nav list-unstyled pb-1" aria-labelledby="dropdownMenuButton">
+                                <li><button id="sb_local_stat" class="btn sb_nav text btn-simple" data-oname="Local" data-tsnormal="20px" data-tslarge="30px"></button></li>
+                                <li><button id="sb_online_stat" class="btn sb_nav text btn-simple" data-oname="Online" data-tsnormal="20px" data-tslarge="30px"></button></li>
+                                <li><button id="sb_game_history" class="btn sb_nav text btn-simple" data-oname="History" data-tsnormal="20px" data-tslarge="30px"></button></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <button class="btn btn-toggle sb_nav collapsed dropdown-toggle text btn-simple" data-bs-toggle="collapse" data-bs-target="#option-collapse" aria-expanded="false" data-oname="Settings" data-tsnormal="30px" data-tslarge="50px"></button>
+                            <div class="collapse ms-3" id="option-collapse">
+                                <ul class="btn-toggle-nav list-unstyled pb-1" aria-labelledby="dropdownMenuButton">
+                                <li><button id="sb_settings" class="btn sb_nav text btn-simple" data-oname="Website Settings" data-tsnormal="20px" data-tslarge="30px"></button></li>
+                                <li><button id="sb_settings_privacy" class="btn sb_nav text btn-simple" data-oname="Privacy Settings" data-tsnormal="20px" data-tslarge="30px"></button></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="offcanvas_foot" class="w-100 justify-content-center align-items-center offcanvas-footer mx-auto d-flex">
+                    <button id="light_switch" class="sb_switch btn btn-simple m-1 border border-2 btn btn-simple focus-black" data-title="ARIA High Contrast" aria-label=""></button>
+                    <button id="letter_switch" class="sb_switch m-1 btn btn-simple border border-2" data-tsnormal="20px" data-tslarge="30px"></button>
+                    <div class="dropup" id="test00">
+                        <button id="language_switch" class="m-1 dropdown-toggle sb_switch mx-1 btn btn-simple border border-2 p-0" data-bs-toggle="dropdown" data-tsnormal="20px" data-tslarge="30px" data-title="ARIA Language Selector" aria-label=""></button>
+                        <div id="lang_switch_menu" class="dropdown-menu" >
+                            <button id="sb_en" class="dropdown-item btn-simple" data-tsnormal="20px" data-tslarge="30px" data-title="English" aria-label="">en</button>
+                            <button id="sb_fr" class="dropdown-item btn-simple" data-tsnormal="20px" data-tslarge="30px" data-title="French" aria-label="">fr</button>
+                            <button id="sb_es" class="dropdown-item btn-simple" data-tsnormal="20px" data-tslarge="30px" data-title="Spanish" aria-label="">es</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer_div" class="position-fixed fixed-bottom">
+            <footer class="d-flex justify-content-center align-items-center mt-3">
+                <button id="rgpd_btn" class="foot btn btn-simple float-end" data-tsnormal="12px" data-tslarge="20px"></button>
+                <a id="pcap_git" class="me-0 foot btn btn-simple float-end" data-tsnormal="12px" data-tslarge="20px" href="https://github.com/pcapurro42" target="_blank" data-title="ARIA Github_p" aria-label=""></a>
+                <a id="bgales_git" class="me-5 foot btn btn-simple float-end" data-tsnormal="12px" data-tslarge="20px" href="https://github.com/bjmgales" target="_blank" data-title="ARIA Github_b" aria-label=""></a>
+            </footer>
+            <div>
+                <hr id="hr" class="mx-auto mt-1 mb-3"/>
+                <p id="mgp_corp"class="text-center" data-tsnormal="10px" data-tslarge="17px">© 2024, Metal Gear Pong Inc.</p>
+            </div>
+        </div>
+
+        <!-- Audio and video -->
+
+        <div>
+            <!-- Audio -->
+
+            <audio id="mgs" src="./Materials/musics/mgs2-theme.mp3" autoplay muted></audio>
+            <audio id="duel-theme" class="game_music" src="./Materials/musics/duel-theme.mp3" muted></audio>
+            <audio id="mgs3-alert-theme" class="game_music" src="./Materials/musics/mgs3-alert-theme.mp3" muted></audio>
+            <audio id="sneaky-theme" class="game_music" src="./Materials/musics/Sneaky-theme.mp3" muted></audio>
+
+            <audio id="mystery_sound" class="sounds" src="./Materials/sounds/mysterious-sound.mp3"></audio>
+            <audio id="codec_sound" class="sounds" src="./Materials/sounds/codec-sound.mp3"></audio>
+            <audio id="hover_sound" class="sounds" src="./Materials/sounds/click-hover.mp3"></audio>
+            <audio id="door_locked" class="sounds" src="./Materials/sounds/door-locked.mp3"></audio>
+            <audio id="click_sound" class="sounds" src="./Materials/sounds/click-sound.mp3"></audio>
+            <audio id="close_sound" class="sounds" src="./Materials/sounds/close-sound.mp3"></audio>
+            <audio id="alert_sound" class="sounds" src="./Materials/sounds/mgs1-alert.mp3"></audio>
+            <audio id="lalilulelo-1" class="sounds" src="./Materials/sounds/lalilulelo-1.mp3"></audio>
+            <audio id="lalilulelo-2" class="sounds" src="./Materials/sounds/lalilulelo-2.mp3"></audio>
+            <audio id="lalilulelo-3" class="sounds" src="./Materials/sounds/lalilulelo-3.mp3"></audio>
+            <audio id="bonus_sound" class="sounds" src="./Materials/sounds/bonus-sound.mp3"></audio>
+            <audio id="online_loser" class="sounds" src="./Materials/sounds/online-loser.mp3"></audio>
+            <audio id="online_winner" class="sounds" src="./Materials/sounds/online-winner.mp3"></audio>
+            <audio id="knock_sound" class="sounds" src="./Materials/sounds/knocking-sound.mp3"></audio>
+
+            <!-- Video -->
+
+            <video src="./Materials/video/credits.mp4" type="video/mp4" id="vid_credits"  tabindex="-1" data-title="ARIA Credits Video" aria-label=""></video>
+
+            <button id="credit_close" data-tsnormal="30px" data-tslarge="50px" data-title="ARIA Credits Close" class="btn btn-simple flex float-end" data-link="home" aria-label="">&#10005;</button>
+
+        </div>
 
         <!-- JavaScript files -->
 
