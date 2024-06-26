@@ -50,6 +50,22 @@ body
     max-width: 650px;
 }
 
+
+#background_left_2{
+    z-index: -1;
+    position: fixed;
+    top: 0%;
+    right: 70%;
+    max-width: 550px;
+}
+
+#background_right_2{
+    z-index: -1;
+    position: fixed;
+    left: 66%;
+    max-width: 550px;
+}
+
 .container{
     max-width: 1090px !important;
 }
