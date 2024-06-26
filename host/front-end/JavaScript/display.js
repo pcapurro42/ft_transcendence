@@ -316,7 +316,7 @@ function detectKonamiCode(event)
                     console.log(getTranslation("Konami Code detected!"));
                     document.getElementById('mystery_sound').play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
                     
-                    localStorage.setItem('konami_code', true);
+                    localStorage.setItem('konami_code', "true");
                     keys_register = [];
                     
                     return ;

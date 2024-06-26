@@ -25,12 +25,27 @@ class Ball
         this.lcl_bounce = 0;
         this.onl_received = 0;
         this.onl_return = 0;
+
+        if (localStorage.getItem('konami_code') == "true")
+        {
+            this.bandana_left = new Image(), this.bandana_left.src = 'Materials/images/game/bandana_left.png';
+            this.bandana_right = new Image(), this.bandana_right.src = 'Materials/images/game/bandana_right.png';
+            this.bandana = true;
+        }
     }
 
     print()
     {
         this.game.display.fillStyle = this.color;
         this.game.display.fillRect(this.x, this.y, this.width, this.height);
+
+        if (this.bandana == true)
+        {
+            if (this.direction <= 90 && this.direction >= -90)
+                this.bandana_right.onload = () => {this.game.display.drawImage(this.bandana_right, this.x, this.y)};
+            else
+                this.bandana_left.onload = () => {this.game.display.drawImage(this.bandana_left, this.x, this.y)};
+        }
     }
 
     printAlert()
