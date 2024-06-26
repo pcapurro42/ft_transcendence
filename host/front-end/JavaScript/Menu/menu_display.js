@@ -142,15 +142,13 @@ const nav = {
         if (role == "host")
         {
             document.getElementById('one_vs_one_host_page').style.display = "block";
-            document.getElementById('h_host_name').innerHTML = localStorage.getItem('login');
-            document.getElementById('h_guest_name').innerHTML = localStorage.getItem('opponent_login');
+            document.getElementById('h_versus_title').innerHTML = localStorage.getItem('login') + "  vs  " + localStorage.getItem('opponent_login');
             document.getElementById('waiting_host').style.display = "none";
         }
         else
         {
             document.getElementById('one_vs_one_guest_page').style.display = "block";
-            document.getElementById('g_host_name').innerHTML = localStorage.getItem('opponent_login');
-            document.getElementById('g_guest_name').innerHTML = localStorage.getItem('login');
+            document.getElementById('g_versus_title').innerHTML = localStorage.getItem('opponent_login') + "  vs  " + localStorage.getItem('login');
             document.getElementById('waiting_host').style.display = "block";
             data_channel.send("ready");
         }
