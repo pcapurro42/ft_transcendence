@@ -42,9 +42,9 @@ class Ball
         if (this.bandana == true)
         {
             if (this.direction <= 90 && this.direction >= -90)
-                this.game.display.drawImage(this.bandana_right, this.x, this.y);
+                this.game.display.drawImage(this.bandana_right, this.x - 28, this.y + 5);
             else
-                this.game.display.drawImage(this.bandana_left, this.x, this.y);
+                this.game.display.drawImage(this.bandana_left, this.x, this.y + 5);
         }
     }
 
