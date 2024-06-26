@@ -45,17 +45,10 @@ function setBackground(pagePath)
         document.getElementById('background_menu_1').style.display = 'block';
         document.getElementById('background_menu_2').style.display = 'block';
     }
-    if (pagePath == '/1vs1' || pagePath == '/1vs2' || pagePath == '/online-game')
-    {
-        document.getElementById('background_left').style.display = 'block';
-        document.getElementById('background_right').style.display = 'block';
-    }
 }
 
 function hideBackgrounds()
 {
-    document.getElementById('background_left').style.display = 'none';
-    document.getElementById('background_right').style.display = 'none';
     document.getElementById('background_menu_1').style.display = 'none';
     document.getElementById('background_menu_2').style.display = 'none';
 }
