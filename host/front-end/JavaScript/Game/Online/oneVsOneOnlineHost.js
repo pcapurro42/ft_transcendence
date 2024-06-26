@@ -22,13 +22,13 @@ class OnlineGame1v1_host
         this.game_width = 1100;
         this.game_height = 720;
 
-        this.bar_speed = 10;
-        this.bar_height = 80;
+        this.bar_speed = 15;
+        this.bar_height = 90;
         this.bar_width = 10;
 
         this.ball_speed = 10;
-        this.ball_height = 20;
-        this.ball_width = 20;
+        this.ball_height = 30;
+        this.ball_width = 30;
 
         this.separator_height = 20;
         this.separator_width = 2;
@@ -37,7 +37,7 @@ class OnlineGame1v1_host
         if (text_size == "normal")
             this.text_size = 85;
         else
-            this.text_size = 140;
+            this.text_size = 120;
 
         this.text_font = "Arial";
 
