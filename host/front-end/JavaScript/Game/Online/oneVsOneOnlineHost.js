@@ -361,7 +361,7 @@ class OnlineGame1v1_host
             if (this.end_time == 0)
                 this.end_time = getActualTimeSeconds();
 
-            document.getElementById('h_win_text').innerHTML = localStorage.getItem('login') + getTranslation('Online Win') + " « You're pretty good! »";
+            document.getElementById('h_win_text').innerHTML = localStorage.getItem('login') + getTranslation('Online Win') + " you're pretty good!";
             document.getElementById('h_win_text').style.display = "block";
             document.getElementById('online_winner').play();
 
@@ -372,7 +372,7 @@ class OnlineGame1v1_host
             if (this.end_time == 0)
                 this.end_time = getActualTimeSeconds();
 
-            document.getElementById('h_win_text').innerHTML = localStorage.getItem('opponent_login') + getTranslation('Online Win') + " « Why are [you] still here? Just to suffer? »";
+            document.getElementById('h_win_text').innerHTML = localStorage.getItem('opponent_login') + getTranslation('Online Win') + " why are you still here? Just to suffer?";
             document.getElementById('h_win_text').style.display = "block";
             document.getElementById('online_loser').play();
 
