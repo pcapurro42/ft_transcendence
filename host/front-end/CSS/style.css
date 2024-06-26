@@ -30,6 +30,7 @@ body
 #background_menu_2
 {
     position: absolute;
+    transform: scaleX(-1);
     bottom: 65px;
     right: -35px;
     max-width: 500px;
@@ -48,22 +49,6 @@ body
     top: 0%;
     right: 70%;
     max-width: 650px;
-}
-
-
-#background_left_2{
-    z-index: -1;
-    position: fixed;
-    top: 0%;
-    right: 70%;
-    max-width: 550px;
-}
-
-#background_right_2{
-    z-index: -1;
-    position: fixed;
-    left: 66%;
-    max-width: 550px;
 }
 
 .container{
