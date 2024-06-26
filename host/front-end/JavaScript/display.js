@@ -297,6 +297,11 @@ function outsideDropdownClick(event)
     }
 }
 
+function initializeToasts()
+{
+
+}
+
 function detectKonamiCode(event)
 {
     let key = event.key;
@@ -315,6 +320,9 @@ function detectKonamiCode(event)
                 {
                     console.log(getTranslation("Konami Code detected!"));
                     document.getElementById('mystery_sound').play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
+
+                    let konami_toast = document.getElementById('konami_toast');
+                    new bootstrap.Toast(konami_toast).show();
                     
                     localStorage.setItem('konami_code', "true");
                     keys_register = [];

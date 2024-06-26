@@ -1,3 +1,5 @@
+initializeToasts()
+
 // < general > //
 
 let originalUrl = window.location.pathname;
