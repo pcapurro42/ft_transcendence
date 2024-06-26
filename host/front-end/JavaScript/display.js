@@ -203,7 +203,7 @@ function setHighContrast(value)
         high_contrast_btn.setAttribute('data-oname', 'Enabled');
         high_contrast_btn.style.backgroundColor = "#AD1400";
         high_contrast_btn.style.color = "white";
-        footer.style.backgroundColor="#640000";
+        footer.style.backgroundColor="#9a040c";
         sb_header.style.backgroundColor="#222222";
         setBackgroundColor("black");
         setTextColor("white");
@@ -224,7 +224,7 @@ function setHighContrast(value)
         });
         sb_dropBg.style.background = 'white';
         side_menu.style.backgroundColor = "white";
-        footer.style.backgroundColor="#640000";
+        footer.style.backgroundColor="#9a040c";
         high_contrast_btn.setAttribute('data-oname', 'Disabled');
         high_contrast_btn.style.backgroundColor = "";
         high_contrast_btn.style.color = "black";
