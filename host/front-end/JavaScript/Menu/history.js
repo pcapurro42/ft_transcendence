@@ -206,7 +206,7 @@ class History
     {
         if (this.history_data != null)
         {
-            let total_distance = 444;
+            let total_distance = 445;
             let bottom_y = this.graph_height - 43;
             let scores_nb = this.history_data.data[history_tab][5].length;
             let game_length = this.history_data.data[history_tab][4];
@@ -233,14 +233,9 @@ class History
 
                 this.graph_display.fillStyle = color;
 
-                let x_pos = 63 + (parseInt(scores_data[i][0].toFixed(2)) * total_distance) / game_length;
                 let y_pos = bottom_y - (i * 13);
-                if (i == scores_nb - 1)
-                    x_pos = x_pos - this.graph_point_size;
-                else if (i == 0)
-                    x_pos = x_pos;
-                else
-                    x_pos = x_pos - (this.graph_point_size / 2);
+                let x_pos = 63 + (parseInt(scores_data[i][0].toFixed(2)) * total_distance) / game_length;
+                x_pos = x_pos - (this.graph_point_size / 2);
 
                 if (i != 0)
                 {
