@@ -21,7 +21,8 @@ body
 
 #background_menu_1
 {
-    position: absolute;
+    z-index: -1;
+    position: fixed;
     top: 0px;
     left: 0px;
     max-width: 400px;
@@ -29,26 +30,12 @@ body
 
 #background_menu_2
 {
-    position: absolute;
+    z-index: -1;
+    position: fixed;
     transform: scaleX(-1);
     bottom: 65px;
     right: -15px;
     max-width: 500px;
-}
-
-#background_left{
-    z-index: -1;
-    position: fixed;
-    left: 76%;
-    max-width: 650px;
-}
-
-#background_right{
-    z-index: -1;
-    position: fixed;
-    top: 0%;
-    right: 75%;
-    max-width: 650px;
 }
 
 .container{
