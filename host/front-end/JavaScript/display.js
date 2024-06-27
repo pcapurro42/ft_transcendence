@@ -36,6 +36,7 @@ function refreshSite()
 function setBackground(pagePath)
 {
     hideBackgrounds();
+    hideAchievement();
 
     if (pagePath == '/home' || pagePath == '/settings' || pagePath == '/privacy-settings' || pagePath == '/statistics'
         || pagePath == '/customize' || pagePath == '/play' || pagePath == '/classic' || pagePath == '/tournament'
@@ -297,6 +298,12 @@ function outsideDropdownClick(event)
     }
 }
 
+function hideAchievement()
+{
+    document.getElementById('konami_toast').style.display = "none";
+    // ...
+}
+
 function displayAchievement(achievement)
 {
     document.getElementById('achiev_sound').play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
@@ -304,6 +311,7 @@ function displayAchievement(achievement)
     if (achievement == "konami")
     {
         let konami_toast = document.getElementById('konami_toast');
+        konami_toast.style.display = "block";
         if (high_contrast == "true")
             konami_toast.style.backgroundColor = "black";
         
@@ -331,8 +339,8 @@ function detectKonamiCode(event)
             {
                 if (keys_register[i + 1] == 'ArrowUp' && keys_register[i + 2] == 'ArrowDown' && keys_register[i + 3] == 'ArrowDown' && keys_register[i + 4] == 'ArrowLeft' && keys_register[i + 5] == 'ArrowRight' && keys_register[i + 6] == 'ArrowLeft' && keys_register[i + 7] == 'ArrowRight' && keys_register[i + 8] == 'b' && keys_register[i + 9] == 'a' && keys_register[i + 10] == 'Enter')
                 {
-                    displayAchievement("konami");
-                    localStorage.setItem('konami_code', "true");
+                    if (localStorage.getItem('konami_code') != "true")
+                        displayAchievement("konami"), localStorage.setItem('konami_code', "true");
                     keys_register = [];
                     return ;
                 }
