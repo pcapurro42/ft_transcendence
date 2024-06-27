@@ -35,6 +35,8 @@ function refreshSite()
 
 function setBackground(pagePath)
 {
+    let icons = document.querySelectorAll('.bg-icon');
+    
     hideBackgrounds();
     hideAchievement();
 
@@ -45,6 +47,7 @@ function setBackground(pagePath)
     {
         document.getElementById('background_menu_1').style.display = 'block';
         document.getElementById('background_menu_2').style.display = 'block';
+        icons[Math.floor(Math.random() * 27)].classList.remove('d-none');
     }
 }
 
@@ -52,6 +55,8 @@ function hideBackgrounds()
 {
     document.getElementById('background_menu_1').style.display = 'none';
     document.getElementById('background_menu_2').style.display = 'none';
+    let icons = document.querySelectorAll('.bg-icon')
+    icons.forEach(element => {element.classList.add('d-none');});
 }
 
 function setBackgroundColor(color)
@@ -206,6 +211,7 @@ function setHighContrast(value)
         high_contrast_btn.style.color = "white";
         footer.style.backgroundColor="#9a040c";
         sb_header.style.backgroundColor="#222222";
+        document.getElementById('menu_ham').classList.replace('bg-light', 'bg-black');
         setBackgroundColor("black");
         setTextColor("white");
         setMaterialsColor("black");
@@ -230,6 +236,7 @@ function setHighContrast(value)
         high_contrast_btn.style.backgroundColor = "";
         high_contrast_btn.style.color = "black";
         sb_header.style.backgroundColor="white"
+        document.getElementById('menu_ham').classList.replace('bg-black', 'bg-light');
         setBackgroundColor("white");
         setTextColor("black");
         setMaterialsColor("white");
@@ -314,7 +321,7 @@ function displayAchievement(achievement)
         konami_toast.style.display = "block";
         if (high_contrast == "true")
             konami_toast.style.backgroundColor = "black";
-        
+
         new bootstrap.Toast(konami_toast).show();
     }
     else if (achievement == "...")
