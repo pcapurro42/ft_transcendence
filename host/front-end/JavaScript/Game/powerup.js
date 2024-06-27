@@ -25,12 +25,14 @@ class PowerUp
         this.onl_taken = 0;
         this.onl_received = 0;
         this.name = name;
+
+        this.ration_img = new Image(), this.bandana_left.src = 'Materials/images/game/ration.png';
     }
 
     print()
     {
-            this.game.display.fillStyle = this.color;
-            this.game.display.fillRect(this.x, this.y, this.width, this.height);
+        this.game.display.fillStyle = this.color;
+        this.game.display.drawImage(this.ration_img, this.x, this.y);
     }
 
     // < verifyers > //
