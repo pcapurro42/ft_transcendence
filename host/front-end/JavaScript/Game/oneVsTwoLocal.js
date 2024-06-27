@@ -280,7 +280,7 @@ class LocalGame1v2
     refreshBall()
     {
         if (this.alert < 100)
-            this.ball.printAlert(), this.alert++, this.sounds.alert.play();
+            this.ball.printAlert(), this.alert++;
 
         this.ball.print();
         this.ball.animate();
@@ -344,6 +344,9 @@ class LocalGame1v2
 
             localStorage.setItem('lcl_game_played_nb', (parseInt(localStorage.getItem('lcl_game_played_nb')) + 1).toString());
 
+            if (parseInt(localStorage.getItem('lcl_game_played_nb')) == 1)
+                displayAchievement("first local game")
+
             localStorage.setItem('lcl_ball_exit_nb', (parseInt(localStorage.getItem('lcl_ball_exit_nb')) + game.ball.lcl_exit).toString());
             localStorage.setItem('lcl_ball_bounce_nb', (parseInt(localStorage.getItem('lcl_ball_bounce_nb')) + game.ball.lcl_bounce).toString());
 
@@ -395,17 +398,24 @@ function removeLocal1v2()
 
 function startLocal1v2()
 {
-    if (game.isOver() == true || active == false)
-    {
-        game.refreshBackground();
-        game.resetGame();
-        active = false;
+    const frame = 1000/120;
 
-        removeLocal1v2();
-    }
-    else
-    {
-        game.refreshDisplay();
-        requestAnimationFrame(startLocal1v2);
-    }
+    game.sounds.alert.play();
+
+    setTimeout(()=> {
+
+        if (game.isOver() == true || active == false)
+        {
+            game.refreshBackground();
+            game.resetGame();
+            active = false;
+
+            removeLocal1v2();
+        }
+        else
+        {
+            game.refreshDisplay();
+            requestAnimationFrame(startLocal1v2);
+        }
+    }, frame);
 }

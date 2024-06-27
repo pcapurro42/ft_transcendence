@@ -35,9 +35,11 @@ function displayAchievement(achievement)
         document.getElementById(toast).style.display = "block";
         new bootstrap.Toast(document.getElementById(toast)).show();
     }
-    else if (achievement == "...")
+    else if (achievement == "first local game")
     {
-        // ...
+        toast = "1st_game_toast";
+        document.getElementById(toast).style.display = "block";
+        new bootstrap.Toast(document.getElementById(toast)).show();
     }
     setAchievementColors(toast);
 }

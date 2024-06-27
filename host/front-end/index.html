@@ -116,6 +116,20 @@
                             <img class="keysdown float-end" src="./Materials/images/keys/L.png" data-alt="Keyboard L Tuto" tabindex="-1">
                         </div>
                     </div>
+                    <div id="1st_game_toast" class="toast border border-2">
+                        <div id="1st_game_toast_header" class="toast-header">
+                            <img id="1st_game_toast_symbol" src="">
+                            <strong class="ms-2 text" data-oname="Achievement unlocked!"></strong>
+                        </div>
+                        <div id="1st_game_toast_body" class="toast-body border border-2">
+                            <div>
+                                <a class="text">« Directed by Hideo Kojima »</a>
+                            </div>
+                            <div>
+                                <a class="text" data-oname="You've played your first local game."></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- 2 vs 1 (local) -->
@@ -175,6 +189,34 @@
                 <div id="main_page">
 
                     <!-- Main menu toolbar -->
+
+                    </div>
+                    <header>
+                        <div id="main_menu_toolbar" class="container">
+                            <a id="menu_ham" class="p-0 px-1 border border-2 rounded border-secondary bg-light btn btn-simple hamburger" data-bs-toggle="offcanvas" href="#sideMenu" role="button" aria-controls="sideMenu" data-title="ARIA Sidebar Menu" aria-label="">
+                                <img class="svg w-100 hamburger" src="./Materials/images/menu/hamburger.svg" alt="">
+                            </a>
+
+                            <div id="login" class="col d-inline-block float-end">
+                                <button id="login_btn" class="btn color_btn btn-outline-danger border border-secondary border-2 text mt-1 btn-simple text color_btn" data-tsnormal="20px" data-tslarge="30px" data-oname="LOG IN WITH 42" data-title="ARIA 42" title="" aria-label=""></button>
+                            </div>
+                            <div id="loading" class="mt-3 me-5 float-end d-none spinner-border text-danger" role="status" data-title="Loading" ariap-label></div>
+                            <div id="logged" class="dropdown col d-inline-block float-end">
+                                <button id="intra_login" class=" dropdown-toggle border border-secondary border-2 btn btn-simple btn-outline-danger color_btn text" role="button" data-tsnormal="25px" data-tslarge="35px" aria-haspopup="true" aria-expanded="false" tabindex="0" data-title="ARIA Login Dropdown" aria-label=""></button>
+                                <ul id="login_dropdown" class="p-0 mt-2 border border-2 d-none">
+                                    <button id="drop_customize" class="btn dropdown_btn btn-simple text text-nowrap" data-tsnormal="20px" data-tslarge="30px" data-oname="Customize" role="button" data-title="Customize" aria-label=""></button>
+                                    <button id="drop_stats" class="btn dropdown_btn text-nowrap btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="Statistics" role="button" data-title="Statistics" aria-label=""></button>
+                                    <button id="drop_settings" class="text-nowrap btn dropdown_btn btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="Settings" role="button" data-title="Settings" aria-label=""></button>
+                                    <button id="drop_logout" class="mb-1 text-nowrap btn dropdown_btn btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="LOG OUT" data-title="LOG OUT" role="button" aria-label="">
+                                    </button>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </header>
+
+                    <!-- Background icons -->
+
                     <div id="menu_backgrounds">
                         <div class="bg-box image" id="background_menu_1">
                             <img class="image bg-img" id="bg_img_1" src="./Materials/images/deco/background-menu-left.png" alt="">
@@ -264,32 +306,7 @@
                             <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/Mic.png">
                         </div>
 
-                    </div>
-                    <header>
-                        <div id="main_menu_toolbar" class="container">
-                            <a id="menu_ham" class="p-0 px-1 border border-2 rounded border-secondary bg-light btn btn-simple hamburger" data-bs-toggle="offcanvas" href="#sideMenu" role="button" aria-controls="sideMenu" data-title="ARIA Sidebar Menu" aria-label="">
-                                <img class="svg w-100 hamburger" src="./Materials/images/menu/hamburger.svg" alt="">
-                            </a>
-
-                            <div id="login" class="col d-inline-block float-end">
-                                <button id="login_btn" class="btn color_btn btn-outline-danger border border-secondary border-2 text mt-1 btn-simple text color_btn" data-tsnormal="20px" data-tslarge="30px" data-oname="LOG IN WITH 42" data-title="ARIA 42" title="" aria-label=""></button>
-                            </div>
-                            <div id="loading" class="mt-3 me-5 float-end d-none spinner-border text-danger" role="status" data-title="Loading" ariap-label></div>
-                            <div id="logged" class="dropdown col d-inline-block float-end">
-                                <button id="intra_login" class=" dropdown-toggle border border-secondary border-2 btn btn-simple btn-outline-danger color_btn text" role="button" data-tsnormal="25px" data-tslarge="35px" aria-haspopup="true" aria-expanded="false" tabindex="0" data-title="ARIA Login Dropdown" aria-label=""></button>
-                                <ul id="login_dropdown" class="p-0 mt-2 border border-2 d-none">
-                                    <button id="drop_customize" class="btn dropdown_btn btn-simple text text-nowrap" data-tsnormal="20px" data-tslarge="30px" data-oname="Customize" role="button" data-title="Customize" aria-label=""></button>
-                                    <button id="drop_stats" class="btn dropdown_btn text-nowrap btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="Statistics" role="button" data-title="Statistics" aria-label=""></button>
-                                    <button id="drop_settings" class="text-nowrap btn dropdown_btn btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="Settings" role="button" data-title="Settings" aria-label=""></button>
-                                    <button id="drop_logout" class="mb-1 text-nowrap btn dropdown_btn btn-simple text" data-tsnormal="20px" data-tslarge="30px" data-oname="LOG OUT" data-title="LOG OUT" role="button" aria-label="">
-                                    </button>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </header>
-
-                    <!-- Achievements -->
+                    <!-- Konami Code achievement -->
 
                     <div id="konami_toast" class="toast border border-2">
                         <div id="konami_toast_header" class="toast-header">

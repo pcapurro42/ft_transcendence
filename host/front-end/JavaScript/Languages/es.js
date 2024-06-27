@@ -349,5 +349,6 @@ let es = [
     ["'PowerUp', « a weapon to surpass Metal Gear... »", "'PowerUp', « a weapon to surpass Metal Gear... »"],
 
     ["Achievement unlocked!", "  – ¡Logro desbloqueado!"],
+    ["You've played your first local game.", "Has jugado su primer partido local."],
     ["You typed the Konami Code.", "Has tecleado el Konami Code."]
 ];

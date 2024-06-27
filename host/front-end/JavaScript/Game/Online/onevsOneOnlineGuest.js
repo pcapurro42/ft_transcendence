@@ -274,7 +274,7 @@ class OnlineGame1v1_guest
     refreshBall()
     {
         if (this.alert < 100)
-            this.ball.printAlert(), this.alert++, this.sounds.alert.play();
+            this.ball.printAlert(), this.alert++;
         this.ball.animate();
         this.ball.print();
     }

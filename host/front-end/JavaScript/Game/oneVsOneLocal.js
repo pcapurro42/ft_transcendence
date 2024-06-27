@@ -258,7 +258,7 @@ class LocalGame1v1
     refreshBall()
     {
         if (this.alert < 100)
-            this.ball.printAlert(), this.alert++, this.sounds.alert.play();
+            this.ball.printAlert(), this.alert++;
 
         this.ball.animate();
         this.ball.print();
@@ -331,6 +331,9 @@ class LocalGame1v1
 
             localStorage.setItem('lcl_game_played_nb', (parseInt(localStorage.getItem('lcl_game_played_nb')) + 1).toString());
 
+            if (parseInt(localStorage.getItem('lcl_game_played_nb')) == 1)
+                displayAchievement("first local game")
+
             localStorage.setItem('lcl_ball_exit_nb', (parseInt(localStorage.getItem('lcl_ball_exit_nb')) + game.ball.lcl_exit).toString());
             localStorage.setItem('lcl_ball_bounce_nb', (parseInt(localStorage.getItem('lcl_ball_bounce_nb')) + game.ball.lcl_bounce).toString());
             if (gameMode == 'bonus'){
@@ -384,6 +387,9 @@ function removeLocal1v1()
 function startLocal1v1()
 {
     const frame = 1000/120;
+
+    game.sounds.alert.play();
+
     setTimeout(()=> {
         if (game.isOver() == true || active == false)
         {
