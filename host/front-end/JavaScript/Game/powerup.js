@@ -147,7 +147,7 @@ class PowerUp
             {
                 if (bonus_type == 1 && this.game.right_player.height == this.game.bar_height)
                 {
-                    this.game.right_player.height = this.game.right_player.height - (this.game.left_player.height / 2);
+                    this.game.right_player.height = this.game.right_player.height - (this.game.right_player.height / 2);
                     this.game.right_player.bonus = true;
                     this.game.right_player.bonus_message = "- size";
                 }
