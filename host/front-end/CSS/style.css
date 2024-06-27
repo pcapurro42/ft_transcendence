@@ -262,6 +262,12 @@ pre{
     left: 90%;
 }
 
+#konami_toast
+{
+    position: absolute;
+    bottom: 125px;
+    left: 15px;
+}
 
 #game_sound_toggle, #sound_toggle{
     transform: scale(0.88);
