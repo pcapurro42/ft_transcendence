@@ -8,15 +8,17 @@ function setAchievementColors(toast)
 {
     if (high_contrast == "true")
     {
-        document.getElementById(toast).style.display.backgroundColor = "black";
+        document.getElementById(toast).style.backgroundColor = "black";
         document.getElementById(toast + "_body").style.borderColor = "white";
+        document.getElementById(toast + "_header").style.backgroundColor = "black";
         document.getElementById(toast + "_header").style.borderColor = "white";
         document.getElementById(toast + "_symbol").setAttribute('src', './Materials/images/menu/ach_symbol_w.png');
     }
     else
     {
-        document.getElementById(toast).style.display.backgroundColor = "white";
+        document.getElementById(toast).style.backgroundColor = "white";
         document.getElementById(toast + "_body").style.borderColor = "black";
+        document.getElementById(toast + "_header").style.backgroundColor = "white";
         document.getElementById(toast + "_header").style.borderColor = "black";
         document.getElementById(toast + "_symbol").setAttribute('src', './Materials/images/menu/ach_symbol_b.png');
     }
