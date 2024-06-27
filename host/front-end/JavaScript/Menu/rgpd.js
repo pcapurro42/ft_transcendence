@@ -43,7 +43,7 @@ function readLocalData()
     let local_stats = ["lcl_ball_exit_nb", "lcl_ball_bounce_nb", "lcl_game_played_nb", "lcl_bonus_taken_nb"];
     let achievements = ["konami_code"];
 
-    for (let i = 2; i != 8; i++)
+    for (let i = 2; i != 7; i++)
         document.getElementById('storage_info_' + i).style.display = "none";
 
     for (let i = 0; i != ui.length; i++)
