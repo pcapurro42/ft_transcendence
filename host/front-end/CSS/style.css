@@ -19,13 +19,18 @@ body
 
 }
 
+@media screen and (max-width: 1590px){
+ .bg-img {display: none;}
+}
+
+
 #background_menu_1
 {
     z-index: -1;
     position: fixed;
     top: 0px;
     left: 0px;
-    max-width: 400px;
+    min-width: 300px!important;
 }
 
 #background_menu_2
@@ -35,9 +40,14 @@ body
     transform: scaleX(-1);
     bottom: 65px;
     right: -15px;
-    max-width: 500px;
 }
 
+.bg-box{
+    max-width: 35%;
+}
+.bg-img{
+    max-width: 70%;
+}
 .container{
     max-width: 1090px !important;
 }
@@ -92,10 +102,13 @@ a{
     border : 0px;
 }
 
-.hamburger{
+#game_ham{
     width: 70px !important;
 }
 
+#menu_ham{
+    width: 55px !important;
+}
 
 .sun{
     filter: invert(53%) sepia(100%) saturate(1571%) hue-rotate(3deg) brightness(99%) contrast(96%);

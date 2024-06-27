@@ -27,12 +27,6 @@
     <body class="container my-4">
 
         <main>
-
-            <div id="game_backgrounds">
-                <img id="background_menu_1" class="image" src="./Materials/images/background-menu-left.png" alt="">
-                <img id="background_menu_2" class="image" src="./Materials/images/background-other-left.png" alt="">
-            </div>
-
             <!-- Game pages -->
 
             <div id="game_pages">
@@ -42,7 +36,7 @@
                 <div id="game_toolbar" class="container my-4">
                     <div class="d-flex">
                         <div>
-                            <a class="btn btn-simple hamburger" data-bs-toggle="offcanvas" href="#sideMenu" role="button" aria-controls="sideMenu" data-title="ARIA Sidebar Menu" aria-label="">
+                            <a id="game_ham" class="btn btn-simple hamburger" data-bs-toggle="offcanvas" href="#sideMenu" role="button" aria-controls="sideMenu" data-title="ARIA Sidebar Menu" aria-label="">
                             <img class="svg w-100 hamburger" src="./Materials/images/menu/hamburger.svg" alt="">
                             </a>
                         </div>
@@ -181,10 +175,17 @@
                 <div id="main_page">
 
                     <!-- Main menu toolbar -->
-
+                    <div id="menu_backgrounds">
+                        <div class="bg-box image" id="background_menu_1">
+                            <img class="image bg-img" id="bg_img_1" src="./Materials/images/background-menu-left.png" alt="">
+                        </div>
+                        <div class="bg-box image" id="background_menu_2">
+                            <img class="image bg-img" id="bg_img_2" src="./Materials/images/background-other-left.png" alt="">
+                        </div>
+                    </div>
                     <header>
                         <div id="main_menu_toolbar" class="container">
-                            <a id="hamburger" class="btn btn-simple hamburger" data-bs-toggle="offcanvas" href="#sideMenu" role="button" aria-controls="sideMenu" data-title="ARIA Sidebar Menu" aria-label="">
+                            <a id="menu_ham" class="p-0 px-1 border border-2 rounded border-secondary bg-light btn btn-simple hamburger" data-bs-toggle="offcanvas" href="#sideMenu" role="button" aria-controls="sideMenu" data-title="ARIA Sidebar Menu" aria-label="">
                                 <img class="svg w-100 hamburger" src="./Materials/images/menu/hamburger.svg" alt="">
                             </a>
 

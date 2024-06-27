@@ -57,7 +57,7 @@ function setBackgroundColor(color)
 {
     if (color == "white"){
         document.body.style.setProperty("background-color", "white");
-        
+
         document.getElementById('login_dropdown').style.setProperty("background-color", "white");
         document.getElementById('modal_color_disco').style.setProperty("background-color", "white");
         document.getElementById('modal_color_leaving').style.setProperty("background-color", "white");
@@ -66,7 +66,7 @@ function setBackgroundColor(color)
     else
     {
         document.body.style.setProperty("background-color", "black");
-        
+
         document.getElementById('login_dropdown').style.setProperty("background-color", "black");
         document.getElementById('modal_color_disco').style.setProperty("background-color", "black");
         document.getElementById('modal_color_leaving').style.setProperty("background-color", "black");
@@ -316,7 +316,7 @@ function displayAchievement(achievement)
 function detectKonamiCode(event)
 {
     let key = event.key;
-    
+
     if (keys_register == null)
         keys_register = [];
     keys_register.push(key);
@@ -332,10 +332,8 @@ function detectKonamiCode(event)
                     console.log(getTranslation("Konami Code detected!"));
                     displayAchievement("konami");
                     document.getElementById('mystery_sound').play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
-                    
                     localStorage.setItem('konami_code', "true");
                     keys_register = [];
-                    
                     return ;
                 }
             }
