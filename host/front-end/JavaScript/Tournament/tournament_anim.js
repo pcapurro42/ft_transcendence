@@ -3,8 +3,8 @@ async function displayNextGame(game_nbr, nicknames){
 	tournamentResetBlocks();
 	fillNicknames(nicknames);
 
-	document.getElementById('round_block').innerHTML = document.getElementById('Roundof16').querySelectorAll('.game_nbr')[game_nbr - 1].innerHTML;
-	document.getElementById('nick_announce').innerHTML = document.getElementById('Roundof16').querySelectorAll('.nicks')[game_nbr - 1].innerHTML
+	document.getElementById('round_block').textContent = document.getElementById('Roundof16').querySelectorAll('.game_nbr')[game_nbr - 1].textContent;
+	document.getElementById('nick_announce').textContent = document.getElementById('Roundof16').querySelectorAll('.nicks')[game_nbr - 1].textContent
 
 	await tournamentGameAnimation(document.getElementById('nick_announce'), document.getElementById('round_block'));
 
@@ -29,21 +29,21 @@ async function displayTournamentStage(nicknames){
 
 	switch (nicknames.length){
 		case 16:
-			round.innerHTML = getTranslation('Round of 16');
+			round.textContent = getTranslation('Round of 16');
 			incomingGames = gamesArray[0];
 			break;
 		case 8:
-			round.innerHTML = getTranslation('Final 8');
+			round.textContent = getTranslation('Final 8');
 			incomingGames = gamesArray[1];
 			break;
 		case 4:
-			round.innerHTML = getTranslation('Final 4');
+			round.textContent = getTranslation('Final 4');
 			incomingGames = gamesArray[2];
 			break;
 		case 2:
-			round.innerHTML = getTranslation('Final');
+			round.textContent = getTranslation('Final');
 			incomingGames = document.getElementById('nick_announce')
-			incomingGames.innerHTML = document.getElementById('1stGameNicks').innerHTML;
+			incomingGames.textContent = document.getElementById('1stGameNicks').textContent;
 			break;
 	}
 
@@ -115,7 +115,7 @@ async function tournamentGameAnimation(player, round)
 }
 
 async function displayFinalWinner(){
-	let winner = document.getElementById('nick_reminder').innerHTML
+	let winner = document.getElementById('nick_reminder').textContent
 	winner = winner.substring(0, winner.indexOf(' '));
 
 	let game_page = document.getElementById('game_page_tournament');
@@ -142,8 +142,8 @@ async function displayFinalWinner(){
 	document.getElementById('main_menu_page').style.display = 'block';
 	document.getElementById('Roundof16').style.display = 'none';
 
-	document.getElementById('round_block').innerHTML = getTranslation('Tournament Win Msg');
-	document.getElementById('nick_announce').innerHTML = getTranslation('Congratulations') + ' ' + winner + '.';
+	document.getElementById('round_block').textContent = getTranslation('Tournament Win Msg');
+	document.getElementById('nick_announce').textContent = getTranslation('Congratulations') + ' ' + winner + '.';
 
 	let end_btn = document.getElementById('end_tournament_btn');
 

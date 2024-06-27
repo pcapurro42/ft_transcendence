@@ -390,7 +390,7 @@ function removeLocal1v2()
 
     document.getElementById('mgs').play();
     document.getElementById('2v1_local_timer').style.display = "none";
-    document.getElementById('start_2v1_local').innerHTML = getTranslation("Launch a game");
+    document.getElementById('start_2v1_local').textContent = getTranslation("Launch a game");
     document.getElementById('start_2v1_local').style.visibility = "visible";
 
     resumeKeysAnim();

@@ -61,7 +61,7 @@ function refreshSounds()
 		sounds[i].volume = sounds_volume / 100;
 
 	let sound_slider_label = document.getElementById('sound_volume_slider_label');
-    sound_slider_label.innerHTML = "(" + sounds_volume + "%)";
+    sound_slider_label.textContent = "(" + sounds_volume + "%)";
 
 	updateSoundsSlider();
 }

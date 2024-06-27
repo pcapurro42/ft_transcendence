@@ -85,7 +85,7 @@ async function answerGenerator(offer){
 		RTC_a.onconnectionstatechange = function(event) {
 			if (RTC_a.connectionState == 'connected'){
 				clearInterval(timeoutInterval);
-				document.getElementById('answer_timeout').innerHTML = "You're pretty good";
+				document.getElementById('answer_timeout').textContent = "You're pretty good";
 			}
 		}
 
@@ -164,16 +164,16 @@ function answerTimeout(){
 	let answerTimeout = 300;
 
 	let countdown = document.getElementById('answer_timeout');
-	countdown.innerHTML = `${answerTimeout}` + getTranslation("Answer Timeout")
+	countdown.textContent = `${answerTimeout}` + getTranslation("Answer Timeout")
 	countdown.style.display = 'block';
 
 	document.getElementById('submit_inv_code').setAttribute('disabled', true);
 
 	timeoutInterval = setInterval(function() {
 		answerTimeout--;
-		countdown.innerHTML = `${answerTimeout}` + getTranslation("Answer Timeout")
+		countdown.textContent = `${answerTimeout}` + getTranslation("Answer Timeout")
 		if (answerTimeout == 0){
-			countdown.innerHTML = getTranslation("Code Expired")
+			countdown.textContent = getTranslation("Code Expired")
 			displayStatusBarAlert(getTranslation("Peer Connection Timeout"));
 			freeInputAndForms();
 			document.getElementById('submit_inv_code').removeAttribute('disabled');

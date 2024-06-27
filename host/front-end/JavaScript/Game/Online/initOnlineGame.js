@@ -50,7 +50,7 @@ async function removeOnline1v1()
     document.getElementById('1v1_host_timer').style.display = "none";
     document.getElementById('1v1_guest_timer').style.display = "none";
 
-    document.getElementById('start_1v1_online').innerHTML = getTranslation("Launch a game");
+    document.getElementById('start_1v1_online').textContent = getTranslation("Launch a game");
     document.getElementById('start_1v1_online').style.visibility = "visible";
 
 	document.getElementById('waiting_host').style.visibility = 'visible';

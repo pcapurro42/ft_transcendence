@@ -31,7 +31,7 @@ function displayTournamentLeaderboard(){
             element.id = "m_" + element.id;
             element.style.transition = '';
             if (element.classList.contains('game_nbr'))
-                if (element.nextElementSibling.innerHTML.startsWith(' undefined')){
+                if (element.nextElementSibling.textContent.startsWith(' undefined')){
                     element.nextElementSibling.remove()
                     element.remove();
                 }
@@ -42,19 +42,19 @@ function displayTournamentLeaderboard(){
     let curr_match;
     switch (nicknames.length){
         case 16:
-            round_block.innerHTML = getTranslation('Round of 16');
+            round_block.textContent = getTranslation('Round of 16');
             curr_match = document.getElementById('m_Roundof16')
             break;
         case 8:
-            round_block.innerHTML = getTranslation('Final 8');
+            round_block.textContent = getTranslation('Final 8');
             curr_match = document.getElementById('m_Final8');
             break;
         case 4:
-            round_block.innerHTML = getTranslation('Final 4');
+            round_block.textContent = getTranslation('Final 4');
             curr_match = document.getElementById('m_Final4')
             break;
         case 2:
-            round_block.innerHTML = getTranslation('Final');
+            round_block.textContent = getTranslation('Final');
             curr_match = document.getElementById('m_Final')
             break;
     }
@@ -62,11 +62,11 @@ function displayTournamentLeaderboard(){
             let games = curr_match.querySelectorAll('p');
         for (let i = 0; i < winner_array.length; i++){
             for (let c = 0; c <= i; c++){
-                games[c].innerHTML = games[c].innerHTML.replace
+                games[c].textContent = games[c].textContent.replace
                 (` ${winner_array[i]} `, `${winner_array[i]} ` + getTranslation('Qualified'));
 
-                games[c].innerHTML = games[c].innerHTML.replace(` ${loser_array[i]} `, `${loser_array[i]} ` + getTranslation('Eliminated'));
-                games[c].innerHTML = games[c].innerHTML.replace('vs', ' ');
+                games[c].textContent = games[c].textContent.replace(` ${loser_array[i]} `, `${loser_array[i]} ` + getTranslation('Eliminated'));
+                games[c].textContent = games[c].textContent.replace('vs', ' ');
             }
         }
     }
@@ -101,18 +101,18 @@ function tournamentDisplayCountDown(nb)
     if (nb == 3){
         document.getElementById('mgs').pause();
         document.getElementById('lalilulelo-3').play();
-        timer.innerHTML = "3";
+        timer.textContent = "3";
     }
     else if (nb == 2){
         document.getElementById('lalilulelo-2').play();
-        timer.innerHTML = "2";
+        timer.textContent = "2";
     }
     else if (nb == 1){
         document.getElementById('lalilulelo-1').play();
-        timer.innerHTML = "1";
+        timer.textContent = "1";
     }
     else if (nb == 0)
-        timer.innerHTML = getTranslation("Go!");
+        timer.textContent = getTranslation("Go!");
     else if (nb == -1)
     {
         document.getElementById('mgs').pause();
@@ -127,18 +127,18 @@ function tournamentDisplayCountDown(nb)
 
 function tournamentLeftWin(){
     let player_left = document.getElementById('nick_reminder');
-    player_left.innerHTML = player_left.innerHTML.trim(' ');
-    gameLoser = player_left.innerHTML.substring(player_left.innerHTML.indexOf(' ', player_left.innerHTML.indexOf(' ') + 1) + 1)
-    player_left.innerHTML = player_left.innerHTML.substring(0, player_left.innerHTML.indexOf(' ')) + " won the game!";
+    player_left.textContent = player_left.textContent.trim(' ');
+    gameLoser = player_left.textContent.substring(player_left.textContent.indexOf(' ', player_left.textContent.indexOf(' ') + 1) + 1)
+    player_left.textContent = player_left.textContent.substring(0, player_left.textContent.indexOf(' ')) + " won the game!";
 
-    gameWinner = player_left.innerHTML.substring(0, player_left.innerHTML.indexOf(' '))
+    gameWinner = player_left.textContent.substring(0, player_left.textContent.indexOf(' '))
 
 }
 
 function tournamentRightWin(){
     let player_right = document.getElementById('nick_reminder');
-    player_right.innerHTML = player_right.innerHTML.trim(' ');
-    gameLoser = player_right.innerHTML.substring(0, player_right.innerHTML.indexOf(' '))
-    player_right.innerHTML = player_right.innerHTML.substring(player_right.innerHTML.indexOf(' ', player_right.innerHTML.indexOf(' ') + 1) + 1) + " won the game!";
-    gameWinner = player_right.innerHTML.substring(0, player_right.innerHTML.indexOf(' '));
+    player_right.textContent = player_right.textContent.trim(' ');
+    gameLoser = player_right.textContent.substring(0, player_right.textContent.indexOf(' '))
+    player_right.textContent = player_right.textContent.substring(player_right.textContent.indexOf(' ', player_right.textContent.indexOf(' ') + 1) + 1) + " won the game!";
+    gameWinner = player_right.textContent.substring(0, player_right.textContent.indexOf(' '));
 }

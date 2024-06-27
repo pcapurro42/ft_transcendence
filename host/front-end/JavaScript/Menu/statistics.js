@@ -324,20 +324,20 @@ function refreshStats()
 
     // load html data from variables
 
-    document.getElementById('lcl_game_played_nb').innerHTML = "[ " + localStorage.getItem('lcl_game_played_nb') + " ]";
-    document.getElementById('lcl_bonus_taken_nb').innerHTML = "[ " + localStorage.getItem('lcl_bonus_taken_nb') + " ]";
-    document.getElementById('lcl_ball_exit_nb').innerHTML = "[ " + localStorage.getItem('lcl_ball_exit_nb') + " ]";
-    document.getElementById('lcl_ball_bounce_nb').innerHTML = "[ " + localStorage.getItem('lcl_ball_bounce_nb') + " ]";
+    document.getElementById('lcl_game_played_nb').textContent = "[ " + localStorage.getItem('lcl_game_played_nb') + " ]";
+    document.getElementById('lcl_bonus_taken_nb').textContent = "[ " + localStorage.getItem('lcl_bonus_taken_nb') + " ]";
+    document.getElementById('lcl_ball_exit_nb').textContent = "[ " + localStorage.getItem('lcl_ball_exit_nb') + " ]";
+    document.getElementById('lcl_ball_bounce_nb').textContent = "[ " + localStorage.getItem('lcl_ball_bounce_nb') + " ]";
 
     let win_rate = ~~(wonGamesNb * 100 / gamesPlayedNb);
     let lose_rate = ~~(loseGameNb * 100 / gamesPlayedNb);
 
-    document.getElementById('onl_game_played_nb').innerHTML = "[ " + gamesPlayedNb + " ]";
-    document.getElementById('onl_game_won_nb').innerHTML = "[ " + wonGamesNb + " ] [ " + win_rate + "% ]";
-    document.getElementById('onl_game_lost_nb').innerHTML = "[ " + loseGameNb + " ] [ " + lose_rate + "% ]";
-    document.getElementById('onl_dist').innerHTML = "[ " + ballDistance + " px ]";
-    document.getElementById('onl_ball_return').innerHTML = "[ " + ballReturned + "/" + ballReceived + " ]";
-    document.getElementById('onl_bonus_taken_nb').innerHTML = "[ " + bonusTaken + "/" + bonusTotal + " ]";
+    document.getElementById('onl_game_played_nb').textContent = "[ " + gamesPlayedNb + " ]";
+    document.getElementById('onl_game_won_nb').textContent = "[ " + wonGamesNb + " ] [ " + win_rate + "% ]";
+    document.getElementById('onl_game_lost_nb').textContent = "[ " + loseGameNb + " ] [ " + lose_rate + "% ]";
+    document.getElementById('onl_dist').textContent = "[ " + ballDistance + " px ]";
+    document.getElementById('onl_ball_return').textContent = "[ " + ballReturned + "/" + ballReceived + " ]";
+    document.getElementById('onl_bonus_taken_nb').textContent = "[ " + bonusTaken + "/" + bonusTotal + " ]";
 }
 
 function changeStatsDisplayMode()

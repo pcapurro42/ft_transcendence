@@ -74,7 +74,7 @@ function refreshMusics()
 	credits_theme.volume = music_volume / 100;
 
 	let music_slider_label = document.getElementById('music_volume_slider_label');
-    music_slider_label.innerHTML = "(" + music_volume + "%)";
+    music_slider_label.textContent = "(" + music_volume + "%)";
 
 	updateMusicsSlider();
 }

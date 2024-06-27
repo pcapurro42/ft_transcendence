@@ -44,21 +44,21 @@ function displayCountDown(nb)
     if (nb == 3){
         menu_music.pause();
         document.getElementById('lalilulelo-3').play();
-        timer.innerHTML = "3";
+        timer.textContent = "3";
         game.refreshBackground();
     }
     else if (nb == 2){
         document.getElementById('lalilulelo-2').play();
-        timer.innerHTML = "2";
+        timer.textContent = "2";
         game.refreshScores();
     }
     else if (nb == 1){
         document.getElementById('lalilulelo-1').play();
-        timer.innerHTML = "1";
+        timer.textContent = "1";
         game.refreshPlayers();
     }
     else if (nb == 0)
-        timer.innerHTML = getTranslation("Go!")
+        timer.textContent = getTranslation("Go!")
     else if (nb == -1)
     {
         timer.classList.add("d-none");

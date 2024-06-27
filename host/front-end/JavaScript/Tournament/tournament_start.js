@@ -40,7 +40,7 @@ async function tournamentGameStart(){
 	let game_page_tournament = document.getElementById('game_page_tournament');
 
 	let player_block = document.getElementById('nick_reminder');
-	player_block.innerHTML = document.getElementById('nick_announce').innerHTML;
+	player_block.textContent = document.getElementById('nick_announce').textContent;
 
 	let next_game_btn = document.getElementById('t_next_game');
 	let start_game_btn = document.getElementById('t_start_game');

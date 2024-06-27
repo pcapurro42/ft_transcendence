@@ -330,9 +330,9 @@ class OnlineGame1v1_guest
             if (this.end_time == 0)
                 this.end_time = getActualTimeSeconds();
 
-            document.getElementById('g_win_text').innerHTML = localStorage.getItem('opponent_login') + getTranslation('Online Win');
+            document.getElementById('g_win_text').textContent = localStorage.getItem('opponent_login') + getTranslation('Online Win');
             document.getElementById('g_win_text').style.display = "block";
-            document.getElementById('g_win_quote').innerHTML = "Why are you still here? Just to suffer?";
+            document.getElementById('g_win_quote').textContent = "Why are you still here? Just to suffer?";
             document.getElementById('g_win_quote').style.display = "block";
             document.getElementById('online_loser').play();
 
@@ -343,9 +343,9 @@ class OnlineGame1v1_guest
             if (this.end_time == 0)
                 this.end_time = getActualTimeSeconds();
 
-            document.getElementById('g_win_text').innerHTML = localStorage.getItem('login') + getTranslation('Online Win');
+            document.getElementById('g_win_text').textContent = localStorage.getItem('login') + getTranslation('Online Win');
             document.getElementById('g_win_text').style.display = "block";
-            document.getElementById('g_win_quote').innerHTML = "You're pretty good!";
+            document.getElementById('g_win_quote').textContent = "You're pretty good!";
             document.getElementById('g_win_quote').style.display = "block";
             document.getElementById('online_winner').play();
 

@@ -115,7 +115,7 @@ function refreshLogin()
 {
     if (localStorage.getItem('status') == "connected")
     {
-        document.getElementById('intra_login').innerHTML = localStorage.getItem('login');
+        document.getElementById('intra_login').textContent = localStorage.getItem('login');
         document.getElementById('intra_login').style.display = "block";
         document.getElementById('login_btn').style.display = "none";
     }

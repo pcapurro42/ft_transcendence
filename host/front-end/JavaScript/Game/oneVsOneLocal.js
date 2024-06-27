@@ -377,7 +377,7 @@ function removeLocal1v1()
 
     document.getElementById('mgs').play();
     document.getElementById('1v1_local_timer').style.display = "none";
-    document.getElementById('start_1v1_local').innerHTML = getTranslation("Launch a game");
+    document.getElementById('start_1v1_local').textContent = getTranslation("Launch a game");
     document.getElementById('start_1v1_local').style.visibility = "visible";
 
     if (type != 'tournament')

@@ -80,7 +80,7 @@ async function guestConnectionHandler(){
 	displayStatusBarSuccess(getTranslation("Peer Connection Success") + localStorage.getItem('opponent_login') +'!');
 	data_channel.onmessage = event => readHostMsg(event);
 	pingHost();
-	document.getElementById('answer_timeout').innerHTML = getTranslation("Waiting Lobby Creation") + localStorage.getItem('opponent_login') + '...';
+	document.getElementById('answer_timeout').textContent = getTranslation("Waiting Lobby Creation") + localStorage.getItem('opponent_login') + '...';
 
 	document.getElementById("join_classic_lobby").onclick = () => {
 		pos = "right";

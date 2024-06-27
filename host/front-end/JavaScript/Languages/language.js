@@ -75,11 +75,11 @@ function refreshLanguage()
 
     if (lang == "en")
     {
-        document.getElementById('language_switch').innerHTML = 'en';
+        document.getElementById('language_switch').textContent = 'en';
         document.getElementById('language_btn_selector').selectedIndex = 0;
 
         for (let i = 0; i != words.length; i++)
-            words[i].innerHTML = getElement(en, words[i].getAttribute("data-oname"));
+            words[i].textContent = getElement(en, words[i].getAttribute("data-oname"));
         for (let i = 0; i != placeholders.length; i++)
             placeholders[i].setAttribute('placeholder', getElement(en, placeholders[i].getAttribute("data-oname")));
         for (let i = 0; i != alt_text.length; i++)
@@ -106,11 +106,11 @@ function refreshLanguage()
     }
     if (lang == "fr")
     {
-        document.getElementById('language_switch').innerHTML = 'fr';
+        document.getElementById('language_switch').textContent = 'fr';
         document.getElementById('language_btn_selector').selectedIndex = 1;
 
         for (let i = 0; i != words.length; i++){
-            words[i].innerHTML = getElement(fr, words[i].getAttribute("data-oname"));
+            words[i].textContent = getElement(fr, words[i].getAttribute("data-oname"));
         }
         for (let i = 0; i != placeholders.length; i++)
             placeholders[i].setAttribute('placeholder', getElement(fr, placeholders[i].getAttribute("data-oname")));
@@ -137,11 +137,11 @@ function refreshLanguage()
     }
     if (lang == "es")
     {
-        document.getElementById('language_switch').innerHTML = 'es';
+        document.getElementById('language_switch').textContent = 'es';
         document.getElementById('language_btn_selector').selectedIndex = 2;
 
         for (let i = 0; i != words.length; i++){
-            words[i].innerHTML = getElement(es, words[i].getAttribute("data-oname"));
+            words[i].textContent = getElement(es, words[i].getAttribute("data-oname"));
         }
         for (let i = 0; i != placeholders.length; i++)
             placeholders[i].setAttribute('placeholder', getElement(es, placeholders[i].getAttribute("data-oname")));
@@ -171,7 +171,7 @@ function refreshLanguage()
     ARIASoundsSlider();
     dropdownAddSvg();
     if (localStorage.getItem('data_anonymize') == 'true')
-        document.getElementById('intra_login').innerHTML = getTranslation('Anonymous');
+        document.getElementById('intra_login').textContent = getTranslation('Anonymous');
 }
 
 function initializeLanguage()

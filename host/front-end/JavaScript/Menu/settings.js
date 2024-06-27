@@ -175,16 +175,16 @@ function initializeGameMode(){
         gameMode = 'bonus';
         t_switch.checked = true;
         c_switch.checked = true;
-        t_switch.nextElementSibling.innerHTML = getTranslation('Bonus Mode');
-        c_switch.nextElementSibling.innerHTML = getTranslation('Bonus Mode');
+        t_switch.nextElementSibling.textContent = getTranslation('Bonus Mode');
+        c_switch.nextElementSibling.textContent = getTranslation('Bonus Mode');
         document.getElementById('surpass_metal_gear_quote').style.display = "block";
     }
     else{
         gameMode = 'normal';
         t_switch.checked = false;
         c_switch.checked = false;
-        t_switch.nextElementSibling.innerHTML = getTranslation('Normal Mode');
-        c_switch.nextElementSibling.innerHTML = getTranslation('Normal Mode');
+        t_switch.nextElementSibling.textContent = getTranslation('Normal Mode');
+        c_switch.nextElementSibling.textContent = getTranslation('Normal Mode');
         document.getElementById('surpass_metal_gear_quote').style.display = "none";
     }
 }

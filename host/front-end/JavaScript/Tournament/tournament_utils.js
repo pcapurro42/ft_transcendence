@@ -14,7 +14,7 @@ function shuffleArray(nicknames){
 }
 
 function formDuplicator(value){
-	document.getElementById('form_block').querySelector('#t_form_label').innerHTML = getTranslation("ARIA Tournament Form Label") + ' ' + 1 + ':';
+	document.getElementById('form_block').querySelector('#t_form_label').textContent = getTranslation("ARIA Tournament Form Label") + ' ' + 1 + ':';
 	let to_remove = document.querySelectorAll('#parent_form .remover');
 
 	for (let c = 1; c < to_remove.length; c++){
@@ -31,7 +31,7 @@ function formDuplicator(value){
 		    childrens[j].id = childrens[j].id + i;
 		let label_child = clone_form.querySelector('#t_form_label' + i)
 		let form_child = clone_form.querySelector('#alias_input' + i)
-		label_child.innerHTML = getTranslation("ARIA Tournament Form Label") + ' ' + (i + 2) + ':';
+		label_child.textContent = getTranslation("ARIA Tournament Form Label") + ' ' + (i + 2) + ':';
 		form_child.setAttribute('aria-labelledby', 't_form_label' + i);
 		document.getElementById('parent_form').append(clone_form);
     }
@@ -39,14 +39,14 @@ function formDuplicator(value){
 }
 
 function fillNicknames(nicknames){
-	document.getElementById('1stGameNicks').innerHTML = ` ${nicknames[0]} vs ${nicknames[1]} `;
-	document.getElementById('2ndGameNicks').innerHTML = ` ${nicknames[2]} vs ${nicknames[3]} `;
-	document.getElementById('3rdGameNicks').innerHTML = ` ${nicknames[4]} vs ${nicknames[5]} `;
-	document.getElementById('4thGameNicks').innerHTML = ` ${nicknames[6]} vs ${nicknames[7]} `;
-	document.getElementById('5thGameNicks').innerHTML = ` ${nicknames[8]} vs ${nicknames[9]} `;
-	document.getElementById('6thGameNicks').innerHTML = ` ${nicknames[10]} vs ${nicknames[11]} `;
-	document.getElementById('7thGameNicks').innerHTML = ` ${nicknames[12]} vs ${nicknames[13]} `;
-	document.getElementById('8thGameNicks').innerHTML = ` ${nicknames[14]} vs ${nicknames[15]} `;
+	document.getElementById('1stGameNicks').textContent = ` ${nicknames[0]} vs ${nicknames[1]} `;
+	document.getElementById('2ndGameNicks').textContent = ` ${nicknames[2]} vs ${nicknames[3]} `;
+	document.getElementById('3rdGameNicks').textContent = ` ${nicknames[4]} vs ${nicknames[5]} `;
+	document.getElementById('4thGameNicks').textContent = ` ${nicknames[6]} vs ${nicknames[7]} `;
+	document.getElementById('5thGameNicks').textContent = ` ${nicknames[8]} vs ${nicknames[9]} `;
+	document.getElementById('6thGameNicks').textContent = ` ${nicknames[10]} vs ${nicknames[11]} `;
+	document.getElementById('7thGameNicks').textContent = ` ${nicknames[12]} vs ${nicknames[13]} `;
+	document.getElementById('8thGameNicks').textContent = ` ${nicknames[14]} vs ${nicknames[15]} `;
 }
 
 function tournamentResetBlocks(){
@@ -86,7 +86,7 @@ function tournamentResetBlocks(){
 		players[i].style.visibility = '';
 		players[i].style.transition = 'opacity 0s';
 		players[i].style.opacity = '1';
-		players[i].innerHTML = '';
+		players[i].textContent = '';
 	}
 }
 
