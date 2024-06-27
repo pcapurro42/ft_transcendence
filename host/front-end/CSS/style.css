@@ -276,6 +276,7 @@ pre{
     position: absolute;
     bottom: 125px;
     left: 15px;
+    max-width: 280px;
 }
 
 #game_sound_toggle, #sound_toggle{
