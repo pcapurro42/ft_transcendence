@@ -140,18 +140,18 @@ let en = [
     ["– History data", "– History data"],
     ["– Achievements", "– Achievements"],
 
-    ["RGPD-Intro", "<pre>This website complies with the General Data Protection Regulation (GDPR) from the european Union.\nWe invite you to read the following to learn more about how the website\nhas been built to respect this regulation.</pre>"],
+    ["RGPD-Intro", "This website complies with the General Data Protection Regulation (GDPR) from the european Union.\nWe invite you to read the following to learn more about how the website\nhas been built to respect this regulation."],
 
-    ["RGPD-Note", "<pre> Note: if you don't use any online features from the website (log in with 42 and online games),\n no data is stored out of your computer or shared with anyone.\n\n\n</pre>"],
+    ["RGPD-Note", "Note: if you don't use any online features from the website (log in with 42 and online games),\n no data is stored out of your computer or shared with anyone.\n\n\n"],
 
     ["RGPD-Data sharing title", "What data is shared and why?"],
-    ["RGPD-Data sharing", "<pre>Only four different types of information are shared:\n\n– IP addresses\n– 42 logins\n– Game history and statistics\n– Game informations\n\nThe first three are stored in our website database.\nFinally, the first two are also shared between two persons playing online, as well as\n game informations to permit game synchronization.</pre>"],
+    ["RGPD-Data sharing", "Only four different types of information are shared:\n\n– IP addresses\n– 42 logins\n– Game history and statistics\n– Game informations\n\nThe first three are stored in our website database.\nFinally, the first two are also shared between two persons playing online, as well as\n game informations to permit game synchronization."],
 
     ["RGPD-Data time title", "For how long is the data stored?"],
-    ["RGPD-Data time", "<pre>For a very short time.\n\n All the data is erased when the website is being rebooted, which happens regularly\n (at least multiple times every day).</pre>"],
+    ["RGPD-Data time", "For a very short time.\n\n All the data is erased when the website is being rebooted, which happens regularly\n (at least multiple times every day)."],
 
     ["RGPD-User action title", "How can I interact with my data?"],
-    ["RGPD-User action", "<pre>In compliance with the GDPR, three options are availaible to you:\n\n– Anonymize your data\n – Delete your online data – Delete your local data\n\n As soon as you ask for it, these directives will take effect.\n Everything can be done in the settings menu.</pre>"],
+    ["RGPD-User action", "In compliance with the GDPR, three options are availaible to you:\n\n– Anonymize your data\n – Delete your online data – Delete your local data\n\n As soon as you ask for it, these directives will take effect.\n Everything can be done in the settings menu."],
 
     ["Game theme", "Game theme"],
     ["Game map", "Game map"],
@@ -181,7 +181,7 @@ let en = [
     ["Sixteen", "Round of 16 (16 players)."],
     ["Eight", "Final eight (8 players)."],
     ["Four", "Final four (4 players)."],
-    ["Duplicate Nickname", "<pre class='text m-3'>Warning: several nicknames are duplicated. \n Please chose unique nicknames.</pre>"],
+    ["Duplicate Nickname", "Warning: several nicknames are duplicated. \n Please chose unique nicknames."],
     ["Round of 16","Round of Sixteen"],
     ["Final 8","Final Eight"],
     ["Final 4","Final Four"],
@@ -203,12 +203,12 @@ let en = [
     ["Qualified", " is qualified!\n"],
     ["Eliminated", "was defeated."],
 
-    ['Peer offer send msg', "<pre>Send this code to a friend \n to start a game.</pre>"],
+    ['Peer offer send msg', "Send this code to a friend \n to start a game."],
 
-    ['Init Connection Msg', '<pre>Once your friend submitted the\ncode, click the above button.'],
+    ['Init Connection Msg', 'Once your friend submitted the\ncode, click the above button.'],
     ['Connect', 'Connect'],
 
-    ['Paste Code Msg', '<pre>Please paste the invitation code provided \n by your friend to start an online game.</pre>'],
+    ['Paste Code Msg', 'Please paste the invitation code provided \n by your friend to start an online game.'],
 
     ["Peer Connection Success", "Succesfully connected to "],
     ["Peer Connection Warning", "Trying to connect with remote peer."],
@@ -305,7 +305,7 @@ let en = [
     ["ARIA History Diagram", "Game domination diagram..."],
     ["ARIA Close Leaderboard", "Close leaderboard"],
     ["ARIA Close sidebar", "Close navigation menu"],
-    ["ARIA Invalid Alias", "<pre class='text m-3'>Nickname is wrongly formatted.\nPlease input a nickname using 4 to 15 characters.\nAccepted characters are uppercase and lowercase letters,\n numbers, hyphen and underscore.</pre"],
+    ["ARIA Invalid Alias", "Nickname is wrongly formatted.\nPlease input a nickname using 4 to 15 characters.\nAccepted characters are uppercase and lowercase letters,\n numbers, hyphen and underscore."],
     ["ARIA Sidebar Menu", "Navigation menu"],
     ["ARIA Github_p", "Visit Patrick github's page"],
     ["ARIA Github_b", "Visit Benjamin github's page"],

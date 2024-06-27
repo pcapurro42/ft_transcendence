@@ -141,18 +141,18 @@ let es = [
     ["– History data", "– histórico de datos"],
     ["– Achievements", "– Logros"],
 
-    ["RGPD-Intro", "<pre>Este sitio web cumple con el Reglamento General de Protección de Datos (RGPD) de la Unión Europea. Le invitamos a leer lo siguiente para obtener más información sobre cómo se ha creado el sitio web para respetar este reglamento.</pre>"],
+    ["RGPD-Intro", "Este sitio web cumple con el Reglamento General de Protección de Datos (RGPD) de la Unión Europea. Le invitamos a leer lo siguiente para obtener más información sobre cómo se ha creado el sitio web para respetar este reglamento."],
 
-    ["RGPD-Note", "<pre> Nota: si no utiliza ninguna función en línea del sitio web (inicio de sesión con 42 y juegos en línea),\n ningún dato se almacena fuera de su ordenador ni se comparte con nadie.\n\n\n</pre>"],
+    ["RGPD-Note", "Nota: si no utiliza ninguna función en línea del sitio web (inicio de sesión con 42 y juegos en línea),\n ningún dato se almacena fuera de su ordenador ni se comparte con nadie.\n\n\n"],
 
     ["RGPD-Data sharing title", "¿Qué datos se comparten y por qué?"],
-    ["RGPD-Data sharing", "<pre>Sólo se comparten cuatro tipos diferentes de información:\n– Direcciones IP\n– 42 inicios de sesión\n– Historico del juego y estadísticas\n– Informaciones del juego\nLos cuatros primeros se almacenan en la base de datos de nuestro sitio web para conectar a los jugadores entre sí.\nPor último, los dos primeros también se comparten entre dos personas que juegan en línea, así como\ninformaciones del juego para permitir la sincronización del juego.</pre>"],
+    ["RGPD-Data sharing", "Sólo se comparten cuatro tipos diferentes de información:\n– Direcciones IP\n– 42 inicios de sesión\n– Historico del juego y estadísticas\n– Informaciones del juego\nLos cuatros primeros se almacenan en la base de datos de nuestro sitio web para conectar a los jugadores entre sí.\nPor último, los dos primeros también se comparten entre dos personas que juegan en línea, así como\ninformaciones del juego para permitir la sincronización del juego."],
 
     ["RGPD-Data time title", "¿Durante cuánto tiempo se almacenan los datos?"],
-    ["RGPD-Data time", "<pre>Todos los datos se borran cuando se reinicia el sitio web, lo que ocurre regularmente (al menos varias veces al día).</pre>"],
+    ["RGPD-Data time", "Todos los datos se borran cuando se reinicia el sitio web, lo que ocurre regularmente (al menos varias veces al día)."],
 
     ["RGPD-User action title", "¿Cómo puedo interactuar con mis datos?"],
-    ["RGPD-User action", "<pre>De conformidad con el GDPR, tiene a su disposición tres opciones:\n– Anonimizar sus datos\n– Eliminar sus datos en línea\n– Eliminar sus datos locales\n\nEn cuanto lo solicite, estas directivas entrarán en vigor.\n Todo se puede hacer en el menú de configuración.</pre>"],
+    ["RGPD-User action", "De conformidad con el GDPR, tiene a su disposición tres opciones:\n– Anonimizar sus datos\n– Eliminar sus datos en línea\n– Eliminar sus datos locales\n\nEn cuanto lo solicite, estas directivas entrarán en vigor.\n Todo se puede hacer en el menú de configuración."],
 
     ["Game theme", "Tema del juego"],
     ["Game map", "Mapa del juego"],
@@ -182,7 +182,7 @@ let es = [
     ["Sixteen", "Octavos de final (16 jugadores)."],
     ["Eight", "Cuartos de final (8 jugadores)."],
     ["Four", "Semifinal (4 jugadores)."],
-    ["Duplicate Nickname", "<pre class='text m-3'>Atención: varios pseudónimos están duplicados. \n Por favor, elige pseudónimos únicos.</pre>"],
+    ["Duplicate Nickname", "Atención: varios pseudónimos están duplicados. \n Por favor, elige pseudónimos únicos."],
     ["Round of 16","Octavos de final"],
     ["Final 8","Cuartos de final"],
     ["Final 4","Semifinal"],
@@ -204,12 +204,12 @@ let es = [
     ["Qualified", " ¡está clasificado!\n"],
     ["Eliminated", "fue derrotado."],
 
-    ['Peer offer send msg', "<pre>Envía este código a un amigo \n para empezar un partido.</pre>"],
+    ['Peer offer send msg', "Envía este código a un amigo \n para empezar un partido."],
 
-    ['Init Connection Msg', '<pre>Una vez que tu amigo haya enviado el\ncódigo, clic en el botón de arriba.'],
+    ['Init Connection Msg', 'Una vez que tu amigo haya enviado el\ncódigo, clic en el botón de arriba.'],
     ['Connect', 'Conectarse'],
 
-    ['Paste Code Msg', '<pre>Por favor, pega el código de invitación proporcionado \n por tu amigo para empezar una partida online.</pre>'],
+    ['Paste Code Msg', 'Por favor, pega el código de invitación proporcionado \n por tu amigo para empezar una partida online.'],
 
     ["Peer Connection Success", "Conectado con éxito a "],
     ["Peer Connection Warning", "Intentando conectar con peer remoto."],
@@ -306,7 +306,7 @@ let es = [
     ["ARIA History Diagram", "Diagrama de dominación del partido..."],
     ["ARIA Close Leaderboard", "Cerrar la clasificación"],
     ["ARIA Close sidebar", "Cerrar el menú de navegación"],
-    ["ARIA Invalid Alias", "<pre class='text m-3'>Pseudónimo mal formateado.\nPor favor, introduzca un pseudónimo usando de 4 a 15 caracteres.\nLos caracteres aceptados son letras mayúsculas y minúsculas,\n números, guión y guión bajo.</pre"],
+    ["ARIA Invalid Alias", "Pseudónimo mal formateado.\nPor favor, introduzca un pseudónimo usando de 4 a 15 caracteres.\nLos caracteres aceptados son letras mayúsculas y minúsculas,\n números, guión y guión bajo."],
     ["ARIA Sidebar Menu", "Menú de navegación"],
     ["ARIA Github_p", "Visitar el github page de Patrick"],
     ["ARIA Github_b", "Visitar el github page de Benjamin"],

@@ -140,18 +140,18 @@ let fr = [
     ["– History data", "– Données d'historique"],
     ["– Achievements", "– Succès"],
 
-    ["RGPD-Intro", "<pre>Ce site Internet se conforme au règlement général sur la protection des données (RGPD) de l'Union européenne.\n Nous vous invitons à lire ce qui suit pour en savoir plus sur comment le site a été développé\n afin de respecter ce règlement.</pre>"],
+    ["RGPD-Intro", "Ce site Internet se conforme au règlement général sur la protection des données (RGPD) de l'Union européenne.\n Nous vous invitons à lire ce qui suit pour en savoir plus sur comment le site a été développé\n afin de respecter ce règlement."],
 
-    ["RGPD-Note", "<pre class='overflow'>Note : si vous n'utilisez aucune des fonctionnalités en ligne du site (se connecter avec 42 et les parties en ligne),\n aucune donnée ne sera stockée en dehors de votre ordinateur ou ne sera partagée avec quelqu'un. \n\n\n</pre>"],
+    ["RGPD-Note", "Note : si vous n'utilisez aucune des fonctionnalités en ligne du site (se connecter avec 42 et les parties en ligne),\n aucune donnée ne sera stockée en dehors de votre ordinateur ou ne sera partagée avec quelqu'un. \n\n\n"],
 
     ["RGPD-Data sharing title", "Quelles données sont partagées et pourquoi ?"],
-    ["RGPD-Data sharing", "<pre>Seulement quatre types d'informations sont partagés:\n\n– adresses IP\n– Logins 42\n– Historique des parties et statistiques\n– Informations de la partie\n\nLes trois premiers sont stockées dans notre base de données.\nEnfin, les deux premiers sont également partagés entre deux personnes jouant en ligne, tout comme les informations de la partie afin de permettre la synchronisation.</pre>"],
+    ["RGPD-Data sharing", "Seulement quatre types d'informations sont partagés:\n\n– adresses IP\n– Logins 42\n– Historique des parties et statistiques\n– Informations de la partie\n\nLes trois premiers sont stockées dans notre base de données.\nEnfin, les deux premiers sont également partagés entre deux personnes jouant en ligne, tout comme les informations de la partie afin de permettre la synchronisation."],
 
     ["RGPD-Data time title", "Pour combien de temps les données sont-elles stockées ?"],
-    ["RGPD-Data time", "<pre>Pour très peu de temps.\n\n Toutes les données sont effacées de la base de données lorsque\n le site est redémarré, ce qui arrive régulièrement\n (au moins plusieurs fois par jour).</pre>"],
+    ["RGPD-Data time", "Pour très peu de temps.\n\n Toutes les données sont effacées de la base de données lorsque\n le site est redémarré, ce qui arrive régulièrement\n (au moins plusieurs fois par jour)."],
 
     ["RGPD-User action title", "Comment puis-je intéragir avec mes données ?"],
-    ["RGPD-User action", "<pre>En accord avec le RGPD, trois options s'offrent à vous :\n\n– L'anonymisation de vos données\n– La suppression de vos données en ligne\n– La supression de vos données locales\n\n Dès que vous en faites la demande, ces directives prendront effet.\n Cela peut-être fait à partir du menu des paramètres.</pre>"],
+    ["RGPD-User action", "En accord avec le RGPD, trois options s'offrent à vous :\n\n– L'anonymisation de vos données\n– La suppression de vos données en ligne\n– La supression de vos données locales\n\n Dès que vous en faites la demande, ces directives prendront effet.\n Cela peut-être fait à partir du menu des paramètres."],
 
     ["Game theme", "Musique du jeu"],
     ["Game map", "Carte du jeu"],
@@ -181,7 +181,7 @@ let fr = [
     ["Sixteen", "Huitième de finale (16 joueurs)."],
     ["Eight", "Quart de finale (8 joueurs)."],
     ["Four", "Demi-finale (4 joueurs)."],
-    ["Duplicate Nickname", "<pre class='text m-3'>Attention : des surnoms sont dupliqués.\n Merci de choisir des surnoms uniques.</pre>"],
+    ["Duplicate Nickname", "Attention : des surnoms sont dupliqués.\n Merci de choisir des surnoms uniques."],
     ["Round of 16","Huitieme de finale"],
     ["Final 8","Quart de finale"],
     ["Final 4","Demi-finale"],
@@ -203,12 +203,12 @@ let fr = [
     ["Qualified", " se qualifie."],
     ["Eliminated", " est battu."],
 
-    ['Peer offer send msg', "<pre>Envoyez ce code a un ami pour\n commencer une partie.</pre>"],
+    ['Peer offer send msg', "Envoyez ce code a un ami pour\n commencer une partie."],
 
-    ['Init Connection Msg', '<pre>Après que votre ami ait saisi le code,\n cliquez sur le bouton ci-dessus.</pre>'],
+    ['Init Connection Msg', 'Après que votre ami ait saisi le code,\n cliquez sur le bouton ci-dessus.'],
     ['Connect', 'Se connecter'],
 
-    ['Paste Code Msg', '<pre>Collez le code d\'invitation fourni par votre\nami pour démarrer une partie en ligne.</pre>'],
+    ['Paste Code Msg', 'Collez le code d\'invitation fourni par votre\nami pour démarrer une partie en ligne.'],
 
     ["Peer Connection Success", "Succès de la connexion à distance avec "],
     ["Peer Connection Warning", "Connexion à distance en cours..."],
@@ -298,7 +298,7 @@ let fr = [
     ["ARIA Settings Slide Left", "Onglet principal des options."],
     ["ARIA Credits Close", "Fermer les crédits. Retour au menu principal."],
     ["ARIA Credits Video", "Vidéo des crédits du jeu, on peut entendre la voix de Cynthia Harrel chanter la chanson Snake Eater, OST éponyme de Metal Gear Solid 3. Merci à Pcapurro et Bgales pour cette formidable expérience."],
-    ["ARIA Invalid Alias", "<pre class='text m-3'>Mauvais format. 4 à 15 caractères,\n lettres majuscules ou minuscules,\n chiffres, tiret et tiret du bas.</pre>"],
+    ["ARIA Invalid Alias", "Mauvais format. 4 à 15 caractères,\n lettres majuscules ou minuscules,\n chiffres, tiret et tiret du bas."],
     ["ARIA Login Dropdown", "Menu du compte"],
     ["ARIA Online Stats Diagram", "Statistique du mode en ligne. Enlevez le mode visuel pour pouvoir accéder aux stats."],
     ["ARIA History Data", "Historique de la partie en ligne..."],
