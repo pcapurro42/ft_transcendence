@@ -23,7 +23,7 @@ body
  .bg-img {display: none;}
 }
 
-@media screen and (max-width: 577px){
+@media screen and (max-height: 955px){
  .item-img {display: none;}
 }
 
