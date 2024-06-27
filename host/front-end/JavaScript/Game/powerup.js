@@ -26,7 +26,7 @@ class PowerUp
         this.onl_received = 0;
         this.name = name;
 
-        this.ration_img = new Image(), this.bandana_left.src = 'Materials/images/game/ration.png';
+        this.ration_img = new Image(), this.ration_img.src = 'Materials/images/game/ration.png';
     }
 
     print()
