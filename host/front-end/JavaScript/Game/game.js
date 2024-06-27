@@ -63,6 +63,7 @@ function displayCountDown(nb)
     {
         timer.classList.add("d-none");
         game_music.play();
+        game.sounds.alert.play();
         menu_music.pause();
         addKeyboardMonitoring();
         if (players_nb == 2 && (role == 'guest' || role == 'host')){

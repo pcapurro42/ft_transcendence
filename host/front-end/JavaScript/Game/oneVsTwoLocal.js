@@ -400,8 +400,6 @@ function startLocal1v2()
 {
     const frame = 1000/120;
 
-    game.sounds.alert.play();
-
     setTimeout(()=> {
 
         if (game.isOver() == true || active == false)

@@ -279,6 +279,14 @@ pre{
     max-width: 280px;
 }
 
+#first_game_toast
+{
+    position: absolute;
+    top: 125px;
+    left: 15px;
+    max-width: 280px;
+}
+
 #game_sound_toggle, #sound_toggle{
     transform: scale(0.88);
 }

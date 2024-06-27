@@ -67,8 +67,6 @@ function startOnline1v1()
     else
         frame = 1000 / 120;
 
-    game.sounds.alert.play();
-
     setTimeout(async () => {
         if (game.isOver() == true || active == false)
         {
