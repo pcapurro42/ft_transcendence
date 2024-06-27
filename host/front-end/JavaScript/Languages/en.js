@@ -138,6 +138,7 @@ let en = [
     ["– Local statistics", "– Local statistics"],
     ["– Online statistics", "– Online statistics"],
     ["– History data", "– History data"],
+    ["– Achievements", "– Achievements"],
 
     ["RGPD-Intro", "<pre>This website complies with the General Data Protection Regulation (GDPR) from the european Union.\nWe invite you to read the following to learn more about how the website\nhas been built to respect this regulation.</pre>"],
 

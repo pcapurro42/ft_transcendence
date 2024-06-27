@@ -138,6 +138,7 @@ let fr = [
     ["– Local statistics", "– Statistiques locales"],
     ["– Online statistics", "– Statistiques en ligne"],
     ["– History data", "– Données d'historique"],
+    ["– Achievements", "– Succès"],
 
     ["RGPD-Intro", "<pre>Ce site Internet se conforme au règlement général sur la protection des données (RGPD) de l'Union européenne.\n Nous vous invitons à lire ce qui suit pour en savoir plus sur comment le site a été développé\n afin de respecter ce règlement.</pre>"],
 
