@@ -350,5 +350,6 @@ let en = [
 
     ["Achievement unlocked!", "  – Achievement unlocked!"],
     ["You've played your first local game.", "You've played your first local game."],
+    ["You've watched the credits.", "You've watched the credits."],
     ["You typed the Konami Code.", "You typed the Konami Code."]
 ];

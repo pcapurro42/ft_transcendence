@@ -271,7 +271,7 @@ pre{
     left: 90%;
 }
 
-#konami_toast
+#konami_toast, #credits_toast
 {
     position: absolute;
     bottom: 125px;

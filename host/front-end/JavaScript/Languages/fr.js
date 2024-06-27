@@ -349,5 +349,6 @@ let fr = [
 
     ["Achievement unlocked!", "  – Succès déverouillé !"],
     ["You've played your first local game.", "Vous avez joué votre première partie locale."],
+    ["You've watched the credits.", "Vous avez regardé les crédits."],
     ["You typed the Konami Code.", "Vous avez saisi le Konami Code."]
 ];

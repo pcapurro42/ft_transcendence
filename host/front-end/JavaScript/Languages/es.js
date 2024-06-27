@@ -350,5 +350,6 @@ let es = [
 
     ["Achievement unlocked!", "  – ¡Logro desbloqueado!"],
     ["You've played your first local game.", "Has jugado su primer partido local."],
+    ["You've watched the credits.", "Has visto los créditos."],
     ["You typed the Konami Code.", "Has tecleado el Konami Code."]
 ];

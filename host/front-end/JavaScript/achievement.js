@@ -1,6 +1,10 @@
+// < achievement display > //
+
 function hideAchievement()
 {
     document.getElementById('konami_toast').style.display = "none";
+    document.getElementById('credits_toast').style.display = "none";
+    document.getElementById('first_game_toast').style.display = "none";
     // ...
 }
 
@@ -29,19 +33,28 @@ function displayAchievement(achievement)
     document.getElementById('achiev_sound').play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
 
     let toast = null;
+    
     if (achievement == "konami")
-    {
         toast = "konami_toast";
-        document.getElementById(toast).style.display = "block";
-        new bootstrap.Toast(document.getElementById(toast)).show();
-    }
     else if (achievement == "first local game")
-    {
         toast = "first_game_toast";
-        document.getElementById(toast).style.display = "block";
-        new bootstrap.Toast(document.getElementById(toast)).show();
-    }
+    else if (achievement == "credits")
+        toast = "credits_toast";
+
+    document.getElementById(toast).style.display = "block";
+    new bootstrap.Toast(document.getElementById(toast)).show();
+    
     setAchievementColors(toast);
+}
+
+// < achievement triggers > //
+
+document.getElementById('vid_credits').addEventListener('ended', detectCreditsWatched);
+
+function detectCreditsWatched()
+{
+    if (localStorage.getItem('credits_watched') == null)
+        localStorage.setItem('credits_watched', "true"), displayAchievement("credits");
 }
 
 function detectKonamiCode(event)
