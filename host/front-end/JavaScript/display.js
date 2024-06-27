@@ -324,14 +324,14 @@ function displayAchievement(achievement)
             konami_toast.style.backgroundColor = "black";
             document.getElementById('konami_toast_header').style.backgroundColor = "black";
             document.getElementById('achiev_symbol_kc').setAttribute('src', './Materials/images/menu/ach_symbol_w.png');
-            document.getElementById('close_btn_achiev_kc').style.color = "white";
+            // document.getElementById('close_btn_achiev_kc').style.color = "white";
         }
         else
         {
             konami_toast.style.backgroundColor = "white";
             document.getElementById('konami_toast_header').style.backgroundColor = "white";
             document.getElementById('achiev_symbol_kc').setAttribute('src', './Materials/images/menu/ach_symbol_b.png');
-            document.getElementById('close_btn_achiev_kc').style.color = "black";
+            // document.getElementById('close_btn_achiev_kc').style.color = "black";
         }
 
         new bootstrap.Toast(konami_toast).show();
