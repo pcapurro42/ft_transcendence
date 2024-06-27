@@ -320,7 +320,9 @@ function displayAchievement(achievement)
         let konami_toast = document.getElementById('konami_toast');
         konami_toast.style.display = "block";
         if (high_contrast == "true")
-            konami_toast.style.backgroundColor = "black";
+            konami_toast.style.backgroundColor = "black", document.getElementById('konami_toast_header').style.backgroundColor = "black";
+        else
+            konami_toast.style.backgroundColor = "white", document.getElementById('konami_toast_header').style.backgroundColor = "white";
 
         new bootstrap.Toast(konami_toast).show();
     }

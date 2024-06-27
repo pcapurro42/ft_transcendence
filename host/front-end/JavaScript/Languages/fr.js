@@ -348,5 +348,5 @@ let fr = [
     ["'PowerUp', « a weapon to surpass Metal Gear... »", "'PowerUp', « a weapon to surpass Metal Gear... »"],
 
     ["Achievement unlocked!", "  – Succès déverouillé !"],
-    ["You typed the Konami Code.", "Vous avez entré le Konami Code."]
+    ["You typed the Konami Code.", "Vous avez saisi le Konami Code."]
 ];
