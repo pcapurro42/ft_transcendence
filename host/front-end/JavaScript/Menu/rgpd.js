@@ -41,7 +41,7 @@ function readLocalData()
     let game = ["game_music", "game_mod", "game_map", "t_player_nbr", "no_confirmation"];
     let _42 = ["login", "auth_code"];
     let local_stats = ["lcl_ball_exit_nb", "lcl_ball_bounce_nb", "lcl_game_played_nb", "lcl_bonus_taken_nb"];
-    let achievements = ["konami_code"];
+    let achievements = ["konami_code", "credits_watched", "lost_toast", "won_toast"];
 
     for (let i = 2; i != 7; i++)
         document.getElementById('storage_info_' + i).style.display = "none";

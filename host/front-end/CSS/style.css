@@ -279,7 +279,7 @@ pre{
     max-width: 280px;
 }
 
-#first_game_toast
+#lcl_toast, #won_toast, #lost_toast
 {
     position: absolute;
     top: 125px;
