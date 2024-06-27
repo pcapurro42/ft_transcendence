@@ -145,5 +145,3 @@ handleLocation();
 if (localStorage.getItem('status') == 'connected')
     retrieveUserInfo();
 window.addEventListener('DOMContentLoaded', ()=>{document.body.style.display = "block"});
-hideBackgrounds()
-

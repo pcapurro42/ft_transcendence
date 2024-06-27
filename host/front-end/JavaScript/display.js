@@ -36,7 +36,7 @@ function refreshSite()
 function setBackground(pagePath)
 {
     let icons = document.querySelectorAll('.bg-icon');
-    
+
     hideBackgrounds();
     hideAchievement();
 
@@ -243,6 +243,7 @@ function setHighContrast(value)
         setImagesColor("black");
     }
     languageSwitch(language);
+
 }
 
 function setDescriptiveImages(value)

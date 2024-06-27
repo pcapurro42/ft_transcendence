@@ -57,7 +57,6 @@ function letterSwitch(){
         text_size_btn_selector.value = 'normal';
     }
     changeTextSize();
-    setBackground(window.location.pathname)
 }
 
 function changeTextSize()
