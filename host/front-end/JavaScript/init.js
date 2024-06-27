@@ -141,6 +141,7 @@ ARIAButtonState();
 
 handleRedirection();
 handleLocation();
+// nav.displayMenu();
 
 if (localStorage.getItem('status') == 'connected')
     retrieveUserInfo();
