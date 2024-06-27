@@ -32,14 +32,14 @@ function dropdownAddSvg(){
 	let moon_svg = '<img class="svg w-100 light_switch" src="./Materials/images/menu/dark.svg" alt="">';
 	let sun_svg = '<img class="sun w-100 light_switch" src="./Materials/images/menu/light.svg" alt="">';
 
-	logout.textContent = logout_svg + '  ' + logout.textContent;
-	custom.textContent =  custom_svg + '  ' + custom.textContent;
-	settings.textContent = settings_svg + '  ' + settings.textContent;
-	stats.textContent = stats_svg + '  ' + stats.textContent;
-	github_p.textContent = github_svg + "Pcapurro";
-	github_b.textContent = github_svg + "Bgales";
-	rgpd.textContent = rgpd_svg + getTranslation('Privacy policy');
-	letter_switch.textContent = 'A';
+	logout.innerHTML = logout_svg + '  ' + logout.innerHTML;
+	custom.innerHTML =  custom_svg + '  ' + custom.innerHTML;
+	settings.innerHTML = settings_svg + '  ' + settings.innerHTML;
+	stats.innerHTML = stats_svg + '  ' + stats.innerHTML;
+	github_p.innerHTML = github_svg + "pcapurro";
+	github_b.innerHTML = github_svg + "bgales";
+	rgpd.innerHTML = rgpd_svg + getTranslation('Privacy policy');
+	letter_switch.innerHTML = 'A';
 	if (text_size == 'normal'){
     	letter_switch.setAttribute('aria-label', getTranslation('Small text'));
 		letter_switch.style.backgroundColor = "";
@@ -56,7 +56,7 @@ function dropdownAddSvg(){
 	if (high_contrast == 'true'){
 		light_switch.setAttribute('aria-pressed', 'true');
 		light_switch.setAttribute('aria-label', getTranslation('Light Switch Off'));
-		light_switch.textContent = moon_svg;
+		light_switch.innerHTML = moon_svg;
 		light_switch.style.backgroundColor = '#AD1400';
 		setImagesColor('white');
 	}
@@ -64,7 +64,7 @@ function dropdownAddSvg(){
 		light_switch.setAttribute('aria-label', getTranslation('Light Switch On'));
 		light_switch.setAttribute('aria-pressed', 'false');
 		light_switch.style.backgroundColor = '';
-		light_switch.textContent = sun_svg;
+		light_switch.innerHTML = sun_svg;
 		setImagesColor('black');
 	}
 }
