@@ -23,7 +23,11 @@ def signal(request):
 	if requestJson.get('answer') != None:
 		return invitation_code.postAnswer(request)
 	else:
-		return HttpResponse(content= invitation_code.generate_code(request))
+		code = invitation_code.generate_code(request)
+		if code != 1:
+			return HttpResponse(content= invitation_code.generate_code(request))
+		else:
+			return HttpResponseServerError("Error : signal offers/answers contains forbidden characters.\n")
 
 def sendToken(response):
 	try:

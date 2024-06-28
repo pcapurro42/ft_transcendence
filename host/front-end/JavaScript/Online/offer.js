@@ -113,6 +113,11 @@ async function fetchAnswer(){
 			return;
 		}
 		let response = await request.json();
+		if (!parseOffersAnswers(response)){
+			displayStatusBarAlert(getTranslation("Wrong Code Format"));
+			resetConnection();
+			return;
+		}
 		localStorage.setItem('opponent_login', response['login']);
 		initConnection(response['answer']);
 	}
@@ -128,7 +133,7 @@ async function initConnection(answer){
 	try{
 
 		answer = JSON.parse(answer);
-		if (parseOffersAnswers(answer) == false || answer.type == 'offer'){
+		if (answer.type == 'offer'){
 			displayStatusBarAlert(getTranslation('Wrong Code Format'));
 			resetConnection();
 			nav.displayMenu();

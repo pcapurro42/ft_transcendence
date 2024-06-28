@@ -51,6 +51,12 @@ function gameHistoryParse(element){
 	const regex = /^[A-Za-z0-9\-_/.,]+$/;
 	return regex.test(element);
 }
+
+function signalParse(element){
+	const regex = /^[A-Za-z0-9\-_/\\\r\n.=: +*]+$/;
+	return regex.test(element);
+}
+
 function isDuplicateNicknames(nicknames){
 	for (let i = 0; i < nicknames.length - 1; i++){
 		for (let c = i + 1; c < nicknames.length; c++){
@@ -61,9 +67,31 @@ function isDuplicateNicknames(nicknames){
 	return false;
 }
 
-function parseOffersAnswers(strJson){
-
-	if (!strJson.iceCandidates || !strJson.type || !strJson.sdp)
-		return false;
-	return true;
+function parseOffersAnswers(signalJson){
+	let bool = true;
+	for (const[key, value] of Object.entries(signalJson)){
+		if (key == 'offer' || key == 'answer'){
+			let OAjson = JSON.parse(signalJson[key]);
+			if (!OAjson.iceCandidates || !OAjson.type || !OAjson.sdp)
+				return false;
+			for (const[key, value] of Object.entries(OAjson)){
+				if (key == "iceCandidates"){
+					let iceCanJson = OAjson.iceCandidates[0];
+					for (const[key, value] of Object.entries(iceCanJson))
+						if (!basicParse(key) || !signalParse(value)){
+							bool = false;
+						}
+						continue
+				}
+				if (!basicParse(key) || !signalParse(value)){
+					bool = false;
+				}
+			}
+			continue;
+		}
+		if (!basicParse(key) || !basicParse(value)){
+			bool = false;
+		}
+	}
+	return bool;
 }

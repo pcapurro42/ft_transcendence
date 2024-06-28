@@ -55,9 +55,14 @@ async function fetchOffer(){
 		}
 		let response = await request.text();
 		response = JSON.parse(response);
+		if (!parseOffersAnswers(response)){
+			displayStatusBarAlert(getTranslation("Wrong Code Format"));
+			resetConnection();
+			return;
+		}
 		localStorage.setItem('opponent_login', response['login']);
 		answerGenerator(response['offer'])
-		console.log(response['offer']);
+
 	}
 	catch(error){
 		document.getElementById('submit_inv_code').removeAttribute('disabled');
@@ -71,7 +76,7 @@ async function answerGenerator(offer){
 	try{
 		offer = JSON.parse(offer);
 
-		if(offer.type != 'offer' || parseOffersAnswers(offer) == false){
+		if(offer.type != 'offer'){
 			displayStatusBarAlert(getTranslation("Wrong Code Format"));
 			return;
 		}

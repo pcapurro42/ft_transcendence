@@ -10,6 +10,28 @@ def parse_input(input):
 		return False
 	return True
 
+def parse_signal(str):
+	regex = re.compile(r'^[A-Za-z0-9\-_/\\\r\n.=: +*]+$')
+	if not regex.match(str):
+		return False
+	return True
+
+def parseOffersAnswers(signal):
+	bool = True
+	if not signal.get('iceCandidates') or not signal.get('type') or not signal.get('sdp'):
+		return False
+	for key, value in signal.items():
+		if key == "iceCandidates":
+			iceCan = signal[key][0]
+			for key, value in iceCan.items():
+				print(key, value)
+				if not parse_input(key) or not parse_signal(str(value)):
+					bool = False
+			continue
+		if not parse_input(key) or not parse_signal(value):
+				bool = False
+	return bool
+
 def generateToken():
 	ran = os.urandom(20)
 	token = ran.hex()

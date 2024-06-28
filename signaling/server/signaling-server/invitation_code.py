@@ -6,6 +6,7 @@ import json
 import threading
 import time
 from . import user_info
+from . import utils
 
 invitation_codes = {}
 
@@ -37,6 +38,14 @@ def generate_code(request):
 
 		if code not in invitation_codes:
 			break
+	if utils.parse_input(requestJson["login"]) is False:
+		return 1
+	if "offer" in requestJson:
+		if not utils.parseOffersAnswers(json.loads(requestJson["offer"])):
+			return
+	if "answer" in requestJson:
+		if not utils.parseOffersAnswers(json.loads(requestJson["answer"])):
+			return 1
 
 	invitation_codes[code] = {
         'host_login': requestJson['login'],
