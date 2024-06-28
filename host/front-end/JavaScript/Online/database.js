@@ -64,6 +64,54 @@ async function retrieveUserInfo(){
 	let userInfo = await response.text();
     userInfo = JSON.parse(userInfo);
     userInfo = userInfo[0].fields;
-	retrieveOnlineStats(userInfo)
+	if (!parseDbResponse(userInfo)){
+        displayStatusBarWarning(getTranslation('Database wrong content'));
+		return;
+	}
+	retrieveOnlineStats(userInfo);
 	refreshLogin();
+}
+
+function parseDbResponse(response){
+
+    if (typeof(response['ballDistance']) !== "number"
+		|| typeof(response['ballReturned']) !== "number"
+		|| typeof(response['ballReceived']) !== "number"
+		|| typeof(response['bonusTaken']) !== "number"
+		|| typeof(response['bonusTotal']) !== "number"
+		|| typeof(response['gamesPlayedNb']) !== "number"
+		|| typeof(response['gameHistory']) !== "string"
+		|| typeof(response['loseGameNb']) !== "number"
+		|| typeof(response['wonGamesNb']) !== "number") {
+        displayStatusBarWarning(getTranslation("Database wrong content"));
+        return false;
+    }
+
+	gameHistJson = response['gameHistory'];
+	gameHistJson = JSON.parse(gameHistJson);
+	if (gameHistJson != null)
+		for (const [key, value] of Object.entries(gameHistJson)){
+			if (key == 'data'){
+				let bool = true;
+				gameHistJson.data.forEach(element => {
+					if (Array.isArray(element)){
+						element.forEach(elem => {
+							if (typeof(element) != 'number' && !gameHistoryParse(element)){
+								bool = false;
+							}
+						});
+					}
+					if (typeof(element) != 'number' && !gameHistoryParse(element)){
+						bool = false;
+					}
+				});
+				if (bool)
+					continue
+				else
+					return false;
+			}
+			if ((typeof(key) != 'number' && !gameHistoryParse(key)) || (typeof(value) != 'number' && !gameHistoryParse(value)))
+				return false;
+		}
+	return true;
 }

@@ -13,6 +13,7 @@ let en = [
     ["Anonymous", "Anon"],
     ["User Anonymization Success", "User data were anonymized successfully."],
     ["Unanonymize Data Msg", "Please sign in again to re-enable public data."],
+    ["Database wrong content", "Warning: the informations retrieved from the database seems to contain dangerous content. Please suppress your online data for your own safety."],
 
     ["Enable/Disable menu music", "Enable or Disable menu music"],
     ["Enable/Disable menu sounds", "Enable or Disable menu sounds"],

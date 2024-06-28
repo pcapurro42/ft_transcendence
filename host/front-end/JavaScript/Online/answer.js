@@ -19,7 +19,7 @@ async function fetchOffer(){
 
 	try{
 
-		if (parseInvitationCode(code) == false){
+		if (basicParse(code) == false){
 			displayStatusBarWarning(getTranslation('Wrong Code Guest'));
 			return;
 		}
@@ -57,6 +57,7 @@ async function fetchOffer(){
 		response = JSON.parse(response);
 		localStorage.setItem('opponent_login', response['login']);
 		answerGenerator(response['offer'])
+		console.log(response['offer']);
 	}
 	catch(error){
 		document.getElementById('submit_inv_code').removeAttribute('disabled');

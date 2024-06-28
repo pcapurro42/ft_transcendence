@@ -42,11 +42,15 @@ function parseAlias(nbr, event){
 	return null;
 }
 
-function parseInvitationCode(code){
-	const regex = /^[A-Za-z0-9\_]+$/;
+function basicParse(code){
+	const regex = /^[A-Za-z0-9\-_]+$/;
 	return regex.test(code);
 }
 
+function gameHistoryParse(element){
+	const regex = /^[A-Za-z0-9\-_/.,]+$/;
+	return regex.test(element);
+}
 function isDuplicateNicknames(nicknames){
 	for (let i = 0; i < nicknames.length - 1; i++){
 		for (let c = i + 1; c < nicknames.length; c++){
