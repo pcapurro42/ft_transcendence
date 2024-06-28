@@ -28,7 +28,7 @@ body
 
 .bg-icon{
     z-index: -2;
-    position: absolute;
+    position: fixed;
     bottom: 125px;
     left:10px;
 }
