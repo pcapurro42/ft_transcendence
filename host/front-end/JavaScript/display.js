@@ -53,15 +53,20 @@ function setBackground(pagePath)
     if (pagePath == '/home' || pagePath == '/settings' || pagePath == '/privacy-settings' || pagePath == '/statistics'
         || pagePath == '/customize' || pagePath == '/play' || pagePath == '/classic' || pagePath == '/tournament'
         || pagePath == '/game-history' || pagePath == '/online-stats' || pagePath == '/local-stats' || pagePath == '/online'
-        || pagePath == '/create-lobby' || pagePath == '/join-lobby')
+        || pagePath == '/create-lobby' || pagePath == '/join-lobby' || pagePath == '/tournament-nicknames')
     {
-        document.getElementById('background_menu_1').style.display = 'block';
-        document.getElementById('background_menu_2').style.display = 'block';
         document.getElementById('cqc_video').style.display = "block";
         document.getElementById('o-cqc').style.display = "block";
         document.getElementById('c-cqc').style.display = "block";
+        document.getElementById('life-gauge').style.display = "block";
+        document.getElementById('soliton-radar').style.display = "block";
         icons[Math.floor(Math.random() * 12)].classList.remove('d-none');
         weapons[Math.floor(Math.random() * 15)].classList.remove('d-none');
+    }
+    else if (pagePath == "/1vs1" || pagePath == "/1vs2" || pagePath == "/tournament-game" || pagePath == "online-game"){
+        document.getElementById('background_menu_1').style.display = 'block';
+        document.getElementById('background_menu_2').style.display = 'block';
+
     }
 }
 
@@ -74,6 +79,8 @@ function hideBackgrounds()
     document.getElementById('cqc_video').style.display = "none";
     document.getElementById('o-cqc').style.display = "none";
     document.getElementById('c-cqc').style.display = "none";
+    document.getElementById('life-gauge').style.display = "none";
+    document.getElementById('soliton-radar').style.display = "none";
 
 }
 
@@ -235,6 +242,7 @@ function setHighContrast(value)
         footer.style.backgroundColor="#9a040c";
         sb_header.style.backgroundColor="#222222";
         document.getElementById('menu_ham').classList.replace('bg-light', 'bg-black');
+        document.getElementById('game_ham').classList.replace('bg-light', 'bg-black');
         document.querySelector('#cqc_video').style.filter = "";
         setBackgroundColor("black");
         setTextColor("white");
@@ -262,6 +270,7 @@ function setHighContrast(value)
         high_contrast_btn.style.color = "black";
         sb_header.style.backgroundColor="white"
         document.getElementById('menu_ham').classList.replace('bg-black', 'bg-light');
+        document.getElementById('game_ham').classList.replace('bg-black', 'bg-light');
         document.querySelector('#cqc_video').style.filter = "invert(100%) !important;";
         setBackgroundColor("white");
         setTextColor("black");

@@ -24,7 +24,6 @@ body
 }
 
 @media screen and (max-width: 1370px){
- .bg-img {display: none;}
  #life-gauge-img {display: none;}
  #soliton-radar {display: none;}
  .cqc{display: none !important;}
@@ -35,7 +34,9 @@ body
  #o-cqc-img{display: none;}
  #c-cqc-img{display: none;}
 }
-
+@media screen and (max-width: 600px){
+ .bg-img {display: none;}
+}
 @media screen and (max-height: 955px){
  .item-img {display: none;}
  .weapon-img{display:none;}
@@ -44,8 +45,11 @@ body
  #o-cqc-img{display: none;}
  #c-cqc-img{display: none;}
 }
+#loading{
+    margin-right: 105px !important;
 
-#logged, #login, #loading{
+}
+#logged, #login{
     margin-right: 105px;
     transform: translateY(-5px);
 }
@@ -56,9 +60,6 @@ body
     left: 100px;
     top: 85px
 }
-#life-gauge-img{
-    width: 277px;
-}
 
 #soliton-radar{
     z-index: -1;
@@ -68,7 +69,7 @@ body
 }
 
 .item-img, .weapon-img, .w-item-img, .w-weapon-img{
-    width: 186px;
+    width: 200px;
 }
 
 .item-img-box, .w-item-img-box{
@@ -166,7 +167,7 @@ a{
 }
 
 #game_ham{
-    width: 70px !important;
+    width: 55px !important;
 }
 
 #menu_ham{
