@@ -228,8 +228,11 @@ function displayStatusBarAlert(message){
 	statusBar.style.transition = 'opacity 0.3s';
 	statusBar.style.opacity = '0';
 	statusBar.textContent = message;
+	document.getElementById("radar").classList.add('d-none');
+	document.getElementById("radar-alert").classList.remove('d-none');
 	setTimeout(() => {
 		statusBar.style.opacity = '1';
+		document.getElementById("radar-alert").play();
 	}, 100);
 
 
@@ -237,6 +240,9 @@ function displayStatusBarAlert(message){
 		statusBar.style.opacity = '0';
 		setTimeout(() => {
 			statusBar.style.display ='none';
+			document.getElementById("radar").classList.remove('d-none');
+			document.getElementById("radar-alert").classList.add('d-none');
+			document.getElementById("radar-alert").pause();
 		}, 300);
 	}, 3000);
 }
@@ -247,14 +253,20 @@ function displayStatusBarWarning(message){
 	statusBar.style.transition = 'opacity 0.3s';
 	statusBar.style.opacity = '0';
 	statusBar.textContent = message;
+	document.getElementById("radar").classList.add('d-none');
+	document.getElementById("radar-jamming").classList.remove('d-none');
 	setTimeout(() => {
 		statusBar.style.opacity = '1';
+		document.getElementById("radar-jamming").play();
 	}, 100);
 
 
 	setTimeout(() =>{
 		statusBar.style.opacity = '0';
 		setTimeout(() => {
+			document.getElementById("radar-jamming").classList.add('d-none');
+			document.getElementById("radar").classList.remove('d-none');
+			document.getElementById("radar-jamming").pause();
 			statusBar.style.display ='none';
 		}, 300);
 	}, 4500);

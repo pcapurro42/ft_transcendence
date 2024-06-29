@@ -313,6 +313,8 @@ let fr = [
     ["ARIA disco modal", "Déconnection innatendue."],
     ["ARIA leaving modal", "Confirmation de sortie de page."],
     ["ARIA localstorage modal", "Données stockées"],
+    ["ARIA Close CQC", "Cacher la vidéo du bas d'écran"],
+    ["ARIA Open CQC", "Montrer la vidéo du bas d'écran"],
 
     ["You Won", "Vous avez gagné"],
     ["You Lose", "Vous avez perdu"],

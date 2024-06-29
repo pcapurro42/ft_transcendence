@@ -35,7 +35,17 @@ function refreshSite()
 
 function setBackground(pagePath)
 {
-    let icons = document.querySelectorAll('.bg-icon');
+    let icons;
+    let weapons;
+
+    if (high_contrast == "true"){
+        icons = document.querySelectorAll('.w-item-img-box');
+        weapons = document.querySelectorAll('.w-weapon-img-box');
+    }
+    else{
+        icons = document.querySelectorAll('.item-img-box');
+        weapons = document.querySelectorAll('.weapon-img-box');
+    }
 
     hideBackgrounds();
     hideAchievement();
@@ -47,7 +57,11 @@ function setBackground(pagePath)
     {
         document.getElementById('background_menu_1').style.display = 'block';
         document.getElementById('background_menu_2').style.display = 'block';
-        icons[Math.floor(Math.random() * 27)].classList.remove('d-none');
+        document.getElementById('cqc_video').style.display = "block";
+        document.getElementById('o-cqc').style.display = "block";
+        document.getElementById('c-cqc').style.display = "block";
+        icons[Math.floor(Math.random() * 12)].classList.remove('d-none');
+        weapons[Math.floor(Math.random() * 15)].classList.remove('d-none');
     }
 }
 
@@ -57,6 +71,10 @@ function hideBackgrounds()
     document.getElementById('background_menu_2').style.display = 'none';
     let icons = document.querySelectorAll('.bg-icon')
     icons.forEach(element => {element.classList.add('d-none');});
+    document.getElementById('cqc_video').style.display = "none";
+    document.getElementById('o-cqc').style.display = "none";
+    document.getElementById('c-cqc').style.display = "none";
+
 }
 
 function setBackgroundColor(color)
@@ -159,13 +177,17 @@ function setTextSize(size)
     let sb_switch = document.querySelectorAll('.sb_switch');
 
     if (size == "data-tsnormal"){
+        document.body.classList.remove('large-text');
         sb_switch.forEach(element => {element.style = "width: 50px; height: 50px;";});
         document.getElementById('offcanvas_foot').style = "height: 106px;"
         document.getElementById('text_size_btn_selector').selectedIndex = 0;
+        document.querySelector('#cqc_video').style.bottom = "106px;";
     }
     else{
+        document.body.classList.add('large-text');
         sb_switch.forEach(element => {element.style = "width: 70px; height: 70px;";});
         document.getElementById('offcanvas_foot').style = "height: 122px; min-height: 117px"
+        document.querySelector('#cqc_video').style.bottom = "122px;";
         document.getElementById('text_size_btn_selector').selectedIndex = 1;
     }
 
@@ -190,6 +212,7 @@ function setHighContrast(value)
     if (high_contrast == "true")
     {
         document.body.classList.add('dark-mode');
+        document.body.classList.add('vid-dmode');
         dark_btn.forEach(element =>{
             element.classList.remove('btn-outline-dark')
             element.classList.add('btn-outline-light')
@@ -212,6 +235,7 @@ function setHighContrast(value)
         footer.style.backgroundColor="#9a040c";
         sb_header.style.backgroundColor="#222222";
         document.getElementById('menu_ham').classList.replace('bg-light', 'bg-black');
+        document.querySelector('#cqc_video').style.filter = "";
         setBackgroundColor("black");
         setTextColor("white");
         setMaterialsColor("black");
@@ -220,6 +244,7 @@ function setHighContrast(value)
     else
     {
         document.body.classList.remove('dark-mode');
+        document.body.classList.remove('vid-dmode');
         dark_btn.forEach(element =>{
             element.classList.remove('btn-outline-light')
             element.classList.add('btn-outline-dark')
@@ -237,6 +262,7 @@ function setHighContrast(value)
         high_contrast_btn.style.color = "black";
         sb_header.style.backgroundColor="white"
         document.getElementById('menu_ham').classList.replace('bg-black', 'bg-light');
+        document.querySelector('#cqc_video').style.filter = "invert(100%) !important;";
         setBackgroundColor("white");
         setTextColor("black");
         setMaterialsColor("white");

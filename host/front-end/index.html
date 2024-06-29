@@ -24,7 +24,7 @@
 
     </head>
 
-    <body class="container my-4">
+    <body class="my-4">
 
         <main>
             <!-- Game pages -->
@@ -219,7 +219,7 @@
                     <!-- Main menu toolbar -->
 
                     <header>
-                        <div id="main_menu_toolbar" class="container">
+                        <div id="main_menu_toolbar">
                             <a id="menu_ham" class="p-0 px-1 border border-2 rounded border-secondary bg-light btn btn-simple hamburger" data-bs-toggle="offcanvas" href="#sideMenu" role="button" aria-controls="sideMenu" data-title="ARIA Sidebar Menu" aria-label="">
                                 <img class="svg w-100 hamburger" src="./Materials/images/menu/hamburger.svg" alt="">
                             </a>
@@ -245,93 +245,189 @@
 
                     <div id="menu_backgrounds">
                         <div class="bg-box image" id="background_menu_1">
-                            <img class="image bg-img" id="bg_img_1" src="./Materials/images/deco/background-menu-left.png" alt="">
+                            <img class="image bg-img d-none" id="bg_img_1" src="./Materials/images/deco/background-menu-left.png" alt="">
                         </div>
                         <div class="bg-box image" id="background_menu_2">
-                            <img class="image bg-img" id="bg_img_2" src="./Materials/images/deco/background-other-left.png" alt="">
+                            <img class="image bg-img d-none" id="bg_img_2" src="./Materials/images/deco/background-other-left.png" alt="">
                         </div>
-                        <div class="bg-icon d-none d-inline-block item-img-box" id="ration-box">
-                            <img class="item-img"  id="ration-img" src ="Materials/images/deco/equip-icons/ration.png">
+                        <div id ="life-gauge">
+                            <img id="life-gauge-img" src="Materials/images/deco/life.png" alt="">
                         </div>
-                        <div class="bg-icon d-none d-inline-block item-img-box" id="tranquilizer-box">
-                            <img class="item-img"  id="tranquilizer-img" src ="Materials/images/deco/equip-icons/tranquilizer.png">
+                        <div id="soliton-radar" class="border border-1">
+                            <video id="radar" autoplay muted loop>
+                                <source src="Materials/video/radar.mp4" type="video/mp4">
+                            </video>
+                            <video class="d-none" id="radar-jamming" muted loop>
+                                <source src="Materials/video/radar-jamming.mp4" type="video/mp4">
+                            </video>
+                            <video class="d-none" id="radar-alert" muted loop>
+                                <source src="Materials/video/radar-alert.mp4" type="video/mp4">
+                            </video>
                         </div>
-                        <div class="bg-icon d-none d-inline-block item-img-box" id="socom-box">
-                            <img class="item-img" id="socom-img" src ="Materials/images/deco/equip-icons/socom.png">
+                        <div class="bg-icon d-none d-inline-block item-img-box">
+                            <img class="item-img"  src ="Materials/images/deco/equip-icons/ration.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/dogtag.png">
+                        <div class="bg-icon d-none d-inline-block weapon-img-box">
+                            <img class="weapon-img"  src ="Materials/images/deco/equip-icons/tranquilizer.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/AK74U.png">
+                        <div class="bg-icon d-none d-inline-block weapon-img-box">
+                            <img class="weapon-img" src ="Materials/images/deco/equip-icons/socom.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/bandana.png">
+                        <div  class="bg-icon d-none d-inline-block item-img-box">
+                            <img class="item-img" src ="Materials/images/deco/equip-icons/dogtag.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/blade.png">
+                        <div  class="bg-icon d-none d-inline-block weapon-img-box">
+                            <img class="weapon-img" src ="Materials/images/deco/equip-icons/AK74U.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/book.png">
+                        <div  class="bg-icon d-none d-inline-block item-img-box">
+                            <img class="item-img" src ="Materials/images/deco/equip-icons/bandana.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/box.png">
+                        <div  class="bg-icon d-none d-inline-block weapon-img-box">
+                            <img class="weapon-img" src ="Materials/images/deco/equip-icons/blade.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/camo.png">
+                        <div  class="bg-icon d-none d-inline-block item-img-box">
+                            <img class="item-img" src ="Materials/images/deco/equip-icons/book.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/Card.png">
+                        <div  class="bg-icon d-none d-inline-block item-img-box">
+                            <img class="item-img" src ="Materials/images/deco/equip-icons/box.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/Cigs.png">
+                        <div  class="bg-icon d-none d-inline-block item-img-box">
+                            <img class="item-img" src ="Materials/images/deco/equip-icons/camo.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/claymore.png">
+                        <div  class="bg-icon d-none d-inline-block item-img-box">
+                            <img class="item-img" src ="Materials/images/deco/equip-icons/Card.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/grenade.png">
+                        <div  class="bg-icon d-none d-inline-block item-img-box">
+                            <img class="item-img" src ="Materials/images/deco/equip-icons/Cigs.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/Magazine.png">
+                        <div  class="bg-icon d-none d-inline-block weapon-img-box">
+                            <img class="weapon-img" src ="Materials/images/deco/equip-icons/claymore.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/Medicine.png">
+                        <div  class="bg-icon d-none d-inline-block weapon-img-box">
+                            <img class="weapon-img" src ="Materials/images/deco/equip-icons/grenade.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/NVG.png">
+                        <div  class="bg-icon d-none d-inline-block weapon-img-box">
+                            <img class="weapon-img" src ="Materials/images/deco/equip-icons/Magazine.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/PSG1-T.png">
+                        <div  class="bg-icon d-none d-inline-block item-img-box">
+                            <img class="item-img" src ="Materials/images/deco/equip-icons/Medicine.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/PSG1.png">
+                        <div  class="bg-icon d-none d-inline-block item-img-box">
+                            <img class="item-img" src ="Materials/images/deco/equip-icons/NVG.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/Scope.png">
+                        <div  class="bg-icon d-none d-inline-block weapon-img-box">
+                            <img class="weapon-img" src ="Materials/images/deco/equip-icons/PSG1-T.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/Stinger.png">
+                        <div  class="bg-icon d-none d-inline-block weapon-img-box">
+                            <img class="weapon-img" src ="Materials/images/deco/equip-icons/PSG1.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/USP.png">
+                        <div  class="bg-icon d-none d-inline-block item-img-box">
+                            <img class="item-img" src ="Materials/images/deco/equip-icons/Scope.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/Chaff.png">
+                        <div  class="bg-icon d-none d-inline-block weapon-img-box">
+                            <img class="weapon-img" src ="Materials/images/deco/equip-icons/Stinger.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/Coolant.png">
+                        <div  class="bg-icon d-none d-inline-block weapon-img-box">
+                            <img class="weapon-img" src ="Materials/images/deco/equip-icons/USP.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/Disk.png">
+                        <div  class="bg-icon d-none d-inline-block weapon-img-box">
+                            <img class="weapon-img" src ="Materials/images/deco/equip-icons/Chaff.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/M4.png">
+                        <div  class="bg-icon d-none d-inline-block weapon-img-box">
+                            <img class="weapon-img" src ="Materials/images/deco/equip-icons/Coolant.png" alt="">
                         </div>
-                        <div  class="bg-icon d-none d-inline-block item-img-box" id="dogtag-box">
-                            <img class="item-img" id="dogtag-img" src ="Materials/images/deco/equip-icons/Mic.png">
+                        <div  class="bg-icon d-none d-inline-block item-img-box">
+                            <img class="item-img" src ="Materials/images/deco/equip-icons/Disk.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block weapon-img-box">
+                            <img class="weapon-img" src ="Materials/images/deco/equip-icons/M4.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block weapon-img-box">
+                            <img class="weapon-img" src ="Materials/images/deco/equip-icons/Mic.png" alt="">
                         </div>
 
+                        <div class="bg-icon d-none d-inline-block w-item-img-box">
+                            <img class="w-item-img"  src ="Materials/images/deco/equip-icons/wRATION.png" alt="">
+                        </div>
+                        <div class="bg-icon d-none d-inline-block w-weapon-img-box">
+                            <img class="w-weapon-img"  src ="Materials/images/deco/equip-icons/wTRANQUILIZER.png" alt="">
+                        </div>
+                        <div class="bg-icon d-none d-inline-block w-weapon-img-box">
+                            <img class="w-weapon-img" src ="Materials/images/deco/equip-icons/wSOCOM.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-item-img-box">
+                            <img class="w-item-img" src ="Materials/images/deco/equip-icons/wDOGTAG.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-weapon-img-box">
+                            <img class="w-weapon-img" src ="Materials/images/deco/equip-icons/wAK74U.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-item-img-box">
+                            <img class="w-item-img" src ="Materials/images/deco/equip-icons/wBandana.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-weapon-img-box">
+                            <img class="w-weapon-img" src ="Materials/images/deco/equip-icons/wBLADE.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-item-img-box">
+                            <img class="w-item-img" src ="Materials/images/deco/equip-icons/wBOOK.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-item-img-box">
+                            <img class="w-item-img" src ="Materials/images/deco/equip-icons/wBOX.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-item-img-box">
+                            <img class="w-item-img" src ="Materials/images/deco/equip-icons/wCAMO.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-item-img-box">
+                            <img class="w-item-img" src ="Materials/images/deco/equip-icons/wCARD.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-item-img-box">
+                            <img class="w-item-img" src ="Materials/images/deco/equip-icons/wCIGS.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-weapon-img-box">
+                            <img class="w-weapon-img" src ="Materials/images/deco/equip-icons/wCIGS.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-weapon-img-box">
+                            <img class="w-weapon-img" src ="Materials/images/deco/equip-icons/wGRENADE.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-weapon-img-box">
+                            <img class="w-weapon-img" src ="Materials/images/deco/equip-icons/wMAGAZINE.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-item-img-box">
+                            <img class="w-item-img" src ="Materials/images/deco/equip-icons/wMEDICINE.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-item-img-box">
+                            <img class="w-item-img" src ="Materials/images/deco/equip-icons/wNVG.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-weapon-img-box">
+                            <img class="w-weapon-img" src ="Materials/images/deco/equip-icons/wPSG1-T.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-weapon-img-box">
+                            <img class="w-weapon-img" src ="Materials/images/deco/equip-icons/wPSG1.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-item-img-box">
+                            <img class="w-item-img" src ="Materials/images/deco/equip-icons/wSCOPE.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-weapon-img-box">
+                            <img class="w-weapon-img" src ="Materials/images/deco/equip-icons/wSTINGER.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-weapon-img-box">
+                            <img class="w-weapon-img" src ="Materials/images/deco/equip-icons/wUSP.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-weapon-img-box">
+                            <img class="w-weapon-img" src ="Materials/images/deco/equip-icons/wCHAFF.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-weapon-img-box">
+                            <img class="w-weapon-img" src ="Materials/images/deco/equip-icons/wCOOLANT.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-item-img-box">
+                            <img class="w-item-img" src ="Materials/images/deco/equip-icons/wDISK.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-weapon-img-box">
+                            <img class="w-weapon-img" src ="Materials/images/deco/equip-icons/wM4.png" alt="">
+                        </div>
+                        <div  class="bg-icon d-none d-inline-block w-weapon-img-box">
+                            <img class="w-weapon-img" src ="Materials/images/deco/equip-icons/wMIC.png" alt="">
+                        </div>
+                    </div>
                     <!-- Credits watched achievement -->
 
                     <div id="credits_toast" class="toast border border-2">
@@ -1117,6 +1213,18 @@
             </div>
         </div>
 
+    <div id="cqc-block">
+    <button id="o-cqc" class="btn btn-simple" data-title="ARIA Open CQC" aria-label="" role="button">
+        <img id="o-cqc-img" class="svg m-1 w-100"  src="./Materials/images/menu/open-cqc.svg" alt="">
+    </button>
+    <button id="c-cqc" class="btn btn-complex d-none" data-title="ARIA Close CQC" aria-label="" role="button">
+        <img id="c-cqc-img" class="svg m-1 w-100"src="./Materials/images/menu/close-cqc.svg" alt="">
+    </button>
+        <video id="cqc_video" class="border border-1 border-secondary cqc" muted loop alt="">
+            <source src="Materials/video/cqc2.mp4" type="video/mp4">
+        </video>
+    </div>
+
     </body>
 
     <!-- Audio and video -->
@@ -1150,6 +1258,7 @@
         <video src="./Materials/video/credits.mp4" type="video/mp4" id="vid_credits"  tabindex="-1" data-title="ARIA Credits Video" aria-label=""></video>
 
         <button id="credit_close" data-tsnormal="30px" data-tslarge="50px" data-title="ARIA Credits Close" class="btn btn-simple flex float-end" data-link="home" aria-label="">&#10005;</button>
+
     </div>
 
     <!-- JavaScript files -->
@@ -1182,7 +1291,7 @@
             <script src="./JavaScript/Menu/customize.js"></script>
             <script src="./JavaScript/Menu/rgpd.js"></script>
             <script src="./JavaScript/Menu/settings.js"></script>
-            <script src="./JavaScript/Menu/credits.js"></script>
+            <script src="./JavaScript/Menu/video.js"></script>
             <script src="./JavaScript/Menu/form.js"></script>
             <script src="./JavaScript/Menu/sidebar.js"></script>
 

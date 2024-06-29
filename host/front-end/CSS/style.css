@@ -19,19 +19,70 @@ body
     font-family: "My_font" !important;
 }
 
-@media screen and (max-width: 1590px){
+#main_menu_page{
+    margin-top: 140px;
+}
+
+@media screen and (max-width: 1370px){
  .bg-img {display: none;}
+ #life-gauge-img {display: none;}
+ #soliton-radar {display: none;}
+ .cqc{display: none !important;}
+ .item-img {display: none;}
+ .weapon-img{display:none;}
+ .w-item-img {display: none;}
+ .w-weapon-img{display:none;}
+ #o-cqc-img{display: none;}
+ #c-cqc-img{display: none;}
 }
 
 @media screen and (max-height: 955px){
  .item-img {display: none;}
+ .weapon-img{display:none;}
+ .w-item-img {display: none;}
+ .w-weapon-img{display:none;}
+ #o-cqc-img{display: none;}
+ #c-cqc-img{display: none;}
 }
 
-.bg-icon{
+#logged, #login, #loading{
+    margin-right: 105px;
+    transform: translateY(-5px);
+}
+
+#life-gauge{
+    z-index: -2;
+    position: fixed;
+    left: 100px;
+    top: 85px
+}
+#life-gauge-img{
+    width: 277px;
+}
+
+#soliton-radar{
+    z-index: -1;
+    position: fixed;
+    top: 85px;
+    right: 105px;
+}
+
+.item-img, .weapon-img, .w-item-img, .w-weapon-img{
+    width: 186px;
+}
+
+.item-img-box, .w-item-img-box{
     z-index: -2;
     position: fixed;
     bottom: 125px;
-    left:10px;
+    left:105px;
+}
+
+.weapon-img-box, .w-weapon-img-box{
+    z-index: -2;
+    position: fixed;
+    bottom: 125px;
+    right:105px;
 }
 
 #background_menu_1
@@ -48,9 +99,11 @@ body
     z-index: -1;
     position: fixed;
     transform: scaleX(-1);
-    bottom: 65px;
+    top: 0px;
     right: -15px;
 }
+
+
 
 .bg-box{
     max-width: 35%;
@@ -118,6 +171,7 @@ a{
 
 #menu_ham{
     width: 55px !important;
+    margin-left: 105px;
 }
 
 .sun{
@@ -127,9 +181,7 @@ a{
 .security_margin{
     margin-bottom: 200px;
 }
-.header_margin{
-    margin-bottom: 100px;
-}
+
 #tournament_announcer{
     margin-top:250px;
 }
@@ -178,10 +230,54 @@ pre{
 
 :root {
     --dark-mode-filter: none;
+    --large-text : 106px;
+    --dmode-filter: invert(1);
+    --bright-filter: none;
 }
 
 .dark-mode{
     --dark-mode-filter : invert(1);
+}
+.vid-dmode{
+    --dmode-filter: none;
+    --bright-filter: brightness(0.5);
+}
+.large-text{
+    --large-text: 122px;
+}
+
+#o-cqc, #c-cqc{
+    position: fixed;
+    bottom: calc(var(--large-text) + 5px);
+    width: 60px;
+    opacity: 0.2;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#o-cqc:hover{
+    transition: 0.15s;
+    opacity: 1.0;
+    transform: translateY(-7px) scale(1.1) !important;
+}
+
+#c-cqc:hover{
+    transition: 0.15s;
+    opacity: 1.0;
+    transform: translateY(-222) scale(1.1) !important;
+}
+
+#cqc_video{
+    transition: 0.15s;
+    width: 360px;
+    position: fixed;
+    bottom: calc(var(--large-text) - 227px);
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @keyframes gamekeys {
@@ -224,7 +320,7 @@ pre{
     left: 0%;
     background-color: black;
 }
-.btn:hover:not(.border, .btn-outline-success, .btn-outline-secondary, .btn-outline-danger, .dark_btn, #intra_login, .dropdown_btn, .foot, .sb_nav){
+.btn:hover:not(.border, .btn-outline-success, .btn-outline-secondary, .btn-outline-danger, .dark_btn, #intra_login, .dropdown_btn, .foot, .sb_nav, #o-cqc, #c-cqc){
     transition: 1s;
     transform: scale(1.2);
 }
@@ -247,6 +343,7 @@ pre{
 .btn:active{
     transform: scale(1.0);
     opacity: 0.6;
+    border: none;
 }
 
 #game_lobby_block{
@@ -299,7 +396,7 @@ pre{
 
 #title
 {
-    border-width: 1 !important;
+    margin-bottom: 100px !important;
 }
 
 #switch_tournament, #switch_classic{
