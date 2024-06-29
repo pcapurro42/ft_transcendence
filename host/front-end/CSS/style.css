@@ -25,7 +25,7 @@ body
 
 @media screen and (max-width: 1370px){
  #life-gauge-img {display: none;}
- #soliton-radar {display: none;}
+ #soliton-radar {display: none !important;}
  .cqc{display: none !important;}
  .item-img {display: none;}
  .weapon-img{display:none;}
