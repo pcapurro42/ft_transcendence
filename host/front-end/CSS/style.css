@@ -19,8 +19,30 @@ body
     font-family: "My_font" !important;
 }
 
-#main_menu_page{
-    margin-top: 140px;
+:root {
+    --dark-mode-filter: none;
+    --dark-bg: white;
+    --large-text : 106px;
+    --dmode-filter: invert(1);
+    --bright-filter: none;
+}
+
+.dark-mode{
+    --dark-mode-filter : invert(1);
+    --dark-bg : black;
+}
+.vid-dmode{
+    --dmode-filter: none;
+    --bright-filter: brightness(0.5);
+}
+.large-text{
+    --large-text: 122px;
+}
+
+
+#loading{
+    margin-right: 105px !important;
+    margin-top: 25px !important;
 }
 
 @media screen and (max-width: 1370px){
@@ -33,6 +55,10 @@ body
  .w-weapon-img{display:none;}
  #o-cqc-img{display: none;}
  #c-cqc-img{display: none;}
+ #header-hr{display: block !important; transform: translateY(71px); position: fixed; top:0px}
+ #main_menu_toolbar{background-color: var(--dark-bg) !important;}
+ #logged, #login, #menu_ham{margin-right: 50px !important; margin-left: 50px !important;}
+ #loading{margin-right: 95px !important;}
 }
 @media screen and (max-width: 600px){
  .bg-img {display: none;}
@@ -45,17 +71,27 @@ body
  #o-cqc-img{display: none;}
  #c-cqc-img{display: none;}
 }
-#loading{
-    margin-right: 105px !important;
 
+#menu_ham{
+    width: 55px !important;
+    margin-left: 105px !important;
+    transform: translateY(22px);
 }
 #logged, #login{
     margin-right: 105px;
-    transform: translateY(-5px);
+    transform: translateY(15px);
+}
+
+#main_menu_toolbar{
+    position: fixed;
+    width: 100%;
+    height: 86px;
+    top:0;
+    background-color: transparent;
 }
 
 #life-gauge{
-    z-index: -2;
+    z-index: -1;
     position: fixed;
     left: 100px;
     top: 85px
@@ -171,10 +207,6 @@ a{
     width: 55px !important;
 }
 
-#menu_ham{
-    width: 55px !important;
-    margin-left: 105px;
-}
 
 .sun{
     filter: invert(53%) sepia(100%) saturate(1571%) hue-rotate(3deg) brightness(99%) contrast(96%);
@@ -228,24 +260,6 @@ pre{
     background-color: transparent !important;
     outline: none !important;
     box-shadow: none !important;
-}
-
-:root {
-    --dark-mode-filter: none;
-    --large-text : 106px;
-    --dmode-filter: invert(1);
-    --bright-filter: none;
-}
-
-.dark-mode{
-    --dark-mode-filter : invert(1);
-}
-.vid-dmode{
-    --dmode-filter: none;
-    --bright-filter: brightness(0.5);
-}
-.large-text{
-    --large-text: 122px;
 }
 
 #o-cqc, #c-cqc{
@@ -398,7 +412,7 @@ pre{
 
 #title
 {
-    margin-bottom: 100px !important;
+    margin-top: 200px !important;
 }
 
 #switch_tournament, #switch_classic{

@@ -152,7 +152,7 @@ let en = [
     ["RGPD-Data time", "For a very short time.\n\n All the data is erased when the website is being rebooted, which happens regularly\n (at least multiple times every day)."],
 
     ["RGPD-User action title", "How can I interact with my data?"],
-    ["RGPD-User action", "In compliance with the GDPR, three options are availaible to you:\n\n– Anonymize your data\n – Delete your online data – Delete your local data\n\n As soon as you ask for it, these directives will take effect.\n Everything can be done in the settings menu."],
+    ["RGPD-User action", "In compliance with the GDPR, three options are availaible to you:\n\n– Anonymize your data\n – Delete your online data\n – Delete your local data\n\n As soon as you ask for it, these directives will take effect.\n Everything can be done in the settings menu."],
 
     ["Game theme", "Game theme"],
     ["Game map", "Game map"],
