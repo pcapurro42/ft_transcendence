@@ -7,6 +7,9 @@ async function login()
     if (localStorage.getItem('sound') == 'on')
     {
         document.getElementById('codec_sound').play().catch(error=> console.error(getTranslation('Enable Sounds Error')));
+        hideEveryRadar();
+	    document.getElementById("codec_vid").classList.remove('d-none');
+	    document.getElementById("codec_vid").play();
         setTimeout(() => {window.location.href = `https://api.intra.42.fr/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`;}, 2000);
     }
     else

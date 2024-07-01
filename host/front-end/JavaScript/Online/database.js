@@ -80,12 +80,10 @@ function parseDbResponse(response){
 		|| typeof(response['bonusTaken']) !== "number"
 		|| typeof(response['bonusTotal']) !== "number"
 		|| typeof(response['gamesPlayedNb']) !== "number"
-		|| typeof(response['gameHistory']) !== "string"
+		|| (typeof(response['gameHistory']) !== "object" && typeof(response['gameHistory']) != 'string')
 		|| typeof(response['loseGameNb']) !== "number"
-		|| typeof(response['wonGamesNb']) !== "number") {
-        displayStatusBarWarning(getTranslation("Database wrong content"));
+		|| typeof(response['wonGamesNb']) !== "number")
         return false;
-    }
 
 	gameHistJson = response['gameHistory'];
 	gameHistJson = JSON.parse(gameHistJson);
@@ -97,11 +95,13 @@ function parseDbResponse(response){
 					if (Array.isArray(element)){
 						element.forEach(elem => {
 							if (typeof(element) != 'number' && !gameHistoryParse(element)){
+								console.log("gamehist[data]", element);
 								bool = false;
 							}
 						});
 					}
 					if (typeof(element) != 'number' && !gameHistoryParse(element)){
+						console.log("2nd if", element);
 						bool = false;
 					}
 				});
@@ -110,8 +110,10 @@ function parseDbResponse(response){
 				else
 					return false;
 			}
-			if ((typeof(key) != 'number' && !gameHistoryParse(key)) || (typeof(value) != 'number' && !gameHistoryParse(value)))
+			if ((typeof(key) != 'number' && !gameHistoryParse(key)) || (typeof(value) != 'number' && !gameHistoryParse(value))){
+				console.log("out if", element);
 				return false;
+			}
 		}
 	return true;
 }

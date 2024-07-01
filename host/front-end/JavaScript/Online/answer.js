@@ -41,8 +41,9 @@ async function fetchOffer(){
 			}),
 		})
 		if (request.status == 404){
-			displayStatusBarAlert(getTranslation('Peer 404'));
-			document.getElementById('submit_inv_code').removeAttribute('disabled');
+			displayStatusBarWarning(getTranslation('Peer 404'));
+			document.getElementById('door_locked').play();
+    		document.getElementById('init_p2p').removeAttribute('disabled');
 			return;
 		}
 		else if (request.status == 500){
@@ -143,14 +144,20 @@ async function sendAnswer(answer){
 		})
 
 		let response = await request.text();
-
+		console.log(response);
     	if (!response){
 			displayStatusBarAlert(getTranslation('Connection Init Failed'));
 			resetConnection();
 			nav.displayMenu();
     	    return;
     	}
-		if (request.status == 500){
+		else if (response == "Same Player Error"){
+			displayStatusBarAlert(getTranslation("Same Player Error"));
+			document.getElementById("alert_sound").play();
+			resetConnection();
+			return;
+		}
+		else if (request.status == 500){
 			localStorage.setItem('status', 'not connected')
 			refreshLogin();
 			document.getElementById('login_btn').style.display = 'block';

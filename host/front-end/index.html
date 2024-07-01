@@ -256,14 +256,17 @@
                             <img id="life-gauge-img" src="Materials/images/deco/life.png" alt="">
                         </div>
                         <div id="soliton-radar" class="border border-1">
-                            <video id="radar" autoplay muted loop>
+                            <video id="radar" class="s-radar" autoplay muted loop>
                                 <source src="Materials/video/radar.mp4" type="video/mp4">
                             </video>
-                            <video class="d-none" id="radar-jamming" muted loop>
+                            <video class="d-none s-radar" id="radar-jamming" muted loop>
                                 <source src="Materials/video/radar-jamming.mp4" type="video/mp4">
                             </video>
-                            <video class="d-none" id="radar-alert" muted loop>
+                            <video class="d-none s-radar" id="radar-alert" muted loop>
                                 <source src="Materials/video/radar-alert.mp4" type="video/mp4">
+                            </video>
+                            <video class="d-none s-radar" id="codec_vid" muted loop>
+                                <source src="Materials/video/codec-vid.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="bg-icon d-none d-inline-block item-img-box">
@@ -1203,6 +1206,18 @@
             </div>
         </div>
 
+    <div id="cqc-block">
+    <button id="o-cqc" class="btn btn-simple" data-title="ARIA Open CQC" aria-label="" role="button">
+        <img id="o-cqc-img" class="svg w-100"  src="./Materials/images/menu/open-cqc.svg" alt="">
+    </button>
+    <button id="c-cqc" class="btn btn-complex d-none" data-title="ARIA Close CQC" aria-label="" role="button">
+        <img id="c-cqc-img" class="svg w-100"src="./Materials/images/menu/close-cqc.svg" alt="">
+    </button>
+        <video id="cqc_video" class="d-none border border-1 border-secondary cqc" muted loop alt="">
+            <source src="Materials/video/cqc2.mp4" type="video/mp4">
+        </video>
+    </div>
+
         <div id="footer_div" class="position-fixed fixed-bottom">
             <footer class="d-flex justify-content-center align-items-center mt-3">
                 <button id="rgpd_btn" class="foot btn btn-simple float-end" data-tsnormal="12px" data-tslarge="20px"></button>
@@ -1215,17 +1230,6 @@
             </div>
         </div>
 
-    <div id="cqc-block">
-    <button id="o-cqc" class="btn btn-simple" data-title="ARIA Open CQC" aria-label="" role="button">
-        <img id="o-cqc-img" class="svg m-1 w-100"  src="./Materials/images/menu/open-cqc.svg" alt="">
-    </button>
-    <button id="c-cqc" class="btn btn-complex d-none" data-title="ARIA Close CQC" aria-label="" role="button">
-        <img id="c-cqc-img" class="svg m-1 w-100"src="./Materials/images/menu/close-cqc.svg" alt="">
-    </button>
-        <video id="cqc_video" class="border border-1 border-secondary cqc" muted loop alt="">
-            <source src="Materials/video/cqc2.mp4" type="video/mp4">
-        </video>
-    </div>
 
     </body>
 

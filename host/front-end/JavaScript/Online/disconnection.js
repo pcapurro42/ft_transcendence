@@ -12,6 +12,8 @@ function resetConnection(){
     document.getElementById('init_p2p').removeAttribute('disabled');
     document.getElementById('submit_inv_code').removeAttribute('disabled');
     role="";
+    document.getElementById('answer_timeout').style.display = "none";
+	clearInterval(timeoutInterval);
 }
 
 function handleDisconnection(){

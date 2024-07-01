@@ -205,6 +205,8 @@ function generateGameID(){
 
 function displayStatusBarSuccess(message){
 	let statusBar = document.getElementById('statusBarSuccess');
+
+	hideEveryStatusBar();
 	statusBar.style.display="block";
 	statusBar.style.transition = 'opacity 0.3s';
 	statusBar.style.opacity = '0';
@@ -224,11 +226,13 @@ function displayStatusBarSuccess(message){
 
 function displayStatusBarAlert(message){
 	let statusBar = document.getElementById('statusBarAlert');
+
+	hideEveryStatusBar();
 	statusBar.style.display="block";
 	statusBar.style.transition = 'opacity 0.3s';
 	statusBar.style.opacity = '0';
 	statusBar.textContent = message;
-	document.getElementById("radar").classList.add('d-none');
+	hideEveryRadar();
 	document.getElementById("radar-alert").classList.remove('d-none');
 	setTimeout(() => {
 		statusBar.style.opacity = '1';
@@ -240,7 +244,7 @@ function displayStatusBarAlert(message){
 		statusBar.style.opacity = '0';
 		setTimeout(() => {
 			statusBar.style.display ='none';
-			document.getElementById("radar").classList.remove('d-none');
+			solitonRadarClean(document.getElementById('radar-alert'));
 			document.getElementById("radar-alert").classList.add('d-none');
 			document.getElementById("radar-alert").pause();
 		}, 300);
@@ -249,11 +253,13 @@ function displayStatusBarAlert(message){
 
 function displayStatusBarWarning(message){
 	let statusBar = document.getElementById('statusBarWarning');
+
+	hideEveryStatusBar();
 	statusBar.style.display="block";
 	statusBar.style.transition = 'opacity 0.3s';
 	statusBar.style.opacity = '0';
 	statusBar.textContent = message;
-	document.getElementById("radar").classList.add('d-none');
+	hideEveryRadar();
 	document.getElementById("radar-jamming").classList.remove('d-none');
 	setTimeout(() => {
 		statusBar.style.opacity = '1';
@@ -265,11 +271,38 @@ function displayStatusBarWarning(message){
 		statusBar.style.opacity = '0';
 		setTimeout(() => {
 			document.getElementById("radar-jamming").classList.add('d-none');
-			document.getElementById("radar").classList.remove('d-none');
+			solitonRadarClean(document.getElementById('radar-jamming'));
 			document.getElementById("radar-jamming").pause();
 			statusBar.style.display ='none';
 		}, 300);
 	}, 4500);
 }
 
+function hideEveryStatusBar(){
+	let bars = document.querySelectorAll('.alert');
 
+	bars.forEach(element => {
+		element.style.display = "none";
+	})
+}
+
+function hideEveryRadar(){
+	let radars = document.querySelectorAll('.s-radar');
+	radars.forEach(element => {
+		element.classList.add('d-none');
+	});
+}
+
+function solitonRadarClean(caller){
+	let radars = document.querySelectorAll('.s-radar');
+	let bool = true;
+	radars.forEach(element => {
+		if (!element.classList.contains("d-none") && element != caller){
+			bool = false;
+		}
+	});
+	if (bool == false)
+		return;
+	else
+		document.getElementById('radar').classList.remove('d-none');
+}

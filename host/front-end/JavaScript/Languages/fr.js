@@ -218,6 +218,7 @@ let fr = [
     ["Peer 404", "Erreur : échec de la connexion. Soyez sûr que tous les pairs sont bien présents, ainsi que de la validité du code d'invitation."],
     ["Peer fetch answer", "Erreur: impossible d'envoyer vos informations vers le serveur."],
     ["Peer fetch offer", "Erreur : impossible de récupérer les informations de l'autre pair."],
+    ["Same Player Error", "Snake, je sais que tu as l'habitude des clones, mais ce n'est pas une raison pour jouer contre toi-même..."],
 
     ["Connection Init Failed", "Échec de la génération du code d'invitation... Merci de bien vouloir recommencer."],
     ["Answer Timeout", ` secondes restantes avant l'expiration du code.`],

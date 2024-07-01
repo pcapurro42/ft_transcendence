@@ -20,9 +20,14 @@ def signal(request):
 	if user_info.verifyUser(requestJson) is False:
 		return HttpResponseServerError("Error: Could not verify user identity.\n")
 
+
 	if requestJson.get('answer') != None:
+		if not utils.parseOffersAnswers(json.loads(requestJson["answer"])):
+			return HttpResponseServerError("Error : signal offers/answers contains forbidden characters.\n")
 		return invitation_code.postAnswer(request)
 	else:
+		if not utils.parseOffersAnswers(json.loads(requestJson["offer"])):
+			return HttpResponseServerError("Error : signal offers/answers contains forbidden characters.\n")
 		code = invitation_code.generate_code(request)
 		if code != 1:
 			return HttpResponse(content= invitation_code.generate_code(request))

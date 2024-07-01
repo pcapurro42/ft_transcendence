@@ -56,10 +56,12 @@ nav.theaterClose = async function(){
 document.getElementById('o-cqc').onclick = showBotVid;
 document.getElementById('c-cqc').onclick = hideBotVid;
 
-function showBotVid(){
+async function showBotVid(){
 	let oCqc = document.getElementById('o-cqc');
 	let cCqc = document.getElementById('c-cqc');
 	let vid = document.getElementById('cqc_video')
+	vid.classList.remove('d-none');
+	await sleep(10);
 	vid.style.bottom = "var(--large-text)";
 	vid.play();
 	cCqc.classList.remove('d-none');
@@ -68,7 +70,7 @@ function showBotVid(){
 	cCqc.style.transform = "translateY(-215px)"
 }
 
-function hideBotVid(){
+async function hideBotVid(){
 	let vid = document.getElementById('cqc_video');
 	let oCqc = document.getElementById('o-cqc');
 	let cCqc = document.getElementById('c-cqc');
@@ -78,4 +80,6 @@ function hideBotVid(){
 	vid.pause();
 	cCqc.classList.add('d-none');
 	oCqc.classList.remove('d-none');
+	await sleep(160);
+	vid.classList.add('d-none');
 }

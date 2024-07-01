@@ -218,6 +218,7 @@ let en = [
     ["Peer 404", "Error: connection failure. Be sure that all peers are ready, and that the invitation code is valid."],
     ["Peer fetch answer", "Error: Could not send your informations to server."],
     ["Peer fetch offer", "Error: Could not retrieve other peer informations."],
+    ["Same Player Error", "Snake, I know you're used to clones, but that's not a reason to play against yourself..."],
 
     ["Connection Init Failed", "Invitation code generation failed... Please restart process."],
     ["Answer Timeout", ` seconds left before code expires.`],
