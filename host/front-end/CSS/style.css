@@ -391,18 +391,10 @@ pre{
     left: 90%;
 }
 
-#konami_toast, #credits_toast
+#konami_toast, #credits_toast, #lcl_toast, #won_toast, #lost_toast
 {
     position: absolute;
     bottom: 125px;
-    left: 15px;
-    max-width: 280px;
-}
-
-#lcl_toast, #won_toast, #lost_toast
-{
-    position: absolute;
-    top: 125px;
     left: 15px;
     max-width: 280px;
 }
