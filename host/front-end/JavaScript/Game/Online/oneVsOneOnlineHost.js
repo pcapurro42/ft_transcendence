@@ -209,6 +209,16 @@ class OnlineGame1v1_host
         }
 
         this.sounds = the_sounds;
+
+        // life initialization
+
+        this.life_left = new Image();
+        this.life_right = new Image();
+    
+        if (high_contrast == true)
+            this.life_left.src = 'Materials/images/game/life/dark-left-life-100.png', this.life_right.src = 'Materials/images/game/life/dark-right-opp-100.png';
+        else
+            this.life_left.src = 'Materials/images/game/life/light-left-life-100.png', this.life_right.src = 'Materials/images/game/life/light-right-opp-100.png';
     }
 
     refreshDisplay()
@@ -216,6 +226,7 @@ class OnlineGame1v1_host
         this.refreshBackground();
         this.refreshScores();
         this.refreshPlayers();
+        this.refreshLifes();
         this.refreshBall();
 
         data_channel.send(`bpos:${this.ball.y}/${this.ball.x}`);
@@ -271,6 +282,23 @@ class OnlineGame1v1_host
         this.left_player.displayBonus();
         this.right_player.displayBonus();
 
+    }
+
+    refreshLifes()
+    {
+        if (this.scores[0] < 10 && this.scores[1] < 10)
+        {
+            let left_life_surface = (100 - (this.scores[1] * 10)) * 330 / 100;
+            let right_life_surface = (100 - (this.scores[0] * 10)) * 330 / 100;
+    
+            this.display.fillStyle = "green";
+            this.display.fillRect(21, 22, left_life_surface, 20);
+            this.display.fillStyle = "orange";
+            this.display.fillRect((this.game_width - 337) - 15, 22, right_life_surface, 20);
+        }
+
+        this.display.drawImage(this.life_left, 15, 15);
+        this.display.drawImage(this.life_right, (this.game_width - 343) - 15, 15);
     }
 
     refreshBall()
