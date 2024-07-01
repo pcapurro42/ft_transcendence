@@ -37,7 +37,7 @@ class OnlineGame1v1_host
         if (text_size == "normal")
             this.text_size = 85;
         else
-            this.text_size = 120;
+            this.text_size = 100;
 
         this.text_font = "Arial";
 
@@ -241,7 +241,7 @@ class OnlineGame1v1_host
 
     refreshScores()
     {
-        let score_y = this.game_height / 6;
+        let score_y = 150;
         let left_score_x = (this.game_width / 4) - this.text_size / 4;
         let right_score_x = (this.game_width - this.game_width / 4) - this.text_size / 4;
 

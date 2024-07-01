@@ -58,7 +58,10 @@ function displayCountDown(nb)
         game.refreshPlayers();
     }
     else if (nb == 0)
+    {
+        game.refreshLifes();
         timer.textContent = getTranslation("Go!")
+    }
     else if (nb == -1)
     {
         timer.classList.add("d-none");

@@ -27,7 +27,7 @@ class LocalGame1v2
         if (text_size == "normal")
             this.text_size = 85;
         else
-            this.text_size = 120;
+            this.text_size = 100;
 
         this.text_font = "Arial";
 
@@ -211,6 +211,16 @@ class LocalGame1v2
         }
 
         this.sounds = the_sounds;
+
+        // life initialization
+
+        this.life_left = new Image();
+        this.life_right = new Image();
+    
+        if (high_contrast == true)
+            this.life_left.src = 'Materials/images/game/life/dark-left-life-100.png', this.life_right.src = 'Materials/images/game/life/dark-right-life-100.png';
+        else
+            this.life_left.src = 'Materials/images/game/life/light-left-life-100.png', this.life_right.src = 'Materials/images/game/life/light-right-life-100.png';
     }
 
     refreshDisplay()
@@ -218,6 +228,7 @@ class LocalGame1v2
         this.refreshBackground();
         this.refreshScores();
         this.refreshPlayers();
+        this.refreshLifes();
         this.refreshBall();
 
         if (gameMode != "normal")
@@ -241,7 +252,7 @@ class LocalGame1v2
 
     refreshScores()
     {
-        let score_y = this.game_height / 6;
+        let score_y = 150;
         let left_score_x = (this.game_width / 4) - this.text_size / 4;
         let right_score_x = (this.game_width - this.game_width / 4) - this.text_size / 4;
 
@@ -275,6 +286,22 @@ class LocalGame1v2
 
         if (gameMode != "normal")
             this.left_player.displayBonus(), this.right_player_1.displayBonus(), this.right_player_2.displayBonus();
+    }
+
+    refreshLifes()
+    {
+        if (this.scores[0] < 10 && this.scores[1] < 10)
+        {
+            let left_life_surface = (100 - (this.scores[1] * 10)) * 330 / 100;
+            let right_life_surface = (100 - (this.scores[0] * 10)) * 330 / 100;
+    
+            this.display.fillStyle = "green";
+            this.display.fillRect(21, 22, left_life_surface, 20);
+            this.display.fillRect((this.game_width - 337) - 15, 22, right_life_surface, 20);
+        }
+
+        this.display.drawImage(this.life_left, 15, 15);
+        this.display.drawImage(this.life_right, (this.game_width - 343) - 15, 15);
     }
 
     refreshBall()
