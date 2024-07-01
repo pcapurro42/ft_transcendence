@@ -51,6 +51,12 @@ body
     transform: translateY(22px);
 }
 
+#title
+{
+    margin-top: 250px !important;
+    z-index:2;
+}
+
 @media screen and (max-width: 1370px){
  #life-gauge-img {display: none;}
  #soliton-radar {display: none !important;}
@@ -63,6 +69,7 @@ body
  #c-cqc{display: none!important;}
  #logged, #login, #menu_ham{margin-right: 50px !important; margin-left: 50px !important;}
  #loading{margin-right: 95px !important;}
+ #title{margin-top: 175px!important;}
 }
 @media screen and (max-width: 600px){
  .bg-img {display: none;}
@@ -271,6 +278,7 @@ pre{
     margin-right: auto;
 }
 
+
 #o-cqc:hover{
     transition: 0.15s;
     opacity: 1.0;
@@ -408,11 +416,6 @@ pre{
     text-align: center;
 }
 
-#title
-{
-    margin-top: 200px !important;
-    z-index:2;
-}
 
 #switch_tournament, #switch_classic{
     cursor: pointer;

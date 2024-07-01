@@ -477,7 +477,7 @@ nav.displayHistory = function()
 
 nav.removeHistory = function()
 {
-    document.getElementById('title').style.setProperty("margin-top", "200px", "important");
+    document.getElementById('title').style.removeProperty("margin-top");
     document.getElementById('history_info').style.display = 'none';
     document.getElementById('history_info').style.visibility = 'hidden';
 
