@@ -171,13 +171,13 @@ function getIceConfig(){
 function freeInputAndForms()
 {
     document.getElementById('invalid-alias-msg').classList.add('d-none');
+    document.getElementById('duplicate_nick').classList.add('d-none');
 
 	let t_cross = document.querySelectorAll('.invalid-feedback');
 	t_cross.forEach(element => {
 		element.style.display = 'none';
 	});
 
-    document.getElementById('duplicate_nick').style.display = 'none';
     document.getElementById('alias_input').value = '';
 	document.getElementById('paste_inv_code').value = '';
 	document.getElementById('invitation_code').value = '';

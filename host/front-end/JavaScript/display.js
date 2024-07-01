@@ -155,7 +155,6 @@ function setTextColor(color)
     let grey_texts = document.getElementsByClassName("text");
     let white_texts = document.getElementsByClassName("text-white");
     let black_texts = document.getElementsByClassName("text-black");
-
     let texts = [...white_texts, ...black_texts, ...grey_texts];
 
     for (let i = 0; i != texts.length; i++)
@@ -215,11 +214,16 @@ function setHighContrast(value)
     let side_menu = document.getElementById('sideMenu')
     let sb_dropBg = document.getElementById('lang_switch_menu');
     let sb_header = document.getElementById('offcanvas_head')
+    let borders = document.querySelectorAll(".border");
 
     if (high_contrast == "true")
     {
         document.body.classList.add('dark-mode');
         document.body.classList.add('vid-dmode');
+
+        borders.forEach(element => {
+            element.classList.replace("border-black", "border-white")
+        })
         dark_btn.forEach(element =>{
             element.classList.remove('btn-outline-dark')
             element.classList.add('btn-outline-light')
@@ -230,7 +234,7 @@ function setHighContrast(value)
             element.classList.remove('focus-black');
         });
 
-        btn_icon.forEach(element => {
+        btn_icon.forEach(element => {back_tournament_form_btn
             element.classList.add('focus-black');
             element.classList.remove('focus-white');
         });
@@ -253,6 +257,10 @@ function setHighContrast(value)
     {
         document.body.classList.remove('dark-mode');
         document.body.classList.remove('vid-dmode');
+
+        borders.forEach(element => {
+            element.classList.replace("border-white", "border-black")
+        });
         dark_btn.forEach(element =>{
             element.classList.remove('btn-outline-light')
             element.classList.add('btn-outline-dark')

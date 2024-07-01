@@ -141,7 +141,7 @@ let es = [
     ["– History data", "– histórico de datos"],
     ["– Achievements", "– Logros"],
 
-    ["RGPD-Intro", "Este sitio web cumple con el Reglamento General de Protección de Datos (RGPD) de la Unión Europea. Le invitamos a leer lo siguiente para obtener más información sobre cómo se ha creado el sitio web para respetar este reglamento."],
+    ["RGPD-Intro", "Este sitio web cumple con el Reglamento General de Protección de Datos (RGPD) de la Unión Europea.\n Le invitamos a leer lo siguiente para obtener más información sobre cómo se ha creado el sitio web\n para respetar este reglamento."],
 
     ["RGPD-Note", "Nota: si no utiliza ninguna función en línea del sitio web (inicio de sesión con 42 y juegos en línea),\n ningún dato se almacena fuera de su ordenador ni se comparte con nadie.\n\n\n"],
 
@@ -149,7 +149,7 @@ let es = [
     ["RGPD-Data sharing", "Sólo se comparten cuatro tipos diferentes de información:\n– Direcciones IP\n– 42 inicios de sesión\n– Historico del juego y estadísticas\n– Informaciones del juego\nLos cuatros primeros se almacenan en la base de datos de nuestro sitio web para conectar a los jugadores entre sí.\nPor último, los dos primeros también se comparten entre dos personas que juegan en línea, así como\ninformaciones del juego para permitir la sincronización del juego."],
 
     ["RGPD-Data time title", "¿Durante cuánto tiempo se almacenan los datos?"],
-    ["RGPD-Data time", "Todos los datos se borran cuando se reinicia el sitio web, lo que ocurre regularmente (al menos varias veces al día)."],
+    ["RGPD-Data time", "Por muy poco tiempo.\n\nTodos los datos se borran cuando se reinicia el sitio web\n, lo que ocurre regularmente (al menos varias veces al día)."],
 
     ["RGPD-User action title", "¿Cómo puedo interactuar con mis datos?"],
     ["RGPD-User action", "De conformidad con el GDPR, tiene a su disposición tres opciones:\n– Anonimizar sus datos\n– Eliminar sus datos en línea\n– Eliminar sus datos locales\n\nEn cuanto lo solicite, estas directivas entrarán en vigor.\n Todo se puede hacer en el menú de configuración."],

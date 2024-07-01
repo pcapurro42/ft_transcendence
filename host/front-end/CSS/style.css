@@ -131,6 +131,7 @@ p, pre, h1, h2, h3{
 }
 .bg-invalid{
     background-color:  #AD1400 !important;
+    color: white !important;
 }
 a{
     text-decoration: none !important;
@@ -445,4 +446,8 @@ pre{
 #play_back_btn, #settings_back_btn, #customize_back_btn, #classic_back_btn, #back_tournament_btn, #create_classic_back_btn, #join_classic_back_btn, #one_vs_one_online_choice_back_btn
 {
     font-weight: bold;
+}
+
+.pre{
+    white-space: pre;
 }
