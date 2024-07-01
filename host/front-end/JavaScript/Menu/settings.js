@@ -81,6 +81,7 @@ function displaySecondSettingsPage()
 {
     nav.hideEveryDiv();
 
+    document.getElementById('title').style.setProperty("margin-top", "120px", "important");
     document.getElementById('settings_menu').style.display = 'block';
     document.getElementById('settings_back_btn').style.display = 'block';
 
@@ -98,6 +99,7 @@ function displaySecondSettingsPage()
 
 function displayFirstSettingsPage()
 {
+    document.getElementById('title').style.setProperty("margin-top", "150px", "important");
     document.getElementById('settings_left_panel').style.display = "block";
     document.getElementById('settings_right_panel').style.display = "block";
     document.getElementById('privacy_panel').style.display = "none";
@@ -113,7 +115,6 @@ function displayFirstSettingsPage()
 nav.displaySettings = function()
 {
     nav.hideEveryDiv();
-
     document.getElementById('settings_menu').style.display = 'block';
     document.getElementById('settings_back_btn').style.display = 'block';
 

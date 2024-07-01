@@ -420,6 +420,7 @@ nav.displayOnlineStats = function()
 
     if (visual == true)
     {
+        document.getElementById('title').style.setProperty("margin-top", "95px", "important");
         document.getElementById('online_stats_v').style.display = 'block';
         document.getElementById('online_stats_nv').style.display = 'none';
 
@@ -431,6 +432,7 @@ nav.displayOnlineStats = function()
     }
     else
     {
+        document.getElementById('title').style.setProperty("margin-top", "125px", "important");
         document.getElementById('online_stats_nv').style.display = 'block';
         document.getElementById('online_stats_v').style.display = 'none';
 

@@ -45,6 +45,12 @@ body
     margin-top: 25px !important;
 }
 
+#menu_ham{
+    width: 55px !important;
+    margin-left: 105px !important;
+    transform: translateY(22px);
+}
+
 @media screen and (max-width: 1370px){
  #life-gauge-img {display: none;}
  #soliton-radar {display: none !important;}
@@ -53,10 +59,8 @@ body
  .weapon-img{display:none;}
  .w-item-img {display: none;}
  .w-weapon-img{display:none;}
- #o-cqc-img{display: none;}
- #c-cqc-img{display: none;}
- #header-hr{display: block !important; transform: translateY(71px); position: fixed; top:0px}
- #main_menu_toolbar{background-color: var(--dark-bg) !important;}
+ #o-cqc{display: none!important;}
+ #c-cqc{display: none!important;}
  #logged, #login, #menu_ham{margin-right: 50px !important; margin-left: 50px !important;}
  #loading{margin-right: 95px !important;}
 }
@@ -72,11 +76,6 @@ body
  #c-cqc-img{display: none;}
 }
 
-#menu_ham{
-    width: 55px !important;
-    margin-left: 105px !important;
-    transform: translateY(22px);
-}
 #logged, #login{
     margin-right: 105px;
     transform: translateY(15px);
@@ -98,7 +97,6 @@ body
 }
 
 #soliton-radar{
-    z-index: -1;
     position: fixed;
     top: 85px;
     right: 105px;
@@ -165,7 +163,7 @@ p, pre, h1, h2, h3{
 .text-red{
     color: #AD1400 !important;
 }
-.bg-invalid{
+.bg-red{
     background-color:  #AD1400 !important;
     color: white !important;
 }
@@ -336,7 +334,7 @@ pre{
     left: 0%;
     background-color: black;
 }
-.btn:hover:not(.border, .btn-outline-success, .btn-outline-secondary, .btn-outline-danger, .dark_btn, #intra_login, .dropdown_btn, .foot, .sb_nav, #o-cqc, #c-cqc){
+.btn:hover:not(.border, .btn-outline-success, .btn-outline-secondary, .btn-outline-danger, .dark_btn, #intra_login, .dropdown_btn, .foot, .sb_nav, #o-cqc, #c-cqc, #cpy_inv_code, #init_p2p){
     transition: 1s;
     transform: scale(1.2);
 }
@@ -413,6 +411,7 @@ pre{
 #title
 {
     margin-top: 200px !important;
+    z-index:2;
 }
 
 #switch_tournament, #switch_classic{
@@ -464,4 +463,17 @@ pre{
 
 .pre{
     white-space: pre;
+    text-wrap: wrap;
+}
+
+.force-white{
+    color:white !important;
+}
+
+.force-white-border{
+    border-color: white!important;
+}
+
+#cpy_inv_code, #init_p2p, #submit_inv_code{
+    background-color: #5a5858;
 }

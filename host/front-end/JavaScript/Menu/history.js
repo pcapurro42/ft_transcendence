@@ -449,7 +449,7 @@ nav.displayHistory = function()
     if (!isConnected())
         return;
     nav.hideEveryDiv();
-
+    document.getElementById('title').style.setProperty("margin-top", "115px", "important");
     document.getElementById('history_info').style.display = 'block';
     document.getElementById('history_info').style.visibility = 'visible';
 
@@ -477,6 +477,7 @@ nav.displayHistory = function()
 
 nav.removeHistory = function()
 {
+    document.getElementById('title').style.setProperty("margin-top", "200px", "important");
     document.getElementById('history_info').style.display = 'none';
     document.getElementById('history_info').style.visibility = 'hidden';
 

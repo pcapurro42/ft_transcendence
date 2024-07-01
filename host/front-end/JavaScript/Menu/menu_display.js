@@ -94,7 +94,8 @@ const nav = {
         nav.hideEveryDiv();
 		let val = document.getElementById('tournament_players_selector').value;
         localStorage.setItem('t_player_nbr', val)
-
+        if (val == 16)
+            document.getElementById('title').style.setProperty("margin-top", "130px", "important");
         document.getElementById('tournament_nickname_menu').style.display = 'block';
         document.getElementById('form_alias').style.display = 'block';
 
@@ -207,6 +208,7 @@ const nav = {
     displayRGPD: function(){
         nav.hideEveryDiv();
         document.getElementById('rgpd_block').style.display = 'block';
+        document.getElementById('title').style.setProperty("margin-top", "70px", "important");
 
         setBackground('/privacy');
         addToHistory('/privacy');
@@ -240,7 +242,7 @@ const nav = {
         document.getElementById('main_menu_page').style.display = 'none';
         document.getElementById('rgpd_block').style.display = "none";
         document.getElementById('main_page').style.display = 'block';
-
+        document.getElementById('title').style.marginTop = "";
         let status_bars = document.querySelectorAll('.status_bar');
         status_bars.forEach( (elem) =>{
             elem.style.display="none";
