@@ -58,7 +58,6 @@ body
 }
 
 @media screen and (max-width: 1370px){
- #life-gauge-img {display: none;}
  #soliton-radar {display: none !important;}
  .cqc{display: none !important;}
  .item-img {display: none;}
@@ -94,13 +93,6 @@ body
     height: 86px;
     top:0;
     background-color: transparent;
-}
-
-#life-gauge{
-    z-index: -1;
-    position: fixed;
-    left: 100px;
-    top: 85px
 }
 
 #soliton-radar{

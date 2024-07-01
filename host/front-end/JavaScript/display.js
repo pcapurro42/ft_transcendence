@@ -58,7 +58,6 @@ function setBackground(pagePath)
         document.getElementById('cqc_video').style.display = "block";
         document.getElementById('o-cqc').style.display = "block";
         document.getElementById('c-cqc').style.display = "block";
-        document.getElementById('life-gauge').style.display = "block";
         document.getElementById('soliton-radar').style.display = "block";
         icons[Math.floor(Math.random() * 12)].classList.remove('d-none');
         weapons[Math.floor(Math.random() * 15)].classList.remove('d-none');
@@ -79,7 +78,6 @@ function hideBackgrounds()
     document.getElementById('cqc_video').style.display = "none";
     document.getElementById('o-cqc').style.display = "none";
     document.getElementById('c-cqc').style.display = "none";
-    document.getElementById('life-gauge').style.display = "none";
     document.getElementById('soliton-radar').style.display = "none";
 
 }
