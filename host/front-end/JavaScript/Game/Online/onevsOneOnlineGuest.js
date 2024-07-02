@@ -356,7 +356,7 @@ class OnlineGame1v1_guest
         if (this.scores[0] > 9)
         {
             if (this.end_time == 0)
-                this.end_time = getActualTimeSeconds();
+                this.end_time = this.scores_time[this.scores_time.length - 1][0];
 
             document.getElementById('g_win_text').textContent = localStorage.getItem('opponent_login') + getTranslation('Online Win');
             document.getElementById('g_win_text').style.display = "block";
@@ -369,7 +369,7 @@ class OnlineGame1v1_guest
         if (this.scores[1] > 9)
         {
             if (this.end_time == 0)
-                this.end_time = getActualTimeSeconds();
+                this.end_time = this.scores_time[this.scores_time.length - 1][0];
 
             document.getElementById('g_win_text').textContent = localStorage.getItem('login') + getTranslation('Online Win');
             document.getElementById('g_win_text').style.display = "block";
