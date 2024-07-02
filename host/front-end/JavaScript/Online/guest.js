@@ -23,14 +23,12 @@ function readHostMsg(event)
 		time = (getActualTimeSeconds() - game.start_time);
 		game.scores[0] = +msg.substring(8);
 		game.scores_time.push([time, "1"]);
-		game.end_time = time;
 		return;
 	}
 	else if (msg.startsWith('score_g:')){
 		time = (getActualTimeSeconds() - game.start_time);
 		game.scores[1] = +msg.substring(8);
 		game.scores_time.push([time, "2"]);
-		game.end_time = time;
 		return;
 	}
 	else if (msg.startsWith('b1:')){
