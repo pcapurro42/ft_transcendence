@@ -240,12 +240,15 @@ class Ball
             this.x = this.x + x_dir;
             this.y = this.y + y_dir;
         }
-        
-        if (this.prev_x < this.x)
-            this.direction = 90;
-        else
-            this.direction = -90;
-        this.prev_x = this.x;
+
+        if (role == 'guest')
+        {
+            if (this.prev_x < this.x)
+                this.direction = 90;
+            else
+                this.direction = -90;
+            this.prev_x = this.x;
+        }
     }
 
     getAwayFromLimits()
@@ -264,6 +267,7 @@ class Ball
                 this.x = this.x + this.speed;
             else
                 this.x = this.x - this.speed;
+            this.prev_x = this.x;
         }
 
         if (this.isAboveOrUnderPlayer() == true)
@@ -296,6 +300,8 @@ class Ball
     {
         this.x = this.game.game_width / 2 - (this.game.ball_width / 2);
         this.y = this.game.game_height / 2 - (this.game.ball_width / 2);
+
+        this.prev_x = this.x;
 
         this.direction = getRandomBallDirection();
         this.bonus_speed = 0;
