@@ -1,22 +1,22 @@
 @font-face {
-  font-family: 'My_font';
+  font-family: 'roboto';
   src: url(../Materials/fonts/roboto-font.ttf);
 }
 
 @font-face {
-  font-family: 'mgs2';
+  font-family: 'tournament';
   src: url(../Materials/fonts/mgs-font-2.ttf);
 }
 
 @font-face {
-  font-family: 'mgs';
-  src: url(../Materials/fonts/mgs-font-1.TTF);
+  font-family: 'main';
+  src: url(../Materials/fonts/mgs-font-1.ttf);
 }
 
 body
 {
     display: none;
-    font-family: "My_font" !important;
+    font-family: "roboto" !important;
 }
 
 :root {
@@ -138,8 +138,6 @@ body
     right: -15px;
 }
 
-
-
 .bg-box{
     max-width: 35%;
 }
@@ -151,13 +149,14 @@ body
 }
 
 p, pre, h1, h2, h3{
-    font-family: "My_font" !important;
+    font-family: "roboto" !important;
 }
-.mgs_font{
-    font-family: "mgs" !important;
+
+.main_font{
+    font-family: "main" !important;
 }
 #nick_reminder, .nicks, #nick_announce, .game_nbr{
-    font-family: mgs2 !important;
+    font-family: tournament !important;
 }
 
 .text-red{
