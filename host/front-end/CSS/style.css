@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: 'main';
-  src: url(../Materials/fonts/mgs-font-1.ttf);
+  src: url(../Materials/fonts/mgs-font-1.woff), format('woff');
 }
 
 body
