@@ -53,7 +53,7 @@ body
 
 #title
 {
-    margin-top: 250px !important;
+    margin-top: 90px !important;
     z-index:2;
 }
 
@@ -73,7 +73,7 @@ body
 @media screen and (max-width: 600px){
  .bg-img {display: none;}
 }
-@media screen and (max-height: 955px){
+@media screen and (max-height: 850px){
  .item-img {display: none;}
  .weapon-img{display:none;}
  .w-item-img {display: none;}
