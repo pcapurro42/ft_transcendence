@@ -13,9 +13,9 @@ function readHostMsg(event)
 		game.ball.x = +msg.substring(msg.indexOf('/') + 1);
 
 		if (game.ball.prev_x < game.ball.x)
-			game.ball.direction = 90;
+			game.ball.direction = 0;
 		else
-			game.ball.direction = -90;
+			game.ball.direction = 180;
 
 		return;
 	}
