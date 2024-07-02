@@ -96,6 +96,7 @@ body
 }
 
 #soliton-radar{
+    z-index: -2;
     position: fixed;
     top: 85px;
     right: 105px;
