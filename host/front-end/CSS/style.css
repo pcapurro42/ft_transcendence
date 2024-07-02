@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'My_font';
-  src: url(../Materials/fonts/myfont.ttf);
+  src: url(../Materials/fonts/roboto-font.ttf);
 }
 
 @font-face {
   font-family: 'mgs2';
-  src: url(../Materials/fonts/MGS2.ttf);
+  src: url(../Materials/fonts/mgs-font-2.ttf);
 }
 
 @font-face {
   font-family: 'mgs';
-  src: url(../Materials/fonts/MGS.TTF);
+  src: url(../Materials/fonts/mgs-font-1.TTF);
 }
 
 body
