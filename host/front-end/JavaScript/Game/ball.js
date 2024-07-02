@@ -12,6 +12,8 @@ class Ball
         this.x = x;
         this.y = y;
 
+        this.prev_x = x;
+
         this.speed = speed;
 
         this.color = color;
@@ -238,6 +240,12 @@ class Ball
             this.x = this.x + x_dir;
             this.y = this.y + y_dir;
         }
+        
+        if (this.prev_x < this.x)
+            this.direction = 90;
+        else
+            this.direction = -90;
+        this.prev_x = this.x;
     }
 
     getAwayFromLimits()
