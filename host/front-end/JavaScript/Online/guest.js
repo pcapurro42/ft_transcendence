@@ -8,8 +8,15 @@ function readHostMsg(event)
 		return;
 	}
 	else if (msg.startsWith('bpos:')){
+		game.ball.prev_x = game.ball.x;
 		game.ball.y = +msg.substring(5, msg.indexOf('/'));
 		game.ball.x = +msg.substring(msg.indexOf('/') + 1);
+
+		if (game.ball.prev_x < game.ball.x)
+			game.ball.direction = 90;
+		else
+			game.ball.direction = -90;
+
 		return;
 	}
 	else if (msg.startsWith('score_h:')){
