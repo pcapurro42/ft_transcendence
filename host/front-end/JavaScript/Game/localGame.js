@@ -66,6 +66,7 @@ function displayCountDown(nb)
     {
         timer.classList.add("d-none");
         game_music.play();
+        game_music.loop = true;
         game.sounds.alert.play();
         menu_music.pause();
         addKeyboardMonitoring();
