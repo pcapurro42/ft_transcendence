@@ -300,7 +300,7 @@ class OnlineGame1v1_guest
     
             this.display.fillStyle = "red";
             this.display.fillRect(21, 22, left_life_surface, 20);
-            this.display.fillStyle = "orange";
+            this.display.fillStyle = "green";
             this.display.fillRect((this.game_width - 337) - 15, 22, right_life_surface, 20);
         }
 
@@ -365,7 +365,7 @@ class OnlineGame1v1_guest
         if (this.scores[0] > 9)
         {
             if (this.end_time == 0)
-                this.end_time = this.scores_time[this.scores_time.length - 1][0];
+                this.end_time = getActualTimeSeconds();
 
             document.getElementById('g_win_text').textContent = localStorage.getItem('opponent_login') + getTranslation('Online Win');
             document.getElementById('g_win_text').style.display = "block";
@@ -378,7 +378,7 @@ class OnlineGame1v1_guest
         if (this.scores[1] > 9)
         {
             if (this.end_time == 0)
-                this.end_time = this.scores_time[this.scores_time.length - 1][0];
+                this.end_time = getActualTimeSeconds();
 
             document.getElementById('g_win_text').textContent = localStorage.getItem('login') + getTranslation('Online Win');
             document.getElementById('g_win_text').style.display = "block";

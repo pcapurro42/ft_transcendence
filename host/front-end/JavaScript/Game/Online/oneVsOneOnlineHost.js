@@ -302,7 +302,7 @@ class OnlineGame1v1_host
     
             this.display.fillStyle = "green";
             this.display.fillRect(21, 22, left_life_surface, 20);
-            this.display.fillStyle = "orange";
+            this.display.fillStyle = "red";
             this.display.fillRect((this.game_width - 337) - 15, 22, right_life_surface, 20);
         }
 

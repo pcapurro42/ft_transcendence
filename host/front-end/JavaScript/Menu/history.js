@@ -216,7 +216,7 @@ class History
     {
         if (this.history_data != null)
         {
-            let total_distance = 445;
+            let total_distance = 443;
             let bottom_y = this.graph_height - 43;
             let scores_nb = this.history_data.data[history_tab][5].length;
             let game_length = this.history_data.data[history_tab][4];
