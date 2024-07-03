@@ -16,8 +16,6 @@ class Ball
 
         this.speed = speed;
 
-        this.color = color;
-
         this.direction = direction;
         this.bonus_speed = bonus_speed;
 
@@ -34,7 +32,7 @@ class Ball
 
     print()
     {
-        this.game.display.fillStyle = this.color;
+        this.game.display.fillStyle = this.game.ball_color;
         this.game.display.fillRect(this.x, this.y, this.width, this.height);
 
         if (this.direction <= 90 && this.direction >= -90)

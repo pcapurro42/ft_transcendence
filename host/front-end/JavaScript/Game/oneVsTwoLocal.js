@@ -225,6 +225,7 @@ class LocalGame1v2
 
     refreshDisplay()
     {
+        this.refreshPreferences();
         this.refreshBackground();
         this.refreshScores();
         this.refreshPlayers();
@@ -233,6 +234,14 @@ class LocalGame1v2
 
         if (gameMode != "normal")
             this.refreshBonus();
+    }
+
+    refreshPreferences()
+    {
+        if (high_contrast == "true")
+            this.menu_color = "white", this.background_color = "black", this.bar_color = "white", this.ball_color = "white";
+        else
+            this.menu_color = "black", this.background_color = "white", this.bar_color = "black", this.ball_color = "black";
     }
 
     refreshBackground()

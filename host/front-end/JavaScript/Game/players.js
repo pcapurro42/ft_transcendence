@@ -14,8 +14,6 @@ class Bar1v1
 
         this.speed = speed;
 
-        this.color = color;
-
         this.bonus_speed = 0;
         this.bonus_height = 0;
 
@@ -26,7 +24,7 @@ class Bar1v1
 
     print()
     {
-        this.game.display.fillStyle = this.color;
+        this.game.display.fillStyle = this.game.bar_color;
         this.game.display.fillRect(this.x, this.y, this.width, this.height);
     }
 

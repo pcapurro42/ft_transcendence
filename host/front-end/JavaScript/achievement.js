@@ -5,8 +5,10 @@ function hideAchievement()
     document.getElementById('konami_toast').style.display = "none";
     document.getElementById('credits_toast').style.display = "none";
     document.getElementById('lcl_toast').style.display = "none";
-    document.getElementById('won_toast').style.display = "none";
-    document.getElementById('lost_toast').style.display = "none";
+    document.getElementById('g_won_toast').style.display = "none";
+    document.getElementById('g_lost_toast').style.display = "none";
+    document.getElementById('h_won_toast').style.display = "none";
+    document.getElementById('h_lost_toast').style.display = "none";
     // ...
 }
 
@@ -38,12 +40,22 @@ function displayAchievement(achievement)
     
     if (achievement == "konami")
         toast = "konami_toast";
+
     else if (achievement == "first local game")
         toast = "lcl_toast";
+
     else if (achievement == "credits")
         toast = "credits_toast";
-    else if (achievement == "won")
-        toast = "won_toast";
+
+    else if (achievement == "g_won")
+        toast = "g_won_toast";
+    else if (achievement == "g_lost")
+        toast = "g_lost_toast";
+    else if (achievement == "h_won")
+        toast = "h_won_toast";
+    else if (achievement == "h_lost")
+        toast = "h_lost_toast";
+
     else if (achievement == "lost")
         toast = "lost_toast";
 

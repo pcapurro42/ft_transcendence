@@ -56,7 +56,6 @@ class OnlineGame1v1_host
             this.canvas = document.getElementById('one_vs_one_guest_game');
         this.display = this.canvas.getContext('2d');
 
-
         this.canvas.width = this.game_width;
         this.canvas.height = this.game_height;
 
@@ -66,6 +65,7 @@ class OnlineGame1v1_host
             this.menu_color = "white", this.background_color = "black", this.bar_color = "white", this.ball_color = "white";
         else
             this.menu_color = "black", this.background_color = "white", this.bar_color = "black", this.ball_color = "black";
+
         if (game_map != null && game_map != "default")
         {
             if (game_map == "red")
@@ -223,6 +223,7 @@ class OnlineGame1v1_host
 
     refreshDisplay()
     {
+        this.refreshPreferences();
         this.refreshBackground();
         this.refreshScores();
         this.refreshPlayers();
@@ -233,6 +234,14 @@ class OnlineGame1v1_host
 
         if (gameMode != "normal")
             this.refreshBonus();
+    }
+
+    refreshPreferences()
+    {
+        if (high_contrast == "true")
+            this.menu_color = "white", this.background_color = "black", this.bar_color = "white", this.ball_color = "white";
+        else
+            this.menu_color = "black", this.background_color = "white", this.bar_color = "black", this.ball_color = "black";
     }
 
     refreshBackground()
@@ -361,6 +370,7 @@ class OnlineGame1v1_host
         let time;
 
         time = (getActualTimeSeconds() - this.start_time);
+        this.end_time = getActualTimeSeconds();
         if (this.ball.x >= this.game_width / 2)
         {
             this.scores[0]++;

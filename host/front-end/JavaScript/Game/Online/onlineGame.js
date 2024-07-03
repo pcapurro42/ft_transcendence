@@ -84,7 +84,7 @@ function startOnline1v1()
                         wonGamesNb += 1;
 
                         if (localStorage.getItem('game_won') != "true")
-                            localStorage.setItem('game_won', "true"), displayAchievement("won");
+                            localStorage.setItem('game_won', "true"), displayAchievement("h_won");
 
                     }
                     else{
@@ -93,7 +93,7 @@ function startOnline1v1()
                         loseGameNb += 1;
 
                         if (localStorage.getItem('game_lost') != "true")
-                            localStorage.setItem('game_lost', "true"), displayAchievement("lost");
+                            localStorage.setItem('game_lost', "true"), displayAchievement("h_lost");
                     }
                     game.ball.onl_received = game.scores[1] + game.ball.onl_return;
                 }
@@ -105,7 +105,7 @@ function startOnline1v1()
                         wonGamesNb += 1;
 
                         if (localStorage.getItem('game_won') != "true")
-                            localStorage.setItem('game_won', "true"), displayAchievement("won");
+                            localStorage.setItem('game_won', "true"), displayAchievement("g_won");
                     }
                     else{
                         gameStat['loseGameNb'] = 1;
@@ -113,7 +113,7 @@ function startOnline1v1()
                         loseGameNb += 1;
 
                         if (localStorage.getItem('game_lost') != "true")
-                            localStorage.setItem('game_lost', "true"), displayAchievement("lost");
+                            localStorage.setItem('game_lost', "true"), displayAchievement("g_lost");
                     }
                     game.ball.onl_received = game.scores[0] + game.ball.onl_return;
                 }

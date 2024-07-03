@@ -95,13 +95,11 @@ function parseDbResponse(response){
 					if (Array.isArray(element)){
 						element.forEach(elem => {
 							if (typeof(element) != 'number' && !gameHistoryParse(element)){
-								console.log("gamehist[data]", element);
 								bool = false;
 							}
 						});
 					}
 					if (typeof(element) != 'number' && !gameHistoryParse(element)){
-						console.log("2nd if", element);
 						bool = false;
 					}
 				});
@@ -111,7 +109,6 @@ function parseDbResponse(response){
 					return false;
 			}
 			if ((typeof(key) != 'number' && !gameHistoryParse(key)) || (typeof(value) != 'number' && !gameHistoryParse(value))){
-				console.log("out if", element);
 				return false;
 			}
 		}

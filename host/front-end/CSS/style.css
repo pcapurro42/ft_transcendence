@@ -383,7 +383,7 @@ pre{
     left: 90%;
 }
 
-#konami_toast, #credits_toast, #lcl_toast, #won_toast, #lost_toast
+#konami_toast, #credits_toast, #lcl_toast, #h_won_toast, #h_lost_toast, #g_won_toast, #g_lost_toast
 {
     position: absolute;
     bottom: 125px;
