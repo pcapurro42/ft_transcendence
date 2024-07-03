@@ -96,20 +96,33 @@ async function guestConnectionHandler(){
 }
 
 async function pingHost(){
-	if (stop_ping)
-		return;
-	data_channel.send('ping');
-	await sleep(900);
-	pingHost();
-}
-async function checkGuestPing(){
-	if (ping == true){
-		ping = false
-		await sleep(1100);
-		checkGuestPing();
+	try{
+		if (stop_ping)
+			return;
+		data_channel.send('ping');
+		await sleep(900);
+		pingHost();
+	}
+	catch(error){
+		console.error(getTranslation("Disconnected"));
 		return;
 	}
-	handleDisconnection();
+}
+async function checkGuestPing(){
+
+	try{
+		if (ping == true){
+			ping = false
+			await sleep(1100);
+			checkGuestPing();
+			return;
+		}
+		handleDisconnection();
+	}
+	catch(error){
+		console.error(getTranslation("Disconnected"));
+		return;
+	}
 }
 
 

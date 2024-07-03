@@ -5,7 +5,7 @@ services:
       context: host/
       dockerfile: Dockerfile.host
     depends_on:
-      - signaling
+      - proxy
     ports:
       - 1025:1025
     env_file:
@@ -43,8 +43,6 @@ services:
       dockerfile: Dockerfile.db
     ports:
       - 5432:5432
-    volumes:
-      - /database/data/
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${DB_USERNAME} -d ${DB_NAME}"]
       interval: 5s

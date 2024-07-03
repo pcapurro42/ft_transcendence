@@ -176,8 +176,9 @@ async function handleLocation(){
         case getSpecificTranslation('fr', '/online-stats'):
         case getSpecificTranslation('es', '/online-stats'):
         case '/online-stats':
-            if (isConnected())
+            if (isConnected()){
                 nav.displayOnlineStats();
+            }
             else{
                 nav.displayMenu();
                 displayStatusBarAlert(getTranslation('Forbidden Page'));
