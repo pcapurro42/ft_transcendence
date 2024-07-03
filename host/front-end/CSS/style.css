@@ -9,7 +9,7 @@
 }
 
 @font-face {
-  font-family: 'main';
+  font-family: 'mgs';
   src: url(../Materials/fonts/mgs-font-1.woff), format('woff');
 }
 
@@ -152,11 +152,11 @@ p, pre, h1, h2, h3{
     font-family: "roboto" !important;
 }
 
-.main_font{
-    font-family: "main" !important;
+.mgs_font{
+    font-family: "mgs" !important;
 }
 #nick_reminder, .nicks, #nick_announce, .game_nbr{
-    font-family: tournament !important;
+    font-family: "tournament" !important;
 }
 
 .text-red{
