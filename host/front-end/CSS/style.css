@@ -9,8 +9,14 @@
 }
 
 @font-face {
-  font-family: 'mgs';
-  src: url(../Materials/fonts/mgs-font-1.woff), format('woff');
+    font-family: 'mgs';
+    src: url(../Materials/fonts/mgs-font-1.woff), format("woff");
+  }
+  
+
+@font-face {
+    font-family: 'main-btn';
+    src: url(../Materials/fonts/press-start-2P.ttf);
 }
 
 body
@@ -69,6 +75,7 @@ body
  #logged, #login, #menu_ham{margin-right: 50px !important; margin-left: 50px !important;}
  #loading{margin-right: 95px !important;}
  #title{margin-top: 175px!important;}
+ #background_menu_1{display: none !important;}
 }
 @media screen and (max-width: 600px){
  .bg-img {display: none;}
@@ -80,6 +87,10 @@ body
  .w-weapon-img{display:none;}
  #o-cqc-img{display: none;}
  #c-cqc-img{display: none;}
+}
+
+.main-btn, .sb_nav, .dropdown_btn, .modal-title{
+    font-family: "main-btn" !important;
 }
 
 #logged, #login{
@@ -103,7 +114,7 @@ body
 }
 
 .item-img, .weapon-img, .w-item-img, .w-weapon-img{
-    width: 200px;
+    width: 201px;
 }
 
 .item-img-box, .w-item-img-box{
@@ -148,14 +159,14 @@ body
     max-width: 1090px !important;
 }
 
-p, pre, h1, h2, h3{
+/* p, pre, h1, h2, h3{
     font-family: "roboto" !important;
-}
+} */
 
 .mgs_font{
     font-family: "mgs" !important;
 }
-#nick_reminder, .nicks, #nick_announce, .game_nbr{
+#nick_reminder, .nicks, #nick_announce, .game_nbr, #h_versus_title, #g_versus_title{
     font-family: "tournament" !important;
 }
 

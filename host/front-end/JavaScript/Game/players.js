@@ -102,6 +102,9 @@ class Bar1v1
         }
         this.speed = this.game.bar_speed;
         this.height = this.game.bar_height;
+
+        this.bonus = false;
+        this.bonus_time = 0;
     }
 
     getInfo()

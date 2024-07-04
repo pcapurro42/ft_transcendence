@@ -59,7 +59,7 @@ function displayCountDown(nb)
     }
     else if (nb == 0)
     {
-        game.refreshLifes();
+        game.refreshLives();
         timer.textContent = getTranslation("Go!")
     }
     else if (nb == -1)

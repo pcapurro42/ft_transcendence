@@ -444,10 +444,12 @@ function refreshHistory()
     }
 }
 
-nav.displayHistory = function()
+nav.displayHistory = async function()
 {
     if (!isConnected())
         return;
+    
+    await retrieveUserInfo();
     nav.hideEveryDiv();
     document.getElementById('title').style.setProperty("margin-top", "115px", "important");
     document.getElementById('history_info').style.display = 'block';

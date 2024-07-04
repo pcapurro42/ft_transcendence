@@ -144,7 +144,6 @@ async function sendAnswer(answer){
 		})
 
 		let response = await request.text();
-		console.log(response);
     	if (!response){
 			displayStatusBarAlert(getTranslation('Connection Init Failed'));
 			resetConnection();

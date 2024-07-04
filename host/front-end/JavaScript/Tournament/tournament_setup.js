@@ -37,6 +37,7 @@ function restartTournament(){
 	document.getElementById('end_tournament_btn').classList.add('d-none');
 	tournamentFinalReset();
 	originalNicknames = shuffleArray(originalNicknames);
+	document.getElementById("nick_announce").textContent = "";
 	startTournament(originalNicknames, originalNicknames.length);
 }
 
@@ -47,6 +48,7 @@ async function endTournament(){
 
 	document.getElementById('round_block').style.opacity = '0';
 	end_btn.style.opacity = '0'
+	document.getElementById('nick_announce').style.opacity = '0';
 
 	await sleep(1000);
 
@@ -56,7 +58,9 @@ async function endTournament(){
 	end_btn.style.opacity = ''
 	document.getElementById('Roundof16').style.display = '';
 	tournamentFinalReset();
-
+	
+	previous_url_path = "";
+    document.getElementById("title_logo").style.display = "block";
 	nav.displayMenu();
 }
 

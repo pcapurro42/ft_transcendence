@@ -55,12 +55,7 @@ function setBackground(pagePath)
         || pagePath == '/game-history' || pagePath == '/online-stats' || pagePath == '/local-stats' || pagePath == '/online'
         || pagePath == '/create-lobby' || pagePath == '/join-lobby' || pagePath == '/tournament-nicknames')
     {
-        if (pagePath == '/home')
-        {
-            document.getElementById('cqc_video').style.display = "block";
-            document.getElementById('o-cqc').style.display = "block";
-            document.getElementById('c-cqc').style.display = "block";
-        }
+        document.getElementById('background_menu_1').style.display = 'block';
         document.getElementById('soliton-radar').style.display = "block";
         icons[Math.floor(Math.random() * 12)].classList.remove('d-none');
         weapons[Math.floor(Math.random() * 15)].classList.remove('d-none');
@@ -68,7 +63,16 @@ function setBackground(pagePath)
     else if (pagePath == "/1vs1" || pagePath == "/1vs2" || pagePath == "/tournament-game" || pagePath == "online-game"){
         document.getElementById('background_menu_1').style.display = 'block';
         document.getElementById('background_menu_2').style.display = 'block';
-
+    }
+    if (pagePath == '/home')
+    {
+        hideBotVid()
+        document.getElementById('cqc_video').style.display = "block";
+        document.getElementById('o-cqc').style.display = "block";
+        document.getElementById('c-cqc').style.display = "block";
+    }
+    else{
+        hideBotVid();
     }
 }
 
@@ -311,7 +315,6 @@ function setDescriptiveImages(value)
 
 function refreshDisplay()
 {
-    setBackground('/settings');
 
     setHighContrast();
 

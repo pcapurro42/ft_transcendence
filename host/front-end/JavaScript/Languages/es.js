@@ -14,7 +14,6 @@ let es = [
     ["User Anonymization Success", "Los datos del usuario se anonimizaron con éxito."],
     ["Unanonymize Data Msg", "Vuelva a iniciar sesión para volver a habilitar los datos públicos."],
 
-
     ["Enable/Disable menu music", "Activar o desactivar la música del menú"],
     ["Enable/Disable menu sounds", "Activar o desactivar los sonidos del menú"],
 
@@ -113,8 +112,8 @@ let es = [
     ["Music volume", "Volumen de la música"],
     ["Text size", "Tamaño del texto"],
     ["Image description", "Descripción de la imagen"],
-    ["High contrast", "Alto contraste"],
-    ["ARIA High Contrast", "Alto contraste"],
+    ["Dark mode", "Modo oscuro"],
+    ["ARIA Dark mode", "Modo oscuro"],
 
     ["Privacy policy", "Política de privacidad"],
     ["Website RGPD", "Este sitio web cumple el Reglamento General de Protección de Datos (RGPD) de la Unión Europea."],
@@ -196,11 +195,11 @@ let es = [
     ["7th Game", "Séptimo partido"],
     ["8th Game", "Octavo partido"],
     ["Next Game", "Próximo partido"],
-    ["Tournament Win Msg","Misión cumplida"],
+    ["Tournament Win Msg","Mision cumplida"],
     ["Congratulations"," Felicitaciones"],
     ["Restart Tournament", "Reiniciar el torneo"],
 
-    ["Leaderboard", "Clasificación"],
+    ["Leaderboard", "Clasificacion"],
     ["Qualified", " ¡está clasificado!\n"],
     ["Eliminated", "fue derrotado."],
 

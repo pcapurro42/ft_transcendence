@@ -12,7 +12,7 @@ class LocalGame1v2
         this.game_width = 1100;
         this.game_height = 720;
 
-        this.bar_speed = 15;
+        this.bar_speed = 10;
         this.bar_height = 90;
         this.bar_width = 10;
 
@@ -229,7 +229,7 @@ class LocalGame1v2
         this.refreshBackground();
         this.refreshScores();
         this.refreshPlayers();
-        this.refreshLifes();
+        this.refreshLives();
         this.refreshBall();
 
         if (gameMode != "normal")
@@ -242,6 +242,14 @@ class LocalGame1v2
             this.menu_color = "white", this.background_color = "black", this.bar_color = "white", this.ball_color = "white";
         else
             this.menu_color = "black", this.background_color = "white", this.bar_color = "black", this.ball_color = "black";
+
+        if (game_map != null && game_map != "default")
+        {
+            if (game_map == "red")
+                this.background_color = "brown";
+            else
+                this.background_color = game_map;
+        }
     }
 
     refreshBackground()
@@ -274,19 +282,19 @@ class LocalGame1v2
 
     refreshPlayers()
     {
-        if (gameKeys.KeyE == true)
+        if (gameKeys.KeyE == true && gameKeys.KeyD == false)
             this.left_player.moveUp();
-        if (gameKeys.KeyD == true)
+        if (gameKeys.KeyD == true && gameKeys.KeyE == false)
             this.left_player.moveDown();
 
-        if (gameKeys.KeyY == true)
+        if (gameKeys.KeyY == true && gameKeys.KeyH == false)
             this.right_player_1.moveUp();
-        if (gameKeys.KeyH == true)
+        if (gameKeys.KeyH == true && gameKeys.KeyY == false)
             this.right_player_1.moveDown();
 
-        if (gameKeys.KeyO == true)
+        if (gameKeys.KeyO == true && gameKeys.KeyL == false)
             this.right_player_2.moveUp();
-        if (gameKeys.KeyL == true)
+        if (gameKeys.KeyL == true && gameKeys.KeyO == false)
             this.right_player_2.moveDown();
 
         this.left_player.print();
@@ -297,7 +305,7 @@ class LocalGame1v2
             this.left_player.displayBonus(), this.right_player_1.displayBonus(), this.right_player_2.displayBonus();
     }
 
-    refreshLifes()
+    refreshLives()
     {
         if (this.scores[0] < 10 && this.scores[1] < 10)
         {

@@ -57,19 +57,31 @@ function hostConnectionHandler(){
 }
 
 async function pingGuest(){
-	if (stop_ping)
+	try{
+		if (stop_ping)
+			return;
+		data_channel.send('ping');
+		await sleep(900);
+		pingGuest();
+	}
+	catch(error){
+		console.error(getTranslation("Disconnected"));
 		return;
-	data_channel.send('ping');
-	await sleep(900);
-	pingGuest();
+	}
 }
 
 async function checkHostPing(){
-	if (ping == true){
-		ping = false
-		await sleep(1100);
-		checkHostPing();
+	try{
+		if (ping == true){
+			ping = false
+			await sleep(1100);
+			checkHostPing();
+			return;
+		}
+		handleDisconnection();
+	}
+	catch(error){
+		console.error(getTranslation("Disconnected"));
 		return;
 	}
-	handleDisconnection();
 }

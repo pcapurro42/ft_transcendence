@@ -28,25 +28,28 @@ async function displayTournamentStage(nicknames){
 	fillNicknames(nicknames);
 
 	switch (nicknames.length){
-		case 16:
-			round.textContent = getTranslation('Round of 16');
-			incomingGames = gamesArray[0];
-			break;
-		case 8:
-			round.textContent = getTranslation('Final 8');
-			incomingGames = gamesArray[1];
-			break;
-		case 4:
-			round.textContent = getTranslation('Final 4');
-			incomingGames = gamesArray[2];
-			break;
-		case 2:
-			round.textContent = getTranslation('Final');
-			incomingGames = document.getElementById('nick_announce')
-			incomingGames.textContent = document.getElementById('1stGameNicks').textContent;
-			break;
-	}
-
+        case 16:
+            round.textContent = getTranslation('Round of 16');
+            incomingGames = gamesArray[0];
+            break;
+        case 8:
+            round.textContent = getTranslation('Final 8');
+            hideUnused(8);
+            incomingGames = gamesArray[1];
+            break;
+        case 4:
+            round.textContent = getTranslation('Final 4');
+            hideUnused(4);
+            incomingGames = gamesArray[2];
+            break;
+        case 2:
+            round.textContent = getTranslation('Final');
+            hideUnused(2);
+            incomingGames = document.getElementById('nick_announce')
+            incomingGames.textContent = document.getElementById('1stGameNicks').textContent;
+            break;
+    }
+	
 	await tournamentStageAnimation(round, incomingGames);
 
 	if (nicknames.length == 2){
@@ -84,7 +87,8 @@ async function tournamentStageAnimation(round, incomingGames){
 async function tournamentGameAnimation(player, round)
 {
 	let main_page = document.getElementById('main_page')
-
+	
+	document.getElementById("Roundof16").classList.add('d-none');
 	main_page.style.opacity = '0';
 	main_page.style.display = 'block';
 
@@ -112,6 +116,8 @@ async function tournamentGameAnimation(player, round)
 	round.style.opacity = '0';
 	main_page.style.opacity = '0'
 	await sleep(1000);
+	document.getElementById("Roundof16").classList.remove('d-none');
+
 }
 
 async function displayFinalWinner(){

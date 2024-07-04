@@ -113,8 +113,8 @@ let fr = [
     ["Music volume", "Volume de la musique"],
     ["Text size", "Taille du texte"],
     ["Image description", "Description de l'image"],
-    ["High contrast", "Haut contraste"],
-    ["ARIA High Contrast", "Haut contraste"],
+    ["Dark mode", "Mode sombre"],
+    ["ARIA Dark mode", "Mode sombre"],
 
     ["Privacy policy", "Politique de confidentialité"],
     ["Website RGPD", "Ce site Internet se conforme au règlement général sur la protection des données (RGPD) de l'Union européenne."],

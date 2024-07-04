@@ -111,3 +111,22 @@ function tournamentFinalReset(){
 	document.getElementById('main_menu_toolbar').style.transition = '';
 	document.getElementById('main_menu_toolbar').style.opacity = '1';
 }
+
+function hideUnused(currStage){
+    let stages;
+    switch (currStage){
+        case 2:
+            stages = document.querySelectorAll(".ro16, .ro8, .ro4");
+            break;
+        case 4:
+            stages = document.querySelectorAll(".ro16, .ro8");
+            break;
+        case 8:
+            stages = document.querySelectorAll(".ro16");
+            break;
+    }
+
+    stages.forEach(elem => {
+        elem.style.display = "none";
+    });
+}
